@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Learning Journey - Beginner Course | GK Foundation</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            color: #5d3a0a;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            text-align: center;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 400px;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 82px;
+            left: 392px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            z-index: 1002;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 22px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #8b4513;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 380px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 0;
+        }
+
+        .slide-menu.collapsed {
+            left: -380px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .menu-bookmark-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .menu-content {
+            padding: 1.5rem 2rem;
+        }
+
+        .menu-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #8b4513;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 0.8rem 0;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            margin: 0 -2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        .menu-item.active {
+            background: rgba(139, 69, 19, 0.1);
+            border-left-color: #8b4513;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        /* Main Container */
+        .main-container {
+            margin-left: 380px;
+            transition: margin-left 0.3s ease;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .main-container.menu-collapsed {
+            margin-left: 0;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #3c2d1f;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            background: #8b4513;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #6d3410;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Success Badge */
+        .success-badge {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(39,174,96,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .slide-menu { width: 100%; }
+            .main-container { margin-left: 0; }
+            .main-container.menu-collapsed { margin-left: 0; }
+            .hero-title { font-size: 2rem; }
+            
+            /* Mobile menu toggle positioning */
+            .menu-toggle {
+                left: 30px !important;
+            }
+            .menu-toggle.collapsed {
+                left: 30px !important;
+            }
+            .menu-toggle-label {
+                left: 22px !important;
+            }
+            .menu-toggle-label.collapsed {
+                left: 22px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" id="menuToggle" onclick="
+        console.log('🔧 Button clicked');
+        const slideMenu = document.getElementById('slideMenu');
+        const mainContainer = document.getElementById('mainContainer');
+        const menuLabel = document.getElementById('menuToggleLabel');
+        const menuToggle = this;
+        
+        const currentLeft = slideMenu.style.left || '0px';
+        const isCollapsed = currentLeft === '-380px' || slideMenu.classList.contains('collapsed');
+        
+        if (isCollapsed) {
+            console.log('📖 Expanding...');
+            slideMenu.style.left = '0px';
+            slideMenu.style.transition = 'left 0.3s ease';
+            mainContainer.style.marginLeft = '380px';
+            menuToggle.style.left = '400px';
+            menuLabel.style.left = '392px';
+            menuLabel.textContent = 'Collapse Menu';
+        } else {
+            console.log('📕 Collapsing...');
+            slideMenu.style.left = '-380px';
+            slideMenu.style.transition = 'left 0.3s ease';
+            mainContainer.style.marginLeft = '0px';
+            menuToggle.style.left = '30px';
+            menuToggle.style.position = 'fixed';
+            menuToggle.style.top = '30px';
+            menuToggle.style.zIndex = '1002';
+            menuToggle.style.display = 'flex';
+            menuToggle.style.visibility = 'visible';
+            menuToggle.style.opacity = '1';
+            menuLabel.style.left = '22px';
+            menuLabel.style.position = 'fixed';
+            menuLabel.style.top = '82px';
+            menuLabel.style.zIndex = '1002';
+            menuLabel.style.display = 'block';
+            menuLabel.style.visibility = 'visible';
+            menuLabel.textContent = 'French Categories';
+        }
+        
+        setTimeout(function() {
+            menuToggle.style.position = 'fixed';
+            menuToggle.style.zIndex = '1002';
+            menuToggle.style.display = 'flex';
+            menuToggle.style.visibility = 'visible';
+            menuToggle.style.opacity = '1';
+            console.log('✅ Safety check complete');
+        }, 500);
+    ">☰</button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse Menu</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title" onclick="openJourneyOverview()">
+                French Learning Journey
+            </div>
+            <div class="menu-subtitle">Navigate Your Learning Path</div>
+        </div>
+        
+        <div class="menu-content">
+            <div class="menu-section">
+                <div class="section-title">Essential Categories</div>
+                <div class="menu-item" onclick="navigateToPage('alphabets')" id="menu-alphabets">
+                    📚 Alphabets & Pronunciation
+                </div>
+                <div class="menu-item" onclick="navigateToPage('numbers')" id="menu-numbers">
+                    🔢 Numbers (1-100)
+                </div>
+                <div class="menu-item" onclick="navigateToPage('greetings')" id="menu-greetings">
+                    👋 Greetings & Basics
+                </div>
+                <div class="menu-item" onclick="navigateToPage('vocabulary')" id="menu-vocabulary">
+                    📖 Essential Vocabulary
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                                    Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container" id="mainContainer">
+        <section class="hero-section">
+            <h1 class="hero-title">🇫🇷 Découvrez le Français!</h1>
+            <h2 class="hero-subtitle">Master the Language of Love, Literature & Diplomacy</h2>
+            <p class="hero-description">
+                Immerse yourself in the rich heritage of French - the language of Molière, Victor Hugo, and global diplomacy. 
+                From its elegant Latin script origins to its modern significance as an official language in 29 countries.
+            </p>
+            <button class="btn" onclick="startLearningJourney()">🚀 Start Learning Journey</button>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #8b4513; text-align: center; margin-bottom: 2rem;">Explore French Language & Heritage</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <div style="background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 12px; border-left: 4px solid #8b4513;">
+                    <h3 style="color: #8b4513; margin-bottom: 1rem;">📜 L'Écriture Française</h3>
+                    <p style="color: #333; line-height: 1.6;">
+                        French uses the Latin alphabet with beautiful accents: à, é, è, ê, ë, î, ï, ô, ù, û, ü, ÿ, ç
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37;">
+                    <h3 style="color: #8b4513; margin-bottom: 1rem;">🏛️ Histoire & Héritage</h3>
+                    <p style="color: #333; line-height: 1.6;">
+                        Born from Vulgar Latin, French evolved through centuries of cultural refinement and philosophical thought.
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 12px; border-left: 4px solid #8b4513;">
+                    <h3 style="color: #8b4513; margin-bottom: 1rem;">🌍 Importance Mondiale</h3>
+                    <p style="color: #333; line-height: 1.6;">
+                        Official language in 29 countries. Working language of the UN, EU, and Olympic Games.
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37;">
+                    <h3 style="color: #8b4513; margin-bottom: 1rem;">🎭 Impact Culturel</h3>
+                    <p style="color: #333; line-height: 1.6;">
+                        French gave the world cuisine, couture, cinéma, ballet. Literary masterpieces shaped modern philosophy.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Emergency fix function - available immediately
+        window.fixButton = function() {
+            console.log('🚨 Emergency button fix running...');
+            const btn = document.getElementById('menuToggle');
+            const lbl = document.getElementById('menuToggleLabel');
+            
+            if (btn) {
+                btn.style.position = 'fixed';
+                btn.style.top = '30px';
+                btn.style.left = '30px';
+                btn.style.width = '44px';
+                btn.style.height = '44px';
+                btn.style.background = 'linear-gradient(135deg, #8b4513, #d4af37)';
+                btn.style.zIndex = '1002';
+                btn.style.display = 'flex';
+                btn.style.visibility = 'visible';
+                btn.style.opacity = '1';
+                btn.style.color = 'white';
+                btn.style.fontSize = '1.2rem';
+                btn.style.border = 'none';
+                btn.style.borderRadius = '8px';
+                btn.style.cursor = 'pointer';
+                btn.style.alignItems = 'center';
+                btn.style.justifyContent = 'center';
+                btn.innerHTML = '☰';
+                console.log('✅ Button fixed at left position');
+            }
+            
+            if (lbl) {
+                lbl.style.position = 'fixed';
+                lbl.style.top = '82px';
+                lbl.style.left = '22px';
+                lbl.style.background = 'rgba(255,255,255,0.95)';
+                lbl.style.color = '#8b4513';
+                lbl.style.zIndex = '1002';
+                lbl.style.display = 'block';
+                lbl.style.visibility = 'visible';
+                lbl.style.opacity = '1';
+                lbl.style.padding = '0.3rem 0.8rem';
+                lbl.style.borderRadius = '6px';
+                lbl.style.fontSize = '0.75rem';
+                lbl.style.fontWeight = '600';
+                lbl.textContent = 'French Categories';
+                console.log('✅ Label fixed');
+            }
+        };
+        
+        // Toggle Menu Function - DIRECT STYLE MANIPULATION
+        function toggleMenu() {
+            console.log('🔧 toggleMenu called');
+            const slideMenu = document.getElementById('slideMenu');
+            const mainContainer = document.getElementById('mainContainer');
+            const menuLabel = document.getElementById('menuToggleLabel');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (!slideMenu || !mainContainer || !menuLabel || !menuToggle) {
+                console.error('❌ Missing elements for toggle');
+                return;
+            }
+            
+            console.log('📍 All elements found successfully');
+            
+            // Check current state by looking at the menu position
+            const currentLeft = slideMenu.style.left || '0px';
+            const isCollapsed = currentLeft === '-380px' || slideMenu.classList.contains('collapsed');
+            
+            console.log('🔄 Current state - collapsed:', isCollapsed);
+            console.log('🔄 Menu current left position:', currentLeft);
+            
+            if (isCollapsed) {
+                // EXPAND MENU
+                console.log('📖 Expanding menu...');
+                
+                // Show menu
+                slideMenu.style.left = '0px';
+                slideMenu.style.transition = 'left 0.3s ease';
+                slideMenu.classList.remove('collapsed');
+                
+                // Adjust main content
+                mainContainer.style.marginLeft = '380px';
+                mainContainer.style.transition = 'margin-left 0.3s ease';
+                mainContainer.classList.remove('menu-collapsed');
+                
+                // Move button to expanded position
+                menuToggle.style.left = '400px';
+                menuToggle.style.background = 'linear-gradient(135deg, #8b4513, #d4af37)';
+                menuToggle.classList.remove('collapsed');
+                
+                // Update label
+                menuLabel.style.left = '392px';
+                menuLabel.style.background = 'rgba(255, 255, 255, 0.95)';
+                menuLabel.style.color = '#8b4513';
+                menuLabel.textContent = 'Collapse Menu';
+                menuLabel.classList.remove('collapsed');
+                
+                console.log('✅ Menu expanded successfully');
+            } else {
+                // COLLAPSE MENU
+                console.log('📕 Collapsing menu...');
+                
+                // Hide menu
+                slideMenu.style.left = '-380px';
+                slideMenu.style.transition = 'left 0.3s ease';
+                slideMenu.classList.add('collapsed');
+                
+                // Adjust main content
+                mainContainer.style.marginLeft = '0px';
+                mainContainer.style.transition = 'margin-left 0.3s ease';
+                mainContainer.classList.add('menu-collapsed');
+                
+                // Move button to collapsed position with forced visibility
+                menuToggle.style.left = '30px';
+                menuToggle.style.background = 'linear-gradient(135deg, #8b4513, #d4af37)';
+                menuToggle.style.position = 'fixed';
+                menuToggle.style.top = '30px';
+                menuToggle.style.width = '44px';
+                menuToggle.style.height = '44px';
+                menuToggle.style.display = 'flex';
+                menuToggle.style.zIndex = '1002';
+                menuToggle.style.visibility = 'visible';
+                menuToggle.style.opacity = '1';
+                menuToggle.classList.add('collapsed');
+                
+                // Update label with forced visibility
+                menuLabel.style.left = '22px';
+                menuLabel.style.background = 'rgba(255, 255, 255, 0.95)';
+                menuLabel.style.color = '#8b4513';
+                menuLabel.style.position = 'fixed';
+                menuLabel.style.top = '82px';
+                menuLabel.style.display = 'block';
+                menuLabel.style.zIndex = '1002';
+                menuLabel.style.visibility = 'visible';
+                menuLabel.style.opacity = '1';
+                menuLabel.textContent = 'French Categories';
+                menuLabel.classList.add('collapsed');
+                
+                console.log('✅ Menu collapsed successfully');
+                console.log('🔍 Collapsed button position:', {
+                    left: menuToggle.style.left,
+                    display: menuToggle.style.display,
+                    visibility: menuToggle.style.visibility,
+                    zIndex: menuToggle.style.zIndex
+                });
+            }
+            
+            // Ensure button always stays visible and on top
+            menuToggle.style.display = 'flex';
+            menuToggle.style.zIndex = '1002';
+            menuToggle.style.position = 'fixed';
+            menuToggle.style.transition = 'all 0.3s ease';
+            
+            menuLabel.style.display = 'block';
+            menuLabel.style.zIndex = '1002';
+            menuLabel.style.position = 'fixed';
+            menuLabel.style.transition = 'all 0.3s ease';
+            
+            console.log('🎯 Toggle complete - button position:', menuToggle.style.left);
+            
+            // Additional safety check for Firebase - ensure button stays visible
+            setTimeout(function() {
+                if (menuToggle && menuToggle.classList.contains('collapsed')) {
+                    menuToggle.style.display = 'flex';
+                    menuToggle.style.visibility = 'visible';
+                    menuToggle.style.opacity = '1';
+                    menuToggle.style.zIndex = '1002';
+                    console.log('🔧 Safety check: Ensured collapsed button remains visible');
+                }
+            }, 500);
+        }
+
+        // Force initialization function for console debugging
+        window.forceInitializeMenu = function() {
+            console.log('🔧 Force initializing menu from console...');
+            initializePage();
+        };
+
+        // Emergency button fix for Firebase loading issues
+        window.fixToggleButton = function() {
+            console.log('🔧 Emergency toggle button fix...');
+            const menuToggle = document.getElementById('menuToggle');
+            const menuLabel = document.getElementById('menuToggleLabel');
+            const slideMenu = document.getElementById('slideMenu');
+            
+            if (menuToggle) {
+                // Check if menu is collapsed to set correct position
+                const isCollapsed = slideMenu && (slideMenu.classList.contains('collapsed') || slideMenu.style.left === '-380px');
+                const buttonLeft = isCollapsed ? '30px' : '400px';
+                const labelLeft = isCollapsed ? '22px' : '392px';
+                const labelText = isCollapsed ? 'French Categories' : 'Collapse Menu';
+                
+                // Force button to be visible and properly positioned
+                menuToggle.style.position = 'fixed';
+                menuToggle.style.top = '30px';
+                menuToggle.style.left = buttonLeft;
+                menuToggle.style.width = '44px';
+                menuToggle.style.height = '44px';
+                menuToggle.style.zIndex = '1002';
+                menuToggle.style.display = 'flex';
+                menuToggle.style.visibility = 'visible';
+                menuToggle.style.opacity = '1';
+                menuToggle.style.background = 'linear-gradient(135deg, #8b4513, #d4af37)';
+                menuToggle.style.color = 'white';
+                menuToggle.style.fontSize = '1.2rem';
+                menuToggle.style.border = 'none';
+                menuToggle.style.borderRadius = '8px';
+                menuToggle.style.cursor = 'pointer';
+                menuToggle.style.alignItems = 'center';
+                menuToggle.style.justifyContent = 'center';
+                menuToggle.innerHTML = '☰';
+                
+                console.log('✅ Toggle button forced to visible position:', buttonLeft);
+            }
+            
+            if (menuLabel) {
+                const isCollapsed = slideMenu && (slideMenu.classList.contains('collapsed') || slideMenu.style.left === '-380px');
+                const labelLeft = isCollapsed ? '22px' : '392px';
+                const labelText = isCollapsed ? 'French Categories' : 'Collapse Menu';
+                
+                menuLabel.style.position = 'fixed';
+                menuLabel.style.top = '82px';
+                menuLabel.style.left = labelLeft;
+                menuLabel.style.zIndex = '1002';
+                menuLabel.style.display = 'block';
+                menuLabel.style.visibility = 'visible';
+                menuLabel.style.opacity = '1';
+                menuLabel.style.background = 'rgba(255, 255, 255, 0.95)';
+                menuLabel.style.color = '#8b4513';
+                menuLabel.style.padding = '0.3rem 0.8rem';
+                menuLabel.style.borderRadius = '6px';
+                menuLabel.style.fontSize = '0.75rem';
+                menuLabel.style.fontWeight = '600';
+                menuLabel.textContent = labelText;
+                
+                console.log('✅ Toggle label forced to visible position:', labelLeft);
+            }
+        };
+
+        // Back Button Function
+        function handleBackButton() {
+            console.log('🔙 Back button clicked - returning to index.html');
+            window.location.href = 'index.html';
+        }
+
+        // Journey Overview Function
+        function openJourneyOverview() {
+            alert('🗺️ Journey Overview page will open here when uploaded to Firebase.');
+        }
+
+        // Navigate to Category Pages
+        function navigateToPage(category) {
+            console.log('🔄 Navigating to category:', category);
+            
+            // Define Firebase paths for each category
+            const categoryPaths = {
+                'alphabets': 'languages/french/Alphabets_Accents',
+                'numbers': 'languages/french/Numbers_1_to_100', 
+                'greetings': 'languages/french/Beginner_Greetings',
+                'vocabulary': 'languages/french/Beg_Vocabulary'
+            };
+            
+            const firebasePath = categoryPaths[category.toLowerCase()];
+            
+            if (!firebasePath) {
+                console.error('❌ Unknown category:', category);
+                alert('❌ Category not found: ' + category);
+                return;
+            }
+            
+            console.log('🔥 Loading content from Firebase path:', firebasePath);
+            
+            // Check if Firebase is available
+            if (typeof firebase === 'undefined') {
+                console.error('❌ Firebase SDK not loaded');
+                alert('❌ Firebase not loaded. Please refresh the page and try again.');
+                return;
+            }
+            
+            // Initialize Firebase if needed
+            if (firebase.apps.length === 0) {
+                try {
+                    firebase.initializeApp({
+                        apiKey: "AIzaSyACr7u6MBx1hdBLhlhBhip6_LWTsuC6RPg",
+                        authDomain: "ga-foundation.firebaseapp.com",
+                        databaseURL: "https://ga-foundation-default-rtdb.firebaseio.com",
+                        projectId: "ga-foundation",
+                        storageBucket: "ga-foundation.firebasestorage.app",
+                        messagingSenderId: "167094257302",
+                        appId: "1:167094257302:web:fc77621c035432175fe4b7"
+                    });
+                    console.log('✅ Firebase initialized successfully');
+                } catch (error) {
+                    console.error('❌ Firebase initialization failed:', error);
+                    alert('❌ Firebase initialization error. Please refresh the page.');
+                    return;
+                }
+            }
+            
+            // Get database reference
+            const database = firebase.database();
+            const contentRef = database.ref(firebasePath);
+            
+            console.log('📡 Fetching content from Firebase...');
+            
+            // Load content from Firebase
+            contentRef.once('value')
+                .then(snapshot => {
+                    const content = snapshot.val();
+                    
+                    if (content && content.trim()) {
+                        console.log('✅ Content loaded from Firebase:', firebasePath);
+                        
+                        // Replace page content
+                        document.body.innerHTML = content;
+                        document.title = category.charAt(0).toUpperCase() + category.slice(1) + ' - French Learning | GK Foundation';
+                        
+                        // Re-add essential back button functionality
+                        window.handleBackButton = function() {
+                            console.log('🔙 Back button clicked - returning to French intro');
+                            
+                            // Load French intro content from Firebase
+                            const frenchIntroRef = database.ref('languages/french/intro/page/content');
+                            frenchIntroRef.once('value')
+                                .then(snapshot => {
+                                    const frenchIntroContent = snapshot.val();
+                                    if (frenchIntroContent && frenchIntroContent.trim()) {
+                                        document.body.innerHTML = frenchIntroContent;
+                                        document.title = 'French Learning Journey - Beginner Course | GK Foundation';
+                                        console.log('✅ Returned to French intro');
+                                    } else {
+                                        // Fallback to index.html
+                                        window.location.href = 'index.html';
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('❌ Error returning to French intro:', error);
+                                    window.location.href = 'index.html';
+                                });
+                        };
+                        
+                        // Update browser history
+                        if (history.pushState) {
+                            history.pushState({page: 'french-' + category}, document.title, '#french-' + category);
+                        }
+                        
+                        console.log('✅ ' + category + ' page loaded successfully!');
+                    } else {
+                        console.log('❌ No content found in Firebase path:', firebasePath);
+                        alert('📄 ' + category.charAt(0).toUpperCase() + category.slice(1) + ' content not uploaded yet!\n\nPlease upload the content to Firebase path:\n' + firebasePath);
+                    }
+                })
+                .catch(error => {
+                    console.error('❌ Error loading content from Firebase:', error);
+                    alert('❌ Error loading ' + category + ' content: ' + error.message + '\n\nPlease ensure the content is uploaded to:\n' + firebasePath);
+                });
+        }
+
+        // Start Learning Journey - Highlight Alphabets and Open Menu
+        function startLearningJourney() {
+            console.log('🚀 Starting learning journey...');
+            
+            // Check if slide menu is closed and open it if needed
+            const slideMenu = document.getElementById('slideMenu');
+            const mainContainer = document.getElementById('mainContainer');
+            const menuToggle = document.getElementById('menuToggle');
+            const menuLabel = document.getElementById('menuToggleLabel');
+            
+            let wasCollapsed = false;
+            
+            if (slideMenu && mainContainer && menuToggle && menuLabel) {
+                const currentLeft = slideMenu.style.left || '0px';
+                const isCollapsed = currentLeft === '-380px' || slideMenu.classList.contains('collapsed');
+                wasCollapsed = isCollapsed;
+                
+                if (isCollapsed) {
+                    console.log('📖 Opening slide menu for learning journey...');
+                    
+                    // Expand the menu
+                    slideMenu.style.left = '0px';
+                    slideMenu.style.transition = 'left 0.3s ease';
+                    mainContainer.style.marginLeft = '380px';
+                    menuToggle.style.left = '400px';
+                    menuLabel.style.left = '392px';
+                    menuLabel.textContent = 'Collapse Menu';
+                    
+                    // Update button visibility
+                    menuToggle.style.position = 'fixed';
+                    menuToggle.style.zIndex = '1002';
+                    menuToggle.style.display = 'flex';
+                    menuToggle.style.visibility = 'visible';
+                    menuToggle.style.opacity = '1';
+                    
+                    console.log('✅ Slide menu opened for learning journey');
+                } else {
+                    console.log('✅ Slide menu already open');
+                }
+            }
+            
+            // Wait a moment for the menu animation, then highlight alphabets
+            setTimeout(() => {
+                // Remove active class from all menu items
+                const menuItems = document.querySelectorAll('.menu-item');
+                menuItems.forEach(item => item.classList.remove('active'));
+                
+                // Add active class to alphabets menu item
+                const alphabetsMenuItem = document.getElementById('menu-alphabets');
+                if (alphabetsMenuItem) {
+                    alphabetsMenuItem.classList.add('active');
+                    alphabetsMenuItem.scrollIntoView({ behavior: 'smooth' });
+                    console.log('🎯 Highlighted Alphabets & Pronunciation');
+                }
+            }, wasCollapsed ? 400 : 100); // Wait longer if menu was closed
+        }
+
+        // Initialize page - Multiple initialization methods for Firebase compatibility
+        function initializePage() {
+            console.log('🎉 Initializing French Learning Intro page...');
+            
+            // Wait a bit for DOM to be fully ready when loaded from Firebase
+            setTimeout(function() {
+                const slideMenu = document.getElementById('slideMenu');
+                const mainContainer = document.getElementById('mainContainer');
+                const menuLabel = document.getElementById('menuToggleLabel');
+                const menuToggle = document.getElementById('menuToggle');
+                
+                console.log('🔍 Elements check:', {
+                    slideMenu: !!slideMenu,
+                    mainContainer: !!mainContainer,
+                    menuLabel: !!menuLabel,
+                    menuToggle: !!menuToggle
+                });
+                
+                if (slideMenu && mainContainer && menuLabel && menuToggle) {
+                    // Set initial expanded state with forced positioning
+                    slideMenu.style.left = '0px';
+                    slideMenu.style.position = 'fixed';
+                    slideMenu.style.zIndex = '1000';
+                    slideMenu.classList.remove('collapsed');
+                    
+                    mainContainer.style.marginLeft = '380px';
+                    mainContainer.classList.remove('menu-collapsed');
+                    
+                    // Force toggle button visibility and positioning
+                    menuToggle.style.left = '400px';
+                    menuToggle.style.top = '30px';
+                    menuToggle.style.width = '44px';
+                    menuToggle.style.height = '44px';
+                    menuToggle.style.background = 'linear-gradient(135deg, #8b4513, #d4af37)';
+                    menuToggle.style.position = 'fixed';
+                    menuToggle.style.display = 'flex';
+                    menuToggle.style.zIndex = '1002';
+                    menuToggle.style.borderRadius = '8px';
+                    menuToggle.style.cursor = 'pointer';
+                    menuToggle.style.alignItems = 'center';
+                    menuToggle.style.justifyContent = 'center';
+                    menuToggle.style.fontSize = '1.2rem';
+                    menuToggle.style.color = 'white';
+                    menuToggle.style.border = 'none';
+                    menuToggle.style.boxShadow = '0 4px 12px rgba(139, 69, 19, 0.3)';
+                    menuToggle.classList.remove('collapsed');
+                    
+                    // Force label visibility and positioning
+                    menuLabel.style.left = '392px';
+                    menuLabel.style.top = '82px';
+                    menuLabel.style.background = 'rgba(255, 255, 255, 0.95)';
+                    menuLabel.style.color = '#8b4513';
+                    menuLabel.style.position = 'fixed';
+                    menuLabel.style.display = 'block';
+                    menuLabel.style.zIndex = '1002';
+                    menuLabel.style.padding = '0.3rem 0.8rem';
+                    menuLabel.style.borderRadius = '6px';
+                    menuLabel.style.fontSize = '0.75rem';
+                    menuLabel.style.fontWeight = '600';
+                    menuLabel.style.whiteSpace = 'nowrap';
+                    menuLabel.style.boxShadow = '0 2px 8px rgba(139, 69, 19, 0.2)';
+                    menuLabel.textContent = 'Collapse Menu';
+                    menuLabel.classList.remove('collapsed');
+                    
+                    console.log('🎯 Menu initialized in expanded state with forced styles');
+                    console.log('📍 Button position:', menuToggle.style.left);
+                    console.log('📍 Label position:', menuLabel.style.left);
+                } else {
+                    console.error('❌ Some elements not found during initialization');
+                    // Try again after a longer delay
+                    setTimeout(initializePage, 1000);
+                }
+            }, 100);
+            
+            console.log('✅ All functions available:');
+            console.log('  - toggleMenu()');
+            console.log('  - handleBackButton()');
+            console.log('  - startLearningJourney()');
+            console.log('  - navigateToPage(category)');
+            console.log('  - openJourneyOverview()');
+        }
+        
+        // Multiple event listeners for different loading scenarios
+        document.addEventListener('DOMContentLoaded', initializePage);
+        
+        // For Firebase loading (when body.innerHTML is replaced)
+        window.addEventListener('load', initializePage);
+        
+        // Immediate initialization if DOM is already ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePage);
+        } else {
+            initializePage();
+        }
+        
+        // Auto-fix button after a delay (for Firebase loading)
+        setTimeout(function() {
+            const btn = document.getElementById('menuToggle');
+            if (btn && (!btn.style.display || btn.style.display === 'none' || btn.style.visibility === 'hidden')) {
+                console.log('🔧 Auto-fixing disappeared button...');
+                window.fixButton();
+            }
+        }, 2000);
+        
+        // Console helper message - simple copy-paste fix
+        console.log('🚨 If button disappears, copy-paste this in console:');
+        console.log(`
+document.getElementById('menuToggle').style.position='fixed';
+document.getElementById('menuToggle').style.top='30px';
+document.getElementById('menuToggle').style.left='30px';
+document.getElementById('menuToggle').style.zIndex='1002';
+document.getElementById('menuToggle').style.display='flex';
+document.getElementById('menuToggle').style.visibility='visible';
+document.getElementById('menuToggle').style.opacity='1';
+document.getElementById('menuToggle').style.background='linear-gradient(135deg,#8b4513,#d4af37)';
+        `);
+        
+        // Simple accessible function
+        setTimeout(function() {
+            window.showButton = function() {
+                const btn = document.getElementById('menuToggle');
+                if (btn) {
+                    btn.style.position='fixed';
+                    btn.style.top='30px';
+                    btn.style.left='30px';
+                    btn.style.zIndex='1002';
+                    btn.style.display='flex';
+                    btn.style.visibility='visible';
+                    btn.style.opacity='1';
+                    btn.style.background='linear-gradient(135deg,#8b4513,#d4af37)';
+                    console.log('✅ Button restored');
+                } else {
+                    console.log('❌ Button not found');
+                }
+            };
+        }, 100);
+    </script>
+</body>
+</html> 
