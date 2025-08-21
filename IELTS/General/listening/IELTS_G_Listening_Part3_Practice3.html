@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Listening Part 3 - Practice 3: Social Event Planning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            font-size: 10px;
+            color: #5d3a0a;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 8px 0 30px rgba(139, 69, 19, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .speakers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .speaker-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .speaker-card.active {
+            border-color: #8b4513;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(212, 175, 55, 0.1));
+            transform: scale(1.02);
+        }
+
+        .speaker-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 8px;
+        }
+
+        .speaker-role {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .speaker-details {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .conversation-context {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Audio Player Styles */
+        .play-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            margin-bottom: 1rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b4513, #d4af37);
+            height: 100%;
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+
+        .time-display {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        .question-group {
+            margin-bottom: 35px;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 12px;
+            border: 1px solid #d4af37;
+        }
+
+        .question-group-title {
+            font-size: 1.2em;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .matching-column {
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .matching-title {
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .matching-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #d4af37;
+        }
+
+        .matching-select {
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            min-width: 60px;
+            font-size: 16px;
+        }
+
+        .matching-select:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .sentence-completion-input {
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-left: 10px;
+            min-width: 150px;
+            font-size: 16px;
+        }
+
+        .sentence-completion-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: '💒';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Auto-submit popup styles */
+        .auto-submit-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auto-submit-popup {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            border: 3px solid #d4af37;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .auto-submit-title {
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .auto-submit-message {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .auto-submit-countdown {
+            font-size: 2rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .auto-submit-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .auto-submit-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auto-submit-btn.primary {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+        }
+
+        .auto-submit-btn.primary:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+        }
+
+        .auto-submit-btn.secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #d4af37;
+        }
+
+        .auto-submit-btn.secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .speakers-container {
+                grid-template-columns: 1fr;
+            }
+
+            .matching-container {
+                grid-template-columns: 1fr;
+            }
+
+            .play-btn {
+                width: 90%;
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">♪</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">💒 IELTS General Listening</div>
+            <div class="menu-subtitle">Part 3 - Practice 3</div>
+        </div>
+        <div class="menu-content">
+            <a href="#speakers" class="menu-item" onclick="navigateToSection('speakers')">
+                <div class="item-title">1. Wedding Planning Team</div>
+                <div class="item-description">👥 Bride, Groom, Maid of Honor & Best Man</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">2. Wedding Planning</div>
+                <div class="item-description">🎧 Reception Organization Discussion (5 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">3. Questions (Part 3)</div>
+                <div class="item-description">📝 Matching + Sentence Completion</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. Results & Analysis</div>
+                <div class="item-description">📊 Performance Feedback & Improvement Tips</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">💒 IELTS General Listening - Part 3 (Practice 3)</h1>
+                <div class="hero-subtitle">
+                    Social Event Planning - Wedding Organization
+                </div>
+                <p class="hero-description">
+                    Listen to Jennifer Brown (Bride), David Smith (Groom), Rachel White (Maid of Honor), and James Taylor (Best Man) planning wedding reception details. This conversation covers event coordination, venue selection, catering arrangements, and entertainment planning. Complete matching and sentence completion questions about their wedding planning discussion. This practice covers Questions 21-30.
+                </p>
+            </section>
+
+            <section id="speakers" class="content-section">
+                <h2 class="section-title">👥 Wedding Planning Team</h2>
+                <div class="speakers-container">
+                    <div class="speaker-card" id="speaker1">
+                        <div class="speaker-name">Jennifer Brown</div>
+                        <div class="speaker-role">Bride | Main Event Organizer</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> British English<br>
+                            <strong>Role:</strong> Bride planning her wedding<br>
+                            <strong>Focus:</strong> Overall coordination and decision-making<br>
+                            <strong>Responsibility:</strong> Final venue and vendor selections
+                        </div>
+                    </div>
+                    <div class="speaker-card" id="speaker2">
+                        <div class="speaker-name">David Smith</div>
+                        <div class="speaker-role">Groom | Co-organizer</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> American English<br>
+                            <strong>Role:</strong> Groom sharing planning responsibilities<br>
+                            <strong>Focus:</strong> Budget management and practical considerations<br>
+                            <strong>Responsibility:</strong> Entertainment and music coordination
+                        </div>
+                    </div>
+                    <div class="speaker-card" id="speaker3">
+                        <div class="speaker-name">Rachel White</div>
+                        <div class="speaker-role">Maid of Honor | Support Coordinator</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> Australian English<br>
+                            <strong>Role:</strong> Best friend and chief bridesmaid<br>
+                            <strong>Focus:</strong> Guest coordination and day-of logistics<br>
+                            <strong>Responsibility:</strong> Decorations and seating arrangements
+                        </div>
+                    </div>
+                    <div class="speaker-card" id="speaker4">
+                        <div class="speaker-name">James Taylor</div>
+                        <div class="speaker-role">Best Man | Support Coordinator</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> British English<br>
+                            <strong>Role:</strong> Best friend and groomsman leader<br>
+                            <strong>Focus:</strong> Transportation and timing coordination<br>
+                            <strong>Responsibility:</strong> Bachelor party and speech preparation
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">🎧 Wedding Planning Discussion</h2>
+                <div class="conversation-context">
+                    <strong>Social Event Context:</strong> Friends planning wedding reception details including venue selection, catering arrangements, entertainment options, and guest coordination. The discussion involves collaborative decision-making for a special social event with multiple stakeholders and considerations.
+                </div>
+                
+                <button class="play-btn" onclick="playAudio()" id="playBtn">
+                    ▶️ Play
+                </button>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">00:00</span> / <span id="totalTime">06:30</span>
+                    </div>
+                </div>
+                
+                <div id="currentSpeaker" style="text-align: center; margin-top: 15px; font-weight: bold; color: #8b4513;"></div>
+            </section>
+
+            <section id="questions" class="content-section">
+                <h2 class="section-title">📝 Wedding Planning Assessment</h2>
+                
+                <!-- Matching Questions (Questions 21-24) -->
+                <div class="question-group">
+                    <h3 class="question-group-title">Questions 21-24: Matching</h3>
+                    <p><em>Match each responsibility to the correct person. Choose your answers from the list A-D.</em></p>
+                    
+                    <div class="matching-container">
+                        <div class="matching-column">
+                            <div class="matching-title">Responsibilities</div>
+                            
+                            <div class="matching-item">
+                                <select class="matching-select" id="q21">
+                                    <option value="">21</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+                                <span>Arranging table decorations and centerpieces</span>
+                            </div>
+                            
+                            <div class="matching-item">
+                                <select class="matching-select" id="q22">
+                                    <option value="">22</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+                                <span>Coordinating transportation for guests</span>
+                            </div>
+                            
+                            <div class="matching-item">
+                                <select class="matching-select" id="q23">
+                                    <option value="">23</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+                                <span>Managing the wedding budget and payments</span>
+                            </div>
+                            
+                            <div class="matching-item">
+                                <select class="matching-select" id="q24">
+                                    <option value="">24</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+                                <span>Selecting music and entertainment options</span>
+                            </div>
+                        </div>
+                        
+                        <div class="matching-column">
+                            <div class="matching-title">People</div>
+                            <div style="padding: 10px; background: white; border-radius: 6px; margin-bottom: 8px;"><strong>A</strong> Jennifer (Bride)</div>
+                            <div style="padding: 10px; background: white; border-radius: 6px; margin-bottom: 8px;"><strong>B</strong> David (Groom)</div>
+                            <div style="padding: 10px; background: white; border-radius: 6px; margin-bottom: 8px;"><strong>C</strong> Rachel (Maid of Honor)</div>
+                            <div style="padding: 10px; background: white; border-radius: 6px; margin-bottom: 8px;"><strong>D</strong> James (Best Man)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sentence Completion Questions (Questions 25-30) -->
+                <div class="question-group">
+                    <h3 class="question-group-title">Questions 25-30: Sentence Completion</h3>
+                    <p><em>Complete the sentences below using NO MORE THAN TWO WORDS for each answer.</em></p>
+                    
+                    <div class="question">
+                        <div class="question-number">Question 25</div>
+                        <div class="question-text">
+                            The wedding reception will be held at the 
+                            <input type="text" class="sentence-completion-input" id="q25" placeholder="25">
+                            which can accommodate up to 150 guests.
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 26</div>
+                        <div class="question-text">
+                            For catering, they have decided on a 
+                            <input type="text" class="sentence-completion-input" id="q26" placeholder="26">
+                            style meal with multiple food stations.
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 27</div>
+                        <div class="question-text">
+                            The wedding ceremony will start at 
+                            <input type="text" class="sentence-completion-input" id="q27" placeholder="27">
+                            in the afternoon to allow for photos.
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 28</div>
+                        <div class="question-text">
+                            They plan to hire a 
+                            <input type="text" class="sentence-completion-input" id="q28" placeholder="28">
+                            to capture professional photos and videos of the event.
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 29</div>
+                        <div class="question-text">
+                            Guest accommodation will be arranged at the nearby 
+                            <input type="text" class="sentence-completion-input" id="q29" placeholder="29">
+                            with special group rates for wedding attendees.
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 30</div>
+                        <div class="question-text">
+                            As a backup plan, they have rented a 
+                            <input type="text" class="sentence-completion-input" id="q30" placeholder="30">
+                            in case of unexpected rain during the outdoor ceremony.
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Results & Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>💒 General Part 3 Improvement Tips</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Auto-submit Timer Popup -->
+    <div class="auto-submit-overlay" id="autoSubmitOverlay">
+        <div class="auto-submit-popup">
+            <div class="auto-submit-title">⏰ Time Completed!</div>
+            <div class="auto-submit-message">
+                The listening time has finished. You should submit your answers now as this simulates the real IELTS test conditions.
+            </div>
+            <div class="auto-submit-countdown" id="autoSubmitCountdown">10</div>
+            <div class="auto-submit-buttons">
+                <button class="auto-submit-btn primary" onclick="handleAutoSubmit()">Submit Now</button>
+                <button class="auto-submit-btn secondary" onclick="continueWithoutSubmit()">Continue Working</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wedding planning conversation data with enhanced TTS integration
+        const conversationData = [
+            {
+                speaker: "Jennifer Brown",
+                text: "Hi everyone! Thanks for meeting today to finalize our wedding reception plans. I'm so excited we're getting close to the big day. We need to sort out the final details and make sure everyone knows their responsibilities.",
+                duration: 16000
+            },
+            {
+                speaker: "David Smith",
+                text: "Absolutely, Jen. I think we've made good progress, but there are still a few key decisions to make. Let's start with the venue confirmation. We decided on the Garden Hotel, right? It can accommodate up to 150 guests, which should be perfect.",
+                duration: 14000
+            },
+            {
+                speaker: "Rachel White",
+                text: "Yes, the Garden Hotel is confirmed. I've been working on the decorations, and I'll be arranging the table decorations and centerpieces. I've found some beautiful white roses and gold accents that will look stunning.",
+                duration: 12000
+            },
+            {
+                speaker: "James Taylor",
+                text: "That sounds great, Rachel. I've been handling the transportation logistics. I'm coordinating transportation for guests, especially those coming from out of town. I've arranged a shuttle service from the main hotels.",
+                duration: 11000
+            },
+            {
+                speaker: "Jennifer Brown",
+                text: "Perfect, James. David, you're still managing the wedding budget and payments, aren't you? I want to make sure we stay within our financial limits while still having everything we dreamed of.",
+                duration: 10000
+            },
+            {
+                speaker: "David Smith",
+                text: "Yes, I'm handling all the budget management. Speaking of entertainment, I'm also selecting music and entertainment options. I've been in touch with a DJ who specializes in wedding receptions and can play a good mix of music.",
+                duration: 12000
+            },
+            {
+                speaker: "Rachel White",
+                text: "Great choices, David. Now, about the catering - we decided on a buffet style meal with multiple food stations, didn't we? I think that gives guests more variety and creates a more relaxed atmosphere.",
+                duration: 11000
+            },
+            {
+                speaker: "Jennifer Brown",
+                text: "Exactly! The buffet style will work perfectly. Also, we confirmed the ceremony time - it will start at three thirty in the afternoon. That gives us plenty of time for photos afterward before the reception begins.",
+                duration: 12000
+            },
+            {
+                speaker: "James Taylor",
+                text: "The timing sounds ideal. I've also been looking into photography. We plan to hire a photographer to capture professional photos and videos of the entire event. I found someone with excellent reviews.",
+                duration: 10000
+            },
+            {
+                speaker: "David Smith",
+                text: "Excellent work, James. For out-of-town guests, we've arranged accommodation at the nearby Grand Hotel with special group rates. It's just a five-minute drive from our venue.",
+                duration: 9000
+            },
+            {
+                speaker: "Rachel White",
+                text: "That's so convenient for everyone. Oh, and I almost forgot - we should discuss the weather backup plan. Since we're planning an outdoor ceremony, we need to be prepared.",
+                duration: 8000
+            },
+            {
+                speaker: "Jennifer Brown",
+                text: "Good point, Rachel. As a backup plan, we have rented a marquee in case of unexpected rain. The rental company can set it up quickly if needed, so we're completely covered.",
+                duration: 10000
+            },
+            {
+                speaker: "James Taylor",
+                text: "That's smart planning. I think we've covered all the major details now. Everyone knows their responsibilities, and we have backup plans in place. This is going to be an amazing celebration!",
+                duration: 9000
+            },
+            {
+                speaker: "David Smith",
+                text: "I couldn't agree more. Jennifer, I think we've planned the perfect wedding. All our friends and family are going to have such a wonderful time celebrating with us.",
+                duration: 8000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            }
+        ];
+
+        // Audio control variables
+        let currentIndex = 0;
+        let isPlaying = false;
+        let speechSynthesis = window.speechSynthesis;
+        let currentUtterance = null;
+        // Optimized audio timing for 5-minute content with natural flow
+        let totalDuration = conversationData.reduce((sum, item) => sum + item.duration, 0) + 90000; // Add 1.5 minutes for pauses and natural flow
+        let currentTime = 0;
+        let audioInterval;
+        let autoSubmitInterval;
+        let autoSubmitCountdown = 10;
+
+        // Voice configuration for different speakers
+        const voiceConfig = {
+            "Jennifer Brown": {
+                rate: 0.85,
+                pitch: 1.0,
+                volume: 0.9,
+                lang: 'en-GB'
+            },
+            "David Smith": {
+                rate: 0.9,
+                pitch: 0.9,
+                volume: 0.9,
+                lang: 'en-US'
+            },
+            "Rachel White": {
+                rate: 0.8,
+                pitch: 1.1,
+                volume: 0.9,
+                lang: 'en-AU'
+            },
+            "James Taylor": {
+                rate: 0.85,
+                pitch: 0.95,
+                volume: 0.9,
+                lang: 'en-GB'
+            }
+        };
+
+        function highlightCurrentSpeaker(speakerName) {
+            // Reset all speaker cards
+            document.querySelectorAll('.speaker-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Handle pause or end of conversation
+            if (speakerName === "pause" || !speakerName) {
+                document.getElementById('currentSpeaker').textContent = '⏸️ Wedding planning discussion pausing...';
+                return;
+            }
+            
+            // Highlight current speaker
+            if (speakerName === "Jennifer Brown") {
+                document.getElementById('speaker1').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: Jennifer (Bride)`;
+            } else if (speakerName === "David Smith") {
+                document.getElementById('speaker2').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: David (Groom)`;
+            } else if (speakerName === "Rachel White") {
+                document.getElementById('speaker3').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: Rachel (Maid of Honor)`;
+            } else if (speakerName === "James Taylor") {
+                document.getElementById('speaker4').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: James (Best Man)`;
+            }
+        }
+
+        function updateProgress() {
+            if (isPlaying) {
+                currentTime += 100;
+                const progress = Math.min((currentTime / totalDuration) * 100, 100);
+                document.getElementById('progressFill').style.width = progress + '%';
+                
+                // Update time display
+                const currentMinutes = Math.floor(currentTime / 60000);
+                const currentSeconds = Math.floor((currentTime % 60000) / 1000);
+                document.getElementById('currentTime').textContent = 
+                    `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')}`;
+                
+                // Check if time is completed (when progress reaches 100%)
+                if (currentTime >= totalDuration) {
+                    console.log('⏰ Timer completed - showing auto-submit popup');
+                    showAutoSubmitPopup();
+                }
+            }
+        }
+
+        function formatTime(milliseconds) {
+            const minutes = Math.floor(milliseconds / 60000);
+            const seconds = Math.floor((milliseconds % 60000) / 1000);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function playAudio() {
+            if (currentIndex >= conversationData.length) {
+                currentIndex = 0;
+                currentTime = 0;
+            }
+            
+            isPlaying = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('playBtn').textContent = '🔊 Playing...';
+            
+            audioInterval = setInterval(updateProgress, 100);
+            playCurrentSegment();
+        }
+
+        function playCurrentSegment() {
+            if (!isPlaying) {
+                return;
+            }
+            
+            if (currentIndex >= conversationData.length) {
+                console.log('🎯 Reached end of conversation data');
+                stopAudio();
+                return;
+            }
+
+            const segment = conversationData[currentIndex];
+            
+            // Handle pause segments
+            if (segment.speaker === "pause") {
+                console.log(`⏸️ Playing pause segment ${currentIndex + 1} for ${segment.duration}ms`);
+                highlightCurrentSpeaker("pause");
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying) {
+                        if (currentIndex < conversationData.length) {
+                            playCurrentSegment();
+                        } else {
+                            console.log('🎯 All conversation segments completed after pause');
+                            stopAudio();
+                        }
+                    }
+                }, segment.duration);
+                return;
+            }
+
+            highlightCurrentSpeaker(segment.speaker);
+
+            // Create speech utterance
+            currentUtterance = new SpeechSynthesisUtterance(segment.text);
+            
+            // Apply voice configuration
+            const config = voiceConfig[segment.speaker];
+            if (config) {
+                currentUtterance.rate = config.rate;
+                currentUtterance.pitch = config.pitch;
+                currentUtterance.volume = config.volume;
+                currentUtterance.lang = config.lang;
+            }
+
+            // Set voice based on language and speaker
+            const voices = speechSynthesis.getVoices();
+            if (segment.speaker === "Jennifer Brown" || segment.speaker === "James Taylor") {
+                const britishVoice = voices.find(voice => 
+                    voice.lang.includes('en-GB') && voice.name.toLowerCase().includes(segment.speaker === "Jennifer Brown" ? 'female' : 'male')
+                ) || voices.find(voice => voice.lang.includes('en-GB'));
+                if (britishVoice) currentUtterance.voice = britishVoice;
+            } else if (segment.speaker === "David Smith") {
+                const americanVoice = voices.find(voice => 
+                    voice.lang.includes('en-US') && voice.name.toLowerCase().includes('male')
+                ) || voices.find(voice => voice.lang.includes('en-US'));
+                if (americanVoice) currentUtterance.voice = americanVoice;
+            } else if (segment.speaker === "Rachel White") {
+                const australianVoice = voices.find(voice => 
+                    voice.lang.includes('en-AU') && voice.name.toLowerCase().includes('female')
+                ) || voices.find(voice => voice.lang.includes('en-AU'));
+                if (australianVoice) currentUtterance.voice = australianVoice;
+            }
+
+            currentUtterance.onstart = () => {
+                console.log(`🎤 Started segment ${currentIndex + 1}: ${segment.speaker}`);
+            };
+
+            currentUtterance.onend = () => {
+                console.log(`✅ Completed segment ${currentIndex + 1}: ${segment.speaker}`);
+                currentIndex++;
+                // Add natural pause between speakers (2 seconds for wedding conversation)
+                setTimeout(() => {
+                    if (isPlaying) {
+                        if (currentIndex < conversationData.length) {
+                            playCurrentSegment();
+                        } else {
+                            console.log('🎯 All conversation segments completed');
+                            stopAudio();
+                        }
+                    }
+                }, 2000);
+            };
+
+            currentUtterance.onerror = (event) => {
+                console.error(`❌ Error in segment ${currentIndex + 1}:`, event.error);
+                // Continue to next segment on error
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying && currentIndex < conversationData.length) {
+                        playCurrentSegment();
+                    } else {
+                        stopAudio();
+                    }
+                }, 1000);
+            };
+
+            try {
+                speechSynthesis.speak(currentUtterance);
+            } catch (error) {
+                console.error(`❌ Failed to start TTS for segment ${currentIndex + 1}:`, error);
+                // Continue to next segment
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying && currentIndex < conversationData.length) {
+                        playCurrentSegment();
+                    } else {
+                        stopAudio();
+                    }
+                }, 1000);
+            }
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            speechSynthesis.cancel();
+            clearInterval(audioInterval);
+            
+            // Show completion message if audio played to the end
+            if (currentIndex >= conversationData.length) {
+                document.getElementById('currentSpeaker').textContent = '✅ Wedding planning discussion completed. You may now answer the questions.';
+                setTimeout(() => {
+                    document.getElementById('currentSpeaker').textContent = '';
+                }, 3000);
+            } else {
+                document.getElementById('currentSpeaker').textContent = '';
+            }
+            
+            currentIndex = 0;
+            currentTime = 0;
+            
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            document.querySelectorAll('.speaker-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            document.getElementById('playBtn').disabled = false;
+            document.getElementById('playBtn').textContent = '▶️ Play';
+        }
+
+        // Correct answers for assessment
+        const correctAnswers = {
+            q21: 'C', // Rachel (Maid of Honor) - arranging table decorations and centerpieces
+            q22: 'D', // James (Best Man) - coordinating transportation for guests
+            q23: 'B', // David (Groom) - managing the wedding budget and payments
+            q24: 'B', // David (Groom) - selecting music and entertainment options
+            q25: 'garden hotel', // The wedding reception will be held at the Garden Hotel
+            q26: 'buffet', // buffet style meal with multiple food stations
+            q27: 'three thirty', // ceremony will start at three thirty in the afternoon
+            q28: 'photographer', // hire a photographer to capture professional photos and videos
+            q29: 'grand hotel', // accommodation at the nearby Grand Hotel
+            q30: 'marquee' // rented a marquee in case of unexpected rain
+        };
+
+        // Question explanations
+        const explanations = {
+            q21: 'Rachel states: "I\'ll be arranging the table decorations and centerpieces. I\'ve found some beautiful white roses and gold accents."',
+            q22: 'James explains: "I\'m coordinating transportation for guests, especially those coming from out of town. I\'ve arranged a shuttle service."',
+            q23: 'Jennifer asks David: "You\'re still managing the wedding budget and payments, aren\'t you?" and David confirms: "Yes, I\'m handling all the budget management."',
+            q24: 'David states: "I\'m also selecting music and entertainment options. I\'ve been in touch with a DJ who specializes in wedding receptions."',
+            q25: 'David mentions: "We decided on the Garden Hotel, right? It can accommodate up to 150 guests, which should be perfect."',
+            q26: 'Rachel confirms: "We decided on a buffet style meal with multiple food stations, didn\'t we?"',
+            q27: 'Jennifer states: "We confirmed the ceremony time - it will start at three thirty in the afternoon."',
+            q28: 'James explains: "We plan to hire a photographer to capture professional photos and videos of the entire event."',
+            q29: 'David mentions: "We\'ve arranged accommodation at the nearby Grand Hotel with special group rates."',
+            q30: 'Jennifer explains: "As a backup plan, we have rented a marquee in case of unexpected rain."'
+        };
+
+        function submitAnswers() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Check matching questions (21-24)
+            for (let i = 21; i <= 24; i++) {
+                const questionName = `q${i}`;
+                const answer = document.getElementById(questionName).value;
+                answers[questionName] = answer;
+                
+                const correct = correctAnswers[questionName];
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[questionName]}<br>
+                        <strong>Explanation:</strong> ${explanations[questionName]}
+                    </div>
+                `);
+            }
+
+            // Check sentence completion questions (25-30)
+            for (let i = 25; i <= 30; i++) {
+                const questionName = `q${i}`;
+                const answer = document.getElementById(questionName).value.trim().toLowerCase();
+                answers[questionName] = answer;
+                
+                const correct = correctAnswers[questionName].toLowerCase();
+                const isCorrect = answer === correct || 
+                    (correct.includes(' ') && correct.split(' ').some(word => answer.includes(word))) ||
+                    answer.includes(correct);
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[questionName]}<br>
+                        <strong>Explanation:</strong> ${explanations[questionName]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Focus on listening for role assignments and responsibility distribution in group conversations");
+                tips.push("Practice identifying specific details about event planning and social coordination");
+                tips.push("Work on understanding multiple speakers discussing collaborative tasks");
+                tips.push("Listen to social planning conversations and event coordination discussions");
+            } else if (score <= 6) {
+                tips.push("Develop better skills in matching people to their specific responsibilities");
+                tips.push("Practice sentence completion with social event and planning vocabulary");
+                tips.push("Work on following conversations where multiple people contribute to planning");
+                tips.push("Focus on wedding and event planning terminology and concepts");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to distinguish between different roles in collaborative planning");
+                tips.push("Practice understanding specific details in multi-speaker social conversations");
+                tips.push("Work on capturing exact information about timing, venues, and arrangements");
+                tips.push("Review vocabulary related to weddings, events, and social planning");
+            } else {
+                tips.push("Excellent work! Continue practicing with authentic IELTS General Part 3 materials");
+                tips.push("Focus on time management to complete both matching and sentence completion efficiently");
+                tips.push("Practice with different social event contexts and collaborative planning scenarios");
+                tips.push("Consider helping others to reinforce your own social conversation listening skills");
+            }
+            
+            return tips;
+        }
+
+        // Auto-submit timer functions
+        function showAutoSubmitPopup() {
+            // Stop audio and clear intervals
+            isPlaying = false;
+            speechSynthesis.cancel();
+            clearInterval(audioInterval);
+            
+            // Show the popup
+            document.getElementById('autoSubmitOverlay').style.display = 'flex';
+            
+            // Reset countdown
+            autoSubmitCountdown = 10;
+            document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+            
+            // Start countdown
+            autoSubmitInterval = setInterval(() => {
+                autoSubmitCountdown--;
+                document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+                
+                if (autoSubmitCountdown <= 0) {
+                    clearInterval(autoSubmitInterval);
+                    handleAutoSubmit();
+                }
+            }, 1000);
+        }
+
+        function handleAutoSubmit() {
+            clearInterval(autoSubmitInterval);
+            document.getElementById('autoSubmitOverlay').style.display = 'none';
+            
+            // Automatically submit answers
+            submitAnswers();
+            
+            // Show message
+            setTimeout(() => {
+                alert('⏰ Time completed! Your answers have been automatically submitted as per IELTS test conditions.');
+            }, 500);
+        }
+
+        function continueWithoutSubmit() {
+            clearInterval(autoSubmitInterval);
+            document.getElementById('autoSubmitOverlay').style.display = 'none';
+            
+            // Allow user to continue working
+            console.log('📝 User chose to continue working after timer completion');
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS General Listening Part 3 Practice 3 - Going to introduction');
+            window.location.href = 'IELTS_General_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('💒 IELTS General Listening Part 3 Practice 3 - Wedding Planning loaded');
+            
+            // Debug audio system
+            console.log('🔊 Browser audio capabilities:');
+            console.log('- speechSynthesis available:', 'speechSynthesis' in window);
+            console.log('- Web Audio API available:', 'AudioContext' in window || 'webkitAudioContext' in window);
+            
+            // Test speech synthesis availability
+            if ('speechSynthesis' in window) {
+                setTimeout(() => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🎤 Initial voices check:', voices.length, 'voices available');
+                    if (voices.length === 0) {
+                        console.log('⏳ Waiting for voices to load...');
+                        speechSynthesis.addEventListener('voiceschanged', function() {
+                            const newVoices = speechSynthesis.getVoices();
+                            console.log('🎤 Voices loaded:', newVoices.length, 'voices now available');
+                        });
+                    }
+                }, 1000);
+            }
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+            if (autoSubmitInterval) {
+                clearInterval(autoSubmitInterval);
+            }
+        });
+    </script>
+</body>
+</html> 
