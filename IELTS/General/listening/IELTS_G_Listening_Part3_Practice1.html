@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Listening Part 3 - Practice 1: Community Meeting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(70, 130, 180, 0.3);
+            box-shadow: 8px 0 30px rgba(46, 139, 87, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #4682b4, #2e8b57);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(70, 130, 180, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(46, 139, 87, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .speakers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .speaker-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .speaker-card.active {
+            border-color: #8b4513;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(212, 175, 55, 0.1));
+            transform: scale(1.02);
+        }
+
+        .speaker-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 8px;
+        }
+
+        .speaker-role {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .speaker-details {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .conversation-context {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Audio Player Styles */
+        .play-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            margin-bottom: 1rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b4513, #d4af37);
+            height: 100%;
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+
+        .time-display {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        .question-group {
+            margin-bottom: 35px;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 12px;
+            border: 1px solid #d4af37;
+        }
+
+        .question-group-title {
+            font-size: 1.2em;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #d4af37;
+        }
+
+        .note-completion-input {
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-left: 10px;
+            min-width: 150px;
+            font-size: 16px;
+        }
+
+        .note-completion-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: '🏘️';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Auto-submit popup styles */
+        .auto-submit-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auto-submit-popup {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            border: 3px solid #4682b4;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .auto-submit-title {
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .auto-submit-message {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .auto-submit-countdown {
+            font-size: 2rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .auto-submit-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .auto-submit-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auto-submit-btn.primary {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+        }
+
+        .auto-submit-btn.primary:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+        }
+
+        .auto-submit-btn.secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #d4af37;
+        }
+
+        .auto-submit-btn.secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .speakers-container {
+                grid-template-columns: 1fr;
+            }
+
+            .play-btn {
+                width: 90%;
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(70, 130, 180, 0.3);
+            color: #2e8b57;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">♪</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">🏘️ IELTS General Listening</div>
+            <div class="menu-subtitle">Part 3 - Practice 1</div>
+        </div>
+        <div class="menu-content">
+            <a href="#speakers" class="menu-item" onclick="navigateToSection('speakers')">
+                <div class="item-title">1. Community Participants</div>
+                <div class="item-description">👥 Local Council Meeting Attendees</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">2. Community Meeting</div>
+                <div class="item-description">🎧 Community Center Renovation Discussion (7 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">3. Questions (Part 3)</div>
+                <div class="item-description">📝 Multiple Choice + Note Completion</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. Results & Analysis</div>
+                <div class="item-description">📊 Performance Feedback & Improvement Tips</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">🏘️ IELTS General Listening - Part 3 (Practice 1)</h1>
+                <div class="hero-subtitle">
+                    Community Meeting - Local Council
+                </div>
+                <p class="hero-description">
+                    Listen to Sarah Miller (Council Representative), Tom Wilson (Local Resident), and Emma Davis (Community Volunteer) discussing the community center renovation project. This conversation covers community planning, funding issues, timeline coordination, and volunteer organization. Complete multiple choice and note completion questions about their community meeting. This practice covers Questions 21-30.
+                </p>
+            </section>
+
+            <section id="speakers" class="content-section">
+                <h2 class="section-title">👥 Community Meeting Participants</h2>
+                <div class="speakers-container">
+                    <div class="speaker-card" id="speaker1">
+                        <div class="speaker-name">Sarah Miller</div>
+                        <div class="speaker-role">Council Representative | Local Government</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> British English<br>
+                            <strong>Position:</strong> Community Development Officer<br>
+                            <strong>Experience:</strong> 8+ years in local council planning<br>
+                            <strong>Role:</strong> Provides official council perspective and policy guidance
+                        </div>
+                    </div>
+                    <div class="speaker-card" id="speaker2">
+                        <div class="speaker-name">Tom Wilson</div>
+                        <div class="speaker-role">Local Resident | Community Member</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> American English<br>
+                            <strong>Background:</strong> Long-term resident and parent<br>
+                            <strong>Interest:</strong> Community facilities and family activities<br>
+                            <strong>Role:</strong> Represents resident concerns and practical needs
+                        </div>
+                    </div>
+                    <div class="speaker-card" id="speaker3">
+                        <div class="speaker-name">Emma Davis</div>
+                        <div class="speaker-role">Community Volunteer | Project Coordinator</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> Australian English<br>
+                            <strong>Background:</strong> Active community volunteer and organizer<br>
+                            <strong>Specialization:</strong> Event planning and volunteer coordination<br>
+                            <strong>Role:</strong> Manages volunteer activities and community engagement
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">🎧 Community Meeting Discussion</h2>
+                <div class="conversation-context">
+                    <strong>Community Context:</strong> Local council meeting discussing the community center renovation project, covering funding sources, construction timeline, volunteer organization, and community engagement strategies. The discussion involves planning for improved facilities and services for local residents.
+                </div>
+                
+                <button class="play-btn" onclick="playAudio()" id="playBtn">
+                    ▶️ Play
+                </button>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">00:00</span> / <span id="totalTime">07:00</span>
+                    </div>
+                </div>
+                
+                <div id="currentSpeaker" style="text-align: center; margin-top: 15px; font-weight: bold; color: #8b4513;"></div>
+            </section>
+
+            <section id="questions" class="content-section">
+                <h2 class="section-title">📝 Community Meeting Assessment</h2>
+                
+                <!-- Multiple Choice Questions (Questions 21-26) -->
+                <div class="question-group">
+                    <h3 class="question-group-title">Questions 21-26: Multiple Choice</h3>
+                    <p><em>Choose the correct letter, A, B or C.</em></p>
+                    
+                    <div class="question">
+                        <div class="question-number">Question 21</div>
+                        <div class="question-text">What is the main reason for renovating the community center?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q21" value="A" id="q21a">
+                                <label for="q21a">A) The building is too old and unsafe</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q21" value="B" id="q21b">
+                                <label for="q21b">B) More space is needed for activities</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q21" value="C" id="q21c">
+                                <label for="q21c">C) The current facilities are outdated</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 22</div>
+                        <div class="question-text">According to Sarah, what is the council's main funding source?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q22" value="A" id="q22a">
+                                <label for="q22a">A) Government grants</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q22" value="B" id="q22b">
+                                <label for="q22b">B) Community fundraising</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q22" value="C" id="q22c">
+                                <label for="q22c">C) Local business sponsorship</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 23</div>
+                        <div class="question-text">What does Tom suggest about the construction timeline?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q23" value="A" id="q23a">
+                                <label for="q23a">A) Work should start immediately</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q23" value="B" id="q23b">
+                                <label for="q23b">B) Construction should avoid school holidays</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q23" value="C" id="q23c">
+                                <label for="q23c">C) The project should be completed in phases</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 24</div>
+                        <div class="question-text">How does Emma plan to organize volunteers?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q24" value="A" id="q24a">
+                                <label for="q24a">A) Through social media campaigns</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q24" value="B" id="q24b">
+                                <label for="q24b">B) By setting up skill-based teams</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q24" value="C" id="q24c">
+                                <label for="q24c">C) Using existing community groups</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 25</div>
+                        <div class="question-text">What new facility does the community want most?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q25" value="A" id="q25a">
+                                <label for="q25a">A) A modern kitchen</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q25" value="B" id="q25b">
+                                <label for="q25b">B) A children's play area</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q25" value="C" id="q25c">
+                                <label for="q25c">C) Better accessibility features</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 26</div>
+                        <div class="question-text">When will the next community meeting be held?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q26" value="A" id="q26a">
+                                <label for="q26a">A) Next week</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q26" value="B" id="q26b">
+                                <label for="q26b">B) In two weeks</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q26" value="C" id="q26c">
+                                <label for="q26c">C) Next month</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note Completion Questions (Questions 27-30) -->
+                <div class="question-group">
+                    <h3 class="question-group-title">Questions 27-30: Note Completion</h3>
+                    <p><em>Complete the notes below using NO MORE THAN TWO WORDS for each answer.</em></p>
+                    
+                    <div class="question">
+                        <div class="question-number">Question 27</div>
+                        <div class="question-text">
+                            Total renovation budget: 
+                            <input type="text" class="note-completion-input" id="q27" placeholder="27"> thousand pounds
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 28</div>
+                        <div class="question-text">
+                            Construction will begin in 
+                            <input type="text" class="note-completion-input" id="q28" placeholder="28"> 
+                            to minimize disruption to community activities
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 29</div>
+                        <div class="question-text">
+                            Volunteers need to register through the 
+                            <input type="text" class="note-completion-input" id="q29" placeholder="29"> 
+                            system on the council website
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 30</div>
+                        <div class="question-text">
+                            The renovation is expected to be completed by 
+                            <input type="text" class="note-completion-input" id="q30" placeholder="30"> 
+                            next year
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Results & Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>🏘️ General Part 3 Improvement Tips</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Auto-submit Timer Popup -->
+    <div class="auto-submit-overlay" id="autoSubmitOverlay">
+        <div class="auto-submit-popup">
+            <div class="auto-submit-title">⏰ Time Completed!</div>
+            <div class="auto-submit-message">
+                The listening time has finished. You should submit your answers now as this simulates the real IELTS test conditions.
+            </div>
+            <div class="auto-submit-countdown" id="autoSubmitCountdown">10</div>
+            <div class="auto-submit-buttons">
+                <button class="auto-submit-btn primary" onclick="handleAutoSubmit()">Submit Now</button>
+                <button class="auto-submit-btn secondary" onclick="continueWithoutSubmit()">Continue Working</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Community conversation data with enhanced TTS integration
+        const conversationData = [
+            {
+                speaker: "Sarah Miller",
+                text: "Good evening, everyone. Thank you for coming to tonight's community meeting. I'm Sarah Miller from the local council, and we're here to discuss the exciting community center renovation project. The main reason we're renovating is that more space is needed for activities, as our community has grown significantly.",
+                duration: 16000
+            },
+            {
+                speaker: "Tom Wilson",
+                text: "Thanks for organizing this, Sarah. I'm really glad we're finally addressing this issue. As a parent with young children, I've seen how overcrowded the current facilities get, especially during school holidays and weekends.",
+                duration: 12000
+            },
+            {
+                speaker: "Emma Davis",
+                text: "Hi everyone, I'm Emma, and I coordinate many of the volunteer activities here. I'm excited about this project because it will give us so many more opportunities to bring the community together and offer better services to residents.",
+                duration: 11000
+            },
+            {
+                speaker: "Sarah Miller",
+                text: "Now, let me update you on the funding situation. The council's main funding source for this project is government grants. We've successfully secured a substantial grant from the Community Development Fund, which will cover most of the renovation costs.",
+                duration: 14000
+            },
+            {
+                speaker: "Tom Wilson",
+                text: "That's great news about the funding. What about the construction timeline? I hope the work won't disrupt the summer programs that my kids love. Could the project be completed in phases so we can still use parts of the center?",
+                duration: 13000
+            },
+            {
+                speaker: "Sarah Miller",
+                text: "Excellent point, Tom. We've actually planned for exactly that concern. Construction will begin in late autumn to minimize disruption to community activities, especially the popular summer programs.",
+                duration: 11000
+            },
+            {
+                speaker: "Emma Davis",
+                text: "I'm really excited about organizing volunteers for this project. My plan is to set up skill-based teams so people can contribute according to their abilities and interests. We'll have teams for painting, gardening, moving, and even administrative support.",
+                duration: 14000
+            },
+            {
+                speaker: "Tom Wilson",
+                text: "That sounds very organized, Emma. What about the new facilities? I know many families are hoping for improvements that will benefit children and elderly residents alike.",
+                duration: 10000
+            },
+            {
+                speaker: "Sarah Miller",
+                text: "Based on our community survey, the facility that people want most is better accessibility features. This includes wheelchair ramps, accessible toilets, and automatic doors. We want to ensure everyone can use the center comfortably.",
+                duration: 13000
+            },
+            {
+                speaker: "Emma Davis",
+                text: "That's wonderful. For volunteers who want to help, you'll need to register through the online system on the council website. It's very straightforward - just fill out your details and indicate which areas you'd like to help with.",
+                duration: 12000
+            },
+            {
+                speaker: "Sarah Miller",
+                text: "The total renovation budget is two hundred and fifty thousand pounds, which will allow us to make significant improvements while maintaining the character of our beloved community center.",
+                duration: 11000
+            },
+            {
+                speaker: "Tom Wilson",
+                text: "When do you expect everything to be finished? I'm hoping we can enjoy the new facilities before next summer's activities begin.",
+                duration: 8000
+            },
+            {
+                speaker: "Sarah Miller",
+                text: "The renovation is expected to be completed by spring next year, well before the busy summer season. We'll schedule our next community meeting in two weeks to update everyone on progress and address any concerns.",
+                duration: 12000
+            },
+            {
+                speaker: "Emma Davis",
+                text: "This is such an exciting project for our community. I encourage everyone to get involved, whether through volunteering, attending meetings, or just spreading the word to neighbors.",
+                duration: 9000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            }
+        ];
+
+        // Audio control variables
+        let currentIndex = 0;
+        let isPlaying = false;
+        let speechSynthesis = window.speechSynthesis;
+        let currentUtterance = null;
+        let totalDuration = conversationData.reduce((sum, item) => sum + item.duration, 0) + 120000; // Add 2 minutes buffer
+        let currentTime = 0;
+        let audioInterval;
+        let autoSubmitInterval;
+        let autoSubmitCountdown = 10;
+
+        // Voice configuration for different speakers
+        const voiceConfig = {
+            "Sarah Miller": {
+                rate: 0.85,
+                pitch: 1.0,
+                volume: 0.9,
+                lang: 'en-GB'
+            },
+            "Tom Wilson": {
+                rate: 0.9,
+                pitch: 0.9,
+                volume: 0.9,
+                lang: 'en-US'
+            },
+            "Emma Davis": {
+                rate: 0.8,
+                pitch: 1.1,
+                volume: 0.9,
+                lang: 'en-AU'
+            }
+        };
+
+        function highlightCurrentSpeaker(speakerName) {
+            // Reset all speaker cards
+            document.querySelectorAll('.speaker-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Handle pause or end of conversation
+            if (speakerName === "pause" || !speakerName) {
+                document.getElementById('currentSpeaker').textContent = '⏸️ Community meeting discussion pausing...';
+                return;
+            }
+            
+            // Highlight current speaker
+            if (speakerName === "Sarah Miller") {
+                document.getElementById('speaker1').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: Sarah (Council)`;
+            } else if (speakerName === "Tom Wilson") {
+                document.getElementById('speaker2').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: Tom (Resident)`;
+            } else if (speakerName === "Emma Davis") {
+                document.getElementById('speaker3').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: Emma (Volunteer)`;
+            }
+        }
+
+        function updateProgress() {
+            if (isPlaying) {
+                currentTime += 100;
+                const progress = Math.min((currentTime / totalDuration) * 100, 100);
+                document.getElementById('progressFill').style.width = progress + '%';
+                
+                // Update time display
+                const currentMinutes = Math.floor(currentTime / 60000);
+                const currentSeconds = Math.floor((currentTime % 60000) / 1000);
+                document.getElementById('currentTime').textContent = 
+                    `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')}`;
+                
+                // Check if time is completed (when progress reaches 100%)
+                if (currentTime >= totalDuration) {
+                    console.log('⏰ Timer completed - showing auto-submit popup');
+                    showAutoSubmitPopup();
+                }
+            }
+        }
+
+        function formatTime(milliseconds) {
+            const minutes = Math.floor(milliseconds / 60000);
+            const seconds = Math.floor((milliseconds % 60000) / 1000);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function playAudio() {
+            if (currentIndex >= conversationData.length) {
+                currentIndex = 0;
+                currentTime = 0;
+            }
+            
+            isPlaying = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('playBtn').textContent = '🔊 Playing...';
+            
+            audioInterval = setInterval(updateProgress, 100);
+            playCurrentSegment();
+        }
+
+        function playCurrentSegment() {
+            if (!isPlaying) {
+                return;
+            }
+            
+            if (currentIndex >= conversationData.length) {
+                console.log('🎯 Reached end of conversation data');
+                stopAudio();
+                return;
+            }
+
+            const segment = conversationData[currentIndex];
+            
+            // Handle pause segments
+            if (segment.speaker === "pause") {
+                console.log(`⏸️ Playing pause segment ${currentIndex + 1} for ${segment.duration}ms`);
+                highlightCurrentSpeaker("pause");
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying) {
+                        if (currentIndex < conversationData.length) {
+                            playCurrentSegment();
+                        } else {
+                            console.log('🎯 All conversation segments completed after pause');
+                            stopAudio();
+                        }
+                    }
+                }, segment.duration);
+                return;
+            }
+
+            highlightCurrentSpeaker(segment.speaker);
+
+            // Create speech utterance
+            currentUtterance = new SpeechSynthesisUtterance(segment.text);
+            
+            // Apply voice configuration
+            const config = voiceConfig[segment.speaker];
+            if (config) {
+                currentUtterance.rate = config.rate;
+                currentUtterance.pitch = config.pitch;
+                currentUtterance.volume = config.volume;
+                currentUtterance.lang = config.lang;
+            }
+
+            // Set voice based on language and speaker
+            const voices = speechSynthesis.getVoices();
+            if (segment.speaker === "Sarah Miller") {
+                const britishVoice = voices.find(voice => 
+                    voice.lang.includes('en-GB') && voice.name.toLowerCase().includes('female')
+                ) || voices.find(voice => voice.lang.includes('en-GB'));
+                if (britishVoice) currentUtterance.voice = britishVoice;
+            } else if (segment.speaker === "Tom Wilson") {
+                const americanVoice = voices.find(voice => 
+                    voice.lang.includes('en-US') && voice.name.toLowerCase().includes('male')
+                ) || voices.find(voice => voice.lang.includes('en-US'));
+                if (americanVoice) currentUtterance.voice = americanVoice;
+            } else if (segment.speaker === "Emma Davis") {
+                const australianVoice = voices.find(voice => 
+                    voice.lang.includes('en-AU') && voice.name.toLowerCase().includes('female')
+                ) || voices.find(voice => voice.lang.includes('en-AU'));
+                if (australianVoice) currentUtterance.voice = australianVoice;
+            }
+
+            currentUtterance.onstart = () => {
+                console.log(`🎤 Started segment ${currentIndex + 1}: ${segment.speaker}`);
+            };
+
+            currentUtterance.onend = () => {
+                console.log(`✅ Completed segment ${currentIndex + 1}: ${segment.speaker}`);
+                currentIndex++;
+                // Add natural pause between speakers (2 seconds for community conversation)
+                setTimeout(() => {
+                    if (isPlaying) {
+                        if (currentIndex < conversationData.length) {
+                            playCurrentSegment();
+                        } else {
+                            console.log('🎯 All conversation segments completed');
+                            stopAudio();
+                        }
+                    }
+                }, 2000);
+            };
+
+            currentUtterance.onerror = (event) => {
+                console.error(`❌ Error in segment ${currentIndex + 1}:`, event.error);
+                // Continue to next segment on error
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying && currentIndex < conversationData.length) {
+                        playCurrentSegment();
+                    } else {
+                        stopAudio();
+                    }
+                }, 1000);
+            };
+
+            try {
+                speechSynthesis.speak(currentUtterance);
+            } catch (error) {
+                console.error(`❌ Failed to start TTS for segment ${currentIndex + 1}:`, error);
+                // Continue to next segment
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying && currentIndex < conversationData.length) {
+                        playCurrentSegment();
+                    } else {
+                        stopAudio();
+                    }
+                }, 1000);
+            }
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            speechSynthesis.cancel();
+            clearInterval(audioInterval);
+            
+            // Show completion message if audio played to the end
+            if (currentIndex >= conversationData.length) {
+                document.getElementById('currentSpeaker').textContent = '✅ Community meeting discussion completed. You may now answer the questions.';
+                setTimeout(() => {
+                    document.getElementById('currentSpeaker').textContent = '';
+                }, 3000);
+            } else {
+                document.getElementById('currentSpeaker').textContent = '';
+            }
+            
+            currentIndex = 0;
+            currentTime = 0;
+            
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            document.querySelectorAll('.speaker-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            document.getElementById('playBtn').disabled = false;
+            document.getElementById('playBtn').textContent = '▶️ Play';
+        }
+
+        // Correct answers for assessment
+        const correctAnswers = {
+            q21: 'B', // More space is needed for activities
+            q22: 'A', // Government grants
+            q23: 'C', // The project should be completed in phases
+            q24: 'B', // By setting up skill-based teams
+            q25: 'C', // Better accessibility features
+            q26: 'B', // In two weeks
+            q27: 'two hundred fifty', // 250 thousand pounds (accepting variations)
+            q28: 'late autumn', // Construction will begin in late autumn
+            q29: 'online', // Online system on the council website
+            q30: 'spring' // Completed by spring next year
+        };
+
+        // Question explanations
+        const explanations = {
+            q21: 'Sarah states: "The main reason we\'re renovating is that more space is needed for activities, as our community has grown significantly."',
+            q22: 'Sarah explains: "The council\'s main funding source for this project is government grants. We\'ve successfully secured a substantial grant from the Community Development Fund."',
+            q23: 'Tom suggests: "Could the project be completed in phases so we can still use parts of the center?" which Sarah agrees with in her planning.',
+            q24: 'Emma explains: "My plan is to set up skill-based teams so people can contribute according to their abilities and interests."',
+            q25: 'Sarah reports: "Based on our community survey, the facility that people want most is better accessibility features."',
+            q26: 'Sarah concludes: "We\'ll schedule our next community meeting in two weeks to update everyone on progress."',
+            q27: 'Sarah mentions: "The total renovation budget is two hundred and fifty thousand pounds."',
+            q28: 'Sarah states: "Construction will begin in late autumn to minimize disruption to community activities."',
+            q29: 'Emma explains: "You\'ll need to register through the online system on the council website."',
+            q30: 'Sarah confirms: "The renovation is expected to be completed by spring next year."'
+        };
+
+        function submitAnswers() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Check multiple choice questions (21-26)
+            for (let i = 21; i <= 26; i++) {
+                const questionName = `q${i}`;
+                const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                const answer = selectedOption ? selectedOption.value : '';
+                answers[questionName] = answer;
+                
+                const correct = correctAnswers[questionName];
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[questionName]}<br>
+                        <strong>Explanation:</strong> ${explanations[questionName]}
+                    </div>
+                `);
+            }
+
+            // Check note completion questions (27-30)
+            for (let i = 27; i <= 30; i++) {
+                const questionName = `q${i}`;
+                const answer = document.getElementById(questionName).value.trim().toLowerCase();
+                answers[questionName] = answer;
+                
+                const correct = correctAnswers[questionName].toLowerCase();
+                const isCorrect = answer === correct || 
+                    (correct.includes(' ') && correct.split(' ').some(word => answer.includes(word))) ||
+                    (questionName === 'q27' && (answer.includes('250') || answer.includes('two hundred fifty')));
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[questionName]}<br>
+                        <strong>Explanation:</strong> ${explanations[questionName]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Focus on listening for specific details in community meetings and local council discussions");
+                tips.push("Practice understanding different English accents in everyday community contexts");
+                tips.push("Work on identifying key information about planning, funding, and timelines");
+                tips.push("Listen to local news, community radio, and council meeting recordings");
+            } else if (score <= 6) {
+                tips.push("Develop better prediction skills by reading question stems before listening to community conversations");
+                tips.push("Practice distinguishing between different speakers' roles and responsibilities in meetings");
+                tips.push("Work on note completion with practical vocabulary and community terminology");
+                tips.push("Focus on understanding community planning processes and local government procedures");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to catch specific details in multi-speaker community discussions");
+                tips.push("Practice following complex community planning conversations and funding discussions");
+                tips.push("Work on maintaining concentration throughout longer community meetings");
+                tips.push("Review vocabulary related to local government, community services, and public planning");
+            } else {
+                tips.push("Excellent work! Continue practicing with authentic IELTS General Part 3 materials");
+                tips.push("Focus on time management to complete both multiple choice and note completion efficiently");
+                tips.push("Practice with different community contexts and local government scenarios");
+                tips.push("Consider helping others to reinforce your own community conversation listening skills");
+            }
+            
+            return tips;
+        }
+
+        // Auto-submit timer functions
+        function showAutoSubmitPopup() {
+            // Stop audio and clear intervals
+            isPlaying = false;
+            speechSynthesis.cancel();
+            clearInterval(audioInterval);
+            
+            // Show the popup
+            document.getElementById('autoSubmitOverlay').style.display = 'flex';
+            
+            // Reset countdown
+            autoSubmitCountdown = 10;
+            document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+            
+            // Start countdown
+            autoSubmitInterval = setInterval(() => {
+                autoSubmitCountdown--;
+                document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+                
+                if (autoSubmitCountdown <= 0) {
+                    clearInterval(autoSubmitInterval);
+                    handleAutoSubmit();
+                }
+            }, 1000);
+        }
+
+        function handleAutoSubmit() {
+            clearInterval(autoSubmitInterval);
+            document.getElementById('autoSubmitOverlay').style.display = 'none';
+            
+            // Automatically submit answers
+            submitAnswers();
+            
+            // Show message
+            setTimeout(() => {
+                alert('⏰ Time completed! Your answers have been automatically submitted as per IELTS test conditions.');
+            }, 500);
+        }
+
+        function continueWithoutSubmit() {
+            clearInterval(autoSubmitInterval);
+            document.getElementById('autoSubmitOverlay').style.display = 'none';
+            
+            // Allow user to continue working
+            console.log('📝 User chose to continue working after timer completion');
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS General Listening Part 3 Practice 1 - Going to introduction');
+            window.location.href = 'IELTS_General_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🏘️ IELTS General Listening Part 3 Practice 1 - Community Meeting loaded');
+            
+            // Debug audio system
+            console.log('🔊 Browser audio capabilities:');
+            console.log('- speechSynthesis available:', 'speechSynthesis' in window);
+            console.log('- Web Audio API available:', 'AudioContext' in window || 'webkitAudioContext' in window);
+            
+            // Test speech synthesis availability
+            if ('speechSynthesis' in window) {
+                setTimeout(() => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🎤 Initial voices check:', voices.length, 'voices available');
+                    if (voices.length === 0) {
+                        console.log('⏳ Waiting for voices to load...');
+                        speechSynthesis.addEventListener('voiceschanged', function() {
+                            const newVoices = speechSynthesis.getVoices();
+                            console.log('🎤 Voices loaded:', newVoices.length, 'voices now available');
+                        });
+                    }
+                }, 1000);
+            }
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+            if (autoSubmitInterval) {
+                clearInterval(autoSubmitInterval);
+            }
+        });
+    </script>
+</body>
+</html> 
