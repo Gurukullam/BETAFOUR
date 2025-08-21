@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Speaking Part 2: Educational Institution Practice | Gammapace</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Master Guruvammal Logo for template back button */
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button - Professional Brown Gradient */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border-left: 3px solid transparent;
+            margin: 0.3rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #8b4513, #d4af37, #8b4513);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .format-info {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Content sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Question Selection */
+        .question-selection {
+            background: rgba(139, 69, 19, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .question-selection h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .question-selection select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            display: block;
+            background: white;
+        }
+
+        /* Cue Card Section */
+        .cue-card-section {
+            margin: 2rem 0;
+        }
+
+        .cue-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.05));
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+        }
+
+        .cue-card h4 {
+            font-size: 1.4rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .cue-card p {
+            color: #666;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .cue-card ul {
+            margin: 1rem 0 1rem 2rem;
+            color: #333;
+        }
+
+        .cue-card li {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .time-instruction {
+            background: #8b4513;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        /* Timer Display */
+        .timer-display {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .timer {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            min-width: 200px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+        }
+
+        .timer-label {
+            color: #8b4513;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Control Buttons */
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 160px;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        .control-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .prepare-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .prepare-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #20c997, #28a745);
+        }
+
+        .record-btn.recording {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        /* Status Display */
+        .status-display {
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .status-display.preparing {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .status-display.recording {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.05));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .analysis-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .analysis-card h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .analysis-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #feedbackText {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .analysis-processing {
+            background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+            background-size: 200% 200%;
+            animation: analysisShimmer 2s linear infinite;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        @keyframes analysisShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        .next-btn:nth-child(2) {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .next-btn:nth-child(2):hover {
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Band Score Guidance */
+        .band-guidance {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 2px solid #d4af37;
+        }
+
+        .band-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .criteria-card {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(212, 175, 55, 0.05));
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 3px solid #8b4513;
+        }
+
+        .criteria-card h5 {
+            color: #8b4513;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .criteria-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0 !important;
+            }
+
+            .menu-toggle {
+                left: 20px;
+            }
+
+            .menu-toggle-label {
+                left: 42px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                left: -100%;
+            }
+
+            .slide-menu.collapsed {
+                left: -100%;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .band-criteria {
+                grid-template-columns: 1fr;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .control-btn {
+                width: 80%;
+                max-width: 250px;
+            }
+        }
+
+        /* Hidden elements */
+        .hidden {
+            display: none;
+        }
+
+        /* Processing animation */
+        .processing {
+            animation: processing 2s linear infinite;
+        }
+
+        @keyframes processing {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .processing {
+            background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+            background-size: 200% 200%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo Container (Back Button) -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Slide-out Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle">
+        ›
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Academic Speaking Part 2</div>
+            <div class="menu-subtitle">Educational Institution</div>
+        </div>
+        <div class="menu-content">
+            <div class="menu-item" onclick="scrollToSection('instructions')">🎯 Select Cue Card</div>
+            <div class="menu-item active" onclick="scrollToSection('recording')">🎙️ Recording Studio</div>
+            <div class="menu-item" onclick="scrollToSection('analysis')">📊 Analysis Results</div>
+            <div class="menu-item" onclick="scrollToSection('guidance')">🎯 Band Score Guidance</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">IELTS Academic Speaking Part 2</h1>
+            <div class="hero-subtitle">Educational Institution Practice</div>
+            <div class="format-info">
+                <p><strong>Part 2 Format:</strong> You will receive a cue card with a topic and bullet points. You have <strong>1 minute to prepare</strong> and can make notes, then you must speak for <strong>2 minutes</strong> without interruption on the topic.</p>
+            </div>
+        </section>
+
+        <!-- Question Selection -->
+        <section class="content-section" id="instructions">
+            <h2 class="section-title">🎯 Select Your Cue Card</h2>
+            <div class="question-selection">
+                <h3>Choose an Educational Institution Topic:</h3>
+                <select id="questionSelect" onchange="updateCurrentQuestion()">
+                    <option value="1">Describe an educational institution you attended</option>
+                    <option value="2">Describe a university you would like to study at</option>
+                    <option value="3">Describe an educational institution that impressed you</option>
+                    <option value="4">Describe a school or college from your hometown</option>
+                    <option value="5">Describe an educational facility you have visited</option>
+                    <option value="6">Describe an institution known for academic excellence</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Cue Card Section -->
+        <section class="content-section" id="cue-card">
+            <h2 class="section-title">🎯 Cue Card</h2>
+            <div class="cue-card-section">
+                <div class="cue-card" id="cueCardContent">
+                    <h4>Describe an educational institution you attended</h4>
+                    <p>You should say:</p>
+                    <ul>
+                        <li>What kind of educational institution it was</li>
+                        <li>Where it was located and what facilities it had</li>
+                        <li>What you studied there and what the atmosphere was like</li>
+                        <li>And explain what you liked most about this institution</li>
+                    </ul>
+                    <div class="time-instruction">
+                        You have 1 minute to prepare and 2 minutes to speak.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-display">
+                <div class="timer" id="timerDisplay">01:00</div>
+                <div class="timer-label" id="timerLabel">Preparation Time</div>
+            </div>
+        </section>
+
+        <!-- Recording Studio Section -->
+        <section class="content-section" id="recording">
+            <h2 class="section-title">🎙️ Recording Studio</h2>
+            
+            <div style="text-align: center; color: #666; margin: 1rem 0;">
+                <p>Click "Start Preparation" to begin your 1-minute preparation time, then record your 2-minute educational institution monologue.</p>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="control-buttons">
+                <button class="control-btn prepare-btn" id="prepareBtn" onclick="startPreparation()">
+                    ⏱️ Start Preparation
+                </button>
+                <button class="control-btn record-btn" id="recordBtn" onclick="startRecording()" disabled>
+                    🎤 Start Recording
+                </button>
+                <button class="control-btn" id="stopBtn" onclick="stopRecording()" disabled>
+                    ⏹️ Stop Recording
+                </button>
+                <button class="control-btn" id="playBtn" onclick="playRecording()" disabled>
+                    ▶️ Play Recording
+                </button>
+                <button class="control-btn" id="processBtn" onclick="processAudio()" disabled>
+                    📊 Analyze Speech
+                </button>
+            </div>
+
+            <!-- Status Display -->
+            <div class="status-display" id="statusDisplay">
+                Ready to begin preparation for your educational institution monologue
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section class="content-section hidden" id="analysis">
+            <h2 class="section-title">
+                📊 Analysis Results
+            </h2>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h4>📝 Example Response</h4>
+                    <p id="transcriptionText" style="font-style: italic; color: #555;">A model educational institution response will appear here to guide your monologue practice. This shows the level of detail and structure expected for 2-minute institution presentations.</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h4>🎯 Your Personal Analysis & Feedback</h4>
+                    <p id="feedbackText" style="white-space: pre-line;">Based on your actual recording, personalized feedback on your institution vocabulary, description skills, and academic presentation will appear here. This analysis is tailored specifically to your educational institution response.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons">
+                <button class="control-btn next-btn" onclick="goToNextCard()">
+                    ➡️ Next Cue Card
+                </button>
+                <button class="control-btn next-btn" onclick="refreshCurrentCard()">
+                    🔄 Retry This Card
+                </button>
+            </div>
+        </section>
+
+        <!-- Band Score Guidance -->
+        <section class="content-section" id="guidance">
+            <h2 class="section-title">
+                🎯 Band Score Guidance
+            </h2>
+            
+            <div class="band-guidance">
+                <h3 style="color: #8b4513; text-align: center; margin-bottom: 1.5rem;">Educational Institution Monologue Assessment Criteria</h3>
+                
+                <div class="band-criteria">
+                    <div class="criteria-card">
+                        <h5>🗣️ Fluency & Coherence</h5>
+                        <p>Maintain steady speech flow throughout the 2-minute institution description. Use logical organization with clear introduction of the institution, detailed description, and personal reflection. Connect ideas smoothly when describing facilities, programs, and experiences.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>📚 Lexical Resource</h5>
+                        <p>Use sophisticated educational vocabulary including institutional terms, facility descriptions, and academic program language. Include precise expressions for campus features, educational offerings, and institutional culture.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>⚙️ Grammatical Range</h5>
+                        <p>Demonstrate complex sentence structures throughout the institution description. Use descriptive language accurately when detailing facilities and programs, and conditional structures when discussing potential or hypothetical educational scenarios.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>🎯 Pronunciation</h5>
+                        <p>Maintain clear articulation during the extended institution presentation. Use appropriate stress patterns for educational terminology and institutional names, engaging the listener throughout the academic discourse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Educational Institution Cue Cards
+        const cueCards = {
+            1: {
+                title: "Describe an educational institution you attended",
+                points: [
+                    "What kind of educational institution it was",
+                    "Where it was located and what facilities it had",
+                    "What you studied there and what the atmosphere was like",
+                    "And explain what you liked most about this institution"
+                ]
+            },
+            2: {
+                title: "Describe a university you would like to study at",
+                points: [
+                    "What university it is and where it is located",
+                    "What programs or courses they offer that interest you",
+                    "What you know about their facilities and reputation",
+                    "And explain why you would like to study at this university"
+                ]
+            },
+            3: {
+                title: "Describe an educational institution that impressed you",
+                points: [
+                    "What institution it was and where you learned about it",
+                    "What made this institution particularly impressive",
+                    "What programs, facilities, or achievements it was known for",
+                    "And explain why this institution left such a strong impression on you"
+                ]
+            },
+            4: {
+                title: "Describe a school or college from your hometown",
+                points: [
+                    "What type of school or college it was",
+                    "Where it was located and what it looked like",
+                    "What reputation it had in your community",
+                    "And explain how this institution influenced your local area"
+                ]
+            },
+            5: {
+                title: "Describe an educational facility you have visited",
+                points: [
+                    "What educational facility it was and when you visited",
+                    "What the purpose of your visit was",
+                    "What you saw and experienced during your visit",
+                    "And explain what you learned from this visit"
+                ]
+            },
+            6: {
+                title: "Describe an institution known for academic excellence",
+                points: [
+                    "What institution it is and what field it excels in",
+                    "How you learned about its reputation for excellence",
+                    "What specific achievements or programs make it excellent",
+                    "And explain how this institution maintains its high standards"
+                ]
+            }
+        };
+
+        // Timer variables
+        let currentTimer = null;
+        let timeRemaining = 60; // Start with preparation time
+        let isPreparationPhase = true;
+        let isRecording = false;
+
+        // Audio recording variables
+        let mediaRecorder;
+        let audioChunks = [];
+        let recordingTimeout;
+        let originalAudioBlob = null;
+        let recordingSeconds = 0;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ IELTS Academic Speaking Part 2: Educational Institution loaded');
+            updateCurrentQuestion();
+            
+            // Check for audio support
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                document.getElementById('statusDisplay').textContent = 'Audio recording not supported in this browser';
+                document.getElementById('recordBtn').disabled = true;
+                console.warn('⚠️ Audio recording not supported');
+            }
+        });
+
+        // Update current cue card display
+        function updateCurrentQuestion() {
+            const select = document.getElementById('questionSelect');
+            const cueCard = document.getElementById('cueCardContent');
+            const selectedValue = select.value;
+            const card = cueCards[selectedValue];
+
+            // Update cue card content
+            cueCard.innerHTML = `
+                <h4>${card.title}</h4>
+                <p>You should say:</p>
+                <ul>
+                    ${card.points.map(point => `<li>${point}</li>`).join('')}
+                </ul>
+                <div class="time-instruction">
+                    You have 1 minute to prepare and 2 minutes to speak.
+                </div>
+            `;
+            
+            // Reset everything when question changes
+            resetSession();
+        }
+
+        // Start preparation timer
+        function startPreparation() {
+            console.log('🟡 Starting preparation phase');
+            isPreparationPhase = true;
+            timeRemaining = 60; // 1 minute preparation
+            
+            // Update UI
+            document.getElementById('prepareBtn').disabled = true;
+            document.getElementById('prepareBtn').textContent = '⏱️ Preparing...';
+            document.getElementById('statusDisplay').textContent = '📝 Preparation time - Think about your educational institution and make notes';
+            document.getElementById('statusDisplay').className = 'status-display preparing';
+            
+            // Start countdown
+            updateTimerDisplay();
+            currentTimer = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+                
+                if (timeRemaining <= 0) {
+                    finishPreparation();
+                }
+            }, 1000);
+        }
+
+        // Finish preparation and enable recording
+        function finishPreparation() {
+            console.log('✅ Preparation complete, enabling recording');
+            clearInterval(currentTimer);
+            isPreparationPhase = false;
+            
+            // Update UI for recording phase
+            document.getElementById('recordBtn').disabled = false;
+            document.getElementById('statusDisplay').textContent = '🎤 Ready to record your 2-minute educational institution monologue';
+            document.getElementById('statusDisplay').className = 'status-display';
+            document.getElementById('timerLabel').textContent = 'Recording Time';
+            
+            // Set timer for recording phase
+            timeRemaining = 120; // 2 minutes for recording
+            updateTimerDisplay();
+        }
+
+        // Start recording
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        echoCancellation: true,
+                        noiseSuppression: true,
+                        sampleRate: 44100
+                    } 
+                });
+                
+                audioChunks = [];
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: 'audio/webm;codecs=opus'
+                });
+                
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+                
+                mediaRecorder.onstop = () => {
+                    originalAudioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    const audioUrl = URL.createObjectURL(originalAudioBlob);
+                    
+                    // Store audio URL for playback
+                    window.currentAudioUrl = audioUrl;
+                    
+                    // Update UI to recorded state
+                    document.getElementById('playBtn').disabled = false;
+                    document.getElementById('processBtn').disabled = false;
+                    document.getElementById('statusDisplay').textContent = '✅ Recording complete! You can play it back or analyze your institution presentation';
+                    document.getElementById('statusDisplay').className = 'status-display';
+                };
+                
+                mediaRecorder.start();
+                isRecording = true;
+                recordingSeconds = 0;
+                
+                // Update UI to recording state
+                document.getElementById('recordBtn').disabled = true;
+                document.getElementById('recordBtn').classList.add('recording');
+                document.getElementById('recordBtn').textContent = '🎤 Recording...';
+                document.getElementById('stopBtn').disabled = false;
+                document.getElementById('statusDisplay').textContent = '🔴 Recording your educational institution monologue...';
+                document.getElementById('statusDisplay').className = 'status-display recording';
+                
+                // Start recording timer
+                currentTimer = setInterval(() => {
+                    timeRemaining--;
+                    recordingSeconds++;
+                    updateTimerDisplay();
+                    
+                    if (timeRemaining <= 0) {
+                        stopRecording();
+                    }
+                }, 1000);
+                
+                console.log('🎙️ Recording started for Educational Institution monologue');
+                
+            } catch (error) {
+                console.error('❌ Error starting recording:', error);
+                alert('Unable to access microphone. Please check your permissions.');
+            }
+        }
+
+        // Stop recording
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                mediaRecorder.stream.getTracks().forEach(track => track.stop());
+                isRecording = false;
+                
+                clearInterval(currentTimer);
+                
+                // Update UI
+                document.getElementById('recordBtn').classList.remove('recording');
+                document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+                document.getElementById('stopBtn').disabled = true;
+                
+                console.log('⏹️ Recording stopped');
+            }
+        }
+
+        // Play recording
+        function playRecording() {
+            if (window.currentAudioUrl) {
+                const audio = new Audio(window.currentAudioUrl);
+                audio.play();
+                console.log('▶️ Playing recording');
+            }
+        }
+
+        // Process audio and show analysis
+        async function processAudio() {
+            if (!originalAudioBlob) return;
+            
+            const analysisSection = document.getElementById('analysis');
+            const transcriptionText = document.getElementById('transcriptionText');
+            const feedbackText = document.getElementById('feedbackText');
+            
+            // Show analysis section with processing indicator
+            analysisSection.classList.remove('hidden');
+            feedbackText.innerHTML = '<div class="analysis-processing">🔄 Analyzing your institution presentation...</div>';
+            transcriptionText.textContent = 'Loading example response...';
+            
+            document.getElementById('statusDisplay').textContent = '🧠 Analyzing your educational institution monologue...';
+            
+            try {
+                // Step 1: Simulate speech-to-text conversion
+                feedbackText.innerHTML = '<div class="analysis-processing">🎙️ Converting speech to text...</div>';
+                const transcript = await simulateSpeechToText(originalAudioBlob);
+                
+                // Step 2: Analyze the transcribed text
+                feedbackText.innerHTML = '<div class="analysis-processing">🧠 Analyzing your institution description and presentation...</div>';
+                const analysis = await analyzeMonologueResponse(transcript);
+                
+                // Step 3: Display results
+                const currentCard = document.getElementById('questionSelect').value;
+                const exampleResponse = getInstitutionExampleResponse(currentCard);
+                
+                // Show example response (unchanged)
+                transcriptionText.textContent = exampleResponse;
+                
+                // Show personalized feedback based on actual recording
+                feedbackText.textContent = analysis.personalizedFeedback;
+                
+                // Scroll to show completed analysis
+                setTimeout(() => {
+                    analysisSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+                
+                document.getElementById('statusDisplay').textContent = '✅ Analysis complete! Review your personalized institution feedback below.';
+                
+                console.log('📊 Audio analysis completed with personalized feedback');
+                
+            } catch (error) {
+                console.error('Processing Error:', error);
+                document.getElementById('statusDisplay').textContent = '❌ Error during analysis. Please try again.';
+                
+                // Reset analysis section on error
+                feedbackText.textContent = 'Analysis failed. Please try recording again.';
+                transcriptionText.textContent = 'Example response will appear after successful analysis.';
+            }
+        }
+
+        // Simulate Speech-to-Text conversion
+        async function simulateSpeechToText(audioBlob) {
+            // Simulate processing time
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Analyze audio properties
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            
+            return new Promise((resolve) => {
+                audio.addEventListener('loadedmetadata', () => {
+                    const duration = audio.duration;
+                    const currentCard = document.getElementById('questionSelect').value;
+                    
+                    let transcript = generateSimulatedInstitutionTranscript(currentCard, duration);
+                    transcript.recordingDuration = duration;
+                    
+                    resolve(transcript);
+                });
+                audio.load();
+            });
+        }
+
+        // Generate simulated transcript for educational institutions
+        function generateSimulatedInstitutionTranscript(cardNumber, duration) {
+            const baseResponses = {
+                1: "The educational institution I attended was",
+                2: "The university I would like to study at is",
+                3: "The educational institution that impressed me was",
+                4: "The school from my hometown is",
+                5: "The educational facility I visited was",
+                6: "The institution known for academic excellence is"
+            };
+            
+            let response = baseResponses[cardNumber] || "The educational institution I want to describe is";
+            
+            // Add duration-based assessment
+            if (duration < 60) {
+                response += " [Response was quite short - aim for closer to 2 minutes for better coverage of institution details]";
+            } else if (duration >= 90 && duration <= 150) {
+                response += " [Good length - well within the optimal range for detailed institution presentation]";
+            } else if (duration > 150) {
+                response += " [Excellent detailed response - comprehensive coverage of all aspects]";
+            } else {
+                response += " [Adequate length - could include more specific details about facilities and programs for higher band scores]";
+            }
+            
+            return response;
+        }
+
+        // Analyze monologue response for educational institution content
+        async function analyzeMonologueResponse(transcript) {
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            const currentCard = document.getElementById('questionSelect').value;
+            const transcriptText = typeof transcript === 'string' ? transcript : transcript.toString();
+            const duration = transcript.recordingDuration || 0;
+            
+            const wordCount = transcriptText.split(' ').length;
+            const hasEducationTerms = /university|college|school|campus|faculty|department|library|laboratory|dormitory|classroom|lecture|seminar|professor|student|degree|program|course|curriculum|facilities|academic|education|learning|study|graduation|enrollment/i.test(transcriptText);
+            
+            let feedback = generateInstitutionFeedback(currentCard, {
+                wordCount: wordCount,
+                hasEducationTerms: hasEducationTerms,
+                transcript: transcriptText,
+                duration: duration
+            });
+            
+            return { personalizedFeedback: feedback };
+        }
+
+        // Generate personalized feedback for institution presentations
+        function generateInstitutionFeedback(cardNumber, analysis) {
+            let feedback = "Based on your recorded institution presentation:\n\n";
+            
+            // Analyze monologue duration (Part 2 should be longer)
+            if (analysis.duration && analysis.duration > 0) {
+                if (analysis.duration < 60) {
+                    feedback += "⏱️ **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - This is quite short for institution descriptions. Aim for 90-120 seconds to fully describe facilities, programs, and personal experiences.\n\n";
+                } else if (analysis.duration >= 90 && analysis.duration <= 150) {
+                    feedback += "✅ **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Excellent timing for institution presentations! This allows for comprehensive coverage of facilities and experiences.\n\n";
+                } else if (analysis.duration > 150) {
+                    feedback += "👍 **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Very detailed institution presentation. Good comprehensive coverage of all aspects.\n\n";
+                } else {
+                    feedback += "📈 **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Good length, could be extended with more specific facility details.\n\n";
+                }
+            }
+            
+            // Institution content development analysis
+            if (analysis.wordCount < 20) {
+                feedback += "🔍 **Institution Detail**: Your response appears brief. For institution descriptions, elaborate on facilities, programs, atmosphere, and personal experiences with specific examples.\n\n";
+            } else if (analysis.wordCount > 100) {
+                feedback += "✅ **Institution Detail**: Excellent comprehensive presentation! You provided detailed information covering multiple aspects of the educational institution.\n\n";
+            } else {
+                feedback += "👍 **Institution Detail**: Good level of detail. Consider adding more specific examples of facilities, programs, or memorable experiences.\n\n";
+            }
+            
+            // Educational vocabulary usage
+            if (analysis.hasEducationTerms) {
+                feedback += "✅ **Educational Vocabulary**: Excellent use of institutional and educational terminology. This demonstrates strong academic language skills and familiarity with educational contexts.\n\n";
+            } else {
+                feedback += "💡 **Educational Vocabulary**: Try incorporating more education-specific terms like 'campus', 'faculty', 'curriculum', 'facilities', 'academic programs', or 'student life' to strengthen your institutional description.\n\n";
+            }
+            
+            // Cue card specific feedback
+            const cardSpecificTips = {
+                1: "For institutions you attended, describe the type, location, facilities, programs studied, campus atmosphere, and what you valued most about your educational experience there.",
+                2: "For desired universities, explain location, attractive programs, reputation, facilities, why it appeals to you, and how it aligns with your academic goals.",
+                3: "For impressive institutions, describe what made them remarkable, their achievements, facilities, programs, reputation, and why they left such a strong impression.",
+                4: "For hometown schools, describe the type, location, appearance, community reputation, local influence, and role in the area's educational landscape.",
+                5: "For visited facilities, explain the visit purpose, what you observed, facilities toured, programs learned about, and insights gained from the experience.",
+                6: "For excellent institutions, describe their field of excellence, reputation sources, specific achievements, high standards, and what maintains their academic excellence."
+            };
+            
+            feedback += "🎯 **Institution Presentation Structure**: " + (cardSpecificTips[cardNumber] || "Address all bullet points systematically with specific institutional examples and personal connections.");
+            feedback += "\n\n📈 **Next Steps**: Practice describing educational environments clearly, use transitional phrases between different aspects, and develop each institutional feature with specific examples.";
+            feedback += "\n\n💡 **Institution Communication Success**: Remember to speak continuously about your educational experience, address all institutional aspects, and maintain coherent organization throughout your presentation.";
+            
+            return feedback;
+        }
+
+        // Get example responses for different institution cue cards
+        function getInstitutionExampleResponse(cardNumber) {
+            const examples = {
+                1: "I'd like to talk about the university I attended, which was Metropolitan University in downtown Toronto, where I completed my bachelor's degree in Business Administration from 2018 to 2022. This was a large public research university with over 30,000 students from diverse backgrounds around the world. The campus was located in the heart of the city, making it easily accessible by public transportation and surrounded by businesses, cultural institutions, and internship opportunities. The university had excellent facilities including a modern library with over one million books, state-of-the-art computer labs, well-equipped lecture halls with the latest audiovisual technology, and a beautiful student center where students could study, socialize, and access various support services. I studied business administration with a concentration in international marketing, which involved courses in finance, management, economics, marketing strategy, and cross-cultural business practices. The academic atmosphere was both challenging and supportive, with professors who encouraged critical thinking and real-world application of business concepts. What I liked most about this institution was the diversity of the student body and the numerous opportunities for practical experience through co-op programs, internships, and case competitions. The university also had a vibrant campus life with over 200 student clubs and organizations, ranging from academic societies to cultural groups and recreational activities. The career services department was exceptional, providing resume workshops, interview preparation, job fairs, and networking events that helped me secure employment before graduation. The university's strong connections with the business community in Toronto provided invaluable networking opportunities and exposed me to different career paths in my field. Most importantly, the institution fostered an environment of intellectual curiosity and personal growth that prepared me not just academically, but also personally for my professional career.",
+                
+                2: "The university I would most like to study at is Stanford University in California, which is widely recognized as one of the world's leading research institutions and a pioneer in innovation and entrepreneurship. Stanford is located in Silicon Valley, which makes it an ideal place for students interested in technology, business, and startup culture. I'm particularly interested in their Master's program in Computer Science with a focus on Artificial Intelligence, which is consistently ranked as the top program in the world. What attracts me most to Stanford is their cutting-edge research facilities, including the Stanford Artificial Intelligence Laboratory, the Human-Computer Interaction Group, and access to advanced computing resources that would allow me to work on groundbreaking research projects. The university is known for its exceptional faculty, many of whom are Nobel laureates, Turing Award winners, and industry leaders who bring real-world experience into the classroom. Stanford's facilities are world-class, including the stunning main campus with its distinctive sandstone architecture, the Green Library system with extensive digital resources, modern research laboratories, and recreational facilities like the golf course and aquatic center. The university's culture of innovation and entrepreneurship is particularly appealing, as many successful tech companies including Google, Yahoo, and Instagram were founded by Stanford alumni. I'm also drawn to their interdisciplinary approach to education, which encourages students to explore connections between different fields and tackle complex problems from multiple perspectives. The location in Silicon Valley would provide unparalleled internship and job opportunities with leading technology companies, venture capital firms, and startups. Additionally, Stanford's financial aid program is generous, ensuring that students from diverse economic backgrounds can afford to attend. The collaborative rather than competitive atmosphere among students, combined with the university's commitment to social responsibility and global impact, makes Stanford an institution where I believe I could not only advance my technical skills but also develop as a leader who can use technology to solve important societal challenges.",
+                
+                3: "The educational institution that impressed me most was MIT (Massachusetts Institute of Technology), which I learned about during my undergraduate engineering studies and had the opportunity to visit during a summer research program. What made MIT particularly impressive was their unique combination of rigorous academic excellence, cutting-edge research, and practical application of knowledge to solve real-world problems. The institution is renowned for its programs in engineering, computer science, and technology, but I was surprised to discover their strong offerings in economics, business, and even arts and humanities. During my visit, I was amazed by the campus facilities, including the legendary Building 32 where much of the artificial intelligence research takes place, the Media Lab with its futuristic projects combining technology and creativity, and the numerous makerspaces where students can prototype and build their innovative ideas. The professors I met were not only world-renowned researchers but also passionate educators who were genuinely excited about their work and eager to mentor students. What impressed me most was the collaborative culture where students from different disciplines work together on interdisciplinary projects that have real impact. I witnessed students developing assistive technologies for people with disabilities, creating sustainable energy solutions, and working on space exploration projects with NASA. The institution's emphasis on 'mens et manus' (mind and hand) was evident everywhere, as theoretical knowledge was always coupled with hands-on application and experimentation. MIT's influence extends far beyond academia, as their research has led to numerous technological breakthroughs and their alumni have founded companies that have shaped the modern world. The institution left such a strong impression on me because it demonstrated how education can be both intellectually rigorous and practically relevant, preparing students not just to understand the world but to actively change it for the better. The energy and passion for innovation that permeated the entire campus was infectious and inspired me to pursue graduate studies in a field where I could contribute to meaningful technological advancement.",
+                
+                4: "The most prominent school in my hometown is Central High School, which has been serving our community for over 75 years and is considered the academic heart of our city. This is a large public secondary school located in the center of town, housed in a beautiful brick building that combines traditional architecture with modern additions and renovations. The school accommodates approximately 1,200 students from grades 9 through 12, drawing from various neighborhoods across the city and surrounding rural areas. Central High School has an excellent reputation in our community for both academic achievement and extracurricular excellence, consistently ranking among the top schools in our state for college preparation and standardized test scores. The building itself is quite impressive, with well-maintained classrooms, a large library that also serves as a community resource, modern science laboratories, a fully equipped auditorium for performing arts, and athletic facilities including a gymnasium and football stadium that hosts community events. What makes this school particularly special is its deep connection to our local community - many parents and even grandparents are alumni, creating a strong sense of tradition and school pride. The school has significantly influenced our local area by serving as a cultural and social center, hosting community events, graduation ceremonies, and school board meetings that bring residents together. Central High School has also been instrumental in preparing young people for college and careers, with many graduates going on to attend prestigious universities or returning to contribute to local businesses and organizations. The school's influence extends beyond education, as it provides stability and identity to our community, and its success is a source of local pride. The teachers and staff are deeply invested in both student success and community welfare, often volunteering for local causes and maintaining connections with alumni long after graduation. This institution has shaped the character of our hometown by fostering values of academic excellence, community service, and civic responsibility that are reflected in our city's culture and development.",
+                
+                5: "The educational facility I visited that left a lasting impression was the Smithsonian National Museum of Natural History in Washington, D.C., which I toured during a school trip when I was studying biology in college. This visit was part of our comparative anatomy course, and our professor had arranged for us to examine their extensive fossil collections and meet with research scientists working in paleontology and evolutionary biology. The museum serves as both a public educational institution and a world-class research facility, housing over 145 million specimens and artifacts that support scientific research and education globally. During our visit, I was amazed by the scope and quality of their exhibits, from the famous dinosaur fossils in the Hall of Paleobiology to the detailed displays of human evolution, marine ecosystems, and geological formations. What impressed me most was the behind-the-scenes tour of their research laboratories and specimen storage areas, where we saw scientists preparing fossils, analyzing DNA from ancient specimens, and conducting cutting-edge research that advances our understanding of life on Earth. The facility's educational programs were exceptional, with interactive exhibits designed to engage visitors of all ages, knowledgeable docents who could answer complex scientific questions, and digital technologies that brought extinct creatures to life through virtual reality and computer simulations. I learned about the museum's role in training the next generation of scientists through their graduate programs, internships, and research collaborations with universities around the world. The visit also taught me about the importance of scientific collections in preserving biodiversity data and supporting conservation efforts, as many of their specimens represent species that are now extinct or endangered. What struck me most was how this institution successfully combines rigorous scientific research with public education, making complex scientific concepts accessible to millions of visitors while advancing human knowledge through their research programs. This visit reinforced my appreciation for natural history and inspired me to consider how educational institutions can serve multiple purposes - advancing knowledge, educating the public, and preserving important cultural and scientific heritage for future generations.",
+                
+                6: "The institution I know that's renowned for academic excellence is Harvard University, which has maintained its reputation as one of the world's premier educational institutions for nearly four centuries. I learned about Harvard's reputation through various sources including academic rankings, where it consistently appears at the top of global university lists, media coverage of their research breakthroughs, and interactions with Harvard alumni in professional settings. What makes Harvard excellent in multiple fields is their exceptional faculty, many of whom are Nobel laureates, Pulitzer Prize winners, and leaders in their respective disciplines who conduct groundbreaking research while teaching undergraduate and graduate students. The institution excels particularly in areas such as medicine, law, business, and liberal arts, with their medical school advancing treatments for complex diseases, their law school training future Supreme Court justices and political leaders, and their business school developing innovative management theories and practices. Harvard maintains its high standards through extremely selective admissions processes, rigorous academic programs, and substantial financial resources that support world-class facilities, research initiatives, and student financial aid. Their endowment, which is among the largest of any university globally, allows them to attract top faculty with competitive salaries and research funding, maintain state-of-the-art facilities, and provide generous financial aid that makes education accessible regardless of family income. The university's culture of excellence is reinforced through traditions such as their honor code, high academic expectations, and peer learning environment where students challenge and inspire each other. Harvard also maintains its standards through continuous innovation in teaching methods, curriculum development, and research methodologies, ensuring they remain at the forefront of educational practice. Their global alumni network, which includes presidents, CEOs, scientists, and cultural leaders, continues to enhance the university's reputation and provides current students with exceptional mentoring and career opportunities. What's particularly impressive is how Harvard balances tradition with innovation, maintaining their historic commitment to academic rigor while adapting to new challenges in education, research, and global engagement, ensuring their continued excellence for future generations."
+            };
+            
+            return examples[cardNumber] || "Excellent educational institution response! Focus on providing specific facility details, program descriptions, and personal experiences while maintaining coherent organization throughout your 2-minute presentation.";
+        }
+
+        // Update timer display
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timerDisplay').textContent = timeString;
+        }
+
+        // Navigation functions
+        function goToNextCard() {
+            const currentCard = parseInt(document.getElementById('questionSelect').value);
+            const nextCard = currentCard >= 6 ? 1 : currentCard + 1;
+            document.getElementById('questionSelect').value = nextCard;
+            updateCurrentQuestion();
+            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function refreshCurrentCard() {
+            resetSession();
+            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetSession() {
+            // Clear timers
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+            
+            // Reset variables
+            isPreparationPhase = true;
+            isRecording = false;
+            timeRemaining = 60;
+            recordingSeconds = 0;
+            originalAudioBlob = null;
+            
+            // Reset UI
+            document.getElementById('prepareBtn').disabled = false;
+            document.getElementById('prepareBtn').textContent = '⏱️ Start Preparation';
+            document.getElementById('recordBtn').disabled = true;
+            document.getElementById('recordBtn').classList.remove('recording');
+            document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+            document.getElementById('stopBtn').disabled = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('processBtn').disabled = true;
+            document.getElementById('timerLabel').textContent = 'Preparation Time';
+            document.getElementById('statusDisplay').textContent = 'Ready to begin preparation for your educational institution monologue';
+            document.getElementById('statusDisplay').className = 'status-display';
+            
+            // Hide analysis section
+            document.getElementById('analysis').classList.add('hidden');
+            
+            // Reset timer display
+            updateTimerDisplay();
+        }
+
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Academic Speaking Part 2 - Going to Academic Introduction');
+            window.location.href = 'IELTS_Academic_Speaking_Introduction.html';
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Update active menu item
+            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Menu toggle functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (isRecording) {
+                stopRecording();
+            }
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+        });
+
+    </script>
+</body>
+</html> 
