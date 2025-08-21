@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Listening Part 2 - Practice 4 | GK Foundation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 8px 0 30px rgba(139, 69, 19, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Audio Player Styles */
+        .audio-player {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #B8860B, #CD853F);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #DAA520, #B8860B);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .time-display {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Questions Styles */
+        .questions-container {
+            margin-top: 2rem;
+        }
+
+        .question-section {
+            margin-bottom: 3rem;
+        }
+
+        .question-section h3 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Map Labelling Styles */
+        .map-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #d4af37;
+            text-align: center;
+        }
+
+        .map-title {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .map-visual {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.05) 100%);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            min-height: 400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .map-location {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: #8b4513;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .map-location.entrance {
+            grid-column: 2;
+            grid-row: 3;
+            background: rgba(76, 175, 80, 0.2);
+            border-color: #4caf50;
+            color: #2e7d32;
+        }
+
+        .map-question {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #d4af37;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .map-question-number {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .map-question-text {
+            flex: 1;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .map-answer-input {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.5rem;
+            font-size: 1rem;
+            min-width: 120px;
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .map-answer-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Table Completion Styles */
+        .table-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #d4af37;
+            overflow-x: auto;
+        }
+
+        .table-title {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .completion-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .completion-table th {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .completion-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            vertical-align: middle;
+        }
+
+        .completion-table tr:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .table-blank {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.5rem;
+            font-size: 1rem;
+            min-width: 100px;
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .table-blank:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #B8860B, #CD853F);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.6);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+            display: none;
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .map-visual {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, 1fr);
+                min-height: 600px;
+            }
+
+            .map-location.entrance {
+                grid-column: 1;
+                grid-row: 6;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">🏥 IELTS General Listening</div>
+            <div class="menu-subtitle">Part 2 - Practice 4</div>
+        </div>
+        <div class="menu-content">
+            <a href="#instructions" class="menu-item" onclick="navigateToSection('instructions')">
+                <div class="item-title">1. Instructions</div>
+                <div class="item-description">⚠️ Test guidelines and preparation</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">2. Audio Monologue</div>
+                <div class="item-description">🎧 Health & Wellness Center (6 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">3. Questions (Part 2)</div>
+                <div class="item-description">📝 Map Labelling + Table Completion</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. Results & Analysis</div>
+                <div class="item-description">📊 Your performance and tips</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">🏥 IELTS General Listening - Part 2 (Practice 4)</h1>
+                <div class="hero-subtitle">
+                    Health & Wellness Center Tour
+                </div>
+                <p class="hero-description">
+                    Listen to a wellness center manager describing the facility layout and services. Complete the map labelling and table completion exercises. This practice simulates real test conditions with Questions 11-20.
+                </p>
+            </section>
+
+            <!-- Instructions Section -->
+            <section id="instructions" class="content-section">
+                <h2 class="section-title">
+                    ⚠️ Instructions
+                </h2>
+                <div style="background: rgba(255, 193, 7, 0.1); border-radius: 10px; padding: 1.5rem; border-left: 4px solid #ffc107;">
+                    <h4 style="color: #8b4513; margin-bottom: 1rem;">📋 Before You Begin:</h4>
+                    <ul style="color: #333; line-height: 1.8; list-style-position: inside;">
+                        <li><strong>Questions 11-15:</strong> Label the map using NO MORE THAN TWO WORDS for each answer</li>
+                        <li><strong>Questions 16-20:</strong> Complete the table using NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer</li>
+                        <li><strong>Audio Duration:</strong> Approximately 6 minutes (one play only)</li>
+                        <li><strong>Writing Time:</strong> You have additional time to transfer and check your answers</li>
+                        <li><strong>Listen Carefully:</strong> Pay attention to location descriptions and facility information</li>
+                    </ul>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.3);">
+                        <button onclick="testAudio()" style="background: linear-gradient(135deg, #28a745, #20c997); color: white; border: none; padding: 0.5rem 1rem; border-radius: 15px; cursor: pointer; font-size: 0.9rem; margin-right: 1rem;">
+                            🔊 Test Audio System
+                        </button>
+                        <small style="color: #666;">Click to test if your browser supports audio playback</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Audio Section -->
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">
+                    🎧 Audio Monologue
+                </h2>
+                
+                <div class="audio-player">
+                    <p style="color: #8b4513; font-weight: 600; margin-bottom: 1rem;">
+                        🔊 You will hear a wellness center manager giving a tour of the new health and wellness facility.
+                    </p>
+                    
+                    <button class="play-btn" onclick="playAudio()" id="playBtn">
+                        ▶️ Play Audio
+                    </button>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="currentTime">00:00</span> / <span id="totalTime">06:00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Questions Section -->
+            <section id="questions" class="content-section">
+                <h2 class="section-title">
+                    📝 Questions 11-20
+                </h2>
+                
+                <div class="questions-container">
+                    <!-- Map Labelling Questions 11-15 -->
+                    <div class="question-section">
+                        <h3>Questions 11-15</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Label the map below. Write NO MORE THAN TWO WORDS for each answer.
+                        </p>
+                        
+                        <div class="map-container">
+                            <div class="map-title">Riverside Health & Wellness Center - Ground Floor</div>
+                            
+                            <div class="map-visual">
+                                <div class="map-location" style="grid-column: 1; grid-row: 1;">
+                                    Reception<br/>
+                                    🏢
+                                </div>
+                                <div class="map-location" style="grid-column: 2; grid-row: 1;">
+                                    Question 11<br/>
+                                    🧘
+                                </div>
+                                <div class="map-location" style="grid-column: 3; grid-row: 1;">
+                                    Swimming Pool<br/>
+                                    🏊
+                                </div>
+                                <div class="map-location" style="grid-column: 1; grid-row: 2;">
+                                    Question 12<br/>
+                                    💪
+                                </div>
+                                <div class="map-location" style="grid-column: 2; grid-row: 2;">
+                                    Café<br/>
+                                    ☕
+                                </div>
+                                <div class="map-location" style="grid-column: 3; grid-row: 2;">
+                                    Question 13<br/>
+                                    🧖
+                                </div>
+                                <div class="map-location" style="grid-column: 1; grid-row: 3;">
+                                    Question 14<br/>
+                                    👩‍⚕️
+                                </div>
+                                <div class="map-location entrance">
+                                    Main Entrance<br/>
+                                    🚪
+                                </div>
+                                <div class="map-location" style="grid-column: 3; grid-row: 3;">
+                                    Question 15<br/>
+                                    🛒
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 1.5rem;">
+                                <div class="map-question">
+                                    <div class="map-question-number">11</div>
+                                    <div class="map-question-text">Relaxation area (top center):</div>
+                                    <input type="text" class="map-answer-input" id="q11" placeholder="Answer">
+                                </div>
+                                
+                                <div class="map-question">
+                                    <div class="map-question-number">12</div>
+                                    <div class="map-question-text">Exercise equipment area (middle left):</div>
+                                    <input type="text" class="map-answer-input" id="q12" placeholder="Answer">
+                                </div>
+                                
+                                <div class="map-question">
+                                    <div class="map-question-number">13</div>
+                                    <div class="map-question-text">Alternative therapy room (middle right):</div>
+                                    <input type="text" class="map-answer-input" id="q13" placeholder="Answer">
+                                </div>
+                                
+                                <div class="map-question">
+                                    <div class="map-question-number">14</div>
+                                    <div class="map-question-text">Health consultation room (bottom left):</div>
+                                    <input type="text" class="map-answer-input" id="q14" placeholder="Answer">
+                                </div>
+                                
+                                <div class="map-question">
+                                    <div class="map-question-number">15</div>
+                                    <div class="map-question-text">Retail area (bottom right):</div>
+                                    <input type="text" class="map-answer-input" id="q15" placeholder="Answer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table Completion Questions 16-20 -->
+                    <div class="question-section">
+                        <h3>Questions 16-20</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
+                        </p>
+                        
+                        <div class="table-container">
+                            <div class="table-title">Wellness Center - Services & Information</div>
+                            
+                            <table class="completion-table">
+                                <thead>
+                                    <tr>
+                                        <th>Service/Facility</th>
+                                        <th>Details</th>
+                                        <th>Cost/Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Personal Training</strong></td>
+                                        <td>Available <input type="text" class="table-blank" id="q16" placeholder="16"></td>
+                                        <td>£35 per session</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Yoga Classes</strong></td>
+                                        <td>Beginner to advanced levels</td>
+                                        <td><input type="text" class="table-blank" id="q17" placeholder="17"> minutes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Spa Treatment</strong></td>
+                                        <td>Must book <input type="text" class="table-blank" id="q18" placeholder="18"> in advance</td>
+                                        <td>From £45</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Swimming Pool</strong></td>
+                                        <td>Heated to <input type="text" class="table-blank" id="q19" placeholder="19"> degrees</td>
+                                        <td>Included in membership</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Health Assessment</strong></td>
+                                        <td>Comprehensive check-up</td>
+                                        <td>Free for <input type="text" class="table-blank" id="q20" placeholder="20"> members</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button class="submit-btn" onclick="submitTest()">Submit Test</button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <h2 class="section-title">
+                    📊 Test Results & Analysis
+                </h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>💡 Part 2 Improvement Tips</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Audio simulation and test data
+        let audioContext = null;
+        let isPlaying = false;
+        let currentTime = 0;
+        let totalDuration = 360; // 6 minutes in seconds
+        let audioInterval = null;
+
+        // Correct answers for Part 2 Practice 4
+        const correctAnswers = {
+            q11: 'meditation room',
+            q12: 'fitness center',
+            q13: 'massage therapy',
+            q14: 'consultation room',
+            q15: 'health shop',
+            q16: 'seven days',
+            q17: '75',
+            q18: 'two weeks',
+            q19: '28',
+            q20: 'premium'
+        };
+
+        // Question explanations
+        const explanations = {
+            q11: 'The manager mentions the meditation room is located in the top center of the building for peaceful relaxation.',
+            q12: 'The fitness center with all exercise equipment is positioned on the middle left side of the facility.',
+            q13: 'The massage therapy room for alternative treatments is located on the middle right section.',
+            q14: 'The consultation room for health assessments is situated in the bottom left area near the medical facilities.',
+            q15: 'The health shop selling wellness products is positioned in the bottom right corner near the exit.',
+            q16: 'Personal training sessions are available seven days a week to accommodate different schedules.',
+            q17: 'Yoga classes run for 75 minutes each, providing comprehensive sessions for all levels.',
+            q18: 'Spa treatments require booking two weeks in advance due to high demand.',
+            q19: 'The swimming pool is heated to a comfortable 28 degrees Celsius year-round.',
+            q20: 'Free health assessments are provided exclusively for premium members as a membership benefit.'
+        };
+
+        // Health & Wellness Center monologue script - broken into chunks for better TTS handling
+        function getMonologueScript() {
+            return [
+                "Good afternoon, everyone, and welcome to the Riverside Health and Wellness Center. I'm Jennifer Thompson, the center manager, and I'm absolutely delighted to show you around our brand new facility.",
+                
+                "Let me start by giving you an overview of our ground floor layout. Directly in front of us is our reception area, where our friendly staff will help you with memberships and bookings.",
+                
+                "Now, if you look to your right as you enter, in the top center of our building, we have our meditation room. This is a special space for peaceful relaxation and mindfulness activities.",
+                
+                "Moving to the left side, in the middle left section, you'll find our fitness center. This area houses all of our exercise equipment, including cardio machines, strength training equipment, and free weights.",
+                
+                "In the top right corner, we have our swimming pool. This is a 25-meter pool perfect for both serious swimming and gentle water exercises.",
+                
+                "In the middle right section, we have our massage therapy room. This is where we offer therapeutic massage, aromatherapy, and reflexology treatments.",
+                
+                "In the center of our facility, we have our café, which serves healthy meals, fresh juices, and nutritious snacks.",
+                
+                "Moving to the bottom left area, we have our consultation room. This is where our health professionals conduct assessments and provide wellness advice.",
+                
+                "Finally, in the bottom right corner, you'll find our health shop. This stocks supplements, exercise equipment, healthy snacks, and fitness accessories.",
+                
+                "Now, let me tell you about our key services. First, our personal training service. We have qualified trainers available seven days a week. Each session costs thirty-five pounds.",
+                
+                "Our yoga classes are extremely popular and suitable for all levels. Each class runs for seventy-five minutes and includes different styles like Hatha and Vinyasa yoga.",
+                
+                "For spa treatments, we offer a full range of services in our massage therapy room. You must book two weeks in advance. Prices start from forty-five pounds.",
+                
+                "Our swimming pool is heated to twenty-eight degrees Celsius throughout the year. Access is included in all membership packages at no additional cost.",
+                
+                "Finally, our comprehensive health assessment service includes a full check-up with personalized recommendations. This is provided free for all premium members.",
+                
+                "We're excited to have you visit our center, and we hope you'll consider joining our wellness community. Thank you for your time."
+            ];
+        }
+
+        // Audio control functions
+        function playAudio() {
+            console.log('🎧 Play button clicked - starting audio playback');
+            
+            if (!checkInternetForAudio()) return;
+            
+            const playBtn = document.getElementById('playBtn');
+            
+            // Disable button during playback
+            playBtn.disabled = true;
+            playBtn.style.opacity = '0.6';
+            playBtn.style.cursor = 'not-allowed';
+            
+            isPlaying = true;
+            
+            // Start audio simulation
+            audioInterval = setInterval(updateProgress, 1000);
+            
+            // Check for speech synthesis support
+            if (!('speechSynthesis' in window)) {
+                console.error('Speech synthesis not supported');
+                alert('Your browser does not support Text-to-Speech. Please try Chrome, Firefox, or Edge.');
+                stopAudio();
+                return;
+            }
+            
+            console.log('Speech synthesis supported, proceeding...');
+            
+            // Cancel any existing speech
+            speechSynthesis.cancel();
+            
+            // Wait a moment for cancellation to complete
+            setTimeout(() => {
+                const scriptChunks = getMonologueScript();
+                console.log('Monologue script chunks:', scriptChunks.length);
+                
+                // Start playing chunks sequentially
+                playAudioChunks(scriptChunks, 0);
+            }, 100);
+        }
+
+        // Play audio in chunks to avoid TTS length limitations
+        function playAudioChunks(chunks, currentIndex) {
+            if (currentIndex >= chunks.length) {
+                console.log('✅ All audio chunks completed');
+                stopAudio();
+                return;
+            }
+            
+            if (!isPlaying) {
+                console.log('🛑 Audio playback stopped by user');
+                return;
+            }
+            
+            const currentChunk = chunks[currentIndex];
+            console.log(`🔊 Playing chunk ${currentIndex + 1}/${chunks.length}: "${currentChunk.substring(0, 50)}..."`);
+            
+            const utterance = new SpeechSynthesisUtterance(currentChunk);
+            utterance.rate = 0.8;
+            utterance.pitch = 1;
+            utterance.volume = 1.0;
+            
+            // Select voice
+            const voices = speechSynthesis.getVoices();
+            if (voices.length > 0) {
+                let selectedVoice = voices.find(voice => 
+                    voice.lang === 'en-GB' || voice.name.includes('UK') || voice.name.includes('British')
+                );
+                
+                if (!selectedVoice) {
+                    selectedVoice = voices.find(voice => 
+                        voice.lang.startsWith('en-') || voice.lang === 'en'
+                    );
+                }
+                
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                    console.log(`🎤 Using voice: ${selectedVoice.name} (${selectedVoice.lang})`);
+                }
+            }
+            
+            utterance.onstart = function() {
+                console.log(`✅ Chunk ${currentIndex + 1} started`);
+            };
+            
+            utterance.onend = function() {
+                console.log(`✅ Chunk ${currentIndex + 1} completed`);
+                // Add small pause between chunks
+                setTimeout(() => {
+                    playAudioChunks(chunks, currentIndex + 1);
+                }, 500);
+            };
+            
+            utterance.onerror = function(event) {
+                console.error(`❌ Error in chunk ${currentIndex + 1}:`, event.error);
+                // Try to continue with next chunk
+                setTimeout(() => {
+                    playAudioChunks(chunks, currentIndex + 1);
+                }, 1000);
+            };
+            
+            try {
+                speechSynthesis.speak(utterance);
+            } catch (error) {
+                console.error(`❌ Failed to speak chunk ${currentIndex + 1}:`, error);
+                // Try next chunk
+                setTimeout(() => {
+                    playAudioChunks(chunks, currentIndex + 1);
+                }, 1000);
+            }
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            currentTime = 0;
+            
+            if (audioInterval) {
+                clearInterval(audioInterval);
+                audioInterval = null;
+            }
+            
+            // Re-enable button
+            const playBtn = document.getElementById('playBtn');
+            playBtn.disabled = false;
+            playBtn.style.opacity = '1';
+            playBtn.style.cursor = 'pointer';
+            
+            // Reset progress
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            
+            // Cancel speech synthesis
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+        }
+
+        function updateProgress() {
+            if (!isPlaying) return;
+            
+            currentTime++;
+            const progressPercent = (currentTime / totalDuration) * 100;
+            
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('currentTime').textContent = formatTime(currentTime);
+            
+            if (currentTime >= totalDuration) {
+                stopAudio();
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function checkInternetForAudio() {
+            // Note: Speech synthesis works offline, but we check for basic browser compatibility
+            console.log('🌐 Network status:', navigator.onLine ? 'Online' : 'Offline');
+            console.log('🔊 Speech synthesis available:', 'speechSynthesis' in window);
+            
+            if (!('speechSynthesis' in window)) {
+                alert('Text-to-Speech is not supported in your browser. Please use Chrome, Firefox, Edge, or Safari.');
+                return false;
+            }
+            
+            // Speech synthesis works offline, so we don't need internet
+            return true;
+        }
+
+        // Test audio function for debugging
+        function testAudio() {
+            console.log('🧪 Testing audio system...');
+            
+            if (!('speechSynthesis' in window)) {
+                alert('❌ Speech Synthesis not supported in this browser');
+                return;
+            }
+            
+            // Cancel any existing speech
+            speechSynthesis.cancel();
+            
+            // Create a simple test utterance
+            const testText = "Audio test successful. You should now be able to hear the practice audio.";
+            const utterance = new SpeechSynthesisUtterance(testText);
+            utterance.rate = 1;
+            utterance.pitch = 1;
+            utterance.volume = 1;
+            
+            utterance.onstart = function() {
+                console.log('✅ Test audio started successfully');
+                alert('✅ Audio test started! You should hear a voice saying "Audio system test..."');
+            };
+            
+            utterance.onend = function() {
+                console.log('✅ Test audio completed');
+                alert('✅ Audio test completed! The audio system is working. You can now try the main practice audio.');
+            };
+            
+            utterance.onerror = function(event) {
+                console.error('❌ Test audio error:', event.error);
+                alert('❌ Audio test failed: ' + event.error + '. Please try a different browser or check your system audio settings.');
+            };
+            
+            // Get voices and select one
+            const voices = speechSynthesis.getVoices();
+            console.log('🎤 Available voices for test:', voices.length);
+            
+            if (voices.length > 0) {
+                // Try to find an English voice
+                let voice = voices.find(v => v.lang.startsWith('en-')) || voices[0];
+                utterance.voice = voice;
+                console.log('🎤 Test using voice:', voice.name, voice.lang);
+            }
+            
+            try {
+                speechSynthesis.speak(utterance);
+                console.log('🔊 Test utterance sent to speech synthesis');
+            } catch (error) {
+                console.error('❌ Error starting test audio:', error);
+                alert('❌ Failed to start audio test: ' + error.message);
+            }
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS General Listening Part 2 Practice 4 - Going to introduction');
+            window.location.href = 'IELTS_General_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Test submission and scoring
+        function submitTest() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Get answers for all questions
+            for (let i = 11; i <= 20; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`].toLowerCase();
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Practice listening for spatial relationships and directional language");
+                tips.push("Focus on understanding floor plans and layout descriptions");
+                tips.push("Work on distinguishing between similar-sounding location names");
+                tips.push("Listen to facility tours and building descriptions to improve comprehension");
+            } else if (score <= 6) {
+                tips.push("Develop better note-taking strategies for complex layout descriptions");
+                tips.push("Practice identifying key details in service descriptions and pricing information");
+                tips.push("Work on following longer monologues while maintaining concentration");
+                tips.push("Focus on understanding numbers, times, and measurements in context");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to distinguish between similar facilities and services");
+                tips.push("Practice map reading and visualization skills while listening");
+                tips.push("Work on catching specific details in longer explanations");
+                tips.push("Review vocabulary related to health, wellness, and recreational facilities");
+            } else {
+                tips.push("Excellent work! Continue practicing with authentic IELTS materials");
+                tips.push("Focus on time management to complete both map and table sections efficiently");
+                tips.push("Practice with different British accents to prepare for test day variety");
+                tips.push("Consider helping others to reinforce your own listening and spatial skills");
+            }
+            
+            return tips;
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🏥 IELTS General Listening Part 2 Practice 4 - Health & Wellness Center loaded');
+            
+            // Debug audio system
+            console.log('🔊 Browser audio capabilities:');
+            console.log('- speechSynthesis available:', 'speechSynthesis' in window);
+            console.log('- Web Audio API available:', 'AudioContext' in window || 'webkitAudioContext' in window);
+            console.log('- User agent:', navigator.userAgent);
+            
+            // Test speech synthesis availability
+            if ('speechSynthesis' in window) {
+                setTimeout(() => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🎤 Initial voices check:', voices.length, 'voices available');
+                    if (voices.length === 0) {
+                        console.log('⏳ Waiting for voices to load...');
+                        speechSynthesis.addEventListener('voiceschanged', function() {
+                            const newVoices = speechSynthesis.getVoices();
+                            console.log('🎤 Voices loaded:', newVoices.length, 'voices now available');
+                        });
+                    }
+                }, 1000);
+            }
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+            
+            // Auto-focus on first input when questions section becomes visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target.id === 'questions') {
+                        setTimeout(() => {
+                            const firstInput = document.getElementById('q11');
+                            if (firstInput) firstInput.focus();
+                        }, 500);
+                    }
+                });
+            });
+            
+            const questionsSection = document.getElementById('questions');
+            if (questionsSection) {
+                observer.observe(questionsSection);
+            }
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+        });
+    </script>
+</body>
+</html> 
