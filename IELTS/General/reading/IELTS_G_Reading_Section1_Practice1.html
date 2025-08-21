@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 1 - Practice 1: Accommodation & Housing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5d3a0a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* Small Timer Display */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle.active #menuIcon {
+            transform: rotate(180deg);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #d4af37;
+            text-align: center;
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .timer-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Split Container Layout */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        /* Passages Panel (Left Side) */
+        .passages-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 45%;
+            max-width: 60%;
+        }
+
+        /* Questions Panel (Right Side) */
+        .questions-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 40%;
+            max-width: 55%;
+        }
+
+        /* Panel Headers */
+        .panel-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .panel-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .passage-counter, .question-progress {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Scrollable Content Areas */
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar Styling */
+        .scrollable-content::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 6px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            border-radius: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+        }
+
+        /* Vertical Separator */
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(180deg, #8b4513, #d4af37, #8b4513);
+            position: relative;
+            cursor: col-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .separator-line {
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .separator-handle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            color: #8b4513;
+            padding: 8px 2px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: col-resize;
+            user-select: none;
+        }
+
+        /* Passage Blocks */
+        .passage-block {
+            margin-bottom: 25px;
+            padding: 16px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .passage-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #d4af37;
+        }
+
+        .passage-text {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        /* Question Groups */
+        .question-group {
+            margin-bottom: 25px;
+            padding: 16px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 12px;
+            border: 1px solid #d4af37;
+        }
+
+        .question-group-title {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 12px 20px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 12px 12px 0 0;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Input Styles */
+        .answer-input {
+            background: #fffbf0;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 0 5px;
+            min-width: 120px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #8b4513;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+            background: white;
+        }
+
+        /* Radio and Checkbox Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        .option input[type="radio"], .option input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: #d4af37;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Results Section */
+        .score-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .answer-review {
+            margin-bottom: 30px;
+        }
+
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .answer-item.correct {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .answer-item.incorrect {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.05);
+        }
+
+        .improvement-tips {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+                max-height: 50vh;
+            }
+            
+            .vertical-separator {
+                width: 100%;
+                height: 6px;
+                cursor: row-resize;
+            }
+            
+            .separator-handle {
+                writing-mode: horizontal-tb;
+                padding: 2px 8px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📖 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 1 - Practice 1</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">🏠 3 Passages - Accommodation Context</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 1 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📖 IELTS General Reading - Section 1 (Practice 1)</h1>
+                <div class="hero-subtitle">
+                    🏠 Accommodation & Housing - Social Survival Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 1 reading skills with authentic accommodation and housing passages. This practice covers everyday situations including rental advertisements, university accommodation booking forms, and housing agency notices. You will encounter all 6 question formats commonly found in IELTS General Reading Section 1: Multiple Choice, True/False/Not Given, Form Completion, Matching Information, Short Answer Questions, and Sentence Completion. Complete Questions 1-14 within the recommended 20-minute timeframe.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📄 Passage Types:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Passage 1:</strong> Rental property advertisements</li>
+                                <li><strong>Passage 2:</strong> University accommodation booking form</li>
+                                <li><strong>Passage 3:</strong> Housing agency policy notice</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📊 Statistics:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Total words:</strong> ~650 words</li>
+                                <li><strong>Question formats:</strong> 6 different types</li>
+                                <li><strong>Difficulty level:</strong> Social survival</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">🎯 Skills Focus:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li>Factual information extraction</li>
+                                <li>Detail scanning and location</li>
+                                <li>Form completion accuracy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin-bottom: 15px; color: #666;">Recommended time for Section 1: 20 minutes</p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startTimer()" id="startBtn">Start Reading</button>
+                    </div>
+                    <div id="timerWarning" style="margin-top: 15px; color: #d4af37; font-weight: bold; display: none;">
+                        ⚠️ 5 minutes remaining!
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">📚 Reading Workspace - Questions 1-14</h2>
+                
+                <!-- Split Container with Vertical Separation -->
+                <div class="split-container">
+                    
+                    <!-- LEFT SIDE: Reading Passages (Scrollable) -->
+                    <div class="passages-panel">
+                        <div class="panel-header">
+                            <h3>📚 Reading Passages</h3>
+                            <div class="passage-counter">3 Passages | ~650 words total</div>
+                        </div>
+                        <div class="passages-content scrollable-content">
+                            
+                            <!-- Passage 1: Rental Advertisements -->
+                            <div class="passage-block" id="passage1">
+                                <div class="passage-title">Passage 1: Rental Property Advertisements</div>
+                                <div class="passage-text">
+                                    <strong>Property A - Modern City Apartment</strong><br>
+                                    Located in the heart of downtown, this fully furnished 2-bedroom apartment offers stunning city views. The property includes a modern kitchen with dishwasher, spacious living area, and secure parking. Rent is £1,200 per month including utilities except electricity. Available from 1st September. No pets allowed. References and deposit required. Contact Sarah Mitchell on 0207 445 6789.
+                                    <br><br>
+                                    
+                                    <strong>Property B - Family House with Garden</strong><br>
+                                    Charming 3-bedroom family home in quiet suburban area, perfect for families with children. Features include large garden, garage, central heating, and recently renovated bathroom. Close to excellent schools and public transport. Monthly rent £1,450 plus bills. Pets welcome with additional deposit. Minimum 12-month lease. Available immediately. Phone David Chen on 0161 234 5678.
+                                    <br><br>
+                                    
+                                    <strong>Property C - Student Studio Near University</strong><br>
+                                    Compact studio apartment ideal for students, just 10 minutes walk from the university campus. Includes kitchenette, study area, and shared laundry facilities. All bills included in monthly rent of £650. Furnished with bed, desk, and wardrobe. Perfect for academic year rental. No smoking. Contact Lisa Thompson via email: lisa.thompson@lettings.co.uk
+                                </div>
+                            </div>
+                            
+                            <!-- Passage 2: University Accommodation Booking Form -->
+                            <div class="passage-block" id="passage2">
+                                <div class="passage-title">Passage 2: University Accommodation Booking Form</div>
+                                <div class="passage-text">
+                                    <strong>UNIVERSITY OF WESTFIELD - ACCOMMODATION APPLICATION</strong><br><br>
+                                    
+                                    <strong>Personal Information Required:</strong><br>
+                                    • Full name (as on passport)<br>
+                                    • Student ID number<br>
+                                    • Course of study and duration<br>
+                                    • Emergency contact details<br>
+                                    • Dietary requirements or allergies<br><br>
+                                    
+                                    <strong>Accommodation Options:</strong><br>
+                                    <em>Standard Room:</em> £145 per week - shared bathroom and kitchen facilities<br>
+                                    <em>Ensuite Room:</em> £189 per week - private bathroom, shared kitchen<br>
+                                    <em>Studio Apartment:</em> £245 per week - private bathroom and kitchenette<br><br>
+                                    
+                                    <strong>Application Process:</strong><br>
+                                    1. Complete online application form<br>
+                                    2. Pay £50 non-refundable processing fee<br>
+                                    3. Submit documents: passport copy, university acceptance letter<br>
+                                    4. Receive confirmation within 14 days<br>
+                                    5. Pay £200 security deposit upon acceptance<br><br>
+                                    
+                                    <strong>Important Dates:</strong><br>
+                                    Application deadline: July 15th<br>
+                                    Room allocation notification: August 1st<br>
+                                    Check-in begins: September 18th<br>
+                                    Semester ends: June 10th
+                                </div>
+                            </div>
+                            
+                            <!-- Passage 3: Housing Agency Policy Notice -->
+                            <div class="passage-block" id="passage3">
+                                <div class="passage-title">Passage 3: Premier Housing Agency - Tenant Information</div>
+                                <div class="passage-text">
+                                    <strong>PREMIER HOUSING AGENCY - TENANT GUIDELINES</strong><br><br>
+                                    
+                                    <strong>Viewing Arrangements:</strong><br>
+                                    All property viewings must be arranged at least 24 hours in advance. Weekend viewings are available by special request only. Tenants must provide valid photo identification before viewing any property. Group viewings are limited to maximum 4 people per session.<br><br>
+                                    
+                                    <strong>Application Requirements:</strong><br>
+                                    Successful applicants must provide: employment contract or proof of income (minimum 2.5 times monthly rent), bank statements from previous 3 months, previous landlord reference (if applicable), and character reference from employer or academic institution. International students require additional documentation including visa status proof.<br><br>
+                                    
+                                    <strong>Payment Terms:</strong><br>
+                                    First month's rent plus security deposit (equivalent to 6 weeks' rent) must be paid before move-in date. Rent is due monthly in advance by standing order. Late payment charges of £25 apply after 7-day grace period. Agency fee of 1.5 weeks' rent applies to all new tenancies.<br><br>
+                                    
+                                    <strong>Maintenance and Repairs:</strong><br>
+                                    Emergency repairs (heating, plumbing, electrical safety) available 24/7 via emergency hotline. Non-emergency maintenance requests must be submitted online and will be addressed within 72 hours during working days. Tenants are responsible for minor repairs under £50 value.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VERTICAL SEPARATOR -->
+                    <div class="vertical-separator">
+                        <div class="separator-line"></div>
+                        <div class="separator-handle" title="Drag to resize">⋮⋮</div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Questions (Scrollable) -->
+                    <div class="questions-panel">
+                        <div class="panel-header">
+                            <h3>📝 Questions 1-14</h3>
+                            <div class="question-progress">
+                                <span id="answeredCount">0</span>/14 answered
+                            </div>
+                        </div>
+                        <div class="questions-content scrollable-content">
+                            
+                            <!-- Questions 1-4: Multiple Choice -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 1-4: Multiple Choice</h4>
+                                <p><em>Choose the correct letter, A, B, or C.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">1.</div>
+                                    <div class="question-text">Which property includes utilities in the rent price?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q1" value="A" onchange="updateProgress()">
+                                            A) Property A (Modern City Apartment)
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q1" value="B" onchange="updateProgress()">
+                                            B) Property B (Family House with Garden)
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q1" value="C" onchange="updateProgress()">
+                                            C) Property C (Student Studio Near University)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">2.</div>
+                                    <div class="question-text">Which accommodation option costs £189 per week?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q2" value="A" onchange="updateProgress()">
+                                            A) Standard Room
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q2" value="B" onchange="updateProgress()">
+                                            B) Ensuite Room
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q2" value="C" onchange="updateProgress()">
+                                            C) Studio Apartment
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">3.</div>
+                                    <div class="question-text">What is the maximum number of people allowed for property viewings?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q3" value="A" onchange="updateProgress()">
+                                            A) 2 people
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q3" value="B" onchange="updateProgress()">
+                                            B) 4 people
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q3" value="C" onchange="updateProgress()">
+                                            C) 6 people
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">4.</div>
+                                    <div class="question-text">How long does Premier Housing Agency take to address non-emergency repairs?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q4" value="A" onchange="updateProgress()">
+                                            A) Within 24 hours
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q4" value="B" onchange="updateProgress()">
+                                            B) Within 72 hours
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q4" value="C" onchange="updateProgress()">
+                                            C) Within 1 week
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 5-8: True/False/Not Given -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 5-8: True/False/Not Given</h4>
+                                <p><em>Do the following statements agree with the information given in the passages?</em></p>
+                                <p><strong>TRUE</strong> - if the statement agrees with the information<br>
+                                <strong>FALSE</strong> - if the statement contradicts the information<br>
+                                <strong>NOT GIVEN</strong> - if there is no information on this</p>
+                                
+                                <div class="question">
+                                    <div class="question-number">5.</div>
+                                    <div class="question-text">Property A allows pets with an additional deposit.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q5" value="TRUE" onchange="updateProgress()">
+                                            TRUE
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q5" value="FALSE" onchange="updateProgress()">
+                                            FALSE
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q5" value="NOT GIVEN" onchange="updateProgress()">
+                                            NOT GIVEN
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">6.</div>
+                                    <div class="question-text">The university accommodation processing fee is refundable.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q6" value="TRUE" onchange="updateProgress()">
+                                            TRUE
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q6" value="FALSE" onchange="updateProgress()">
+                                            FALSE
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q6" value="NOT GIVEN" onchange="updateProgress()">
+                                            NOT GIVEN
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">7.</div>
+                                    <div class="question-text">Weekend property viewings require special arrangements.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q7" value="TRUE" onchange="updateProgress()">
+                                            TRUE
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q7" value="FALSE" onchange="updateProgress()">
+                                            FALSE
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q7" value="NOT GIVEN" onchange="updateProgress()">
+                                            NOT GIVEN
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">8.</div>
+                                    <div class="question-text">Property C has air conditioning in all rooms.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q8" value="TRUE" onchange="updateProgress()">
+                                            TRUE
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q8" value="FALSE" onchange="updateProgress()">
+                                            FALSE
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q8" value="NOT GIVEN" onchange="updateProgress()">
+                                            NOT GIVEN
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 9-11: Form Completion -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 9-11: Form Completion</h4>
+                                <p><em>Complete the summary using information from the passages. Use NO MORE THAN TWO WORDS for each answer.</em></p>
+                                
+                                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 3px solid #d4af37; margin: 15px 0;">
+                                    <h4 style="color: #8b4513; margin-bottom: 15px;">University Accommodation Summary</h4>
+                                    <p style="line-height: 1.6; font-size: 0.95rem;">
+                                        Students applying for university accommodation must submit their applications by <input type="text" class="answer-input" id="q9" placeholder="9" onchange="updateProgress()"> and pay a processing fee of £50. The most expensive accommodation option is the <input type="text" class="answer-input" id="q10" placeholder="10" onchange="updateProgress()"> which costs £245 per week. All students must provide a <input type="text" class="answer-input" id="q11" placeholder="11" onchange="updateProgress()"> copy along with their university acceptance letter.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Questions 12-13: Matching Information -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 12-13: Matching Information</h4>
+                                <p><em>Match the following features with the correct properties (A, B, or C).</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">12.</div>
+                                    <div class="question-text">Which property mentions garage facilities?</div>
+                                    <input type="text" class="answer-input" id="q12" placeholder="A, B, or C" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">13.</div>
+                                    <div class="question-text">Which property is described as ideal for students?</div>
+                                    <input type="text" class="answer-input" id="q13" placeholder="A, B, or C" onchange="updateProgress()">
+                                </div>
+                            </div>
+
+                            <!-- Question 14: Short Answer -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Question 14: Short Answer Question</h4>
+                                <p><em>Answer the question using NO MORE THAN THREE WORDS from the passage.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">14.</div>
+                                    <div class="question-text">What charge applies to late rent payments according to Premier Housing Agency?</div>
+                                    <input type="text" class="answer-input" id="q14" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 14 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>🏠 Reading Enhancement Strategies</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Enhanced Reading Workspace Class
+        class ReadingWorkspace {
+            constructor() {
+                this.currentQuestion = 1;
+                this.answeredQuestions = new Set();
+                this.timerDuration = 20 * 60; // 20 minutes in seconds
+                this.timeRemaining = this.timerDuration;
+                this.timerInterval = null;
+                this.timerRunning = false;
+                this.initializeWorkspace();
+            }
+
+            initializeWorkspace() {
+                this.setupResizablePanels();
+                this.setupProgressTracking();
+                this.updateTimerDisplay();
+            }
+
+            // Resizable Panels
+            setupResizablePanels() {
+                const separator = document.querySelector('.vertical-separator');
+                const passagesPanel = document.querySelector('.passages-panel');
+                const questionsPanel = document.querySelector('.questions-panel');
+                
+                if (!separator) return;
+                
+                let isResizing = false;
+                
+                separator.addEventListener('mousedown', (e) => {
+                    isResizing = true;
+                    document.addEventListener('mousemove', handleResize);
+                    document.addEventListener('mouseup', stopResize);
+                    e.preventDefault();
+                });
+                
+                function handleResize(e) {
+                    if (!isResizing) return;
+                    const container = document.querySelector('.split-container');
+                    const containerRect = container.getBoundingClientRect();
+                    const percentage = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+                    
+                    if (percentage > 30 && percentage < 70) {
+                        passagesPanel.style.flex = `0 0 ${percentage}%`;
+                        questionsPanel.style.flex = `0 0 ${100 - percentage}%`;
+                    }
+                }
+                
+                function stopResize() {
+                    isResizing = false;
+                    document.removeEventListener('mousemove', handleResize);
+                    document.removeEventListener('mouseup', stopResize);
+                }
+            }
+
+            // Progress Tracking
+            setupProgressTracking() {
+                const inputs = document.querySelectorAll('input[type="text"], input[type="radio"]');
+                inputs.forEach(input => {
+                    input.addEventListener('change', () => {
+                        this.updateProgress();
+                    });
+                });
+            }
+
+            updateProgress() {
+                const answeredInputs = document.querySelectorAll('input[type="text"]:not([value=""]), input[type="radio"]:checked');
+                const answeredCount = new Set();
+                
+                answeredInputs.forEach(input => {
+                    if (input.type === 'text' && input.value.trim() !== '') {
+                        answeredCount.add(input.id);
+                    } else if (input.type === 'radio' && input.checked) {
+                        answeredCount.add(input.name);
+                    }
+                });
+
+                const countElement = document.getElementById('answeredCount');
+                if (countElement) {
+                    countElement.textContent = answeredCount.size;
+                }
+            }
+
+            // Timer Functions
+            updateTimerDisplay() {
+                const minutes = Math.floor(this.timeRemaining / 60);
+                const seconds = this.timeRemaining % 60;
+                const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // Update main timer display
+                const timerDisplay = document.getElementById('timerDisplay');
+                if (timerDisplay) {
+                    timerDisplay.textContent = timeString;
+                }
+
+                // Update small timer display
+                const smallTimerTime = document.getElementById('smallTimerTime');
+                if (smallTimerTime) {
+                    smallTimerTime.textContent = timeString;
+                }
+
+                // Show warning at 5 minutes
+                const warningElement = document.getElementById('timerWarning');
+                if (warningElement) {
+                    if (this.timeRemaining <= 300 && this.timeRemaining > 0) {
+                        warningElement.style.display = 'block';
+                    } else {
+                        warningElement.style.display = 'none';
+                    }
+                }
+
+                // Change small timer color when time is running low
+                const smallTimerDisplay = document.getElementById('smallTimerDisplay');
+                if (smallTimerDisplay && this.timeRemaining <= 300 && this.timeRemaining > 0) {
+                    smallTimerDisplay.style.background = 'linear-gradient(135deg, #d4af37, #ff6b35)';
+                } else if (smallTimerDisplay) {
+                    smallTimerDisplay.style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                }
+            }
+
+            startTimer() {
+                if (!this.timerRunning) {
+                    this.timerRunning = true;
+
+                    // Show small timer display
+                    const smallTimerDisplay = document.getElementById('smallTimerDisplay');
+                    if (smallTimerDisplay) {
+                        smallTimerDisplay.style.display = 'flex';
+                    }
+
+                    this.timerInterval = setInterval(() => {
+                        this.timeRemaining--;
+                        this.updateTimerDisplay();
+                        
+                        if (this.timeRemaining <= 0) {
+                            this.stopTimer();
+                            alert('⏰ Time is up! You should submit your answers now.');
+                        }
+                    }, 1000);
+
+                    document.getElementById('startBtn').disabled = true;
+                }
+            }
+
+
+
+            stopTimer() {
+                this.timerRunning = false;
+                clearInterval(this.timerInterval);
+
+                // Hide small timer display
+                const smallTimerDisplay = document.getElementById('smallTimerDisplay');
+                if (smallTimerDisplay) {
+                    smallTimerDisplay.style.display = 'none';
+                }
+            }
+        }
+
+        // Initialize workspace
+        const workspace = new ReadingWorkspace();
+
+        // Answer key for scoring
+        const answerKey = {
+            q1: 'C',
+            q2: 'B', 
+            q3: 'B',
+            q4: 'B',
+            q5: 'FALSE',
+            q6: 'FALSE',
+            q7: 'TRUE',
+            q8: 'NOT GIVEN',
+            q9: 'July 15th',
+            q10: 'Studio Apartment',
+            q11: 'passport',
+            q12: 'B',
+            q13: 'C',
+            q14: '£25'
+        };
+
+        // Menu and Navigation Functions
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('menu-open'); // Make button stick to menu
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        // Timer Functions
+        function startTimer() {
+            workspace.startTimer();
+            // Scroll to reading workspace when timer starts
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+
+
+        // Progress Function
+        function updateProgress() {
+            workspace.updateProgress();
+        }
+
+
+
+        // Submit and Scoring Functions
+        function submitAnswers() {
+            workspace.stopTimer();
+            
+            let score = 0;
+            const results = [];
+            
+            // Check all answers
+            for (const [questionId, correctAnswer] of Object.entries(answerKey)) {
+                let userAnswer = '';
+                const element = document.getElementById(questionId);
+                
+                if (element) {
+                    if (element.type === 'text') {
+                        userAnswer = element.value.trim();
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButton = document.querySelector(`input[name="${questionId}"]:checked`);
+                    if (radioButton) {
+                        userAnswer = radioButton.value;
+                    }
+                }
+                
+                const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
+                if (isCorrect) score++;
+                
+                results.push({
+                    question: questionId,
+                    userAnswer: userAnswer,
+                    correctAnswer: correctAnswer,
+                    isCorrect: isCorrect
+                });
+            }
+            
+            displayResults(score, results);
+        }
+
+        function displayResults(score, results) {
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            
+            // Generate answer review
+            const reviewContainer = document.getElementById('answerReview');
+            reviewContainer.innerHTML = '';
+            
+            results.forEach((result, index) => {
+                const answerItem = document.createElement('div');
+                answerItem.className = `answer-item ${result.isCorrect ? 'correct' : 'incorrect'}`;
+                answerItem.innerHTML = `
+                    <div>
+                        <strong>Question ${index + 1}:</strong> ${result.userAnswer || 'No answer'}
+                        ${!result.isCorrect ? `<br><strong>Correct answer:</strong> ${result.correctAnswer}` : ''}
+                    </div>
+                    <div style="font-size: 1.2em;">${result.isCorrect ? '✓' : '✗'}</div>
+                `;
+                reviewContainer.appendChild(answerItem);
+            });
+            
+            // Generate improvement tips
+            const tipsList = document.getElementById('improvementList');
+            const tips = generateImprovementTips(score, results);
+            tipsList.innerHTML = '';
+            tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateImprovementTips(score, results) {
+            const tips = [];
+            
+            if (score >= 12) {
+                tips.push('Excellent performance! Your reading comprehension skills are very strong.');
+                tips.push('Continue practicing with Section 2 and 3 to maintain this level.');
+            } else if (score >= 10) {
+                tips.push('Good performance! Focus on scanning techniques for specific information.');
+                tips.push('Practice identifying paraphrased information in different question types.');
+            } else if (score >= 7) {
+                tips.push('Room for improvement. Focus on understanding question types and their requirements.');
+                tips.push('Practice skimming for main ideas and scanning for specific details.');
+            } else {
+                tips.push('Significant improvement needed. Review basic reading strategies.');
+                tips.push('Practice with simpler passages first to build confidence.');
+                tips.push('Focus on vocabulary building for accommodation and housing topics.');
+            }
+            
+            // Specific tips based on common errors
+            const mcErrors = results.filter(r => r.question.startsWith('q') && ['1','2','3','4'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            const tfErrors = results.filter(r => r.question.startsWith('q') && ['5','6','7','8'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            
+            if (mcErrors > 2) {
+                tips.push('Focus on eliminating wrong options in multiple choice questions.');
+            }
+            if (tfErrors > 2) {
+                tips.push('Practice distinguishing between FALSE and NOT GIVEN in True/False questions.');
+            }
+            
+            return tips;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const menu = document.getElementById('slideMenu');
+                if (menu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Auto-save functionality
+        function autoSave() {
+            const formData = {};
+            const inputs = document.querySelectorAll('input[type="text"], input[type="radio"]:checked');
+            inputs.forEach(input => {
+                if (input.type === 'text') {
+                    formData[input.id] = input.value;
+                } else if (input.type === 'radio' && input.checked) {
+                    formData[input.name] = input.value;
+                }
+            });
+            localStorage.setItem('ielts_reading_practice1', JSON.stringify(formData));
+        }
+
+        // Load saved data
+        function loadSavedData() {
+            const savedData = localStorage.getItem('ielts_reading_practice1');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                Object.entries(formData).forEach(([key, value]) => {
+                    const element = document.getElementById(key);
+                    if (element && element.type === 'text') {
+                        element.value = value;
+                    } else if (key.startsWith('q')) {
+                        const radioButton = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                        if (radioButton) {
+                            radioButton.checked = true;
+                        }
+                    }
+                });
+                workspace.updateProgress();
+            }
+        }
+
+        // Auto-save every 30 seconds
+        setInterval(autoSave, 30000);
+
+        // Load saved data on page load
+        document.addEventListener('DOMContentLoaded', loadSavedData);
+    </script>
+</body>
+</html> 
