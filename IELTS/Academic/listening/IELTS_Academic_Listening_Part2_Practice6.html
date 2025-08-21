@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Listening Part 2 - Practice 6 | GK Foundation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #3a2006;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(139, 69, 19, 0.3);
+            box-shadow: 8px 0 30px rgba(139, 69, 19, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Audio Player Styles */
+        .audio-player {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #d4af37, #8b4513);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .time-display {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Questions Styles */
+        .questions-container {
+            margin-top: 2rem;
+        }
+
+        .question-section {
+            margin-bottom: 3rem;
+        }
+
+        .question-section h3 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Table Completion Styles */
+        .table-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid #d4af37;
+            margin-bottom: 1.5rem;
+        }
+
+        .table-title {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .completion-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        .completion-table th {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(139, 69, 19, 0.1) 100%);
+            color: #8b4513;
+            padding: 1rem;
+            border-bottom: 2px solid #d4af37;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .completion-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            vertical-align: middle;
+        }
+
+        .completion-table tr:nth-child(even) {
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .completion-table tr:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .table-blank {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.5rem;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 150px;
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .table-blank:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Form Completion Styles */
+        .form-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid #d4af37;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-title {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #8b4513;
+            min-width: 120px;
+            font-size: 1rem;
+        }
+
+        .form-input {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.6rem;
+            font-size: 1rem;
+            min-width: 150px;
+            background: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-text {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+            display: none;
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: '🎓';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .completion-table {
+                font-size: 0.9rem;
+            }
+
+            .completion-table th,
+            .completion-table td {
+                padding: 0.6rem;
+            }
+
+            .table-blank {
+                max-width: 120px;
+                font-size: 0.9rem;
+            }
+
+            .form-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .form-label {
+                min-width: auto;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📚 IELTS Academic Listening</div>
+            <div class="menu-subtitle">Part 2 - Practice 6</div>
+        </div>
+        <div class="menu-content">
+            <a href="#instructions" class="menu-item" onclick="navigateToSection('instructions')">
+                <div class="item-title">1. Instructions</div>
+                <div class="item-description">⚠️ Test guidelines and preparation</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">2. Audio Monologue</div>
+                <div class="item-description">🎧 Graduate Thesis Defense (6.5 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">3. Questions (Part 2)</div>
+                <div class="item-description">📝 Table Completion + Form Completion</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. Results & Analysis</div>
+                <div class="item-description">📊 Your performance and tips</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📚 IELTS Academic Listening - Part 2 (Practice 6)</h1>
+                <div class="hero-subtitle">
+                    Graduate Thesis Defense & Doctoral Examination
+                </div>
+                <p class="hero-description">
+                    Listen to Dr. Michelle Rodriguez, Director of Graduate Studies, explaining the thesis defense process and examination procedures to doctoral candidates. Complete a table with thesis committee information and fill out a defense scheduling form. This practice covers Questions 11-20 with authentic graduate school academic context.
+                </p>
+            </section>
+
+            <!-- Instructions Section -->
+            <section id="instructions" class="content-section">
+                <h2 class="section-title">
+                    ⚠️ Instructions
+                </h2>
+                <div style="background: rgba(212, 175, 55, 0.1); border-radius: 10px; padding: 1.5rem; border-left: 4px solid #d4af37;">
+                    <h4 style="color: #8b4513; margin-bottom: 1rem;">📋 Before You Begin:</h4>
+                    <ul style="color: #333; line-height: 1.8; list-style-position: inside;">
+                        <li><strong>Questions 11-17:</strong> Complete the table using NO MORE THAN THREE WORDS for each answer</li>
+                        <li><strong>Questions 18-20:</strong> Complete the form using ONE WORD AND/OR A NUMBER for each answer</li>
+                        <li><strong>Audio Duration:</strong> Approximately 6.5 minutes (one play only)</li>
+                        <li><strong>Writing Time:</strong> You have additional time to transfer and check your answers</li>
+                        <li><strong>Listen Carefully:</strong> Pay attention to thesis procedures, committee roles, and defense scheduling requirements</li>
+                    </ul>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.3);">
+                        <button onclick="testAudio()" style="background: linear-gradient(135deg, #28a745, #20c997); color: white; border: none; padding: 0.5rem 1rem; border-radius: 15px; cursor: pointer; font-size: 0.9rem; margin-right: 1rem;">
+                            🔊 Test Audio System
+                        </button>
+                        <small style="color: #666;">Click to test if your browser supports audio playback</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Audio Section -->
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">
+                    🎧 Audio Monologue
+                </h2>
+                
+                <div class="audio-player">
+                    <p style="color: #8b4513; font-weight: 600; margin-bottom: 1rem;">
+                        🔊 You will hear Dr. Michelle Rodriguez, Director of Graduate Studies, explaining thesis defense procedures to doctoral candidates.
+                    </p>
+                    
+                    <button class="play-btn" onclick="playAudio()" id="playBtn">
+                        ▶️ Play Audio
+                    </button>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="currentTime">00:00</span> / <span id="totalTime">06:30</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Questions Section -->
+            <section id="questions" class="content-section">
+                <h2 class="section-title">
+                    📝 Questions 11-20
+                </h2>
+                
+                <div class="questions-container">
+                    <!-- Table Completion Questions 11-17 -->
+                    <div class="question-section">
+                        <h3>Questions 11-17</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Complete the table below. Write NO MORE THAN THREE WORDS for each answer.
+                        </p>
+                        
+                        <div class="table-container">
+                            <div class="table-title">Thesis Defense Committee - Roles and Requirements</div>
+                            
+                            <table class="completion-table">
+                                <thead>
+                                    <tr>
+                                        <th>Committee Position</th>
+                                        <th>Academic Rank</th>
+                                        <th>Primary Responsibility</th>
+                                        <th>Meeting Requirement</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Committee Chair</td>
+                                        <td><input type="text" class="table-blank" id="q11" placeholder="11"></td>
+                                        <td>Overall supervision</td>
+                                        <td>Weekly meetings</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Internal Examiner</td>
+                                        <td>Associate Professor</td>
+                                        <td><input type="text" class="table-blank" id="q12" placeholder="12"></td>
+                                        <td>Monthly meetings</td>
+                                    </tr>
+                                    <tr>
+                                        <td>External Examiner</td>
+                                        <td>Professor</td>
+                                        <td>Independent assessment</td>
+                                        <td><input type="text" class="table-blank" id="q13" placeholder="13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Methodology Advisor</td>
+                                        <td><input type="text" class="table-blank" id="q14" placeholder="14"></td>
+                                        <td>Research methods</td>
+                                        <td>Bi-weekly meetings</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Department Representative</td>
+                                        <td>Senior Lecturer</td>
+                                        <td><input type="text" class="table-blank" id="q15" placeholder="15"></td>
+                                        <td>Final meeting</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Student Representative</td>
+                                        <td><input type="text" class="table-blank" id="q16" placeholder="16"></td>
+                                        <td>Peer perspective</td>
+                                        <td>Optional attendance</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Administrative Coordinator</td>
+                                        <td>Graduate Administrator</td>
+                                        <td>Defense logistics</td>
+                                        <td><input type="text" class="table-blank" id="q17" placeholder="17"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Form Completion Questions 18-20 -->
+                    <div class="question-section">
+                        <h3>Questions 18-20</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Complete the thesis defense scheduling form below. Write ONE WORD AND/OR A NUMBER for each answer.
+                        </p>
+                        
+                        <div class="form-container">
+                            <div class="form-title">Thesis Defense Scheduling Form</div>
+                            
+                            <div class="form-row">
+                                <span class="form-label">Notice Period:</span>
+                                <input type="text" class="form-input" id="q18" placeholder="18">
+                                <span class="form-text">weeks minimum advance notice required</span>
+                            </div>
+                            
+                            <div class="form-row">
+                                <span class="form-label">Defense Duration:</span>
+                                <input type="text" class="form-input" id="q19" placeholder="19">
+                                <span class="form-text">hours maximum presentation and examination</span>
+                            </div>
+                            
+                            <div class="form-row">
+                                <span class="form-label">Preferred Day:</span>
+                                <input type="text" class="form-input" id="q20" placeholder="20">
+                                <span class="form-text">(most commonly scheduled day of the week)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button class="submit-btn" onclick="submitTest()">Submit Test</button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <h2 class="section-title">
+                    📊 Test Results & Analysis
+                </h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>🎓 Academic Part 2 Improvement Tips</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Audio simulation and test data
+        let audioContext = null;
+        let isPlaying = false;
+        let currentTime = 0;
+        let totalDuration = 390; // 6.5 minutes in seconds
+        let audioInterval = null;
+
+        // Correct answers for Academic Part 2 Practice 6
+        const correctAnswers = {
+            q11: 'full professor',
+            q12: 'methodology review',
+            q13: 'defense attendance',
+            q14: 'assistant professor',
+            q15: 'administrative oversight',
+            q16: 'doctoral candidate',
+            q17: 'scheduling meetings',
+            q18: '6',
+            q19: '3',
+            q20: 'thursday'
+        };
+
+        // Question explanations
+        const explanations = {
+            q11: 'The Committee Chair must hold the rank of Full Professor to ensure adequate academic authority and experience.',
+            q12: 'The Internal Examiner\'s primary responsibility is methodology review, ensuring research methods are appropriate and rigorous.',
+            q13: 'The External Examiner is only required for defense attendance, providing independent assessment without ongoing involvement.',
+            q14: 'The Methodology Advisor typically holds the rank of Assistant Professor, often being a specialist in research methods.',
+            q15: 'The Department Representative provides administrative oversight, ensuring defense procedures follow university regulations.',
+            q16: 'The Student Representative is a Doctoral Candidate from the same department, providing peer perspective on the defense process.',
+            q17: 'The Administrative Coordinator is responsible for scheduling meetings and coordinating all logistical aspects of the defense.',
+            q18: 'A minimum of 6 weeks advance notice is required to schedule a thesis defense, allowing committee members adequate preparation time.',
+            q19: 'The defense duration is maximum 3 hours, including both the presentation and the examination by the committee.',
+            q20: 'Thursday is the most commonly scheduled day for thesis defenses, as it allows for post-defense celebrations before the weekend.'
+        };
+
+        // Graduate Thesis Defense monologue script - broken into chunks for better TTS handling
+        function getMonologueScript() {
+            return [
+                "Good afternoon, doctoral candidates. I'm Dr. Michelle Rodriguez, Director of Graduate Studies, and today I'll be explaining our thesis defense procedures and examination requirements.",
+                
+                "Let me start by outlining the composition of your thesis defense committee. The committee chair must hold the rank of full professor. This ensures that the person overseeing your defense has sufficient academic experience and authority.",
+                
+                "Your internal examiner will typically be an associate professor from our department. Their primary responsibility is methodology review, ensuring that your research methods are appropriate and rigorous for doctoral-level work.",
+                
+                "The external examiner must be a professor from outside our university. They provide independent assessment and are only required for defense attendance. This external perspective is crucial for maintaining academic standards.",
+                
+                "We also require a methodology advisor, usually an assistant professor who specializes in research methods. They'll meet with you bi-weekly to ensure your methodological approach remains sound throughout your research.",
+                
+                "The department representative is typically a senior lecturer whose role is administrative oversight. They ensure that defense procedures follow university regulations and department guidelines. They only attend the final meeting.",
+                
+                "We include a student representative, who must be a doctoral candidate from the same department. They provide peer perspective and help ensure the defense process is fair and transparent. Their attendance is optional.",
+                
+                "Finally, the administrative coordinator is a graduate administrator responsible for defense logistics. This includes scheduling meetings and coordinating all practical aspects of your defense process.",
+                
+                "Now, regarding scheduling your thesis defense. You must provide a minimum of six weeks advance notice. This allows committee members adequate time to read your thesis and prepare their questions and evaluation.",
+                
+                "The defense itself has a maximum duration of three hours. This includes your presentation, which should be approximately thirty minutes, followed by examination and deliberation by the committee.",
+                
+                "Most defenses are scheduled on Thursday, as this allows for post-defense celebrations before the weekend. It's become our traditional day for these important academic milestones.",
+                
+                "Remember, the thesis defense is the culmination of years of hard work. Proper preparation and understanding of these procedures will help ensure your success in this final step toward your doctoral degree."
+            ];
+        }
+
+        // Audio control functions
+        function playAudio() {
+            console.log('🎧 Play button clicked - starting audio playback');
+            
+            if (!checkInternetForAudio()) return;
+            
+            const playBtn = document.getElementById('playBtn');
+            
+            // Disable button during playback
+            playBtn.disabled = true;
+            playBtn.style.opacity = '0.6';
+            playBtn.style.cursor = 'not-allowed';
+            
+            isPlaying = true;
+            
+            // Start audio simulation
+            audioInterval = setInterval(updateProgress, 1000);
+            
+            // Check for speech synthesis support
+            if (!('speechSynthesis' in window)) {
+                console.error('Speech synthesis not supported');
+                alert('Your browser does not support Text-to-Speech. Please try Chrome, Firefox, or Edge.');
+                stopAudio();
+                return;
+            }
+            
+            console.log('Speech synthesis supported, proceeding...');
+            
+            // Cancel any existing speech
+            speechSynthesis.cancel();
+            
+            // Wait a moment for cancellation to complete
+            setTimeout(() => {
+                const scriptChunks = getMonologueScript();
+                console.log('Monologue script chunks:', scriptChunks.length);
+                
+                // Start playing chunks sequentially
+                playAudioChunks(scriptChunks, 0);
+            }, 100);
+        }
+
+        // Play audio in chunks to avoid TTS length limitations
+        function playAudioChunks(chunks, currentIndex) {
+            if (currentIndex >= chunks.length) {
+                console.log('✅ All audio chunks completed');
+                stopAudio();
+                return;
+            }
+            
+            if (!isPlaying) {
+                console.log('🛑 Audio playback stopped by user');
+                return;
+            }
+            
+            const currentChunk = chunks[currentIndex];
+            console.log(`🔊 Playing chunk ${currentIndex + 1}/${chunks.length}: "${currentChunk.substring(0, 50)}..."`);
+            
+            const utterance = new SpeechSynthesisUtterance(currentChunk);
+            utterance.rate = 0.8;
+            utterance.pitch = 1;
+            utterance.volume = 1.0;
+            
+            // Select voice - American English preference
+            const voices = speechSynthesis.getVoices();
+            if (voices.length > 0) {
+                let selectedVoice = voices.find(voice => 
+                    voice.lang === 'en-US' || voice.name.includes('US') || voice.name.includes('American')
+                );
+                
+                if (!selectedVoice) {
+                    selectedVoice = voices.find(voice => 
+                        voice.lang.startsWith('en-') || voice.lang === 'en'
+                    );
+                }
+                
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                    console.log(`🎤 Using voice: ${selectedVoice.name} (${selectedVoice.lang})`);
+                }
+            }
+            
+            utterance.onstart = function() {
+                console.log(`✅ Chunk ${currentIndex + 1} started`);
+            };
+            
+            utterance.onend = function() {
+                console.log(`✅ Chunk ${currentIndex + 1} completed`);
+                // Add small pause between chunks
+                setTimeout(() => {
+                    playAudioChunks(chunks, currentIndex + 1);
+                }, 500);
+            };
+            
+            utterance.onerror = function(event) {
+                console.error(`❌ Error in chunk ${currentIndex + 1}:`, event.error);
+                // Try to continue with next chunk
+                setTimeout(() => {
+                    playAudioChunks(chunks, currentIndex + 1);
+                }, 1000);
+            };
+            
+            try {
+                speechSynthesis.speak(utterance);
+            } catch (error) {
+                console.error(`❌ Failed to speak chunk ${currentIndex + 1}:`, error);
+                // Try next chunk
+                setTimeout(() => {
+                    playAudioChunks(chunks, currentIndex + 1);
+                }, 1000);
+            }
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            currentTime = 0;
+            
+            if (audioInterval) {
+                clearInterval(audioInterval);
+                audioInterval = null;
+            }
+            
+            // Re-enable button
+            const playBtn = document.getElementById('playBtn');
+            playBtn.disabled = false;
+            playBtn.style.opacity = '1';
+            playBtn.style.cursor = 'pointer';
+            
+            // Reset progress
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            
+            // Cancel speech synthesis
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+        }
+
+        function updateProgress() {
+            if (!isPlaying) return;
+            
+            currentTime++;
+            const progressPercent = (currentTime / totalDuration) * 100;
+            
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('currentTime').textContent = formatTime(currentTime);
+            
+            if (currentTime >= totalDuration) {
+                stopAudio();
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function checkInternetForAudio() {
+            // Note: Speech synthesis works offline, but we check for basic browser compatibility
+            console.log('🌐 Network status:', navigator.onLine ? 'Online' : 'Offline');
+            console.log('🔊 Speech synthesis available:', 'speechSynthesis' in window);
+            
+            if (!('speechSynthesis' in window)) {
+                alert('Text-to-Speech is not supported in your browser. Please use Chrome, Firefox, Edge, or Safari.');
+                return false;
+            }
+            
+            // Speech synthesis works offline, so we don't need internet
+            return true;
+        }
+
+        // Test audio function for debugging
+        function testAudio() {
+            console.log('🧪 Testing audio system...');
+            
+            if (!('speechSynthesis' in window)) {
+                alert('❌ Speech Synthesis not supported in this browser');
+                return;
+            }
+            
+            // Cancel any existing speech
+            speechSynthesis.cancel();
+            
+            // Create a simple test utterance
+            const testText = "Audio test successful. You should now be able to hear the academic practice audio.";
+            const utterance = new SpeechSynthesisUtterance(testText);
+            utterance.rate = 1;
+            utterance.pitch = 1;
+            utterance.volume = 1;
+            
+            utterance.onstart = function() {
+                console.log('✅ Test audio started successfully');
+                alert('✅ Audio test started! You should hear a voice saying "Audio test successful..."');
+            };
+            
+            utterance.onend = function() {
+                console.log('✅ Test audio completed');
+                alert('✅ Audio test completed! The academic audio system is working. You can now try the main practice audio.');
+            };
+            
+            utterance.onerror = function(event) {
+                console.error('❌ Test audio error:', event.error);
+                alert('❌ Audio test failed: ' + event.error + '. Please try a different browser or check your system audio settings.');
+            };
+            
+            // Get voices and select one
+            const voices = speechSynthesis.getVoices();
+            console.log('🎤 Available voices for test:', voices.length);
+            
+            if (voices.length > 0) {
+                // Try to find an English voice
+                let voice = voices.find(v => v.lang.startsWith('en-')) || voices[0];
+                utterance.voice = voice;
+                console.log('🎤 Test using voice:', voice.name, voice.lang);
+            }
+            
+            try {
+                speechSynthesis.speak(utterance);
+                console.log('🔊 Test utterance sent to speech synthesis');
+            } catch (error) {
+                console.error('❌ Error starting test audio:', error);
+                alert('❌ Failed to start audio test: ' + error.message);
+            }
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Academic Listening Part 2 Practice 6 - Going to introduction');
+            window.location.href = 'IELTS_Academic_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Test submission and scoring
+        function submitTest() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Get answers for table completion questions (11-17)
+            for (let i = 11; i <= 17; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`].toLowerCase();
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Get answers for form completion questions (18-20)
+            for (let i = 18; i <= 20; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`].toLowerCase();
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Focus on listening for specific academic administrative details and procedural information");
+                tips.push("Practice table completion with university administrative vocabulary and committee structures");
+                tips.push("Work on understanding American academic accents and formal administrative presentation styles");
+                tips.push("Listen to university administrative presentations and graduate program orientations regularly");
+            } else if (score <= 6) {
+                tips.push("Develop better prediction skills by reading table headers and administrative terminology before listening");
+                tips.push("Practice distinguishing between different academic roles and administrative requirements");
+                tips.push("Work on form completion skills for academic administrative procedures");
+                tips.push("Focus on understanding university committee structures and graduate program requirements");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to catch specific details in academic administrative presentations");
+                tips.push("Practice following complex university procedure explanations and committee role descriptions");
+                tips.push("Work on maintaining concentration throughout longer administrative orientation presentations");
+                tips.push("Review vocabulary related to thesis defenses, academic committees, and graduate procedures");
+            } else {
+                tips.push("Excellent work! Continue practicing with authentic IELTS Academic materials");
+                tips.push("Focus on time management to complete both table completion and form completion efficiently");
+                tips.push("Practice with different American academic accents to prepare for test day variety");
+                tips.push("Consider helping others to reinforce your own academic listening and administrative comprehension skills");
+            }
+            
+            return tips;
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📚 IELTS Academic Listening Part 2 Practice 6 - Graduate Thesis Defense loaded');
+            
+            // Debug audio system
+            console.log('🔊 Browser audio capabilities:');
+            console.log('- speechSynthesis available:', 'speechSynthesis' in window);
+            console.log('- Web Audio API available:', 'AudioContext' in window || 'webkitAudioContext' in window);
+            console.log('- User agent:', navigator.userAgent);
+            
+            // Test speech synthesis availability
+            if ('speechSynthesis' in window) {
+                setTimeout(() => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🎤 Initial voices check:', voices.length, 'voices available');
+                    if (voices.length === 0) {
+                        console.log('⏳ Waiting for voices to load...');
+                        speechSynthesis.addEventListener('voiceschanged', function() {
+                            const newVoices = speechSynthesis.getVoices();
+                            console.log('🎤 Voices loaded:', newVoices.length, 'voices now available');
+                        });
+                    }
+                }, 1000);
+            }
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+            
+            // Auto-focus on first input when questions section becomes visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target.id === 'questions') {
+                        setTimeout(() => {
+                            const firstInput = document.getElementById('q11');
+                            if (firstInput) {
+                                firstInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }, 500);
+                    }
+                });
+            });
+            
+            const questionsSection = document.getElementById('questions');
+            if (questionsSection) {
+                observer.observe(questionsSection);
+            }
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+        });
+    </script>
+</body>
+</html> 
