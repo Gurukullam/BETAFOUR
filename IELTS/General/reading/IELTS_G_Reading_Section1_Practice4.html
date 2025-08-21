@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 1 - Practice 4: Education & Training</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            color: #5d3a0a;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            opacity: 0.8;
+        }
+
+        /* Small Timer Display (appears when timer is running) */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -380px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            overflow-y: auto;
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin: 25px 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513 0%, #d4af37 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .timer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Split Container for Reading Workspace */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        .passages-panel {
+            flex: 1;
+            min-width: 45%;
+            max-width: 60%;
+            padding: 25px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 248, 0.9) 100%);
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .questions-panel {
+            flex: 1;
+            min-width: 40%;
+            max-width: 55%;
+            padding: 25px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(248, 248, 248, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+        }
+
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(135deg, #d4af37 0%, #8b4513 100%);
+            cursor: col-resize;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .vertical-separator:hover {
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+        }
+
+        .separator-handle {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 3px;
+            padding: 8px 2px;
+            font-size: 12px;
+            color: #8b4513;
+            font-weight: bold;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            user-select: none;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+        }
+
+        /* Passage Styles */
+        .passage {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .passage-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .passage-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Question Styles */
+        .question-group {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            border-left: 4px solid #8b4513;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .question-group-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+            padding: 10px 0;
+        }
+
+        .question-number {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 5px;
+        }
+
+        .question-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 0;
+        }
+
+        .radio-option input[type="radio"] {
+            margin: 0;
+            scale: 1.2;
+        }
+
+        .radio-option label {
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+
+
+        /* Results Section */
+        .score-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .answer-review {
+            margin-bottom: 30px;
+        }
+
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .answer-item.correct {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .answer-item.incorrect {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.05);
+        }
+
+        .improvement-tips {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+                max-height: 50vh;
+            }
+            
+            .vertical-separator {
+                width: 100%;
+                height: 6px;
+                cursor: row-resize;
+            }
+            
+            .separator-handle {
+                writing-mode: horizontal-tb;
+                padding: 2px 8px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .timer-display {
+                font-size: 2rem;
+            }
+
+            .small-timer-display {
+                right: 10px;
+                top: 5px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .gk-logo-container {
+                right: 10px;
+                top: 25px;
+            }
+
+            .master-guruvammal-logo {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+
+            .back-label {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📖 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 1 - Practice 4</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">🎓 3 Passages - Education & Training Context</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 1 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📖 IELTS General Reading - Section 1 (Practice 4)</h1>
+                <div class="hero-subtitle">
+                    🎓 Education & Training - Social Survival Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 1 reading skills with authentic education and training passages. This practice covers everyday situations including course descriptions, training program information, and adult education guides. You will encounter all 6 question formats commonly found in IELTS General Reading Section 1: Short Answer Questions, Multiple Choice, Sentence Completion, True/False/Not Given, Form Completion, and Matching Information. Complete Questions 1-14 within the recommended 20-minute timeframe.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">📚 Passage Details</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>📖 Total Passages:</strong> 3</li>
+                                <li style="margin-bottom: 8px;"><strong>📊 Word Count:</strong> ~700 words</li>
+                                <li style="margin-bottom: 8px;"><strong>🎯 Difficulty Level:</strong> Intermediate</li>
+                                <li style="margin-bottom: 8px;"><strong>🏷️ Context:</strong> Education & Training</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">❓ Question Formats</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>📝 Short Answer:</strong> Q1-3</li>
+                                <li style="margin-bottom: 8px;"><strong>🎯 Multiple Choice:</strong> Q4-7</li>
+                                <li style="margin-bottom: 8px;"><strong>✅ True/False/Not Given:</strong> Q8-11</li>
+                                <li style="margin-bottom: 8px;"><strong>📋 Form Completion:</strong> Q12-14</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">🎓 Passage Themes</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>📚 Passage A:</strong> University Course Guide</li>
+                                <li style="margin-bottom: 8px;"><strong>🛠️ Passage B:</strong> Professional Training Programs</li>
+                                <li style="margin-bottom: 8px;"><strong>🎒 Passage C:</strong> Adult Education Center Information</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer - 20 Minutes</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin: 15px 0; color: #666; font-size: 1.1rem;">
+                        🎯 <strong>IELTS Section 1 Standard:</strong> Complete all 14 questions within 20 minutes for optimal exam preparation.
+                    </p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startReading()">Start Reading</button>
+                    </div>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 8px; text-align: left;">
+                        <h4 style="color: #8b4513; margin-bottom: 10px;">⏰ Time Management Tips:</h4>
+                        <ul style="margin: 0; padding-left: 20px; color: #666;">
+                            <li>Spend 2-3 minutes reading all passages quickly</li>
+                            <li>Allocate 6-7 minutes per passage for questions</li>
+                            <li>Save 2-3 minutes for review and checking answers</li>
+                            <li>Look for keywords and synonyms in questions and passages</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">📚 Reading Workspace - Questions 1-14</h2>
+                
+                <div class="split-container">
+                    <!-- Passages Panel -->
+                    <div class="passages-panel">
+                        <div class="passage">
+                            <div class="passage-title">📚 Passage A: University Course Information</div>
+                            <div class="passage-content">
+                                <strong>Bachelor of Business Administration (BBA) Program</strong><br><br>
+                                
+                                The University of Metropolitan Studies offers a comprehensive three-year Bachelor of Business Administration program designed for working professionals. Classes are scheduled exclusively on weekends to accommodate students who maintain full-time employment during the week.<br><br>
+                                
+                                <strong>Program Structure:</strong><br>
+                                The BBA program consists of 24 core subjects spread across six semesters. Students attend classes on Saturdays and Sundays from 9:00 AM to 4:00 PM, with a one-hour lunch break. Each semester runs for 16 weeks, and there are two semesters per academic year.<br><br>
+                                
+                                <strong>Entry Requirements:</strong><br>
+                                Applicants must have completed secondary education with a minimum grade average of 70%. Additionally, candidates need to demonstrate at least two years of work experience in any field. An entrance examination covering basic mathematics and English comprehension is required for all prospective students.<br><br>
+                                
+                                <strong>Course Fees:</strong><br>
+                                The total program fee is $18,000, payable in six installments of $3,000 each semester. The university offers a 10% discount for students who pay the entire amount upfront. Financial assistance is available for eligible students through the government's education loan scheme.<br><br>
+                                
+                                <strong>Career Prospects:</strong><br>
+                                Graduates from this program have found employment in various sectors including banking, retail management, and small business ownership. The university's career services department provides job placement assistance and maintains partnerships with over 50 local businesses.
+                            </div>
+                        </div>
+
+                        <div class="passage">
+                            <div class="passage-title">🛠️ Passage B: Professional Training Institute</div>
+                            <div class="passage-content">
+                                <strong>TechSkills Professional Training Center</strong><br><br>
+                                
+                                TechSkills Institute specializes in providing practical training courses for individuals seeking to upgrade their technical abilities or change careers. Our programs are designed by industry experts and updated regularly to meet current market demands.<br><br>
+                                
+                                <strong>Popular Courses:</strong><br>
+                                • Computer Programming Fundamentals (12 weeks, $2,400)<br>
+                                • Digital Marketing Certification (8 weeks, $1,600)<br>
+                                • Web Design and Development (16 weeks, $3,200)<br>
+                                • Data Analysis with Excel (6 weeks, $1,200)<br>
+                                • Project Management Professional (10 weeks, $2,000)<br><br>
+                                
+                                <strong>Learning Format:</strong><br>
+                                All courses are available in three formats: full-time day classes (Monday to Friday, 9 AM-3 PM), part-time evening classes (Monday, Wednesday, Friday, 6 PM-9 PM), and weekend intensive sessions (Saturday and Sunday, 10 AM-4 PM). Students can switch between formats if their schedule changes.<br><br>
+                                
+                                <strong>Certification:</strong><br>
+                                Upon successful completion, students receive industry-recognized certificates. The institute maintains a 95% job placement rate within six months of graduation. Free career counseling and interview preparation workshops are included with every course.<br><br>
+                                
+                                <strong>Enrollment Process:</strong><br>
+                                Registration opens on the first Monday of each month. Classes begin two weeks after registration closes. A non-refundable deposit of $200 is required to secure a place, with the remaining balance due on the first day of class.
+                            </div>
+                        </div>
+
+                        <div class="passage">
+                            <div class="passage-title">🎒 Passage C: Community Adult Education Center</div>
+                            <div class="passage-content">
+                                <strong>Riverside Adult Learning Center - Course Catalog</strong><br><br>
+                                
+                                The Riverside Adult Learning Center has been serving the community for over 20 years, offering affordable education opportunities for adults aged 18 and above. Our mission is to provide accessible learning experiences that improve employment prospects and personal development.<br><br>
+                                
+                                <strong>General Education Classes:</strong><br>
+                                • Basic English for Beginners: Tuesdays and Thursdays, 7:00-9:00 PM<br>
+                                • Mathematics Fundamentals: Mondays and Wednesdays, 6:30-8:30 PM<br>
+                                • Computer Literacy: Saturdays, 10:00 AM-12:00 PM<br>
+                                • High School Equivalency Preparation: Monday to Thursday, 5:00-7:00 PM<br><br>
+                                
+                                <strong>Vocational Programs:</strong><br>
+                                • Food Safety Certification (2 days): $150<br>
+                                • First Aid and CPR Training (1 day): $85<br>
+                                • Forklift Operation License (3 days): $275<br>
+                                • Security Guard Training (5 days): $425<br><br>
+                                
+                                <strong>Registration Information:</strong><br>
+                                All courses require advance registration. Students must bring photo identification and proof of age. Course fees are due at the time of registration, and we accept cash, check, or credit card payments. Class sizes are limited to 15 students to ensure individual attention.<br><br>
+                                
+                                <strong>Support Services:</strong><br>
+                                Free childcare is available during evening classes for children aged 3-12. The center also provides free textbooks and basic school supplies. Parking is available on-site at no additional cost.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertical Separator -->
+                    <div class="vertical-separator">
+                        <div class="separator-handle">RESIZE</div>
+                    </div>
+
+                    <!-- Questions Panel -->
+                    <div class="questions-panel">
+                        <!-- Questions 1-3: Short Answer Questions -->
+                        <div class="question-group">
+                            <div class="question-group-title">📝 Questions 1-3: Short Answer Questions</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Answer the questions below. Write NO MORE THAN THREE WORDS for each answer.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 1</div>
+                                <div class="question-text">
+                                    What is the minimum grade average required for the BBA program?
+                                </div>
+                                <input type="text" class="answer-input" id="q1" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 2</div>
+                                <div class="question-text">
+                                    How many years of work experience are required for BBA admission?
+                                </div>
+                                <input type="text" class="answer-input" id="q2" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 3</div>
+                                <div class="question-text">
+                                    What percentage discount is offered for upfront payment of the BBA program?
+                                </div>
+                                <input type="text" class="answer-input" id="q3" placeholder="Your answer">
+                            </div>
+                        </div>
+
+                        <!-- Questions 4-7: Multiple Choice -->
+                        <div class="question-group">
+                            <div class="question-group-title">🎯 Questions 4-7: Multiple Choice</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Choose the correct letter, A, B, C, or D.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 4</div>
+                                <div class="question-text">
+                                    The longest course at TechSkills Institute is:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q4a" name="q4" value="A">
+                                        <label for="q4a">A) Computer Programming Fundamentals</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q4b" name="q4" value="B">
+                                        <label for="q4b">B) Digital Marketing Certification</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q4c" name="q4" value="C">
+                                        <label for="q4c">C) Web Design and Development</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q4d" name="q4" value="D">
+                                        <label for="q4d">D) Project Management Professional</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 5</div>
+                                <div class="question-text">
+                                    Part-time evening classes at TechSkills are held:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5a" name="q5" value="A">
+                                        <label for="q5a">A) Monday to Friday</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5b" name="q5" value="B">
+                                        <label for="q5b">B) Three times per week</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5c" name="q5" value="C">
+                                        <label for="q5c">C) Weekends only</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5d" name="q5" value="D">
+                                        <label for="q5d">D) Flexible schedule</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 6</div>
+                                <div class="question-text">
+                                    The job placement rate at TechSkills Institute is:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6a" name="q6" value="A">
+                                        <label for="q6a">A) 85%</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6b" name="q6" value="B">
+                                        <label for="q6b">B) 90%</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6c" name="q6" value="C">
+                                        <label for="q6c">C) 95%</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6d" name="q6" value="D">
+                                        <label for="q6d">D) 100%</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 7</div>
+                                <div class="question-text">
+                                    Classes at TechSkills begin:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7a" name="q7" value="A">
+                                        <label for="q7a">A) On the first Monday of each month</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7b" name="q7" value="B">
+                                        <label for="q7b">B) When registration closes</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7c" name="q7" value="C">
+                                        <label for="q7c">C) Two weeks after registration closes</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7d" name="q7" value="D">
+                                        <label for="q7d">D) Immediately after payment</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 8-11: True/False/Not Given -->
+                        <div class="question-group">
+                            <div class="question-group-title">✅ Questions 8-11: True/False/Not Given</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Do the following statements agree with the information in the passage?<br>
+                                TRUE - if the statement agrees with the information<br>
+                                FALSE - if the statement contradicts the information<br>
+                                NOT GIVEN - if there is no information on this
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 8</div>
+                                <div class="question-text">
+                                    Riverside Adult Learning Center has been operating for exactly 20 years.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8a" name="q8" value="TRUE">
+                                        <label for="q8a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8b" name="q8" value="FALSE">
+                                        <label for="q8b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8c" name="q8" value="NOT GIVEN">
+                                        <label for="q8c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 9</div>
+                                <div class="question-text">
+                                    Computer Literacy classes are only available on weekends.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9a" name="q9" value="TRUE">
+                                        <label for="q9a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9b" name="q9" value="FALSE">
+                                        <label for="q9b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9c" name="q9" value="NOT GIVEN">
+                                        <label for="q9c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 10</div>
+                                <div class="question-text">
+                                    All students at Riverside Adult Learning Center must be over 18 years old.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10a" name="q10" value="TRUE">
+                                        <label for="q10a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10b" name="q10" value="FALSE">
+                                        <label for="q10b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10c" name="q10" value="NOT GIVEN">
+                                        <label for="q10c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 11</div>
+                                <div class="question-text">
+                                    Riverside Adult Learning Center provides free meals for students.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q11a" name="q11" value="TRUE">
+                                        <label for="q11a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q11b" name="q11" value="FALSE">
+                                        <label for="q11b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q11c" name="q11" value="NOT GIVEN">
+                                        <label for="q11c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 12-14: Form Completion -->
+                        <div class="question-group">
+                            <div class="question-group-title">📋 Questions 12-14: Form Completion</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Complete the form below. Write NO MORE THAN TWO WORDS for each answer.
+                            </p>
+
+                            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                                <h4 style="text-align: center; margin-bottom: 15px; color: #8b4513;">Vocational Training Summary</h4>
+                                <div style="display: grid; gap: 10px;">
+                                    <div class="question">
+                                        <div class="question-number">Question 12</div>
+                                        <div class="question-text">
+                                            Most affordable course: <input type="text" class="answer-input" id="q12" placeholder="Your answer" style="width: 150px; display: inline;">
+                                        </div>
+                                    </div>
+
+                                    <div class="question">
+                                        <div class="question-number">Question 13</div>
+                                        <div class="question-text">
+                                            Longest training duration: <input type="text" class="answer-input" id="q13" placeholder="Your answer" style="width: 150px; display: inline;"> days
+                                        </div>
+                                    </div>
+
+                                    <div class="question">
+                                        <div class="question-number">Question 14</div>
+                                        <div class="question-text">
+                                            Maximum class size at Riverside: <input type="text" class="answer-input" id="q14" placeholder="Your answer" style="width: 150px; display: inline;"> students
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 14 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>🎓 Reading Enhancement Strategies</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Enhanced Reading Workspace Class
+        class ReadingWorkspace {
+            constructor() {
+                this.currentQuestion = 1;
+                this.answeredQuestions = new Set();
+                this.timerDuration = 20 * 60; // 20 minutes in seconds
+                this.timeRemaining = this.timerDuration;
+                this.timerInterval = null;
+                this.timerRunning = false;
+                this.initializeWorkspace();
+            }
+
+            initializeWorkspace() {
+                this.setupResizablePanels();
+                this.setupProgressTracking();
+                this.updateTimerDisplay();
+            }
+
+            // Resizable Panels
+            setupResizablePanels() {
+                const separator = document.querySelector('.vertical-separator');
+                const passagesPanel = document.querySelector('.passages-panel');
+                const questionsPanel = document.querySelector('.questions-panel');
+                
+                if (!separator) return;
+                
+                let isResizing = false;
+
+                separator.addEventListener('mousedown', (e) => {
+                    isResizing = true;
+                    document.body.style.cursor = 'col-resize';
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isResizing) return;
+
+                    const container = document.querySelector('.split-container');
+                    const containerRect = container.getBoundingClientRect();
+                    const newPosition = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+                    
+                    if (newPosition > 25 && newPosition < 75) {
+                        passagesPanel.style.flex = `0 0 ${newPosition}%`;
+                        questionsPanel.style.flex = `0 0 ${100 - newPosition}%`;
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isResizing) {
+                        isResizing = false;
+                        document.body.style.cursor = 'default';
+                    }
+                });
+            }
+
+            // Progress Tracking
+            setupProgressTracking() {
+                const inputs = document.querySelectorAll('.answer-input, input[type="radio"]');
+                inputs.forEach(input => {
+                    input.addEventListener('input', () => this.updateProgress());
+                    input.addEventListener('change', () => this.updateProgress());
+                });
+            }
+
+            updateProgress() {
+                this.autoSave();
+            }
+
+            getAnsweredQuestions() {
+                const answered = new Set();
+                
+                // Text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answered.add(input.id);
+                    }
+                });
+                
+                // Radio buttons
+                for (let i = 4; i <= 11; i++) {
+                    const radioGroup = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (radioGroup) {
+                        answered.add(`q${i}`);
+                    }
+                }
+                
+                return answered;
+            }
+
+            // Timer Functions
+            startTimer() {
+                if (this.timerRunning) return;
+                
+                this.timerRunning = true;
+                this.showSmallTimer();
+                
+                this.timerInterval = setInterval(() => {
+                    this.timeRemaining--;
+                    this.updateTimerDisplay();
+                    
+                    if (this.timeRemaining <= 0) {
+                        this.stopTimer();
+                        this.handleTimeUp();
+                    }
+                }, 1000);
+            }
+
+            stopTimer() {
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+                this.timerRunning = false;
+                this.hideSmallTimer();
+            }
+
+            updateTimerDisplay() {
+                const minutes = Math.floor(this.timeRemaining / 60);
+                const seconds = this.timeRemaining % 60;
+                const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                const timerDisplay = document.getElementById('timerDisplay');
+                const smallTimerTime = document.getElementById('smallTimerTime');
+                
+                if (timerDisplay) {
+                    timerDisplay.textContent = timeString;
+                    
+                    // Change color when 5 minutes or less remain
+                    if (this.timeRemaining <= 300) {
+                        timerDisplay.style.color = '#dc3545';
+                    } else if (this.timeRemaining <= 600) {
+                        timerDisplay.style.color = '#ffc107';
+                    } else {
+                        timerDisplay.style.color = '#8b4513';
+                    }
+                }
+                
+                if (smallTimerTime) {
+                    smallTimerTime.textContent = timeString;
+                    
+                    // Change small timer color too
+                    const smallTimer = document.getElementById('smallTimerDisplay');
+                    if (this.timeRemaining <= 300) {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(220, 53, 69, 0.95) 0%, rgba(139, 69, 19, 0.95) 100%)';
+                    } else if (this.timeRemaining <= 600) {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(255, 193, 7, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                    } else {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                    }
+                }
+            }
+
+            showSmallTimer() {
+                const smallTimer = document.getElementById('smallTimerDisplay');
+                if (smallTimer) {
+                    smallTimer.style.display = 'flex';
+                }
+            }
+
+            hideSmallTimer() {
+                const smallTimer = document.getElementById('smallTimerDisplay');
+                if (smallTimer) {
+                    smallTimer.style.display = 'none';
+                }
+            }
+
+            handleTimeUp() {
+                alert('⏰ Time is up! Your answers have been automatically saved. Click OK to see your results.');
+                submitAnswers();
+            }
+
+            // Auto-save functionality
+            autoSave() {
+                const answers = {};
+                
+                // Save text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answers[input.id] = input.value.trim();
+                    }
+                });
+                
+                // Save radio selections
+                document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                    answers[radio.name] = radio.value;
+                });
+                
+                try {
+                    localStorage.setItem('ielts_reading_s1_p4_answers', JSON.stringify(answers));
+                } catch (error) {
+                    console.warn('Could not save answers to localStorage');
+                }
+            }
+
+            // Load saved answers
+            loadSavedAnswers() {
+                try {
+                    const saved = localStorage.getItem('ielts_reading_s1_p4_answers');
+                    if (saved) {
+                        const answers = JSON.parse(saved);
+                        
+                        // Restore text inputs
+                        Object.entries(answers).forEach(([id, value]) => {
+                            const element = document.getElementById(id);
+                            if (element && element.type === 'text') {
+                                element.value = value;
+                            }
+                        });
+                        
+                        // Restore radio selections
+                        Object.entries(answers).forEach(([name, value]) => {
+                            const radio = document.querySelector(`input[name="${name}"][value="${value}"]`);
+                            if (radio) {
+                                radio.checked = true;
+                            }
+                        });
+                        
+                        this.updateProgress();
+                    }
+                } catch (error) {
+                    console.warn('Could not load saved answers');
+                }
+            }
+        }
+
+        // Initialize workspace
+        const workspace = new ReadingWorkspace();
+
+        // Global Functions
+        function startReading() {
+            workspace.startTimer();
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Progress Function
+        function updateProgress() {
+            workspace.updateProgress();
+        }
+
+        // Auto-save functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            workspace.loadSavedAnswers();
+        });
+
+        // Menu and Navigation Functions
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('menu-open'); // Make button stick to menu
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        // Submit and Scoring Functions
+        const answerKey = {
+            'q1': '70%',
+            'q2': 'two years',
+            'q3': '10%',
+            'q4': 'C',
+            'q5': 'B',
+            'q6': 'C',
+            'q7': 'C',
+            'q8': 'FALSE',
+            'q9': 'TRUE',
+            'q10': 'TRUE',
+            'q11': 'NOT GIVEN',
+            'q12': 'First Aid',
+            'q13': 'five',
+            'q14': '15'
+        };
+
+        function submitAnswers() {
+            workspace.stopTimer();
+            
+            let score = 0;
+            const results = [];
+            
+            // Check all answers
+            for (const [questionId, correctAnswer] of Object.entries(answerKey)) {
+                let userAnswer = '';
+                const element = document.getElementById(questionId);
+                
+                if (element) {
+                    if (element.type === 'text') {
+                        userAnswer = element.value.trim();
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButton = document.querySelector(`input[name="${questionId}"]:checked`);
+                    if (radioButton) {
+                        userAnswer = radioButton.value;
+                    }
+                }
+                
+                const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase() ||
+                                userAnswer.toLowerCase().includes(correctAnswer.toLowerCase());
+                if (isCorrect) score++;
+                
+                results.push({
+                    question: questionId,
+                    userAnswer: userAnswer,
+                    correctAnswer: correctAnswer,
+                    isCorrect: isCorrect
+                });
+            }
+            
+            displayResults(score, results);
+        }
+
+        function displayResults(score, results) {
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            
+            // Generate answer review
+            const reviewContainer = document.getElementById('answerReview');
+            reviewContainer.innerHTML = '';
+            
+            results.forEach((result, index) => {
+                const answerItem = document.createElement('div');
+                answerItem.className = `answer-item ${result.isCorrect ? 'correct' : 'incorrect'}`;
+                answerItem.innerHTML = `
+                    <div>
+                        <strong>Question ${index + 1}:</strong> ${result.userAnswer || 'No answer'}
+                        ${!result.isCorrect ? `<br><strong>Correct answer:</strong> ${result.correctAnswer}` : ''}
+                    </div>
+                    <div style="font-size: 1.2em;">${result.isCorrect ? '✓' : '✗'}</div>
+                `;
+                reviewContainer.appendChild(answerItem);
+            });
+            
+            // Generate improvement tips
+            const tipsList = document.getElementById('improvementList');
+            const tips = generateImprovementTips(score, results);
+            tipsList.innerHTML = '';
+            tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateImprovementTips(score, results) {
+            const tips = [];
+            
+            if (score >= 12) {
+                tips.push('Excellent performance! Your reading comprehension skills are very strong.');
+                tips.push('Continue practicing with more complex educational texts to maintain this level.');
+            } else if (score >= 10) {
+                tips.push('Good performance! Focus on time management for course information reading.');
+                tips.push('Practice identifying specific details in training program descriptions.');
+            } else if (score >= 7) {
+                tips.push('Room for improvement. Focus on understanding education and training terminology.');
+                tips.push('Practice scanning for specific dates, costs, and program requirements.');
+            } else {
+                tips.push('Significant improvement needed. Review basic education and training vocabulary.');
+                tips.push('Practice with simpler passages first to build confidence.');
+                tips.push('Focus on vocabulary building for academic and professional training topics.');
+            }
+            
+            // Specific tips based on common errors
+            const mcErrors = results.filter(r => r.question.startsWith('q') && ['4','5','6','7'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            const tfErrors = results.filter(r => r.question.startsWith('q') && ['8','9','10','11'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            
+            if (mcErrors > 2) {
+                tips.push('Focus on careful reading of course schedules and training program details.');
+            }
+            if (tfErrors > 1) {
+                tips.push('Practice distinguishing between stated facts and unstated information in educational contexts.');
+            }
+            
+            return tips;
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('slideMenu').classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize timer display
+        workspace.updateTimerDisplay();
+    </script>
+</body>
+</html> 
