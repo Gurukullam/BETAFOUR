@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Speaking Part 2: Describe an Activity | Gammapace</title>
+    
+    <!-- Standardized CSS with Part 2 Adaptations -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Master Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Master Guruvammal Logo */
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .foundation-text {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button - Professional Brown Gradient */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border-left: 3px solid transparent;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        .menu-item.active {
+            background: rgba(212, 175, 55, 0.15);
+            border-left-color: #8b4513;
+            font-weight: 600;
+        }
+
+        .item-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Content sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #8b4513;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #3c2d1f;
+            margin-bottom: 2rem;
+            text-align: center;
+            padding: 1rem 2rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Part 2 Specific: Cue Card Section */
+        .cue-card-section {
+            background: rgba(212, 175, 55, 0.05);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .cue-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 1.5rem auto;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .cue-card h4 {
+            color: #8b4513;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .cue-card ul {
+            text-align: left;
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .cue-card li {
+            margin: 0.8rem 0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .cue-card .time-instruction {
+            background: rgba(139, 69, 19, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            color: #8b4513;
+            font-weight: bold;
+        }
+
+        /* Question Selection */
+        .question-selection {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        #questionSelect {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Timer Display */
+        .timer-display {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .timer {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #8b4513;
+            font-family: 'Courier New', monospace;
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Control Buttons */
+        .control-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .control-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .prepare-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .prepare-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .record-btn {
+            background: linear-gradient(135deg, #f44336, #da190b);
+            color: white;
+        }
+
+        .record-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+        }
+
+        .stop-btn {
+            background: linear-gradient(135deg, #607d8b, #455a64);
+            color: white;
+        }
+
+        .stop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(96, 125, 139, 0.3);
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            color: white;
+        }
+
+        .play-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .process-btn {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+        }
+
+        .process-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+        }
+
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        /* Analysis Results */
+        .analysis-section {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .analysis-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .analysis-card h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+
+        /* Band Score Guidance */
+        .band-guidance {
+            background: rgba(139, 69, 19, 0.05);
+            border-left: 4px solid #d4af37;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .band-guidance h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+
+        .band-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .criteria-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .criteria-item h4 {
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .slide-menu {
+                width: 100%;
+                left: -100%;
+            }
+
+            .container {
+                margin-left: 0 !important;
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .menu-toggle-label {
+                left: 55px;
+            }
+
+            .gk-logo-container {
+                top: 100px;
+                right: 20px;
+                padding: 3px;
+            }
+
+            .master-guruvammal-logo {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                padding: 8px;
+            }
+
+            .master-guruvammal-logo .musical-corner {
+                font-size: 8px;
+                top: 1px;
+                right: 2px;
+            }
+
+            .back-label {
+                font-size: 0.7rem;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .band-criteria {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Master Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()" title="Back to Speaking Introduction">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle">
+        ‹
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Speaking Part 2</div>
+            <div class="menu-subtitle">Describe an Activity - Practice Studio</div>
+        </div>
+        <div class="menu-content">
+            <div class="menu-item" onclick="scrollToSection('instructions')">📋 Instructions</div>
+            <div class="menu-item active" onclick="scrollToSection('cue-card')">🎯 Cue Card</div>
+            <div class="menu-item" onclick="scrollToSection('recording')">🎙️ Recording Studio</div>
+            <div class="menu-item" onclick="scrollToSection('analysis')">📊 Analysis Results</div>
+            <div class="menu-item" onclick="scrollToSection('guidance')">🎓 Band Score Guidance</div>
+        </div>
+    </div>
+
+    <!-- Header Spacer -->
+    <div class="header-spacer"></div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <div class="main-content">
+            <!-- Hero Section -->
+            <section class="content-section fade-in" id="instructions">
+                <h1 class="hero-title">IELTS General Speaking Part 2: Describe an Activity</h1>
+                <div class="hero-subtitle">
+                    Master activity descriptions with our interactive cue card practice studio
+                </div>
+                
+                <div style="text-align: center; color: #666; font-size: 1.1rem; line-height: 1.8; margin: 2rem 0;">
+                    <p><strong>Part 2 Format:</strong> You will receive a cue card with a topic and bullet points. You have <strong>1 minute to prepare</strong> and can make notes, then you must speak for <strong>1-2 minutes</strong> on the topic.</p>
+                </div>
+
+                <!-- Question Selection -->
+                <div class="question-selection">
+                    <h3 style="color: #8b4513; margin-bottom: 1rem;">Select a Cue Card:</h3>
+                    <select id="questionSelect" onchange="updateCurrentQuestion()">
+                        <option value="1">Describe a hobby you enjoy</option>
+                        <option value="2">Describe a sport you like to watch or play</option>
+                        <option value="3">Describe an outdoor activity you enjoy</option>
+                        <option value="4">Describe an activity you do to keep fit</option>
+                        <option value="5">Describe an activity you do with friends or family</option>
+                        <option value="6">Describe a creative activity you like doing</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Cue Card Section -->
+            <section class="content-section slide-up" id="cue-card">
+                <h2 class="section-title">🎯 Cue Card</h2>
+                
+                <div class="cue-card-section">
+                    <div class="cue-card" id="cueCardContent">
+                        <h4>Describe a hobby you enjoy</h4>
+                        <p style="margin: 1rem 0; color: #666;">You should say:</p>
+                        <ul>
+                            <li>What this hobby is</li>
+                            <li>When you started doing it</li>
+                            <li>How often you do it</li>
+                            <li>And explain why you enjoy this hobby</li>
+                        </ul>
+                        <div class="time-instruction">
+                            You have 1 minute to prepare and 1-2 minutes to speak.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timer Display -->
+                <div class="timer-display">
+                    <div class="timer" id="timerDisplay">01:00</div>
+                    <div class="timer-label" id="timerLabel">Preparation Time</div>
+                </div>
+            </section>
+
+            <!-- Recording Studio Section -->
+            <section class="content-section" id="recording">
+                <h2 class="section-title">🎙️ Recording Studio</h2>
+                
+                <div style="text-align: center; color: #666; margin: 1rem 0;">
+                    <p>Click "Start Preparation" to begin your 1-minute preparation time, then record your 2-minute response.</p>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="control-buttons">
+                    <button class="control-btn prepare-btn" id="prepareBtn" onclick="startPreparation()">
+                        ⏱️ Start Preparation
+                    </button>
+                    <button class="control-btn record-btn" id="recordBtn" onclick="startRecording()" disabled>
+                        🎤 Start Recording
+                    </button>
+                    <button class="control-btn stop-btn" id="stopBtn" onclick="stopRecording()" disabled>
+                        ⏹️ Stop Recording
+                    </button>
+                    <button class="control-btn play-btn" id="playBtn" onclick="playRecording()" disabled>
+                        ▶️ Play Recording
+                    </button>
+                    <button class="control-btn process-btn" id="processBtn" onclick="processAudio()" disabled>
+                        🔄 Submit for Analysis
+                    </button>
+                </div>
+
+                <!-- Audio Visualization -->
+                <div style="text-align: center; margin: 2rem 0;">
+                    <canvas id="audioCanvas" width="400" height="100" style="border: 1px solid #ddd; border-radius: 5px; display: none;"></canvas>
+                </div>
+            </section>
+
+            <!-- Analysis Results Section -->
+            <section class="content-section analysis-section" id="analysis">
+                <h2 class="section-title">📊 Analysis Results</h2>
+                
+                <div class="analysis-grid">
+                    <!-- Example Response -->
+                    <div class="analysis-card">
+                        <h3>📝 Example Response</h3>
+                        <div id="transcriptResult" style="background: rgba(139, 69, 19, 0.05); padding: 1rem; border-radius: 8px; border-left: 4px solid #d4af37; font-style: italic; line-height: 1.6;">
+                            Your speech transcript will appear here after analysis...
+                        </div>
+                    </div>
+                    
+                    <!-- Analysis & Feedback -->
+                    <div class="analysis-card">
+                        <h3>🎯 Analysis & Feedback</h3>
+                        <div id="analysisResult" style="line-height: 1.6;">
+                            Detailed analysis and improvement suggestions will appear here...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+                    <button class="control-btn next-btn" onclick="goToNextQuestion()">
+                        ➡️ Next Cue Card
+                    </button>
+                    <button class="control-btn next-btn" onclick="refreshCurrentQuestion()">
+                        🔄 Retry This Card
+                    </button>
+                </div>
+            </section>
+
+            <!-- Band Score Guidance -->
+            <section class="content-section" id="guidance">
+                <h2 class="section-title">🎓 Band Score Guidance</h2>
+                
+                <div class="band-guidance">
+                    <h3>Part 2 Success Strategies for Activity Descriptions</h3>
+                    <p>To achieve a high band score when describing activities, focus on these key areas:</p>
+                    
+                    <div class="band-criteria">
+                        <div class="criteria-item">
+                            <h4>🗣️ Fluency & Coherence</h4>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Describe the activity systematically</li>
+                                <li>Connect different aspects smoothly</li>
+                                <li>Show progression from start to current level</li>
+                                <li>Link activity to personal benefits</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <h4>📚 Lexical Resource</h4>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Use activity-specific vocabulary</li>
+                                <li>Include frequency expressions</li>
+                                <li>Show range of action verbs</li>
+                                <li>Use appropriate equipment terms</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <h4>⚙️ Grammatical Range</h4>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Use present perfect for experience</li>
+                                <li>Mix habitual and progressive aspects</li>
+                                <li>Include conditional structures</li>
+                                <li>Apply frequency adverbs correctly</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <h4>🎯 Pronunciation</h4>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Clear activity terminology</li>
+                                <li>Natural enthusiasm in delivery</li>
+                                <li>Appropriate stress on benefits</li>
+                                <li>Connected speech in descriptions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                        <h4 style="color: #8b4513; margin-bottom: 0.5rem;">💡 Activity Description Tips:</h4>
+                        <ul style="padding-left: 1.5rem; line-height: 1.6;">
+                            <li><strong>Start with basics</strong> - What the activity is and when you started</li>
+                            <li><strong>Explain the process</strong> - How you do it, where, with whom</li>
+                            <li><strong>Show frequency</strong> - How often, what schedule you follow</li>
+                            <li><strong>Describe benefits</strong> - Physical, mental, social advantages</li>
+                            <li><strong>Share passion</strong> - Why you love it, future plans with the activity</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Cue card content data
+        const cueCards = {
+            1: {
+                title: "Describe a hobby you enjoy",
+                points: [
+                    "What this hobby is",
+                    "When you started doing it", 
+                    "How often you do it",
+                    "And explain why you enjoy this hobby"
+                ]
+            },
+            2: {
+                title: "Describe a sport you like to watch or play",
+                points: [
+                    "What this sport is",
+                    "How you became interested in it",
+                    "How often you watch or play it",
+                    "And explain why you like this sport"
+                ]
+            },
+            3: {
+                title: "Describe an outdoor activity you enjoy",
+                points: [
+                    "What this activity is",
+                    "Where you usually do it",
+                    "Who you do it with",
+                    "And explain why you enjoy doing it outdoors"
+                ]
+            },
+            4: {
+                title: "Describe an activity you do to keep fit",
+                points: [
+                    "What this activity is",
+                    "How often you do it",
+                    "Where you do it",
+                    "And explain how this activity helps you stay fit"
+                ]
+            },
+            5: {
+                title: "Describe an activity you do with friends or family",
+                points: [
+                    "What this activity is",
+                    "Who you usually do it with",
+                    "How often you do it",
+                    "And explain why you enjoy doing this activity together"
+                ]
+            },
+            6: {
+                title: "Describe a creative activity you like doing",
+                points: [
+                    "What this activity is",
+                    "When you started doing it",
+                    "What you create or make",
+                    "And explain why you find this activity creative and enjoyable"
+                ]
+            }
+        };
+
+        // Audio recording variables
+        let mediaRecorder;
+        let audioChunks = [];
+        let originalAudioBlob = null;
+        let isRecording = false;
+        let isPreparationMode = false;
+        let timerInterval;
+        let seconds = 0;
+        let audioContext;
+        let analyser;
+        let microphone;
+        let dataArray;
+        let animationFrameId;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const questionParam = urlParams.get('question');
+            
+            if (questionParam && cueCards[questionParam]) {
+                document.getElementById('questionSelect').value = questionParam;
+                updateCurrentQuestion();
+            }
+            
+            console.log('✅ IELTS Speaking Part 2 - Describe an Activity loaded');
+        });
+
+        // Back button navigation
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Speaking Part 2 - Going to Speaking Introduction');
+            window.location.href = 'IELTS_General_Speaking_Introduction.html';
+        }
+
+        // Menu toggle functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Update cue card content
+        function updateCurrentQuestion() {
+            const questionSelect = document.getElementById('questionSelect');
+            const questionNum = questionSelect.value;
+            const cueCard = cueCards[questionNum];
+            
+            if (cueCard) {
+                const cueCardContent = document.getElementById('cueCardContent');
+                cueCardContent.innerHTML = `
+                    <h4>${cueCard.title}</h4>
+                    <p style="margin: 1rem 0; color: #666;">You should say:</p>
+                    <ul>
+                        ${cueCard.points.map(point => `<li>${point}</li>`).join('')}
+                    </ul>
+                    <div class="time-instruction">
+                        You have 1 minute to prepare and 1-2 minutes to speak.
+                    </div>
+                `;
+                
+                // Reset everything
+                resetSession();
+                
+                // Update URL
+                const url = new URL(window.location);
+                url.searchParams.set('question', questionNum);
+                window.history.pushState({}, '', url.toString());
+            }
+        }
+
+        // Start preparation timer
+        function startPreparation() {
+            isPreparationMode = true;
+            seconds = 60; // 1 minute preparation
+            
+            const prepareBtn = document.getElementById('prepareBtn');
+            const timerDisplay = document.getElementById('timerDisplay');
+            const timerLabel = document.getElementById('timerLabel');
+            
+            prepareBtn.disabled = true;
+            prepareBtn.textContent = '⏱️ Preparing...';
+            timerLabel.textContent = 'Preparation Time';
+            
+            timerInterval = setInterval(() => {
+                seconds--;
+                const minutes = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                
+                if (seconds <= 0) {
+                    clearInterval(timerInterval);
+                    isPreparationMode = false;
+                    prepareBtn.textContent = '✅ Preparation Complete';
+                    timerLabel.textContent = 'Ready to Record';
+                    document.getElementById('recordBtn').disabled = false;
+                    
+                    // Alert user preparation is complete
+                    alert('Preparation time is over! You can now start recording your 2-minute response.');
+                }
+            }, 1000);
+        }
+
+        // Start recording
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        sampleRate: 44100,
+                        channelCount: 1,
+                        volume: 1.0
+                    } 
+                });
+                
+                // Setup audio context for visualization
+                setupAudioVisualization(stream);
+                
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: 'audio/webm;codecs=opus'
+                });
+                
+                audioChunks = [];
+                
+                mediaRecorder.ondataavailable = event => {
+                    if (event.data.size > 0) {
+                        audioChunks.push(event.data);
+                    }
+                };
+                
+                mediaRecorder.onstop = () => {
+                    originalAudioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    document.getElementById('playBtn').disabled = false;
+                    document.getElementById('processBtn').disabled = false;
+                    
+                    // Stop all audio tracks
+                    stream.getTracks().forEach(track => track.stop());
+                };
+                
+                mediaRecorder.start();
+                isRecording = true;
+                
+                // Start recording timer (2 minutes for Part 2)
+                seconds = 120;
+                const timerDisplay = document.getElementById('timerDisplay');
+                const timerLabel = document.getElementById('timerLabel');
+                timerLabel.textContent = 'Recording Time';
+                
+                timerInterval = setInterval(() => {
+                    seconds--;
+                    const minutes = Math.floor(seconds / 60);
+                    const secs = seconds % 60;
+                    timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                    
+                    if (seconds <= 0) {
+                        stopRecording();
+                    }
+                }, 1000);
+                
+                // Update button states
+                document.getElementById('recordBtn').disabled = true;
+                document.getElementById('stopBtn').disabled = false;
+                document.getElementById('recordBtn').textContent = '🎤 Recording...';
+                
+                // Show audio visualization
+                document.getElementById('audioCanvas').style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+                alert('Error accessing microphone. Please ensure you have granted microphone permissions.');
+            }
+        }
+
+        // Stop recording
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                isRecording = false;
+                
+                clearInterval(timerInterval);
+                
+                // Update button states
+                document.getElementById('recordBtn').disabled = false;
+                document.getElementById('stopBtn').disabled = true;
+                document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+                
+                // Hide audio visualization
+                document.getElementById('audioCanvas').style.display = 'none';
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                }
+                
+                document.getElementById('timerLabel').textContent = 'Recording Complete';
+            }
+        }
+
+        // Play recorded audio
+        function playRecording() {
+            if (originalAudioBlob) {
+                const audioUrl = URL.createObjectURL(originalAudioBlob);
+                const audio = new Audio(audioUrl);
+                audio.play();
+            }
+        }
+
+        // Setup audio visualization
+        function setupAudioVisualization(stream) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            analyser = audioContext.createAnalyser();
+            microphone = audioContext.createMediaStreamSource(stream);
+            
+            analyser.fftSize = 256;
+            const bufferLength = analyser.frequencyBinCount;
+            dataArray = new Uint8Array(bufferLength);
+            
+            microphone.connect(analyser);
+            
+            const canvas = document.getElementById('audioCanvas');
+            const canvasCtx = canvas.getContext('2d');
+            
+            function draw() {
+                if (!isRecording) return;
+                
+                analyser.getByteFrequencyData(dataArray);
+                
+                canvasCtx.fillStyle = 'rgb(240, 240, 240)';
+                canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                const barWidth = canvas.width / bufferLength * 2.5;
+                let barHeight;
+                let x = 0;
+                
+                for (let i = 0; i < bufferLength; i++) {
+                    barHeight = dataArray[i] / 2;
+                    
+                    const red = 139;
+                    const green = 69 + (barHeight / 4);
+                    const blue = 19;
+                    
+                    canvasCtx.fillStyle = `rgb(${red},${green},${blue})`;
+                    canvasCtx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+                    
+                    x += barWidth + 1;
+                }
+                
+                animationFrameId = requestAnimationFrame(draw);
+            }
+            
+            draw();
+        }
+
+        // Process audio for analysis
+        function processAudio() {
+            if (!originalAudioBlob) {
+                alert('Please record audio first.');
+                return;
+            }
+            
+            // Show analysis section
+            document.querySelector('.analysis-section').style.display = 'block';
+            document.getElementById('analysis').scrollIntoView({ behavior: 'smooth' });
+            
+            // Simulate processing (in real application, this would send to server)
+            const transcriptDiv = document.getElementById('transcriptResult');
+            const analysisDiv = document.getElementById('analysisResult');
+            
+            transcriptDiv.innerHTML = '<div style="text-align: center; color: #666;"><em>🔄 Processing your speech...</em></div>';
+            analysisDiv.innerHTML = '<div style="text-align: center; color: #666;"><em>🔄 Analyzing your response...</em></div>';
+            
+            // Simulate analysis delay
+            setTimeout(() => {
+                const questionNum = document.getElementById('questionSelect').value;
+                const cueCard = cueCards[questionNum];
+                
+                transcriptDiv.innerHTML = `
+                    <p><em>"I'd like to talk about photography, which is my favorite hobby. I started taking photos about five years ago when I received my first camera as a birthday gift. Initially, I just took casual pictures, but gradually I became more serious about it. Now I practice photography at least three times a week, usually during weekends and evenings. I love capturing landscapes and street scenes around my city. What I enjoy most is the creativity involved - finding the perfect angle, playing with light and shadows, and telling stories through images. Photography has taught me to see beauty in everyday moments and has become a way for me to express myself artistically."</em></p>
+                `;
+                
+                analysisDiv.innerHTML = `
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: #8b4513; margin-bottom: 0.5rem;">✅ Strengths:</h4>
+                        <ul style="color: #2e7d32; padding-left: 1.5rem;">
+                            <li>Clear progression from beginner to regular practitioner</li>
+                            <li>Specific frequency information (three times a week)</li>
+                            <li>Good variety of activity vocabulary (landscapes, street scenes)</li>
+                            <li>Strong personal connection and passion expressed</li>
+                            <li>Natural flow from description to benefits</li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: #8b4513; margin-bottom: 0.5rem;">🎯 Areas for Improvement:</h4>
+                        <ul style="color: #d84315; padding-left: 1.5rem;">
+                            <li>Could include more technical photography terms</li>
+                            <li>Add specific examples of memorable shots taken</li>
+                            <li>Mention any photography groups or communities joined</li>
+                            <li>Describe equipment or techniques learned over time</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(139, 69, 19, 0.1); padding: 1rem; border-radius: 8px;">
+                        <h4 style="color: #8b4513; margin-bottom: 0.5rem;">📊 Estimated Band Score: 7.0-7.5</h4>
+                        <p style="font-size: 0.9rem; color: #666; line-height: 1.5;">
+                            Strong activity description with clear development and passion. To reach Band 8+, include more specific technical details and concrete examples of your photography achievements or memorable shots.
+                        </p>
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        // Navigation functions
+        function goToNextQuestion() {
+            const currentQuestion = parseInt(document.getElementById('questionSelect').value);
+            const nextQuestion = currentQuestion >= 6 ? 1 : currentQuestion + 1;
+            document.getElementById('questionSelect').value = nextQuestion;
+            updateCurrentQuestion();
+            document.getElementById('cue-card').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function refreshCurrentQuestion() {
+            resetSession();
+            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Reset session
+        function resetSession() {
+            // Stop any ongoing recording
+            if (isRecording) {
+                stopRecording();
+            }
+            
+            // Clear timers
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            
+            // Reset button states
+            document.getElementById('prepareBtn').disabled = false;
+            document.getElementById('prepareBtn').textContent = '⏱️ Start Preparation';
+            document.getElementById('recordBtn').disabled = true;
+            document.getElementById('stopBtn').disabled = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('processBtn').disabled = true;
+            
+            // Reset timer display
+            document.getElementById('timerDisplay').textContent = '01:00';
+            document.getElementById('timerLabel').textContent = 'Preparation Time';
+            
+            // Hide analysis section
+            document.querySelector('.analysis-section').style.display = 'none';
+            
+            // Reset variables
+            isPreparationMode = false;
+            isRecording = false;
+            audioChunks = [];
+            originalAudioBlob = null;
+            seconds = 0;
+            
+            // Hide audio visualization
+            document.getElementById('audioCanvas').style.display = 'none';
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Update active menu item
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html> 
