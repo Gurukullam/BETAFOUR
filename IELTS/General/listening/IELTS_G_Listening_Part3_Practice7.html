@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Listening Part 3 - Practice 7: Health and Fitness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            font-size: 10px;
+            color: #5d3a0a;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 8px 0 30px rgba(139, 69, 19, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .speakers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .speaker-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .speaker-card.active {
+            border-color: #8b4513;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(212, 175, 55, 0.1));
+            transform: scale(1.02);
+        }
+
+        .speaker-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 8px;
+        }
+
+        .speaker-role {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .speaker-details {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .conversation-context {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Audio Player Styles */
+        .play-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            margin-bottom: 1rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b4513, #d4af37);
+            height: 100%;
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+
+        .time-display {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        .question-group {
+            margin-bottom: 35px;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 12px;
+            border: 1px solid #d4af37;
+        }
+
+        .question-group-title {
+            font-size: 1.2em;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #d4af37;
+        }
+
+        .matching-container {
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .matching-title {
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+
+        .matching-question {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .matching-select {
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-left: 15px;
+            min-width: 120px;
+            font-size: 16px;
+        }
+
+        .matching-select:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .options-list {
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .options-list h4 {
+            color: #8b4513;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .options-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .options-list li::before {
+            content: attr(data-letter);
+            position: absolute;
+            left: 0;
+            color: #8b4513;
+            font-weight: bold;
+        }
+
+        .note-completion-input {
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-left: 10px;
+            min-width: 120px;
+            font-size: 16px;
+        }
+
+        .note-completion-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .note-completion-container {
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .note-completion-title {
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+
+        .note-completion-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: '💪';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Auto-submit popup styles */
+        .auto-submit-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auto-submit-popup {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            border: 3px solid #d4af37;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .auto-submit-title {
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .auto-submit-message {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .auto-submit-countdown {
+            font-size: 2rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .auto-submit-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .auto-submit-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auto-submit-btn.primary {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+        }
+
+        .auto-submit-btn.primary:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+        }
+
+        .auto-submit-btn.secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #d4af37;
+        }
+
+        .auto-submit-btn.secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .speakers-container {
+                grid-template-columns: 1fr;
+            }
+
+            .play-btn {
+                width: 90%;
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">♪</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">💪 IELTS General Listening</div>
+            <div class="menu-subtitle">Part 3 - Practice 7</div>
+        </div>
+        <div class="menu-content">
+            <a href="#speakers" class="menu-item" onclick="navigateToSection('speakers')">
+                <div class="item-title">1. Fitness Team</div>
+                <div class="item-description">👥 Enthusiast, Beginner & Personal Trainer</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">2. Gym Planning</div>
+                <div class="item-description">🎧 Fitness Goal Discussion (5 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">3. Questions (Part 3)</div>
+                <div class="item-description">📝 Multiple Choice + Matching + Notes</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. Results & Analysis</div>
+                <div class="item-description">📊 Performance Feedback & Improvement Tips</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">💪 IELTS General Listening - Part 3 (Practice 7)</h1>
+                <div class="hero-subtitle">
+                    Health and Fitness - Gym Membership Planning
+                </div>
+                <p class="hero-description">
+                    Listen to Emma Thompson (Fitness Enthusiast), Robert Kim (Beginner), and Lisa Martinez (Personal Trainer) discussing gym membership and fitness goals. This conversation covers fitness planning, membership options, training schedules, and health goal setting. Complete multiple choice, matching questions, and note completion about their fitness planning session. This practice covers Questions 21-30.
+                </p>
+            </section>
+
+            <section id="speakers" class="content-section">
+                <h2 class="section-title">👥 Fitness Planning Participants</h2>
+                <div class="speakers-container">
+                    <div class="speaker-card" id="speaker1">
+                        <div class="speaker-name">Emma Thompson</div>
+                        <div class="speaker-role">Fitness Enthusiast | Experienced Member</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> British English<br>
+                            <strong>Role:</strong> Long-term gym member with fitness expertise<br>
+                            <strong>Experience:</strong> 5 years of consistent training<br>
+                            <strong>Responsibility:</strong> Sharing fitness knowledge and motivating beginners
+                        </div>
+                    </div>
+                    <div class="speaker-card" id="speaker2">
+                        <div class="speaker-name">Robert Kim</div>
+                        <div class="speaker-role">Beginner | New Member</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> Australian English<br>
+                            <strong>Role:</strong> New gym member seeking guidance<br>
+                            <strong>Background:</strong> Limited fitness experience<br>
+                            <strong>Responsibility:</strong> Learning about fitness options and setting realistic goals
+                        </div>
+                    </div>
+                    <div class="speaker-card" id="speaker3">
+                        <div class="speaker-name">Lisa Martinez</div>
+                        <div class="speaker-role">Personal Trainer | Fitness Professional</div>
+                        <div class="speaker-details">
+                            <strong>Accent:</strong> American English<br>
+                            <strong>Role:</strong> Certified personal trainer and fitness consultant<br>
+                            <strong>Experience:</strong> Professional fitness coaching<br>
+                            <strong>Responsibility:</strong> Providing expert advice and designing training programs
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">🎧 Fitness Planning Discussion</h2>
+                <div class="conversation-context">
+                    <strong>Health & Fitness Context:</strong> Friends meeting at a gym to discuss membership options, training schedules, and personal fitness goals. The conversation involves planning effective workout routines, understanding gym facilities, and setting achievable health objectives for different fitness levels.
+                </div>
+                
+                <button class="play-btn" onclick="playAudio()" id="playBtn">
+                    ▶️ Play
+                </button>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">00:00</span> / <span id="totalTime">06:30</span>
+                    </div>
+                </div>
+                
+                <div id="currentSpeaker" style="text-align: center; margin-top: 15px; font-weight: bold; color: #8b4513;"></div>
+            </section>
+
+            <section id="questions" class="content-section">
+                <h2 class="section-title">📝 Fitness Planning Assessment</h2>
+                
+                <!-- Multiple Choice Questions (Questions 21-23) -->
+                <div class="question-group">
+                    <h3 class="question-group-title">Questions 21-23: Multiple Choice</h3>
+                    <p><em>Choose the correct letter, A, B or C.</em></p>
+                    
+                    <div class="question">
+                        <div class="question-number">Question 21</div>
+                        <div class="question-text">What is Robert's main fitness goal?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q21" value="A" id="q21a">
+                                <label for="q21a">A) Building muscle mass for bodybuilding</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q21" value="B" id="q21b">
+                                <label for="q21b">B) Improving overall health and fitness</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q21" value="C" id="q21c">
+                                <label for="q21c">C) Training for marathon competition</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 22</div>
+                        <div class="question-text">According to Lisa, what should beginners focus on initially?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q22" value="A" id="q22a">
+                                <label for="q22a">A) Heavy weight lifting exercises</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q22" value="B" id="q22b">
+                                <label for="q22b">B) Building proper form and consistency</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q22" value="C" id="q22c">
+                                <label for="q22c">C) Advanced cardio training programs</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">Question 23</div>
+                        <div class="question-text">What membership option does Emma recommend for Robert?</div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q23" value="A" id="q23a">
+                                <label for="q23a">A) Premium membership with all facilities</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q23" value="B" id="q23b">
+                                <label for="q23b">B) Basic membership to start gradually</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q23" value="C" id="q23c">
+                                <label for="q23c">C) Day passes until he decides long-term</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matching Questions (Questions 24-26) -->
+                <div class="question-group">
+                    <h3 class="question-group-title">Questions 24-26: Matching Questions</h3>
+                    <p><em>Match each fitness activity with its primary benefit. Choose the correct letter A-F.</em></p>
+                    
+                    <div class="matching-container">
+                        <div class="matching-title">Fitness Activities and Primary Benefits</div>
+                        
+                        <div class="matching-question">
+                            <strong>Question 24: Weight Training</strong>
+                            <select class="matching-select" id="q24">
+                                <option value="">Select...</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                        
+                        <div class="matching-question">
+                            <strong>Question 25: Swimming</strong>
+                            <select class="matching-select" id="q25">
+                                <option value="">Select...</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                        
+                        <div class="matching-question">
+                            <strong>Question 26: Yoga Classes</strong>
+                            <select class="matching-select" id="q26">
+                                <option value="">Select...</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                        
+                        <div class="options-list">
+                            <h4>Primary Benefits:</h4>
+                            <ul>
+                                <li data-letter="A">Strength and muscle development</li>
+                                <li data-letter="B">Full-body cardiovascular workout</li>
+                                <li data-letter="C">Flexibility and stress relief</li>
+                                <li data-letter="D">High-intensity interval training</li>
+                                <li data-letter="E">Balance and coordination improvement</li>
+                                <li data-letter="F">Social interaction and motivation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note Completion Questions (Questions 27-30) -->
+                <div class="question-group">
+                    <h3 class="question-group-title">Questions 27-30: Note Completion</h3>
+                    <p><em>Complete the notes below using NO MORE THAN TWO WORDS for each answer.</em></p>
+                    
+                    <div class="note-completion-container">
+                        <div class="note-completion-title">Robert's Fitness Plan - Weekly Schedule</div>
+                        
+                        <div class="note-completion-item">
+                            <strong>Monday & Wednesday:</strong> Weight training with 
+                            <input type="text" class="note-completion-input" id="q27" placeholder="27"> 
+                            minutes of cardio warm-up
+                        </div>
+                        
+                        <div class="note-completion-item">
+                            <strong>Tuesday & Thursday:</strong> Swimming sessions lasting 
+                            <input type="text" class="note-completion-input" id="q28" placeholder="28"> 
+                            minutes each visit
+                        </div>
+                        
+                        <div class="note-completion-item">
+                            <strong>Friday:</strong> Yoga class focusing on 
+                            <input type="text" class="note-completion-input" id="q29" placeholder="29"> 
+                            and breathing techniques
+                        </div>
+                        
+                        <div class="note-completion-item">
+                            <strong>Weekend:</strong> Rest days with optional 
+                            <input type="text" class="note-completion-input" id="q30" placeholder="30"> 
+                            activities for active recovery
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Results & Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>💪 General Part 3 Improvement Tips</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Auto-submit Timer Popup -->
+    <div class="auto-submit-overlay" id="autoSubmitOverlay">
+        <div class="auto-submit-popup">
+            <div class="auto-submit-title">⏰ Time Completed!</div>
+            <div class="auto-submit-message">
+                The listening time has finished. You should submit your answers now as this simulates the real IELTS test conditions.
+            </div>
+            <div class="auto-submit-countdown" id="autoSubmitCountdown">10</div>
+            <div class="auto-submit-buttons">
+                <button class="auto-submit-btn primary" onclick="handleAutoSubmit()">Submit Now</button>
+                <button class="auto-submit-btn secondary" onclick="continueWithoutSubmit()">Continue Working</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fitness planning conversation data with enhanced TTS integration
+        const conversationData = [
+            {
+                speaker: "Emma Thompson",
+                text: "Hi Robert! Great to see you here at the gym. I'm so excited that you've decided to start your fitness journey. This is Lisa, our personal trainer - she's absolutely fantastic and has helped so many people achieve their goals.",
+                duration: 12000
+            },
+            {
+                speaker: "Robert Kim",
+                text: "Thanks Emma! I'm really nervous but excited too. I've never been to a gym before, and I'm not sure where to start. My main goal is just improving my overall health and fitness - nothing too intense to begin with.",
+                duration: 12000
+            },
+            {
+                speaker: "Lisa Martinez",
+                text: "That's a perfect approach, Robert! For beginners, I always recommend focusing on building proper form and consistency rather than jumping into heavy workouts. It's much more important to develop good habits and technique first.",
+                duration: 13000
+            },
+            {
+                speaker: "Emma Thompson",
+                text: "Absolutely! When I started five years ago, I made the mistake of trying to do too much too quickly. Lisa's advice is spot on - consistency beats intensity every time, especially when you're starting out.",
+                duration: 11000
+            },
+            {
+                speaker: "Robert Kim",
+                text: "That makes me feel better. What kind of membership do you think I should get? There are so many options, and I don't want to pay for things I won't use.",
+                duration: 9000
+            },
+            {
+                speaker: "Emma Thompson",
+                text: "I'd recommend starting with the basic membership to begin gradually. It gives you access to all the essential equipment - cardio machines, weight training area, and the pool. You can always upgrade later if you want additional services.",
+                duration: 12000
+            },
+            {
+                speaker: "Lisa Martinez",
+                text: "That's excellent advice. Now, let me explain the benefits of different activities. Weight training is primarily for strength and muscle development. It's essential for building a strong foundation and improving your metabolism.",
+                duration: 12000
+            },
+            {
+                speaker: "Robert Kim",
+                text: "What about swimming? I've heard that's really good exercise, and I actually enjoy being in the water.",
+                duration: 7000
+            },
+            {
+                speaker: "Lisa Martinez",
+                text: "Swimming is fantastic! It provides a full-body cardiovascular workout while being gentle on your joints. It's one of the best exercises for overall fitness, especially for beginners because it's low-impact.",
+                duration: 11000
+            },
+            {
+                speaker: "Emma Thompson",
+                text: "And don't forget about yoga classes! I love them for flexibility and stress relief. After a hard day at work, yoga really helps me unwind and keeps my body flexible.",
+                duration: 10000
+            },
+            {
+                speaker: "Lisa Martinez",
+                text: "Perfect! Let me suggest a weekly schedule for you, Robert. Monday and Wednesday could be weight training days with fifteen minutes of cardio warm-up. This will help you build strength gradually while improving your cardiovascular fitness.",
+                duration: 13000
+            },
+            {
+                speaker: "Robert Kim",
+                text: "That sounds manageable. What about the other days?",
+                duration: 4000
+            },
+            {
+                speaker: "Lisa Martinez",
+                text: "Tuesday and Thursday would be perfect for swimming sessions lasting thirty minutes each visit. This gives you variety and works different muscle groups while providing excellent cardio exercise.",
+                duration: 11000
+            },
+            {
+                speaker: "Emma Thompson",
+                text: "And I'd definitely recommend Friday yoga classes! They focus on flexibility and breathing techniques, which is perfect for ending the week. It helps prevent muscle tension and promotes recovery.",
+                duration: 11000
+            },
+            {
+                speaker: "Lisa Martinez",
+                text: "Exactly! And for weekends, I suggest rest days with optional walking activities for active recovery. This keeps you moving without putting too much stress on your body while it's adapting to the new routine.",
+                duration: 12000
+            },
+            {
+                speaker: "Robert Kim",
+                text: "This all sounds like a great plan! I feel much more confident about starting now. Thank you both for all the helpful advice and encouragement.",
+                duration: 9000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            }
+        ];
+
+        // Audio control variables
+        let currentIndex = 0;
+        let isPlaying = false;
+        let speechSynthesis = window.speechSynthesis;
+        let currentUtterance = null;
+        // Optimized audio timing for 5-minute content with natural flow
+        let totalDuration = conversationData.reduce((sum, item) => sum + item.duration, 0) + 90000; // Add 1.5 minutes for pauses and natural flow
+        let currentTime = 0;
+        let audioInterval;
+        let autoSubmitInterval;
+        let autoSubmitCountdown = 10;
+
+        // Voice configuration for different speakers
+        const voiceConfig = {
+            "Emma Thompson": {
+                rate: 0.85,
+                pitch: 1.0,
+                volume: 0.9,
+                lang: 'en-GB'
+            },
+            "Robert Kim": {
+                rate: 0.9,
+                pitch: 0.9,
+                volume: 0.9,
+                lang: 'en-AU'
+            },
+            "Lisa Martinez": {
+                rate: 0.8,
+                pitch: 1.05,
+                volume: 0.9,
+                lang: 'en-US'
+            }
+        };
+
+        function highlightCurrentSpeaker(speakerName) {
+            // Reset all speaker cards
+            document.querySelectorAll('.speaker-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Handle pause or end of conversation
+            if (speakerName === "pause" || !speakerName) {
+                document.getElementById('currentSpeaker').textContent = '⏸️ Fitness discussion pausing...';
+                return;
+            }
+            
+            // Highlight current speaker
+            if (speakerName === "Emma Thompson") {
+                document.getElementById('speaker1').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: Emma (Fitness Enthusiast)`;
+            } else if (speakerName === "Robert Kim") {
+                document.getElementById('speaker2').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: Robert (Beginner)`;
+            } else if (speakerName === "Lisa Martinez") {
+                document.getElementById('speaker3').classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🗣️ Currently speaking: Lisa (Personal Trainer)`;
+            }
+        }
+
+        function updateProgress() {
+            if (isPlaying) {
+                currentTime += 100;
+                const progress = Math.min((currentTime / totalDuration) * 100, 100);
+                document.getElementById('progressFill').style.width = progress + '%';
+                
+                // Update time display
+                const currentMinutes = Math.floor(currentTime / 60000);
+                const currentSeconds = Math.floor((currentTime % 60000) / 1000);
+                document.getElementById('currentTime').textContent = 
+                    `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')}`;
+                
+                // Check if time is completed (when progress reaches 100%)
+                if (currentTime >= totalDuration) {
+                    console.log('⏰ Timer completed - showing auto-submit popup');
+                    showAutoSubmitPopup();
+                }
+            }
+        }
+
+        function formatTime(milliseconds) {
+            const minutes = Math.floor(milliseconds / 60000);
+            const seconds = Math.floor((milliseconds % 60000) / 1000);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function playAudio() {
+            if (currentIndex >= conversationData.length) {
+                currentIndex = 0;
+                currentTime = 0;
+            }
+            
+            isPlaying = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('playBtn').textContent = '🔊 Playing...';
+            
+            audioInterval = setInterval(updateProgress, 100);
+            playCurrentSegment();
+        }
+
+        function playCurrentSegment() {
+            if (!isPlaying) {
+                return;
+            }
+            
+            if (currentIndex >= conversationData.length) {
+                console.log('🎯 Reached end of conversation data');
+                stopAudio();
+                return;
+            }
+
+            const segment = conversationData[currentIndex];
+            
+            // Handle pause segments
+            if (segment.speaker === "pause") {
+                console.log(`⏸️ Playing pause segment ${currentIndex + 1} for ${segment.duration}ms`);
+                highlightCurrentSpeaker("pause");
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying) {
+                        if (currentIndex < conversationData.length) {
+                            playCurrentSegment();
+                        } else {
+                            console.log('🎯 All conversation segments completed after pause');
+                            stopAudio();
+                        }
+                    }
+                }, segment.duration);
+                return;
+            }
+
+            highlightCurrentSpeaker(segment.speaker);
+
+            // Create speech utterance
+            currentUtterance = new SpeechSynthesisUtterance(segment.text);
+            
+            // Apply voice configuration
+            const config = voiceConfig[segment.speaker];
+            if (config) {
+                currentUtterance.rate = config.rate;
+                currentUtterance.pitch = config.pitch;
+                currentUtterance.volume = config.volume;
+                currentUtterance.lang = config.lang;
+            }
+
+            // Set voice based on language and speaker
+            const voices = speechSynthesis.getVoices();
+            if (segment.speaker === "Emma Thompson") {
+                const britishVoice = voices.find(voice => 
+                    voice.lang.includes('en-GB') && voice.name.toLowerCase().includes('female')
+                ) || voices.find(voice => voice.lang.includes('en-GB'));
+                if (britishVoice) currentUtterance.voice = britishVoice;
+            } else if (segment.speaker === "Robert Kim") {
+                const australianVoice = voices.find(voice => 
+                    voice.lang.includes('en-AU') && voice.name.toLowerCase().includes('male')
+                ) || voices.find(voice => voice.lang.includes('en-AU'));
+                if (australianVoice) currentUtterance.voice = australianVoice;
+            } else if (segment.speaker === "Lisa Martinez") {
+                const americanVoice = voices.find(voice => 
+                    voice.lang.includes('en-US') && voice.name.toLowerCase().includes('female')
+                ) || voices.find(voice => voice.lang.includes('en-US'));
+                if (americanVoice) currentUtterance.voice = americanVoice;
+            }
+
+            currentUtterance.onstart = () => {
+                console.log(`🎤 Started segment ${currentIndex + 1}: ${segment.speaker}`);
+            };
+
+            currentUtterance.onend = () => {
+                console.log(`✅ Completed segment ${currentIndex + 1}: ${segment.speaker}`);
+                currentIndex++;
+                // Add natural pause between speakers (2 seconds for fitness conversation)
+                setTimeout(() => {
+                    if (isPlaying) {
+                        if (currentIndex < conversationData.length) {
+                            playCurrentSegment();
+                        } else {
+                            console.log('🎯 All conversation segments completed');
+                            stopAudio();
+                        }
+                    }
+                }, 2000);
+            };
+
+            currentUtterance.onerror = (event) => {
+                console.error(`❌ Error in segment ${currentIndex + 1}:`, event.error);
+                // Continue to next segment on error
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying && currentIndex < conversationData.length) {
+                        playCurrentSegment();
+                    } else {
+                        stopAudio();
+                    }
+                }, 1000);
+            };
+
+            try {
+                speechSynthesis.speak(currentUtterance);
+            } catch (error) {
+                console.error(`❌ Failed to start TTS for segment ${currentIndex + 1}:`, error);
+                // Continue to next segment
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying && currentIndex < conversationData.length) {
+                        playCurrentSegment();
+                    } else {
+                        stopAudio();
+                    }
+                }, 1000);
+            }
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            speechSynthesis.cancel();
+            clearInterval(audioInterval);
+            
+            // Show completion message if audio played to the end
+            if (currentIndex >= conversationData.length) {
+                document.getElementById('currentSpeaker').textContent = '✅ Fitness discussion completed. You may now answer the questions.';
+                setTimeout(() => {
+                    document.getElementById('currentSpeaker').textContent = '';
+                }, 3000);
+            } else {
+                document.getElementById('currentSpeaker').textContent = '';
+            }
+            
+            currentIndex = 0;
+            currentTime = 0;
+            
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            document.querySelectorAll('.speaker-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            document.getElementById('playBtn').disabled = false;
+            document.getElementById('playBtn').textContent = '▶️ Play';
+        }
+
+        // Correct answers for assessment
+        const correctAnswers = {
+            q21: 'B', // Improving overall health and fitness
+            q22: 'B', // Building proper form and consistency
+            q23: 'B', // Basic membership to start gradually
+            q24: 'A', // Weight Training → Strength and muscle development
+            q25: 'B', // Swimming → Full-body cardiovascular workout
+            q26: 'C', // Yoga Classes → Flexibility and stress relief
+            q27: 'fifteen', // fifteen minutes of cardio warm-up
+            q28: 'thirty minutes', // thirty minutes each visit (accepting variations)
+            q29: 'flexibility', // focusing on flexibility and breathing techniques
+            q30: 'walking activities' // optional walking activities (accepting variations)
+        };
+
+        // Question explanations
+        const explanations = {
+            q21: 'Robert states: "My main goal is just improving my overall health and fitness - nothing too intense to begin with."',
+            q22: 'Lisa explains: "For beginners, I always recommend focusing on building proper form and consistency rather than jumping into heavy workouts."',
+            q23: 'Emma recommends: "I\'d recommend starting with the basic membership to begin gradually. It gives you access to all the essential equipment."',
+            q24: 'Lisa explains: "Weight training is primarily for strength and muscle development. It\'s essential for building a strong foundation."',
+            q25: 'Lisa states: "Swimming is fantastic! It provides a full-body cardiovascular workout while being gentle on your joints."',
+            q26: 'Emma mentions: "And don\'t forget about yoga classes! I love them for flexibility and stress relief."',
+            q27: 'Lisa suggests: "Monday and Wednesday could be weight training days with fifteen minutes of cardio warm-up."',
+            q28: 'Lisa explains: "Tuesday and Thursday would be perfect for swimming sessions lasting thirty minutes each visit."',
+            q29: 'Emma states: "And I\'d definitely recommend Friday yoga classes! They focus on flexibility and breathing techniques."',
+            q30: 'Lisa suggests: "And for weekends, I suggest rest days with optional walking activities for active recovery."'
+        };
+
+        function submitAnswers() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Check multiple choice questions (21-23)
+            for (let i = 21; i <= 23; i++) {
+                const questionName = `q${i}`;
+                const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                const answer = selectedOption ? selectedOption.value : '';
+                answers[questionName] = answer;
+                
+                const correct = correctAnswers[questionName];
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[questionName]}<br>
+                        <strong>Explanation:</strong> ${explanations[questionName]}
+                    </div>
+                `);
+            }
+
+            // Check matching questions (24-26)
+            for (let i = 24; i <= 26; i++) {
+                const questionName = `q${i}`;
+                const selectElement = document.getElementById(questionName);
+                const answer = selectElement ? selectElement.value : '';
+                answers[questionName] = answer;
+                
+                const correct = correctAnswers[questionName];
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[questionName]}<br>
+                        <strong>Explanation:</strong> ${explanations[questionName]}
+                    </div>
+                `);
+            }
+
+            // Check note completion questions (27-30)
+            for (let i = 27; i <= 30; i++) {
+                const questionName = `q${i}`;
+                const answer = document.getElementById(questionName).value.trim().toLowerCase();
+                answers[questionName] = answer;
+                
+                const correct = correctAnswers[questionName].toLowerCase();
+                const isCorrect = answer === correct || 
+                    (correct.includes(' ') && correct.split(' ').some(word => answer.includes(word))) ||
+                    answer.includes(correct.split(' ')[0]);
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[questionName]}<br>
+                        <strong>Explanation:</strong> ${explanations[questionName]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Focus on listening for health and fitness vocabulary in everyday conversations");
+                tips.push("Practice understanding discussions about exercise, wellness, and healthy lifestyle choices");
+                tips.push("Work on following multi-speaker discussions about physical activities and health goals");
+                tips.push("Listen to fitness-related conversations and gym membership information");
+            } else if (score <= 6) {
+                tips.push("Develop better note completion skills with fitness schedules and health planning");
+                tips.push("Practice identifying specific exercise benefits and training recommendations");
+                tips.push("Work on understanding fitness advice and gym facility descriptions");
+                tips.push("Focus on vocabulary related to exercise types, health goals, and fitness planning");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to distinguish between different fitness activities and their benefits");
+                tips.push("Practice capturing exact details about workout schedules and exercise routines");
+                tips.push("Work on understanding health advice and fitness goal-setting discussions");
+                tips.push("Review vocabulary related to gym memberships, exercise programs, and wellness planning");
+            } else {
+                tips.push("Excellent work! Continue practicing with authentic IELTS General Part 3 materials");
+                tips.push("Focus on time management to complete multiple choice, matching, and note completion efficiently");
+                tips.push("Practice with different health and fitness contexts and scenarios");
+                tips.push("Consider helping others to reinforce your own health and fitness listening skills");
+            }
+            
+            return tips;
+        }
+
+        // Auto-submit timer functions
+        function showAutoSubmitPopup() {
+            // Stop audio and clear intervals
+            isPlaying = false;
+            speechSynthesis.cancel();
+            clearInterval(audioInterval);
+            
+            // Show the popup
+            document.getElementById('autoSubmitOverlay').style.display = 'flex';
+            
+            // Reset countdown
+            autoSubmitCountdown = 10;
+            document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+            
+            // Start countdown
+            autoSubmitInterval = setInterval(() => {
+                autoSubmitCountdown--;
+                document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+                
+                if (autoSubmitCountdown <= 0) {
+                    clearInterval(autoSubmitInterval);
+                    handleAutoSubmit();
+                }
+            }, 1000);
+        }
+
+        function handleAutoSubmit() {
+            clearInterval(autoSubmitInterval);
+            document.getElementById('autoSubmitOverlay').style.display = 'none';
+            
+            // Automatically submit answers
+            submitAnswers();
+            
+            // Show message
+            setTimeout(() => {
+                alert('⏰ Time completed! Your answers have been automatically submitted as per IELTS test conditions.');
+            }, 500);
+        }
+
+        function continueWithoutSubmit() {
+            clearInterval(autoSubmitInterval);
+            document.getElementById('autoSubmitOverlay').style.display = 'none';
+            
+            // Allow user to continue working
+            console.log('📝 User chose to continue working after timer completion');
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS General Listening Part 3 Practice 7 - Going to introduction');
+            window.location.href = 'IELTS_General_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('💪 IELTS General Listening Part 3 Practice 7 - Health and Fitness loaded');
+            
+            // Debug audio system
+            console.log('🔊 Browser audio capabilities:');
+            console.log('- speechSynthesis available:', 'speechSynthesis' in window);
+            console.log('- Web Audio API available:', 'AudioContext' in window || 'webkitAudioContext' in window);
+            
+            // Test speech synthesis availability
+            if ('speechSynthesis' in window) {
+                setTimeout(() => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🎤 Initial voices check:', voices.length, 'voices available');
+                    if (voices.length === 0) {
+                        console.log('⏳ Waiting for voices to load...');
+                        speechSynthesis.addEventListener('voiceschanged', function() {
+                            const newVoices = speechSynthesis.getVoices();
+                            console.log('🎤 Voices loaded:', newVoices.length, 'voices now available');
+                        });
+                    }
+                }, 1000);
+            }
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+            if (autoSubmitInterval) {
+                clearInterval(autoSubmitInterval);
+            }
+        });
+    </script>
+</body>
+</html> 
