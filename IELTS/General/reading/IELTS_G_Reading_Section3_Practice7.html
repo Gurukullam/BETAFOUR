@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 3 - Practice 7: Strategic Leadership and Organizational Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5d3a0a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* Small Timer Display */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle.active #menuIcon {
+            transform: rotate(180deg);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #d4af37;
+            text-align: center;
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .timer-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Split Container Layout */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        /* Passages Panel (Left Side) */
+        .passages-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 45%;
+            max-width: 60%;
+        }
+
+        /* Questions Panel (Right Side) */
+        .questions-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 40%;
+            max-width: 55%;
+        }
+
+        /* Panel Headers */
+        .panel-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .panel-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .passage-counter, .question-progress {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Scrollable Content Areas */
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar Styling */
+        .scrollable-content::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 6px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            border-radius: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+        }
+
+        /* Vertical Separator */
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(180deg, #8b4513, #d4af37, #8b4513);
+            position: relative;
+            cursor: col-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .separator-line {
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .separator-handle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            color: #8b4513;
+            padding: 8px 2px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: col-resize;
+            user-select: none;
+        }
+
+        /* Passage Text Styling */
+        .passage-block {
+            margin-bottom: 0; /* Single passage - no spacing needed */
+            padding: 25px;
+            background: rgba(249, 249, 249, 0.8);
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .passage-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .passage-text {
+            font-size: 1rem; /* Slightly larger for complex content */
+            line-height: 1.7; /* Increased for readability */
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Question Styling */
+        .question-group {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(248, 248, 248, 0.9);
+            border-radius: 10px;
+            border-left: 4px solid #8b4513;
+        }
+
+        .question-group-title {
+            font-size: 1.2rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .question:hover {
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+            border-color: #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #8b4513;
+            display: inline-block;
+            margin-right: 10px;
+            min-width: 25px;
+        }
+
+        .question-text {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .options {
+            display: grid;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(249, 249, 249, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #d4af37;
+        }
+
+        .answer-select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .answer-select:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .information-list {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Results Section */
+        .results-section {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 69, 19, 0.05) 100%);
+            text-align: center;
+            display: none;
+        }
+
+        .results-header h2 {
+            color: #8b4513;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .results-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            
+            .vertical-separator {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+        }
+
+        /* Warning styles */
+        .warning {
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #4caf50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📚 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 3 - Practice 7</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">📚 1 Passage - Strategic Leadership and Organizational Excellence</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 3 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passage ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">👑</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📚 IELTS General Reading - Section 3 (Practice 7)</h1>
+                <div class="hero-subtitle">
+                    👑 Strategic Leadership and Organizational Excellence - Expert Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 3 reading skills with expert level strategic leadership and organizational excellence content. This practice covers executive leadership frameworks, organizational transformation strategies, high-performance team development, and strategic governance across complex organizational environments. You will encounter Section 3 question formats: Multiple Choice (5), Matching Information (5), and Sentence Completion (3). Complete Questions 28-40 within the recommended 20-minute timeframe to master your Section 3 skills with sophisticated strategic leadership and organizational excellence comprehension.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📚 Passage Type:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Single Passage:</strong> Strategic Leadership and Organizational Excellence</li>
+                                <li><strong>Content Style:</strong> Expert strategic leadership and executive management</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📊 Statistics:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Total words:</strong> ~850 words</li>
+                                <li><strong>Question formats:</strong> 3 core types (5-5-3 distribution)</li>
+                                <li><strong>Difficulty level:</strong> Expert Leadership Focus</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">🎯 Skills Focus:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li>Strategic leadership analysis</li>
+                                <li>Organizational excellence comprehension</li>
+                                <li>Executive management interpretation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin-bottom: 15px; color: #666;">Recommended time for Section 3: 20 minutes</p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startTimer()" id="startBtn">Start Reading</button>
+                    </div>
+                    <div id="timerWarning" style="margin-top: 15px; color: #d4af37; font-weight: bold; display: none;">
+                        ⚠️ 5 minutes remaining!
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">📚 Reading Workspace - Questions 28-40</h2>
+                
+                <!-- Split Container with Vertical Separation -->
+                <div class="split-container">
+                    
+                    <!-- LEFT SIDE: Single Reading Passage (Scrollable) -->
+                    <div class="passages-panel">
+                        <div class="panel-header">
+                            <h3>📚 Reading Passage</h3>
+                            <div class="passage-counter">1 Passage | ~850 words</div>
+                        </div>
+                        <div class="passages-content scrollable-content">
+                            
+                            <!-- Single Passage: Strategic Leadership and Organizational Excellence -->
+                            <div class="passage-block" id="passage1">
+                                <div class="passage-title">Strategic Leadership and Organizational Excellence: Executive Frameworks for Transformational Performance and Sustainable Competitive Advantage</div>
+                                <div class="passage-text">
+                                    Strategic leadership and organizational excellence represent the pinnacle of executive management capabilities, encompassing sophisticated frameworks for transformational change, high-performance culture development, and sustainable competitive advantage creation across complex, dynamic business environments. Exceptional leaders demonstrate visionary thinking, strategic agility, and emotional intelligence while orchestrating organizational transformation initiatives that align human capital, technological resources, and operational processes to achieve extraordinary performance outcomes and stakeholder value creation.<br><br>
+                                    
+                                    Executive leadership excellence requires mastery of strategic thinking processes that integrate market intelligence, competitive analysis, and stakeholder expectations to formulate comprehensive organizational strategies that anticipate future challenges while leveraging current capabilities. Strategic leaders utilize scenario planning, systems thinking, and decision-making frameworks to navigate uncertainty, mitigate risks, and capitalize on emerging opportunities while maintaining organizational focus and resource optimization throughout complex transformation journeys.<br><br>
+                                    
+                                    Organizational transformation leadership involves designing and implementing comprehensive change management strategies that address cultural evolution, process reengineering, and capability development across all organizational levels. Transformational leaders establish clear vision statements, communicate compelling narratives, and create psychological safety environments that encourage innovation, experimentation, and continuous learning while maintaining operational excellence and performance standards during periods of significant organizational change.<br><br>
+                                    
+                                    High-performance team development represents a critical component of organizational excellence, requiring leaders to cultivate collaborative cultures, optimize team dynamics, and leverage diverse perspectives to enhance creativity, problem-solving capabilities, and collective performance outcomes. Effective leaders implement talent development programs, succession planning initiatives, and performance management systems that identify, nurture, and retain exceptional talent while creating opportunities for professional growth and career advancement across the organization.<br><br>
+                                    
+                                    Strategic governance and accountability frameworks ensure organizational alignment, ethical leadership practices, and stakeholder value creation through transparent decision-making processes, risk management protocols, and performance measurement systems. Leaders establish governance structures that balance entrepreneurial flexibility with regulatory compliance, stakeholder expectations, and long-term sustainability objectives while maintaining organizational integrity and building stakeholder trust through consistent performance delivery and transparent communication.<br><br>
+                                    
+                                    Innovation leadership involves creating organizational ecosystems that foster creativity, encourage experimentation, and accelerate knowledge creation through strategic partnerships, research and development investments, and cross-functional collaboration initiatives. Innovation-focused leaders establish innovation labs, incubation programs, and knowledge sharing platforms that connect internal capabilities with external expertise, emerging technologies, and market opportunities to drive continuous improvement and breakthrough innovation outcomes.<br><br>
+                                    
+                                    Stakeholder engagement and relationship management require sophisticated communication strategies, influence tactics, and partnership development capabilities that build trust, align interests, and create mutual value across diverse stakeholder groups including employees, customers, investors, partners, and community organizations. Strategic leaders develop stakeholder mapping frameworks, engagement protocols, and value proposition strategies that strengthen relationships while advancing organizational objectives and societal contributions.<br><br>
+                                    
+                                    Performance excellence and continuous improvement initiatives integrate quality management systems, operational efficiency programs, and customer experience optimization strategies that deliver superior value propositions while maintaining cost competitiveness and operational agility. Excellence-focused leaders implement performance dashboards, benchmarking protocols, and improvement methodologies that enable data-driven decision making, rapid problem resolution, and systematic capability enhancement across all organizational functions.<br><br>
+                                    
+                                    Global leadership capabilities encompass cultural intelligence, cross-border management expertise, and international market understanding that enable organizations to compete effectively in diverse geographic markets while adapting to local requirements and leveraging global synergies. Global leaders develop cultural competency, language skills, and international network relationships that facilitate market entry, partnership development, and knowledge transfer across different cultural and regulatory environments.<br><br>
+                                    
+                                    Future leadership evolution will increasingly emphasize sustainability leadership, digital transformation expertise, and purpose-driven management approaches that balance financial performance with environmental stewardship, social responsibility, and ethical governance practices. Next-generation leaders must integrate sustainability considerations into strategic planning, embrace digital technologies for organizational enhancement, and create purpose-driven cultures that attract top talent while contributing to positive societal outcomes and long-term organizational resilience.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VERTICAL SEPARATOR -->
+                    <div class="vertical-separator">
+                        <div class="separator-line"></div>
+                        <div class="separator-handle" title="Drag to resize">⋮⋮</div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Questions 28-40 (Scrollable) -->
+                    <div class="questions-panel">
+                        <div class="panel-header">
+                            <h3>📝 Questions 28-40</h3>
+                            <div class="question-progress">
+                                <span id="answeredCount">0</span>/13 answered
+                            </div>
+                        </div>
+                        <div class="questions-content scrollable-content">
+                            
+                            <!-- Questions 28-32: Multiple Choice -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 28-32: Multiple Choice</h4>
+                                <p><em>Choose the correct letter, A, B, C, or D.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">28.</div>
+                                    <div class="question-text">According to the passage, exceptional leaders demonstrate which combination of capabilities?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q28" value="A" onchange="updateProgress()">
+                                            A) Technical expertise and financial management skills exclusively
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q28" value="B" onchange="updateProgress()">
+                                            B) Visionary thinking, strategic agility, and emotional intelligence while orchestrating transformation
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q28" value="C" onchange="updateProgress()">
+                                            C) Traditional management approaches without innovation focus
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q28" value="D" onchange="updateProgress()">
+                                            D) Short-term profit maximization and cost reduction strategies
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">29.</div>
+                                    <div class="question-text">What do strategic leaders utilize for navigation according to the passage?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q29" value="A" onchange="updateProgress()">
+                                            A) Rigid planning methodologies and historical data only
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q29" value="B" onchange="updateProgress()">
+                                            B) Scenario planning, systems thinking, and decision-making frameworks to navigate uncertainty
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q29" value="C" onchange="updateProgress()">
+                                            C) Intuitive decision-making without analytical support
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q29" value="D" onchange="updateProgress()">
+                                            D) Simple cost-benefit analysis and basic forecasting
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">30.</div>
+                                    <div class="question-text">According to the passage, what do transformational leaders establish?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q30" value="A" onchange="updateProgress()">
+                                            A) Rigid hierarchical structures and strict compliance protocols
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q30" value="B" onchange="updateProgress()">
+                                            B) Clear vision statements and psychological safety environments that encourage innovation
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q30" value="C" onchange="updateProgress()">
+                                            C) Traditional management approaches without change initiatives
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q30" value="D" onchange="updateProgress()">
+                                            D) Cost reduction programs and efficiency optimization only
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">31.</div>
+                                    <div class="question-text">What do innovation-focused leaders establish according to the passage?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q31" value="A" onchange="updateProgress()">
+                                            A) Traditional research departments with limited external interaction
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q31" value="B" onchange="updateProgress()">
+                                            B) Innovation labs, incubation programs, and knowledge sharing platforms connecting internal and external expertise
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q31" value="C" onchange="updateProgress()">
+                                            C) Isolated development teams without collaboration opportunities
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q31" value="D" onchange="updateProgress()">
+                                            D) Conservative approaches that avoid experimentation and risk-taking
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">32.</div>
+                                    <div class="question-text">According to the passage, future leadership evolution will increasingly emphasize what areas?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q32" value="A" onchange="updateProgress()">
+                                            A) Traditional profit maximization without consideration for broader impacts
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q32" value="B" onchange="updateProgress()">
+                                            B) Sustainability leadership, digital transformation expertise, and purpose-driven management approaches
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q32" value="C" onchange="updateProgress()">
+                                            C) Resistance to technological change and environmental considerations
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q32" value="D" onchange="updateProgress()">
+                                            D) Short-term financial performance without stakeholder consideration
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 33-37: Matching Information -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 33-37: Matching Information</h4>
+                                <p><em>Choose the correct letter, A-J, for each statement. You may use any letter more than once.</em></p>
+                                
+                                <div class="information-list" style="background: rgba(248, 248, 248, 0.9); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                                    <h5>Information from the passage:</h5>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; margin-top: 10px;">
+                                        <div><strong>A.</strong> Executive leadership excellence and strategic thinking</div>
+                                        <div><strong>B.</strong> Organizational transformation leadership strategies</div>
+                                        <div><strong>C.</strong> High-performance team development approaches</div>
+                                        <div><strong>D.</strong> Strategic governance and accountability frameworks</div>
+                                        <div><strong>E.</strong> Innovation leadership and ecosystem creation</div>
+                                        <div><strong>F.</strong> Stakeholder engagement and relationship management</div>
+                                        <div><strong>G.</strong> Performance excellence and continuous improvement</div>
+                                        <div><strong>H.</strong> Global leadership capabilities and cultural intelligence</div>
+                                        <div><strong>I.</strong> Future leadership evolution and sustainability focus</div>
+                                        <div><strong>J.</strong> Strategic leadership and organizational excellence overview</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="question">
+                                    <div class="question-number">33.</div>
+                                    <div class="question-text">Utilizes scenario planning and systems thinking to navigate uncertainty and capitalize on opportunities</div>
+                                    <select class="answer-select" id="q33" onchange="updateProgress()">
+                                        <option value="">Select information</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                        <option value="H">H</option>
+                                        <option value="I">I</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">34.</div>
+                                    <div class="question-text">Implements talent development programs and succession planning initiatives to retain exceptional talent</div>
+                                    <select class="answer-select" id="q34" onchange="updateProgress()">
+                                        <option value="">Select information</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                        <option value="H">H</option>
+                                        <option value="I">I</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">35.</div>
+                                    <div class="question-text">Develops cultural competency and international network relationships for market entry and partnership development</div>
+                                    <select class="answer-select" id="q35" onchange="updateProgress()">
+                                        <option value="">Select information</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                        <option value="H">H</option>
+                                        <option value="I">I</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">36.</div>
+                                    <div class="question-text">Integrates quality management systems and operational efficiency programs for superior value delivery</div>
+                                    <select class="answer-select" id="q36" onchange="updateProgress()">
+                                        <option value="">Select information</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                        <option value="H">H</option>
+                                        <option value="I">I</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">37.</div>
+                                    <div class="question-text">Develops stakeholder mapping frameworks and engagement protocols to strengthen relationships</div>
+                                    <select class="answer-select" id="q37" onchange="updateProgress()">
+                                        <option value="">Select information</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                        <option value="H">H</option>
+                                        <option value="I">I</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Questions 38-40: Sentence Completion -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 38-40: Sentence Completion</h4>
+                                <p><em>Complete the sentences using NO MORE THAN THREE WORDS from the passage.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">38.</div>
+                                    <div class="question-text">Strategic leaders establish governance structures that balance entrepreneurial flexibility with regulatory compliance, stakeholder expectations, and __________ while maintaining organizational integrity.</div>
+                                    <input type="text" class="answer-input" id="q38" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">39.</div>
+                                    <div class="question-text">Excellence-focused leaders implement performance dashboards, benchmarking protocols, and improvement methodologies that enable __________, rapid problem resolution, and systematic capability enhancement.</div>
+                                    <input type="text" class="answer-input" id="q39" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">40.</div>
+                                    <div class="question-text">Next-generation leaders must integrate sustainability considerations into strategic planning, embrace digital technologies for organizational enhancement, and create __________ that attract top talent while contributing to positive societal outcomes.</div>
+                                    <input type="text" class="answer-input" id="q40" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <div class="results-header">
+                    <h2>📊 Practice Results</h2>
+                    <p>Your Section 3 Reading Performance</p>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 13 questions correct</div>
+                </div>
+
+                <div id="detailedResults" style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <!-- Results will be populated here -->
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <button class="timer-btn" onclick="resetPractice()">Try Again</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Timer and workspace functionality
+        let timerInterval;
+        let timeRemaining = 1200; // 20 minutes in seconds
+        let isTimerRunning = false;
+
+        // Correct answers for Section 3 Practice 7
+        const correctAnswers = {
+            'q28': 'B',
+            'q29': 'B',
+            'q30': 'B',
+            'q31': 'B',
+            'q32': 'B',
+            'q33': 'A',
+            'q34': 'C',
+            'q35': 'H',
+            'q36': 'G',
+            'q37': 'F',
+            'q38': 'long-term sustainability objectives',
+            'q39': 'data-driven decision making',
+            'q40': 'purpose-driven cultures'
+        };
+
+        function startTimer() {
+            if (isTimerRunning) return;
+            
+            isTimerRunning = true;
+            document.getElementById('startBtn').disabled = true;
+            
+            // Show small timer
+            const smallTimer = document.getElementById('smallTimerDisplay');
+            smallTimer.style.display = 'flex';
+            
+            // Auto-scroll to reading workspace
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            timeRemaining--;
+            
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            document.getElementById('timerDisplay').textContent = timeString;
+            document.getElementById('smallTimerTime').textContent = timeString;
+            
+            // Warning at 10 minutes remaining
+            if (timeRemaining === 600) {
+                document.getElementById('timerWarning').textContent = '⚠️ 10 minutes remaining!';
+                document.getElementById('timerWarning').style.display = 'block';
+                document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(255, 140, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%)';
+            }
+            
+            // Warning at 5 minutes remaining
+            if (timeRemaining === 300) {
+                document.getElementById('timerWarning').textContent = '⚠️ 5 minutes remaining!';
+                document.getElementById('timerWarning').style.color = '#ff6b35';
+                document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(255, 69, 0, 0.95) 0%, rgba(255, 99, 71, 0.95) 100%)';
+            }
+            
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                submitAnswers();
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('menu-open');
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function updateProgress() {
+            this.autoSave(); // Only handles auto-save functionality
+        }
+
+        function autoSave() {
+            // Auto-save user answers to localStorage
+            const answers = {};
+            for (let i = 28; i <= 40; i++) {
+                const questionElement = document.getElementById(`q${i}`);
+                if (questionElement) {
+                    if (questionElement.type === 'text' || questionElement.tagName === 'SELECT') {
+                        answers[`q${i}`] = questionElement.value;
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                    if (radioButtons.length > 0) {
+                        answers[`q${i}`] = radioButtons[0].value;
+                    }
+                }
+            }
+            
+            localStorage.setItem('section3_practice7_answers', JSON.stringify(answers));
+            
+            // Update progress counter
+            const answeredCount = Object.keys(answers).filter(key => answers[key] && answers[key].trim() !== '').length;
+            document.getElementById('answeredCount').textContent = answeredCount;
+        }
+
+        function loadSavedAnswers() {
+            const savedAnswers = localStorage.getItem('section3_practice7_answers');
+            if (savedAnswers) {
+                const answers = JSON.parse(savedAnswers);
+                for (const [questionId, answer] of Object.entries(answers)) {
+                    const questionElement = document.getElementById(questionId);
+                    if (questionElement) {
+                        if (questionElement.type === 'text' || questionElement.tagName === 'SELECT') {
+                            questionElement.value = answer;
+                        }
+                    } else {
+                        // Handle radio buttons
+                        const radioButton = document.querySelector(`input[name="${questionId}"][value="${answer}"]`);
+                        if (radioButton) {
+                            radioButton.checked = true;
+                        }
+                    }
+                }
+                updateProgress();
+            }
+        }
+
+        function submitAnswers() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            
+            const userAnswers = {};
+            let score = 0;
+            
+            // Collect answers for questions 28-40
+            for (let i = 28; i <= 40; i++) {
+                const questionElement = document.getElementById(`q${i}`);
+                if (questionElement && questionElement.type === 'text') {
+                    userAnswers[`q${i}`] = questionElement.value.toLowerCase().trim();
+                } else if (questionElement && questionElement.tagName === 'SELECT') {
+                    userAnswers[`q${i}`] = questionElement.value;
+                } else {
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                    if (radioButtons.length > 0) {
+                        userAnswers[`q${i}`] = radioButtons[0].value;
+                    }
+                }
+            }
+            
+            // Calculate score
+            for (const [questionId, correctAnswer] of Object.entries(correctAnswers)) {
+                const userAnswer = userAnswers[questionId] || '';
+                if (typeof correctAnswer === 'string' && typeof userAnswer === 'string') {
+                    if (correctAnswer.toLowerCase() === userAnswer.toLowerCase()) {
+                        score++;
+                    }
+                }
+            }
+            
+            // Display results
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('results').style.display = 'block';
+            
+            // Show detailed results
+            let resultsHTML = '<h3 style="color: #8b4513; margin-bottom: 20px;">📚 Detailed Answer Review</h3>';
+            resultsHTML += '<div style="display: grid; gap: 15px;">';
+            
+            for (let i = 28; i <= 40; i++) {
+                const questionId = `q${i}`;
+                const correctAnswer = correctAnswers[questionId];
+                const userAnswer = userAnswers[questionId] || 'No answer';
+                const isCorrect = correctAnswer.toLowerCase() === (userAnswer || '').toLowerCase();
+                
+                resultsHTML += `
+                    <div style="padding: 15px; background: ${isCorrect ? 'rgba(76, 175, 80, 0.1)' : 'rgba(244, 67, 54, 0.1)'}; border-radius: 8px; border-left: 4px solid ${isCorrect ? '#4caf50' : '#f44336'};">
+                        <div style="font-weight: bold; margin-bottom: 5px;">Question ${i}: ${isCorrect ? '✅ Correct' : '❌ Incorrect'}</div>
+                        <div>Your answer: <span style="color: #666;">${userAnswer}</span></div>
+                        <div>Correct answer: <span style="color: #8b4513; font-weight: bold;">${correctAnswer}</span></div>
+                    </div>
+                `;
+            }
+            
+            resultsHTML += '</div>';
+            
+            // Add improvement tips based on performance
+            const percentage = Math.round((score / 13) * 100);
+            resultsHTML += `<div style="margin-top: 30px; padding: 20px; background: rgba(212, 175, 55, 0.1); border-radius: 10px;">`;
+            resultsHTML += `<h4 style="color: #8b4513;">👑 Strategic Leadership and Organizational Excellence Mastery</h4>`;
+            
+            if (percentage >= 85) {
+                resultsHTML += `<p><strong>Outstanding!</strong> You have mastered Section 3 with expert-level strategic leadership comprehension. Achievements:</p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Multiple Choice mastery (5 questions):</strong> Expert strategic leadership and executive management interpretation</li>
+                        <li><strong>Matching Information excellence (5 questions):</strong> Advanced detail location within leadership frameworks and organizational excellence content</li>
+                        <li><strong>Sentence Completion precision (3 questions):</strong> Strategic leadership terminology extraction and executive vocabulary mastery</li>
+                        <li><strong>Section 3 Complete:</strong> You have successfully completed all 7 practices with sophisticated professional comprehension!</li>
+                    </ul>`;
+            } else if (percentage >= 65) {
+                resultsHTML += `<p><strong>Excellent progress!</strong> Your Section 3 strategic leadership skills demonstrate strong development. Focus on:</p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Multiple Choice (5):</strong> Understanding complex strategic leadership terminology and executive management concepts</li>
+                        <li><strong>Matching Information (5):</strong> Locating specific details within leadership passages and organizational excellence frameworks</li>
+                        <li><strong>Sentence Completion (3):</strong> Extracting precise strategic terms and following academic word limits</li>
+                        <li>Analyzing executive leadership strategies and organizational transformation methodologies</li>
+                    </ul>`;
+            } else {
+                resultsHTML += `<p><strong>Continue developing!</strong> Build Section 3 strategic leadership comprehension skills with expert-level content:</p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Multiple Choice foundation (5):</strong> Understanding strategic leadership document structure and executive terminology</li>
+                        <li><strong>Matching Information basics (5):</strong> Careful scanning for specific leadership details and precise information location</li>
+                        <li><strong>Sentence Completion fundamentals (3):</strong> Scanning for precise strategic terms and organizational excellence concepts</li>
+                        <li>Review strategic leadership and organizational excellence fundamentals to strengthen expert-level comprehension</li>
+                    </ul>`;
+            }
+            
+            resultsHTML += `</div>`;
+            
+            document.getElementById('detailedResults').innerHTML = resultsHTML;
+            
+            // Clear saved answers
+            localStorage.removeItem('section3_practice7_answers');
+            
+            // Navigate to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetPractice() {
+            // Reset timer
+            timeRemaining = 1200;
+            isTimerRunning = false;
+            clearInterval(timerInterval);
+            document.getElementById('timerDisplay').textContent = '20:00';
+            document.getElementById('smallTimerTime').textContent = '20:00';
+            document.getElementById('smallTimerDisplay').style.display = 'none';
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('timerWarning').style.display = 'none';
+            
+            // Reset small timer colors
+            document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+            
+            // Clear all answers
+            document.querySelectorAll('.answer-input').forEach(input => input.value = '');
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            document.querySelectorAll('.answer-select').forEach(select => select.value = '');
+            
+            // Clear saved answers
+            localStorage.removeItem('section3_practice7_answers');
+            
+            // Hide results
+            document.getElementById('results').style.display = 'none';
+            
+            // Reset progress counter
+            document.getElementById('answeredCount').textContent = '0';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const menu = document.getElementById('slideMenu');
+                if (menu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize
+        window.addEventListener('load', function() {
+            loadSavedAnswers();
+            
+            // Add change listeners for auto-save
+            document.querySelectorAll('.answer-input, input[type="radio"], .answer-select').forEach(element => {
+                element.addEventListener('change', autoSave);
+                element.addEventListener('input', autoSave);
+            });
+        });
+
+        // Resizable panels functionality
+        let isResizing = false;
+
+        document.querySelector('.separator-handle').addEventListener('mousedown', function(e) {
+            isResizing = true;
+            document.body.style.cursor = 'col-resize';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isResizing) return;
+            
+            const container = document.querySelector('.split-container');
+            const containerRect = container.getBoundingClientRect();
+            const newLeftWidth = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+            
+            if (newLeftWidth > 30 && newLeftWidth < 70) {
+                document.querySelector('.passages-panel').style.flex = `0 0 ${newLeftWidth}%`;
+                document.querySelector('.questions-panel').style.flex = `0 0 ${100 - newLeftWidth}%`;
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isResizing = false;
+            document.body.style.cursor = 'default';
+        });
+    </script>
+</body>
+</html> 
