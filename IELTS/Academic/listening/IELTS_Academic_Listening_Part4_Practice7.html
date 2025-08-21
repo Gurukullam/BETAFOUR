@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Academic Listening Part 4 - Practice 7: Cultural Anthropology – Field Methods</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, rgba(212,175,55,0.3) 0%, rgba(139,69,19,0.2) 50%, rgba(255,215,0,0.1) 100%); min-height: 100vh; position: relative; }
+    body::before { content: ''; position: fixed; inset: 0; width: 100%; height: 100%; background:
+      radial-gradient(circle at 20% 20%, rgba(255,215,0,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(212,175,55,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgba(139,69,19,0.05) 0%, transparent 50%);
+      z-index: -1; pointer-events: none; }
+    .header-spacer { height: 20px; width: 100%; }
+    .gk-logo-container { position: fixed; top: 30px; right: 30px; z-index: 1002; display: flex; flex-direction: column; align-items: center; gap: .3rem; cursor: pointer; padding: 5px; border-radius: 10px; transition: all .3s ease; }
+    .gk-logo-container:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(139,69,19,0.3); }
+    .master-guruvammal-logo { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; font-family: 'Century Gothic', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -1px; line-height: 1; color: #5d3a0a; text-shadow: 1px 1px 2px rgba(255,255,255,0.3); background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(139,69,19,0.25) 50%, rgba(205,133,63,0.2) 100%); backdrop-filter: blur(10px); border-radius: 6px; padding: 10px; box-shadow: 0 8px 25px rgba(139,69,19,0.3), 0 0 40px rgba(212,175,55,0.2); transition: all .3s ease; }
+            .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+    .master-guruvammal-logo:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(139,69,19,0.4), 0 0 50px rgba(212,175,55,0.3); }
+    .back-label { font-size: .75rem; font-weight: 600; color: #8b4513; font-family: 'Century Gothic', sans-serif; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); transition: all .3s ease; }
+    .gk-logo-container:hover .back-label { color: #5d3a0a; transform: translateY(-1px); }
+
+    .container { max-width: 1200px; margin: 0 auto; position: relative; margin-left: 360px; transition: margin-left .3s ease; }
+    .container.menu-collapsed { margin-left: 20px; }
+    .main-content { margin-top: 0; padding: 1.5rem 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+    .slide-menu { position: fixed; left: 0; top: 0; width: 340px; height: 100vh; background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,249,250,0.95) 100%); backdrop-filter: blur(20px); border-right: 3px solid rgba(212,175,55,0.3); box-shadow: 8px 0 30px rgba(139,69,19,0.15); z-index: 1000; overflow-y: auto; transition: transform .4s cubic-bezier(.25,.46,.45,.94); transform: translateX(0); }
+    .slide-menu.collapsed { transform: translateX(-340px); }
+    .menu-header { background: linear-gradient(135deg, #8b4513, #d4af37); color: white; padding: 2rem 1.5rem 1.5rem; border-bottom: 2px solid rgba(139,69,19,0.3); position: relative; overflow: hidden; }
+    .menu-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(212,175,55,0.1) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(255,215,0,0.15) 0%, transparent 40%); }
+    .menu-title { font-size: 1.4rem; font-weight: bold; margin-bottom: .5rem; position: relative; z-index: 1; }
+    .menu-subtitle { font-size: .9rem; opacity: .9; position: relative; z-index: 1; }
+    .menu-content { padding: 1.5rem 0; }
+    .menu-item { display: block; padding: 1rem 1.5rem; text-decoration: none; color: #333; border-bottom: 1px solid rgba(212,175,55,0.1); transition: all .3s ease; position: relative; overflow: hidden; }
+    .menu-item::before { content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: linear-gradient(135deg, #8b4513, #d4af37); transform: scaleY(0); transition: transform .3s ease; }
+    .menu-item:hover { background: rgba(212,175,55,0.08); color: #8b4513; transform: translateX(8px); }
+    .menu-item:hover::before { transform: scaleY(1); }
+    .item-title { font-weight: 600; font-size: 1rem; margin-bottom: .2rem; }
+    .item-description { font-size: .85rem; color: #666; line-height: 1.4; }
+
+    .menu-toggle { position: fixed; top: 30px; left: 360px; background: linear-gradient(135deg, #8b4513, #d4af37); color: white; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; z-index: 1001; box-shadow: 0 4px 15px rgba(139,69,19,0.3); transition: all 0.3s ease; }
+    .menu-toggle:hover { background: linear-gradient(135deg, #d4af37, #ffd700); transform: scale(1.05); box-shadow: 0 6px 20px rgba(139,69,19,0.4); }
+    .menu-toggle.collapsed { left: 30px; }
+
+    .hero-section { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; text-align: center; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
+    .hero-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 30%, rgba(212,175,55,0.1) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(139,69,19,0.08) 0%, transparent 50%); }
+    .hero-title { font-size: 2.8rem; font-weight: 900; color: #8b4513; margin-bottom: 1rem; position: relative; z-index: 1; }
+    .hero-subtitle { font-size: 1.4rem; color: #666; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+    .hero-description { font-size: 1.1rem; color: #555; max-width: 900px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+
+    .content-section { background: rgba(255,255,255,0.9); border-radius: 15px; padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border-left: 5px solid #d4af37; }
+    .section-title { color: #8b4513; font-size: 2rem; margin-bottom: 1.5rem; text-align: center; border-bottom: 3px solid #d4af37; padding-bottom: .5rem; }
+    .speaker-container { display: flex; justify-content: center; margin-bottom: 2rem; }
+    .speaker-card { background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(255,215,0,0.05)); padding: 25px; border-radius: 15px; border: 2px solid #d4af37; max-width: 600px; width: 100%; transition: transform .3s ease, box-shadow .3s ease; }
+    .speaker-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(212,175,55,0.3); }
+    .speaker-card.active { border-color: #8b4513; background: linear-gradient(135deg, rgba(139,69,19,0.1), rgba(212,175,55,0.1)); transform: scale(1.02); }
+    .speaker-name { font-size: 1.5em; font-weight: bold; color: #5d3a0a; margin-bottom: 10px; text-align: center; }
+    .speaker-role { color: #8b4513; font-weight: 600; margin-bottom: 15px; text-align: center; font-size: 1.1em; }
+    .speaker-details { color: #666; font-size: 1em; line-height: 1.6; text-align: center; }
+
+    .lecture-context { background: rgba(255,215,0,0.1); padding: 25px; border-radius: 12px; margin-bottom: 25px; border-left: 4px solid #d4af37; font-size: 1.05em; line-height: 1.7; }
+
+    .play-btn { background: linear-gradient(135deg, #8b4513, #d4af37); color: white; border: none; padding: 1.2rem 3rem; border-radius: 25px; cursor: pointer; font-size: 1.3rem; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(139,69,19,0.4); margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto; }
+    .play-btn:hover:not(:disabled) { background: linear-gradient(135deg, #d4af37, #ffd700); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139,69,19,0.6); }
+    .play-btn:disabled { opacity: .6; cursor: not-allowed; }
+
+    .progress-container { background: rgba(139,69,19,0.1); border-radius: 12px; padding: 1rem; margin-top: 1.5rem; }
+    .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 1rem; }
+    .progress-fill { background: linear-gradient(90deg, #8b4513, #d4af37); height: 100%; width: 0%; transition: width 0.2s ease; }
+    .time-display { text-align: center; font-size: 1rem; color: #8b4513; font-weight: 600; }
+
+    .question-group { margin-bottom: 40px; padding: 25px; background: rgba(255,215,0,0.05); border-radius: 15px; border: 2px solid #d4af37; }
+    .question-group-title { font-size: 1.3em; color: #8b4513; margin-bottom: 25px; font-weight: bold; text-align: center; }
+    .summary-completion-container { background: rgba(255,215,0,0.05); border: 2px solid #d4af37; border-radius: 15px; padding: 25px; margin: 25px 0; }
+    .summary-completion-title { text-align: center; font-size: 1.2em; font-weight: bold; color: #8b4513; margin-bottom: 25px; }
+    .summary-text { font-size: 1.05em; line-height: 1.95; color: #333; background: #fff; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37; }
+    .summary-input { background: #fffbf0; border: 2px solid #d4af37; border-radius: 6px; padding: 8px 12px; margin: 0 5px; min-width: 160px; font-size: 16px; font-weight: 600; color: #8b4513; }
+    .summary-input:focus { outline: none; border-color: #8b4513; box-shadow: 0 0 8px rgba(212,175,55,0.4); background: #fff; }
+
+    .submit-btn { background: linear-gradient(135deg, #8b4513, #5d3a0a); color: white; border: none; padding: 18px 50px; border-radius: 25px; cursor: pointer; font-size: 20px; font-weight: bold; transition: all 0.3s ease; display: block; margin: 40px auto; }
+    .submit-btn:hover { background: linear-gradient(135deg, #5d3a0a, #8b4513); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139,69,19,0.4); }
+
+    .score-display { text-align: center; margin-bottom: 2rem; padding: 2.5rem; background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(255,215,0,0.05)); border-radius: 20px; border: 2px solid #d4af37; }
+    .score-number { font-size: 3.5rem; font-weight: bold; color: #8b4513; margin-bottom: .5rem; }
+    .score-text { font-size: 1.3rem; color: #666; margin-top: .5rem; }
+
+    .answer-review { margin-bottom: 2rem; }
+    .review-item { background: rgba(255,255,255,0.9); border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; border-left: 5px solid; }
+    .review-item.correct { border-left-color: #28a745; background: rgba(40,167,69,0.1); }
+    .review-item.incorrect { border-left-color: #dc3545; background: rgba(220,53,69,0.1); }
+
+    .improvement-tips { background: rgba(212,175,55,0.1); border-radius: 15px; padding: 2rem; border: 2px solid rgba(212,175,55,0.3); }
+    .improvement-tips h4 { color: #8b4513; margin-bottom: 1.5rem; font-size: 1.3rem; }
+    .improvement-tips ul { list-style: none; padding: 0; }
+    .improvement-tips li { margin-bottom: 1rem; padding-left: 2rem; position: relative; font-size: 1.05em; line-height: 1.6; }
+    .improvement-tips li::before { content: '🌏'; position: absolute; left: 0; top: 0; }
+
+    .auto-submit-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; display: none; align-items: center; justify-content: center; }
+    .auto-submit-popup { background: #fff; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 15px 50px rgba(0,0,0,0.3); border: 3px solid #d4af37; max-width: 500px; margin: 20px; }
+    .auto-submit-title { font-size: 1.8rem; color: #8b4513; margin-bottom: 15px; font-weight: bold; }
+    .auto-submit-message { font-size: 1.1rem; color: #333; margin-bottom: 25px; line-height: 1.6; }
+    .auto-submit-countdown { font-size: 2rem; color: #d4af37; font-weight: bold; margin-bottom: 25px; }
+    .auto-submit-buttons { display: flex; gap: 15px; justify-content: center; }
+    .auto-submit-btn { padding: 12px 25px; border: none; border-radius: 25px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+    .auto-submit-btn.primary { background: linear-gradient(135deg, #8b4513, #d4af37); color: #fff; }
+    .auto-submit-btn.primary:hover { background: linear-gradient(135deg, #d4af37, #ffd700); transform: translateY(-2px); }
+    .auto-submit-btn.secondary { background: #f0f0f0; color: #333; border: 2px solid #d4af37; }
+    .auto-submit-btn.secondary:hover { background: rgba(212,175,55,0.1); }
+
+    @media (max-width: 768px) { .container { margin-left: 20px; } .slide-menu { width: 100%; transform: translateX(-100%); } .slide-menu.active { transform: translateX(0); } .menu-toggle { left: 30px; } .hero-title { font-size: 2.2rem; } .main-content { padding: 1rem; } .content-section { padding: 1.5rem; } .play-btn { width: 90%; font-size: 1.1rem; padding: 1rem 2rem; } }
+    html { scroll-behavior: smooth; }
+    ::selection { background: rgba(212,175,55,0.3); color: #8b4513; }
+  </style>
+</head>
+<body>
+  <div class="header-spacer"></div>
+  <div class="gk-logo-container" onclick="handleBackButton()">
+    <div class="master-guruvammal-logo">Ga<span class="musical-corner">P</span></div>
+    <div class="back-label">Back</div>
+  </div>
+
+  <div class="slide-menu" id="slideMenu">
+    <div class="menu-header">
+      <div class="menu-title">🌏 IELTS Academic Listening</div>
+      <div class="menu-subtitle">Part 4 - Practice 7</div>
+    </div>
+    <div class="menu-content">
+      <a href="#speaker" class="menu-item" onclick="navigateToSection('speaker')">
+        <div class="item-title">1. Cultural Anthropology Lecturer</div>
+        <div class="item-description">🎓 Dr. Hana Okafor - Field Methods</div>
+      </a>
+      <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+        <div class="item-title">2. Anthropology Lecture</div>
+        <div class="item-description">🎧 Field Methods</div>
+      </a>
+      <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+        <div class="item-title">3. Academic Assessment</div>
+        <div class="item-description">📝 Sentence Completion (Questions 31–40)</div>
+      </a>
+      <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+        <div class="item-title">4. Performance Analysis</div>
+        <div class="item-description">📊 Anthropology Results & Feedback</div>
+      </a>
+    </div>
+  </div>
+  <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()"><span id="menuIcon">📋</span></div>
+
+  <div class="container" id="container">
+    <main class="main-content">
+      <section class="hero-section">
+        <h1 class="hero-title">🌏 IELTS Academic Listening - Part 4 (Practice 7)</h1>
+        <div class="hero-subtitle">Cultural Anthropology – Field Methods</div>
+        <p class="hero-description">
+          Listen to Dr. Hana Okafor presenting a lecture on anthropological field methods. The talk explores participant observation and interviews, rapport and ethics, informed consent and confidentiality, reflexivity and positionality, fieldnotes and coding, triangulation and validity, representation and decolonising practices, and responsibilities to communities.
+        </p>
+      </section>
+
+      <section id="speaker" class="content-section">
+        <h2 class="section-title">🎓 Lecturer Profile</h2>
+        <div class="speaker-container">
+          <div class="speaker-card" id="speakerCard">
+            <div class="speaker-name">Dr. Hana Okafor</div>
+            <div class="speaker-role">Department of Anthropology | Field Methods</div>
+            <div class="speaker-details">
+              <strong>Academic Position:</strong> Senior Lecturer in Cultural Anthropology<br />
+              <strong>Accent:</strong> Australian English (Academic)<br />
+              <strong>Specialization:</strong> Ethnography, qualitative methods, community engagement
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="audio-section" class="content-section">
+        <h2 class="section-title">🎧 Anthropology Lecture: Field Methods</h2>
+        <div class="lecture-context">
+          <strong>Academic Context:</strong> Cultural Anthropology lecture on the practice and ethics of ethnographic research.
+        </div>
+        <button class="play-btn" onclick="playAudio()" id="playBtn">Play</button>
+        <div class="progress-container">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="time-display"><span id="currentTime">00:00</span> / <span id="totalTime">00:00</span></div>
+        </div>
+        <div id="currentSpeaker" style="text-align:center;margin-top:20px;font-weight:bold;color:#8b4513;font-size:1.1em;"></div>
+      </section>
+
+      <section id="questions" class="content-section">
+        <h2 class="section-title">📝 Academic Assessment</h2>
+        <div class="question-group">
+          <h3 class="question-group-title">Questions 31–40: Sentence Completion</h3>
+          <p><em>Complete the notes below using ONE WORD ONLY for each answer.</em></p>
+
+          <div class="summary-completion-container">
+            <div class="summary-completion-title">Field Methods – Lecture Notes</div>
+            <div class="summary-text">
+              <strong>Approaches and Relationships</strong><br />
+              Ethnography centres on <input type="text" class="summary-input" id="q31" placeholder="31" /> observation and sustained <input type="text" class="summary-input" id="q32" placeholder="32" /> with participants to build understanding.
+              <br /><br />
+              <strong>Ethics and Consent</strong><br />
+              Researchers must secure informed <input type="text" class="summary-input" id="q33" placeholder="33" /> and protect <input type="text" class="summary-input" id="q34" placeholder="34" /> when handling sensitive narratives.
+              <br /><br />
+              <strong>Reflexivity and Practice</strong><br />
+              Ongoing <input type="text" class="summary-input" id="q35" placeholder="35" /> about positionality informs interpretation; detailed <input type="text" class="summary-input" id="q36" placeholder="36" /> capture context and emergent patterns.
+              <br /><br />
+              <strong>Triangulation and Validity</strong><br />
+              Methodological <input type="text" class="summary-input" id="q37" placeholder="37" /> strengthens credibility; checking for <input type="text" class="summary-input" id="q38" placeholder="38" /> supports internal consistency.
+              <br /><br />
+              <strong>Representation and Responsibility</strong><br />
+              Attentive <input type="text" class="summary-input" id="q39" placeholder="39" /> avoids harm in dissemination; collaborative <input type="text" class="summary-input" id="q40" placeholder="40" /> honours obligations to communities.
+            </div>
+          </div>
+        </div>
+        <button class="submit-btn" onclick="submitAnswers()">Submit</button>
+      </section>
+
+      <section id="results" class="content-section" style="display:none;">
+        <h2 class="section-title">📊 Anthropology Performance Analysis</h2>
+        <div class="score-display">
+          <div class="score-number" id="scoreNumber">0</div>
+          <div class="score-text">out of 10 questions correct</div>
+        </div>
+        <div class="answer-review" id="answerReview"></div>
+        <div class="improvement-tips">
+          <h4>🌏 Anthropology Listening Enhancement Strategies</h4>
+          <ul id="improvementList"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="auto-submit-overlay" id="autoSubmitOverlay">
+    <div class="auto-submit-popup">
+      <div class="auto-submit-title">⏰ Lecture Completed!</div>
+      <div class="auto-submit-message">The lecture time has finished. Submit your answers now as this simulates real IELTS Part 4 test conditions.</div>
+      <div class="auto-submit-countdown" id="autoSubmitCountdown">10</div>
+      <div class="auto-submit-buttons">
+        <button class="auto-submit-btn primary" onclick="handleAutoSubmit()">Submit Now</button>
+        <button class="auto-submit-btn secondary" onclick="continueWithoutSubmit()">Continue Working</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cultural Anthropology lecture (~5.5 minutes content) + dynamic 30s buffer
+    const conversationData = [
+      { speaker: 'Dr. Hana Okafor', text: "Good afternoon. Today we examine the practice of ethnographic research, considering how methods, ethics, and relationships shape the knowledge we produce and the responsibilities that follow from our presence in the field.", duration: 26000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Ethnography privileges immersion: by participating in daily life while observing carefully, we learn not only what people say but how practices unfold, how meanings are negotiated, and how institutions permeate routines.", duration: 26000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Interviews complement observation by foregrounding participant perspectives. Building rapport requires time, sensitivity to context, and attention to power dynamics that inflect who speaks, how, and to whom.", duration: 25000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Ethics is not a checklist resolved at project start but an ongoing practice. Informed consent adapts to changing circumstances, and confidentiality commitments must be defended when narratives reveal vulnerability or risk.", duration: 26000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Reflexivity expects researchers to interrogate their positionality—their identities, histories, and aims—and to examine how these shape access, interpretation, and the very questions we allow ourselves to ask.", duration: 25000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Fieldnotes, crafted contemporaneously and expanded soon after, anchor memory and analysis; coding notes for patterns and discrepancies helps surface themes without prematurely forcing them into rigid categories.", duration: 25000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Triangulation strengthens claims by combining methods, sources, and researchers where possible. Validity here means coherence and accountability rather than simple replication under controlled conditions.", duration: 25000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Representation carries consequences. We must consider who is portrayed, with what language, and toward which audiences; and we must anticipate whether publication will impose costs or invite unwanted attention.", duration: 25000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Decolonising approaches ask us to share authority, to co-produce knowledge, and to allow communities to set priorities for dissemination and benefit, resisting extractive habits that have marked the discipline's past.", duration: 24000 },
+      { speaker: 'pause', text: '', duration: 3000 },
+      { speaker: 'Dr. Hana Okafor', text: "Finally, responsibility endures after fieldwork ends. Returning results, supporting local aims where possible, and being available for dialogue are part of ethical practice that treats interlocutors as partners rather than sources.", duration: 24000 },
+      { speaker: 'pause', text: '', duration: 5000 }
+    ];
+
+    let currentIndex = 0, isPlaying = false;
+    let speechSynthesisRef = window.speechSynthesis;
+    let currentUtterance = null;
+    const contentDuration = conversationData.reduce((sum, item) => sum + item.duration, 0);
+    let totalDuration = contentDuration + 30000; // dynamic: audio (incl. pauses) + 30s buffer
+    let currentTime = 0, audioInterval, autoSubmitInterval, autoSubmitCountdown = 10; let timerElapsed = false;
+
+    const voiceConfig = { 'Dr. Hana Okafor': { rate: 0.8, pitch: 1.0, volume: 0.9, lang: 'en-AU' } };
+
+    function highlightCurrentSpeaker(name){
+      const card = document.getElementById('speakerCard');
+      if(name === 'pause' || !name){ card.classList.remove('active'); document.getElementById('currentSpeaker').textContent = '⏸️ Lecture pausing for emphasis...'; return; }
+      if(name === 'Dr. Hana Okafor'){ card.classList.add('active'); document.getElementById('currentSpeaker').textContent = `🌏 Currently presenting: Dr. Okafor (Field Methods)`; }
+    }
+
+    function updateProgress(){
+      if(isPlaying){
+        currentTime += 100; const p = Math.min((currentTime / totalDuration) * 100, 100);
+        document.getElementById('progressFill').style.width = p + '%';
+        const mm = Math.floor(currentTime/60000), ss = Math.floor((currentTime%60000)/1000);
+        document.getElementById('currentTime').textContent = `${mm.toString().padStart(2,'0')}:${ss.toString().padStart(2,'0')}`;
+        if(currentTime >= totalDuration){ timerElapsed = true; }
+      }
+    }
+
+    function formatTime(ms){ const m = Math.floor(ms/60000), s = Math.floor((ms%60000)/1000); return `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`; }
+
+    function playAudio(){
+      if(currentIndex >= conversationData.length){ currentIndex = 0; currentTime = 0; timerElapsed = false; }
+      isPlaying = true; const btn = document.getElementById('playBtn'); btn.disabled = true; btn.textContent = 'Playing...';
+      audioInterval = setInterval(updateProgress, 100);
+      playCurrentSegment();
+    }
+
+    function playCurrentSegment(){
+      if(!isPlaying) return;
+      if(currentIndex >= conversationData.length){ stopAudio(); return; }
+      const seg = conversationData[currentIndex];
+      if(seg.speaker === 'pause'){
+        highlightCurrentSpeaker('pause'); currentIndex++;
+        setTimeout(()=>{ if(isPlaying){ if(currentIndex < conversationData.length){ playCurrentSegment(); } else { stopAudio(); } } }, seg.duration);
+        return;
+      }
+      highlightCurrentSpeaker(seg.speaker);
+      currentUtterance = new SpeechSynthesisUtterance(seg.text);
+      const cfg = voiceConfig[seg.speaker]; if(cfg){ currentUtterance.rate = cfg.rate; currentUtterance.pitch = cfg.pitch; currentUtterance.volume = cfg.volume; currentUtterance.lang = cfg.lang; }
+      const voices = speechSynthesisRef.getVoices();
+      const auVoice = voices.find(v => v.lang && v.lang.toLowerCase().includes('en-au') && v.name.toLowerCase().includes('female')) || voices.find(v => v.lang && v.lang.toLowerCase().includes('en-au')) || voices.find(v => v.lang && v.lang.toLowerCase().includes('en'));
+      if(auVoice) currentUtterance.voice = auVoice;
+      currentUtterance.onend = () => { currentIndex++; setTimeout(()=>{ if(isPlaying){ if(currentIndex < conversationData.length){ playCurrentSegment(); } else { stopAudio(); } } }, 3000); };
+      currentUtterance.onerror = () => { currentIndex++; setTimeout(()=>{ if(isPlaying && currentIndex < conversationData.length){ playCurrentSegment(); } else { stopAudio(); } }, 1000); };
+      try { speechSynthesisRef.speak(currentUtterance); } catch(e){ currentIndex++; setTimeout(()=>{ if(isPlaying && currentIndex < conversationData.length){ playCurrentSegment(); } else { stopAudio(); } }, 1000); }
+    }
+
+    function stopAudio(){
+      isPlaying = false; speechSynthesisRef.cancel(); clearInterval(audioInterval);
+      if(currentIndex >= conversationData.length){ showAutoSubmitPopup(); } else { document.getElementById('currentSpeaker').textContent = ''; }
+      currentIndex = 0; currentTime = 0; document.getElementById('progressFill').style.width = '0%'; document.getElementById('currentTime').textContent = '00:00'; document.getElementById('speakerCard').classList.remove('active');
+      const btn = document.getElementById('playBtn'); btn.disabled = false; btn.textContent = 'Play';
+    }
+
+    const correctAnswers = {
+      q31: 'participant',
+      q32: 'rapport',
+      q33: 'consent',
+      q34: 'confidentiality',
+      q35: 'reflexivity',
+      q36: 'fieldnotes',
+      q37: 'triangulation',
+      q38: 'coherence',
+      q39: 'representation',
+      q40: 'collaboration'
+    };
+
+    const explanations = {
+      q31: 'Dr. Okafor: ethnography privileges participant observation.',
+      q32: 'Dr. Okafor: building rapport requires time and sensitivity.',
+      q33: 'Dr. Okafor: informed consent is an ongoing practice.',
+      q34: 'Dr. Okafor: confidentiality protects sensitive narratives.',
+      q35: 'Dr. Okafor: reflexivity about positionality informs interpretation.',
+      q36: 'Dr. Okafor: detailed fieldnotes capture context and patterns.',
+      q37: 'Dr. Okafor: triangulation strengthens claims.',
+      q38: 'Dr. Okafor: checking for coherence supports internal consistency.',
+      q39: 'Dr. Okafor: representation carries consequences.',
+      q40: 'Dr. Okafor: collaborative practices honour obligations to communities.'
+    };
+
+    function isOneWord(answer){ if(!answer) return false; return !answer.trim().includes(' '); }
+
+    function submitAnswers(){
+      let score = 0; const reviewHTML = [];
+      for(let i=31;i<=40;i++){
+        const id = `q${i}`; const ans = (document.getElementById(id).value||'').trim().toLowerCase();
+        const correct = correctAnswers[id].toLowerCase();
+        const one = isOneWord(ans);
+        const isCorrect = one && (
+          ans === correct || ans.replace(/[-]/g,'') === correct.replace(/[-]/g,'')
+        );
+        if(isCorrect) score++;
+        reviewHTML.push(
+          `<div class="review-item ${isCorrect ? 'correct':'incorrect'}">`
+          + `<strong>Question ${i}:</strong> ${isCorrect ? '✅':'❌'}<br>`
+          + `<strong>Your answer:</strong> ${ans || '<em>No answer</em>'}<br>`
+          + `<strong>Correct answer:</strong> ${correctAnswers[id]}<br>`
+          + `<strong>Explanation:</strong> ${explanations[id]}`
+          + `</div>`
+        );
+      }
+      document.getElementById('scoreNumber').textContent = score;
+      document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+      const tips = generateImprovementTips(score).map(t => `<li>${t}</li>`).join('');
+      document.getElementById('improvementList').innerHTML = tips;
+      const res = document.getElementById('results'); res.style.display = 'block'; res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function generateImprovementTips(score){
+      const tips = [];
+      if(score <= 3){
+        tips.push('Revise foundational concepts: consent, confidentiality, reflexivity, triangulation.');
+        tips.push('Practice identifying single-word terms in complex sentences.');
+        tips.push('Note how ethics is presented as ongoing, not one-off.');
+      } else if(score <= 6){
+        tips.push('Connect fieldnotes and coding to emergent pattern recognition.');
+        tips.push('Relate triangulation to coherence and internal validity.');
+        tips.push('Map positionality to interpretation choices.');
+      } else if(score <= 8){
+        tips.push('Synthesize representation choices with responsibilities to communities.');
+        tips.push('Prefer exact one-word terms over paraphrase in answers.');
+        tips.push('Capture how interviews and observation complement each other.');
+      } else {
+        tips.push('Draft an ethics and dissemination plan alongside methods.');
+        tips.push('Practice with ethnography talks to strengthen terminology recall.');
+        tips.push('Record indicators for credibility and accountability in reporting.');
+      }
+      return tips;
+    }
+
+    function showAutoSubmitPopup(){
+      isPlaying = false; speechSynthesisRef.cancel(); clearInterval(audioInterval);
+      document.getElementById('autoSubmitOverlay').style.display = 'flex';
+      autoSubmitCountdown = 10; document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+      autoSubmitInterval = setInterval(()=>{ autoSubmitCountdown--; document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown; if(autoSubmitCountdown <= 0){ clearInterval(autoSubmitInterval); handleAutoSubmit(); } }, 1000);
+    }
+
+    function handleAutoSubmit(){ clearInterval(autoSubmitInterval); document.getElementById('autoSubmitOverlay').style.display = 'none'; submitAnswers(); setTimeout(()=>{ alert('⏰ Lecture completed! Your answers have been automatically submitted.'); }, 500); }
+    function continueWithoutSubmit(){ clearInterval(autoSubmitInterval); document.getElementById('autoSubmitOverlay').style.display = 'none'; }
+
+    function handleBackButton(){ window.location.href = 'IELTS_Academic_Listening_Introduction.html'; }
+    function toggleMenu(){ const m = document.getElementById('slideMenu'); const c = document.getElementById('container'); const t = document.getElementById('menuToggle'); m.classList.toggle('collapsed'); c.classList.toggle('menu-collapsed'); t.classList.toggle('collapsed'); }
+    function navigateToSection(id){ document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' }); if(window.innerWidth <= 768){ toggleMenu(); } }
+
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape'){ handleBackButton(); } else if(e.code === 'Space' && !isPlaying){ e.preventDefault(); playAudio(); } else if(e.ctrlKey && e.key === 'Tab'){ e.preventDefault(); toggleMenu(); } });
+
+    document.addEventListener('DOMContentLoaded', ()=>{ if('speechSynthesis' in window){ setTimeout(()=>{ const v = speechSynthesisRef.getVoices(); if(v.length === 0){ speechSynthesisRef.addEventListener('voiceschanged', ()=>{}); } }, 1000); } document.getElementById('totalTime').textContent = formatTime(totalDuration); });
+
+    window.addEventListener('beforeunload', ()=>{ if('speechSynthesis' in window) speechSynthesisRef.cancel(); if(audioInterval) clearInterval(audioInterval); if(autoSubmitInterval) clearInterval(autoSubmitInterval); });
+  </script>
+</body>
+</html> 
