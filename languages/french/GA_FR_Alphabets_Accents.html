@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Alphabets & Accents Guide - A1 Level | GK Foundation</title>
+    
+    <!-- Font Awesome CSS (Embedded for self-contained operation) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in this page */
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-language:before { content: "\f1ab"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-comments:before { content: "\f086"; }
+        .fa-play:before { content: "\f04b"; }
+        .fa-star:before { content: "\f005"; }
+        .fa-clock:before { content: "\f017"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-certificate:before { content: "\f0a3"; }
+        .fa-heart:before { content: "\f004"; }
+        .fa-flag:before { content: "\f024"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-times:before { content: "\f00d"; }
+        .fa-chevron-right:before { content: "\f054"; }
+        .fa-chevron-left:before { content: "\f053"; }
+        .fa-volume-up:before { content: "\f028"; }
+        .fa-edit:before { content: "\f044"; }
+        .fa-microphone:before { content: "\f130"; }
+        .fa-coffee:before { content: "\f0f4"; }
+        .fa-home:before { content: "\f015"; }
+        .fa-shopping-cart:before { content: "\f07a"; }
+        .fa-utensils:before { content: "\f2e7"; }
+        .fa-map:before { content: "\f279"; }
+        .fa-rocket:before { content: "\f135"; }
+        .fa-pause:before { content: "\f04c"; }
+        .fa-stop:before { content: "\f04d"; }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing - matching HomePage.html */
+        .header-spacer {
+            height: 20px; /* Minimal top spacing */
+            width: 100%;
+        }
+
+        /* Master Guruvammal Logo for back button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            /* Layout & Structure */
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            box-sizing: border-box;
+            
+            /* Typography */
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            
+            /* Golden Square Background */
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
+            padding: 8px;
+            
+            /* Visual Effects */
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            
+            /* Interaction */
+            transition: all 0.3s ease;
+        }
+
+        /* Letter P with circle corner element within Master Gammapace Logo */
+        .master-guruvammal-logo .tamil-corner {
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 0.8px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 6px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        /* Hover effect for Master Gammapace Logo */
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4), 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Back Label under Logo */
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 370px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 30px; /* Adjusted to provide consistent spacing */
+        }
+
+        /* Main Content - professional layout */
+        .main-content {
+            margin-top: 0; /* Remove excessive top margin */
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Slide-out Menu Button */
+        .menu-toggle {
+            position: fixed;
+            top: 40px; /* Aligned with header spacing */
+            left: 370px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Menu Toggle Label */
+        .menu-toggle-label {
+            position: fixed;
+            top: 100px; /* Positioned below the button */
+            left: 395px; /* Centered under button */
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Label hover effect when button is hovered */
+        .menu-toggle:hover + .menu-toggle-label {
+            background: rgba(160, 82, 45, 0.95);
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px; /* Aligned with collapsed container margin */
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 55px; /* Centered under the collapsed button (30px + 25px) */
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 20px; /* Match header spacer height */
+            left: 0;
+            width: 350px;
+            height: calc(100vh - 20px); /* Adjust height to account for top offset */
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem; /* Professional padding with more top space */
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px; /* More professional top margin */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px; /* Compact professional height */
+            border-radius: 0 0 8px 8px; /* Subtle bottom rounding */
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2); /* Professional shadow */
+        }
+
+        /* Back Button - Positioned on right side of content */
+        .content-back-btn {
+            position: fixed;
+            top: 30px; /* Aligned with menu toggle button */
+            right: 30px; /* Professional right positioning */
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .content-back-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .content-back-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Back Button Label */
+        .content-back-label {
+            position: fixed;
+            top: 85px; /* Positioned below the back button */
+            right: 52px; /* Centered under the 45px button */
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(50%);
+            pointer-events: none;
+        }
+
+        /* Label hover effect when back button is hovered */
+        .content-back-btn:hover + .content-back-label {
+            background: rgba(160, 82, 45, 0.95);
+            transform: translateX(50%) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-content {
+            padding: 1.5rem 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1.2rem 1rem;
+            margin-bottom: 0.8rem;
+            background: rgba(139, 69, 19, 0.06);
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 3px solid #8b4513;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(139, 69, 19, 0.1);
+        }
+
+        .menu-item:hover {
+            background: rgba(139, 69, 19, 0.12);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+            border-left-color: #d4af37;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0;
+            color: #2c1810;
+            letter-spacing: 0.2px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem 0rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .french-flag {
+            display: inline-flex;
+            width: 80px;
+            height: 50px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .flag-blue {
+            background: #0055A4;
+            flex: 1;
+        }
+
+        .flag-white {
+            background: #FFFFFF;
+            flex: 1;
+        }
+
+        .flag-red {
+            background: #EF4135;
+            flex: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #5d4e37;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #a0522d, #f4d03f);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(139, 69, 19, 0.1);
+            color: #8b4513;
+            border: 2px solid #8b4513;
+        }
+
+        .btn-secondary:hover {
+            background: #8b4513;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #5d4e37;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .audio-btn {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .audio-btn:hover {
+            background: linear-gradient(135deg, #f4d03f, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Tables */
+        .alphabet-table, .accent-table, .words-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .alphabet-table th, .accent-table th, .words-table th {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .alphabet-table td, .accent-table td, .words-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            vertical-align: middle;
+        }
+
+        .alphabet-table tr:hover, .accent-table tr:hover, .words-table tr:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .letter-column {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #8b4513;
+            text-align: center;
+            width: 80px;
+        }
+
+        .pronunciation-column {
+            font-size: 1.1rem;
+            color: #5d4e37;
+            font-style: italic;
+        }
+
+        .english-guide-column {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .french-word-column {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #8b4513;
+        }
+
+        .english-translation-column {
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Play Speaker Button */
+        .play-speaker-button {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .play-speaker-button:hover {
+            background: linear-gradient(135deg, #f4d03f, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .play-speaker-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .play-speaker-button.playing {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        .play-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0;
+                padding: 0 1rem;
+            }
+
+            .menu-toggle {
+                left: 20px;
+                top: 20px;
+            }
+
+            .menu-toggle-label {
+                left: 45px;
+                top: 80px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                top: 0;
+                height: 100vh;
+            }
+
+            .slide-menu.collapsed {
+                left: -100%;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .alphabet-table, .accent-table, .words-table {
+                font-size: 0.9rem;
+            }
+
+            .letter-column {
+                font-size: 1.5rem;
+            }
+
+            .audio-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()" title="Back to Home">
+        <div class="master-guruvammal-logo">
+            Ga<span class="tamil-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">French Learning Menu</div>
+        </div>
+        <div class="menu-content">
+            <!-- Current Page Sections -->
+            <div style="background: rgba(139, 69, 19, 0.1); padding: 0.5rem; margin-bottom: 0.5rem; border-radius: 6px; font-weight: bold; color: #8b4513; text-align: center;">
+                📚 Alphabets & Accents (Current)
+            </div>
+            <a href="#alphabet" class="menu-item" onclick="navigateToSection('alphabet')">
+                <div class="item-title">🔤 French Alphabet</div>
+            </a>
+            <a href="#accents" class="menu-item" onclick="navigateToSection('accents')">
+                <div class="item-title">✨ French Accents</div>
+            </a>
+            <a href="#words" class="menu-item" onclick="navigateToSection('words')">
+                <div class="item-title">📝 Example Words</div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Header Spacer - Reserved for IndexLayout Header Integration -->
+    <div class="header-spacer"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content - Matches HomePage spacing -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section fade-in">
+                <h1 class="hero-title">
+                    L'Alphabet & Les Accents Français
+                </h1>
+                <div class="hero-subtitle">Master French Letters, Sounds & Accents</div>
+                <div class="french-flag">
+                    <div class="flag-blue"></div>
+                    <div class="flag-white"></div>
+                    <div class="flag-red"></div>
+                </div>
+                <p class="hero-description">
+                    Learn the French alphabet with proper pronunciation and discover how French accents 
+                    change the sound and meaning of words. Each letter and accent comes with example 
+                    words to help you practice in context!
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="toggleMenu()">
+                        Browse Sections
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('alphabet')">
+                        Start Learning
+                    </button>
+                </div>
+            </section>
+
+            <!-- 1. French Alphabet Section -->
+            <section id="alphabet" class="content-section">
+                <div class="category-icon" style="text-align: center;">
+                    🔤
+                </div>
+                <h2 class="section-title">
+                    1. L'Alphabet Français - French Alphabet
+                </h2>
+                <p class="section-subtitle">Learn the 26 letters of the French alphabet with pronunciation and English guidance</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllAlphabet()">
+                        Play All Letters A-Z
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        Stop Audio
+                    </button>
+                </div>
+
+                <table class="alphabet-table">
+                    <thead>
+                        <tr>
+                            <th>Letter</th>
+                            <th>French Pronunciation</th>
+                            <th>English Guide</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="letter-column">A</td>
+                            <td class="pronunciation-column">[ah]</td>
+                            <td class="english-guide-column">Like "ah" in father</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-a')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">B</td>
+                            <td class="pronunciation-column">[bay]</td>
+                            <td class="english-guide-column">Like "bay" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-b')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">C</td>
+                            <td class="pronunciation-column">[say]</td>
+                            <td class="english-guide-column">Like "say" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-c')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">D</td>
+                            <td class="pronunciation-column">[day]</td>
+                            <td class="english-guide-column">Like "day" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-d')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">E</td>
+                            <td class="pronunciation-column">[uh]</td>
+                            <td class="english-guide-column">Like "uh" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-e')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">F</td>
+                            <td class="pronunciation-column">[eff]</td>
+                            <td class="english-guide-column">Like "eff" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-f')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">G</td>
+                            <td class="pronunciation-column">[zhay]</td>
+                            <td class="english-guide-column">Like "zhay" with soft g</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-g')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">H</td>
+                            <td class="pronunciation-column">[ahsh]</td>
+                            <td class="english-guide-column">Like "ash" - usually silent</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-h')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">I</td>
+                            <td class="pronunciation-column">[ee]</td>
+                            <td class="english-guide-column">Like "ee" in see</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-i')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">J</td>
+                            <td class="pronunciation-column">[zhee]</td>
+                            <td class="english-guide-column">Like "zhee" with soft sound</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-j')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">K</td>
+                            <td class="pronunciation-column">[kah]</td>
+                            <td class="english-guide-column">Like "ka" with hard k</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-k')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">L</td>
+                            <td class="pronunciation-column">[ell]</td>
+                            <td class="english-guide-column">Like "ell" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-l')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">M</td>
+                            <td class="pronunciation-column">[emm]</td>
+                            <td class="english-guide-column">Like "emm" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-m')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">N</td>
+                            <td class="pronunciation-column">[enn]</td>
+                            <td class="english-guide-column">Like "enn" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-n')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">O</td>
+                            <td class="pronunciation-column">[oh]</td>
+                            <td class="english-guide-column">Like "oh" in go</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-o')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">P</td>
+                            <td class="pronunciation-column">[pay]</td>
+                            <td class="english-guide-column">Like "pay" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-p')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">Q</td>
+                            <td class="pronunciation-column">[kuu]</td>
+                            <td class="english-guide-column">Like "koo" sound</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-q')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">R</td>
+                            <td class="pronunciation-column">[air]</td>
+                            <td class="english-guide-column">Rolled or guttural R</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-r')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">S</td>
+                            <td class="pronunciation-column">[ess]</td>
+                            <td class="english-guide-column">Like "ess" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-s')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">T</td>
+                            <td class="pronunciation-column">[tay]</td>
+                            <td class="english-guide-column">Like "tay" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-t')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">U</td>
+                            <td class="pronunciation-column">[uu]</td>
+                            <td class="english-guide-column">Rounded "ee" sound</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-u')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">V</td>
+                            <td class="pronunciation-column">[vay]</td>
+                            <td class="english-guide-column">Like "vay" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-v')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">W</td>
+                            <td class="pronunciation-column">[double vay]</td>
+                            <td class="english-guide-column">Double V - rare in French</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-w')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">X</td>
+                            <td class="pronunciation-column">[eeks]</td>
+                            <td class="english-guide-column">Like "eeks" in English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-x')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">Y</td>
+                            <td class="pronunciation-column">[ee-grek]</td>
+                            <td class="english-guide-column">"Greek i" - like "ee"</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-y')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">Z</td>
+                            <td class="pronunciation-column">[zed]</td>
+                            <td class="english-guide-column">Like "zed" in British English</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('letter-z')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 2. French Accents Section -->
+            <section id="accents" class="content-section">
+                <div class="category-icon" style="text-align: center;">
+                    ◌́◌̀◌̂
+                </div>
+                <h2 class="section-title">
+                    2. Les Accents Français - French Accents
+                </h2>
+                <p class="section-subtitle">Master French accents that change pronunciation and meaning</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllAccents()">
+                        Play All Accents
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        Stop Audio
+                    </button>
+                </div>
+
+                <table class="accent-table">
+                    <thead>
+                        <tr>
+                            <th>Accent</th>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>English Guide</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="letter-column">é</td>
+                            <td class="pronunciation-column">Accent aigu</td>
+                            <td class="french-word-column">café</td>
+                            <td class="english-guide-column">Like "ay" in play</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-aigu')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">è</td>
+                            <td class="pronunciation-column">Accent grave</td>
+                            <td class="french-word-column">mère</td>
+                            <td class="english-guide-column">Like "eh" in bet</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-grave-e')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">à</td>
+                            <td class="pronunciation-column">Accent grave</td>
+                            <td class="french-word-column">à</td>
+                            <td class="english-guide-column">Like "ah" in father</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-grave-a')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ù</td>
+                            <td class="pronunciation-column">Accent grave</td>
+                            <td class="french-word-column">où</td>
+                            <td class="english-guide-column">Rounded "oo" sound</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-grave-u')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ê</td>
+                            <td class="pronunciation-column">Accent circonflexe</td>
+                            <td class="french-word-column">tête</td>
+                            <td class="english-guide-column">Like "eh" in bet</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-circonflexe-e')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">â</td>
+                            <td class="pronunciation-column">Accent circonflexe</td>
+                            <td class="french-word-column">pâte</td>
+                            <td class="english-guide-column">Like "ah" in father</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-circonflexe-a')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">î</td>
+                            <td class="pronunciation-column">Accent circonflexe</td>
+                            <td class="french-word-column">île</td>
+                            <td class="english-guide-column">Like "ee" in see</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-circonflexe-i')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ô</td>
+                            <td class="pronunciation-column">Accent circonflexe</td>
+                            <td class="french-word-column">côte</td>
+                            <td class="english-guide-column">Like "oh" in go</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-circonflexe-o')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">û</td>
+                            <td class="pronunciation-column">Accent circonflexe</td>
+                            <td class="french-word-column">sûr</td>
+                            <td class="english-guide-column">Rounded "oo" sound</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('accent-circonflexe-u')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ë</td>
+                            <td class="pronunciation-column">Tréma</td>
+                            <td class="french-word-column">Noël</td>
+                            <td class="english-guide-column">Like "eh" in bet</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('trema-e')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ï</td>
+                            <td class="pronunciation-column">Tréma</td>
+                            <td class="french-word-column">maïs</td>
+                            <td class="english-guide-column">Like "ee" in see</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('trema-i')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ç</td>
+                            <td class="pronunciation-column">Cédille</td>
+                            <td class="french-word-column">français</td>
+                            <td class="english-guide-column">Like "ss" in pass</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('cedille')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 3. Example Words Section -->
+            <section id="words" class="content-section">
+                <div class="category-icon" style="text-align: center;">
+                    📚
+                </div>
+                <h2 class="section-title">
+                    3. Mots d'Exemple - Example Words
+                </h2>
+                <p class="section-subtitle">Common French words starting with letters and containing accents</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllWords()">
+                        Play All Words
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        Stop Audio
+                    </button>
+                </div>
+
+                <table class="words-table">
+                    <thead>
+                        <tr>
+                            <th>Letter/Accent</th>
+                            <th>French Word</th>
+                            <th>English Translation</th>
+                            <th>Pronunciation</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Words starting with letters -->
+                        <tr>
+                            <td class="letter-column">A</td>
+                            <td class="french-word-column">arbre</td>
+                            <td class="english-translation-column">tree</td>
+                            <td class="pronunciation-column">[AHR-bruh]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-arbre')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">B</td>
+                            <td class="french-word-column">bonjour</td>
+                            <td class="english-translation-column">hello</td>
+                            <td class="pronunciation-column">[bon-ZHOOR]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-bonjour')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">C</td>
+                            <td class="french-word-column">chat</td>
+                            <td class="english-translation-column">cat</td>
+                            <td class="pronunciation-column">[shah]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-chat')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">D</td>
+                            <td class="french-word-column">dans</td>
+                            <td class="english-translation-column">in</td>
+                            <td class="pronunciation-column">[dahn]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-dans')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">E</td>
+                            <td class="french-word-column">eau</td>
+                            <td class="english-translation-column">water</td>
+                            <td class="pronunciation-column">[oh]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-eau')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">F</td>
+                            <td class="french-word-column">famille</td>
+                            <td class="english-translation-column">family</td>
+                            <td class="pronunciation-column">[fah-MEEL]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-famille')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">G</td>
+                            <td class="french-word-column">grand</td>
+                            <td class="english-translation-column">big</td>
+                            <td class="pronunciation-column">[grahn]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-grand')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">H</td>
+                            <td class="french-word-column">homme</td>
+                            <td class="english-translation-column">man</td>
+                            <td class="pronunciation-column">[ohm]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-homme')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">I</td>
+                            <td class="french-word-column">ici</td>
+                            <td class="english-translation-column">here</td>
+                            <td class="pronunciation-column">[ee-SEE]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-ici')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">J</td>
+                            <td class="french-word-column">jour</td>
+                            <td class="english-translation-column">day</td>
+                            <td class="pronunciation-column">[zhoor]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-jour')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <!-- Words with accents -->
+                        <tr>
+                            <td class="letter-column">é</td>
+                            <td class="french-word-column">été</td>
+                            <td class="english-translation-column">summer</td>
+                            <td class="pronunciation-column">[ay-TAY]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-ete')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">è</td>
+                            <td class="french-word-column">père</td>
+                            <td class="english-translation-column">father</td>
+                            <td class="pronunciation-column">[pair]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-pere')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">à</td>
+                            <td class="french-word-column">à bientôt</td>
+                            <td class="english-translation-column">see you soon</td>
+                            <td class="pronunciation-column">[ah bee-ahn-TOH]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-abientot')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ç</td>
+                            <td class="french-word-column">garçon</td>
+                            <td class="english-translation-column">boy</td>
+                            <td class="pronunciation-column">[gar-SOHN]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-garcon')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ê</td>
+                            <td class="french-word-column">être</td>
+                            <td class="english-translation-column">to be</td>
+                            <td class="pronunciation-column">[EH-truh]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-etre')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">î</td>
+                            <td class="french-word-column">maître</td>
+                            <td class="english-translation-column">master</td>
+                            <td class="pronunciation-column">[MEH-truh]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-maitre')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ô</td>
+                            <td class="french-word-column">hôtel</td>
+                            <td class="english-translation-column">hotel</td>
+                            <td class="pronunciation-column">[oh-TELL]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-hotel')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ù</td>
+                            <td class="french-word-column">où</td>
+                            <td class="english-translation-column">where</td>
+                            <td class="pronunciation-column">[oo]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-ou')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ë</td>
+                            <td class="french-word-column">Noël</td>
+                            <td class="english-translation-column">Christmas</td>
+                            <td class="pronunciation-column">[noh-ELL]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-noel')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="letter-column">ï</td>
+                            <td class="french-word-column">naïf</td>
+                            <td class="english-translation-column">naive</td>
+                            <td class="pronunciation-column">[nah-EEF]</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('word-naif')">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="play-text">Play</span>
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Toggle menu functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.querySelector('.container');
+            const toggle = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            toggle.classList.toggle('collapsed');
+            toggleLabel.classList.toggle('collapsed');
+            
+            if (menu.classList.contains('collapsed')) {
+                toggleLabel.textContent = 'Expand';
+            } else {
+                toggleLabel.textContent = 'Collapse';
+            }
+        }
+
+        // Back button functionality - returns to home page
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from French Alphabets page');
+            
+            // Clear any session storage
+            sessionStorage.removeItem('previousPage');
+            sessionStorage.removeItem('previousPageType');
+            
+            // Always navigate to home page
+            console.log(`🔄 Returning to home page`);
+            window.location.href = '../../../index.html#home';
+        }
+
+        // Navigation to sections
+        function navigateToSection(sectionId) {
+            // Close menu if it's open
+            const menu = document.getElementById('slideMenu');
+            if (!menu.classList.contains('collapsed')) {
+                toggleMenu();
+            }
+            scrollToSection(sectionId);
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+
+
+        // Audio functionality using Speech Synthesis API for cross-platform compatibility
+        let currentAudio = null;
+        let currentPlayingButton = null;
+
+        function playAudio(audioId) {
+            // Stop any currently playing audio and remove playing state
+            stopAllAudio();
+
+            // Find the button that triggered this audio
+            const button = event.target.closest('.play-speaker-button');
+            
+            console.log(`Playing audio for: ${audioId}`);
+            
+            // Use browser's speech synthesis with French pronunciation
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance();
+                utterance.text = getTextForAudio(audioId);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.7; // Slower rate for learning
+                
+                // Try to use a French voice if available
+                const voices = speechSynthesis.getVoices();
+                const frenchVoice = voices.find(voice => voice.lang.startsWith('fr'));
+                if (frenchVoice) {
+                    utterance.voice = frenchVoice;
+                }
+                
+                // Add playing state when audio starts
+                utterance.onstart = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.add('playing');
+                        currentPlayingButton = button;
+                    }
+                };
+                
+                // Remove playing state when audio ends
+                utterance.onend = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.remove('playing');
+                        currentPlayingButton = null;
+                    }
+                };
+                
+                // Handle errors
+                utterance.onerror = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.remove('playing');
+                        currentPlayingButton = null;
+                    }
+                };
+                
+                speechSynthesis.speak(utterance);
+            } else {
+                alert(`Audio would play: ${audioId}\n\nIn a real implementation, this would play the actual French pronunciation.`);
+            }
+        }
+
+        function getTextForAudio(audioId) {
+            const audioTexts = {
+                // Alphabet letters - French pronunciation only
+                'letter-a': 'A',
+                'letter-b': 'B', 
+                'letter-c': 'C',
+                'letter-d': 'D',
+                'letter-e': 'E',
+                'letter-f': 'F',
+                'letter-g': 'G', 
+                'letter-h': 'H',
+                'letter-i': 'I',
+                'letter-j': 'J',
+                'letter-k': 'K',
+                'letter-l': 'L',
+                'letter-m': 'M',
+                'letter-n': 'N',
+                'letter-o': 'O',
+                'letter-p': 'P',
+                'letter-q': 'Q',
+                'letter-r': 'R',
+                'letter-s': 'S',
+                'letter-t': 'T',
+                'letter-u': 'U',
+                'letter-v': 'V',
+                'letter-w': 'W',
+                'letter-x': 'X',
+                'letter-y': 'Y',
+                'letter-z': 'Z',
+                
+                // Accents - French pronunciation only
+                'accent-aigu': 'é',
+                'accent-grave-e': 'è',
+                'accent-grave-a': 'à',
+                'accent-grave-u': 'ù',
+                'accent-circonflexe-e': 'ê',
+                'accent-circonflexe-a': 'â',
+                'accent-circonflexe-i': 'î',
+                'accent-circonflexe-o': 'ô',
+                'accent-circonflexe-u': 'û',
+                'trema-e': 'ë',
+                'trema-i': 'ï',
+                'cedille': 'ç',
+                
+                // Example words - French pronunciation only
+                'word-arbre': 'arbre',
+                'word-bonjour': 'bonjour',
+                'word-chat': 'chat',
+                'word-dans': 'dans',
+                'word-eau': 'eau',
+                'word-famille': 'famille',
+                'word-grand': 'grand',
+                'word-homme': 'homme',
+                'word-ici': 'ici',
+                'word-jour': 'jour',
+                'word-ete': 'été',
+                'word-pere': 'père',
+                'word-abientot': 'à bientôt',
+                'word-garcon': 'garçon',
+                'word-etre': 'être',
+                'word-maitre': 'maître',
+                'word-hotel': 'hôtel',
+                'word-ou': 'où',
+                'word-noel': 'Noël',
+                'word-naif': 'naïf'
+            };
+            return audioTexts[audioId] || audioId;
+        }
+
+        function playAllAlphabet() {
+            const alphabet = ['letter-a', 'letter-b', 'letter-c', 'letter-d', 'letter-e', 'letter-f', 'letter-g', 'letter-h', 'letter-i', 'letter-j', 'letter-k', 'letter-l', 'letter-m', 'letter-n', 'letter-o', 'letter-p', 'letter-q', 'letter-r', 'letter-s', 'letter-t', 'letter-u', 'letter-v', 'letter-w', 'letter-x', 'letter-y', 'letter-z'];
+            playSequence(alphabet);
+        }
+
+        function playAllAccents() {
+            const accents = ['accent-aigu', 'accent-grave-e', 'accent-grave-a', 'accent-grave-u', 'accent-circonflexe-e', 'accent-circonflexe-a', 'accent-circonflexe-i', 'accent-circonflexe-o', 'accent-circonflexe-u', 'trema-e', 'trema-i', 'cedille'];
+            playSequence(accents);
+        }
+
+        function playAllWords() {
+            const words = ['word-arbre', 'word-bonjour', 'word-chat', 'word-dans', 'word-eau', 'word-famille', 'word-grand', 'word-homme', 'word-ici', 'word-jour', 'word-ete', 'word-pere', 'word-abientot', 'word-garcon', 'word-etre', 'word-maitre', 'word-hotel', 'word-ou', 'word-noel', 'word-naif'];
+            playSequence(words);
+        }
+
+        function playSequence(audioIds) {
+            let index = 0;
+            
+            function playNext() {
+                if (index < audioIds.length) {
+                    const audioId = audioIds[index];
+                    console.log(`Playing sequence ${index + 1}/${audioIds.length}: ${audioId}`);
+                    
+                    // Find the corresponding button for this audio ID
+                    const button = document.querySelector(`[onclick*="${audioId}"]`);
+                    
+                    if ('speechSynthesis' in window) {
+                        const utterance = new SpeechSynthesisUtterance();
+                        utterance.text = getTextForAudio(audioId);
+                        utterance.lang = 'fr-FR';
+                        utterance.rate = 0.7;
+                        
+                        // Try to use a French voice if available
+                        const voices = speechSynthesis.getVoices();
+                        const frenchVoice = voices.find(voice => voice.lang.startsWith('fr'));
+                        if (frenchVoice) {
+                            utterance.voice = frenchVoice;
+                        }
+                        
+                        utterance.onstart = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.add('playing');
+                            }
+                        };
+                        
+                        utterance.onend = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.remove('playing');
+                            }
+                            index++;
+                            setTimeout(playNext, 800); // Pause between items
+                        };
+                        
+                        utterance.onerror = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.remove('playing');
+                            }
+                            index++;
+                            setTimeout(playNext, 800);
+                        };
+                        
+                        speechSynthesis.speak(utterance);
+                    } else {
+                        index++;
+                        setTimeout(playNext, 1000);
+                    }
+                }
+            }
+            
+            playNext();
+        }
+
+        function stopAllAudio() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                currentAudio = null;
+            }
+            
+            // Remove playing state from all play speaker buttons
+            document.querySelectorAll('.play-speaker-button.playing').forEach(button => {
+                button.classList.remove('playing');
+            });
+            currentPlayingButton = null;
+            
+            console.log('All audio stopped');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close menu if it's open
+                const menu = document.getElementById('slideMenu');
+                if (!menu.classList.contains('collapsed')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('French Alphabets & Accents page loaded successfully');
+            
+            // Check if speech synthesis is available
+            if ('speechSynthesis' in window) {
+                console.log('Speech synthesis available for audio playback');
+                
+                // Load voices
+                speechSynthesis.onvoiceschanged = () => {
+                    const voices = speechSynthesis.getVoices();
+                    const frenchVoices = voices.filter(voice => voice.lang.startsWith('fr'));
+                    console.log(`Found ${frenchVoices.length} French voices:`, frenchVoices.map(v => v.name));
+                };
+            } else {
+                console.log('Speech synthesis not available');
+            }
+
+            // Initialize toggle label based on menu state
+            const menu = document.getElementById('slideMenu');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            if (menu.classList.contains('collapsed')) {
+                toggleLabel.textContent = 'Expand';
+            } else {
+                toggleLabel.textContent = 'Collapse';
+            }
+        });
+    </script>
+</body>
+</html> 
