@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 1 - Practice 3: Shopping & Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5d3a0a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* Small Timer Display */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+        }
+
+
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Timer Section */
+        .timer-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.2);
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .timer-btn:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .timer-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Split Reading Workspace */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        .passages-panel {
+            flex: 1;
+            min-width: 300px;
+            background: #fffbf0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .questions-panel {
+            flex: 1;
+            min-width: 350px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .panel-header h3 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .passage-counter, .progress-counter {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        /* Custom Scrollbar */
+        .scrollable-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-track {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 4px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            border-radius: 4px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+        }
+
+        /* Resizable Separator */
+        .resizer {
+            width: 6px;
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            cursor: col-resize;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .resizer::before {
+            content: '⋮';
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .resizer:hover {
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+        }
+
+        /* Passage Styles */
+        .passage-block {
+            margin-bottom: 25px;
+            padding: 16px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .passage-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .passage-text {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Question Styles */
+        .question-group {
+            margin-bottom: 25px;
+            padding: 16px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .question-group-title {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 12px 20px;
+            margin: -16px -16px 20px -16px;
+            border-radius: 12px 12px 0 0;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .answer-input {
+            background: #fffbf0;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 0 5px;
+            min-width: 120px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #8b4513;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(139, 69, 19, 0.2);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .option input[type="radio"] {
+            margin: 0;
+            accent-color: #d4af37;
+        }
+
+        /* Progress Tracking */
+        .progress-indicator {
+            text-align: center;
+            padding: 15px;
+            background: rgba(139, 69, 19, 0.05);
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(212, 175, 55, 0.1));
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Results Section */
+        .score-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .answer-review {
+            margin-bottom: 30px;
+        }
+
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .answer-item.correct {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .answer-item.incorrect {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.05);
+        }
+
+        .improvement-tips {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .split-container {
+                flex-direction: column;
+                height: auto;
+                min-height: 80vh;
+            }
+
+            .passages-panel,
+            .questions-panel {
+                min-width: auto;
+                min-height: 300px;
+            }
+
+            .resizer {
+                width: 100%;
+                height: 6px;
+                cursor: row-resize;
+            }
+
+            .resizer::before {
+                content: '⋯';
+            }
+
+            .timer-display {
+                font-size: 2rem;
+            }
+
+            .menu-toggle {
+                top: 15px;
+                left: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .gk-logo-container {
+                top: 15px;
+                right: 15px;
+            }
+
+            .master-guruvammal-logo {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        /* Selection and Focus Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📖 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 1 - Practice 3</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">🛍️ 3 Passages - Shopping & Services Context</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 1 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📖 IELTS General Reading - Section 1 (Practice 3)</h1>
+                <div class="hero-subtitle">
+                    🛍️ Shopping & Services - Social Survival Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 1 reading skills with authentic shopping and services passages. This practice covers everyday situations including shopping center directories, mobile phone plan comparisons, and customer service policies. You will encounter all 6 question formats commonly found in IELTS General Reading Section 1: Matching Information, Form Completion, Multiple Choice, and Short Answer Questions. Complete Questions 1-14 within the recommended 20-minute timeframe.
+                </p>
+            </section>
+
+        <!-- Passage Information Section -->
+        <section id="passage-info" class="content-section">
+            <h2 class="section-title">📋 Reading Passage Information</h2>
+            <div class="timer-container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                    <div>
+                        <h4 style="color: #8b4513; margin-bottom: 10px;">📄 Passage Types:</h4>
+                        <ul style="color: #666; line-height: 1.8;">
+                            <li><strong>Passage 1:</strong> Shopping center directory with store listings</li>
+                            <li><strong>Passage 2:</strong> Mobile phone plan comparison with features</li>
+                            <li><strong>Passage 3:</strong> Customer service policy and returns procedure</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #8b4513; margin-bottom: 10px;">📊 Question Formats:</h4>
+                        <ul style="color: #666; line-height: 1.8;">
+                            <li><strong>1-4:</strong> Matching Information</li>
+                            <li><strong>5-8:</strong> Form Completion</li>
+                            <li><strong>9-12:</strong> Multiple Choice</li>
+                            <li><strong>13-14:</strong> Short Answer Questions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #8b4513; margin-bottom: 10px;">⏱️ Time Management:</h4>
+                        <ul style="color: #666; line-height: 1.8;">
+                            <li><strong>Total Time:</strong> 20 minutes</li>
+                            <li><strong>Reading:</strong> 5-7 minutes</li>
+                            <li><strong>Answering:</strong> 13-15 minutes</li>
+                            <li><strong>Word Count:</strong> ~650 words</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timer Section -->
+        <section id="timer-section" class="content-section">
+            <h2 class="section-title">⏰ Reading Timer - 20 Minutes</h2>
+            <div class="timer-container">
+                <div class="timer-display" id="timerDisplay">20:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" onclick="startTimer()" id="startBtn">Start Reading</button>
+                </div>
+                <div id="timerWarning" style="margin-top: 15px; color: #d4af37; font-weight: bold; display: none;">
+                    ⚠️ Warning: Only 5 minutes remaining!
+                </div>
+            </div>
+        </section>
+
+        <!-- Reading Workspace -->
+        <section id="reading-workspace" class="content-section">
+            <h2 class="section-title">📚 Reading Workspace - Questions 1-14</h2>
+            
+            <div class="split-container">
+                <!-- Reading Passages Panel -->
+                <div class="passages-panel">
+                    <div class="panel-header">
+                        <h3>📚 Reading Passages</h3>
+                        <div class="passage-counter">3 Passages | ~650 words total</div>
+                    </div>
+                    <div class="passages-content scrollable-content">
+                        
+                        <!-- Passage 1: Shopping Center Directory -->
+                        <div class="passage-block" id="passage1">
+                            <div class="passage-title">Passage 1: Westfield Shopping Center - Store Directory</div>
+                            <div class="passage-text">
+                                <strong>WESTFIELD SHOPPING CENTER - COMPLETE STORE DIRECTORY</strong><br><br>
+                                
+                                <strong>GROUND FLOOR (Level 0)</strong><br>
+                                Fashion Zone: TrendyStyle (women's clothing), UrbanWear (casual clothing), ShoeMart (footwear), AccessoryWorld (jewelry and bags)<br>
+                                Food Court: Pizza Palace, Burger Kingdom, Asian Delights, Coffee Corner<br>
+                                Services: CityBank ATM, Post Office Express, Phone Repair Plus<br><br>
+                                
+                                <strong>FIRST FLOOR (Level 1)</strong><br>
+                                Electronics: TechnoWorld (computers and laptops), GadgetHub (mobile phones), GameZone (video games), AudioMax (headphones and speakers)<br>
+                                Health & Beauty: PharmaCare (pharmacy), BeautySpot (cosmetics), FitGym (fitness center), OpticVision (eyewear)<br>
+                                Home & Garden: HomeDecor (furniture), KitchenPro (cooking equipment), GardenCenter (plants and tools)<br><br>
+                                
+                                <strong>SECOND FLOOR (Level 2)</strong><br>
+                                Entertainment: CinemaMax (movie theater), BookWorld (bookstore), MusicStore (instruments), ArtGallery (paintings)<br>
+                                Family Services: KidsPlayground (children's play area), BabyWorld (infant supplies), ToyLand (toys and games)<br>
+                                Professional Services: LegalAdvice (law firm), FinanceFirst (accounting), TravelAgent (holiday bookings)<br><br>
+                                
+                                <strong>BASEMENT LEVEL (-1)</strong><br>
+                                Supermarket: FreshMart (groceries and household items)<br>
+                                Storage: Customer lockers available near FreshMart entrance<br>
+                                Parking: 500-space underground parking garage<br><br>
+                                
+                                <strong>Opening Hours:</strong> Monday-Wednesday 9:00-18:00, Thursday-Friday 9:00-21:00, Saturday 8:00-21:00, Sunday 10:00-17:00<br>
+                                <strong>Customer Service:</strong> Located on Ground Floor near main entrance<br>
+                                <strong>Lost & Found:</strong> Level 1, next to escalators
+                            </div>
+                        </div>
+                        
+                        <!-- Passage 2: Mobile Phone Plan Comparison -->
+                        <div class="passage-block" id="passage2">
+                            <div class="passage-title">Passage 2: MobileConnect - Phone Plan Comparison</div>
+                            <div class="passage-text">
+                                <strong>MOBILECONNECT - CHOOSE YOUR PERFECT PLAN</strong><br><br>
+                                
+                                <strong>BASIC PLAN - £15/month</strong><br>
+                                • 2GB monthly data allowance<br>
+                                • 300 text messages included<br>
+                                • 150 minutes of calls<br>
+                                • No international calls included<br>
+                                • 12-month minimum contract<br>
+                                • Free phone setup and SIM card<br><br>
+                                
+                                <strong>STANDARD PLAN - £25/month</strong><br>
+                                • 8GB monthly data allowance<br>
+                                • Unlimited text messages<br>
+                                • 500 minutes of calls<br>
+                                • 60 minutes international calls to 15 countries<br>
+                                • 18-month minimum contract<br>
+                                • Free phone setup, SIM card, and protective case<br>
+                                • Mobile hotspot feature included<br><br>
+                                
+                                <strong>PREMIUM PLAN - £40/month</strong><br>
+                                • Unlimited monthly data<br>
+                                • Unlimited text messages<br>
+                                • Unlimited UK calls<br>
+                                • 200 minutes international calls to 35 countries<br>
+                                • 24-month minimum contract<br>
+                                • Free phone setup, SIM card, protective case, and wireless earphones<br>
+                                • Mobile hotspot and cloud storage (50GB) included<br>
+                                • Priority customer support<br><br>
+                                
+                                <strong>STUDENT DISCOUNT:</strong> 20% off Standard and Premium plans with valid student ID<br>
+                                <strong>FAMILY PACKAGE:</strong> Add up to 4 additional lines for £10 each (Premium plan only)<br>
+                                <strong>EARLY TERMINATION:</strong> £25 fee per remaining month if contract cancelled early<br>
+                                <strong>PHONE UPGRADE:</strong> Available after 12 months on Standard and Premium plans<br>
+                                <strong>CUSTOMER SERVICE:</strong> Available 24/7 via phone, chat, or email
+                            </div>
+                        </div>
+                        
+                        <!-- Passage 3: Customer Service Policy -->
+                        <div class="passage-block" id="passage3">
+                            <div class="passage-title">Passage 3: RetailHub - Customer Service & Returns Policy</div>
+                            <div class="passage-text">
+                                <strong>RETAILHUB CUSTOMER SERVICE POLICY</strong><br><br>
+                                
+                                <strong>RETURNS POLICY</strong><br>
+                                All items can be returned within 30 days of purchase with original receipt. Electronics and software must be returned within 14 days in unopened packaging. Clothing items must have original tags attached and show no signs of wear. Personalized or custom-made items cannot be returned unless faulty.<br><br>
+                                
+                                <strong>REFUND PROCESS</strong><br>
+                                Cash purchases: Full refund in original payment method<br>
+                                Card purchases: Refund processed within 3-5 business days<br>
+                                Online purchases: Refund issued after item inspection (7-10 days)<br>
+                                Gift card purchases: Refund provided as store credit only<br><br>
+                                
+                                <strong>EXCHANGE POLICY</strong><br>
+                                Size exchanges for clothing available within 14 days with receipt. Color exchanges accepted only if item was misrepresented online. Faulty items can be exchanged immediately with receipt or proof of purchase. No exchanges on sale items unless faulty.<br><br>
+                                
+                                <strong>WARRANTY INFORMATION</strong><br>
+                                Electronics: 2-year manufacturer warranty plus 1-year extended warranty option (£50)<br>
+                                Appliances: 1-year warranty with free repair service<br>
+                                Clothing: 6-month warranty against manufacturing defects<br>
+                                Furniture: 5-year warranty with annual maintenance check option<br><br>
+                                
+                                <strong>COMPLAINT PROCEDURE</strong><br>
+                                Step 1: Speak with store manager within 7 days of issue<br>
+                                Step 2: Submit written complaint to customer service within 14 days<br>
+                                Step 3: Regional manager review within 21 days<br>
+                                Step 4: Final appeal to head office within 30 days<br><br>
+                                
+                                <strong>CUSTOMER RIGHTS</strong><br>
+                                Free repairs or replacement for faulty goods. Compensation for inconvenience if service fails to meet standards. Right to cancel orders within 24 hours of online purchase. Price match guarantee on identical items from competitor stores.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resizable Separator -->
+                <div class="resizer" id="resizer"></div>
+
+                <!-- Questions Panel -->
+                <div class="questions-panel">
+                    <div class="panel-header">
+                        <h3>❓ Questions 1-14</h3>
+                        <div class="progress-counter">Answered: <span id="answeredCount">0</span>/14</div>
+                    </div>
+                    <div class="questions-content scrollable-content">
+                        
+                        <!-- Questions 1-4: Matching Information -->
+                        <div class="question-group">
+                            <h4 class="question-group-title">Questions 1-4: Matching Information</h4>
+                            <p><em>Match each service or shop with the correct floor level. Choose from the floors listed below. You may use any letter more than once.</em></p>
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                                <strong>Floor Levels:</strong><br>
+                                A. Ground Floor (Level 0)<br>
+                                B. First Floor (Level 1)<br>
+                                C. Second Floor (Level 2)<br>
+                                D. Basement Level (-1)
+                            </div>
+                            
+                            <div class="question">
+                                <div class="question-number">1.</div>
+                                <div class="question-text">Customer lockers for storage</div>
+                                <input type="text" class="answer-input" id="q1" placeholder="1" onchange="updateProgress()">
+                            </div>
+                            
+                            <div class="question">
+                                <div class="question-number">2.</div>
+                                <div class="question-text">Movie theater</div>
+                                <input type="text" class="answer-input" id="q2" placeholder="2" onchange="updateProgress()">
+                            </div>
+                            
+                            <div class="question">
+                                <div class="question-number">3.</div>
+                                <div class="question-text">Fitness center</div>
+                                <input type="text" class="answer-input" id="q3" placeholder="3" onchange="updateProgress()">
+                            </div>
+                            
+                            <div class="question">
+                                <div class="question-number">4.</div>
+                                <div class="question-text">Coffee shop</div>
+                                <input type="text" class="answer-input" id="q4" placeholder="4" onchange="updateProgress()">
+                            </div>
+                        </div>
+
+                        <!-- Questions 5-8: Form Completion -->
+                        <div class="question-group">
+                            <h4 class="question-group-title">Questions 5-8: Form Completion</h4>
+                            <p><em>Complete the mobile phone plan summary using information from the passages. Use NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.</em></p>
+                            
+                            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 3px solid #d4af37; margin: 15px 0;">
+                                <h4 style="color: #8b4513; margin-bottom: 15px;">Mobile Phone Plan Summary</h4>
+                                <p style="line-height: 1.6; font-size: 0.95rem;">
+                                    The Basic Plan costs £15 per month and includes <input type="text" class="answer-input" id="q5" placeholder="5" onchange="updateProgress()"> GB of data. For unlimited data, customers should choose the <input type="text" class="answer-input" id="q6" placeholder="6" onchange="updateProgress()"> Plan. Students can receive a <input type="text" class="answer-input" id="q7" placeholder="7" onchange="updateProgress()"> percent discount on selected plans. If you cancel your contract early, you must pay a fee of £25 for each <input type="text" class="answer-input" id="q8" placeholder="8" onchange="updateProgress()"> remaining.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Questions 9-12: Multiple Choice -->
+                        <div class="question-group">
+                            <h4 class="question-group-title">Questions 9-12: Multiple Choice</h4>
+                            <p><em>Choose the correct letter, A, B, C, or D.</em></p>
+                            
+                            <div class="question">
+                                <div class="question-number">9.</div>
+                                <div class="question-text">According to the returns policy, electronics must be returned within</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q9" value="A" onchange="updateProgress()">
+                                        A. 7 days
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q9" value="B" onchange="updateProgress()">
+                                        B. 14 days
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q9" value="C" onchange="updateProgress()">
+                                        C. 21 days
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q9" value="D" onchange="updateProgress()">
+                                        D. 30 days
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                <div class="question-number">10.</div>
+                                <div class="question-text">What warranty period is offered for furniture?</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q10" value="A" onchange="updateProgress()">
+                                        A. 1 year
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q10" value="B" onchange="updateProgress()">
+                                        B. 2 years
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q10" value="C" onchange="updateProgress()">
+                                        C. 3 years
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q10" value="D" onchange="updateProgress()">
+                                        D. 5 years
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                <div class="question-number">11.</div>
+                                <div class="question-text">The shopping center is open latest on</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q11" value="A" onchange="updateProgress()">
+                                        A. Wednesday
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q11" value="B" onchange="updateProgress()">
+                                        B. Friday
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q11" value="C" onchange="updateProgress()">
+                                        C. Saturday
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q11" value="D" onchange="updateProgress()">
+                                        D. Sunday
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                <div class="question-number">12.</div>
+                                <div class="question-text">Which mobile plan includes international calling?</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q12" value="A" onchange="updateProgress()">
+                                        A. Basic Plan only
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q12" value="B" onchange="updateProgress()">
+                                        B. Standard Plan only
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q12" value="C" onchange="updateProgress()">
+                                        C. Premium Plan only
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q12" value="D" onchange="updateProgress()">
+                                        D. Standard and Premium Plans
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 13-14: Short Answer Questions -->
+                        <div class="question-group">
+                            <h4 class="question-group-title">Questions 13-14: Short Answer Questions</h4>
+                            <p><em>Answer the questions using NO MORE THAN THREE WORDS from the passage.</em></p>
+                            
+                            <div class="question">
+                                <div class="question-number">13.</div>
+                                <div class="question-text">What can customers use to store their belongings while shopping?</div>
+                                <input type="text" class="answer-input" id="q13" placeholder="13" onchange="updateProgress()">
+                            </div>
+                            
+                            <div class="question">
+                                <div class="question-number">14.</div>
+                                <div class="question-text">How many underground parking spaces are available?</div>
+                                <input type="text" class="answer-input" id="q14" placeholder="14" onchange="updateProgress()">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submit Section -->
+        <section id="submit-section" class="content-section">
+            <h2 class="section-title">📝 Submit Your Answers</h2>
+            
+            <div class="progress-indicator">
+                Progress: <span id="answeredCount2">0</span>/14 questions answered
+            </div>
+            
+            <div class="submit-section">
+                <p style="margin-bottom: 20px; color: #666; font-size: 1.1rem;">
+                    Review your answers before submitting. You can return to previous questions using the workspace above.
+                </p>
+                <button class="submit-btn" onclick="submitAnswers()">Submit All Answers</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="content-section" style="display: none;">
+            <h2 class="section-title">📊 Performance Analysis</h2>
+            
+            <div class="score-display">
+                <div class="score-number" id="scoreNumber">0</div>
+                <div class="score-text">out of 14 questions correct</div>
+            </div>
+
+            <div class="answer-review" id="answerReview">
+                <!-- Answer review will be populated by JavaScript -->
+            </div>
+
+            <div class="improvement-tips">
+                <h4>🛍️ Reading Enhancement Strategies</h4>
+                <ul id="improvementList">
+                    <!-- Tips will be populated by JavaScript -->
+                </ul>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <script>
+        // Reading Workspace Management
+        class ReadingWorkspace {
+            constructor() {
+                this.timerDuration = 1200; // 20 minutes in seconds
+                this.timeRemaining = this.timerDuration;
+                this.timerRunning = false;
+                this.timerInterval = null;
+                this.setupResizer();
+                this.loadSavedAnswers();
+                this.updateProgress();
+            }
+
+            setupResizer() {
+                const resizer = document.getElementById('resizer');
+                const leftPanel = document.querySelector('.passages-panel');
+                const rightPanel = document.querySelector('.questions-panel');
+                const container = document.querySelector('.split-container');
+
+                let isResizing = false;
+
+                resizer.addEventListener('mousedown', (e) => {
+                    isResizing = true;
+                    document.addEventListener('mousemove', handleMouseMove);
+                    document.addEventListener('mouseup', () => {
+                        isResizing = false;
+                        document.removeEventListener('mousemove', handleMouseMove);
+                    });
+                });
+
+                function handleMouseMove(e) {
+                    if (!isResizing) return;
+
+                    const containerRect = container.getBoundingClientRect();
+                    const leftWidth = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+
+                    if (leftWidth > 25 && leftWidth < 75) {
+                        leftPanel.style.flex = `0 0 ${leftWidth}%`;
+                        rightPanel.style.flex = `0 0 ${100 - leftWidth}%`;
+                    }
+                }
+            }
+
+            saveAnswer(questionId, value) {
+                try {
+                    const answers = JSON.parse(localStorage.getItem('ielts_reading_s1_p3_answers') || '{}');
+                    answers[questionId] = value;
+                    localStorage.setItem('ielts_reading_s1_p3_answers', JSON.stringify(answers));
+                } catch (error) {
+                    console.warn('Could not save answer to localStorage');
+                }
+            }
+
+            loadSavedAnswers() {
+                try {
+                    const answers = JSON.parse(localStorage.getItem('ielts_reading_s1_p3_answers') || '{}');
+                    Object.entries(answers).forEach(([questionId, value]) => {
+                        const element = document.getElementById(questionId);
+                        if (element) {
+                            if (element.type === 'radio') {
+                                const radio = document.querySelector(`input[name="${questionId}"][value="${value}"]`);
+                                if (radio) radio.checked = true;
+                            } else {
+                                element.value = value;
+                            }
+                        }
+                    });
+                } catch (error) {
+                    console.warn('Could not load saved answers from localStorage');
+                }
+            }
+
+            updateProgress() {
+                const answeredCount = new Set();
+
+                // Check text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answeredCount.add(input.id);
+                    }
+                });
+
+                // Check radio buttons
+                document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                    answeredCount.add(radio.name);
+                });
+
+                const countElement = document.getElementById('answeredCount');
+                if (countElement) {
+                    countElement.textContent = answeredCount.size;
+                }
+                const countElement2 = document.getElementById('answeredCount2');
+                if (countElement2) {
+                    countElement2.textContent = answeredCount.size;
+                }
+            }
+
+            // Timer Functions
+            updateTimerDisplay() {
+                const minutes = Math.floor(this.timeRemaining / 60);
+                const seconds = this.timeRemaining % 60;
+                const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // Update main timer display
+                const timerDisplay = document.getElementById('timerDisplay');
+                if (timerDisplay) {
+                    timerDisplay.textContent = timeString;
+                }
+
+                // Update small timer display
+                const smallTimerTime = document.getElementById('smallTimerTime');
+                if (smallTimerTime) {
+                    smallTimerTime.textContent = timeString;
+                }
+
+                // Show warning at 5 minutes
+                const warningElement = document.getElementById('timerWarning');
+                if (warningElement) {
+                    if (this.timeRemaining <= 300 && this.timeRemaining > 0) {
+                        warningElement.style.display = 'block';
+                    } else {
+                        warningElement.style.display = 'none';
+                    }
+                }
+
+                // Change small timer color when time is running low
+                const smallTimerDisplay = document.getElementById('smallTimerDisplay');
+                if (smallTimerDisplay && this.timeRemaining <= 300 && this.timeRemaining > 0) {
+                    smallTimerDisplay.style.background = 'linear-gradient(135deg, #d4af37, #ff6b35)';
+                } else if (smallTimerDisplay) {
+                    smallTimerDisplay.style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                }
+            }
+
+            startTimer() {
+                if (!this.timerRunning) {
+                    this.timerRunning = true;
+
+                    // Show small timer display
+                    const smallTimerDisplay = document.getElementById('smallTimerDisplay');
+                    if (smallTimerDisplay) {
+                        smallTimerDisplay.style.display = 'flex';
+                    }
+
+                    this.timerInterval = setInterval(() => {
+                        this.timeRemaining--;
+                        this.updateTimerDisplay();
+                        
+                        if (this.timeRemaining <= 0) {
+                            this.stopTimer();
+                            alert('⏰ Time is up! You should submit your answers now.');
+                        }
+                    }, 1000);
+
+                    document.getElementById('startBtn').disabled = true;
+                }
+            }
+
+            stopTimer() {
+                this.timerRunning = false;
+                clearInterval(this.timerInterval);
+
+                // Hide small timer display
+                const smallTimerDisplay = document.getElementById('smallTimerDisplay');
+                if (smallTimerDisplay) {
+                    smallTimerDisplay.style.display = 'none';
+                }
+            }
+        }
+
+        // Initialize workspace
+        const workspace = new ReadingWorkspace();
+
+        // Global Functions
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('menu-open'); // Make button stick to menu
+        }
+
+
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        function startTimer() {
+            workspace.startTimer();
+            // Scroll to reading workspace when timer starts
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Progress Function
+        function updateProgress() {
+            workspace.updateProgress();
+        }
+
+        // Auto-save functionality
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('answer-input') || e.target.type === 'radio') {
+                const questionId = e.target.name || e.target.id;
+                const value = e.target.value;
+                workspace.saveAnswer(questionId, value);
+                workspace.updateProgress();
+            }
+        });
+
+        // Submit and Scoring Functions
+        const answerKey = {
+            'q1': 'D',
+            'q2': 'C', 
+            'q3': 'B',
+            'q4': 'A',
+            'q5': '2',
+            'q6': 'Premium',
+            'q7': '20',
+            'q8': 'month',
+            'q9': 'B',
+            'q10': 'D',
+            'q11': 'C',
+            'q12': 'D',
+            'q13': 'Customer lockers',
+            'q14': '500'
+        };
+
+        function submitAnswers() {
+            workspace.stopTimer();
+            
+            let score = 0;
+            const results = [];
+            
+            // Check all answers
+            for (const [questionId, correctAnswer] of Object.entries(answerKey)) {
+                let userAnswer = '';
+                const element = document.getElementById(questionId);
+                
+                if (element) {
+                    if (element.type === 'text') {
+                        userAnswer = element.value.trim();
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButton = document.querySelector(`input[name="${questionId}"]:checked`);
+                    if (radioButton) {
+                        userAnswer = radioButton.value;
+                    }
+                }
+                
+                const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase() ||
+                                userAnswer.toLowerCase().includes(correctAnswer.toLowerCase());
+                if (isCorrect) score++;
+                
+                results.push({
+                    question: questionId,
+                    userAnswer: userAnswer,
+                    correctAnswer: correctAnswer,
+                    isCorrect: isCorrect
+                });
+            }
+            
+            displayResults(score, results);
+        }
+
+        function displayResults(score, results) {
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            
+            // Generate answer review
+            const reviewContainer = document.getElementById('answerReview');
+            reviewContainer.innerHTML = '';
+            
+            results.forEach((result, index) => {
+                const answerItem = document.createElement('div');
+                answerItem.className = `answer-item ${result.isCorrect ? 'correct' : 'incorrect'}`;
+                answerItem.innerHTML = `
+                    <div>
+                        <strong>Question ${index + 1}:</strong> ${result.userAnswer || 'No answer'}
+                        ${!result.isCorrect ? `<br><strong>Correct answer:</strong> ${result.correctAnswer}` : ''}
+                    </div>
+                    <div style="font-size: 1.2em;">${result.isCorrect ? '✓' : '✗'}</div>
+                `;
+                reviewContainer.appendChild(answerItem);
+            });
+            
+            // Generate improvement tips
+            const tipsList = document.getElementById('improvementList');
+            const tips = generateImprovementTips(score, results);
+            tipsList.innerHTML = '';
+            tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateImprovementTips(score, results) {
+            const tips = [];
+            
+            if (score >= 12) {
+                tips.push('Excellent performance! Your reading comprehension skills are very strong.');
+                tips.push('Continue practicing with more complex passages to maintain this level.');
+            } else if (score >= 10) {
+                tips.push('Good performance! Focus on time management for shopping directory reading.');
+                tips.push('Practice identifying specific details in service information.');
+            } else if (score >= 7) {
+                tips.push('Room for improvement. Focus on understanding shopping and services terminology.');
+                tips.push('Practice scanning for specific prices, locations, and service details.');
+            } else {
+                tips.push('Significant improvement needed. Review basic shopping and services vocabulary.');
+                tips.push('Practice with simpler passages first to build confidence.');
+                tips.push('Focus on vocabulary building for retail and customer service topics.');
+            }
+            
+            // Specific tips based on common errors
+            const mcErrors = results.filter(r => r.question.startsWith('q') && ['9','10','11','12'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            const matchingErrors = results.filter(r => r.question.startsWith('q') && ['1','2','3','4'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            
+            if (mcErrors > 2) {
+                tips.push('Focus on careful reading of shopping center information and service policies.');
+            }
+            if (matchingErrors > 2) {
+                tips.push('Practice matching specific information to correct categories or locations.');
+            }
+            
+            return tips;
+        }
+
+
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('slideMenu').classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize timer display
+        workspace.updateTimerDisplay();
+    </script>
+</body>
+</html> 
