@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 1 - Practice 7: Legal & Banking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            color: #5d3a0a;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            opacity: 0.8;
+        }
+
+        /* Small Timer Display (appears when timer is running) */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -380px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            overflow-y: auto;
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin: 25px 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513 0%, #d4af37 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .timer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Split Container for Reading Workspace */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        .passages-panel {
+            flex: 1;
+            min-width: 45%;
+            max-width: 60%;
+            padding: 25px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 248, 0.9) 100%);
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .questions-panel {
+            flex: 1;
+            min-width: 40%;
+            max-width: 55%;
+            padding: 25px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(248, 248, 248, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+        }
+
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(135deg, #d4af37 0%, #8b4513 100%);
+            cursor: col-resize;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .vertical-separator:hover {
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+        }
+
+        .separator-handle {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 3px;
+            padding: 8px 2px;
+            font-size: 12px;
+            color: #8b4513;
+            font-weight: bold;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            user-select: none;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+        }
+
+        /* Passage Styles */
+        .passage {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .passage-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .passage-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Question Styles */
+        .question-group {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            border-left: 4px solid #8b4513;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .question-group-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+            padding: 10px 0;
+        }
+
+        .question-number {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 5px;
+        }
+
+        .question-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 0;
+        }
+
+        .radio-option input[type="radio"] {
+            margin: 0;
+            scale: 1.2;
+        }
+
+        .radio-option label {
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+
+
+        /* Results Section */
+        .score-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .answer-review {
+            margin-bottom: 30px;
+        }
+
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .answer-item.correct {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .answer-item.incorrect {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.05);
+        }
+
+        .improvement-tips {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+                max-height: 50vh;
+            }
+            
+            .vertical-separator {
+                width: 100%;
+                height: 6px;
+                cursor: row-resize;
+            }
+            
+            .separator-handle {
+                writing-mode: horizontal-tb;
+                padding: 2px 8px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .timer-display {
+                font-size: 2rem;
+            }
+
+            .small-timer-display {
+                right: 10px;
+                top: 5px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .gk-logo-container {
+                right: 10px;
+                top: 25px;
+            }
+
+            .master-guruvammal-logo {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+
+            .back-label {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📖 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 1 - Practice 7</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">⚖️ 3 Passages - Legal & Banking Context</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 1 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📖 IELTS General Reading - Section 1 (Practice 7)</h1>
+                <div class="hero-subtitle">
+                    ⚖️ Legal & Banking - Social Survival Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 1 reading skills with authentic legal and banking passages featuring the most advanced vocabulary and complex professional language. This practice covers essential legal and financial situations including tenancy agreements, banking service terms, and consumer protection notices. You will encounter all 6 question formats commonly found in IELTS General Reading Section 1: Sentence Completion, True/False/Not Given, Multiple Choice, Matching Information, Form Completion, and Short Answer Questions. Complete Questions 1-14 within the recommended 20-minute timeframe.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">📚 Passage Details</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>📖 Total Passages:</strong> 3</li>
+                                <li style="margin-bottom: 8px;"><strong>📊 Word Count:</strong> ~800 words</li>
+                                <li style="margin-bottom: 8px;"><strong>🎯 Difficulty Level:</strong> Advanced</li>
+                                <li style="margin-bottom: 8px;"><strong>🏷️ Context:</strong> Legal & Banking</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">❓ Question Formats</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>📝 Sentence Completion:</strong> Q1-4</li>
+                                <li style="margin-bottom: 8px;"><strong>✅ True/False/Not Given:</strong> Q5-8</li>
+                                <li style="margin-bottom: 8px;"><strong>🎯 Multiple Choice:</strong> Q9-11</li>
+                                <li style="margin-bottom: 8px;"><strong>🔗 Matching/Form/Short:</strong> Q12-14</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">⚖️ Passage Themes</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>🏠 Passage A:</strong> Residential Tenancy Agreement</li>
+                                <li style="margin-bottom: 8px;"><strong>🏦 Passage B:</strong> Banking Service Conditions</li>
+                                <li style="margin-bottom: 8px;"><strong>📋 Passage C:</strong> Consumer Protection Notice</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer - 20 Minutes</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin: 15px 0; color: #666; font-size: 1.1rem;">
+                        🎯 <strong>IELTS Section 1 Standard:</strong> Complete all 14 questions within 20 minutes for optimal exam preparation.
+                    </p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startReading()">Start Reading</button>
+                    </div>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 8px; text-align: left;">
+                        <h4 style="color: #8b4513; margin-bottom: 10px;">⏰ Advanced Time Management:</h4>
+                        <ul style="margin: 0; padding-left: 20px; color: #666;">
+                            <li>Spend 4-5 minutes reading passages carefully due to complex legal/financial language</li>
+                            <li>Focus on understanding formal terminology and document structure</li>
+                            <li>Allocate 5 minutes per passage for answering questions</li>
+                            <li>Reserve 2-3 minutes for careful review of legal/financial terms</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">📚 Reading Workspace - Questions 1-14</h2>
+                
+                <div class="split-container">
+                    <!-- Passages Panel -->
+                    <div class="passages-panel">
+                        <div class="passage">
+                            <div class="passage-title">🏠 Passage A: Standard Residential Tenancy Agreement</div>
+                            <div class="passage-content">
+                                <strong>RESIDENTIAL TENANCY AGREEMENT</strong><br>
+                                <strong>Metropolitan Property Management Ltd.</strong><br><br>
+                                
+                                This tenancy agreement constitutes a legally binding contract between the Landlord (Metropolitan Property Management Ltd.) and the Tenant(s) for the rental of residential premises. Both parties acknowledge that they have read, understood, and agree to be bound by all terms and conditions herein specified.<br><br>
+                                
+                                <strong>PROPERTY DETAILS:</strong><br>
+                                Address: 42 Riverside Avenue, Unit 3B, Metropolitan City<br>
+                                Type: Two-bedroom apartment with balcony<br>
+                                Lease Commencement: March 1, 2024<br>
+                                Lease Termination: February 28, 2025<br>
+                                Monthly Rental Amount: $1,850<br>
+                                Security Deposit: $2,775 (equivalent to 1.5 months' rent)<br><br>
+                                
+                                <strong>PAYMENT OBLIGATIONS:</strong><br>
+                                Rent is payable in advance on the first day of each calendar month. Late payment penalties of $75 will be imposed for payments received after the 5th day of the month. Tenants must provide post-dated checks for the entire lease term or establish automatic bank transfer arrangements within 30 days of lease commencement.<br><br>
+                                
+                                <strong>MAINTENANCE AND REPAIRS:</strong><br>
+                                The Landlord is responsible for major structural repairs, heating system maintenance, and appliance replacement due to normal wear and tear. Tenants are obligated to maintain the premises in good condition and report any damage or necessary repairs within 48 hours of discovery. Failure to report damages promptly may result in tenants being held financially liable for consequential damages.<br><br>
+                                
+                                <strong>TERMINATION PROVISIONS:</strong><br>
+                                Either party may terminate this agreement with 60 days' written notice. Early termination by the tenant requires payment of two months' rent as compensation, unless the termination is due to landlord breach of material terms. The security deposit will be refunded within 21 days of lease termination, minus any deductions for damages beyond normal wear and tear.<br><br>
+                                
+                                <strong>RESTRICTIONS AND PROHIBITIONS:</strong><br>
+                                The premises are designated as non-smoking. Pet ownership is permitted with prior written consent and additional monthly fee of $100. Subletting or assignment requires landlord approval and may incur administrative fees of $200. Modifications to the property structure or installations require written authorization.
+                            </div>
+                        </div>
+
+                        <div class="passage">
+                            <div class="passage-title">🏦 Passage B: Premier Banking Services - Terms and Conditions</div>
+                            <div class="passage-content">
+                                <strong>PREMIER BANKING SERVICES AGREEMENT</strong><br>
+                                <strong>First National Bank - Personal Banking Division</strong><br><br>
+                                
+                                These terms and conditions govern the provision of Premier Banking Services to qualified account holders. By maintaining a Premier account, customers acknowledge acceptance of these terms and agree to comply with all stipulated conditions and fee structures.<br><br>
+                                
+                                <strong>ACCOUNT ELIGIBILITY AND REQUIREMENTS:</strong><br>
+                                Premier Banking status requires a minimum combined balance of $25,000 across all deposit accounts or a monthly direct deposit of $5,000. Accounts falling below these thresholds for two consecutive months will be converted to standard banking with applicable fees. Account holders must maintain current contact information and notify the bank of any changes within 30 days.<br><br>
+                                
+                                <strong>SERVICE BENEFITS AND PRIVILEGES:</strong><br>
+                                Premier customers receive complimentary unlimited domestic transactions, free wire transfers up to $10,000 monthly, and waived fees for certified checks and money orders. Additionally, Premier status provides priority customer service access with dedicated relationship managers available during extended hours (Monday-Friday 7 AM to 8 PM, Saturday 9 AM to 4 PM).<br><br>
+                                
+                                <strong>FEE STRUCTURE AND CHARGES:</strong><br>
+                                While most services are complimentary, certain premium services incur charges: international wire transfers ($45 per transaction), foreign currency exchange (1.5% markup on published rates), and safe deposit box rentals (annual fees ranging from $75-$300 depending on box size). Overdraft protection is provided free of charge for the first occurrence each calendar year; subsequent overdrafts incur a $35 fee per incident.<br><br>
+                                
+                                <strong>DIGITAL BANKING AND SECURITY:</strong><br>
+                                Premier customers receive enhanced online banking features including real-time balance alerts, advanced budgeting tools, and investment portfolio integration. Two-factor authentication is mandatory for all digital transactions exceeding $1,000. Customers are responsible for maintaining the confidentiality of their login credentials and must report suspicious activity immediately.<br><br>
+                                
+                                <strong>DISPUTE RESOLUTION AND LIABILITY:</strong><br>
+                                Account discrepancies must be reported within 60 days of statement issuance. The bank's liability for electronic transaction errors is limited to the actual amount of the erroneous transaction, excluding consequential damages. All disputes are subject to binding arbitration as outlined in the comprehensive account agreement.
+                            </div>
+                        </div>
+
+                        <div class="passage">
+                            <div class="passage-title">📋 Passage C: Consumer Protection Notice - Financial Services</div>
+                            <div class="passage-content">
+                                <strong>CONSUMER FINANCIAL PROTECTION BUREAU</strong><br>
+                                <strong>IMPORTANT NOTICE TO CONSUMERS</strong><br><br>
+                                
+                                This notice provides essential information regarding your rights and protections when engaging with financial service providers. Understanding these protections empowers consumers to make informed decisions and seek appropriate recourse when necessary.<br><br>
+                                
+                                <strong>RIGHT TO ACCURATE INFORMATION:</strong><br>
+                                Financial institutions are legally obligated to provide clear, accurate, and timely disclosure of all fees, interest rates, and terms associated with their products and services. Any material changes to account terms must be communicated in writing at least 45 days prior to implementation, allowing consumers adequate time to evaluate alternatives or close accounts without penalty.<br><br>
+                                
+                                <strong>PROTECTION AGAINST UNFAIR PRACTICES:</strong><br>
+                                Consumers are protected against discriminatory lending practices, unauthorized account charges, and deceptive marketing tactics. Financial institutions cannot retroactively apply fee increases to existing account balances or impose charges that were not clearly disclosed during account opening. Additionally, automatic enrollment in optional services without explicit consumer consent is prohibited.<br><br>
+                                
+                                <strong>DISPUTE RESOLUTION PROCEDURES:</strong><br>
+                                Consumers experiencing problems with financial service providers should first attempt resolution directly with the institution. If unsatisfied with the response, formal complaints can be filed with the Consumer Financial Protection Bureau through their online portal, telephone hotline (1-855-411-2372), or written correspondence. The bureau investigates complaints and facilitates resolution between consumers and financial institutions.<br><br>
+                                
+                                <strong>DATA PRIVACY AND SECURITY RIGHTS:</strong><br>
+                                Consumers have the right to know how their personal and financial information is collected, used, and shared. Financial institutions must implement robust security measures to protect customer data and promptly notify account holders of any security breaches that may compromise their information. Consumers may request copies of their financial records and challenge inaccurate information.<br><br>
+                                
+                                <strong>EMERGENCY ASSISTANCE AND RESOURCES:</strong><br>
+                                During financial hardship, consumers may be eligible for assistance programs including payment deferrals, loan modifications, or fee waivers. Many institutions offer hardship programs, and consumers should proactively communicate with their financial service providers during challenging circumstances. Free financial counseling services are available through certified non-profit organizations nationwide.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertical Separator -->
+                    <div class="vertical-separator">
+                        <div class="separator-handle">RESIZE</div>
+                    </div>
+
+                    <!-- Questions Panel -->
+                    <div class="questions-panel">
+                        <!-- Questions 1-4: Sentence Completion -->
+                        <div class="question-group">
+                            <div class="question-group-title">📝 Questions 1-4: Sentence Completion</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Complete the sentences below. Choose NO MORE THAN THREE WORDS from the passage for each answer.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 1</div>
+                                <div class="question-text">
+                                    The security deposit amount is equivalent to __________ months' rent.
+                                </div>
+                                <input type="text" class="answer-input" id="q1" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 2</div>
+                                <div class="question-text">
+                                    Tenants must report damages within __________ hours of discovery.
+                                </div>
+                                <input type="text" class="answer-input" id="q2" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 3</div>
+                                <div class="question-text">
+                                    Premier Banking requires a minimum combined balance of __________ across all deposit accounts.
+                                </div>
+                                <input type="text" class="answer-input" id="q3" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 4</div>
+                                <div class="question-text">
+                                    Material changes to account terms must be communicated __________ days prior to implementation.
+                                </div>
+                                <input type="text" class="answer-input" id="q4" placeholder="Your answer">
+                            </div>
+                        </div>
+
+                        <!-- Questions 5-8: True/False/Not Given -->
+                        <div class="question-group">
+                            <div class="question-group-title">✅ Questions 5-8: True/False/Not Given</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Do the following statements agree with the information in the passage?<br>
+                                TRUE - if the statement agrees with the information<br>
+                                FALSE - if the statement contradicts the information<br>
+                                NOT GIVEN - if there is no information on this
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 5</div>
+                                <div class="question-text">
+                                    Late payment penalties are imposed if rent is received after the 3rd day of the month.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5a" name="q5" value="TRUE">
+                                        <label for="q5a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5b" name="q5" value="FALSE">
+                                        <label for="q5b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5c" name="q5" value="NOT GIVEN">
+                                        <label for="q5c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 6</div>
+                                <div class="question-text">
+                                    Premier Banking customers receive unlimited international wire transfers at no charge.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6a" name="q6" value="TRUE">
+                                        <label for="q6a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6b" name="q6" value="FALSE">
+                                        <label for="q6b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6c" name="q6" value="NOT GIVEN">
+                                        <label for="q6c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 7</div>
+                                <div class="question-text">
+                                    Two-factor authentication is required for all digital banking transactions.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7a" name="q7" value="TRUE">
+                                        <label for="q7a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7b" name="q7" value="FALSE">
+                                        <label for="q7b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7c" name="q7" value="NOT GIVEN">
+                                        <label for="q7c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 8</div>
+                                <div class="question-text">
+                                    Financial institutions must notify customers of security breaches within 24 hours.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8a" name="q8" value="TRUE">
+                                        <label for="q8a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8b" name="q8" value="FALSE">
+                                        <label for="q8b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8c" name="q8" value="NOT GIVEN">
+                                        <label for="q8c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 9-11: Multiple Choice -->
+                        <div class="question-group">
+                            <div class="question-group-title">🎯 Questions 9-11: Multiple Choice</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Choose the correct letter, A, B, C, or D.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 9</div>
+                                <div class="question-text">
+                                    According to the tenancy agreement, early termination by the tenant requires:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9a" name="q9" value="A">
+                                        <label for="q9a">A) 30 days' notice and one month's rent</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9b" name="q9" value="B">
+                                        <label for="q9b">B) 60 days' notice and two months' rent</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9c" name="q9" value="C">
+                                        <label for="q9c">C) 60 days' notice only</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9d" name="q9" value="D">
+                                        <label for="q9d">D) Two months' rent as compensation</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 10</div>
+                                <div class="question-text">
+                                    Premier Banking customers have access to relationship managers:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10a" name="q10" value="A">
+                                        <label for="q10a">A) 24 hours a day, 7 days a week</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10b" name="q10" value="B">
+                                        <label for="q10b">B) Monday-Friday 9 AM to 5 PM only</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10c" name="q10" value="C">
+                                        <label for="q10c">C) During extended hours including weekends</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10d" name="q10" value="D">
+                                        <label for="q10d">D) By appointment only</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 11</div>
+                                <div class="question-text">
+                                    According to the Consumer Protection Notice, consumers should first:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q11a" name="q11" value="A">
+                                        <label for="q11a">A) File a complaint with the Consumer Financial Protection Bureau</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q11b" name="q11" value="B">
+                                        <label for="q11b">B) Attempt resolution directly with the financial institution</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q11c" name="q11" value="C">
+                                        <label for="q11c">C) Seek legal counsel immediately</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q11d" name="q11" value="D">
+                                        <label for="q11d">D) Contact a financial counseling service</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 12-14: Mixed Format -->
+                        <div class="question-group">
+                            <div class="question-group-title">🔗 Questions 12-14: Mixed Format</div>
+                            
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Question 12: Matching Information - Write A, B, or C
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 12</div>
+                                <div class="question-text">
+                                    Which passage mentions a specific telephone hotline number for complaints?
+                                </div>
+                                <input type="text" class="answer-input" id="q12" placeholder="A, B, or C">
+                            </div>
+
+                            <p style="margin: 20px 0 15px 0; font-style: italic; color: #666;">
+                                Questions 13-14: Short Answer - Write NO MORE THAN TWO WORDS AND/OR A NUMBER
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 13</div>
+                                <div class="question-text">
+                                    What is the monthly fee for pet ownership in the rental property?
+                                </div>
+                                <input type="text" class="answer-input" id="q13" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 14</div>
+                                <div class="question-text">
+                                    What percentage markup is charged on foreign currency exchange for Premier Banking customers?
+                                </div>
+                                <input type="text" class="answer-input" id="q14" placeholder="Your answer">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 14 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>⚖️ Reading Enhancement Strategies</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Enhanced Reading Workspace Class
+        class ReadingWorkspace {
+            constructor() {
+                this.currentQuestion = 1;
+                this.answeredQuestions = new Set();
+                this.timerDuration = 20 * 60; // 20 minutes in seconds
+                this.timeRemaining = this.timerDuration;
+                this.timerInterval = null;
+                this.timerRunning = false;
+                this.initializeWorkspace();
+            }
+
+            initializeWorkspace() {
+                this.setupResizablePanels();
+                this.setupProgressTracking();
+                this.updateTimerDisplay();
+            }
+
+            // Resizable Panels
+            setupResizablePanels() {
+                const separator = document.querySelector('.vertical-separator');
+                const passagesPanel = document.querySelector('.passages-panel');
+                const questionsPanel = document.querySelector('.questions-panel');
+                
+                if (!separator) return;
+                
+                let isResizing = false;
+
+                separator.addEventListener('mousedown', (e) => {
+                    isResizing = true;
+                    document.body.style.cursor = 'col-resize';
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isResizing) return;
+
+                    const container = document.querySelector('.split-container');
+                    const containerRect = container.getBoundingClientRect();
+                    const newPosition = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+                    
+                    if (newPosition > 25 && newPosition < 75) {
+                        passagesPanel.style.flex = `0 0 ${newPosition}%`;
+                        questionsPanel.style.flex = `0 0 ${100 - newPosition}%`;
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isResizing) {
+                        isResizing = false;
+                        document.body.style.cursor = 'default';
+                    }
+                });
+            }
+
+            // Progress Tracking
+            setupProgressTracking() {
+                const inputs = document.querySelectorAll('.answer-input, input[type="radio"]');
+                inputs.forEach(input => {
+                    input.addEventListener('input', () => this.updateProgress());
+                    input.addEventListener('change', () => this.updateProgress());
+                });
+            }
+
+            updateProgress() {
+                this.autoSave();
+            }
+
+            getAnsweredQuestions() {
+                const answered = new Set();
+                
+                // Text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answered.add(input.id);
+                    }
+                });
+                
+                // Radio buttons
+                for (let i = 5; i <= 11; i++) {
+                    const radioGroup = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (radioGroup) {
+                        answered.add(`q${i}`);
+                    }
+                }
+                
+                return answered;
+            }
+
+            // Timer Functions
+            startTimer() {
+                if (this.timerRunning) return;
+                
+                this.timerRunning = true;
+                this.showSmallTimer();
+                
+                this.timerInterval = setInterval(() => {
+                    this.timeRemaining--;
+                    this.updateTimerDisplay();
+                    
+                    if (this.timeRemaining <= 0) {
+                        this.stopTimer();
+                        this.handleTimeUp();
+                    }
+                }, 1000);
+            }
+
+            stopTimer() {
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+                this.timerRunning = false;
+                this.hideSmallTimer();
+            }
+
+            updateTimerDisplay() {
+                const minutes = Math.floor(this.timeRemaining / 60);
+                const seconds = this.timeRemaining % 60;
+                const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                const timerDisplay = document.getElementById('timerDisplay');
+                const smallTimerTime = document.getElementById('smallTimerTime');
+                
+                if (timerDisplay) {
+                    timerDisplay.textContent = timeString;
+                    
+                    // Change color when 5 minutes or less remain
+                    if (this.timeRemaining <= 300) {
+                        timerDisplay.style.color = '#dc3545';
+                    } else if (this.timeRemaining <= 600) {
+                        timerDisplay.style.color = '#ffc107';
+                    } else {
+                        timerDisplay.style.color = '#8b4513';
+                    }
+                }
+                
+                if (smallTimerTime) {
+                    smallTimerTime.textContent = timeString;
+                    
+                    // Change small timer color too
+                    const smallTimer = document.getElementById('smallTimerDisplay');
+                    if (this.timeRemaining <= 300) {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(220, 53, 69, 0.95) 0%, rgba(139, 69, 19, 0.95) 100%)';
+                    } else if (this.timeRemaining <= 600) {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(255, 193, 7, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                    } else {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                    }
+                }
+            }
+
+            showSmallTimer() {
+                const smallTimer = document.getElementById('smallTimerDisplay');
+                if (smallTimer) {
+                    smallTimer.style.display = 'flex';
+                }
+            }
+
+            hideSmallTimer() {
+                const smallTimer = document.getElementById('smallTimerDisplay');
+                if (smallTimer) {
+                    smallTimer.style.display = 'none';
+                }
+            }
+
+            handleTimeUp() {
+                alert('⏰ Time is up! Your answers have been automatically saved. Click OK to see your results.');
+                submitAnswers();
+            }
+
+            // Auto-save functionality
+            autoSave() {
+                const answers = {};
+                
+                // Save text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answers[input.id] = input.value.trim();
+                    }
+                });
+                
+                // Save radio selections
+                document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                    answers[radio.name] = radio.value;
+                });
+                
+                try {
+                    localStorage.setItem('ielts_reading_s1_p7_answers', JSON.stringify(answers));
+                } catch (error) {
+                    console.warn('Could not save answers to localStorage');
+                }
+            }
+
+            // Load saved answers
+            loadSavedAnswers() {
+                try {
+                    const saved = localStorage.getItem('ielts_reading_s1_p7_answers');
+                    if (saved) {
+                        const answers = JSON.parse(saved);
+                        
+                        // Restore text inputs
+                        Object.entries(answers).forEach(([id, value]) => {
+                            const element = document.getElementById(id);
+                            if (element && element.type === 'text') {
+                                element.value = value;
+                            }
+                        });
+                        
+                        // Restore radio selections
+                        Object.entries(answers).forEach(([name, value]) => {
+                            const radio = document.querySelector(`input[name="${name}"][value="${value}"]`);
+                            if (radio) {
+                                radio.checked = true;
+                            }
+                        });
+                        
+                        this.updateProgress();
+                    }
+                } catch (error) {
+                    console.warn('Could not load saved answers');
+                }
+            }
+        }
+
+        // Initialize workspace
+        const workspace = new ReadingWorkspace();
+
+        // Global Functions
+        function startReading() {
+            workspace.startTimer();
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Progress Function
+        function updateProgress() {
+            workspace.updateProgress();
+        }
+
+        // Auto-save functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            workspace.loadSavedAnswers();
+        });
+
+        // Menu and Navigation Functions
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('menu-open'); // Make button stick to menu
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        // Submit and Scoring Functions
+        const answerKey = {
+            'q1': '1.5',
+            'q2': '48',
+            'q3': '$25,000',
+            'q4': '45',
+            'q5': 'FALSE',
+            'q6': 'FALSE',
+            'q7': 'FALSE',
+            'q8': 'NOT GIVEN',
+            'q9': 'B',
+            'q10': 'C',
+            'q11': 'B',
+            'q12': 'C',
+            'q13': '$100',
+            'q14': '1.5%'
+        };
+
+        function submitAnswers() {
+            workspace.stopTimer();
+            
+            let score = 0;
+            const results = [];
+            
+            // Check all answers
+            for (const [questionId, correctAnswer] of Object.entries(answerKey)) {
+                let userAnswer = '';
+                const element = document.getElementById(questionId);
+                
+                if (element) {
+                    if (element.type === 'text') {
+                        userAnswer = element.value.trim();
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButton = document.querySelector(`input[name="${questionId}"]:checked`);
+                    if (radioButton) {
+                        userAnswer = radioButton.value;
+                    }
+                }
+                
+                const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase() ||
+                                userAnswer.toLowerCase().includes(correctAnswer.toLowerCase()) ||
+                                userAnswer === correctAnswer;
+                if (isCorrect) score++;
+                
+                results.push({
+                    question: questionId,
+                    userAnswer: userAnswer,
+                    correctAnswer: correctAnswer,
+                    isCorrect: isCorrect
+                });
+            }
+            
+            displayResults(score, results);
+        }
+
+        function displayResults(score, results) {
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            
+            // Generate answer review
+            const reviewContainer = document.getElementById('answerReview');
+            reviewContainer.innerHTML = '';
+            
+            results.forEach((result, index) => {
+                const answerItem = document.createElement('div');
+                answerItem.className = `answer-item ${result.isCorrect ? 'correct' : 'incorrect'}`;
+                answerItem.innerHTML = `
+                    <div>
+                        <strong>Question ${index + 1}:</strong> ${result.userAnswer || 'No answer'}
+                        ${!result.isCorrect ? `<br><strong>Correct answer:</strong> ${result.correctAnswer}` : ''}
+                    </div>
+                    <div style="font-size: 1.2em;">${result.isCorrect ? '✓' : '✗'}</div>
+                `;
+                reviewContainer.appendChild(answerItem);
+            });
+            
+            // Generate improvement tips
+            const tipsList = document.getElementById('improvementList');
+            const tips = generateImprovementTips(score, results);
+            tipsList.innerHTML = '';
+            tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateImprovementTips(score, results) {
+            const tips = [];
+            
+            if (score >= 12) {
+                tips.push('Exceptional performance! Your comprehension of complex legal and financial texts is outstanding.');
+                tips.push('Continue practicing with advanced professional documents to maintain this expert level.');
+            } else if (score >= 10) {
+                tips.push('Excellent performance! You demonstrate strong skills with formal legal and banking language.');
+                tips.push('Focus on refining your understanding of precise legal terminology and contractual language.');
+            } else if (score >= 8) {
+                tips.push('Good performance with advanced texts. Continue working on legal and financial vocabulary.');
+                tips.push('Practice identifying specific clauses and conditions in formal documents.');
+            } else if (score >= 6) {
+                tips.push('Adequate performance. Focus on building vocabulary for legal and banking contexts.');
+                tips.push('Practice reading formal agreements and understanding professional terminology.');
+            } else {
+                tips.push('Significant improvement needed. Start with simpler legal and financial texts.');
+                tips.push('Build foundational vocabulary in legal and banking terminology.');
+                tips.push('Practice understanding formal document structures and professional language patterns.');
+            }
+            
+            // Specific tips based on common errors
+            const sentenceErrors = results.filter(r => r.question.startsWith('q') && ['1','2','3','4'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            const tfErrors = results.filter(r => r.question.startsWith('q') && ['5','6','7','8'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            const mcErrors = results.filter(r => r.question.startsWith('q') && ['9','10','11'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            
+            if (sentenceErrors > 2) {
+                tips.push('Focus on extracting precise information from legal and financial documents.');
+            }
+            if (tfErrors > 2) {
+                tips.push('Practice carefully distinguishing between stated facts and implications in formal texts.');
+            }
+            if (mcErrors > 1) {
+                tips.push('Work on understanding complex legal and banking procedures and requirements.');
+            }
+            
+            return tips;
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('slideMenu').classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize timer display
+        workspace.updateTimerDisplay();
+    </script>
+</body>
+</html> 
