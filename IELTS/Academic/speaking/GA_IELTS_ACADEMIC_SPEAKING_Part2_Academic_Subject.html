@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Speaking Part 2: Academic Subject Practice | Gammapace</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Master Guruvammal Logo for template back button */
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button - Professional Brown Gradient */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border-left: 3px solid transparent;
+            margin: 0.3rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #8b4513, #d4af37, #8b4513);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .format-info {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Content sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Question Selection */
+        .question-selection {
+            background: rgba(139, 69, 19, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .question-selection h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .question-selection select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            display: block;
+            background: white;
+        }
+
+        /* Cue Card Section */
+        .cue-card-section {
+            margin: 2rem 0;
+        }
+
+        .cue-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.05));
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+        }
+
+        .cue-card h4 {
+            font-size: 1.4rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .cue-card p {
+            color: #666;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .cue-card ul {
+            margin: 1rem 0 1rem 2rem;
+            color: #333;
+        }
+
+        .cue-card li {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .time-instruction {
+            background: #8b4513;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        /* Timer Display */
+        .timer-display {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .timer {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            min-width: 200px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+        }
+
+        .timer-label {
+            color: #8b4513;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Control Buttons */
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 160px;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        .control-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .prepare-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .prepare-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #20c997, #28a745);
+        }
+
+        .record-btn.recording {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        /* Status Display */
+        .status-display {
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .status-display.preparing {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .status-display.recording {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.05));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .analysis-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .analysis-card h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .analysis-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #feedbackText {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .analysis-processing {
+            background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+            background-size: 200% 200%;
+            animation: analysisShimmer 2s linear infinite;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        @keyframes analysisShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        .next-btn:nth-child(2) {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .next-btn:nth-child(2):hover {
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Band Score Guidance */
+        .band-guidance {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 2px solid #d4af37;
+        }
+
+        .band-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .criteria-card {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(212, 175, 55, 0.05));
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 3px solid #8b4513;
+        }
+
+        .criteria-card h5 {
+            color: #8b4513;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .criteria-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0 !important;
+            }
+
+            .menu-toggle {
+                left: 20px;
+            }
+
+            .menu-toggle-label {
+                left: 42px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                left: -100%;
+            }
+
+            .slide-menu.collapsed {
+                left: -100%;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .band-criteria {
+                grid-template-columns: 1fr;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .control-btn {
+                width: 80%;
+                max-width: 250px;
+            }
+        }
+
+        /* Hidden elements */
+        .hidden {
+            display: none;
+        }
+
+        /* Processing animation */
+        .processing {
+            animation: processing 2s linear infinite;
+        }
+
+        @keyframes processing {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .processing {
+            background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+            background-size: 200% 200%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo Container (Back Button) -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Slide-out Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle">
+        ›
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Academic Speaking Part 2</div>
+            <div class="menu-subtitle">Academic Subject</div>
+        </div>
+        <div class="menu-content">
+            <div class="menu-item" onclick="scrollToSection('instructions')">🎯 Select Cue Card</div>
+            <div class="menu-item active" onclick="scrollToSection('recording')">🎙️ Recording Studio</div>
+            <div class="menu-item" onclick="scrollToSection('analysis')">📊 Analysis Results</div>
+            <div class="menu-item" onclick="scrollToSection('guidance')">🎯 Band Score Guidance</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">IELTS Academic Speaking Part 2</h1>
+            <div class="hero-subtitle">Academic Subject Practice</div>
+            <div class="format-info">
+                <p><strong>Part 2 Format:</strong> You will receive a cue card with a topic and bullet points. You have <strong>1 minute to prepare</strong> and can make notes, then you must speak for <strong>2 minutes</strong> without interruption on the topic.</p>
+            </div>
+        </section>
+
+        <!-- Question Selection -->
+        <section class="content-section" id="instructions">
+            <h2 class="section-title">🎯 Select Your Cue Card</h2>
+            <div class="question-selection">
+                <h3>Choose an Academic Subject Topic:</h3>
+                <select id="questionSelect" onchange="updateCurrentQuestion()">
+                    <option value="1">Describe an academic subject you enjoy</option>
+                    <option value="2">Describe a subject you found challenging but interesting</option>
+                    <option value="3">Describe a subject that influenced your career choice</option>
+                    <option value="4">Describe a subject you would like to study in the future</option>
+                    <option value="5">Describe a subject you excelled in</option>
+                    <option value="6">Describe a subject that changed your perspective</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Cue Card Section -->
+        <section class="content-section" id="cue-card">
+            <h2 class="section-title">🎯 Cue Card</h2>
+            <div class="cue-card-section">
+                <div class="cue-card" id="cueCardContent">
+                    <h4>Describe an academic subject you enjoy</h4>
+                    <p>You should say:</p>
+                    <ul>
+                        <li>What the subject is and where you studied it</li>
+                        <li>What topics or areas this subject covers</li>
+                        <li>How you learned about this subject and what methods were used</li>
+                        <li>And explain why you find this subject enjoyable and interesting</li>
+                    </ul>
+                    <div class="time-instruction">
+                        You have 1 minute to prepare and 2 minutes to speak.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-display">
+                <div class="timer" id="timerDisplay">01:00</div>
+                <div class="timer-label" id="timerLabel">Preparation Time</div>
+            </div>
+        </section>
+
+        <!-- Recording Studio Section -->
+        <section class="content-section" id="recording">
+            <h2 class="section-title">🎙️ Recording Studio</h2>
+            
+            <div style="text-align: center; color: #666; margin: 1rem 0;">
+                <p>Click "Start Preparation" to begin your 1-minute preparation time, then record your 2-minute academic subject monologue.</p>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="control-buttons">
+                <button class="control-btn prepare-btn" id="prepareBtn" onclick="startPreparation()">
+                    ⏱️ Start Preparation
+                </button>
+                <button class="control-btn record-btn" id="recordBtn" onclick="startRecording()" disabled>
+                    🎤 Start Recording
+                </button>
+                <button class="control-btn" id="stopBtn" onclick="stopRecording()" disabled>
+                    ⏹️ Stop Recording
+                </button>
+                <button class="control-btn" id="playBtn" onclick="playRecording()" disabled>
+                    ▶️ Play Recording
+                </button>
+                <button class="control-btn" id="processBtn" onclick="processAudio()" disabled>
+                    📊 Analyze Speech
+                </button>
+            </div>
+
+            <!-- Status Display -->
+            <div class="status-display" id="statusDisplay">
+                Ready to begin preparation for your academic subject monologue
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section class="content-section hidden" id="analysis">
+            <h2 class="section-title">
+                📊 Analysis Results
+            </h2>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h4>📝 Example Response</h4>
+                    <p id="transcriptionText" style="font-style: italic; color: #555;">A model academic subject response will appear here to guide your monologue practice. This shows the level of detail and structure expected for 2-minute subject presentations.</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h4>🎯 Your Personal Analysis & Feedback</h4>
+                    <p id="feedbackText" style="white-space: pre-line;">Based on your actual recording, personalized feedback on your subject knowledge, academic vocabulary, and presentation skills will appear here. This analysis is tailored specifically to your academic subject response.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons">
+                <button class="control-btn next-btn" onclick="goToNextCard()">
+                    ➡️ Next Cue Card
+                </button>
+                <button class="control-btn next-btn" onclick="refreshCurrentCard()">
+                    🔄 Retry This Card
+                </button>
+            </div>
+        </section>
+
+        <!-- Band Score Guidance -->
+        <section class="content-section" id="guidance">
+            <h2 class="section-title">
+                🎯 Band Score Guidance
+            </h2>
+            
+            <div class="band-guidance">
+                <h3 style="color: #8b4513; text-align: center; margin-bottom: 1.5rem;">Academic Subject Monologue Assessment Criteria</h3>
+                
+                <div class="band-criteria">
+                    <div class="criteria-card">
+                        <h5>🗣️ Fluency & Coherence</h5>
+                        <p>Maintain steady speech flow throughout the 2-minute subject description. Use logical organization with clear introduction of the subject, detailed content explanation, and personal reflection. Connect ideas smoothly when describing topics, learning methods, and subject appeal.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>📚 Lexical Resource</h5>
+                        <p>Use sophisticated academic vocabulary including subject-specific terminology, learning methodology language, and analytical expressions. Include precise terms for curriculum content, assessment methods, and academic skills developed through the subject.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>⚙️ Grammatical Range</h5>
+                        <p>Demonstrate complex sentence structures throughout the subject presentation. Use descriptive language accurately when explaining concepts and theories, and conditional structures when discussing hypothetical applications or future study plans.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>🎯 Pronunciation</h5>
+                        <p>Maintain clear articulation during the extended subject presentation. Use appropriate stress patterns for academic terminology and subject-specific vocabulary, engaging the listener throughout the academic discourse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Academic Subject Cue Cards
+        const cueCards = {
+            1: {
+                title: "Describe an academic subject you enjoy",
+                points: [
+                    "What the subject is and where you studied it",
+                    "What topics or areas this subject covers",
+                    "How you learned about this subject and what methods were used",
+                    "And explain why you find this subject enjoyable and interesting"
+                ]
+            },
+            2: {
+                title: "Describe a subject you found challenging but interesting",
+                points: [
+                    "What the subject was and at what level you studied it",
+                    "What made this subject particularly challenging",
+                    "How you overcame the difficulties and what help you received",
+                    "And explain why you found it interesting despite the challenges"
+                ]
+            },
+            3: {
+                title: "Describe a subject that influenced your career choice",
+                points: [
+                    "What the subject was and when you first studied it",
+                    "What specific aspects of the subject interested you most",
+                    "How this subject connected to your career aspirations",
+                    "And explain how this subject shaped your professional path"
+                ]
+            },
+            4: {
+                title: "Describe a subject you would like to study in the future",
+                points: [
+                    "What subject it is and why you became interested in it",
+                    "Where you would like to study this subject",
+                    "What you hope to learn and what skills you would develop",
+                    "And explain how studying this subject would benefit your future goals"
+                ]
+            },
+            5: {
+                title: "Describe a subject you excelled in",
+                points: [
+                    "What the subject was and at what level you studied it",
+                    "What made you particularly good at this subject",
+                    "How your success in this subject was recognized",
+                    "And explain what skills or knowledge this subject gave you"
+                ]
+            },
+            6: {
+                title: "Describe a subject that changed your perspective",
+                points: [
+                    "What the subject was and where you studied it",
+                    "What your initial understanding or expectations were",
+                    "How the subject challenged or changed your thinking",
+                    "And explain what new insights or perspectives you gained"
+                ]
+            }
+        };
+
+        // Timer variables
+        let currentTimer = null;
+        let timeRemaining = 60; // Start with preparation time
+        let isPreparationPhase = true;
+        let isRecording = false;
+
+        // Audio recording variables
+        let mediaRecorder;
+        let audioChunks = [];
+        let recordingTimeout;
+        let originalAudioBlob = null;
+        let recordingSeconds = 0;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ IELTS Academic Speaking Part 2: Academic Subject loaded');
+            updateCurrentQuestion();
+            
+            // Check for audio support
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                document.getElementById('statusDisplay').textContent = 'Audio recording not supported in this browser';
+                document.getElementById('recordBtn').disabled = true;
+                console.warn('⚠️ Audio recording not supported');
+            }
+        });
+
+        // Update current cue card display
+        function updateCurrentQuestion() {
+            const select = document.getElementById('questionSelect');
+            const cueCard = document.getElementById('cueCardContent');
+            const selectedValue = select.value;
+            const card = cueCards[selectedValue];
+
+            // Update cue card content
+            cueCard.innerHTML = `
+                <h4>${card.title}</h4>
+                <p>You should say:</p>
+                <ul>
+                    ${card.points.map(point => `<li>${point}</li>`).join('')}
+                </ul>
+                <div class="time-instruction">
+                    You have 1 minute to prepare and 2 minutes to speak.
+                </div>
+            `;
+            
+            // Reset everything when question changes
+            resetSession();
+        }
+
+        // Start preparation timer
+        function startPreparation() {
+            console.log('🟡 Starting preparation phase');
+            isPreparationPhase = true;
+            timeRemaining = 60; // 1 minute preparation
+            
+            // Update UI
+            document.getElementById('prepareBtn').disabled = true;
+            document.getElementById('prepareBtn').textContent = '⏱️ Preparing...';
+            document.getElementById('statusDisplay').textContent = '📝 Preparation time - Think about your academic subject and make notes';
+            document.getElementById('statusDisplay').className = 'status-display preparing';
+            
+            // Start countdown
+            updateTimerDisplay();
+            currentTimer = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+                
+                if (timeRemaining <= 0) {
+                    finishPreparation();
+                }
+            }, 1000);
+        }
+
+        // Finish preparation and enable recording
+        function finishPreparation() {
+            console.log('✅ Preparation complete, enabling recording');
+            clearInterval(currentTimer);
+            isPreparationPhase = false;
+            
+            // Update UI for recording phase
+            document.getElementById('recordBtn').disabled = false;
+            document.getElementById('statusDisplay').textContent = '🎤 Ready to record your 2-minute academic subject monologue';
+            document.getElementById('statusDisplay').className = 'status-display';
+            document.getElementById('timerLabel').textContent = 'Recording Time';
+            
+            // Set timer for recording phase
+            timeRemaining = 120; // 2 minutes for recording
+            updateTimerDisplay();
+        }
+
+        // Start recording
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        echoCancellation: true,
+                        noiseSuppression: true,
+                        sampleRate: 44100
+                    } 
+                });
+                
+                audioChunks = [];
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: 'audio/webm;codecs=opus'
+                });
+                
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+                
+                mediaRecorder.onstop = () => {
+                    originalAudioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    const audioUrl = URL.createObjectURL(originalAudioBlob);
+                    
+                    // Store audio URL for playback
+                    window.currentAudioUrl = audioUrl;
+                    
+                    // Update UI to recorded state
+                    document.getElementById('playBtn').disabled = false;
+                    document.getElementById('processBtn').disabled = false;
+                    document.getElementById('statusDisplay').textContent = '✅ Recording complete! You can play it back or analyze your subject presentation';
+                    document.getElementById('statusDisplay').className = 'status-display';
+                };
+                
+                mediaRecorder.start();
+                isRecording = true;
+                recordingSeconds = 0;
+                
+                // Update UI to recording state
+                document.getElementById('recordBtn').disabled = true;
+                document.getElementById('recordBtn').classList.add('recording');
+                document.getElementById('recordBtn').textContent = '🎤 Recording...';
+                document.getElementById('stopBtn').disabled = false;
+                document.getElementById('statusDisplay').textContent = '🔴 Recording your academic subject monologue...';
+                document.getElementById('statusDisplay').className = 'status-display recording';
+                
+                // Start recording timer
+                currentTimer = setInterval(() => {
+                    timeRemaining--;
+                    recordingSeconds++;
+                    updateTimerDisplay();
+                    
+                    if (timeRemaining <= 0) {
+                        stopRecording();
+                    }
+                }, 1000);
+                
+                console.log('🎙️ Recording started for Academic Subject monologue');
+                
+            } catch (error) {
+                console.error('❌ Error starting recording:', error);
+                alert('Unable to access microphone. Please check your permissions.');
+            }
+        }
+
+        // Stop recording
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                mediaRecorder.stream.getTracks().forEach(track => track.stop());
+                isRecording = false;
+                
+                clearInterval(currentTimer);
+                
+                // Update UI
+                document.getElementById('recordBtn').classList.remove('recording');
+                document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+                document.getElementById('stopBtn').disabled = true;
+                
+                console.log('⏹️ Recording stopped');
+            }
+        }
+
+        // Play recording
+        function playRecording() {
+            if (window.currentAudioUrl) {
+                const audio = new Audio(window.currentAudioUrl);
+                audio.play();
+                console.log('▶️ Playing recording');
+            }
+        }
+
+        // Process audio and show analysis
+        async function processAudio() {
+            if (!originalAudioBlob) return;
+            
+            const analysisSection = document.getElementById('analysis');
+            const transcriptionText = document.getElementById('transcriptionText');
+            const feedbackText = document.getElementById('feedbackText');
+            
+            // Show analysis section with processing indicator
+            analysisSection.classList.remove('hidden');
+            feedbackText.innerHTML = '<div class="analysis-processing">🔄 Analyzing your subject presentation...</div>';
+            transcriptionText.textContent = 'Loading example response...';
+            
+            document.getElementById('statusDisplay').textContent = '🧠 Analyzing your academic subject monologue...';
+            
+            try {
+                // Step 1: Simulate speech-to-text conversion
+                feedbackText.innerHTML = '<div class="analysis-processing">🎙️ Converting speech to text...</div>';
+                const transcript = await simulateSpeechToText(originalAudioBlob);
+                
+                // Step 2: Analyze the transcribed text
+                feedbackText.innerHTML = '<div class="analysis-processing">🧠 Analyzing your subject knowledge and presentation...</div>';
+                const analysis = await analyzeMonologueResponse(transcript);
+                
+                // Step 3: Display results
+                const currentCard = document.getElementById('questionSelect').value;
+                const exampleResponse = getSubjectExampleResponse(currentCard);
+                
+                // Show example response (unchanged)
+                transcriptionText.textContent = exampleResponse;
+                
+                // Show personalized feedback based on actual recording
+                feedbackText.textContent = analysis.personalizedFeedback;
+                
+                // Scroll to show completed analysis
+                setTimeout(() => {
+                    analysisSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+                
+                document.getElementById('statusDisplay').textContent = '✅ Analysis complete! Review your personalized subject feedback below.';
+                
+                console.log('📊 Audio analysis completed with personalized feedback');
+                
+            } catch (error) {
+                console.error('Processing Error:', error);
+                document.getElementById('statusDisplay').textContent = '❌ Error during analysis. Please try again.';
+                
+                // Reset analysis section on error
+                feedbackText.textContent = 'Analysis failed. Please try recording again.';
+                transcriptionText.textContent = 'Example response will appear after successful analysis.';
+            }
+        }
+
+        // Simulate Speech-to-Text conversion
+        async function simulateSpeechToText(audioBlob) {
+            // Simulate processing time
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Analyze audio properties
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            
+            return new Promise((resolve) => {
+                audio.addEventListener('loadedmetadata', () => {
+                    const duration = audio.duration;
+                    const currentCard = document.getElementById('questionSelect').value;
+                    
+                    let transcript = generateSimulatedSubjectTranscript(currentCard, duration);
+                    transcript.recordingDuration = duration;
+                    
+                    resolve(transcript);
+                });
+                audio.load();
+            });
+        }
+
+        // Generate simulated transcript for academic subjects
+        function generateSimulatedSubjectTranscript(cardNumber, duration) {
+            const baseResponses = {
+                1: "The academic subject I enjoy is",
+                2: "The challenging but interesting subject was", 
+                3: "The subject that influenced my career choice was",
+                4: "The subject I would like to study in the future is",
+                5: "The subject I excelled in was",
+                6: "The subject that changed my perspective was"
+            };
+            
+            let response = baseResponses[cardNumber] || "The academic subject I want to describe is";
+            
+            // Add duration-based assessment
+            if (duration < 60) {
+                response += " [Response was quite short - aim for closer to 2 minutes for better coverage of subject details]";
+            } else if (duration >= 90 && duration <= 150) {
+                response += " [Good length - well within the optimal range for detailed subject presentation]";
+            } else if (duration > 150) {
+                response += " [Excellent detailed response - comprehensive coverage of subject features and personal experience]";
+            } else {
+                response += " [Adequate length - could include more specific details about learning methods and subject applications for higher band scores]";
+            }
+            
+            return response;
+        }
+
+        // Analyze monologue response for academic subject content
+        async function analyzeMonologueResponse(transcript) {
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            const currentCard = document.getElementById('questionSelect').value;
+            const transcriptText = typeof transcript === 'string' ? transcript : transcript.toString();
+            const duration = transcript.recordingDuration || 0;
+            
+            const wordCount = transcriptText.split(' ').length;
+            const hasSubjectTerms = /mathematics|science|physics|chemistry|biology|history|literature|psychology|economics|philosophy|sociology|engineering|computer|programming|language|linguistics|art|music|geography|political|law|medicine|business|management|statistics|research|theory|analysis|methodology|curriculum|syllabus|textbook|lecture|seminar|assignment|exam|grade|professor|teacher|study|learn|academic|university|college|knowledge|skill|concept|principle|practice|application|critical thinking|problem solving|essay|presentation|experiment|field work|case study|dissertation|thesis/i.test(transcriptText);
+            
+            let feedback = generateSubjectFeedback(currentCard, {
+                wordCount: wordCount,
+                hasSubjectTerms: hasSubjectTerms,
+                transcript: transcriptText,
+                duration: duration
+            });
+            
+            return { personalizedFeedback: feedback };
+        }
+
+        // Generate personalized feedback for subject presentations
+        function generateSubjectFeedback(cardNumber, analysis) {
+            let feedback = "Based on your recorded subject presentation:\n\n";
+            
+            // Analyze monologue duration (Part 2 should be longer)
+            if (analysis.duration && analysis.duration > 0) {
+                if (analysis.duration < 60) {
+                    feedback += "⏱️ **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - This is quite short for subject descriptions. Aim for 90-120 seconds to fully explore curriculum content, learning methods, and personal experiences.\n\n";
+                } else if (analysis.duration >= 90 && analysis.duration <= 150) {
+                    feedback += "✅ **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Excellent timing for subject presentations! This allows for comprehensive coverage of content and personal reflection.\n\n";
+                } else if (analysis.duration > 150) {
+                    feedback += "👍 **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Very detailed subject presentation. Good comprehensive coverage of all academic aspects.\n\n";
+                } else {
+                    feedback += "📈 **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Good length, could be extended with more specific curriculum details.\n\n";
+                }
+            }
+            
+            // Subject content development analysis
+            if (analysis.wordCount < 20) {
+                feedback += "🔍 **Subject Detail**: Your response appears brief. For subject descriptions, elaborate on curriculum content, learning methods, personal experiences, and academic applications with specific examples.\n\n";
+            } else if (analysis.wordCount > 100) {
+                feedback += "✅ **Subject Detail**: Excellent comprehensive presentation! You provided detailed information covering multiple aspects of the academic subject.\n\n";
+            } else {
+                feedback += "👍 **Subject Detail**: Good level of detail. Consider adding more specific examples of topics studied, assignments completed, or skills developed.\n\n";
+            }
+            
+            // Academic vocabulary usage
+            if (analysis.hasSubjectTerms) {
+                feedback += "✅ **Academic Vocabulary**: Excellent use of subject-specific and academic terminology. This demonstrates strong academic language skills and familiarity with educational contexts.\n\n";
+            } else {
+                feedback += "💡 **Academic Vocabulary**: Try incorporating more subject-specific terms like 'curriculum', 'methodology', 'analysis', 'theory', 'research', 'critical thinking', or field-specific vocabulary to strengthen your subject description.\n\n";
+            }
+            
+            // Cue card specific feedback
+            const cardSpecificTips = {
+                1: "For subjects you enjoy, describe the subject content, study location, curriculum topics, learning methods used, and explain your personal interest and enjoyment factors.",
+                2: "For challenging subjects, explain the difficulty aspects, study level, help received, overcoming strategies, and why the challenge made it interesting and worthwhile.",
+                3: "For career-influencing subjects, describe first exposure, most interesting aspects, career connections, and how the subject shaped your professional direction and goals.",
+                4: "For future study subjects, explain your interest development, preferred study locations, learning expectations, skill development goals, and future benefits anticipated.",
+                5: "For subjects you excelled in, describe the subject level, success factors, recognition received, and skills or knowledge gained through your academic excellence.",
+                6: "For perspective-changing subjects, explain initial expectations, thinking challenges, new insights gained, and how the subject transformed your understanding or worldview."
+            };
+            
+            feedback += "🎯 **Subject Presentation Structure**: " + (cardSpecificTips[cardNumber] || "Address all bullet points systematically with specific academic examples and personal connections.");
+            feedback += "\n\n📈 **Next Steps**: Practice describing academic content clearly, use transitional phrases between different subject aspects, and develop each learning experience with specific examples.";
+            feedback += "\n\n💡 **Subject Communication Success**: Remember to speak continuously about your academic experience, address all subject components, and maintain coherent organization throughout your presentation.";
+            
+            return feedback;
+        }
+
+        // Get example responses for different subject cue cards
+        function getSubjectExampleResponse(cardNumber) {
+            const examples = {
+                1: "I'd like to talk about Psychology, which I studied during my undergraduate degree at the University of Toronto from 2019 to 2023. Psychology is a fascinating academic discipline that explores human behavior, mental processes, and the factors that influence how we think, feel, and act. During my four years of study, I covered numerous areas within psychology including cognitive psychology, which examines mental processes like memory and problem-solving, social psychology that looks at how people interact and influence each other, developmental psychology focusing on human growth throughout the lifespan, and abnormal psychology that studies mental disorders and their treatments. The learning methods used in this subject were incredibly diverse and engaging, combining theoretical lectures with practical laboratory experiments, case study analyses, and hands-on research projects. We learned through reading academic journals and research papers, conducting our own experiments with fellow students, analyzing statistical data using specialized software, and participating in group discussions about complex psychological theories. What makes psychology particularly enjoyable and interesting for me is its direct relevance to everyday life and human relationships. Every concept I learned could be applied to understanding myself, my family, friends, and colleagues better. For instance, studying cognitive biases helped me recognize my own thinking patterns and decision-making processes, while learning about social influence made me more aware of how advertising, peer pressure, and cultural norms affect our choices. The subject also satisfied my curiosity about why people behave the way they do, providing scientific explanations for phenomena I had observed but never fully understood. Additionally, psychology taught me valuable research skills, critical thinking abilities, and data analysis techniques that have proven useful in many other areas of my academic and professional life. The subject continues to evolve with new discoveries about the brain and behavior, making it an exciting field that constantly challenges existing assumptions and opens new avenues for understanding human nature. Most importantly, psychology has given me a deeper appreciation for human complexity and individual differences, making me more empathetic and understanding in my personal relationships and professional interactions.",
+                
+                2: "The subject I found challenging but interesting was Advanced Statistics, which I studied during the second year of my Master's degree in Business Administration. This course was particularly demanding because it required a strong foundation in mathematics, which had never been my strongest area, combined with complex statistical software applications and advanced analytical thinking skills that pushed me well beyond my comfort zone. What made this subject especially challenging was the abstract nature of many statistical concepts, the need to understand multiple statistical tests and when to apply each one appropriately, and the requirement to interpret complex data sets and communicate findings clearly to non-technical audiences. The mathematical formulas seemed overwhelming at first, and I struggled with concepts like multivariate analysis, regression modeling, and hypothesis testing procedures that required both computational accuracy and conceptual understanding. To overcome these difficulties, I adopted several strategies and sought various forms of help throughout the semester. I formed a study group with classmates who had stronger mathematical backgrounds, attended every office hours session with the professor to clarify confusing concepts, hired a private tutor who specialized in business statistics, and practiced extensively using online statistical software tutorials and sample datasets. I also discovered that connecting statistical concepts to real-world business scenarios made them much more understandable and memorable, so I started looking for practical applications of every technique we learned. Despite the challenges, I found the subject fascinating because of its power to reveal hidden patterns in data and support evidence-based decision making in business contexts. Statistics taught me to question assumptions, look for evidence rather than relying on intuition, and approach complex problems systematically rather than emotionally. The subject opened my eyes to how data-driven insights could transform business strategies, marketing campaigns, and operational efficiency in ways I had never imagined. By the end of the course, I had developed a deep appreciation for the scientific method and analytical rigor that statistics brings to business management, even though I continued to find some aspects challenging. This experience taught me that intellectual challenge and interest often go hand in hand, and that persevering through difficult material can lead to the most rewarding learning experiences and valuable skills for future career success.",
+                
+                3: "The academic subject that most significantly influenced my career choice was Environmental Science, which I first encountered during my final year of high school and then pursued more seriously during my undergraduate studies at McGill University. Initially, I had been considering a career in business or law, following the expectations of my family, but my exposure to environmental science completely redirected my professional aspirations toward sustainability consulting and environmental policy development. What first captured my attention about environmental science were the interconnected systems approach and the way this field combines multiple disciplines including biology, chemistry, geography, economics, and social sciences to address complex real-world problems like climate change, pollution, and resource depletion. The specific aspects that interested me most were ecosystem dynamics, renewable energy technologies, environmental impact assessment methodologies, and the intersection between environmental protection and economic development that showed me how environmental considerations could be integrated into business decision-making processes. During my studies, I was particularly fascinated by case studies of companies that had successfully implemented sustainable practices while maintaining profitability, and research projects that demonstrated how environmental degradation affects human health and economic stability in measurable ways. The subject connected to my career aspirations by showing me that environmental protection and business success were not mutually exclusive, but could actually be complementary when approached strategically with proper scientific understanding and innovative thinking. I realized that my interests in problem-solving, analytical thinking, and making a positive societal impact could all be fulfilled through a career focused on helping organizations become more environmentally sustainable while remaining economically viable. Environmental science shaped my professional path by providing me with the technical knowledge, analytical skills, and systems thinking approach necessary to work as a sustainability consultant, where I now help companies assess their environmental impact, develop more sustainable practices, and navigate increasingly complex environmental regulations. The interdisciplinary nature of environmental science also prepared me to communicate effectively with diverse stakeholders including scientists, business executives, government officials, and community members, which has been invaluable in my current role. Most importantly, this subject gave me a sense of purpose and mission in my career, knowing that my professional work contributes to addressing some of the most critical challenges facing our planet and future generations.",
+                
+                4: "The subject I would most like to study in the future is Artificial Intelligence and Machine Learning, which has become increasingly relevant and fascinating to me as I observe how these technologies are transforming virtually every industry and aspect of modern life. My interest in this field developed gradually through my current work in data analysis, where I've encountered various AI applications and realized the enormous potential for innovation and problem-solving that these technologies offer. I would prefer to study this subject at a top-tier university like Stanford, MIT, or Carnegie Mellon, where cutting-edge research is being conducted and where I could learn from leading experts in the field while having access to advanced computing resources and collaborative research opportunities with both faculty and fellow students from diverse backgrounds. Through studying AI and machine learning, I hope to learn both the theoretical foundations and practical applications of these technologies, including understanding different types of machine learning algorithms, neural network architectures, natural language processing techniques, computer vision applications, and the ethical considerations surrounding AI development and deployment. I'm particularly interested in developing skills in programming languages like Python and R, working with large datasets, implementing machine learning models, and understanding how to evaluate and improve algorithmic performance in real-world scenarios. The technical skills I would develop include statistical analysis, pattern recognition, data preprocessing, model optimization, and the ability to translate business problems into machine learning solutions that can provide meaningful insights and automate complex decision-making processes. Studying this subject would benefit my future goals in multiple ways, both professionally and personally. Professionally, AI expertise would make me much more valuable in today's job market and open doors to exciting career opportunities in technology companies, research institutions, consulting firms, or even entrepreneurial ventures focused on AI applications. The subject would also enhance my current analytical capabilities and allow me to tackle much more complex and impactful projects than I can currently handle with traditional statistical methods alone. On a personal level, I'm deeply curious about how artificial intelligence might reshape society, education, healthcare, and human-computer interaction in the coming decades, and I want to be part of shaping that future rather than just observing it from the sidelines. Additionally, the problem-solving approaches and computational thinking skills developed through AI studies would be valuable in many other areas of life and learning, making me a more effective analytical thinker and innovative problem-solver regardless of whatever specific career path I ultimately pursue.",
+                
+                5: "The academic subject I excelled in most significantly was English Literature, which I studied throughout high school and during my undergraduate degree, consistently achieving the highest grades in my class and receiving recognition from teachers and professors for my analytical writing and critical thinking abilities. I was particularly good at this subject because of my natural love for reading, strong writing skills that had been developed since childhood, and an intuitive ability to analyze texts, identify literary themes, and articulate complex interpretations in clear, persuasive academic essays. My success in literature also stemmed from my genuine curiosity about human nature, historical contexts, and social issues that literature explores, which made studying even challenging texts feel engaging rather than burdensome. What made me excel was my systematic approach to reading, taking detailed notes on character development, symbolism, and thematic elements, and my ability to connect different works and authors to broader literary movements and cultural contexts. I also had excellent memory for specific textual details and quotations, which allowed me to support my analytical arguments with precise evidence from the primary sources. My success in English Literature was recognized in several ways throughout my academic career. In high school, I received the annual award for highest achievement in English and was selected to represent my school in regional literature competitions where I placed first in essay writing contests. During my undergraduate studies, I was invited to join the Honor Society for English majors, received a scholarship specifically for students excelling in literary studies, and had one of my research papers published in the university's undergraduate literary journal. Several professors encouraged me to pursue graduate studies in literature and offered to write recommendation letters highlighting my exceptional analytical abilities and original insights into literary works. This subject gave me invaluable skills and knowledge that have benefited me far beyond academic settings. Literature developed my critical thinking abilities, teaching me to question assumptions, analyze arguments, examine evidence, and consider multiple perspectives on complex issues. My writing skills became highly refined through constant practice with academic essays, creative writing assignments, and research papers, making me an effective communicator in any professional context. Literature also expanded my understanding of different cultures, historical periods, and human experiences, giving me greater empathy and cultural awareness that enhances my personal relationships and professional interactions. The subject taught me to appreciate nuance, complexity, and ambiguity rather than seeking simple answers to complicated questions, which has made me a more thoughtful decision-maker and problem-solver in all areas of life. Additionally, my literature background provided me with extensive knowledge of rhetoric, persuasive techniques, and effective communication strategies that have proven valuable in my career, particularly when preparing presentations, writing reports, or engaging in negotiations where clear, compelling communication is essential for success.",
+                
+                6: "The subject that fundamentally changed my perspective was Philosophy, which I initially approached with skepticism during my first year of university, thinking it would be abstract and irrelevant to practical life, but which ultimately transformed how I think about ethics, knowledge, existence, and my role in society. Before studying philosophy, I had relatively simplistic views about right and wrong, accepted most beliefs without critical examination, and approached life's big questions with assumptions based primarily on my cultural upbringing and personal experiences rather than rigorous logical analysis. I studied philosophy at the University of British Columbia, where I was required to take an introductory course as part of my liberal arts general education requirements, despite being skeptical about its practical value for someone planning a career in business management. My initial understanding was that philosophy was purely academic theorizing with little connection to real-world decision making or professional success. The subject challenged and changed my thinking in profound ways by introducing me to systematic methods of logical reasoning, ethical frameworks for analyzing moral dilemmas, and epistemological questions about the nature of knowledge, truth, and justified belief. Through studying philosophers like Socrates, I learned the importance of questioning assumptions and admitting the limits of my knowledge rather than pretending to understand things I had never seriously examined. Kant's categorical imperative gave me a new framework for thinking about ethical decisions based on universal principles rather than personal preferences or cultural norms. Studying different philosophical traditions from Western, Eastern, and Indigenous perspectives showed me that there are multiple valid ways of understanding reality, knowledge, and human purpose that I had never seriously considered. The new insights and perspectives I gained from philosophy include a deeper appreciation for logical consistency in arguments, recognition that most important questions don't have simple answers, understanding that ethical decision-making requires careful consideration of principles and consequences, and awareness that my own worldview is just one of many possible ways of interpreting human experience. Philosophy taught me to value intellectual humility, recognizing that changing my mind based on better evidence or reasoning is a sign of wisdom rather than weakness. I also gained appreciation for the complexity of seemingly straightforward concepts like justice, freedom, happiness, and success, realizing that these ideas require careful definition and analysis rather than assumption. Perhaps most importantly, philosophy showed me that examining fundamental questions about life's meaning, moral obligations, and human nature isn't just academic exercise but essential for living a thoughtful, intentional, and ethically responsible life. These philosophical insights have influenced my approach to business ethics, personal relationships, and social responsibilities in ways that continue to shape my decision-making and personal development years after completing my formal philosophy studies."
+            };
+            
+            return examples[cardNumber] || "Excellent academic subject response! Focus on providing specific curriculum details, learning method descriptions, and personal academic experiences while maintaining coherent organization throughout your 2-minute presentation.";
+        }
+
+        // Update timer display
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timerDisplay').textContent = timeString;
+        }
+
+        // Navigation functions
+        function goToNextCard() {
+            const currentCard = parseInt(document.getElementById('questionSelect').value);
+            const nextCard = currentCard >= 6 ? 1 : currentCard + 1;
+            document.getElementById('questionSelect').value = nextCard;
+            updateCurrentQuestion();
+            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function refreshCurrentCard() {
+            resetSession();
+            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetSession() {
+            // Clear timers
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+            
+            // Reset variables
+            isPreparationPhase = true;
+            isRecording = false;
+            timeRemaining = 60;
+            recordingSeconds = 0;
+            originalAudioBlob = null;
+            
+            // Reset UI
+            document.getElementById('prepareBtn').disabled = false;
+            document.getElementById('prepareBtn').textContent = '⏱️ Start Preparation';
+            document.getElementById('recordBtn').disabled = true;
+            document.getElementById('recordBtn').classList.remove('recording');
+            document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+            document.getElementById('stopBtn').disabled = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('processBtn').disabled = true;
+            document.getElementById('timerLabel').textContent = 'Preparation Time';
+            document.getElementById('statusDisplay').textContent = 'Ready to begin preparation for your academic subject monologue';
+            document.getElementById('statusDisplay').className = 'status-display';
+            
+            // Hide analysis section
+            document.getElementById('analysis').classList.add('hidden');
+            
+            // Reset timer display
+            updateTimerDisplay();
+        }
+
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Academic Speaking Part 2 - Going to Academic Introduction');
+            window.location.href = 'IELTS_Academic_Speaking_Introduction.html';
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Update active menu item
+            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Menu toggle functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (isRecording) {
+                stopRecording();
+            }
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+        });
+
+    </script>
+</body>
+</html> 
