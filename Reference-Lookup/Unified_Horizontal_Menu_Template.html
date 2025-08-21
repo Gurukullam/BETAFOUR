@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Horizontal Menu Template</title>
+    <style>
+        /* =================================================================== */
+        /* UNIFIED HORIZONTAL MENU SYSTEM TEMPLATE - V2.0                    */
+        /* =================================================================== */
+        /* This template provides a complete system for creating expandable    */
+        /* horizontal menus with inline submenus and branching functionality   */
+        /*                                                                     */
+        /* 🚀 KEY FEATURES:                                                    */
+        /* 1. Horizontal Branching: Submenus expand right instead of down     */
+        /* 2. Smart Container Layout: Uses flexbox for perfect alignment      */
+        /* 3. Global State Management: Comprehensive auto-collapse system     */
+        /* 4. Parent-Child Relationships: Nested submenus maintain parents    */
+        /* 5. Scope Separation: Clear opening/closing logic distinction       */
+        /* 6. Timer Integration: Auto-hide compatible with manual controls    */
+        /* 7. Debug Logging: Console tracking for troubleshooting             */
+        /*                                                                     */
+        /* 🌍 GLOBAL SUBMENU MANAGEMENT:                                       */
+        /* - Universal auto-collapse: Only one submenu active at a time       */
+        /* - Smart parent preservation: Parents stay open for nested children */
+        /* - Intelligent state reset: Arrows, layouts, states properly managed*/
+        /* - Cross-menu protection: Different main menus close each other     */
+        /*                                                                     */
+        /* 🔧 IMPLEMENTATION:                                                  */
+        /* 1. Copy the closeAllSubmenusGlobally() function                    */
+        /* 2. Update toggle functions to use scope-separated logic            */
+        /* 3. Customize mainSubmenus array for your specific menus            */
+        /* 4. Test cross-menu interactions thoroughly                         */
+        /* =================================================================== */
+
+        /* BASE MENU CONTAINER */
+        .menu-container {
+            position: relative;
+        }
+
+        /* MAIN SUBMENU - Expandable Horizontal Container with Enhanced Scrolling */
+        .main-submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            min-width: 280px; /* Base width for main menu */
+            width: max-content; /* Fit content width exactly */
+            max-width: 280px; /* Base maximum width */
+            max-height: 70vh; /* Maximum height - enable vertical scroll */
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: visible; /* Allow horizontal expansion */
+            z-index: 1000;
+            display: none;
+            margin-top: 5px;
+            padding: 6px 0;
+            /* Custom scrollbar styling */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(139, 69, 19, 0.3) rgba(139, 69, 19, 0.1);
+            /* Smooth transition for horizontal expansion */
+            transition: max-width 0.3s ease, width 0.3s ease;
+        }
+
+        /* EXPANDED STATE - Horizontally expanded when branching submenu is active */
+        .main-submenu.expanded {
+            max-width: 95vw; /* Responsive expanded width - enable horizontal scroll */
+            width: max-content;
+            overflow-x: auto; /* Enable horizontal scrolling when content exceeds viewport */
+        }
+
+        /* Webkit scrollbar styling - Both vertical and horizontal */
+        .main-submenu::-webkit-scrollbar {
+            width: 8px; /* Vertical scrollbar width */
+            height: 8px; /* Horizontal scrollbar height */
+        }
+
+        .main-submenu::-webkit-scrollbar-track {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 4px;
+        }
+
+        .main-submenu::-webkit-scrollbar-thumb {
+            background: rgba(139, 69, 19, 0.3);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .main-submenu::-webkit-scrollbar-thumb:hover {
+            background: rgba(139, 69, 19, 0.5);
+        }
+
+        /* Corner where horizontal and vertical scrollbars meet */
+        .main-submenu::-webkit-scrollbar-corner {
+            background: rgba(139, 69, 19, 0.1);
+        }
+
+        /* SUBMENU SECTIONS - Main content areas */
+        .submenu-section {
+            margin-bottom: 5px;
+        }
+
+        .submenu-section-title {
+            font-size: 0.85rem;
+            color: #8b4513;
+            font-weight: bold;
+            padding: 4px 12px 3px 12px;
+            margin-bottom: 3px;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.15);
+        }
+
+        .submenu-section-items {
+            padding: 0;
+        }
+
+        .submenu-section-items a {
+            display: block;
+            padding: 6px 12px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            margin: 1px 8px;
+        }
+
+        .submenu-section-items a:hover {
+            background: rgba(139, 69, 19, 0.1);
+            color: #8b4513;
+        }
+
+        /* BRANCHING SUBMENU CONTAINER - Horizontal Layout System */
+        .branching-submenu-container {
+            position: relative;
+            /* Create horizontal flow when submenu is shown */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* When branching submenu is shown, create horizontal layout */
+        .branching-submenu-container.horizontal-layout {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        /* SUBMENU TOGGLE - Item that triggers branching */
+        .submenu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .submenu-arrow {
+            transition: transform 0.3s ease;
+            margin-left: auto;
+            font-size: 0.7rem;
+        }
+
+        .submenu-arrow.rotated {
+            transform: rotate(90deg);
+        }
+
+        /* BRANCHING SUBMENU - Inline horizontal content with Enhanced Scrolling */
+        .branching-submenu {
+            display: none; /* Hidden by default */
+            width: max-content;
+            max-width: 60vw; /* Responsive horizontal layout width */
+            max-height: 50vh; /* Maximum height for vertical scroll */
+            background: rgba(139, 69, 19, 0.05);
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            border-radius: 6px;
+            margin-left: 8px; /* Space from main menu items */
+            margin-top: 4px;
+            padding: 8px;
+            /* Remove absolute positioning - now inline */
+            position: static;
+            /* Enable scrolling for branching content */
+            overflow-x: auto; /* Horizontal scroll for wide content */
+            overflow-y: auto; /* Vertical scroll for tall content */
+            /* Custom scrollbar for branching submenu */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(139, 69, 19, 0.4) rgba(139, 69, 19, 0.1);
+            /* Smooth transition for showing/hiding */
+            transition: all 0.3s ease;
+        }
+
+        .branching-submenu.show {
+            display: block;
+        }
+
+        /* Prevent animation conflicts when switching between submenus */
+        .branching-submenu:not(.show) {
+            animation: none !important;
+        }
+
+        /* BRANCHING CONTENT SECTIONS - Horizontal columns */
+        .branching-section {
+            display: inline-block; /* Horizontal layout */
+            vertical-align: top;
+            margin-right: 12px; /* Space between columns */
+            margin-bottom: 0;
+            min-width: 80px; /* Minimum width for each section */
+        }
+
+        .branching-section-title {
+            font-size: 0.8rem;
+            color: #8b4513;
+            font-weight: bold;
+            margin-bottom: 4px;
+            padding: 2px 0;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.15);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .branching-section a {
+            display: inline-block; /* Horizontal items */
+            padding: 2px 4px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.65rem;
+            transition: all 0.2s ease;
+            border-radius: 3px;
+            margin: 1px 2px;
+            text-align: center;
+            white-space: nowrap;
+            background: rgba(139, 69, 19, 0.05);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            min-width: 16px;
+        }
+
+        .branching-section a:hover {
+            background: rgba(139, 69, 19, 0.15);
+            color: #8b4513;
+            transform: translateY(-1px);
+        }
+
+        /* Branching submenu scrollbar styling - Both vertical and horizontal */
+        .branching-submenu::-webkit-scrollbar {
+            width: 6px;
+            height: 6px; /* Height for horizontal scrollbar */
+        }
+
+        .branching-submenu::-webkit-scrollbar-track {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 3px;
+        }
+
+        .branching-submenu::-webkit-scrollbar-thumb {
+            background: rgba(139, 69, 19, 0.4);
+            border-radius: 3px;
+        }
+
+        .branching-submenu::-webkit-scrollbar-thumb:hover {
+            background: rgba(139, 69, 19, 0.6);
+        }
+
+        /* Corner where horizontal and vertical scrollbars meet */
+        .branching-submenu::-webkit-scrollbar-corner {
+            background: rgba(139, 69, 19, 0.1);
+        }
+
+        /* MENU ARROW INDICATORS */
+        .menu-arrow {
+            transition: transform 0.3s ease;
+            margin-left: 0.3rem;
+        }
+
+        .menu-arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        /* MOBILE RESPONSIVE with Enhanced Scrolling */
+        @media (max-width: 768px) {
+            .main-submenu {
+                min-width: 90vw;
+                max-width: 90vw;
+                left: 50%;
+                transform: translateX(-50%);
+                max-height: 75vh; /* Height limit for mobile */
+                overflow-y: auto; /* Enable vertical scrolling */
+                overflow-x: auto; /* Enable horizontal scrolling when expanded */
+                /* Enhanced mobile scrolling */
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .main-submenu.expanded {
+                max-width: 95vw;
+                max-height: 80vh; /* Larger when expanded */
+                overflow-x: auto; /* Enable horizontal scroll for wide content */
+            }
+
+            .branching-submenu {
+                position: static; /* Better mobile flow */
+                min-width: auto;
+                max-width: 85vw; /* Responsive width */
+                max-height: 50vh; /* Height limit with vertical scroll */
+                margin-left: 4px;
+                padding: 6px;
+                /* Enhanced mobile scrolling for branching */
+                overflow-x: auto; /* Horizontal scroll for wide grids */
+                overflow-y: auto; /* Vertical scroll for tall content */
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .branching-section {
+                min-width: 60px; /* Compact for mobile */
+                margin-right: 8px;
+            }
+
+            .branching-section-title {
+                font-size: 0.7rem; /* Smaller on mobile */
+                padding: 1px 3px;
+            }
+
+            .branching-section a {
+                padding: 1px 3px; /* Compact for mobile */
+                font-size: 0.6rem; /* Smaller practice numbers */
+                min-width: 14px;
+            }
+
+            /* Enhanced mobile scrollbar styling */
+            .main-submenu::-webkit-scrollbar,
+            .branching-submenu::-webkit-scrollbar {
+                width: 6px;
+                height: 6px;
+            }
+
+            .main-submenu::-webkit-scrollbar-thumb,
+            .branching-submenu::-webkit-scrollbar-thumb {
+                background: rgba(139, 69, 19, 0.6);
+                border-radius: 3px;
+            }
+
+            .main-submenu::-webkit-scrollbar-track,
+            .branching-submenu::-webkit-scrollbar-track {
+                background: rgba(139, 69, 19, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Unified Horizontal Menu System Template</h1>
+    
+    <!-- =================================================================== -->
+    <!-- HTML STRUCTURE TEMPLATE                                             -->
+    <!-- =================================================================== -->
+    
+    <nav>
+        <ul>
+            <!-- MAIN MENU ITEM -->
+            <li class="menu-container" 
+                onmouseenter="cancelMenuTimeout('exampleMenu')" 
+                onmouseleave="startMenuTimeout('exampleMenu')">
+                
+                <!-- MAIN MENU TRIGGER -->
+                <a href="#example" onclick="toggleMainSubmenu(event)">
+                    <i class="fas fa-example-icon"></i> 
+                    Example Menu 
+                    <i class="fas fa-chevron-down menu-arrow"></i>
+                </a>
+                
+                <!-- MAIN SUBMENU CONTAINER -->
+                <div class="main-submenu" id="exampleSubmenu" 
+                     onmouseenter="cancelMenuTimeout('exampleMenu')" 
+                     onmouseleave="startMenuTimeout('exampleMenu')">
+                    
+                    <!-- SECTION 1: Regular items -->
+                    <div class="submenu-section">
+                        <div class="submenu-section-title"><strong>Section 1</strong></div>
+                        <div class="submenu-section-items">
+                            <a href="#item1" onclick="selectMenuItem('item1')">
+                                <i class="fas fa-icon1"></i> Item 1
+                            </a>
+                            <a href="#item2" onclick="selectMenuItem('item2')">
+                                <i class="fas fa-icon2"></i> Item 2
+                            </a>
+                            <!-- BRANCHING ITEM -->
+                            <div class="branching-submenu-container">
+                                <a href="#branching-item" onclick="toggleBranchingSubmenu(event, 'section1')" class="submenu-toggle">
+                                    <i class="fas fa-branching-icon"></i> Branching Item 
+                                    <i class="fas fa-chevron-right submenu-arrow" id="section1-arrow"></i>
+                                </a>
+                                <!-- INLINE BRANCHING SUBMENU -->
+                                <div class="branching-submenu" id="section1BranchingSubmenu">
+                                    <!-- BRANCHING COLUMN 1 -->
+                                    <div class="branching-section">
+                                        <div class="branching-section-title"><strong>Category 1</strong></div>
+                                        <a href="#cat1-item1" onclick="selectBranchingItem('section1', 'cat1', 'item1')">1</a>
+                                        <a href="#cat1-item2" onclick="selectBranchingItem('section1', 'cat1', 'item2')">2</a>
+                                        <a href="#cat1-item3" onclick="selectBranchingItem('section1', 'cat1', 'item3')">3</a>
+                                    </div>
+                                    <!-- BRANCHING COLUMN 2 -->
+                                    <div class="branching-section">
+                                        <div class="branching-section-title"><strong>Category 2</strong></div>
+                                        <a href="#cat2-item1" onclick="selectBranchingItem('section1', 'cat2', 'item1')">1</a>
+                                        <a href="#cat2-item2" onclick="selectBranchingItem('section1', 'cat2', 'item2')">2</a>
+                                        <a href="#cat2-item3" onclick="selectBranchingItem('section1', 'cat2', 'item3')">3</a>
+                                    </div>
+                                    <!-- BRANCHING COLUMN 3 -->
+                                    <div class="branching-section">
+                                        <div class="branching-section-title"><strong>Category 3</strong></div>
+                                        <a href="#cat3-item1" onclick="selectBranchingItem('section1', 'cat3', 'item1')">1</a>
+                                        <a href="#cat3-item2" onclick="selectBranchingItem('section1', 'cat3', 'item2')">2</a>
+                                        <a href="#cat3-item3" onclick="selectBranchingItem('section1', 'cat3', 'item3')">3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SECTION 2: Another section with branching -->
+                    <div class="submenu-section">
+                        <div class="submenu-section-title"><strong>Section 2</strong></div>
+                        <div class="submenu-section-items">
+                            <div class="branching-submenu-container">
+                                <a href="#branching-item2" onclick="toggleBranchingSubmenu(event, 'section2')" class="submenu-toggle">
+                                    <i class="fas fa-branching-icon2"></i> Another Branching Item 
+                                    <i class="fas fa-chevron-right submenu-arrow" id="section2-arrow"></i>
+                                </a>
+                                <div class="branching-submenu" id="section2BranchingSubmenu">
+                                    <div class="branching-section">
+                                        <div class="branching-section-title"><strong>Type A</strong></div>
+                                        <a href="#typeA-1" onclick="selectBranchingItem('section2', 'typeA', 'item1')">1</a>
+                                        <a href="#typeA-2" onclick="selectBranchingItem('section2', 'typeA', 'item2')">2</a>
+                                    </div>
+                                    <div class="branching-section">
+                                        <div class="branching-section-title"><strong>Type B</strong></div>
+                                        <a href="#typeB-1" onclick="selectBranchingItem('section2', 'typeB', 'item1')">1</a>
+                                        <a href="#typeB-2" onclick="selectBranchingItem('section2', 'typeB', 'item2')">2</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        /* =================================================================== */
+        /* JAVASCRIPT TEMPLATE FUNCTIONS                                       */
+        /* =================================================================== */
+
+        // Menu timeout management (for hover behavior)
+        let menuTimeouts = {};
+
+        function startMenuTimeout(menuType) {
+            menuTimeouts[menuType] = setTimeout(() => {
+                closeSubmenuByType(menuType);
+            }, 3000); // 3 second auto-hide
+        }
+
+        function cancelMenuTimeout(menuType) {
+            if (menuTimeouts[menuType]) {
+                clearTimeout(menuTimeouts[menuType]);
+                delete menuTimeouts[menuType];
+            }
+        }
+
+        // 🌍 GLOBAL SUBMENU MANAGEMENT SYSTEM
+        // This function closes ALL submenus throughout the entire application
+        function closeAllSubmenusGlobally(exceptSubmenuId = null) {
+            console.log('🌍 Global submenu cleanup initiated', exceptSubmenuId ? `(except: ${exceptSubmenuId})` : '');
+            
+            // 1. Close ALL main submenus (customize this array for your application)
+            const mainSubmenus = [
+                { id: 'exampleSubmenu', parent: '.menu-container' },
+                { id: 'otherSubmenu', parent: '.other-menu' },
+                // Add your main submenus here
+            ];
+
+            mainSubmenus.forEach(menu => {
+                if (menu.id === exceptSubmenuId) return; // Skip the submenu we're opening
+                
+                // Don't close parent submenu if we're opening a nested/branching submenu within it
+                if (menu.id === 'exampleSubmenu' && exceptSubmenuId && 
+                    (exceptSubmenuId.includes('Nested') || exceptSubmenuId.includes('Branching'))) {
+                    return;
+                }
+                
+                const submenu = document.getElementById(menu.id);
+                const parent = document.querySelector(menu.parent);
+                if (submenu && parent) {
+                    submenu.classList.remove('show');
+                    parent.classList.remove('active');
+                }
+            });
+
+            // 2. Close ALL nested submenus
+            const allNestedSubmenus = document.querySelectorAll('.nested-submenu');
+            allNestedSubmenus.forEach(submenu => {
+                if (submenu.id === exceptSubmenuId) return;
+                if (submenu.classList.contains('show')) {
+                    submenu.classList.remove('show');
+                }
+            });
+
+            // 3. Close ALL branching submenus
+            const allBranchingSubmenus = document.querySelectorAll('.branching-submenu');
+            allBranchingSubmenus.forEach(submenu => {
+                if (submenu.id === exceptSubmenuId) return;
+                if (submenu.classList.contains('show')) {
+                    submenu.classList.remove('show');
+                }
+            });
+
+            // 4. Reset horizontal layouts (except for the container of the submenu we're opening)
+            const allContainers = document.querySelectorAll('.nested-submenu-container, .branching-submenu-container');
+            allContainers.forEach(container => {
+                const submenuInContainer = container.querySelector(`#${exceptSubmenuId}`);
+                if (!submenuInContainer) {
+                    container.classList.remove('horizontal-layout');
+                }
+            });
+
+            // 5. Reset submenu arrows (except for the arrow of the submenu we're opening)
+            const allArrows = document.querySelectorAll('.submenu-arrow');
+            allArrows.forEach(arrow => {
+                const arrowId = arrow.id;
+                const isTargetArrow = exceptSubmenuId && arrowId.includes(exceptSubmenuId.replace('Submenu', ''));
+                if (!isTargetArrow) {
+                    arrow.classList.remove('rotated');
+                }
+            });
+
+            // 6. Reset main menu arrows (except for the main menu we're opening)
+            const mainArrows = [
+                { class: '.menu-arrow', id: 'exampleSubmenu' },
+                // Add your main menu arrows here
+            ];
+            mainArrows.forEach(arrowInfo => {
+                if (arrowInfo.id !== exceptSubmenuId) {
+                    const arrow = document.querySelector(arrowInfo.class);
+                    if (arrow) {
+                        arrow.classList.remove('rotated');
+                    }
+                }
+            });
+
+            console.log('✅ Global submenu cleanup completed');
+        }
+
+        // Toggle main submenu
+        function toggleMainSubmenu(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const submenu = document.getElementById('exampleSubmenu');
+            const menuParent = submenu.closest('.menu-container');
+            const arrow = menuParent.querySelector('.menu-arrow');
+            const isCurrentlyOpen = submenu.classList.contains('show');
+            
+            if (isCurrentlyOpen) {
+                // CLOSING: Just close this submenu
+                submenu.classList.remove('show');
+                menuParent.classList.remove('active');
+                arrow.classList.remove('rotated');
+                cancelMenuTimeout('exampleMenu');
+            } else {
+                // OPENING: Close all others first, then open this one
+                closeAllSubmenusGlobally('exampleSubmenu');
+                submenu.classList.add('show');
+                menuParent.classList.add('active');
+                arrow.classList.add('rotated');
+                startMenuTimeout('exampleMenu');
+                
+                // Add click-outside listener
+                setTimeout(() => {
+                    document.addEventListener('click', closeMainSubmenuOnClickOutside);
+                }, 100);
+            }
+        }
+
+        // Toggle branching submenu - CORE HORIZONTAL EXPANSION LOGIC
+        function toggleBranchingSubmenu(event, sectionType) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            console.log(`✨ Attempting to toggle ${sectionType} Branching submenu`);
+            
+            const submenuId = sectionType + 'BranchingSubmenu';
+            const arrowId = sectionType + '-arrow';
+            
+            const branchingSubmenu = document.getElementById(submenuId);
+            const arrow = document.getElementById(arrowId);
+            const mainSubmenu = document.getElementById('exampleSubmenu');
+            
+            if (!branchingSubmenu) {
+                console.error(`❌ Could not find submenu: ${submenuId}`);
+                return;
+            }
+            
+            const isCurrentlyOpen = branchingSubmenu.classList.contains('show');
+            console.log(`✨ Submenu current state: ${isCurrentlyOpen ? 'OPEN' : 'CLOSED'}`);
+            
+            if (isCurrentlyOpen) {
+                // CLOSING: Just close this submenu
+                branchingSubmenu.classList.remove('show');
+                arrow.classList.remove('rotated');
+                const container = branchingSubmenu.closest('.branching-submenu-container');
+                if (container) {
+                    container.classList.remove('horizontal-layout');
+                }
+                
+                // Check if any other branching submenu is still open
+                const otherSubmenuId = sectionType === 'section1' ? 'section2BranchingSubmenu' : 'section1BranchingSubmenu';
+                const otherSubmenu = document.getElementById(otherSubmenuId);
+                if (!otherSubmenu || !otherSubmenu.classList.contains('show')) {
+                    // No other branching submenu open, check if any nested submenus are open
+                    const anyNestedOpen = document.querySelector('.nested-submenu.show');
+                    if (!anyNestedOpen) {
+                        mainSubmenu.classList.remove('expanded');
+                    }
+                }
+                console.log(`✨ ${sectionType} Branching submenu closed`);
+            } else {
+                // OPENING: Close all others first, but ensure main submenu is open
+                closeAllSubmenusGlobally(submenuId);
+                
+                // Ensure the main submenu is open
+                if (!mainSubmenu.classList.contains('show')) {
+                    mainSubmenu.classList.add('show');
+                    const menuParent = mainSubmenu.closest('.menu-container');
+                    if (menuParent) {
+                        menuParent.classList.add('active');
+                    }
+                }
+                
+                // Now open this submenu
+                const container = branchingSubmenu.closest('.branching-submenu-container');
+                if (container) {
+                    container.classList.add('horizontal-layout');
+                }
+                
+                branchingSubmenu.classList.add('show');
+                arrow.classList.add('rotated');
+                mainSubmenu.classList.add('expanded');
+                
+                // Cancel any auto-hide timer since we're manually opening a branching submenu
+                if (window.cancelMenuTimeout) {
+                    window.cancelMenuTimeout('exampleMenu');
+                }
+                
+                console.log(`✨ ${sectionType} Branching submenu opened - Horizontal layout activated`);
+            }
+        }
+
+        // Handle branching item selection
+        function selectBranchingItem(section, category, item) {
+            console.log(`✅ Selected: ${section} > ${category} > ${item}`);
+            
+            // Close all menus
+            const mainSubmenu = document.getElementById('exampleSubmenu');
+            const menuParent = mainSubmenu.closest('.menu-container');
+            mainSubmenu.classList.remove('show');
+            mainSubmenu.classList.remove('expanded');
+            menuParent.classList.remove('active');
+            
+            // Close branching submenus
+            document.querySelectorAll('.branching-submenu').forEach(submenu => {
+                submenu.classList.remove('show');
+                const container = submenu.closest('.branching-submenu-container');
+                if (container) {
+                    container.classList.remove('horizontal-layout');
+                }
+            });
+            
+            // Reset arrows
+            document.querySelectorAll('.submenu-arrow').forEach(arrow => {
+                arrow.classList.remove('rotated');
+            });
+            document.querySelectorAll('.menu-arrow').forEach(arrow => {
+                arrow.classList.remove('rotated');
+            });
+            
+            // Remove click-outside listener
+            document.removeEventListener('click', closeMainSubmenuOnClickOutside);
+            
+            // Your navigation logic here
+            alert(`Navigation to: ${section} > ${category} > ${item}`);
+        }
+
+        // Handle regular menu item selection
+        function selectMenuItem(item) {
+            console.log(`✅ Selected: ${item}`);
+            // Your navigation logic here
+            alert(`Navigation to: ${item}`);
+        }
+
+        // Close submenu on outside click
+        function closeMainSubmenuOnClickOutside(event) {
+            const submenu = document.getElementById('exampleSubmenu');
+            const menuContainer = submenu.closest('.menu-container');
+            
+            if (!menuContainer.contains(event.target)) {
+                submenu.classList.remove('show');
+                submenu.classList.remove('expanded');
+                menuContainer.classList.remove('active');
+                
+                // Close all branching submenus
+                document.querySelectorAll('.branching-submenu').forEach(branchingSubmenu => {
+                    branchingSubmenu.classList.remove('show');
+                    const container = branchingSubmenu.closest('.branching-submenu-container');
+                    if (container) {
+                        container.classList.remove('horizontal-layout');
+                    }
+                });
+                
+                // Reset all arrows
+                document.querySelectorAll('.submenu-arrow').forEach(arrow => {
+                    arrow.classList.remove('rotated');
+                });
+                document.querySelectorAll('.menu-arrow').forEach(arrow => {
+                    arrow.classList.remove('rotated');
+                });
+                
+                document.removeEventListener('click', closeMainSubmenuOnClickOutside);
+            }
+        }
+
+        // Close all other submenus (implement based on your other menus)
+        function closeAllOtherSubmenus(currentMenu) {
+            // Add logic to close other main menus
+            console.log(`Closing other submenus, keeping ${currentMenu} open`);
+        }
+
+        // Close submenu by type
+        function closeSubmenuByType(menuType) {
+            if (menuType === 'exampleMenu') {
+                const submenu = document.getElementById('exampleSubmenu');
+                const menuParent = submenu.closest('.menu-container');
+                submenu.classList.remove('show');
+                submenu.classList.remove('expanded');
+                menuParent.classList.remove('active');
+                
+                // Close branching submenus
+                document.querySelectorAll('.branching-submenu').forEach(branchingSubmenu => {
+                    branchingSubmenu.classList.remove('show');
+                    const container = branchingSubmenu.closest('.branching-submenu-container');
+                    if (container) {
+                        container.classList.remove('horizontal-layout');
+                    }
+                });
+                
+                // Reset arrows
+                document.querySelectorAll('.submenu-arrow').forEach(arrow => {
+                    arrow.classList.remove('rotated');
+                });
+                document.querySelectorAll('.menu-arrow').forEach(arrow => {
+                    arrow.classList.remove('rotated');
+                });
+                
+                document.removeEventListener('click', closeMainSubmenuOnClickOutside);
+            }
+        }
+    </script>
+
+    <!-- =================================================================== -->
+    <!-- IMPLEMENTATION GUIDE                                                 -->
+    <!-- =================================================================== -->
+    
+    <div style="margin-top: 50px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+        <h2>📋 Implementation Guide</h2>
+        
+        <h3>🎯 Quick Setup Steps:</h3>
+        <ol>
+            <li><strong>Copy CSS:</strong> Copy all styles with class prefix for your menu type</li>
+            <li><strong>Adapt HTML:</strong> Replace IDs, classes, and content for your specific menu</li>
+            <li><strong>Update JavaScript:</strong> Modify function names and IDs to match your menu</li>
+            <li><strong>Customize:</strong> Adjust colors, sizes, and transitions to match your design</li>
+        </ol>
+        
+        <h3>🔧 Key Customization Points:</h3>
+        <ul>
+            <li><strong>Menu Width:</strong> Adjust <code>min-width</code>, <code>max-width</code> in <code>.main-submenu</code></li>
+            <li><strong>Expanded Width:</strong> Modify <code>max-width: 95vw</code> in <code>.main-submenu.expanded</code></li>
+            <li><strong>Branching Width:</strong> Change <code>max-width: 60vw</code> in <code>.branching-submenu</code></li>
+            <li><strong>Vertical Heights:</strong> Adjust <code>max-height: 70vh</code> (main) and <code>max-height: 50vh</code> (branching)</li>
+            <li><strong>Colors:</strong> Update <code>rgba(139, 69, 19, ...)</code> values throughout</li>
+            <li><strong>Animation Speed:</strong> Modify <code>transition: ... 0.3s ease</code> values</li>
+            <li><strong>Scrollbar Styling:</strong> Customize scrollbar colors and sizes for both directions</li>
+        </ul>
+        
+        <h3>🎨 CSS Class Naming Convention:</h3>
+        <pre>
+.your-menu-name-menu          → Main menu container
+.your-menu-name-submenu       → Main submenu
+.your-menu-name-submenu.expanded → Expanded state
+.branching-submenu-container   → Branching container (reusable)
+.branching-submenu            → Branching submenu (reusable)
+.branching-section            → Individual columns (reusable)
+        </pre>
+        
+        <h3>🚀 JavaScript Function Template:</h3>
+        <pre>
+function toggleYourMenuSubmenu(event) { ... }
+function toggleYourMenuBranching(event, type) { ... }
+function selectYourMenuItem(item) { ... }
+function closeYourMenuOnClickOutside(event) { ... }
+        </pre>
+        
+        <h3>✨ Features Included:</h3>
+        <ul>
+            <li>✅ Unified horizontal expansion (280px → 95vw responsive)</li>
+            <li>✅ Inline branching submenus with flex layout</li>
+            <li>✅ <strong>Dual-direction scrolling (vertical + horizontal)</strong></li>
+            <li>✅ <strong>Responsive viewport-based sizing (vw/vh units)</strong></li>
+            <li>✅ <strong>Enhanced mobile scrolling with touch support</strong></li>
+            <li>✅ <strong>Custom scrollbars for both directions</strong></li>
+            <li>✅ Smooth CSS transitions</li>
+            <li>✅ Auto-hide with hover management</li>
+            <li>✅ Click-outside closing</li>
+            <li>✅ Mobile responsive design</li>
+            <li>✅ Multiple branching sections support</li>
+            <li>✅ Conflict prevention between branches</li>
+            <li>✅ <strong>Viewport height limits prevent screen overflow</strong></li>
+            <li>✅ <strong>Touch-optimized scrolling for mobile devices</strong></li>
+        </ul>
+    </div>
+</body>
+</html> 
