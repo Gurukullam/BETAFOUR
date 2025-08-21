@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 2 - Practice 3: Professional Training & Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5d3a0a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* Small Timer Display */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle.active #menuIcon {
+            transform: rotate(180deg);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #d4af37;
+            text-align: center;
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .timer-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Split Container Layout */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        /* Passages Panel (Left Side) */
+        .passages-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 45%;
+            max-width: 60%;
+        }
+
+        /* Questions Panel (Right Side) */
+        .questions-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 40%;
+            max-width: 55%;
+        }
+
+        /* Panel Headers */
+        .panel-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .panel-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .passage-counter, .question-progress {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Scrollable Content Areas */
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar Styling */
+        .scrollable-content::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 6px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            border-radius: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+        }
+
+        /* Vertical Separator */
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(180deg, #8b4513, #d4af37, #8b4513);
+            position: relative;
+            cursor: col-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .separator-line {
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .separator-handle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            color: #8b4513;
+            padding: 8px 2px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: col-resize;
+            user-select: none;
+        }
+
+        /* Passage Text Styling */
+        .passage-block {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(249, 249, 249, 0.8);
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .passage-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .passage-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Question Styling */
+        .question-group {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(248, 248, 248, 0.9);
+            border-radius: 10px;
+            border-left: 4px solid #8b4513;
+        }
+
+        .question-group-title {
+            font-size: 1.2rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .question:hover {
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+            border-color: #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #8b4513;
+            display: inline-block;
+            margin-right: 10px;
+            min-width: 25px;
+        }
+
+        .question-text {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .options {
+            display: grid;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(249, 249, 249, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #d4af37;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Results Section */
+        .results-section {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 69, 19, 0.05) 100%);
+            text-align: center;
+            display: none;
+        }
+
+        .results-header h2 {
+            color: #8b4513;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .results-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            
+            .vertical-separator {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+        }
+
+        /* Warning styles */
+        .warning {
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #4caf50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">🏢 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 2 - Practice 3</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">🎓 2 Passages - Professional Training & Development</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 2 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">🎓</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">🏢 IELTS General Reading - Section 2 (Practice 3)</h1>
+                <div class="hero-subtitle">
+                    🎓 Professional Training & Development - Intermediate Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 2 reading skills with intermediate-level professional training and development materials. This practice covers workplace learning contexts including customer service training programs and performance evaluation procedures. You will encounter common Section 2 question formats: Sentence Completion, True/False/Not Given, Multiple Choice, and Matching Information. Complete Questions 15-27 within the recommended 20-minute timeframe to advance your professional reading capabilities.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📄 Passage Types:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Passage 1:</strong> Customer Service Training Program</li>
+                                <li><strong>Passage 2:</strong> Performance Evaluation Procedures</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📊 Statistics:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Total words:</strong> ~750 words</li>
+                                <li><strong>Question formats:</strong> 4 different types</li>
+                                <li><strong>Difficulty level:</strong> Intermediate workplace</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">🎯 Skills Focus:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li>Training program comprehension</li>
+                                <li>Performance assessment understanding</li>
+                                <li>Professional development interpretation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin-bottom: 15px; color: #666;">Recommended time for Section 2: 20 minutes</p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startTimer()" id="startBtn">Start Reading</button>
+                    </div>
+                    <div id="timerWarning" style="margin-top: 15px; color: #d4af37; font-weight: bold; display: none;">
+                        ⚠️ 5 minutes remaining!
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">🎓 Reading Workspace - Questions 15-27</h2>
+                
+                <!-- Split Container with Vertical Separation -->
+                <div class="split-container">
+                    
+                    <!-- LEFT SIDE: Reading Passages (Scrollable) -->
+                    <div class="passages-panel">
+                        <div class="panel-header">
+                            <h3>📚 Reading Passages</h3>
+                            <div class="passage-counter">2 Passages | ~750 words total</div>
+                        </div>
+                        <div class="passages-content scrollable-content">
+                            
+                            <!-- Passage 1: Customer Service Training Program -->
+                            <div class="passage-block" id="passage1">
+                                <div class="passage-title">Passage 1: Customer Service Training Program</div>
+                                <div class="passage-text">
+                                    <strong>EXCELLSERVICE SOLUTIONS - COMPREHENSIVE CUSTOMER SERVICE TRAINING</strong><br><br>
+                                    
+                                    <strong>Program Overview</strong><br>
+                                    Our intensive customer service training program is designed to equip professionals with the essential skills and competencies required for excellence in customer-facing roles. The curriculum encompasses theoretical foundations and practical applications, emphasizing the development of emotional intelligence, conflict resolution capabilities, and advanced communication techniques. Participants will engage in scenario-based learning through role-playing exercises, case study analysis, and interactive workshops that simulate real-world customer interactions.<br><br>
+                                    
+                                    <strong>Module Structure and Content</strong><br>
+                                    The program consists of four comprehensive modules delivered over an eight-week period. Module One focuses on understanding customer psychology and behavioral patterns, covering topics such as customer expectations, service perception, and loyalty drivers. Module Two addresses verbal and non-verbal communication skills, including active listening techniques, empathetic responses, and professional telephone etiquette. Module Three concentrates on conflict management and complaint resolution, teaching de-escalation strategies and problem-solving methodologies. Module Four integrates technology-assisted customer service, including CRM system utilization, digital communication channels, and multichannel support coordination.<br><br>
+                                    
+                                    <strong>Assessment and Certification</strong><br>
+                                    Participant progress is evaluated through continuous assessment methods including practical demonstrations, written examinations, and peer evaluation exercises. A minimum score of 75% is required in each module to advance to subsequent training components. The final assessment comprises a comprehensive simulation exercise where participants demonstrate their ability to handle complex customer scenarios independently. Successful completion results in certification that is recognized by industry professional bodies and contributes to continuing professional development portfolios.<br><br>
+                                    
+                                    <strong>Implementation and Support</strong><br>
+                                    Training delivery utilizes a blended learning approach combining face-to-face instruction with online learning platforms. Experienced facilitators with extensive industry backgrounds guide participants through interactive sessions, while digital resources provide supplementary materials and self-paced learning opportunities. Post-training support includes mentoring programs, refresher workshops, and access to a professional network of certified practitioners. Organizations implementing this program typically observe significant improvements in customer satisfaction scores, reduced complaint escalation rates, and enhanced employee confidence levels within six months of completion.
+                                </div>
+                            </div>
+                            
+                            <!-- Passage 2: Performance Evaluation Procedures -->
+                            <div class="passage-block" id="passage2">
+                                <div class="passage-title">Passage 2: Performance Evaluation Procedures</div>
+                                <div class="passage-text">
+                                    <strong>PROGRESSIVE ENTERPRISES - EMPLOYEE PERFORMANCE MANAGEMENT FRAMEWORK</strong><br><br>
+                                    
+                                    <strong>Evaluation Methodology and Frequency</strong><br>
+                                    Our comprehensive performance evaluation system operates on a quarterly review cycle, supplemented by annual comprehensive assessments and bi-annual goal-setting sessions. The methodology incorporates multiple evaluation perspectives including self-assessment, supervisor review, peer feedback, and client testimonials where applicable. This multi-source approach ensures balanced and objective performance appraisal, minimizing individual bias and providing holistic insights into employee contributions and development areas.<br><br>
+                                    
+                                    <strong>Performance Criteria and Metrics</strong><br>
+                                    Evaluation criteria are aligned with organizational objectives and individual role specifications, encompassing quantitative performance indicators and qualitative behavioral competencies. Quantitative measures include productivity metrics, target achievement rates, quality standards compliance, and customer satisfaction scores. Qualitative assessments focus on leadership potential, teamwork collaboration, innovation contributions, professional conduct, and adherence to corporate values. Each criterion is weighted according to role requirements and organizational priorities, ensuring relevant and meaningful evaluation outcomes.<br><br>
+                                    
+                                    <strong>Development Planning and Career Progression</strong><br>
+                                    Performance evaluation results inform personalized development planning and career progression pathways. Identified strengths are leveraged through stretch assignments, leadership opportunities, and mentoring responsibilities. Areas requiring improvement are addressed through targeted training interventions, skill development programs, and performance improvement plans with clearly defined milestones and timelines. High-performing employees are fast-tracked into succession planning programs and offered advanced professional development opportunities including external conference attendance, industry certification programs, and cross-functional project assignments.<br><br>
+                                    
+                                    <strong>Performance Recognition and Corrective Action</strong><br>
+                                    Outstanding performance is recognized through various reward mechanisms including monetary incentives, public acknowledgment, career advancement opportunities, and exclusive professional development programs. Conversely, consistently underperforming employees enter structured improvement programs featuring additional supervision, skills training, and regular progress monitoring. If performance standards are not met within specified timeframes, escalation procedures may result in role modification, departmental transfer, or employment termination following comprehensive documentation and legal compliance protocols. The organization maintains detailed performance records to support fair and consistent decision-making processes while protecting both employee and organizational interests.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VERTICAL SEPARATOR -->
+                    <div class="vertical-separator">
+                        <div class="separator-line"></div>
+                        <div class="separator-handle" title="Drag to resize">⋮⋮</div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Questions (Scrollable) -->
+                    <div class="questions-panel">
+                        <div class="panel-header">
+                            <h3>📝 Questions 15-27</h3>
+                            <div class="question-progress">
+                                <span id="answeredCount">0</span>/13 answered
+                            </div>
+                        </div>
+                        <div class="questions-content scrollable-content">
+                            
+                            <!-- Questions 15-18: Sentence Completion -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 15-18: Sentence Completion</h4>
+                                <p><em>Complete the sentences using NO MORE THAN THREE WORDS from the passage.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">15.</div>
+                                    <div class="question-text">The customer service training program is delivered over __________ period.</div>
+                                    <input type="text" class="answer-input" id="q15" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">16.</div>
+                                    <div class="question-text">A minimum score of __________ is required to advance to the next module.</div>
+                                    <input type="text" class="answer-input" id="q16" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">17.</div>
+                                    <div class="question-text">Performance evaluations operate on a __________ review cycle.</div>
+                                    <input type="text" class="answer-input" id="q17" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">18.</div>
+                                    <div class="question-text">High-performing employees are included in __________ programs.</div>
+                                    <input type="text" class="answer-input" id="q18" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+                            </div>
+
+                            <!-- Questions 19-22: True/False/Not Given -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 19-22: True/False/Not Given</h4>
+                                <p><em>Do the following statements agree with the information in the passages?</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">19.</div>
+                                    <div class="question-text">The customer service training program includes online learning components.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">20.</div>
+                                    <div class="question-text">All training participants must complete external industry certification.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">21.</div>
+                                    <div class="question-text">Performance evaluations include feedback from colleagues working at the same level.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">22.</div>
+                                    <div class="question-text">Underperforming employees are automatically dismissed after one warning.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 23-25: Multiple Choice -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 23-25: Multiple Choice</h4>
+                                <p><em>Choose the correct letter, A, B, C, or D.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">23.</div>
+                                    <div class="question-text">What is the main focus of Module Two in the customer service training?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="A" onchange="updateProgress()">
+                                            A) Customer psychology and behavioral patterns
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="B" onchange="updateProgress()">
+                                            B) Verbal and non-verbal communication skills
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="C" onchange="updateProgress()">
+                                            C) Conflict management and complaint resolution
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="D" onchange="updateProgress()">
+                                            D) Technology-assisted customer service
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">24.</div>
+                                    <div class="question-text">What happens to employees who consistently underperform?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="A" onchange="updateProgress()">
+                                            A) They are immediately transferred to another department
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="B" onchange="updateProgress()">
+                                            B) They enter structured improvement programs
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="C" onchange="updateProgress()">
+                                            C) They receive monetary incentives for motivation
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="D" onchange="updateProgress()">
+                                            D) They are enrolled in external certification programs
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">25.</div>
+                                    <div class="question-text">According to the text, what typically improves within six months of completing the customer service training?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="A" onchange="updateProgress()">
+                                            A) Employee salary levels and benefits
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="B" onchange="updateProgress()">
+                                            B) Customer satisfaction scores and employee confidence
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="C" onchange="updateProgress()">
+                                            C) Technology systems and digital platforms
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="D" onchange="updateProgress()">
+                                            D) Training program duration and module structure
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 26-27: Matching Information -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 26-27: Matching Information</h4>
+                                <p><em>Match the following content areas with the correct training modules.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">26.</div>
+                                    <div class="question-text">CRM system utilization and digital communication channels</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="A" onchange="updateProgress()">
+                                            A) Module One
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="B" onchange="updateProgress()">
+                                            B) Module Two
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="C" onchange="updateProgress()">
+                                            C) Module Three
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="D" onchange="updateProgress()">
+                                            D) Module Four
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">27.</div>
+                                    <div class="question-text">De-escalation strategies and problem-solving methodologies</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="A" onchange="updateProgress()">
+                                            A) Module One
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="B" onchange="updateProgress()">
+                                            B) Module Two
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="C" onchange="updateProgress()">
+                                            C) Module Three
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="D" onchange="updateProgress()">
+                                            D) Module Four
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <div class="results-header">
+                    <h2>📊 Practice Results</h2>
+                    <p>Your Section 2 Reading Performance</p>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 13 questions correct</div>
+                </div>
+
+                <div id="detailedResults" style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <!-- Results will be populated here -->
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <button class="timer-btn" onclick="resetPractice()">Try Again</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Timer and workspace functionality
+        let timerInterval;
+        let timeRemaining = 1200; // 20 minutes in seconds
+        let isTimerRunning = false;
+
+        // Correct answers for Section 2 Practice 3
+        const correctAnswers = {
+            'q15': 'eight-week period',
+            'q16': '75%',
+            'q17': 'quarterly',
+            'q18': 'succession planning',
+            'q19': 'True',
+            'q20': 'Not Given',
+            'q21': 'True',
+            'q22': 'False',
+            'q23': 'B',
+            'q24': 'B',
+            'q25': 'B',
+            'q26': 'D',
+            'q27': 'C'
+        };
+
+        function startTimer() {
+            if (isTimerRunning) return;
+            
+            isTimerRunning = true;
+            document.getElementById('startBtn').disabled = true;
+            
+            // Show small timer
+            const smallTimer = document.getElementById('smallTimerDisplay');
+            smallTimer.style.display = 'flex';
+            
+            // Auto-scroll to reading workspace
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            timeRemaining--;
+            
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            document.getElementById('timerDisplay').textContent = timeString;
+            document.getElementById('smallTimerTime').textContent = timeString;
+            
+            // Warning at 10 minutes remaining
+            if (timeRemaining === 600) {
+                document.getElementById('timerWarning').textContent = '⚠️ 10 minutes remaining!';
+                document.getElementById('timerWarning').style.display = 'block';
+                document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(255, 140, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%)';
+            }
+            
+            // Warning at 5 minutes remaining
+            if (timeRemaining === 300) {
+                document.getElementById('timerWarning').textContent = '⚠️ 5 minutes remaining!';
+                document.getElementById('timerWarning').style.color = '#ff6b35';
+                document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(255, 69, 0, 0.95) 0%, rgba(255, 99, 71, 0.95) 100%)';
+            }
+            
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                submitAnswers();
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('menu-open');
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function updateProgress() {
+            this.autoSave(); // Only handles auto-save functionality
+        }
+
+        function autoSave() {
+            // Auto-save user answers to localStorage
+            const answers = {};
+            for (let i = 15; i <= 27; i++) {
+                const questionElement = document.getElementById(`q${i}`);
+                if (questionElement) {
+                    if (questionElement.type === 'text') {
+                        answers[`q${i}`] = questionElement.value;
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                    if (radioButtons.length > 0) {
+                        answers[`q${i}`] = radioButtons[0].value;
+                    }
+                }
+            }
+            
+            localStorage.setItem('section2_practice3_answers', JSON.stringify(answers));
+            
+            // Update progress counter
+            const answeredCount = Object.keys(answers).filter(key => answers[key] && answers[key].trim() !== '').length;
+            document.getElementById('answeredCount').textContent = answeredCount;
+        }
+
+        function loadSavedAnswers() {
+            const savedAnswers = localStorage.getItem('section2_practice3_answers');
+            if (savedAnswers) {
+                const answers = JSON.parse(savedAnswers);
+                for (const [questionId, answer] of Object.entries(answers)) {
+                    const questionElement = document.getElementById(questionId);
+                    if (questionElement) {
+                        if (questionElement.type === 'text') {
+                            questionElement.value = answer;
+                        }
+                    } else {
+                        // Handle radio buttons
+                        const radioButton = document.querySelector(`input[name="${questionId}"][value="${answer}"]`);
+                        if (radioButton) {
+                            radioButton.checked = true;
+                        }
+                    }
+                }
+                updateProgress();
+            }
+        }
+
+        function submitAnswers() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            
+            const userAnswers = {};
+            let score = 0;
+            
+            // Collect answers
+            for (let i = 15; i <= 27; i++) {
+                const questionElement = document.getElementById(`q${i}`);
+                if (questionElement && questionElement.type === 'text') {
+                    userAnswers[`q${i}`] = questionElement.value.toLowerCase().trim();
+                } else {
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                    if (radioButtons.length > 0) {
+                        userAnswers[`q${i}`] = radioButtons[0].value;
+                    }
+                }
+            }
+            
+            // Calculate score
+            for (const [questionId, correctAnswer] of Object.entries(correctAnswers)) {
+                const userAnswer = userAnswers[questionId] || '';
+                if (typeof correctAnswer === 'string' && typeof userAnswer === 'string') {
+                    if (correctAnswer.toLowerCase() === userAnswer.toLowerCase()) {
+                        score++;
+                    }
+                }
+            }
+            
+            // Display results
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('reading-workspace').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            
+            // Show detailed results
+            let resultsHTML = '<h3 style="color: #8b4513; margin-bottom: 20px;">📋 Detailed Answer Review</h3>';
+            resultsHTML += '<div style="display: grid; gap: 15px;">';
+            
+            for (let i = 15; i <= 27; i++) {
+                const questionId = `q${i}`;
+                const correctAnswer = correctAnswers[questionId];
+                const userAnswer = userAnswers[questionId] || 'No answer';
+                const isCorrect = correctAnswer.toLowerCase() === (userAnswer || '').toLowerCase();
+                
+                resultsHTML += `
+                    <div style="padding: 15px; background: ${isCorrect ? 'rgba(76, 175, 80, 0.1)' : 'rgba(244, 67, 54, 0.1)'}; border-radius: 8px; border-left: 4px solid ${isCorrect ? '#4caf50' : '#f44336'};">
+                        <div style="font-weight: bold; margin-bottom: 5px;">Question ${i}: ${isCorrect ? '✅ Correct' : '❌ Incorrect'}</div>
+                        <div>Your answer: <span style="color: #666;">${userAnswer}</span></div>
+                        <div>Correct answer: <span style="color: #8b4513; font-weight: bold;">${correctAnswer}</span></div>
+                    </div>
+                `;
+            }
+            
+            resultsHTML += '</div>';
+            
+            // Add improvement tips based on performance
+            const percentage = Math.round((score / 13) * 100);
+            resultsHTML += `<div style="margin-top: 30px; padding: 20px; background: rgba(212, 175, 55, 0.1); border-radius: 10px;">`;
+            resultsHTML += `<h4 style="color: #8b4513;">🎓 Professional Development Reading Enhancement Strategies</h4>`;
+            
+            if (percentage >= 85) {
+                resultsHTML += `<p><strong>Excellent!</strong> You demonstrate advanced professional development reading skills. Focus on:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Complex training methodology analysis and multi-layered evaluation systems</li>
+                        <li>Advanced performance management frameworks and strategic development planning</li>
+                        <li>Leadership competency models and organizational development principles</li>
+                    </ul>`;
+            } else if (percentage >= 65) {
+                resultsHTML += `<p><strong>Good progress!</strong> Your training and development comprehension is advancing well. Work on:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Understanding comprehensive training program structures and assessment methods</li>
+                        <li>Interpreting performance evaluation criteria and development planning processes</li>
+                        <li>Analyzing professional competency frameworks and career progression pathways</li>
+                    </ul>`;
+            } else {
+                resultsHTML += `<p><strong>Keep practicing!</strong> Focus on building intermediate professional development reading skills:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Identifying key training components and learning module structures</li>
+                        <li>Understanding basic performance evaluation processes and criteria</li>
+                        <li>Recognizing professional development opportunities and career advancement factors</li>
+                        <li>Practice with simpler training materials and performance management documents</li>
+                    </ul>`;
+            }
+            
+            resultsHTML += `</div>`;
+            
+            document.getElementById('detailedResults').innerHTML = resultsHTML;
+            
+            // Clear saved answers
+            localStorage.removeItem('section2_practice3_answers');
+            
+            // Navigate to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetPractice() {
+            // Reset timer
+            timeRemaining = 1200;
+            isTimerRunning = false;
+            clearInterval(timerInterval);
+            document.getElementById('timerDisplay').textContent = '20:00';
+            document.getElementById('smallTimerTime').textContent = '20:00';
+            document.getElementById('smallTimerDisplay').style.display = 'none';
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('timerWarning').style.display = 'none';
+            
+            // Reset small timer colors
+            document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+            
+            // Clear all answers
+            document.querySelectorAll('.answer-input').forEach(input => input.value = '');
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            
+            // Clear saved answers
+            localStorage.removeItem('section2_practice3_answers');
+            
+            // Show workspace, hide results
+            document.getElementById('reading-workspace').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            
+            // Reset progress counter
+            document.getElementById('answeredCount').textContent = '0';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const menu = document.getElementById('slideMenu');
+                if (menu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize
+        window.addEventListener('load', function() {
+            loadSavedAnswers();
+            
+            // Add change listeners for auto-save
+            document.querySelectorAll('.answer-input, input[type="radio"]').forEach(element => {
+                element.addEventListener('change', autoSave);
+                element.addEventListener('input', autoSave);
+            });
+        });
+
+        // Resizable panels functionality
+        let isResizing = false;
+
+        document.querySelector('.separator-handle').addEventListener('mousedown', function(e) {
+            isResizing = true;
+            document.body.style.cursor = 'col-resize';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isResizing) return;
+            
+            const container = document.querySelector('.split-container');
+            const containerRect = container.getBoundingClientRect();
+            const newLeftWidth = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+            
+            if (newLeftWidth > 30 && newLeftWidth < 70) {
+                document.querySelector('.passages-panel').style.flex = `0 0 ${newLeftWidth}%`;
+                document.querySelector('.questions-panel').style.flex = `0 0 ${100 - newLeftWidth}%`;
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isResizing = false;
+            document.body.style.cursor = 'default';
+        });
+    </script>
+</body>
+</html> 
