@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Speaking Part 2: Research Project Practice | Gammapace</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Master Guruvammal Logo for template back button */
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button - Professional Brown Gradient */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border-left: 3px solid transparent;
+            margin: 0.3rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #8b4513, #d4af37, #8b4513);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .format-info {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Content sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Question Selection */
+        .question-selection {
+            background: rgba(139, 69, 19, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .question-selection h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .question-selection select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            display: block;
+            background: white;
+        }
+
+        /* Cue Card Section */
+        .cue-card-section {
+            margin: 2rem 0;
+        }
+
+        .cue-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.05));
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+        }
+
+        .cue-card h4 {
+            font-size: 1.4rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .cue-card p {
+            color: #666;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .cue-card ul {
+            margin: 1rem 0 1rem 2rem;
+            color: #333;
+        }
+
+        .cue-card li {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .time-instruction {
+            background: #8b4513;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        /* Timer Display */
+        .timer-display {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .timer {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            min-width: 200px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+        }
+
+        .timer-label {
+            color: #8b4513;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Control Buttons */
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 160px;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        .control-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .prepare-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .prepare-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #20c997, #28a745);
+        }
+
+        .record-btn.recording {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        /* Status Display */
+        .status-display {
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .status-display.preparing {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .status-display.recording {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.05));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .analysis-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .analysis-card h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .analysis-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #feedbackText {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .analysis-processing {
+            background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+            background-size: 200% 200%;
+            animation: analysisShimmer 2s linear infinite;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        @keyframes analysisShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        .next-btn:nth-child(2) {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .next-btn:nth-child(2):hover {
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Band Score Guidance */
+        .band-guidance {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 2px solid #d4af37;
+        }
+
+        .band-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .criteria-card {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(212, 175, 55, 0.05));
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 3px solid #8b4513;
+        }
+
+        .criteria-card h5 {
+            color: #8b4513;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .criteria-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0 !important;
+            }
+
+            .menu-toggle {
+                left: 20px;
+            }
+
+            .menu-toggle-label {
+                left: 42px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                left: -100%;
+            }
+
+            .slide-menu.collapsed {
+                left: -100%;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .band-criteria {
+                grid-template-columns: 1fr;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .control-btn {
+                width: 80%;
+                max-width: 250px;
+            }
+        }
+
+        /* Hidden elements */
+        .hidden {
+            display: none;
+        }
+
+        /* Processing animation */
+        .processing {
+            animation: processing 2s linear infinite;
+        }
+
+        @keyframes processing {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .processing {
+            background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+            background-size: 200% 200%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo Container (Back Button) -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Slide-out Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle">
+        ›
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Academic Speaking Part 2</div>
+            <div class="menu-subtitle">Research Project</div>
+        </div>
+        <div class="menu-content">
+            <div class="menu-item" onclick="scrollToSection('instructions')">🎯 Select Cue Card</div>
+            <div class="menu-item active" onclick="scrollToSection('recording')">🎙️ Recording Studio</div>
+            <div class="menu-item" onclick="scrollToSection('analysis')">📊 Analysis Results</div>
+            <div class="menu-item" onclick="scrollToSection('guidance')">🎯 Band Score Guidance</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">IELTS Academic Speaking Part 2</h1>
+            <div class="hero-subtitle">Research Project Practice</div>
+            <div class="format-info">
+                <p><strong>Part 2 Format:</strong> You will receive a cue card with a topic and bullet points. You have <strong>1 minute to prepare</strong> and can make notes, then you must speak for <strong>2 minutes</strong> without interruption on the topic.</p>
+            </div>
+        </section>
+
+        <!-- Question Selection -->
+        <section class="content-section" id="instructions">
+            <h2 class="section-title">🎯 Select Your Cue Card</h2>
+            <div class="question-selection">
+                <h3>Choose a Research Project Topic:</h3>
+                <select id="questionSelect" onchange="updateCurrentQuestion()">
+                    <option value="1">Describe a research project you completed</option>
+                    <option value="2">Describe a research study that interested you</option>
+                    <option value="3">Describe a research method you learned about</option>
+                    <option value="4">Describe a research collaboration you were involved in</option>
+                    <option value="5">Describe a research challenge you overcame</option>
+                    <option value="6">Describe a research discovery that impressed you</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Cue Card Section -->
+        <section class="content-section" id="cue-card">
+            <h2 class="section-title">🎯 Cue Card</h2>
+            <div class="cue-card-section">
+                <div class="cue-card" id="cueCardContent">
+                    <h4>Describe a research project you completed</h4>
+                    <p>You should say:</p>
+                    <ul>
+                        <li>What the research project was about</li>
+                        <li>How you conducted your research</li>
+                        <li>What difficulties you encountered during the process</li>
+                        <li>And explain what you learned from this research experience</li>
+                    </ul>
+                    <div class="time-instruction">
+                        You have 1 minute to prepare and 2 minutes to speak.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-display">
+                <div class="timer" id="timerDisplay">01:00</div>
+                <div class="timer-label" id="timerLabel">Preparation Time</div>
+            </div>
+        </section>
+
+        <!-- Recording Studio Section -->
+        <section class="content-section" id="recording">
+            <h2 class="section-title">🎙️ Recording Studio</h2>
+            
+            <div style="text-align: center; color: #666; margin: 1rem 0;">
+                <p>Click "Start Preparation" to begin your 1-minute preparation time, then record your 2-minute research project monologue.</p>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="control-buttons">
+                <button class="control-btn prepare-btn" id="prepareBtn" onclick="startPreparation()">
+                    ⏱️ Start Preparation
+                </button>
+                <button class="control-btn record-btn" id="recordBtn" onclick="startRecording()" disabled>
+                    🎤 Start Recording
+                </button>
+                <button class="control-btn" id="stopBtn" onclick="stopRecording()" disabled>
+                    ⏹️ Stop Recording
+                </button>
+                <button class="control-btn" id="playBtn" onclick="playRecording()" disabled>
+                    ▶️ Play Recording
+                </button>
+                <button class="control-btn" id="processBtn" onclick="processAudio()" disabled>
+                    📊 Analyze Speech
+                </button>
+            </div>
+
+            <!-- Status Display -->
+            <div class="status-display" id="statusDisplay">
+                Ready to begin preparation for your research project monologue
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section class="content-section hidden" id="analysis">
+            <h2 class="section-title">
+                📊 Analysis Results
+            </h2>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h4>📝 Example Response</h4>
+                    <p id="transcriptionText" style="font-style: italic; color: #555;">A model research project response will appear here to guide your monologue practice. This shows the level of detail and structure expected for 2-minute research presentations.</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h4>🎯 Your Personal Analysis & Feedback</h4>
+                    <p id="feedbackText" style="white-space: pre-line;">Based on your actual recording, personalized feedback on your research vocabulary, methodology description, and academic presentation skills will appear here. This analysis is tailored specifically to your research project response.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons">
+                <button class="control-btn next-btn" onclick="goToNextCard()">
+                    ➡️ Next Cue Card
+                </button>
+                <button class="control-btn next-btn" onclick="refreshCurrentCard()">
+                    🔄 Retry This Card
+                </button>
+            </div>
+        </section>
+
+        <!-- Band Score Guidance -->
+        <section class="content-section" id="guidance">
+            <h2 class="section-title">
+                🎯 Band Score Guidance
+            </h2>
+            
+            <div class="band-guidance">
+                <h3 style="color: #8b4513; text-align: center; margin-bottom: 1.5rem;">Research Project Monologue Assessment Criteria</h3>
+                
+                <div class="band-criteria">
+                    <div class="criteria-card">
+                        <h5>🗣️ Fluency & Coherence</h5>
+                        <p>Maintain steady speech flow throughout the 2-minute research presentation. Use logical organization with clear methodology explanation, findings discussion, and conclusion. Connect research phases smoothly.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>📚 Lexical Resource</h5>
+                        <p>Use sophisticated research vocabulary including methodology terms, data analysis language, and academic field terminology. Include precise expressions for research processes, challenges, and outcomes.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>⚙️ Grammatical Range</h5>
+                        <p>Demonstrate complex sentence structures throughout the research description. Use narrative past tenses accurately when describing research activities and conditional structures for hypothetical research scenarios.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>🎯 Pronunciation</h5>
+                        <p>Maintain clear articulation during the extended research presentation. Use appropriate stress patterns for technical terms and methodology vocabulary, engaging the listener throughout the academic discourse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Research Project Cue Cards
+        const cueCards = {
+            1: {
+                title: "Describe a research project you completed",
+                points: [
+                    "What the research project was about",
+                    "How you conducted your research",
+                    "What difficulties you encountered during the process",
+                    "And explain what you learned from this research experience"
+                ]
+            },
+            2: {
+                title: "Describe a research study that interested you",
+                points: [
+                    "What the research study was investigating",
+                    "Who conducted the study and where you learned about it",
+                    "What methodology or approach they used",
+                    "And explain why this research interested you so much"
+                ]
+            },
+            3: {
+                title: "Describe a research method you learned about",
+                points: [
+                    "What the research method was",
+                    "In what context you learned about this method",
+                    "How this method is typically used in research",
+                    "And explain why you found this research method valuable"
+                ]
+            },
+            4: {
+                title: "Describe a research collaboration you were involved in",
+                points: [
+                    "What the collaborative research project involved",
+                    "Who you collaborated with and their roles",
+                    "How you coordinated the research activities",
+                    "And explain what benefits you gained from this collaboration"
+                ]
+            },
+            5: {
+                title: "Describe a research challenge you overcame",
+                points: [
+                    "What the research challenge was",
+                    "Why this challenge was particularly difficult",
+                    "What steps you took to address and overcome it",
+                    "And explain how overcoming this challenge improved your research skills"
+                ]
+            },
+            6: {
+                title: "Describe a research discovery that impressed you",
+                points: [
+                    "What the research discovery was",
+                    "Who made this discovery and in what field",
+                    "What impact this discovery had on the field",
+                    "And explain why this discovery impressed you so much"
+                ]
+            }
+        };
+
+        // Timer variables
+        let currentTimer = null;
+        let timeRemaining = 60; // Start with preparation time
+        let isPreparationPhase = true;
+        let isRecording = false;
+
+        // Audio recording variables
+        let mediaRecorder;
+        let audioChunks = [];
+        let recordingTimeout;
+        let originalAudioBlob = null;
+        let recordingSeconds = 0;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ IELTS Academic Speaking Part 2: Research Project loaded');
+            updateCurrentQuestion();
+            
+            // Check for audio support
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                document.getElementById('statusDisplay').textContent = 'Audio recording not supported in this browser';
+                document.getElementById('recordBtn').disabled = true;
+                console.warn('⚠️ Audio recording not supported');
+            }
+        });
+
+        // Update current cue card display
+        function updateCurrentQuestion() {
+            const select = document.getElementById('questionSelect');
+            const cueCard = document.getElementById('cueCardContent');
+            const selectedValue = select.value;
+            const card = cueCards[selectedValue];
+
+            // Update cue card content
+            cueCard.innerHTML = `
+                <h4>${card.title}</h4>
+                <p>You should say:</p>
+                <ul>
+                    ${card.points.map(point => `<li>${point}</li>`).join('')}
+                </ul>
+                <div class="time-instruction">
+                    You have 1 minute to prepare and 2 minutes to speak.
+                </div>
+            `;
+            
+            // Reset everything when question changes
+            resetSession();
+        }
+
+        // Start preparation timer
+        function startPreparation() {
+            console.log('🟡 Starting preparation phase');
+            isPreparationPhase = true;
+            timeRemaining = 60; // 1 minute preparation
+            
+            // Update UI
+            document.getElementById('prepareBtn').disabled = true;
+            document.getElementById('prepareBtn').textContent = '⏱️ Preparing...';
+            document.getElementById('statusDisplay').textContent = '📝 Preparation time - Think about your research project and make notes';
+            document.getElementById('statusDisplay').className = 'status-display preparing';
+            
+            // Start countdown
+            updateTimerDisplay();
+            currentTimer = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+                
+                if (timeRemaining <= 0) {
+                    finishPreparation();
+                }
+            }, 1000);
+        }
+
+        // Finish preparation and enable recording
+        function finishPreparation() {
+            console.log('✅ Preparation complete, enabling recording');
+            clearInterval(currentTimer);
+            isPreparationPhase = false;
+            
+            // Update UI for recording phase
+            document.getElementById('recordBtn').disabled = false;
+            document.getElementById('statusDisplay').textContent = '🎤 Ready to record your 2-minute research project monologue';
+            document.getElementById('statusDisplay').className = 'status-display';
+            document.getElementById('timerLabel').textContent = 'Recording Time';
+            
+            // Set timer for recording phase
+            timeRemaining = 120; // 2 minutes for recording
+            updateTimerDisplay();
+        }
+
+        // Start recording
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        echoCancellation: true,
+                        noiseSuppression: true,
+                        sampleRate: 44100
+                    } 
+                });
+                
+                audioChunks = [];
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: 'audio/webm;codecs=opus'
+                });
+                
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+                
+                mediaRecorder.onstop = () => {
+                    originalAudioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    const audioUrl = URL.createObjectURL(originalAudioBlob);
+                    
+                    // Store audio URL for playback
+                    window.currentAudioUrl = audioUrl;
+                    
+                    // Update UI to recorded state
+                    document.getElementById('playBtn').disabled = false;
+                    document.getElementById('processBtn').disabled = false;
+                    document.getElementById('statusDisplay').textContent = '✅ Recording complete! You can play it back or analyze your research presentation';
+                    document.getElementById('statusDisplay').className = 'status-display';
+                };
+                
+                mediaRecorder.start();
+                isRecording = true;
+                recordingSeconds = 0;
+                
+                // Update UI to recording state
+                document.getElementById('recordBtn').disabled = true;
+                document.getElementById('recordBtn').classList.add('recording');
+                document.getElementById('recordBtn').textContent = '🎤 Recording...';
+                document.getElementById('stopBtn').disabled = false;
+                document.getElementById('statusDisplay').textContent = '🔴 Recording your research project monologue...';
+                document.getElementById('statusDisplay').className = 'status-display recording';
+                
+                // Start recording timer
+                currentTimer = setInterval(() => {
+                    timeRemaining--;
+                    recordingSeconds++;
+                    updateTimerDisplay();
+                    
+                    if (timeRemaining <= 0) {
+                        stopRecording();
+                    }
+                }, 1000);
+                
+                console.log('🎙️ Recording started for Research Project monologue');
+                
+            } catch (error) {
+                console.error('❌ Error starting recording:', error);
+                alert('Unable to access microphone. Please check your permissions.');
+            }
+        }
+
+        // Stop recording
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                mediaRecorder.stream.getTracks().forEach(track => track.stop());
+                isRecording = false;
+                
+                clearInterval(currentTimer);
+                
+                // Update UI
+                document.getElementById('recordBtn').classList.remove('recording');
+                document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+                document.getElementById('stopBtn').disabled = true;
+                
+                console.log('⏹️ Recording stopped');
+            }
+        }
+
+        // Play recording
+        function playRecording() {
+            if (window.currentAudioUrl) {
+                const audio = new Audio(window.currentAudioUrl);
+                audio.play();
+                console.log('▶️ Playing recording');
+            }
+        }
+
+        // Process audio and show analysis
+        async function processAudio() {
+            if (!originalAudioBlob) return;
+            
+            const analysisSection = document.getElementById('analysis');
+            const transcriptionText = document.getElementById('transcriptionText');
+            const feedbackText = document.getElementById('feedbackText');
+            
+            // Show analysis section with processing indicator
+            analysisSection.classList.remove('hidden');
+            feedbackText.innerHTML = '<div class="analysis-processing">🔄 Analyzing your research presentation...</div>';
+            transcriptionText.textContent = 'Loading example response...';
+            
+            document.getElementById('statusDisplay').textContent = '🧠 Analyzing your research project monologue...';
+            
+            try {
+                // Step 1: Simulate speech-to-text conversion
+                feedbackText.innerHTML = '<div class="analysis-processing">🎙️ Converting speech to text...</div>';
+                const transcript = await simulateSpeechToText(originalAudioBlob);
+                
+                // Step 2: Analyze the transcribed text
+                feedbackText.innerHTML = '<div class="analysis-processing">🧠 Analyzing your research methodology and presentation...</div>';
+                const analysis = await analyzeMonologueResponse(transcript);
+                
+                // Step 3: Display results
+                const currentCard = document.getElementById('questionSelect').value;
+                const exampleResponse = getResearchExampleResponse(currentCard);
+                
+                // Show example response (unchanged)
+                transcriptionText.textContent = exampleResponse;
+                
+                // Show personalized feedback based on actual recording
+                feedbackText.textContent = analysis.personalizedFeedback;
+                
+                // Scroll to show completed analysis
+                setTimeout(() => {
+                    analysisSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+                
+                document.getElementById('statusDisplay').textContent = '✅ Analysis complete! Review your personalized research feedback below.';
+                
+                console.log('📊 Audio analysis completed with personalized feedback');
+                
+            } catch (error) {
+                console.error('Processing Error:', error);
+                document.getElementById('statusDisplay').textContent = '❌ Error during analysis. Please try again.';
+                
+                // Reset analysis section on error
+                feedbackText.textContent = 'Analysis failed. Please try recording again.';
+                transcriptionText.textContent = 'Example response will appear after successful analysis.';
+            }
+        }
+
+        // Simulate Speech-to-Text conversion
+        async function simulateSpeechToText(audioBlob) {
+            // Simulate processing time
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Analyze audio properties
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            
+            return new Promise((resolve) => {
+                audio.addEventListener('loadedmetadata', () => {
+                    const duration = audio.duration;
+                    const currentCard = document.getElementById('questionSelect').value;
+                    
+                    let transcript = generateSimulatedResearchTranscript(currentCard, duration);
+                    transcript.recordingDuration = duration;
+                    
+                    resolve(transcript);
+                });
+                audio.load();
+            });
+        }
+
+        // Generate simulated transcript for research projects
+        function generateSimulatedResearchTranscript(cardNumber, duration) {
+            const baseResponses = {
+                1: "The research project I completed focused on",
+                2: "The research study that interested me investigated",
+                3: "The research method I learned about was",
+                4: "The research collaboration I was involved in examined",
+                5: "The research challenge I overcame involved",
+                6: "The research discovery that impressed me was"
+            };
+            
+            let response = baseResponses[cardNumber] || "My research project involved";
+            
+            // Add duration-based assessment
+            if (duration < 60) {
+                response += " [Response was quite short - aim for closer to 2 minutes for better coverage of research details]";
+            } else if (duration >= 90 && duration <= 150) {
+                response += " [Good length - well within the optimal range for detailed research presentation]";
+            } else if (duration > 150) {
+                response += " [Excellent detailed response - comprehensive coverage of research methodology and findings]";
+            } else {
+                response += " [Adequate length - could include more research-specific details for higher band scores]";
+            }
+            
+            return response;
+        }
+
+        // Analyze monologue response for research content
+        async function analyzeMonologueResponse(transcript) {
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            const currentCard = document.getElementById('questionSelect').value;
+            const transcriptText = typeof transcript === 'string' ? transcript : transcript.toString();
+            const duration = transcript.recordingDuration || 0;
+            
+            const wordCount = transcriptText.split(' ').length;
+            const hasResearchTerms = /research|methodology|data|analysis|experiment|study|findings|hypothesis|survey|interview|participant|variable|correlation|statistical|qualitative|quantitative|peer-review|literature|citation|sample/i.test(transcriptText);
+            
+            let feedback = generateResearchFeedback(currentCard, {
+                wordCount: wordCount,
+                hasResearchTerms: hasResearchTerms,
+                transcript: transcriptText,
+                duration: duration
+            });
+            
+            return { personalizedFeedback: feedback };
+        }
+
+        // Generate personalized feedback for research presentations
+        function generateResearchFeedback(cardNumber, analysis) {
+            let feedback = "Based on your recorded research presentation:\n\n";
+            
+            // Analyze monologue duration (Part 2 should be longer)
+            if (analysis.duration && analysis.duration > 0) {
+                if (analysis.duration < 60) {
+                    feedback += "⏱️ **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - This is quite short for research presentations. Aim for 90-120 seconds to fully describe your methodology, findings, and implications.\n\n";
+                } else if (analysis.duration >= 90 && analysis.duration <= 150) {
+                    feedback += "✅ **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Excellent timing for research presentations! This allows for comprehensive coverage of methodology and results.\n\n";
+                } else if (analysis.duration > 150) {
+                    feedback += "👍 **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Very detailed research presentation. Good comprehensive coverage of all research aspects.\n\n";
+                } else {
+                    feedback += "📈 **Presentation Duration**: " + Math.round(analysis.duration) + " seconds - Good length, could be extended with more methodological details.\n\n";
+                }
+            }
+            
+            // Research content development analysis
+            if (analysis.wordCount < 20) {
+                feedback += "🔍 **Research Detail**: Your response appears brief. For research presentations, elaborate on methodology, data collection, analysis procedures, and implications with specific examples.\n\n";
+            } else if (analysis.wordCount > 100) {
+                feedback += "✅ **Research Detail**: Excellent comprehensive presentation! You provided detailed information covering multiple aspects of your research project.\n\n";
+            } else {
+                feedback += "👍 **Research Detail**: Good level of detail. Consider adding more specific examples of research procedures or unexpected findings.\n\n";
+            }
+            
+            // Research vocabulary usage
+            if (analysis.hasResearchTerms) {
+                feedback += "✅ **Research Vocabulary**: Excellent use of research and methodology-related terminology. This demonstrates strong academic research communication skills.\n\n";
+            } else {
+                feedback += "💡 **Research Vocabulary**: Try incorporating more research-specific terms like 'methodology', 'data analysis', 'participants', 'variables', 'findings', or 'literature review' to strengthen your academic presentation.\n\n";
+            }
+            
+            // Cue card specific feedback
+            const cardSpecificTips = {
+                1: "For completed research projects, describe the research question, methodology used, data collection process, main findings, and personal learning outcomes with concrete examples.",
+                2: "For research studies that interested you, explain the research objectives, innovative methodology, significance of findings, and why it captured your academic attention.",
+                3: "For research methods, describe the methodological approach, when it's used, advantages/limitations, and how it contributes to knowledge generation in your field.",
+                4: "For research collaborations, explain each collaborator's role, coordination challenges, shared responsibilities, and benefits of interdisciplinary or team-based research.",
+                5: "For research challenges, detail the specific obstacle, why it was difficult, your problem-solving approach, and how overcoming it improved your research competencies.",
+                6: "For impressive research discoveries, explain the breakthrough, its methodology, field impact, and why it represents significant advancement in scientific knowledge."
+            };
+            
+            feedback += "🎯 **Research Presentation Structure**: " + (cardSpecificTips[cardNumber] || "Address all bullet points systematically with specific research examples and methodological details.");
+            feedback += "\n\n📈 **Next Steps**: Practice describing research procedures clearly, use transitional phrases between research phases, and develop each methodological aspect with specific examples.";
+            feedback += "\n\n💡 **Research Communication Success**: Remember to speak continuously about your research experience, address all methodological aspects, and maintain coherent organization throughout your presentation.";
+            
+            return feedback;
+        }
+
+        // Get example responses for different research cue cards
+        function getResearchExampleResponse(cardNumber) {
+            const examples = {
+                1: "I'd like to talk about a research project I completed during my final year studying Environmental Science, which focused on urban air quality monitoring and its impact on public health. This was a six-month independent research project that I conducted in collaboration with the local environmental protection agency. I chose this topic because air pollution has become a critical issue in my city, and I wanted to contribute meaningful data to the ongoing policy discussions. My research involved setting up air quality monitoring stations at different locations throughout the city, including residential areas, industrial zones, and commercial districts. I collected data on particulate matter, nitrogen dioxide, and ozone levels over a three-month period, taking measurements every hour using calibrated digital sensors. The data collection process was quite challenging because I had to ensure the equipment was properly maintained and calibrated, and I encountered several technical difficulties with the sensors malfunctioning during rainy weather. I overcame these challenges by developing backup measurement protocols and learning to repair the equipment myself. The analysis phase involved using statistical software to identify patterns and correlations between pollution levels and factors like traffic density, weather conditions, and time of day. My findings revealed that pollution levels were significantly higher near industrial areas during weekday mornings and that weather patterns had a more substantial impact than previously documented. This research experience taught me invaluable lessons about project management, data analysis, and the importance of persistence when facing technical challenges. It also reinforced my passion for environmental research and led to my current graduate studies in atmospheric science.",
+                
+                2: "The research study that fascinated me was a longitudinal investigation into the effects of bilingualism on cognitive flexibility and executive function, conducted by Dr. Sarah Chen's team at the University of Toronto. I first learned about this study during my cognitive psychology course, and it immediately captured my interest because it challenged many assumptions about language learning and brain development. The researchers followed over 300 participants from childhood through adolescence, comparing monolingual and bilingual individuals on various cognitive tasks including working memory, attention control, and problem-solving abilities. What made this study particularly compelling was their innovative methodology combining neuroimaging techniques with behavioral assessments, allowing them to observe both brain activity patterns and performance outcomes. The researchers used functional MRI scans to examine brain activity while participants completed complex cognitive tasks, providing unprecedented insight into how bilingual experience shapes neural networks. The study revealed that bilingual individuals consistently outperformed monolinguals on tasks requiring cognitive flexibility and showed enhanced activity in brain regions associated with executive control. This research interested me so much because it demonstrated the profound neuroplasticity of the human brain and showed how our linguistic experiences can literally reshape our cognitive architecture. The implications for education policy and language learning programs were enormous, suggesting that multilingual education benefits extend far beyond communication skills. The study also employed rigorous longitudinal methodology that followed participants for over a decade, providing robust evidence for causality rather than just correlation. This research fundamentally changed my understanding of language acquisition and inspired me to pursue graduate research in psycholinguistics, where I'm now investigating similar questions about language and cognitive development.",
+                
+                3: "The research method I found most valuable was mixed-methods research design, which I learned about during my advanced research methodology course in my master's program. This approach combines quantitative and qualitative research techniques within a single study, allowing researchers to gain both statistical insights and deeper contextual understanding of their research questions. I first encountered this methodology when studying community health interventions, where researchers needed to measure both the effectiveness of programs and understand participants' lived experiences. The mixed-methods approach typically involves collecting numerical data through surveys, experiments, or existing datasets, while simultaneously gathering qualitative insights through interviews, focus groups, or ethnographic observations. What makes this method particularly powerful is the way it allows researchers to triangulate their findings, meaning they can validate discoveries from one method using data from another. For example, if quantitative data shows that a health intervention improved outcomes, qualitative interviews can reveal why and how these improvements occurred, providing crucial context for understanding the mechanisms behind the results. I learned to implement this method in my own research on student learning outcomes, where I combined statistical analysis of test scores with in-depth interviews about students' learning experiences. The quantitative component revealed which teaching strategies were most effective, while the qualitative data explained students' motivations, challenges, and preferences. This research method proved invaluable because it provided a more complete and nuanced understanding of complex social phenomena than either approach could achieve alone. It also enhanced the credibility and applicability of research findings, as the combination of statistical evidence and personal narratives created compelling arguments for policy makers and practitioners. Learning this methodology has made me a more versatile researcher and taught me to appreciate the complementary strengths of different research paradigms.",
+                
+                4: "I want to describe a research collaboration I participated in during my doctoral studies, which involved investigating sustainable agriculture practices across three different climate zones. This interdisciplinary project brought together researchers from agricultural science, environmental engineering, and economics departments from universities in Canada, Mexico, and Costa Rica. My role was to coordinate the soil analysis component and contribute expertise in nutrient cycling, while my collaborators specialized in irrigation systems, crop genetics, and economic modeling respectively. The collaboration began when our research supervisor identified the need for comprehensive data spanning different agricultural contexts, which no single researcher or institution could provide independently. We coordinated our research activities through regular video conferences, shared databases, and standardized protocols that ensured consistency across all three study sites. Each team collected soil samples, weather data, and crop yield information using identical methodologies, but we adapted our approaches to local conditions and regulations. The coordination challenges were significant, including language barriers, different academic calendars, time zone differences, and varying institutional requirements for ethical approval. We addressed these obstacles by creating detailed communication protocols, appointing regional coordinators, and developing flexible timelines that accommodated each institution's constraints. Data sharing proved complex because of different software systems and privacy regulations, so we invested considerable time in establishing secure, compatible platforms for collaboration. The benefits I gained from this collaboration were immense, including exposure to diverse research perspectives, improved cross-cultural communication skills, and access to much larger and more diverse datasets than I could have collected independently. Working with international colleagues also broadened my understanding of how agricultural practices vary across cultures and environments, insights that would have been impossible to gain from single-location research. The collaboration resulted in three co-authored publications and established ongoing research partnerships that continue to benefit my academic career. Most importantly, it taught me that complex global challenges require collaborative approaches that transcend institutional and national boundaries.",
+                
+                5: "The most significant research challenge I overcame was dealing with extremely low response rates during my dissertation research on workplace stress among healthcare professionals. Initially, I had planned to survey 500 healthcare workers across five hospitals, but after three months of data collection, I had received only 47 completed questionnaires, representing less than 10% of my target sample size. This challenge was particularly difficult because healthcare workers were experiencing unprecedented stress due to the COVID-19 pandemic, making them both an important population to study and an extremely difficult group to reach. The low response rate threatened the validity and statistical power of my entire dissertation project, and I was facing the possibility of completely redesigning my research or significantly delaying my graduation timeline. I addressed this challenge through a multi-faceted approach that required creativity, persistence, and flexibility in my research design. First, I conducted informal interviews with hospital administrators and healthcare workers to understand the barriers preventing participation, discovering that survey length, timing, and concerns about confidentiality were major deterrents. Based on this feedback, I shortened my questionnaire from 45 minutes to 15 minutes by prioritizing the most essential measures and eliminating redundant questions. I also shifted from online-only distribution to multiple formats, including paper questionnaires that could be completed during break times and mobile-friendly versions that could be accessed quickly between shifts. To address confidentiality concerns, I partnered with healthcare worker unions and professional associations who vouched for the research integrity and helped promote participation among their members. I also implemented an incentive system offering participants entry into a raffle for gift cards, and I arranged to present preliminary findings back to participating hospitals as a way to demonstrate the practical value of their contribution. Through these modifications, my response rate increased to 78% over the following four months, ultimately yielding a robust dataset of 390 participants. Overcoming this challenge significantly improved my research skills by teaching me to be adaptable, to listen carefully to participant feedback, and to view obstacles as opportunities for methodological innovation. It also reinforced the importance of pilot testing and stakeholder engagement in research design, lessons that have informed all my subsequent research projects.",
+                
+                6: "The research discovery that most impressed me was the 2020 breakthrough in protein structure prediction achieved by DeepMind's AlphaFold system, which solved a 50-year-old challenge in computational biology known as the protein folding problem. This discovery was made by a team of artificial intelligence researchers and structural biologists working at DeepMind Technologies in London, led by Dr. Demis Hassabis and Dr. John Jumper. I first learned about this breakthrough when it was announced at the Critical Assessment of protein Structure Prediction competition, where AlphaFold achieved unprecedented accuracy in predicting three-dimensional protein structures from amino acid sequences alone. The impact of this discovery on the field of biology has been revolutionary, as protein structure determination traditionally required expensive and time-consuming experimental techniques like X-ray crystallography or nuclear magnetic resonance spectroscopy, which could take months or years to complete. AlphaFold's ability to predict protein structures with near-experimental accuracy in a matter of hours has accelerated research across numerous biological disciplines, from drug discovery to understanding genetic diseases. What impressed me most about this discovery was the innovative approach of combining deep learning techniques with decades of biological knowledge, demonstrating how artificial intelligence can augment rather than replace traditional scientific methods. The researchers trained their neural network on hundreds of thousands of known protein structures, teaching it to recognize patterns and relationships between amino acid sequences and three-dimensional conformations. The system's success was validated when it correctly predicted the structures of proteins that had never been experimentally determined, some of which were subsequently confirmed through laboratory techniques. This discovery impressed me because it represents a perfect example of interdisciplinary collaboration, bringing together computer scientists, structural biologists, and mathematicians to solve a fundamental problem in life sciences. The broader implications extend far beyond protein structure prediction, potentially accelerating the development of new medications, improving our understanding of genetic disorders, and advancing research in areas like enzyme design and synthetic biology. The fact that DeepMind made all their predictions freely available to the scientific community demonstrates how groundbreaking discoveries can have maximum impact when shared openly, inspiring me to consider how my own research can contribute to collective scientific knowledge."
+            };
+            
+            return examples[cardNumber] || "Excellent research project response! Focus on providing specific methodological details, addressing all bullet points, and maintaining coherent organization throughout your 2-minute presentation.";
+        }
+
+        // Update timer display
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timerDisplay').textContent = timeString;
+        }
+
+        // Navigation functions
+        function goToNextCard() {
+            const currentCard = parseInt(document.getElementById('questionSelect').value);
+            const nextCard = currentCard >= 6 ? 1 : currentCard + 1;
+            document.getElementById('questionSelect').value = nextCard;
+            updateCurrentQuestion();
+            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function refreshCurrentCard() {
+            resetSession();
+            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetSession() {
+            // Clear timers
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+            
+            // Reset variables
+            isPreparationPhase = true;
+            isRecording = false;
+            timeRemaining = 60;
+            recordingSeconds = 0;
+            originalAudioBlob = null;
+            
+            // Reset UI
+            document.getElementById('prepareBtn').disabled = false;
+            document.getElementById('prepareBtn').textContent = '⏱️ Start Preparation';
+            document.getElementById('recordBtn').disabled = true;
+            document.getElementById('recordBtn').classList.remove('recording');
+            document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+            document.getElementById('stopBtn').disabled = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('processBtn').disabled = true;
+            document.getElementById('timerLabel').textContent = 'Preparation Time';
+            document.getElementById('statusDisplay').textContent = 'Ready to begin preparation for your research project monologue';
+            document.getElementById('statusDisplay').className = 'status-display';
+            
+            // Hide analysis section
+            document.getElementById('analysis').classList.add('hidden');
+            
+            // Reset timer display
+            updateTimerDisplay();
+        }
+
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Academic Speaking Part 2 - Going to Academic Introduction');
+            window.location.href = 'IELTS_Academic_Speaking_Introduction.html';
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Update active menu item
+            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Menu toggle functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (isRecording) {
+                stopRecording();
+            }
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+        });
+
+    </script>
+</body>
+</html> 
