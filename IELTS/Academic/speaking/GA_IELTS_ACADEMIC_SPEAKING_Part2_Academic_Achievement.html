@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Speaking Part 2: Academic Achievement Practice | Gammapace</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Master Guruvammal Logo for template back button */
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button - Professional Brown Gradient */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border-left: 3px solid transparent;
+            margin: 0.3rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #8b4513, #d4af37, #8b4513);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .format-info {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Content sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Question Selection */
+        .question-selection {
+            background: rgba(139, 69, 19, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .question-selection h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .question-selection select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            display: block;
+            background: white;
+        }
+
+        /* Cue Card Section */
+        .cue-card-section {
+            margin: 2rem 0;
+        }
+
+        .cue-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.05));
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+        }
+
+        .cue-card h4 {
+            font-size: 1.4rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .cue-card p {
+            color: #666;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .cue-card ul {
+            margin: 1rem 0 1rem 2rem;
+            color: #333;
+        }
+
+        .cue-card li {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .time-instruction {
+            background: #8b4513;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        /* Timer Display */
+        .timer-display {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .timer {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            min-width: 200px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+        }
+
+        .timer-label {
+            color: #8b4513;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Control Buttons */
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 160px;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        .control-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .prepare-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .prepare-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #20c997, #28a745);
+        }
+
+        .record-btn.recording {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        /* Status Display */
+        .status-display {
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .status-display.preparing {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .status-display.recording {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.05));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .analysis-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .analysis-card h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .analysis-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #feedbackText {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .analysis-processing {
+            background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+            background-size: 200% 200%;
+            animation: analysisShimmer 2s linear infinite;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        @keyframes analysisShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        .next-btn:nth-child(2) {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .next-btn:nth-child(2):hover {
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Band Score Guidance */
+        .band-guidance {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 2px solid #d4af37;
+        }
+
+        .band-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .criteria-card {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(212, 175, 55, 0.05));
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 3px solid #8b4513;
+        }
+
+        .criteria-card h5 {
+            color: #8b4513;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .criteria-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0 !important;
+            }
+
+            .menu-toggle {
+                left: 20px;
+            }
+
+            .menu-toggle-label {
+                left: 42px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                left: -100%;
+            }
+
+            .slide-menu.collapsed {
+                left: -100%;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .band-criteria {
+                grid-template-columns: 1fr;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .control-btn {
+                width: 80%;
+                max-width: 250px;
+            }
+        }
+
+        /* Hidden elements */
+        .hidden {
+            display: none;
+        }
+
+        /* Processing animation */
+        .processing {
+            animation: processing 2s linear infinite;
+        }
+
+        @keyframes processing {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .processing {
+            background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+            background-size: 200% 200%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo Container (Back Button) -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Slide-out Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle">
+        ›
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Academic Speaking Part 2</div>
+            <div class="menu-subtitle">Academic Achievement</div>
+        </div>
+        <div class="menu-content">
+            <div class="menu-item" onclick="scrollToSection('instructions')">🎯 Select Cue Card</div>
+            <div class="menu-item active" onclick="scrollToSection('recording')">🎙️ Recording Studio</div>
+            <div class="menu-item" onclick="scrollToSection('analysis')">📊 Analysis Results</div>
+            <div class="menu-item" onclick="scrollToSection('guidance')">🎯 Band Score Guidance</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">IELTS Academic Speaking Part 2</h1>
+            <div class="hero-subtitle">Academic Achievement Practice</div>
+            <div class="format-info">
+                <p><strong>Part 2 Format:</strong> You will receive a cue card with a topic and bullet points. You have <strong>1 minute to prepare</strong> and can make notes, then you must speak for <strong>2 minutes</strong> without interruption on the topic.</p>
+            </div>
+        </section>
+
+        <!-- Question Selection -->
+        <section class="content-section" id="instructions">
+            <h2 class="section-title">🎯 Select Your Cue Card</h2>
+            <div class="question-selection">
+                <h3>Choose an Academic Achievement Topic:</h3>
+                <select id="questionSelect" onchange="updateCurrentQuestion()">
+                    <option value="1">Describe an important academic achievement</option>
+                    <option value="2">Describe a research project you completed</option>
+                    <option value="3">Describe an academic award you received</option>
+                    <option value="4">Describe a challenging academic goal you accomplished</option>
+                    <option value="5">Describe a significant academic milestone</option>
+                    <option value="6">Describe an academic success that made you proud</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Cue Card Section -->
+        <section class="content-section" id="cue-card">
+            <h2 class="section-title">🎯 Cue Card</h2>
+            <div class="cue-card-section">
+                <div class="cue-card" id="cueCardContent">
+                    <h4>Describe an important academic achievement</h4>
+                    <p>You should say:</p>
+                    <ul>
+                        <li>What this achievement was</li>
+                        <li>When and where it happened</li>
+                        <li>What challenges you faced and how you overcame them</li>
+                        <li>And explain why this achievement was important to you</li>
+                    </ul>
+                    <div class="time-instruction">
+                        You have 1 minute to prepare and 2 minutes to speak.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-display">
+                <div class="timer" id="timerDisplay">01:00</div>
+                <div class="timer-label" id="timerLabel">Preparation Time</div>
+            </div>
+        </section>
+
+        <!-- Recording Studio Section -->
+        <section class="content-section" id="recording">
+            <h2 class="section-title">🎙️ Recording Studio</h2>
+            
+            <div style="text-align: center; color: #666; margin: 1rem 0;">
+                <p>Click "Start Preparation" to begin your 1-minute preparation time, then record your 2-minute monologue response.</p>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="control-buttons">
+                <button class="control-btn prepare-btn" id="prepareBtn" onclick="startPreparation()">
+                    ⏱️ Start Preparation
+                </button>
+                <button class="control-btn record-btn" id="recordBtn" onclick="startRecording()" disabled>
+                    🎤 Start Recording
+                </button>
+                <button class="control-btn" id="stopBtn" onclick="stopRecording()" disabled>
+                    ⏹️ Stop Recording
+                </button>
+                <button class="control-btn" id="playBtn" onclick="playRecording()" disabled>
+                    ▶️ Play Recording
+                </button>
+                <button class="control-btn" id="processBtn" onclick="processAudio()" disabled>
+                    📊 Analyze Speech
+                </button>
+            </div>
+
+            <!-- Status Display -->
+            <div class="status-display" id="statusDisplay">
+                Ready to begin preparation for your academic achievement monologue
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section class="content-section hidden" id="analysis">
+            <h2 class="section-title">
+                📊 Analysis Results
+            </h2>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h4>📝 Example Response</h4>
+                    <p id="transcriptionText" style="font-style: italic; color: #555;">A model academic achievement response will appear here to guide your monologue practice. This shows the level of detail and structure expected for 2-minute academic presentations.</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h4>🎯 Your Personal Analysis & Feedback</h4>
+                    <p id="feedbackText" style="white-space: pre-line;">Based on your actual recording, personalized feedback on your monologue structure, academic vocabulary, coherence, and presentation skills will appear here. This analysis is tailored specifically to your academic achievement response.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons">
+                <button class="control-btn next-btn" onclick="goToNextCard()">
+                    ➡️ Next Cue Card
+                </button>
+                <button class="control-btn next-btn" onclick="refreshCurrentCard()">
+                    🔄 Retry This Card
+                </button>
+            </div>
+        </section>
+
+        <!-- Band Score Guidance -->
+        <section class="content-section" id="guidance">
+            <h2 class="section-title">
+                🎯 Band Score Guidance
+            </h2>
+            
+            <div class="band-guidance">
+                <h3 style="color: #8b4513; text-align: center; margin-bottom: 1.5rem;">Academic Achievement Monologue Assessment Criteria</h3>
+                
+                <div class="band-criteria">
+                    <div class="criteria-card">
+                        <h5>🗣️ Fluency & Coherence</h5>
+                        <p>Maintain steady speech flow throughout the 2-minute monologue. Use logical organization with clear introduction, development, and conclusion. Connect ideas smoothly when describing your achievement journey.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>📚 Lexical Resource</h5>
+                        <p>Use sophisticated academic vocabulary related to achievements, challenges, and academic processes. Include precise terminology for your field of study and varied expressions for describing accomplishments and difficulties.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>⚙️ Grammatical Range</h5>
+                        <p>Demonstrate complex sentence structures throughout the extended response. Use narrative tenses accurately when describing past achievements and conditional structures when discussing hypothetical scenarios.</p>
+                    </div>
+                    
+                    <div class="criteria-card">
+                        <h5>🎯 Pronunciation</h5>
+                        <p>Maintain clear articulation during the extended monologue. Use appropriate stress and intonation patterns to emphasize key points about your achievement and engage the listener throughout the presentation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Academic Achievement Cue Cards
+        const cueCards = {
+            1: {
+                title: "Describe an important academic achievement",
+                points: [
+                    "What this achievement was",
+                    "When and where it happened",
+                    "What challenges you faced and how you overcame them",
+                    "And explain why this achievement was important to you"
+                ]
+            },
+            2: {
+                title: "Describe a research project you completed",
+                points: [
+                    "What the research project was about",
+                    "How you conducted your research",
+                    "What difficulties you encountered during the process",
+                    "And explain what you learned from this research experience"
+                ]
+            },
+            3: {
+                title: "Describe an academic award you received",
+                points: [
+                    "What the award was for",
+                    "How you qualified for or earned this award",
+                    "Who presented it to you and when",
+                    "And explain how this recognition affected your academic motivation"
+                ]
+            },
+            4: {
+                title: "Describe a challenging academic goal you accomplished",
+                points: [
+                    "What your academic goal was",
+                    "Why it was particularly challenging for you",
+                    "What steps you took to achieve it",
+                    "And explain how accomplishing this goal changed your perspective"
+                ]
+            },
+            5: {
+                title: "Describe a significant academic milestone",
+                points: [
+                    "What the milestone was in your academic journey",
+                    "How long it took you to reach this point",
+                    "What preparation or work was required",
+                    "And explain why this milestone was meaningful to your education"
+                ]
+            },
+            6: {
+                title: "Describe an academic success that made you proud",
+                points: [
+                    "What your academic success involved",
+                    "What made this achievement particularly difficult",
+                    "How others reacted to your success",
+                    "And explain why you felt so proud of this accomplishment"
+                ]
+            }
+        };
+
+        // Timer variables
+        let currentTimer = null;
+        let timeRemaining = 60; // Start with preparation time
+        let isPreparationPhase = true;
+        let isRecording = false;
+
+        // Audio recording variables
+        let mediaRecorder;
+        let audioChunks = [];
+        let recordingTimeout;
+        let originalAudioBlob = null;
+        let recordingSeconds = 0;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ IELTS Academic Speaking Part 2: Academic Achievement loaded');
+            updateCurrentQuestion();
+            
+            // Check for audio support
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                document.getElementById('statusDisplay').textContent = 'Audio recording not supported in this browser';
+                document.getElementById('recordBtn').disabled = true;
+                console.warn('⚠️ Audio recording not supported');
+            }
+        });
+
+        // Update current cue card display
+        function updateCurrentQuestion() {
+            const select = document.getElementById('questionSelect');
+            const cueCard = document.getElementById('cueCardContent');
+            const selectedValue = select.value;
+            const card = cueCards[selectedValue];
+
+            // Update cue card content
+            cueCard.innerHTML = `
+                <h4>${card.title}</h4>
+                <p>You should say:</p>
+                <ul>
+                    ${card.points.map(point => `<li>${point}</li>`).join('')}
+                </ul>
+                <div class="time-instruction">
+                    You have 1 minute to prepare and 2 minutes to speak.
+                </div>
+            `;
+            
+            // Reset everything when question changes
+            resetSession();
+        }
+
+        // Start preparation timer
+        function startPreparation() {
+            console.log('🟡 Starting preparation phase');
+            isPreparationPhase = true;
+            timeRemaining = 60; // 1 minute preparation
+            
+            // Update UI
+            document.getElementById('prepareBtn').disabled = true;
+            document.getElementById('prepareBtn').textContent = '⏱️ Preparing...';
+            document.getElementById('statusDisplay').textContent = '📝 Preparation time - Think about your response and make notes';
+            document.getElementById('statusDisplay').className = 'status-display preparing';
+            
+            // Start countdown
+            updateTimerDisplay();
+            currentTimer = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+                
+                if (timeRemaining <= 0) {
+                    finishPreparation();
+                }
+            }, 1000);
+        }
+
+        // Finish preparation and enable recording
+        function finishPreparation() {
+            console.log('✅ Preparation complete, enabling recording');
+            clearInterval(currentTimer);
+            isPreparationPhase = false;
+            
+            // Update UI for recording phase
+            document.getElementById('recordBtn').disabled = false;
+            document.getElementById('statusDisplay').textContent = '🎤 Ready to record your 2-minute academic achievement monologue';
+            document.getElementById('statusDisplay').className = 'status-display';
+            document.getElementById('timerLabel').textContent = 'Recording Time';
+            
+            // Set timer for recording phase
+            timeRemaining = 120; // 2 minutes for recording
+            updateTimerDisplay();
+        }
+
+        // Start recording
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        echoCancellation: true,
+                        noiseSuppression: true,
+                        sampleRate: 44100
+                    } 
+                });
+                
+                audioChunks = [];
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: 'audio/webm;codecs=opus'
+                });
+                
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+                
+                mediaRecorder.onstop = () => {
+                    originalAudioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    const audioUrl = URL.createObjectURL(originalAudioBlob);
+                    
+                    // Store audio URL for playback
+                    window.currentAudioUrl = audioUrl;
+                    
+                    // Update UI to recorded state
+                    document.getElementById('playBtn').disabled = false;
+                    document.getElementById('processBtn').disabled = false;
+                    document.getElementById('statusDisplay').textContent = '✅ Recording complete! You can play it back or analyze your monologue';
+                    document.getElementById('statusDisplay').className = 'status-display';
+                };
+                
+                mediaRecorder.start();
+                isRecording = true;
+                recordingSeconds = 0;
+                
+                // Update UI to recording state
+                document.getElementById('recordBtn').disabled = true;
+                document.getElementById('recordBtn').classList.add('recording');
+                document.getElementById('recordBtn').textContent = '🎤 Recording...';
+                document.getElementById('stopBtn').disabled = false;
+                document.getElementById('statusDisplay').textContent = '🔴 Recording your academic achievement monologue...';
+                document.getElementById('statusDisplay').className = 'status-display recording';
+                
+                // Start recording timer
+                currentTimer = setInterval(() => {
+                    timeRemaining--;
+                    recordingSeconds++;
+                    updateTimerDisplay();
+                    
+                    if (timeRemaining <= 0) {
+                        stopRecording();
+                    }
+                }, 1000);
+                
+                console.log('🎙️ Recording started for Academic Achievement monologue');
+                
+            } catch (error) {
+                console.error('❌ Error starting recording:', error);
+                alert('Unable to access microphone. Please check your permissions.');
+            }
+        }
+
+        // Stop recording
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                mediaRecorder.stream.getTracks().forEach(track => track.stop());
+                isRecording = false;
+                
+                clearInterval(currentTimer);
+                
+                // Update UI
+                document.getElementById('recordBtn').classList.remove('recording');
+                document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+                document.getElementById('stopBtn').disabled = true;
+                
+                console.log('⏹️ Recording stopped');
+            }
+        }
+
+        // Play recording
+        function playRecording() {
+            if (window.currentAudioUrl) {
+                const audio = new Audio(window.currentAudioUrl);
+                audio.play();
+                console.log('▶️ Playing recording');
+            }
+        }
+
+        // Process audio and show analysis
+        async function processAudio() {
+            if (!originalAudioBlob) return;
+            
+            const analysisSection = document.getElementById('analysis');
+            const transcriptionText = document.getElementById('transcriptionText');
+            const feedbackText = document.getElementById('feedbackText');
+            
+            // Show analysis section with processing indicator
+            analysisSection.classList.remove('hidden');
+            feedbackText.innerHTML = '<div class="analysis-processing">🔄 Analyzing your monologue...</div>';
+            transcriptionText.textContent = 'Loading example response...';
+            
+            document.getElementById('statusDisplay').textContent = '🧠 Analyzing your academic achievement monologue...';
+            
+            try {
+                // Step 1: Simulate speech-to-text conversion
+                feedbackText.innerHTML = '<div class="analysis-processing">🎙️ Converting speech to text...</div>';
+                const transcript = await simulateSpeechToText(originalAudioBlob);
+                
+                // Step 2: Analyze the transcribed text
+                feedbackText.innerHTML = '<div class="analysis-processing">🧠 Analyzing your academic presentation skills...</div>';
+                const analysis = await analyzeMonologueResponse(transcript);
+                
+                // Step 3: Display results
+                const currentCard = document.getElementById('questionSelect').value;
+                const exampleResponse = getAcademicExampleResponse(currentCard);
+                
+                // Show example response (unchanged)
+                transcriptionText.textContent = exampleResponse;
+                
+                // Show personalized feedback based on actual recording
+                feedbackText.textContent = analysis.personalizedFeedback;
+                
+                // Scroll to show completed analysis
+                setTimeout(() => {
+                    analysisSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+                
+                document.getElementById('statusDisplay').textContent = '✅ Analysis complete! Review your personalized feedback below.';
+                
+                console.log('📊 Audio analysis completed with personalized feedback');
+                
+            } catch (error) {
+                console.error('Processing Error:', error);
+                document.getElementById('statusDisplay').textContent = '❌ Error during analysis. Please try again.';
+                
+                // Reset analysis section on error
+                feedbackText.textContent = 'Analysis failed. Please try recording again.';
+                transcriptionText.textContent = 'Example response will appear after successful analysis.';
+            }
+        }
+
+        // Simulate Speech-to-Text conversion
+        async function simulateSpeechToText(audioBlob) {
+            // Simulate processing time
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Analyze audio properties
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            
+            return new Promise((resolve) => {
+                audio.addEventListener('loadedmetadata', () => {
+                    const duration = audio.duration;
+                    const currentCard = document.getElementById('questionSelect').value;
+                    
+                    let transcript = generateSimulatedMonologueTranscript(currentCard, duration);
+                    transcript.recordingDuration = duration;
+                    
+                    resolve(transcript);
+                });
+                audio.load();
+            });
+        }
+
+        // Generate simulated transcript for monologue
+        function generateSimulatedMonologueTranscript(cardNumber, duration) {
+            const baseResponses = {
+                1: "One of my most important academic achievements was",
+                2: "The research project I'd like to describe is",
+                3: "I received an academic award for",
+                4: "A challenging academic goal I accomplished was",
+                5: "A significant milestone in my academic journey was",
+                6: "An academic success that made me particularly proud was"
+            };
+            
+            let response = baseResponses[cardNumber] || "My academic achievement involved";
+            
+            // Add duration-based assessment
+            if (duration < 60) {
+                response += " [Response was quite short - aim for closer to 2 minutes for better band scores]";
+            } else if (duration >= 90 && duration <= 150) {
+                response += " [Good length - well within the optimal range for Part 2 monologues]";
+            } else if (duration > 150) {
+                response += " [Excellent detailed response - comprehensive coverage of all bullet points]";
+            } else {
+                response += " [Adequate length - could be developed further for higher band scores]";
+            }
+            
+            return response;
+        }
+
+        // Analyze monologue response
+        async function analyzeMonologueResponse(transcript) {
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            const currentCard = document.getElementById('questionSelect').value;
+            const transcriptText = typeof transcript === 'string' ? transcript : transcript.toString();
+            const duration = transcript.recordingDuration || 0;
+            
+            const wordCount = transcriptText.split(' ').length;
+            const hasAcademicTerms = /achievement|research|university|academic|study|analysis|project|award|challenge|goal|milestone/i.test(transcriptText);
+            
+            let feedback = generateMonologueFeedback(currentCard, {
+                wordCount: wordCount,
+                hasAcademicTerms: hasAcademicTerms,
+                transcript: transcriptText,
+                duration: duration
+            });
+            
+            return { personalizedFeedback: feedback };
+        }
+
+        // Generate personalized feedback for monologue
+        function generateMonologueFeedback(cardNumber, analysis) {
+            let feedback = "Based on your recorded monologue:\n\n";
+            
+            // Analyze monologue duration (Part 2 should be longer)
+            if (analysis.duration && analysis.duration > 0) {
+                if (analysis.duration < 60) {
+                    feedback += "⏱️ **Monologue Duration**: " + Math.round(analysis.duration) + " seconds - This is quite short for IELTS Part 2. Aim for 90-120 seconds to fully address all bullet points.\n\n";
+                } else if (analysis.duration >= 90 && analysis.duration <= 150) {
+                    feedback += "✅ **Monologue Duration**: " + Math.round(analysis.duration) + " seconds - Excellent timing for Part 2! This allows for comprehensive coverage of the topic.\n\n";
+                } else if (analysis.duration > 150) {
+                    feedback += "👍 **Monologue Duration**: " + Math.round(analysis.duration) + " seconds - Very detailed response. Good comprehensive coverage, though ensure all time is used effectively.\n\n";
+                } else {
+                    feedback += "📈 **Monologue Duration**: " + Math.round(analysis.duration) + " seconds - Good length, could be extended slightly for better development.\n\n";
+                }
+            }
+            
+            // Structure and development analysis
+            if (analysis.wordCount < 20) {
+                feedback += "🔍 **Content Development**: Your response appears brief. For Part 2, elaborate on each bullet point with specific examples, details, and personal experiences.\n\n";
+            } else if (analysis.wordCount > 100) {
+                feedback += "✅ **Content Development**: Excellent detailed response! You provided comprehensive information covering multiple aspects of your achievement.\n\n";
+            } else {
+                feedback += "👍 **Content Development**: Good detail level. Consider adding more specific examples or expanding on the impact of your achievement.\n\n";
+            }
+            
+            // Academic vocabulary usage
+            if (analysis.hasAcademicTerms) {
+                feedback += "✅ **Academic Language**: Excellent use of achievement and academic-related vocabulary. This demonstrates strong scholarly communication skills.\n\n";
+            } else {
+                feedback += "💡 **Academic Language**: Try incorporating more academic terms related to achievements, challenges, research, or educational processes to strengthen your response.\n\n";
+            }
+            
+            // Cue card specific feedback
+            const cardSpecificTips = {
+                1: "For academic achievements, describe the specific accomplishment, timeline, challenges overcome, and personal significance with concrete details.",
+                2: "Research project descriptions should include methodology, findings, challenges, and learning outcomes with specific examples from your work.",
+                3: "Award descriptions should explain the criteria, selection process, recognition ceremony, and impact on your academic motivation and future goals.",
+                4: "Challenging goals should detail the difficulty, your strategy for achievement, obstacles faced, and how success changed your academic approach.",
+                5: "Academic milestones should describe the journey to reach this point, preparation required, significance in your education, and future implications.",
+                6: "Pride-inducing successes should explain what made it difficult, your emotional response, others' reactions, and lasting impact on your confidence."
+            };
+            
+            feedback += "🎯 **Monologue Structure**: " + (cardSpecificTips[cardNumber] || "Address all bullet points systematically with specific examples and personal reflection.");
+            feedback += "\n\n📈 **Next Steps**: Practice organizing your ideas during preparation time, use transitional phrases between points, and develop each bullet point with specific examples.";
+            feedback += "\n\n💡 **Part 2 Success**: Remember to speak continuously for the full 2 minutes, address all bullet points, and maintain coherent organization throughout your monologue.";
+            
+            return feedback;
+        }
+
+        // Get example responses for different cue cards
+        function getAcademicExampleResponse(cardNumber) {
+            const examples = {
+                1: "I'd like to talk about my most significant academic achievement, which was completing my honors thesis in Environmental Science last year. This was a year-long research project that I conducted during my final year at university, focusing on sustainable water management systems in urban areas. The achievement was particularly meaningful because it represented the culmination of four years of study and allowed me to contribute original research to my field. I faced several major challenges during this process, including access to reliable data sources and coordinating with multiple government agencies for site visits. However, I overcame these obstacles by developing strong networking skills and learning to be more persistent in my communications. This achievement was incredibly important to me because it not only earned me the highest grade in my program but also led to a publication opportunity and opened doors for my current graduate studies. The experience taught me valuable lessons about perseverance, independent research, and the satisfaction that comes from making a meaningful contribution to academic knowledge.",
+                
+                2: "The research project I want to describe was my investigation into renewable energy adoption patterns in rural communities, which I completed as part of my master's program in Sustainable Development. I conducted this research over six months, using a mixed-methods approach that combined quantitative surveys with qualitative interviews from residents in five different rural areas. The project involved extensive fieldwork, data collection, and statistical analysis using specialized software. During the process, I encountered significant difficulties including language barriers when interviewing community members, unreliable internet connectivity for data transmission, and challenges in accessing remote locations. I overcame these obstacles by learning basic phrases in local dialects, developing offline data collection methods, and partnering with local community leaders who helped facilitate access. This research experience taught me invaluable lessons about the complexity of implementing sustainable technologies in different cultural contexts. It also improved my project management skills, enhanced my cultural sensitivity, and reinforced my passion for environmental research. The findings were ultimately presented at an international conference and contributed to policy recommendations for government agencies working on rural development initiatives.",
+                
+                3: "I'd like to tell you about the Dean's Award for Academic Excellence that I received at the end of my second year studying International Relations at university. This award is given annually to the top-performing student in each faculty, based on academic grades, research contributions, and community involvement. I qualified for this recognition through maintaining a perfect GPA while also contributing to several research projects with my professors and actively participating in the university's Model United Nations program. The award was presented by the Dean of Arts during our annual academic ceremony, attended by faculty, students, and families. It was quite an emotional moment for me, as I had worked incredibly hard to balance my studies with extracurricular activities and part-time work to support my education. Receiving this recognition significantly boosted my academic confidence and motivation to continue pursuing excellence in my studies. It also opened up new opportunities, including a research assistant position with one of the department's leading professors and eligibility for exclusive scholarship programs. Most importantly, it validated my decision to push myself academically and showed me that dedication and hard work truly pay off in the long run.",
+                
+                4: "A particularly challenging academic goal that I accomplished was mastering advanced statistical analysis methods during my graduate program in Psychology. When I first started my master's degree, I had very limited experience with statistical software and found quantitative research methods quite intimidating. This was especially challenging because my thesis research required sophisticated data analysis techniques including multivariate regression and factor analysis. The goal seemed almost impossible at first because I was starting from such a basic level while my classmates had stronger mathematical backgrounds. I tackled this challenge systematically by enrolling in additional statistics courses, spending extra hours in the computer lab practicing with statistical software, and working closely with a statistics tutor twice a week. I also formed a study group with other students who were struggling with similar concepts, which helped create a supportive learning environment. After months of intensive study and practice, I not only mastered these techniques but actually began helping other students with their statistical analyses. Accomplishing this goal completely changed my perspective on my capabilities and taught me that with sufficient dedication and the right learning strategies, I could overcome seemingly insurmountable academic challenges. It also opened up new research possibilities for my future academic career.",
+                
+                5: "A significant milestone in my academic journey was successfully defending my doctoral dissertation proposal last spring, which marked the transition from coursework to independent research in my PhD program in Cognitive Neuroscience. This milestone represented three years of intensive preparation, during which I completed comprehensive examinations, developed expertise in neuroimaging techniques, and refined my research focus through extensive literature review. The preparation process was demanding and required me to synthesize knowledge from multiple disciplines including psychology, neuroscience, computer science, and statistics. I had to demonstrate mastery of both theoretical concepts and practical research skills, including designing experiments, analyzing complex datasets, and articulating the significance of my proposed research to a committee of experts. The proposal defense itself was a rigorous two-hour examination where I presented my research plans and answered detailed questions about methodology, theoretical framework, and potential implications. This milestone was incredibly meaningful because it represented official recognition that I was ready to conduct independent research at the doctoral level. It validated years of hard work and academic preparation while also serving as a launching point for the most important phase of my doctoral studies. The experience taught me valuable skills in presentation, critical thinking, and defending ideas under pressure that will serve me well throughout my academic career.",
+                
+                6: "An academic success that made me particularly proud was being selected to present my undergraduate research at the National Conference for Student Researchers in my field of Biochemistry. This opportunity arose from a year-long independent research project I conducted under the mentorship of a faculty member, investigating enzyme behavior in extreme temperature conditions. What made this achievement especially difficult was that I was competing against graduate students and advanced undergraduates from universities across the country, many with more extensive research experience than I had. The selection process was highly competitive, requiring submission of a detailed research abstract, preliminary results, and recommendations from faculty supervisors. When I received the acceptance notification, my professors were genuinely surprised and excited, as our university had never had an undergraduate selected for this particular conference before. My family was incredibly proud, especially since I was the first person in my family to attend university, let alone present research at a national level. I felt so proud of this accomplishment because it represented not just academic achievement, but also validation that I belonged in the scientific community despite coming from a non-academic background. The experience of presenting my research to experts in the field, receiving valuable feedback, and networking with other young scientists was transformative and solidified my commitment to pursuing graduate studies and a career in scientific research."
+            };
+            
+            return examples[cardNumber] || "Excellent academic achievement response! Focus on providing specific details, addressing all bullet points, and maintaining coherent organization throughout your 2-minute monologue.";
+        }
+
+        // Update timer display
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timerDisplay').textContent = timeString;
+        }
+
+        // Navigation functions
+        function goToNextCard() {
+            const currentCard = parseInt(document.getElementById('questionSelect').value);
+            const nextCard = currentCard >= 6 ? 1 : currentCard + 1;
+            document.getElementById('questionSelect').value = nextCard;
+            updateCurrentQuestion();
+            document.getElementById('cueCardContent').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function refreshCurrentCard() {
+            resetSession();
+            document.getElementById('cueCardContent').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetSession() {
+            // Clear timers
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+            
+            // Reset variables
+            isPreparationPhase = true;
+            isRecording = false;
+            timeRemaining = 60;
+            recordingSeconds = 0;
+            originalAudioBlob = null;
+            
+            // Reset UI
+            document.getElementById('prepareBtn').disabled = false;
+            document.getElementById('prepareBtn').textContent = '⏱️ Start Preparation';
+            document.getElementById('recordBtn').disabled = true;
+            document.getElementById('recordBtn').classList.remove('recording');
+            document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+            document.getElementById('stopBtn').disabled = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('processBtn').disabled = true;
+            document.getElementById('timerLabel').textContent = 'Preparation Time';
+            document.getElementById('statusDisplay').textContent = 'Ready to begin preparation for your academic achievement monologue';
+            document.getElementById('statusDisplay').className = 'status-display';
+            
+            // Hide analysis section
+            document.getElementById('analysis').classList.add('hidden');
+            
+            // Reset timer display
+            updateTimerDisplay();
+        }
+
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Academic Speaking Part 2 - Going to Academic Introduction');
+            window.location.href = 'IELTS_Academic_Speaking_Introduction.html';
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Update active menu item
+            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Menu toggle functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (isRecording) {
+                stopRecording();
+            }
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+        });
+
+    </script>
+</body>
+</html> 
