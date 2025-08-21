@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS - International English Language Testing System</title>
+    
+    <!-- Font Awesome CSS (Embedded icons) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in application */
+        .fa-home:before { content: "\f015"; }
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-clipboard-check:before { content: "\f46c"; }
+        .fa-chevron-down:before { content: "\f078"; }
+        .fa-headphones:before { content: "\f025"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-edit:before { content: "\f044"; }
+        .fa-microphone:before { content: "\f130"; }
+        .fa-clipboard-list:before { content: "\f46d"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-times:before { content: "\f00d"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-clock:before { content: "\f017"; }
+        .fa-certificate:before { content: "\f0a3"; }
+        .fa-mobile-alt:before { content: "\f3cd"; }
+        .fa-headset:before { content: "\f590"; }
+        .fa-globe:before { content: "\f0ac"; }
+        .fa-lightbulb:before { content: "\f0eb"; }
+        .fa-rocket:before { content: "\f135"; }
+        .fa-heart:before { content: "\f004"; }
+        .fa-star:before { content: "\f005"; }
+        .fa-check:before { content: "\f00c"; }
+        .fa-language:before { content: "\f1ab"; }
+        .fa-flag:before { content: "\f024"; }
+        .fa-crown:before { content: "\f521"; }
+        .fa-sign-in-alt:before { content: "\f2f6"; }
+        .fa-user-plus:before { content: "\f234"; }
+        .fa-user:before { content: "\f007"; }
+        .fa-cog:before { content: "\f013"; }
+        .fa-sign-out-alt:before { content: "\f2f5"; }
+        .fa-shield-alt:before { content: "\f3ed"; }
+        .fa-calendar-alt:before { content: "\f073"; }
+        .fa-calendar-day:before { content: "\f783"; }
+        .fa-calendar-week:before { content: "\f784"; }
+        .fa-lock:before { content: "\f023"; }
+        .fa-arrow-up:before { content: "\f062"; }
+    </style>
+
+    <!-- Font Awesome (CDN - fallback) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Mobile-optimized root styles */
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            touch-action: manipulation;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #3c2d1f;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #cd853f 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Improve tap targets and touch response */
+        button, a, input, select, textarea {
+            touch-action: manipulation;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #3c2d1f;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            width: 100%;
+            min-height: 80px;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 0.5rem;
+        }
+
+        .nav-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-height: 45px;
+        }
+
+        .nav-bottom-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            padding-top: 0.3rem;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Master Gammapace Logo for header */
+        .master-guruvammal-logo {
+            /* Layout & Structure */
+            position: relative !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 40px !important;
+            height: 40px !important;
+            box-sizing: border-box !important;
+            
+            /* Typography */
+            font-family: 'Century Gothic', sans-serif !important;
+            font-size: 24px !important;
+            font-weight: 900 !important;
+            letter-spacing: -0.5px !important;
+            line-height: 1 !important;
+            color: #5d3a0a !important;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3) !important;
+            
+            /* Golden Square Background */
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%) !important;
+            backdrop-filter: blur(10px) !important;
+            border-radius: 4px !important;
+            padding: 8px !important;
+            
+            /* Visual Effects */
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2), 0 0 20px rgba(212, 175, 55, 0.1) !important;
+            z-index: 10000 !important;
+            
+            /* Interaction */
+            transition: all 0.3s ease !important;
+        }
+
+        /* Letter P with circle corner element within Master Gammapace Logo */
+        .master-guruvammal-logo .musical-corner {
+            position: absolute !important;
+            top: 2px !important;
+            right: 3px !important;
+            width: 8px !important;
+            height: 8px !important;
+            border-radius: 50% !important;
+            background-color: transparent !important;
+            border: 0.8px solid #5d3a0a !important;
+            color: #5d3a0a !important;
+            font-family: 'Century Gothic', sans-serif !important;
+            font-size: 4.5px !important;
+            font-weight: 900 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3) !important;
+            box-shadow: none !important;
+        }
+
+        /* Optional hover effect for Master Gammapace Logo */
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Ensure logo container fits Master Logo properly */
+        .logo .master-guruvammal-logo {
+            margin-right: 0.5rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #8b4513;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .auth-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: white;
+        }
+
+        .btn-premium:hover {
+            background: linear-gradient(135deg, #b8860b, #d4af37);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #8b4513;
+            border: 1px solid #8b4513;
+        }
+
+        .btn-secondary:hover {
+            background: #8b4513;
+            color: white;
+        }
+
+        .btn-primary {
+            background: #8b4513;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #a0522d;
+            transform: translateY(-1px);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: #3c2d1f;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #8b4513;
+            background: rgba(139, 69, 19, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Submenu styles */
+        .ielts-general-submenu,
+        .ielts-academic-submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            min-width: 200px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .ielts-general-submenu.show,
+        .ielts-academic-submenu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .ielts-general-submenu a,
+        .ielts-academic-submenu a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            color: #3c2d1f;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            border-radius: 0;
+        }
+
+        .ielts-general-submenu a:hover,
+        .ielts-academic-submenu a:hover {
+            background: rgba(139, 69, 19, 0.1);
+            color: #8b4513;
+            transform: translateX(5px);
+        }
+
+        .ielts-general-arrow,
+        .ielts-academic-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .ielts-general-menu.active .ielts-general-arrow,
+        .ielts-academic-menu.active .ielts-academic-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-top: 120px;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: flex-start;
+            justify-content: center;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 750px;
+            width: 95%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            margin: 0 auto;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        /* Sign-in Modal - Wider to accommodate image and form */
+        #signInModal .modal-content {
+            max-width: 850px;
+            width: 95%;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        /* Sign-up Modal - Same layout as sign-in modal */
+        #signUpModal .modal-content {
+            max-width: 850px;
+            width: 95%;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        /* Shared styles for both sign-in and sign-up image sections */
+        .signin-image-section,
+        .signup-image-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            padding: 1rem;
+            min-height: 400px;
+        }
+
+        .signin-image-section img,
+        .signup-image-section img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Shared styles for both sign-in and sign-up form sections */
+        .signin-form-section,
+        .signup-form-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1rem;
+            min-width: 300px;
+        }
+
+        /* Compact styling for sign-up form specifically */
+        .signup-form-section {
+            padding: 0.8rem;
+        }
+
+        .signup-form-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            margin-top: 0;
+        }
+
+        .signup-form-section .form-group {
+            margin-bottom: 0.7rem;
+        }
+
+        .signup-form-section .form-group label {
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .signup-form-section .form-group input,
+        .signup-form-section .form-group select {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            border-width: 1px;
+        }
+
+        .signup-form-section .form-group small {
+            font-size: 0.75rem;
+            margin-top: 0.2rem;
+        }
+
+        .signup-form-section .btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .signup-form-section .modal-transition {
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+        }
+
+        .signup-form-section .modal-transition p {
+            font-size: 0.85rem;
+        }
+
+        /* Adjust close button for both wider modals */
+        #signInModal .close-modal,
+        #signUpModal .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+
+
+        /* Sign-in and Signup Buttons - Centered and smaller */
+        #signInModal .btn,
+        #signUpModal .btn {
+            width: auto;
+            min-width: 140px;
+            margin: 0 auto;
+            display: block;
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+            margin-top: -10px;
+        }
+
+        .close-modal:hover {
+            color: #000;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.7rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #8b4513;
+        }
+
+        .alert {
+            display: none;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        .alert.success {
+            background: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+
+        .alert.error {
+            background: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+
+        /* Premium Modal Styles */
+        .premium-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .premium-subtitle {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .subscription-plans-section {
+            margin: 2rem 0;
+        }
+
+        .plans-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 1rem;
+        }
+
+        .plans-title i {
+            color: #8b4513;
+            margin-right: 0.5rem;
+        }
+
+        .subscription-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-option {
+            position: relative;
+        }
+
+        .plan-option input[type="radio"] {
+            display: none;
+        }
+
+        .plan-label {
+            display: block;
+            padding: 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .plan-option input[type="radio"]:checked + .plan-label {
+            border-color: #8b4513;
+            background: rgba(139, 69, 19, 0.05);
+        }
+
+        .plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price {
+            text-align: right;
+        }
+
+        .price-amount {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .price-period {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .plan-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .plan-instruction {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #fff9f0, #fdf2e9);
+            border: 2px dashed #8b4513;
+            border-radius: 8px;
+            color: #8b4513;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .payment-form-section {
+            margin-top: 2rem;
+            scroll-margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Highlight effect when payment section becomes visible */
+        .payment-form-section.highlighted {
+            box-shadow: 0 0 20px rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            background: rgba(139, 69, 19, 0.02);
+        }
+
+        .payment-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 1rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-group.full-width {
+            flex: 1;
+        }
+
+        .form-group.half-width {
+            flex: 0.5;
+        }
+
+        .security-notice {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            padding: 0.8rem;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 8px;
+            color: #8b4513;
+            font-size: 0.9rem;
+        }
+
+        .payment-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-btn:hover {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            transform: translateY(-2px);
+        }
+
+        /* Modal transition links */
+        .modal-transition {
+            margin-top: 1.5rem;
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .modal-transition p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .modal-transition a {
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-transition a:hover {
+            color: #d4af37;
+            text-decoration: underline;
+        }
+
+        /* Modal transition spinner */
+        .modal-spinner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            z-index: 1000;
+        }
+
+        .modal-spinner-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #8b4513;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 2px 10px rgba(139, 69, 19, 0.2);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Smooth modal content transitions */
+        .modal-content {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .modal-content.transitioning {
+            opacity: 0.3;
+            transform: scale(0.98);
+        }
+
+        /* Empty content placeholder */
+        .empty-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .empty-content h1 {
+            font-size: 2.5rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+
+        .empty-content p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                border-radius: 0 0 8px 8px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-menu a {
+                width: 100%;
+                justify-content: flex-start;
+                padding: 0.8rem;
+            }
+
+            .auth-section #guestButtons {
+                gap: 0.2rem;
+            }
+
+            .btn {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.6rem;
+            }
+
+            /* Mobile responsive for both sign-in and sign-up modals */
+            #signInModal .modal-content,
+            #signUpModal .modal-content {
+                flex-direction: column;
+                max-width: 95%;
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+
+            .signin-image-section,
+            .signup-image-section {
+                min-height: 250px;
+                order: 1;
+            }
+
+            .signin-form-section,
+            .signup-form-section {
+                order: 2;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Top Row: Logo and Auth Buttons -->
+            <div class="nav-top-row">
+                <a href="../index.html" class="logo">
+                    <div class="master-guruvammal-logo">
+                        Ga<span class="musical-corner">P</span>
+                    </div>
+                </a>
+                
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                
+                <div class="auth-section">
+                    <!-- Guest User Buttons -->
+                    <div id="guestButtons" style="display: flex; gap: 0.4rem; align-items: center;">
+                        <button class="btn btn-premium" onclick="showPremiumModal()">
+                            <i class="fas fa-crown"></i> Subscription
+                        </button>
+                        <button class="btn btn-secondary" onclick="showSignInModal()">
+                            <i class="fas fa-sign-in-alt"></i> Sign In
+                        </button>
+                        <button class="btn btn-primary" onclick="showSignUpModal()">
+                            <i class="fas fa-user-plus"></i> Sign Up
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Row: Navigation Menu -->
+            <div class="nav-bottom-row">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" onclick="selectHome();"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="ielts-general-menu" onmouseenter="cancelSubmenuTimeout('ieltsGeneral')" onmouseleave="startSubmenuTimeout('ieltsGeneral')">
+                        <a href="#ielts-general" onclick="toggleIeltsGeneralSubmenu(event)"><i class="fas fa-clipboard-check"></i> IELTS General <i class="fas fa-chevron-down ielts-general-arrow"></i></a>
+                        <div class="ielts-general-submenu" id="ieltsGeneralSubmenu" onmouseenter="cancelSubmenuTimeout('ieltsGeneral')" onmouseleave="startSubmenuTimeout('ieltsGeneral')">
+                            <a href="#ielts-general-listening-practice" onclick="selectIeltsGeneralOption('Listening')"><i class="fas fa-headphones"></i> Listening</a>
+                            <a href="#ielts-general-reading-practice" onclick="selectIeltsGeneralOption('Reading')"><i class="fas fa-book-open"></i> Reading</a>
+                            <a href="#ielts-general-writing-practice" onclick="selectIeltsGeneralOption('Writing')"><i class="fas fa-edit"></i> Writing</a>
+                            <a href="#ielts-general-speaking-practice" onclick="selectIeltsGeneralOption('Speaking')"><i class="fas fa-microphone"></i> Speaking</a>
+                        </div>
+                    </li>
+                    <li class="ielts-academic-menu" onmouseenter="cancelSubmenuTimeout('ieltsAcademic')" onmouseleave="startSubmenuTimeout('ieltsAcademic')">
+                        <a href="#ielts-academic" onclick="toggleIeltsAcademicSubmenu(event)"><i class="fas fa-graduation-cap"></i> IELTS Academic <i class="fas fa-chevron-down ielts-academic-arrow"></i></a>
+                        <div class="ielts-academic-submenu" id="ieltsAcademicSubmenu" onmouseenter="cancelSubmenuTimeout('ieltsAcademic')" onmouseleave="startSubmenuTimeout('ieltsAcademic')">
+                            <a href="#ielts-academic-listening-practice" onclick="selectIeltsAcademicOption('Listening')"><i class="fas fa-headphones"></i> Listening</a>
+                            <a href="#ielts-academic-reading-practice" onclick="selectIeltsAcademicOption('Reading')"><i class="fas fa-book-open"></i> Reading</a>
+                            <a href="#ielts-academic-writing-practice" onclick="selectIeltsAcademicOption('Writing')"><i class="fas fa-edit"></i> Writing</a>
+                            <a href="#ielts-academic-speaking-practice" onclick="selectIeltsAcademicOption('Speaking')"><i class="fas fa-microphone"></i> Speaking</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- IELTS Hero Section -->
+        <section class="hero-section fade-in" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); padding: 4rem 2rem; text-align: center; margin-bottom: 3rem; position: relative; overflow: hidden; max-width: 1200px; margin-left: auto; margin-right: auto; margin-bottom: 3rem;">
+            <h1 style="font-size: 3rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem; position: relative; z-index: 1; font-family: 'Century Gothic', sans-serif;">GammaPace IELTS Practice Module</h1>
+            <h2 style="font-size: 1.5rem; color: #3c2d1f; margin-bottom: 2rem; position: relative; z-index: 1; font-family: 'Century Gothic', sans-serif;">Comprehensive Interactive IELTS Preparation Platform</h2>
+            <p style="font-size: 1.1rem; color: #666; max-width: 900px; margin: 0 auto 2rem; position: relative; z-index: 1; line-height: 1.6; text-align: justify; font-family: 'Century Gothic', sans-serif;">
+                GammaPace offering with Practice module for the IELTS provides a comprehensive and interactive platform designed to help learners prepare effectively for the International English Language Testing System (IELTS)—the world's most widely accepted English proficiency test. Recognized by over 12,000 institutions globally, including universities, employers, and immigration authorities, IELTS is taken by more than 4 million candidates annually to achieve their academic, professional, or migration aspirations. GammaPace's Practice module simulates real test conditions, offering targeted exercises across Listening, Reading, Writing, and Speaking sections. With personalized feedback, performance tracking, and expert tips, learners gain the confidence and skills needed to succeed. Whether you're aiming to study abroad, advance your career, or relocate, GammaPace empowers you to reach your IELTS goals efficiently.
+            </p>
+        </section>
+
+        <!-- Countries Using IELTS -->
+        <section style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 3rem 2rem; margin-bottom: 3rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #8b4513; margin-bottom: 3rem; font-weight: bold;">Countries That Accept IELTS</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div style="background: rgba(139, 69, 19, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; border-left: 4px solid #d4af37;">
+                    <h3 style="font-size: 1.3rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem;">🇦🇺 Australia</h3>
+                    <p style="color: #666; line-height: 1.6;">All universities and the Department of Home Affairs for immigration</p>
+                </div>
+                <div style="background: rgba(139, 69, 19, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; border-left: 4px solid #d4af37;">
+                    <h3 style="font-size: 1.3rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem;">🇨🇦 Canada</h3>
+                    <p style="color: #666; line-height: 1.6;">Immigration, Refugees and Citizenship Canada (IRCC) and all universities</p>
+                </div>
+                <div style="background: rgba(139, 69, 19, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; border-left: 4px solid #d4af37;">
+                    <h3 style="font-size: 1.3rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem;">🇬🇧 United Kingdom</h3>
+                    <p style="color: #666; line-height: 1.6;">UK Visas and Immigration (UKVI) and all universities</p>
+                </div>
+                <div style="background: rgba(139, 69, 19, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; border-left: 4px solid #d4af37;">
+                    <h3 style="font-size: 1.3rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem;">🇺🇸 United States</h3>
+                    <p style="color: #666; line-height: 1.6;">Over 3,400 institutions including Ivy League universities</p>
+                </div>
+                <div style="background: rgba(139, 69, 19, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; border-left: 4px solid #d4af37;">
+                    <h3 style="font-size: 1.3rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem;">🇳🇿 New Zealand</h3>
+                    <p style="color: #666; line-height: 1.6;">Immigration New Zealand and all educational institutions</p>
+                </div>
+                <div style="background: rgba(139, 69, 19, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; border-left: 4px solid #d4af37;">
+                    <h3 style="font-size: 1.3rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem;">🌍 140+ Countries</h3>
+                    <p style="color: #666; line-height: 1.6;">Including Singapore, Hong Kong, South Africa, and European nations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why IELTS is Preferred -->
+        <section style="margin-bottom: 3rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #8b4513; margin-bottom: 3rem; font-weight: bold;">Why IELTS is the Preferred Choice</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <i class="fas fa-globe" style="font-size: 3rem; color: #8b4513; margin-bottom: 1rem; display: block; text-align: center;"></i>
+                    <h3 style="font-size: 1.5rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem; text-align: center;">Global Recognition</h3>
+                    <p style="color: #666; text-align: center; line-height: 1.8;">
+                        Accepted by 12,000+ organizations worldwide including top universities, employers, and immigration authorities.
+                    </p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <i class="fas fa-users" style="font-size: 3rem; color: #8b4513; margin-bottom: 1rem; display: block; text-align: center;"></i>
+                    <h3 style="font-size: 1.5rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem; text-align: center;">Human Interaction</h3>
+                    <p style="color: #666; text-align: center; line-height: 1.8;">
+                        Speaking test is conducted face-to-face with a certified examiner, providing a more natural and fair assessment.
+                    </p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <i class="fas fa-calendar-alt" style="font-size: 3rem; color: #8b4513; margin-bottom: 1rem; display: block; text-align: center;"></i>
+                    <h3 style="font-size: 1.5rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem; text-align: center;">Flexible Scheduling</h3>
+                    <p style="color: #666; text-align: center; line-height: 1.8;">
+                        Available 48 times a year with test centers in over 140 countries. Choose from Academic or General Training modules.
+                    </p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: #8b4513; margin-bottom: 1rem; display: block; text-align: center;"></i>
+                    <h3 style="font-size: 1.5rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem; text-align: center;">Trusted & Secure</h3>
+                    <p style="color: #666; text-align: center; line-height: 1.8;">
+                        Jointly owned by British Council, IDP, and Cambridge Assessment English with rigorous security measures.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IELTS Test Format -->
+        <section style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 3rem 2rem; margin-bottom: 3rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #8b4513; margin-bottom: 3rem; font-weight: bold;">IELTS Test Format</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div style="background: linear-gradient(135deg, #8b4513, #d4af37); color: white; border-radius: 12px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-headphones" style="font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">Listening</h3>
+                    <p style="margin-bottom: 1rem; opacity: 0.9;">30 minutes + 10 minutes transfer time</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">4 sections with 40 questions testing various listening skills including conversations and monologues.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #8b4513, #d4af37); color: white; border-radius: 12px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-book-open" style="font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">Reading</h3>
+                    <p style="margin-bottom: 1rem; opacity: 0.9;">60 minutes</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">3 reading passages with 40 questions. Academic has academic texts; General has everyday materials.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #8b4513, #d4af37); color: white; border-radius: 12px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-edit" style="font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">Writing</h3>
+                    <p style="margin-bottom: 1rem; opacity: 0.9;">60 minutes</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">2 tasks: Task 1 (150 words) - graphs/letters; Task 2 (250 words) - essay on given topic.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #8b4513, #d4af37); color: white; border-radius: 12px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-microphone" style="font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">Speaking</h3>
+                    <p style="margin-bottom: 1rem; opacity: 0.9;">11-14 minutes</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Face-to-face interview with 3 parts: introduction, cue card topic, and discussion.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IELTS Band Scores -->
+        <section style="margin-bottom: 3rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #8b4513; margin-bottom: 3rem; font-weight: bold;">Understanding IELTS Band Scores</h2>
+            <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="text-align: center; padding: 1rem; border-radius: 8px; background: rgba(220, 53, 69, 0.1);">
+                        <h4 style="color: #dc3545; font-weight: bold; margin-bottom: 0.5rem;">Band 1-3</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Non-user to Extremely Limited User</p>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; border-radius: 8px; background: rgba(255, 193, 7, 0.1);">
+                        <h4 style="color: #ffc107; font-weight: bold; margin-bottom: 0.5rem;">Band 4-5</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Limited to Modest User</p>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; border-radius: 8px; background: rgba(40, 167, 69, 0.1);">
+                        <h4 style="color: #28a745; font-weight: bold; margin-bottom: 0.5rem;">Band 6-7</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Competent to Good User</p>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; border-radius: 8px; background: rgba(139, 69, 19, 0.1);">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 0.5rem;">Band 8-9</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Very Good to Expert User</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Required Band Scores by Country -->
+        <section style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 3rem 2rem; margin-bottom: 3rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #8b4513; margin-bottom: 3rem; font-weight: bold;">Required Band Scores by Purpose</h2>
+            
+            <!-- Immigration Requirements -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="font-size: 1.8rem; color: #8b4513; margin-bottom: 2rem; text-align: center;">Immigration Requirements</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: rgba(139, 69, 19, 0.05); border-radius: 10px; padding: 1.5rem; border: 2px solid #d4af37;">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">🇨🇦 Canada (Express Entry)</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Minimum:</strong> Band 6.0 overall</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Competitive:</strong> Band 8.0+ overall</p>
+                        <p style="color: #666; font-size: 0.9rem;">Higher scores = more points in Express Entry system</p>
+                    </div>
+                    <div style="background: rgba(139, 69, 19, 0.05); border-radius: 10px; padding: 1.5rem; border: 2px solid #d4af37;">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">🇦🇺 Australia (PR)</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Minimum:</strong> Band 6.0 overall</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Competitive:</strong> Band 7.0+ overall</p>
+                        <p style="color: #666; font-size: 0.9rem;">Points system rewards higher band scores</p>
+                    </div>
+                    <div style="background: rgba(139, 69, 19, 0.05); border-radius: 10px; padding: 1.5rem; border: 2px solid #d4af37;">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">🇬🇧 UK (Various Visas)</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Student:</strong> Band 5.5-6.5</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Work:</strong> Band 6.0-7.0</p>
+                        <p style="color: #666; font-size: 0.9rem;">Depends on visa type and pathway</p>
+                    </div>
+                    <div style="background: rgba(139, 69, 19, 0.05); border-radius: 10px; padding: 1.5rem; border: 2px solid #d4af37;">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">🇳🇿 New Zealand</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Minimum:</strong> Band 6.5 overall</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Each skill:</strong> Band 6.0+</p>
+                        <p style="color: #666; font-size: 0.9rem;">For skilled migrant and work visas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Requirements -->
+            <div>
+                <h3 style="font-size: 1.8rem; color: #8b4513; margin-bottom: 2rem; text-align: center;">Academic Requirements</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: rgba(139, 69, 19, 0.05); border-radius: 10px; padding: 1.5rem; border: 2px solid #d4af37;">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">🎓 Undergraduate</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Typical:</strong> Band 6.0-6.5</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Top Universities:</strong> Band 7.0+</p>
+                        <p style="color: #666; font-size: 0.9rem;">Varies by institution and program</p>
+                    </div>
+                    <div style="background: rgba(139, 69, 19, 0.05); border-radius: 10px; padding: 1.5rem; border: 2px solid #d4af37;">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">🎓 Postgraduate</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Typical:</strong> Band 6.5-7.0</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Top Universities:</strong> Band 7.5+</p>
+                        <p style="color: #666; font-size: 0.9rem;">Higher requirements for competitive programs</p>
+                    </div>
+                    <div style="background: rgba(139, 69, 19, 0.05); border-radius: 10px; padding: 1.5rem; border: 2px solid #d4af37;">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">📚 Foundation/Pathway</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Typical:</strong> Band 5.0-5.5</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Direct Entry:</strong> Band 6.0+</p>
+                        <p style="color: #666; font-size: 0.9rem;">Bridge programs for university entry</p>
+                    </div>
+                    <div style="background: rgba(139, 69, 19, 0.05); border-radius: 10px; padding: 1.5rem; border: 2px solid #d4af37;">
+                        <h4 style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">🔬 PhD/Research</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Minimum:</strong> Band 7.0</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;"><strong>Preferred:</strong> Band 7.5+</p>
+                        <p style="color: #666; font-size: 0.9rem;">Research programs require higher proficiency</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sign In Modal -->
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signInModal')">&times;</span>
+            
+            <!-- Spinner Overlay -->
+            <div class="modal-spinner-overlay" id="signInSpinner">
+                <div class="modal-spinner"></div>
+            </div>
+            
+            <!-- Image Section -->
+            <div class="signin-image-section">
+                <img src="../Reference-Lookup/IELTS_Signup Picture v2.jpg" alt="IELTS Sign In" loading="lazy">
+            </div>
+            
+            <!-- Form Section -->
+            <div class="signin-form-section">
+                <h2>Sign In</h2>
+                <div id="signInAlert" class="alert">
+                    <span id="signInAlertText"></span>
+                </div>
+                <form id="signInForm">
+                    <div class="form-group">
+                        <label for="signInEmail">Email:</label>
+                        <input type="email" id="signInEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signInPassword">Password:</label>
+                        <input type="password" id="signInPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                </form>
+                <div class="modal-transition">
+                    <p>Don't have an account? <a href="#" onclick="switchToSignUp()">Sign up here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signUpModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signUpModal')">&times;</span>
+            
+            <!-- Spinner Overlay -->
+            <div class="modal-spinner-overlay" id="signUpSpinner">
+                <div class="modal-spinner"></div>
+            </div>
+            
+            <!-- Image Section -->
+            <div class="signup-image-section">
+                <img src="../Reference-Lookup/IELTS_Signup Picture v2.jpg" alt="IELTS Sign Up" loading="lazy">
+            </div>
+            
+            <!-- Form Section -->
+            <div class="signup-form-section">
+                <h2>Sign Up</h2>
+                <div id="signUpAlert" class="alert">
+                    <span id="signUpAlertText"></span>
+                </div>
+                <form id="signUpForm">
+                    <div class="form-group">
+                        <label for="signUpEmail">Email:</label>
+                        <input type="email" id="signUpEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signUpCountry">Country:</label>
+                        <select id="signUpCountry" required style="width: 100%; padding: 0.7rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                            <option value="">Select your country</option>
+                            <option value="AU">🇦🇺 Australia</option>
+                            <option value="CA">🇨🇦 Canada</option>
+                            <option value="CN">🇨🇳 China</option>
+                            <option value="FR">🇫🇷 France</option>
+                            <option value="DE">🇩🇪 Germany</option>
+                            <option value="IN">🇮🇳 India</option>
+                            <option value="IT">🇮🇹 Italy</option>
+                            <option value="JP">🇯🇵 Japan</option>
+                            <option value="SG">🇸🇬 Singapore</option>
+                            <option value="ES">🇪🇸 Spain</option>
+                            <option value="AE">🇦🇪 UAE</option>
+                            <option value="GB">🇬🇧 United Kingdom</option>
+                            <option value="US">🇺🇸 United States</option>
+                            <option value="OTHER">🌍 Other Country</option>
+                        </select>
+                        <small style="color: #666; font-size: 0.8rem; margin-top: 0.3rem; display: block;">
+                            ℹ️ We use this to provide you with the best experience for your region.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="signUpPassword">Password:</label>
+                        <input type="password" id="signUpPassword" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Sign Up
+                    </button>
+                </form>
+                <div class="modal-transition">
+                    <p>Already have an account? <a href="#" onclick="switchToSignIn()">Sign in here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Modal -->
+    <div id="premiumModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('premiumModal')">&times;</span>
+            <div class="premium-header">
+                <h2><i class="fas fa-crown"></i> Choose Your Subscription Plan</h2>
+                <p class="premium-subtitle">Select the perfect subscription for your IELTS learning journey</p>
+                <div style="background: rgba(139, 69, 19, 0.05); border-radius: 8px; padding: 1rem; margin-top: 1rem; border-left: 4px solid #d4af37;">
+                    <p style="margin: 0; color: #666; font-size: 0.9rem; text-align: center;">
+                        <i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i>
+                        Full access to all IELTS practice modules with feedback for all the modules
+                    </p>
+                </div>
+            </div>
+            
+            <div id="premiumAlert" class="alert">
+                <span id="premiumAlertText"></span>
+            </div>
+            
+            <div class="subscription-plans-section">
+                <h3 class="plans-title"><i class="fas fa-credit-card"></i> Choose Your Plan</h3>
+                <div class="subscription-plans">
+                
+                <div class="plan-option" data-plan="weekly">
+                    <input type="radio" id="planWeekly" name="subscriptionPlan" value="weekly">
+                    <label for="planWeekly" class="plan-label">
+                        <div class="plan-header">
+                            <h4><i class="fas fa-calendar-week"></i> Weekly Plan</h4>
+                            <div class="plan-price">
+                                <span class="price-amount" data-usd="$4.99 CAD" data-inr="₹399">$4.99 CAD</span>
+                                <span class="price-period">/week</span>
+                            </div>
+                        </div>
+                        <p class="plan-description">Perfect for short-term IELTS preparation</p>
+                    </label>
+                </div>
+                
+                <div class="plan-option popular" data-plan="monthly">
+                    <input type="radio" id="planMonthly" name="subscriptionPlan" value="monthly" checked>
+                    <label for="planMonthly" class="plan-label">
+                        <div class="plan-badge">Most Popular</div>
+                        <div class="plan-header">
+                            <h4><i class="fas fa-calendar-alt"></i> Monthly Plan</h4>
+                            <div class="plan-price">
+                                <span class="price-amount" data-usd="$14.99 CAD" data-inr="₹1199">$14.99 CAD</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                        </div>
+                        <p class="plan-description">Ideal for comprehensive IELTS practice</p>
+                    </label>
+                </div>
+                
+                <div class="plan-option" data-plan="quarterly">
+                    <input type="radio" id="planQuarterly" name="subscriptionPlan" value="quarterly">
+                    <label for="planQuarterly" class="plan-label">
+                        <div class="plan-header">
+                            <h4><i class="fas fa-calendar"></i> Quarterly Plan</h4>
+                            <div class="plan-price">
+                                <span class="price-amount" data-usd="$29.99 CAD" data-inr="₹2399">$29.99 CAD</span>
+                                <span class="price-period">/3 months</span>
+                            </div>
+                        </div>
+                        <p class="plan-description">Best value for complete IELTS mastery</p>
+                    </label>
+                </div>
+                </div>
+                
+                <div class="plan-instruction" id="planInstruction">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>Select your subscription plan above to unlock full IELTS access</span>
+                </div>
+            </div>
+            
+            <div class="payment-form-section" id="paymentFormSection" style="display: none;">
+                <h3 class="payment-title"><i class="fas fa-credit-card"></i> Payment Information</h3>
+                <form id="paymentForm" class="payment-form">
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="cardholderName">Cardholder Name</label>
+                            <input type="text" id="cardholderName" name="cardholderName" required autocomplete="cc-name">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" name="cardNumber" required maxlength="19" autocomplete="cc-number">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="expiryDate">MM/YY</label>
+                            <input type="text" id="expiryDate" name="expiryDate" required maxlength="5" autocomplete="cc-exp">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" required maxlength="4" autocomplete="cc-csc">
+                        </div>
+                    </div>
+                    
+                    <div class="security-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Your payment information is secure and encrypted</span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-premium payment-btn">
+                        <i class="fas fa-lock"></i> 
+                        <span id="paymentBtnText">Subscribe Now</span>
+                        <span id="paymentAmount">$14.99 CAD</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Modal Functions
+        function showSignInModal() {
+            document.getElementById('signInModal').classList.add('show');
+            document.getElementById('signInEmail').focus();
+        }
+
+        function showSignUpModal() {
+            document.getElementById('signUpModal').classList.add('show');
+            document.getElementById('signUpEmail').focus();
+        }
+
+        function showPremiumModal() {
+            document.getElementById('premiumModal').classList.add('show');
+            
+            // Hide payment form initially and show plan instruction
+            const paymentFormSection = document.getElementById('paymentFormSection');
+            const planInstruction = document.getElementById('planInstruction');
+            
+            if (paymentFormSection) {
+                paymentFormSection.style.display = 'none';
+                paymentFormSection.style.opacity = '0';
+                paymentFormSection.style.transform = 'translateY(20px)';
+            }
+            
+            if (planInstruction) {
+                planInstruction.style.display = 'block';
+                planInstruction.style.opacity = '1';
+                planInstruction.style.transform = 'scale(1)';
+                planInstruction.style.transition = 'all 0.3s ease-out';
+            }
+            
+            // Clear plan selection initially
+            const planRadios = document.querySelectorAll('input[name="subscriptionPlan"]');
+            planRadios.forEach(radio => radio.checked = false);
+            
+            console.log('💡 Select a subscription plan to proceed with payment');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+            // Clear form data
+            const forms = document.querySelectorAll(`#${modalId} form`);
+            forms.forEach(form => form.reset());
+            // Clear alerts
+            const alerts = document.querySelectorAll(`#${modalId} .alert`);
+            alerts.forEach(alert => alert.classList.remove('show'));
+        }
+
+        // Prevent multiple clicks during transition
+        let isTransitioning = false;
+
+        // Smooth transition functions with spinner
+        function switchToSignUp() {
+            if (isTransitioning) return; // Prevent multiple clicks
+            isTransitioning = true;
+            
+            const signInModal = document.getElementById('signInModal');
+            const signUpModal = document.getElementById('signUpModal');
+            const signInContent = signInModal.querySelector('.modal-content');
+            const signInSpinner = document.getElementById('signInSpinner');
+            
+            // Step 1: Show spinner and start transition
+            signInContent.classList.add('transitioning');
+            signInSpinner.classList.add('show');
+            
+            // Step 2: After transition effect, switch modals
+            setTimeout(() => {
+                // Clear sign-in form data
+                document.getElementById('signInForm').reset();
+                const signInAlert = document.querySelector('#signInModal .alert');
+                if (signInAlert) signInAlert.classList.remove('show');
+                
+                // Hide sign-in modal and show sign-up modal
+                signInModal.classList.remove('show');
+                signUpModal.classList.add('show');
+                
+                // Step 3: Hide spinner and complete transition
+                setTimeout(() => {
+                    signInSpinner.classList.remove('show');
+                    signInContent.classList.remove('transitioning');
+                    isTransitioning = false; // Reset transition flag
+                    
+                    // Focus on email field with slight delay for smooth UX
+                    setTimeout(() => {
+                        const emailField = document.getElementById('signUpEmail');
+                        if (emailField) emailField.focus();
+                    }, 100);
+                }, 150);
+            }, 600);
+        }
+
+        function switchToSignIn() {
+            if (isTransitioning) return; // Prevent multiple clicks
+            isTransitioning = true;
+            
+            const signInModal = document.getElementById('signInModal');
+            const signUpModal = document.getElementById('signUpModal');
+            const signUpContent = signUpModal.querySelector('.modal-content');
+            const signUpSpinner = document.getElementById('signUpSpinner');
+            
+            // Step 1: Show spinner and start transition
+            signUpContent.classList.add('transitioning');
+            signUpSpinner.classList.add('show');
+            
+            // Step 2: After transition effect, switch modals
+            setTimeout(() => {
+                // Clear sign-up form data
+                document.getElementById('signUpForm').reset();
+                const signUpAlert = document.querySelector('#signUpModal .alert');
+                if (signUpAlert) signUpAlert.classList.remove('show');
+                
+                // Hide sign-up modal and show sign-in modal
+                signUpModal.classList.remove('show');
+                signInModal.classList.add('show');
+                
+                // Step 3: Hide spinner and complete transition
+                setTimeout(() => {
+                    signUpSpinner.classList.remove('show');
+                    signUpContent.classList.remove('transitioning');
+                    isTransitioning = false; // Reset transition flag
+                    
+                    // Focus on email field with slight delay for smooth UX
+                    setTimeout(() => {
+                        const emailField = document.getElementById('signInEmail');
+                        if (emailField) emailField.focus();
+                    }, 100);
+                }, 150);
+            }, 600);
+        }
+
+        // Mobile menu toggle with accessibility support
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const toggleBtn = document.querySelector('.mobile-menu-toggle');
+            
+            navMenu.classList.toggle('active');
+            
+            // Update button icon
+            const icon = toggleBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+                toggleBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                icon.className = 'fas fa-bars';
+                toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // IELTS General Submenu Functions
+        function toggleIeltsGeneralSubmenu(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const submenu = document.getElementById('ieltsGeneralSubmenu');
+            const menuParent = submenu.closest('.ielts-general-menu');
+            const isCurrentlyOpen = submenu.classList.contains('show');
+            
+            // Cancel any pending timeout for this menu
+            if (window.cancelSubmenuTimeout) {
+                window.cancelSubmenuTimeout('ieltsGeneral');
+            }
+            
+            if (isCurrentlyOpen) {
+                submenu.classList.remove('show');
+                menuParent.classList.remove('active');
+            } else {
+                closeAllSubmenusGlobally('ieltsGeneralSubmenu');
+                submenu.classList.add('show');
+                menuParent.classList.add('active');
+            }
+        }
+
+        // IELTS Academic Submenu Functions
+        function toggleIeltsAcademicSubmenu(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const submenu = document.getElementById('ieltsAcademicSubmenu');
+            const menuParent = submenu.closest('.ielts-academic-menu');
+            const isCurrentlyOpen = submenu.classList.contains('show');
+            
+            // Cancel any pending timeout for this menu
+            if (window.cancelSubmenuTimeout) {
+                window.cancelSubmenuTimeout('ieltsAcademic');
+            }
+            
+            if (isCurrentlyOpen) {
+                submenu.classList.remove('show');
+                menuParent.classList.remove('active');
+            } else {
+                closeAllSubmenusGlobally('ieltsAcademicSubmenu');
+                submenu.classList.add('show');
+                menuParent.classList.add('active');
+            }
+        }
+
+        // Close all submenus globally except the specified one
+        function closeAllSubmenusGlobally(exceptSubmenuId) {
+            const allSubmenus = ['ieltsGeneralSubmenu', 'ieltsAcademicSubmenu'];
+            
+            allSubmenus.forEach(submenuId => {
+                if (submenuId !== exceptSubmenuId) {
+                    const submenu = document.getElementById(submenuId);
+                    const menuParent = submenu?.closest('.ielts-general-menu, .ielts-academic-menu');
+                    
+                    if (submenu) submenu.classList.remove('show');
+                    if (menuParent) menuParent.classList.remove('active');
+                }
+            });
+        }
+
+        // IELTS General Option Selection Function
+        function selectIeltsGeneralOption(skill) {
+            console.log(`✅ IELTS General ${skill} selected`);
+            
+            // Close the submenu first
+            const submenu = document.getElementById('ieltsGeneralSubmenu');
+            const menuParent = submenu.closest('.ielts-general-menu');
+            submenu.classList.remove('show');
+            menuParent.classList.remove('active');
+            
+            // Handle specific navigation for IELTS General skills
+            if (skill === 'Listening') {
+                console.log(`🔗 Navigating to: IELTS General Listening Introduction`);
+                window.location.href = 'General/listening/IELTS_General_Listening_Introduction.html';
+                return;
+            }
+            
+            if (skill === 'Reading') {
+                console.log(`🔗 Navigating to: IELTS General Reading`);
+                window.location.href = 'General/reading/IELTS_General_Reading_Introduction.html';
+                return;
+            }
+            
+            if (skill === 'Writing') {
+                console.log(`🔗 Navigating to: IELTS General Writing`);
+                window.location.href = 'General/writing/IELTS_General_Writing_Introduction.html';
+                return;
+            }
+            
+            if (skill === 'Speaking') {
+                console.log(`🔗 Navigating to: IELTS General Speaking`);
+                window.location.href = 'General/speaking/IELTS_General_Speaking_Introduction.html';
+                return;
+            }
+            
+
+        }
+
+        // IELTS Academic Option Selection Function
+        function selectIeltsAcademicOption(skill) {
+            console.log(`✅ IELTS Academic ${skill} selected`);
+            
+            // Close the submenu first
+            const submenu = document.getElementById('ieltsAcademicSubmenu');
+            const menuParent = submenu.closest('.ielts-academic-menu');
+            submenu.classList.remove('show');
+            menuParent.classList.remove('active');
+            
+            // Handle specific navigation for IELTS Academic skills
+            if (skill === 'Listening') {
+                console.log(`🔗 Navigating to: IELTS Academic Listening Introduction`);
+                window.location.href = 'Academic/listening/IELTS_Academic_Listening_Introduction.html';
+                return;
+            }
+            
+            if (skill === 'Reading') {
+                console.log(`🔗 Navigating to: IELTS Academic Reading`);
+                window.location.href = 'Academic/reading/IELTS_Academic_Reading_Introduction.html';
+                return;
+            }
+            
+            if (skill === 'Writing') {
+                console.log(`🔗 Navigating to: IELTS Academic Writing`);
+                window.location.href = 'Academic/writing/IELTS_Academic_Writing_Introduction.html';
+                return;
+            }
+            
+            if (skill === 'Speaking') {
+                console.log(`🔗 Navigating to: IELTS Academic Speaking`);
+                window.location.href = 'Academic/speaking/IELTS_Academic_Speaking_Introduction.html';
+                return;
+            }
+        }
+
+        // Navigation functions
+        function selectHome() {
+            console.log('🏠 Home selected - Loading IELTS content');
+            // Placeholder for home content loading
+        }
+
+        // Submenu timeout handling
+        let submenuTimeouts = {};
+
+        function startSubmenuTimeout(menuType) {
+            submenuTimeouts[menuType] = setTimeout(() => {
+                const submenu = document.getElementById(menuType + 'Submenu');
+                const menuItem = document.querySelector('.' + menuType.toLowerCase() + '-menu');
+                if (submenu && menuItem) {
+                    submenu.classList.remove('show');
+                    menuItem.classList.remove('active');
+                }
+            }, 300);
+        }
+
+        function cancelSubmenuTimeout(menuType) {
+            if (submenuTimeouts[menuType]) {
+                clearTimeout(submenuTimeouts[menuType]);
+                delete submenuTimeouts[menuType];
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const toggleBtn = document.querySelector('.mobile-menu-toggle');
+            const navbar = document.querySelector('.navbar');
+            
+            if (!navbar.contains(event.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = toggleBtn.querySelector('i');
+                icon.className = 'fas fa-bars';
+                toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close submenus when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            if (!navbar.contains(event.target)) {
+                // Close all submenus
+                closeAllSubmenusGlobally();
+            }
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal.show');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+        });
+
+        // Auto-show sign-in modal on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Automatically show sign-in modal when page loads
+            setTimeout(() => {
+                showSignInModal();
+            }, 500); // Small delay for better user experience
+        });
+
+        // Plan selection functionality for Premium modal
+        document.addEventListener('DOMContentLoaded', function() {
+            const planRadios = document.querySelectorAll('input[name="subscriptionPlan"]');
+            const paymentFormSection = document.getElementById('paymentFormSection');
+            const planInstruction = document.getElementById('planInstruction');
+            const paymentAmount = document.getElementById('paymentAmount');
+
+            planRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.checked) {
+                        // Show payment form
+                        if (paymentFormSection) {
+                            paymentFormSection.style.display = 'block';
+                            setTimeout(() => {
+                                paymentFormSection.style.opacity = '1';
+                                paymentFormSection.style.transform = 'translateY(0)';
+                                
+                                // Smooth scroll to payment section after form appears
+                                setTimeout(() => {
+                                    paymentFormSection.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'start'
+                                    });
+                                    
+                                    // Add subtle highlight effect
+                                    setTimeout(() => {
+                                        paymentFormSection.classList.add('highlighted');
+                                        
+                                        // Remove highlight after 2 seconds
+                                        setTimeout(() => {
+                                            paymentFormSection.classList.remove('highlighted');
+                                        }, 2000);
+                                    }, 500);
+                                }, 200);
+                            }, 100);
+                        }
+                        
+                        // Hide plan instruction
+                        if (planInstruction) {
+                            planInstruction.style.display = 'none';
+                        }
+                        
+                        // Update payment amount
+                        const priceElement = this.closest('.plan-option').querySelector('.price-amount');
+                        if (priceElement && paymentAmount) {
+                            paymentAmount.textContent = priceElement.textContent;
+                        }
+                    }
+                });
+            });
+
+            // Form submissions (placeholder functionality)
+            const signInForm = document.getElementById('signInForm');
+            const signUpForm = document.getElementById('signUpForm');
+            const paymentForm = document.getElementById('paymentForm');
+
+            if (signInForm) {
+                signInForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Sign In functionality would be implemented here');
+                });
+            }
+
+            if (signUpForm) {
+                signUpForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Sign Up functionality would be implemented here');
+                });
+            }
+
+            if (paymentForm) {
+                paymentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Payment processing would be implemented here');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
