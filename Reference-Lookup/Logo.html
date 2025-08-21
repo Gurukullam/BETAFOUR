@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunflower Logo for Gammapace Foundation</title>
+    <style>
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+            padding: 2rem;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #8b4513;
+            margin-bottom: 3rem;
+        }
+        
+        .sunflower-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .sunflower-option {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .sunflower-option h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-demo {
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        /* Emoji Sunflower Logo */
+        .sunflower-7 {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sunflower-7 .emoji {
+            font-size: 80px;
+            position: absolute;
+            z-index: 1;
+            line-height: 1;
+        }
+        
+        .sunflower-7 .letters {
+            position: relative;
+            z-index: 2;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            margin-top: -15px; /* Move up higher in the brown circle of the sunflower */
+        }
+        
+        .foundation-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8b4513;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        /* Business Card Styles */
+        .business-card-section {
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .business-cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .business-card {
+            perspective: 1000px;
+        }
+
+        .card-front {
+            width: 350px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(139, 69, 19, 0.6);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+                linear-gradient(45deg, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.8rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        .sunflower-logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .sunflower-logo .letters {
+            position: relative;
+            z-index: 2;
+            font-weight: 900;
+            font-size: 28px;
+            font-family: 'Century Gothic', sans-serif;
+            letter-spacing: -1px;
+            line-height: 1;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            color: #5d3a0a;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            box-sizing: border-box;
+        }
+
+        .company-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .card-content {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .person-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c1810;
+            margin-bottom: 0.3rem;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .title {
+            font-size: 0.9rem;
+            color: #6b4423;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+        }
+
+        .website {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #b8860b;
+            margin-bottom: 0.3rem;
+            text-decoration: none;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: #5a4a3a;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+        }
+
+        .card-footer {
+            z-index: 1;
+            position: relative;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Back Card Styles */
+        .card-back {
+            width: 350px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.15) 0%, rgba(205, 133, 63, 0.25) 50%, rgba(212, 175, 55, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(139, 69, 19, 0.6);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-center-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-center-logo .letters {
+            font-weight: 900;
+            font-size: 120px;
+            font-family: 'Century Gothic', sans-serif;
+            letter-spacing: -2px;
+            line-height: 1;
+            color: #8b4513;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Responsive Business Card */
+        @media (max-width: 600px) {
+            .business-cards-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .card-front,
+            .card-back {
+                width: 300px;
+                height: 180px;
+                padding: 1.2rem;
+            }
+            
+            .sunflower-logo .letters {
+                font-size: 20px;
+                width: 40px;
+                height: 40px;
+                padding: 6px;
+            }
+
+            .back-center-logo .letters {
+                font-size: 80px;
+                letter-spacing: -1px;
+            }
+            
+            .person-name {
+                font-size: 1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.3rem;
+                align-items: center;
+            }
+
+
+        }
+
+        /* Brochure Styles */
+        .brochure-section {
+            margin: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brochure {
+            max-width: 800px;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .brochure-front {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.15) 50%, rgba(205, 133, 63, 0.1) 100%);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(139, 69, 19, 0.4);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2), 0 0 50px rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brochure-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+                linear-gradient(45deg, rgba(139, 69, 19, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .brochure-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brochure-logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .brochure-logo .letters {
+            position: relative;
+            z-index: 2;
+            font-weight: 900;
+            font-size: 32px;
+            font-family: 'Century Gothic', sans-serif;
+            letter-spacing: -1px;
+            line-height: 1;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            color: #5d3a0a;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
+            box-sizing: border-box;
+        }
+
+        .brochure-title h1 {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 2.2rem;
+            color: #5d3a0a;
+            margin: 0 0 0.5rem 0;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .brochure-title .subtitle {
+            font-size: 1.1rem;
+            color: #6b4423;
+            font-style: italic;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+        }
+
+        .brochure-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brochure-section-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            border-left: 4px solid #8b4513;
+        }
+
+        .brochure-section-item h3 {
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 1.3rem;
+            margin: 0 0 1rem 0;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .brochure-section-item p {
+            color: #4a3728;
+            line-height: 1.6;
+            margin: 0;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .program-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            padding: 1rem;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .program-item strong {
+            color: #5d3a0a;
+            font-size: 1.1rem;
+        }
+
+        .program-item span {
+            color: #6b4423;
+            font-size: 0.9rem;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .features-list li {
+            padding: 0.8rem;
+            background: rgba(139, 69, 19, 0.08);
+            border-radius: 8px;
+            color: #4a3728;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .test-prep {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .test-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            padding: 1rem;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .test-item strong {
+            color: #5d3a0a;
+            font-size: 1.1rem;
+        }
+
+        .test-item span {
+            color: #6b4423;
+            font-size: 0.9rem;
+        }
+
+        .brochure-footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(139, 69, 19, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 2rem;
+        }
+
+        .contact-left h4 {
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem 0;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-left p {
+            color: #6b4423;
+            margin: 0;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-details p {
+            margin: 0.3rem 0;
+            color: #4a3728;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .founder-info {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(139, 69, 19, 0.2);
+        }
+
+        .founder-info p {
+            color: #6b4423;
+            margin: 0;
+            font-size: 0.9rem;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Gammapace Logo Styles */
+        .guruvammal-logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: guruvammal-pulse 2s ease-in-out infinite;
+        }
+
+        .guruvammal-logo .letters {
+            position: relative;
+            z-index: 10000 !important;
+            font-weight: 900;
+            font-size: 38px;
+            font-family: 'Century Gothic', sans-serif;
+            letter-spacing: -1px;
+            line-height: 1;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            color: #5d3a0a;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            box-sizing: border-box;
+        }
+
+        @keyframes guruvammal-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Master Gammapace Logo Styles */
+        .master-logo-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .master-logo-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2), 0 0 50px rgba(212, 175, 55, 0.15);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .master-logo-area {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        /* Compact Master Logo for Integration */
+        .master-logo-compact {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            background: none;
+            border: none;
+            box-shadow: none;
+            z-index: 1;
+        }
+
+        /* Sizing adjustments for business card and brochure Master Logo */
+        .card-header .master-guruvammal-logo {
+            transform: scale(1.0);
+            margin: -5px auto -10px auto;
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        .card-header .master-guruvammal-logo:hover {
+            transform: scale(1.0) !important;
+            transition: none !important;
+        }
+
+        .brochure-header .master-guruvammal-logo {
+            transform: scale(0.85);
+            margin: -15px auto -25px auto;
+        }
+
+        /* Wave-13 styles for Master Logo */
+        .wave-13 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -100 !important;
+        }
+
+        .wave-13 .note {
+            position: absolute;
+            color: #8b4513;
+            font-size: 10px;
+            opacity: 0.8;
+            font-weight: normal;
+            animation: none !important;
+            z-index: -100 !important;
+        }
+
+        /* 
+        =================================================================
+        MASTER GAMMAPACE LOGO - Single Complete Object
+        =================================================================
+        Complete self-contained logo combining:
+        - Golden gradient square background
+        - "Ga" foundation text
+        - Letter "P" in circle at corner
+        - All visual effects and styling
+        */
+        .master-guruvammal-logo {
+            /* Layout & Structure */
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            box-sizing: border-box;
+            
+            /* Typography */
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            
+            /* Golden Square Background */
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 12px;
+            
+            /* Visual Effects */
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            
+            /* Interaction */
+            transition: all 0.3s ease;
+        }
+
+        /* Letter P with circle corner element within Master Gammapace Logo */
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 4px;
+            right: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 6px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        /* Optional hover effect for Master Gammapace Logo */
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Letter P with circle at top-right corner of business card back */
+        .musical-script-corner {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid #8b4513;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 12px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            z-index: 10;
+        }
+
+        /* Responsive Brochure */
+        @media (max-width: 768px) {
+            .brochure-front {
+                padding: 1.5rem;
+            }
+            
+            .brochure-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .brochure-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-section {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .programs-grid,
+            .features-list,
+            .test-prep {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gammapace Foundation</h1>
+        
+        <!-- Business Card Section -->
+        <div class="business-card-section">
+            <h2 style="text-align: center; color: #8b4513; margin-bottom: 2rem;">Business Card Design</h2>
+            <div class="business-cards-container">
+                <div class="business-card">
+                    <div class="card-front">
+                        <div class="card-header">
+                            <div class="master-guruvammal-logo">
+                                Ga<span class="musical-corner">P</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="person-name">Sivachandran Ramachandran</div>
+                            <div class="website">www.<strong>G</strong>amma<strong>p</strong>ace.com</div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="contact-info">
+                                <div class="contact-item">📧 Gammapace@outlook.com</div>
+                                <div class="contact-item">📱 6476751968</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="business-card">
+                    <div class="card-back">
+                        <div class="back-center-logo">
+                            <div class="letters">Ga</div>
+                        </div>
+                        <div class="musical-script-corner">P</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brochure Section -->
+        <div class="brochure-section">
+            <h2 style="text-align: center; color: #8b4513; margin-bottom: 2rem;">Educational Brochure</h2>
+            <div class="brochure">
+                <div class="brochure-front">
+                    <!-- Header -->
+                    <div class="brochure-header">
+                        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="brochure-content">
+                        <div class="brochure-section-item">
+                            <h3>🎓 Our Mission</h3>
+                            <p>To democratize quality education through innovative, self-paced learning experiences that adapt to every learner's unique style and schedule.</p>
+                        </div>
+
+                        <div class="brochure-section-item">
+                            <h3>🌍 Language Learning Programs</h3>
+                            <div class="programs-grid">
+                                <div class="program-item">
+                                    <strong>🇫🇷 French</strong>
+                                    <span>Complete beginner to advanced courses</span>
+                                </div>
+                                <div class="program-item">
+                                    <strong>🇬🇧 English</strong>
+                                    <span>Grammar, vocabulary & speaking skills</span>
+                                </div>
+                                <div class="program-item">
+                                    <strong>🇮🇳 Tamil</strong>
+                                    <span>Cultural immersion & script learning</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="brochure-section-item">
+                            <h3>✨ Why Choose Us?</h3>
+                            <ul class="features-list">
+                                <li>📱 Interactive mobile-friendly platform</li>
+                                <li>👥 Community-driven learning environment</li>
+                                <li>🎯 Personalized learning paths</li>
+                                <li>🏆 Industry-recognized certificates</li>
+                                <li>🕒 24/7 access to course materials</li>
+                                <li>💬 Expert instructor support</li>
+                            </ul>
+                        </div>
+
+                        <div class="brochure-section-item">
+                            <h3>🚀 Test Preparation</h3>
+                            <div class="test-prep">
+                                <div class="test-item">
+                                    <strong>IELTS Preparation</strong>
+                                    <span>Comprehensive training for all modules</span>
+                                </div>
+                                <div class="test-item">
+                                    <strong>CELPIP Preparation</strong>
+                                    <span>Canadian English proficiency focus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="brochure-footer">
+                        <div class="contact-section">
+                            <div class="contact-left">
+                                <h4>Get Started Today!</h4>
+                                <p>Join thousands of successful learners worldwide</p>
+                            </div>
+                            <div class="contact-right">
+                                <div class="contact-details">
+                                    <p><strong>🌐 www.<span style="font-weight: 900;">G</span>amma<span style="font-weight: 900;">p</span>ace.com</strong></p>
+                                    <p>📧 info@gammapace.com</p>
+                                    <p>📱 +1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="founder-info">
+                            <p><em>Founded by Sivachandran Ramachandran</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sunflower-grid">            
+            <div class="sunflower-option">
+                <h3>Master Gammapace Logo</h3>
+                <div class="logo-demo">
+                    <div class="master-guruvammal-logo">
+                        Ga<span class="musical-corner">P</span>
+                    </div>
+                </div>
+                <p>Complete Master Gammapace Logo with golden square, foundation text, and letter "P" in circle integration.</p>
+            </div>
+        </div>
+
+        <!-- Master Gammapace Logo Section -->
+        <div class="business-card-section">
+            <h2 style="text-align: center; color: #8b4513; margin-bottom: 2rem;">Master Gammapace Logo</h2>
+            
+            <!-- Compact Master Logo for Integration -->
+            <div style="display: flex; justify-content: center; margin: 2rem 0;">
+                <div class="master-guruvammal-logo">
+                    Ga<span class="musical-corner">P</span>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #6b4423; margin-top: 1rem; font-style: italic;">
+                Compact Master Logo - Ready for integration into other pages
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Firebase compatible navigation functions
+        function handleBackButton() {
+            console.log('🔙 Navigating back from Logo page...');
+            if (window.loadLanguageContent || window.parent.loadLanguageContent) {
+                if (window.loadLanguageContent) {
+                    window.loadLanguageContent('home', 'main');
+                } else if (window.parent.loadLanguageContent) {
+                    window.parent.loadLanguageContent('home', 'main');
+                }
+            } else {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = 'index.html';
+                }
+            }
+        }
+
+        // Global functions for Firebase compatibility
+        window.handleBackButton = handleBackButton;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('✅ Logo page loaded - Firebase compatible');
+        });
+    </script>
+</body>
+</html> 
