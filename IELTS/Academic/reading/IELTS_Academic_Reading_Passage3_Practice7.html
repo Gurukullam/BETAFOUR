@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Reading Passage 3 - Practice 7: Interdisciplinary Research | GK Foundation</title>
+    
+    <!-- Font Awesome CSS (Embedded for self-contained operation) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in this page */
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-clock:before { content: "\f017"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-user:before { content: "\f007"; }
+        .fa-newspaper:before { content: "\f1ea"; }
+        .fa-university:before { content: "\f19c"; }
+        .fa-chevron-down:before { content: "\f078"; }
+        .fa-chevron-up:before { content: "\f077"; }
+        .fa-chevron-right:before { content: "\f054"; }
+        .fa-chevron-left:before { content: "\f053"; }
+        .fa-home:before { content: "\f015"; }
+        .fa-star:before { content: "\f005"; }
+        .fa-trophy:before { content: "\f091"; }
+        .fa-lightbulb:before { content: "\f0eb"; }
+        .fa-exclamation-triangle:before { content: "\f071"; }
+        .fa-check-circle:before { content: "\f058"; }
+        .fa-info-circle:before { content: "\f05a"; }
+        .fa-book:before { content: "\f02d"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-times:before { content: "\f00d"; }
+        .fa-edit:before { content: "\f044"; }
+        .fa-times-circle:before { content: "\f057"; }
+        .fa-file-alt:before { content: "\f15c"; }
+        .fa-search:before { content: "\f002"; }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            font-size: 10px;
+            color: #5d3a0a;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Small Timer Display */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Container - Updated with proper menu state management */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-open {
+            margin-left: 400px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button - Updated positioning */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        .menu-toggle.menu-open {
+            left: 390px;
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -380px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1.5rem 1rem 1rem 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 60px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 1rem;
+        }
+
+        /* Split Container */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        .left-panel {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-right: 3px solid #d4af37;
+        }
+
+        .right-panel {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(248, 248, 248, 0.95);
+        }
+
+        .passage-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .passage-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        .passage-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* Question Styles */
+        .question-group {
+            margin-bottom: 25px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .question-group h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            border-left: 3px solid #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #8b4513;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.3rem 0;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .answer-input {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.3rem 0.5rem;
+            font-size: 13px;
+            min-width: 80px;
+            background: white;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Timer Section */
+        .timer-container {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.1));
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .start-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Results Section */
+        .score-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .answer-review {
+            margin-bottom: 30px;
+        }
+
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .answer-item.correct {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .answer-item.incorrect {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.05);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .container.menu-open {
+                margin-left: 300px;
+            }
+
+            .menu-toggle {
+                left: 20px;
+            }
+
+            .menu-toggle.menu-open {
+                left: 290px;
+            }
+
+            .slide-menu {
+                width: 280px;
+            }
+
+            .slide-menu.open {
+                left: 0;
+            }
+
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .left-panel, .right-panel {
+                flex: none;
+                border-right: none;
+                border-bottom: 3px solid #d4af37;
+            }
+
+            .right-panel {
+                border-bottom: none;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Spacer -->
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo Container (Back Button) -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📚 IELTS Academic Reading</div>
+            <div class="menu-subtitle">Passage 3 - Practice 7</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">🎯 Academic Text - Master Context</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Passage 3 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passage ← → Questions</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📚 IELTS Academic Reading - Passage 3 (Practice 7)</h1>
+                <div class="hero-subtitle">
+                    🎯 Research - Interdisciplinary & Synthesis
+                </div>
+                <p class="hero-description">
+                    Examine master-level interdisciplinary research frameworks and theoretical synthesis methodologies that define contemporary academic investigation across multiple knowledge domains. This academic passage explores complex systems theory, interdisciplinary methodology integration, theoretical synthesis approaches, and master-level analytical frameworks that represent the pinnacle of academic research sophistication and cross-disciplinary knowledge integration in modern scholarship.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                
+                <div style="background: rgba(212, 175, 55, 0.1); border-left: 4px solid #d4af37; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="color: #8b4513; margin-bottom: 1rem; font-size: 1.2rem;">Academic Passage Details</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">🎯</span>
+                            <strong>Topic:</strong> Master-Level Interdisciplinary Research and Theoretical Synthesis
+                        </li>
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">📏</span>
+                            <strong>Word Count:</strong> Approximately 1300 words (Master++ Difficulty)
+                        </li>
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">⭐</span>
+                            <strong>Difficulty Level:</strong> Master++ (Ultimate Interdisciplinary Academic)
+                        </li>
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">❓</span>
+                            <strong>Questions:</strong> 14 questions covering 4 different question types
+                        </li>
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">⏱️</span>
+                            <strong>Recommended Time:</strong> 20 minutes (authentic exam conditions)
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(139, 69, 19, 0.1); border-left: 4px solid #8b4513; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="color: #8b4513; margin-bottom: 1rem; font-size: 1.2rem;">Question Type Distribution</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">📝</span>
+                            <strong>Questions 1-3:</strong> Multiple Choice (Interdisciplinary analysis)
+                        </li>
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">🔗</span>
+                            <strong>Questions 4-7:</strong> Matching Information (Research concepts)
+                        </li>
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">✓</span>
+                            <strong>Questions 8-11:</strong> True/False/Not Given (Theoretical accuracy)
+                        </li>
+                        <li style="padding: 0.4rem 0; color: #444; position: relative; padding-left: 1.5rem;">
+                            <span style="position: absolute; left: 0; color: #8b4513; font-weight: bold;">📋</span>
+                            <strong>Questions 12-14:</strong> Summary Completion (Synthesis concepts)
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer</h2>
+                
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <button class="start-btn" onclick="startTimer()" id="startBtn">Start Reading</button>
+                    <p style="margin-top: 1rem; color: #666; font-style: italic;">
+                        Click "Start Reading" to begin your 20-minute practice session. The timer will automatically scroll you to the reading workspace.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">📚 Reading Workspace - Questions 1-14</h2>
+                
+                <div class="split-container">
+                    <div class="left-panel">
+                        <div class="passage-title">Interdisciplinary Research Methodologies and Complex Systems Theory: Advanced Frameworks for Contemporary Academic Investigation</div>
+                        <div class="passage-text">
+                            <p>Contemporary interdisciplinary research has evolved into sophisticated methodological frameworks that transcend traditional disciplinary boundaries through the integration of diverse epistemological approaches, theoretical perspectives, and analytical methodologies that collectively enable comprehensive investigation of complex phenomena requiring multiple knowledge domains, specialized expertise, and innovative conceptual synthesis to address multifaceted research questions that cannot be adequately understood through single-discipline approaches, thereby necessitating the development of advanced theoretical frameworks, collaborative research protocols, and interdisciplinary communication strategies that facilitate meaningful integration of diverse scholarly traditions, methodological approaches, and knowledge systems into coherent and rigorous academic investigations capable of generating new insights, innovative solutions, and transformative understanding of complex real-world problems that demand sophisticated analytical thinking and multidimensional research competencies.</p>
+
+                            <p>Complex systems theory has emerged as a foundational framework for interdisciplinary research through its capacity to model and analyze phenomena characterized by nonlinear dynamics, emergent properties, adaptive behaviors, and multi-scale interactions that span multiple temporal and spatial dimensions, enabling researchers to investigate diverse systems ranging from biological networks and ecological communities to social organizations, economic markets, and technological infrastructures through unified mathematical and conceptual tools that reveal common underlying principles governing complex behavior across apparently disparate domains. This theoretical approach employs sophisticated analytical techniques including network analysis, agent-based modeling, dynamical systems theory, and statistical mechanics to characterize system-level properties that emerge from component interactions, feedback loops, self-organization processes, and adaptive responses to environmental perturbations, providing powerful explanatory frameworks for understanding how local interactions generate global patterns, how simple rules produce complex behaviors, and how systems maintain stability while simultaneously adapting to changing conditions through continuous reorganization and evolutionary processes.</p>
+
+                            <p>Interdisciplinary methodology integration requires sophisticated epistemological frameworks that accommodate diverse ways of knowing, multiple research paradigms, and varied analytical approaches while maintaining scientific rigor, methodological coherence, and theoretical consistency across different knowledge domains and disciplinary traditions. This methodological synthesis involves careful consideration of ontological assumptions, epistemological commitments, and axiological principles underlying different disciplinary approaches, requiring researchers to develop meta-theoretical frameworks that can bridge conceptual gaps, resolve methodological tensions, and integrate diverse forms of evidence and analysis into coherent and compelling scholarly arguments. Such integration demands advanced skills in philosophical reflection, conceptual analysis, and theoretical synthesis, as well as practical competencies in multiple research methods, data analysis techniques, and scholarly communication practices that enable effective collaboration across disciplinary boundaries and meaningful engagement with diverse intellectual communities.</p>
+
+                            <p>Theoretical synthesis in interdisciplinary research involves the creation of novel conceptual frameworks that integrate insights, principles, and findings from multiple disciplines into innovative theoretical constructs capable of explaining complex phenomena, predicting system behaviors, and guiding future research investigations across diverse domains of inquiry. This synthetic process requires sophisticated analytical thinking, creative conceptual development, and rigorous logical reasoning to identify meaningful connections between apparently disparate theoretical traditions, extract generalizable principles from domain-specific knowledge, and construct coherent explanatory frameworks that transcend disciplinary limitations while maintaining empirical grounding and predictive capability. Successful theoretical synthesis often leads to paradigm shifts, conceptual breakthroughs, and transformative advances in understanding that reshape entire fields of inquiry and open new avenues for research, application, and societal impact through the creation of powerful explanatory frameworks that illuminate previously hidden connections and reveal fundamental principles governing complex phenomena.</p>
+
+                            <p>Collaborative research frameworks in interdisciplinary investigations must address numerous practical and conceptual challenges including disciplinary language barriers, methodological incompatibilities, institutional constraints, and cultural differences that can impede effective communication, knowledge sharing, and joint problem-solving among researchers from diverse academic backgrounds and intellectual traditions. Successful interdisciplinary collaboration requires the development of shared vocabularies, common conceptual frameworks, and mutually acceptable research protocols that enable meaningful dialogue, productive cooperation, and synergistic knowledge creation while respecting disciplinary expertise, maintaining methodological integrity, and preserving the unique contributions of different knowledge domains. This collaborative process often involves extensive negotiation, conceptual translation, and methodological adaptation to achieve genuine integration rather than mere juxtaposition of disciplinary perspectives, requiring significant investment in relationship building, trust development, and mutual learning among research team members with potentially very different scholarly backgrounds and research orientations.</p>
+
+                            <p>Emergent properties and systems thinking represent fundamental concepts in interdisciplinary research that highlight how complex phenomena arise from interactions among system components in ways that cannot be predicted or understood through analysis of individual elements in isolation, necessitating holistic analytical approaches that consider relationships, processes, and contextual factors as essential components of comprehensive understanding. This systems perspective emphasizes the importance of studying phenomena at multiple levels of analysis, from micro-scale interactions to macro-level patterns, while attending to temporal dynamics, spatial relationships, and hierarchical organization that shape system behavior and influence emergent outcomes. Systems thinking requires sophisticated analytical capabilities including pattern recognition, dynamic modeling, and multi-scale analysis that enable researchers to identify key relationships, understand feedback mechanisms, and predict system responses to interventions or environmental changes across different temporal and spatial scales.</p>
+
+                            <p>Knowledge integration strategies in interdisciplinary research involve sophisticated processes of conceptual synthesis, theoretical alignment, and methodological coordination that enable researchers to combine insights from diverse sources into coherent and comprehensive understanding of complex phenomena requiring multiple perspectives and analytical approaches. These integration strategies must address fundamental challenges including incommensurable theoretical frameworks, conflicting empirical findings, and incompatible methodological assumptions while developing innovative approaches to evidence synthesis, conceptual reconciliation, and theoretical unification that preserve the strengths of individual disciplines while creating new possibilities for understanding and explanation. Effective knowledge integration often requires the development of meta-frameworks, bridging concepts, and translation mechanisms that facilitate meaningful communication and collaboration across disciplinary boundaries while maintaining intellectual rigor and scholarly credibility.</p>
+
+                            <p>Transdisciplinary research represents the most advanced form of interdisciplinary investigation, involving collaboration not only among academic disciplines but also with practitioners, stakeholders, and community members to address real-world problems through participatory research processes that integrate scientific knowledge with experiential understanding, local expertise, and practical wisdom. This approach requires sophisticated skills in stakeholder engagement, participatory research methods, and knowledge co-production that enable researchers to work effectively with diverse communities while maintaining scientific rigor and generating actionable insights that can inform policy decisions, improve practice, and contribute to positive social change. Transdisciplinary research often involves complex ethical considerations, power dynamics, and cultural sensitivities that require careful attention to equity, inclusion, and social justice principles throughout the research process.</p>
+
+                            <p>Innovation and creativity in interdisciplinary research emerge from the productive tension between different ways of thinking, diverse theoretical perspectives, and varied methodological approaches that stimulate novel insights, unexpected connections, and breakthrough discoveries through the juxtaposition of seemingly unrelated ideas and concepts. This creative process often involves analogical reasoning, metaphorical thinking, and conceptual bridging that enable researchers to transfer insights from one domain to another, identify hidden patterns and relationships, and generate innovative solutions to complex problems through the synthesis of diverse knowledge sources and analytical approaches. Interdisciplinary creativity requires openness to uncertainty, tolerance for ambiguity, and willingness to explore unconventional ideas while maintaining critical thinking skills and rigorous analytical standards.</p>
+
+                            <p>Future directions in interdisciplinary research will likely involve even greater integration of technological tools, computational methods, and data science approaches that enable more sophisticated analysis of complex systems, more effective collaboration across geographical and institutional boundaries, and more comprehensive integration of diverse data sources and analytical perspectives. Emerging technologies including artificial intelligence, machine learning, and big data analytics offer new possibilities for interdisciplinary investigation while simultaneously creating new challenges related to data quality, algorithmic bias, and ethical considerations that must be addressed through careful attention to methodological rigor, ethical principles, and social responsibility. The future of interdisciplinary research will require continued innovation in collaborative frameworks, methodological approaches, and theoretical development that can address increasingly complex global challenges while maintaining the highest standards of scholarly excellence and societal relevance.</p>
+
+                            <p>Meta-research and reflexivity in interdisciplinary investigations involve systematic examination of research processes, methodological assumptions, and knowledge production practices to ensure quality, validity, and reliability of interdisciplinary findings while identifying potential biases, limitations, and areas for improvement in interdisciplinary research approaches. This reflexive process requires researchers to critically examine their own disciplinary backgrounds, theoretical commitments, and methodological preferences while remaining open to alternative perspectives and approaches that may challenge their assumptions and expand their understanding. Meta-research in interdisciplinary contexts often reveals important insights about the nature of knowledge production, the role of disciplinary training in shaping research practices, and the challenges and opportunities associated with crossing disciplinary boundaries in pursuit of comprehensive understanding of complex phenomena.</p>
+
+                            <p>The ultimate goal of advanced interdisciplinary research is to generate transformative understanding that transcends disciplinary limitations while addressing complex real-world challenges through innovative theoretical frameworks, sophisticated methodological approaches, and collaborative research practices that leverage the strengths of multiple knowledge domains to create new possibilities for understanding, explanation, and positive social impact. This transformative potential requires sustained commitment to intellectual excellence, methodological rigor, and ethical responsibility while remaining open to new ideas, alternative perspectives, and innovative approaches that can enhance our capacity to understand and address the complex challenges facing contemporary society through rigorous scholarship and meaningful engagement with diverse communities and stakeholders.</p>
+                        </div>
+                    </div>
+
+                    <div class="right-panel">
+                        <!-- Questions 1-3: Multiple Choice -->
+                        <div class="question-group">
+                            <h3>Questions 1-3</h3>
+                            <p style="font-style: italic; margin-bottom: 1rem;">
+                                Choose the correct letter, <strong>A, B, C</strong> or <strong>D</strong>.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">1.</div>
+                                <div class="question-text">According to the passage, complex systems theory enables researchers to:</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q1" value="A" onchange="updateProgress()">
+                                        A) Focus exclusively on individual system components without considering interactions
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q1" value="B" onchange="updateProgress()">
+                                        B) Investigate diverse systems through unified mathematical tools revealing common underlying principles
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q1" value="C" onchange="updateProgress()">
+                                        C) Avoid studying systems with nonlinear dynamics and emergent properties
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q1" value="D" onchange="updateProgress()">
+                                        D) Eliminate the need for mathematical analysis in complex system research
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">2.</div>
+                                <div class="question-text">Theoretical synthesis in interdisciplinary research involves:</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q2" value="A" onchange="updateProgress()">
+                                        A) Simply combining different theories without any integration
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q2" value="B" onchange="updateProgress()">
+                                        B) Creating novel conceptual frameworks that integrate insights from multiple disciplines
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q2" value="C" onchange="updateProgress()">
+                                        C) Avoiding any connection between different theoretical traditions
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q2" value="D" onchange="updateProgress()">
+                                        D) Rejecting empirical grounding in favor of abstract speculation
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">3.</div>
+                                <div class="question-text">Transdisciplinary research differs from other forms of interdisciplinary research because it:</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q3" value="A" onchange="updateProgress()">
+                                        A) Involves only academic disciplines without external stakeholders
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q3" value="B" onchange="updateProgress()">
+                                        B) Includes collaboration with practitioners, stakeholders, and community members
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q3" value="C" onchange="updateProgress()">
+                                        C) Focuses exclusively on theoretical knowledge without practical applications
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q3" value="D" onchange="updateProgress()">
+                                        D) Avoids addressing real-world problems and social challenges
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 4-7: Matching Information -->
+                        <div class="question-group">
+                            <h3>Questions 4-7</h3>
+                            <p style="font-style: italic; margin-bottom: 1rem;">
+                                Look at the following research concepts (Questions 4-7) and the list of characteristics below.<br>
+                                Match each research concept with the correct characteristic, <strong>A-H</strong>.<br>
+                                Write the correct letter <strong>A-H</strong> in boxes 4-7.<br>
+                                <strong>NB</strong> You may use any letter more than once.
+                            </p>
+
+                            <div style="background: rgba(255, 255, 255, 0.9); padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 3px solid #d4af37;">
+                                <h4 style="color: #8b4513; margin-bottom: 10px;">List of Characteristics</h4>
+                                <p style="margin: 5px 0;"><strong>A</strong> Requires development of shared vocabularies and common conceptual frameworks</p>
+                                <p style="margin: 5px 0;"><strong>B</strong> Involves systematic examination of research processes and methodological assumptions</p>
+                                <p style="margin: 5px 0;"><strong>C</strong> Emerges from productive tension between different ways of thinking</p>
+                                <p style="margin: 5px 0;"><strong>D</strong> Emphasizes studying phenomena at multiple levels of analysis</p>
+                                <p style="margin: 5px 0;"><strong>E</strong> Involves sophisticated processes of conceptual synthesis and theoretical alignment</p>
+                                <p style="margin: 5px 0;"><strong>F</strong> Requires analogical reasoning and metaphorical thinking</p>
+                                <p style="margin: 5px 0;"><strong>G</strong> Addresses fundamental challenges including incommensurable theoretical frameworks</p>
+                                <p style="margin: 5px 0;"><strong>H</strong> Involves sophisticated analytical techniques including network analysis and agent-based modeling</p>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">4.</div>
+                                <div class="question-text">
+                                    Collaborative research frameworks
+                                    <br><input type="text" class="answer-input" id="q4" placeholder="A-H" onchange="updateProgress()" style="margin-top: 0.5rem; width: 100px;">
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">5.</div>
+                                <div class="question-text">
+                                    Emergent properties and systems thinking
+                                    <br><input type="text" class="answer-input" id="q5" placeholder="A-H" onchange="updateProgress()" style="margin-top: 0.5rem; width: 100px;">
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">6.</div>
+                                <div class="question-text">
+                                    Innovation and creativity in interdisciplinary research
+                                    <br><input type="text" class="answer-input" id="q6" placeholder="A-H" onchange="updateProgress()" style="margin-top: 0.5rem; width: 100px;">
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">7.</div>
+                                <div class="question-text">
+                                    Complex systems theory
+                                    <br><input type="text" class="answer-input" id="q7" placeholder="A-H" onchange="updateProgress()" style="margin-top: 0.5rem; width: 100px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 8-11: True/False/Not Given -->
+                        <div class="question-group">
+                            <h3>Questions 8-11</h3>
+                            <p style="font-style: italic; margin-bottom: 1rem;">
+                                Do the following statements agree with the information given in the passage?<br>
+                                Write <strong>TRUE</strong> if the statement agrees with the information<br>
+                                Write <strong>FALSE</strong> if the statement contradicts the information<br>
+                                Write <strong>NOT GIVEN</strong> if there is no information on this
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">8.</div>
+                                <div class="question-text">Interdisciplinary methodology integration requires accommodation of diverse ways of knowing and multiple research paradigms.</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q8" value="TRUE" onchange="updateProgress()">
+                                        TRUE
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q8" value="FALSE" onchange="updateProgress()">
+                                        FALSE
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q8" value="NOT GIVEN" onchange="updateProgress()">
+                                        NOT GIVEN
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">9.</div>
+                                <div class="question-text">Successful theoretical synthesis always leads to immediate paradigm shifts in all related fields.</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q9" value="TRUE" onchange="updateProgress()">
+                                        TRUE
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q9" value="FALSE" onchange="updateProgress()">
+                                        FALSE
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q9" value="NOT GIVEN" onchange="updateProgress()">
+                                        NOT GIVEN
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">10.</div>
+                                <div class="question-text">Knowledge integration strategies must address challenges including incommensurable theoretical frameworks and conflicting empirical findings.</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q10" value="TRUE" onchange="updateProgress()">
+                                        TRUE
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q10" value="FALSE" onchange="updateProgress()">
+                                        FALSE
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q10" value="NOT GIVEN" onchange="updateProgress()">
+                                        NOT GIVEN
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">11.</div>
+                                <div class="question-text">All interdisciplinary research projects require identical levels of stakeholder engagement and community participation.</div>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q11" value="TRUE" onchange="updateProgress()">
+                                        TRUE
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q11" value="FALSE" onchange="updateProgress()">
+                                        FALSE
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q11" value="NOT GIVEN" onchange="updateProgress()">
+                                        NOT GIVEN
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 12-14: Summary Completion -->
+                        <div class="question-group">
+                            <h3>Questions 12-14</h3>
+                            <p style="font-style: italic; margin-bottom: 1rem;">
+                                Complete the summary below.<br>
+                                Choose <strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong> from the passage for each answer.
+                            </p>
+
+                            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 3px solid #d4af37; margin: 15px 0;">
+                                <h4 style="color: #8b4513; margin-bottom: 15px;">Advanced Interdisciplinary Research Integration</h4>
+                                <p style="line-height: 1.6; font-size: 0.95rem;">
+                                    Contemporary interdisciplinary research has evolved into sophisticated 
+                                    <input type="text" class="answer-input" id="q12" placeholder="12" onchange="updateProgress()"> that transcend traditional disciplinary boundaries. Effective interdisciplinary collaboration requires the development of shared vocabularies, common conceptual frameworks, and mutually acceptable 
+                                    <input type="text" class="answer-input" id="q13" placeholder="13" onchange="updateProgress()"> that enable meaningful dialogue and productive cooperation. Future directions will likely involve greater integration of technological tools and 
+                                    <input type="text" class="answer-input" id="q14" placeholder="14" onchange="updateProgress()"> approaches that enable more sophisticated analysis of complex systems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 14 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Timer functionality
+        let timeRemaining = 1200; // 20 minutes in seconds
+        let timerInterval;
+        let isTimerRunning = false;
+
+        function startTimer() {
+            if (isTimerRunning) return;
+            
+            isTimerRunning = true;
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('smallTimerDisplay').style.display = 'flex';
+            
+            // Auto-scroll to reading workspace
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                alert('Time is up! Please submit your answers.');
+                return;
+            }
+            
+            timeRemaining--;
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            document.getElementById('timerDisplay').textContent = timeString;
+            document.getElementById('smallTimerTime').textContent = timeString;
+            
+            // Warning at 5 minutes
+            if (timeRemaining === 300) {
+                document.getElementById('smallTimerDisplay').style.background = 
+                    'linear-gradient(135deg, rgba(255, 152, 0, 0.95) 0%, rgba(255, 87, 34, 0.95) 100%)';
+                alert('5 minutes remaining!');
+            }
+            
+            // Warning at 1 minute
+            if (timeRemaining === 60) {
+                document.getElementById('smallTimerDisplay').style.background = 
+                    'linear-gradient(135deg, rgba(244, 67, 54, 0.95) 0%, rgba(213, 0, 0, 0.95) 100%)';
+                alert('1 minute remaining!');
+            }
+        }
+
+        // Menu functionality with proper state management
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('menu-open');
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove('open');
+                document.getElementById('container').classList.remove('menu-open');
+                menuToggle.classList.remove('menu-open');
+            }
+        });
+
+        // ESC key to close menu
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('slideMenu').classList.remove('open');
+                document.getElementById('container').classList.remove('menu-open');
+                document.getElementById('menuToggle').classList.remove('menu-open');
+            }
+        });
+
+        // Answer tracking
+        let answers = {};
+
+        function updateProgress() {
+            // Auto-save functionality - simplified without progress tracking
+            // This function is called when answers change
+        }
+
+        // Submit answers functionality
+        function submitAnswers() {
+            if (!isTimerRunning) {
+                alert('Please start the timer before submitting your answers.');
+                return;
+            }
+
+            // Collect all answers
+            const formData = new FormData();
+            
+            // Collect radio button answers
+            for (let i = 1; i <= 3; i++) { // Multiple choice
+                const radioInputs = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                if (radioInputs.length > 0) {
+                    answers[`q${i}`] = radioInputs[0].value;
+                }
+            }
+            
+            for (let i = 8; i <= 11; i++) { // True/False/Not Given
+                const radioInputs = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                if (radioInputs.length > 0) {
+                    answers[`q${i}`] = radioInputs[0].value;
+                }
+            }
+            
+            // Collect text input answers
+            for (let i = 4; i <= 7; i++) { // Matching information
+                const textInput = document.getElementById(`q${i}`);
+                if (textInput && textInput.value.trim()) {
+                    answers[`q${i}`] = textInput.value.trim();
+                }
+            }
+            
+            for (let i = 12; i <= 14; i++) { // Summary completion
+                const textInput = document.getElementById(`q${i}`);
+                if (textInput && textInput.value.trim()) {
+                    answers[`q${i}`] = textInput.value.trim();
+                }
+            }
+
+            // Calculate score
+            const correctAnswers = {
+                'q1': 'B',
+                'q2': 'B',
+                'q3': 'B',
+                'q4': 'A',
+                'q5': 'D',
+                'q6': 'C',
+                'q7': 'H',
+                'q8': 'TRUE',
+                'q9': 'NOT GIVEN',
+                'q10': 'TRUE',
+                'q11': 'NOT GIVEN',
+                'q12': 'methodological frameworks',
+                'q13': 'research protocols',
+                'q14': 'data science'
+            };
+
+            let score = 0;
+            let reviewHTML = '';
+
+            for (let i = 1; i <= 14; i++) {
+                const userAnswer = answers[`q${i}`] || '';
+                const correctAnswer = correctAnswers[`q${i}`];
+                const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
+                
+                if (isCorrect) score++;
+
+                reviewHTML += `
+                    <div class="answer-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <div>
+                            <strong>Question ${i}:</strong> Your answer: "${userAnswer}" 
+                            ${isCorrect ? '✓' : `✗ (Correct: "${correctAnswer}")`}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Stop timer
+            clearInterval(timerInterval);
+            document.getElementById('smallTimerDisplay').style.display = 'none';
+
+            // Show results
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Back button functionality
+        function handleBackButton() {
+            window.location.href = 'IELTS_Academic_Reading_Introduction.html';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📚 IELTS Academic Reading Passage 3 Practice 7 loaded');
+        });
+    </script>
+</body>
+</html> 
