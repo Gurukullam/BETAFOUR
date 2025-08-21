@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Learning - Guruvammal Foundation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #cd853f 100%);
+            min-height: 100vh;
+            color: #3c2d1f;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #8b4513;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .flag-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .module-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid transparent;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            border-color: #8b4513;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+        }
+        
+        .module-icon {
+            font-size: 3rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+        
+        .module-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .module-description {
+            color: #666;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .module-features {
+            color: #8b4513;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #8b4513;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .back-button:hover {
+            background: #a0522d;
+            transform: translateY(-2px);
+        }
+        
+        .stats-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #8b4513;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">🇮🇳 Guruvammal Tamil</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../../index.html"><i class="fas fa-home"></i> Home</a></li>
+                                         <li><a href="../../IELTS/index.html"><i class="fas fa-graduation-cap"></i> Platform</a></li>
+                    <li><a href="../french/index.html"><i class="fas fa-flag"></i> French</a></li>
+                    <li><a href="../english/index.html"><i class="fas fa-flag"></i> English</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="../../IELTS/index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Learning Platform
+        </a>
+
+        <div class="hero-section">
+            <div class="flag-icon">🇮🇳</div>
+            <h1 class="hero-title">தமிழ் கற்கலாம்</h1>
+            <p class="hero-subtitle">Learn the ancient and beautiful Tamil language with cultural immersion</p>
+            <p style="color: #8b4513; font-weight: 600;">Classical heritage • Modern applications • Cultural richness</p>
+        </div>
+
+        <div class="modules-grid">
+            <a href="script.html" class="module-card">
+                <i class="fas fa-language module-icon"></i>
+                <h3 class="module-title">Tamil Script & Letters</h3>
+                <p class="module-description">
+                    Master the Tamil script system with its unique vowels, consonants, and compound letters. 
+                    Learn proper pronunciation and writing techniques for authentic Tamil communication.
+                </p>
+                <div class="module-features">✓ 247 Letters ✓ Vowels ✓ Consonants ✓ Script Writing</div>
+            </a>
+
+            <a href="numbers.html" class="module-card">
+                <i class="fas fa-calculator module-icon"></i>
+                <h3 class="module-title">Tamil Numbers</h3>
+                <p class="module-description">
+                    Learn the Tamil number system from basic counting to complex numerical expressions 
+                    used in traditional and modern contexts.
+                </p>
+                <div class="module-features">✓ 1-100 ✓ Traditional System ✓ Modern Usage ✓ Calculations</div>
+            </a>
+
+            <a href="greetings.html" class="module-card">
+                <i class="fas fa-handshake module-icon"></i>
+                <h3 class="module-title">Traditional Greetings</h3>
+                <p class="module-description">
+                    Essential Tamil greetings, respectful expressions, and cultural etiquette for 
+                    meaningful interactions in Tamil-speaking communities.
+                </p>
+                <div class="module-features">✓ Vanakkam ✓ Respect Forms ✓ Cultural Context ✓ Family Terms</div>
+            </a>
+
+            <a href="vocabulary.html" class="module-card">
+                <i class="fas fa-book module-icon"></i>
+                <h3 class="module-title">Essential Vocabulary</h3>
+                <p class="module-description">
+                    Build your Tamil vocabulary with essential words rooted in classical literature 
+                    and modern usage, organized by themes and frequency.
+                </p>
+                <div class="module-features">✓ Classical Words ✓ Modern Terms ✓ Cultural Context ✓ Usage Examples</div>
+            </a>
+        </div>
+
+        <div class="stats-section">
+            <h2 style="color: #8b4513; margin-bottom: 1rem;">Tamil Learning Statistics</h2>
+            <p style="color: #666;">Connect with one of the world's oldest languages</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">8,000+</span>
+                    <div class="stat-label">Lines of Content</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <div class="stat-label">Core Modules</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2000+</span>
+                    <div class="stat-label">Years of Heritage</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">78M+</span>
+                    <div class="stat-label">Native Speakers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
