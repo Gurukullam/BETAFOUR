@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Listening Part 3 - Practice 1 | GK Foundation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #3a2006;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(139, 69, 19, 0.3);
+            box-shadow: 8px 0 30px rgba(139, 69, 19, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Speaker Cards Section */
+        .speakers-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .speakers-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .speakers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .speaker-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.25);
+        }
+
+        .speaker-card.active {
+            border-color: #d4af37;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .speaker-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .speaker-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .speaker-info h3 {
+            color: #8b4513;
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .speaker-role {
+            color: #666;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .speaker-details {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #8b4513;
+        }
+
+        .detail-value {
+            color: #555;
+        }
+
+        .speaker-background {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Audio Player Styles */
+        .audio-player {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #d4af37, #8b4513);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .time-display {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Questions Styles */
+        .questions-container {
+            margin-top: 2rem;
+        }
+
+        .question-section {
+            margin-bottom: 3rem;
+        }
+
+        .question-section h3 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Multiple Choice Styles */
+        .mc-question {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #d4af37;
+        }
+
+        .mc-question h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .mc-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .mc-option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .mc-option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateX(5px);
+        }
+
+        .mc-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .mc-option label {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* Sentence Completion Styles */
+        .sentence-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid #d4af37;
+            margin-bottom: 1.5rem;
+        }
+
+        .sentence-title {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .sentence-item {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .sentence-text {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .sentence-blank {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.5rem;
+            font-size: 1rem;
+            min-width: 150px;
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .sentence-blank:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+            display: none;
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: '🎓';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .speakers-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sentence-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Auto-submit popup styles */
+        .auto-submit-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auto-submit-popup {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            border: 3px solid #d4af37;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .auto-submit-title {
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .auto-submit-message {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .auto-submit-countdown {
+            font-size: 2rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .auto-submit-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .auto-submit-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auto-submit-btn.primary {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            color: white;
+        }
+
+        .auto-submit-btn.primary:hover {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            transform: translateY(-2px);
+        }
+
+        .auto-submit-btn.secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #d4af37;
+        }
+
+        .auto-submit-btn.secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">💬 IELTS Academic Listening</div>
+            <div class="menu-subtitle">Part 3 - Practice 1</div>
+        </div>
+        <div class="menu-content">
+            <a href="#speakers" class="menu-item" onclick="navigateToSection('speakers')">
+                <div class="item-title">1. Speaker Profiles</div>
+                <div class="item-description">👥 Meet the conversation participants</div>
+            </a>
+            <a href="#instructions" class="menu-item" onclick="navigateToSection('instructions')">
+                <div class="item-title">2. Instructions</div>
+                <div class="item-description">⚠️ Test guidelines and preparation</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">3. Audio Conversation</div>
+                <div class="item-description">🎧 Tutorial Discussion (4.5 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">4. Questions (Part 3)</div>
+                <div class="item-description">📝 Multiple Choice + Sentence Completion</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">5. Results & Analysis</div>
+                <div class="item-description">📊 Your performance and tips</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">💬 IELTS Academic Listening - Part 3 (Practice 1)</h1>
+                <div class="hero-subtitle">
+                    Tutorial Discussion - Psychology Department
+                </div>
+                <p class="hero-description">
+                    Listen to a tutorial discussion between Dr. Sarah Chen and her student Marcus Williams about research methodology for his psychology research proposal. This authentic academic conversation covers research design, ethical considerations, and methodology selection. Answer Questions 21-30 to test your understanding of academic discussions and speaker viewpoints.
+                </p>
+            </section>
+
+            <!-- Speaker Profiles Section -->
+            <section id="speakers" class="speakers-section">
+                <h2 class="speakers-title">
+                    👥 Conversation Participants
+                </h2>
+                
+                <div class="speakers-container">
+                    <div class="speaker-card" id="speaker-chen">
+                        <div class="speaker-header">
+                            <div class="speaker-avatar">SC</div>
+                            <div class="speaker-info">
+                                <h3>Dr. Sarah Chen</h3>
+                                <div class="speaker-role">Senior Lecturer & Research Supervisor</div>
+                            </div>
+                        </div>
+                        <div class="speaker-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Department:</span>
+                                <span class="detail-value">Psychology</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Accent:</span>
+                                <span class="detail-value">British English</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Specialization:</span>
+                                <span class="detail-value">Research Methodology</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Experience:</span>
+                                <span class="detail-value">12 years</span>
+                            </div>
+                        </div>
+                        <div class="speaker-background">
+                            Dr. Chen specializes in cognitive psychology and research methodology. She has extensive experience supervising undergraduate and graduate research projects, with particular expertise in experimental design and ethical considerations in psychological research.
+                        </div>
+                    </div>
+
+                    <div class="speaker-card" id="speaker-marcus">
+                        <div class="speaker-header">
+                            <div class="speaker-avatar">MW</div>
+                            <div class="speaker-info">
+                                <h3>Marcus Williams</h3>
+                                <div class="speaker-role">3rd Year Psychology Student</div>
+                            </div>
+                        </div>
+                        <div class="speaker-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Level:</span>
+                                <span class="detail-value">Undergraduate</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Accent:</span>
+                                <span class="detail-value">American English</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Focus Area:</span>
+                                <span class="detail-value">Social Psychology</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Year:</span>
+                                <span class="detail-value">Third Year</span>
+                            </div>
+                        </div>
+                        <div class="speaker-background">
+                            Marcus is working on his final year research project focusing on social psychology. He's seeking guidance on research methodology and ethical considerations for his study on group behavior and social influence in academic settings.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instructions Section -->
+            <section id="instructions" class="content-section">
+                <h2 class="section-title">
+                    ⚠️ Instructions
+                </h2>
+                <div style="background: rgba(212, 175, 55, 0.1); border-radius: 10px; padding: 1.5rem; border-left: 4px solid #d4af37;">
+                    <h4 style="color: #8b4513; margin-bottom: 1rem;">📋 Before You Begin:</h4>
+                    <ul style="color: #333; line-height: 1.8; list-style-position: inside;">
+                        <li><strong>Questions 21-26:</strong> Choose the correct letter A, B, or C for multiple choice questions</li>
+                        <li><strong>Questions 27-30:</strong> Complete the sentences using NO MORE THAN TWO WORDS for each answer</li>
+                        <li><strong>Audio Duration:</strong> Approximately 4.5 minutes (one play only)</li>
+                        <li><strong>Speaker Focus:</strong> Pay attention to different viewpoints and academic discussion flow</li>
+                        <li><strong>Listen Carefully:</strong> Note speaker attitudes, opinions, and academic planning decisions</li>
+                    </ul>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.3);">
+                        <button onclick="testAudio()" style="background: linear-gradient(135deg, #28a745, #20c997); color: white; border: none; padding: 0.5rem 1rem; border-radius: 15px; cursor: pointer; font-size: 0.9rem; margin-right: 1rem;">
+                            🔊 Test Audio System
+                        </button>
+                        <small style="color: #666;">Click to test if your browser supports multi-speaker audio playback</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Audio Section -->
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">
+                    🎧 Audio Conversation
+                </h2>
+                
+                <div class="audio-player">
+                    <p style="color: #8b4513; font-weight: 600; margin-bottom: 1rem;">
+                        🔊 You will hear a tutorial discussion between Dr. Sarah Chen and Marcus Williams about research methodology planning.
+                    </p>
+                    
+                    <button class="play-btn" onclick="playAudio()" id="playBtn">
+                        ▶️ Play Conversation
+                    </button>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="currentTime">00:00</span> / <span id="totalTime">07:00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Questions Section -->
+            <section id="questions" class="content-section">
+                <h2 class="section-title">
+                    📝 Questions 21-30
+                </h2>
+                
+                <div class="questions-container">
+                    <!-- Multiple Choice Questions 21-26 -->
+                    <div class="question-section">
+                        <h3>Questions 21-26</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Choose the correct letter A, B, or C.
+                        </p>
+                        
+                        <div class="mc-question">
+                            <h4>21. What is Marcus's main research interest?</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q21a" name="q21" value="A">
+                                    <label for="q21a">A. Cognitive psychology</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q21b" name="q21" value="B">
+                                    <label for="q21b">B. Social psychology</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q21c" name="q21" value="C">
+                                    <label for="q21c">C. Developmental psychology</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mc-question">
+                            <h4>22. According to Dr. Chen, what is the most important consideration when designing a psychology experiment?</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q22a" name="q22" value="A">
+                                    <label for="q22a">A. Cost effectiveness</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q22b" name="q22" value="B">
+                                    <label for="q22b">B. Ethical implications</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q22c" name="q22" value="C">
+                                    <label for="q22c">C. Time constraints</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mc-question">
+                            <h4>23. Marcus is concerned about which aspect of his research methodology?</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q23a" name="q23" value="A">
+                                    <label for="q23a">A. Sample size calculation</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q23b" name="q23" value="B">
+                                    <label for="q23b">B. Data analysis methods</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q23c" name="q23" value="C">
+                                    <label for="q23c">C. Participant recruitment</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mc-question">
+                            <h4>24. Dr. Chen suggests that Marcus should use which research approach?</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q24a" name="q24" value="A">
+                                    <label for="q24a">A. Qualitative methodology</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q24b" name="q24" value="B">
+                                    <label for="q24b">B. Quantitative methodology</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q24c" name="q24" value="C">
+                                    <label for="q24c">C. Mixed methods approach</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mc-question">
+                            <h4>25. What does Dr. Chen think about Marcus's timeline for the research project?</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q25a" name="q25" value="A">
+                                    <label for="q25a">A. It is too ambitious</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q25b" name="q25" value="B">
+                                    <label for="q25b">B. It is realistic</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q25c" name="q25" value="C">
+                                    <label for="q25c">C. It needs extension</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mc-question">
+                            <h4>26. Marcus agrees to meet Dr. Chen again:</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q26a" name="q26" value="A">
+                                    <label for="q26a">A. Next week</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q26b" name="q26" value="B">
+                                    <label for="q26b">B. In two weeks</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q26c" name="q26" value="C">
+                                    <label for="q26c">C. Next month</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sentence Completion Questions 27-30 -->
+                    <div class="question-section">
+                        <h3>Questions 27-30</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer.
+                        </p>
+                        
+                        <div class="sentence-container">
+                            <div class="sentence-title">Tutorial Discussion - Key Points</div>
+                            
+                            <div class="sentence-item">
+                                <span class="sentence-text">27. Marcus needs to submit his research proposal to the</span>
+                                <input type="text" class="sentence-blank" id="q27" placeholder="27">
+                                <span class="sentence-text">before starting data collection.</span>
+                            </div>
+                            
+                            <div class="sentence-item">
+                                <span class="sentence-text">28. Dr. Chen recommends using</span>
+                                <input type="text" class="sentence-blank" id="q28" placeholder="28">
+                                <span class="sentence-text">to analyze the quantitative data.</span>
+                            </div>
+                            
+                            <div class="sentence-item">
+                                <span class="sentence-text">29. The minimum number of participants required for the study is</span>
+                                <input type="text" class="sentence-blank" id="q29" placeholder="29">
+                                <span class="sentence-text">people.</span>
+                            </div>
+                            
+                            <div class="sentence-item">
+                                <span class="sentence-text">30. Marcus will focus his literature review on</span>
+                                <input type="text" class="sentence-blank" id="q30" placeholder="30">
+                                <span class="sentence-text">theories related to group behavior.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button class="submit-btn" onclick="submitTest()">Submit Test</button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <h2 class="section-title">
+                    📊 Test Results & Analysis
+                </h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>🎓 Academic Part 3 Improvement Tips</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Audio simulation and test data
+        let audioContext = null;
+        let isPlaying = false;
+        let currentTime = 0;
+        let totalDuration = 420; // 7 minutes in seconds for comprehensive conversation
+        let audioInterval = null;
+        let currentSpeaker = null;
+
+        // Correct answers for Academic Part 3 Practice 1
+        const correctAnswers = {
+            q21: 'B',
+            q22: 'B',
+            q23: 'A',
+            q24: 'C',
+            q25: 'B',
+            q26: 'B',
+            q27: 'ethics committee',
+            q28: 'statistical software',
+            q29: '60',
+            q30: 'social identity'
+        };
+
+        // Question explanations
+        const explanations = {
+            q21: 'Marcus clearly states that his main research interest is social psychology, specifically focusing on group behavior and social influence.',
+            q22: 'Dr. Chen emphasizes that ethical implications are the most important consideration when designing psychology experiments, prioritizing participant welfare.',
+            q23: 'Marcus expresses concern about sample size calculation, wondering whether he has enough participants for statistical significance.',
+            q24: 'Dr. Chen suggests a mixed methods approach, combining both qualitative interviews and quantitative surveys for comprehensive data.',
+            q25: 'Dr. Chen thinks Marcus\'s timeline is realistic for a final year project, given proper planning and organization.',
+            q26: 'Marcus agrees to meet Dr. Chen again in two weeks after he has revised his research proposal based on her feedback.',
+            q27: 'Marcus needs to submit his research proposal to the ethics committee before starting any data collection with human participants.',
+            q28: 'Dr. Chen recommends using statistical software like SPSS or R for analyzing the quantitative data from surveys.',
+            q29: 'The minimum number of participants required for the study is 60 people to ensure adequate statistical power.',
+            q30: 'Marcus will focus his literature review on social identity theories, which are relevant to understanding group behavior patterns.'
+        };
+
+        // Academic conversation data with enhanced TTS integration
+        const conversationData = [
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "Good afternoon, Marcus. Please, have a seat. I've reviewed your initial research proposal, and I'd like to discuss some key aspects with you today.",
+                duration: 8000
+            },
+            {
+                speaker: "Marcus Williams",
+                text: "Thank you, Dr. Chen. I'm really excited about this project. As I mentioned in my proposal, my main research interest is social psychology, particularly group behavior and social influence in academic settings.",
+                duration: 12000
+            },
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "Yes, that's an excellent area of study. Now, before we discuss methodology, I must emphasize that ethical implications are the most important consideration when designing any psychology experiment. We must always prioritize participant welfare.",
+                duration: 14000
+            },
+            {
+                speaker: "Marcus Williams",
+                text: "Absolutely, I understand that. But I'm actually quite concerned about sample size calculation. I'm wondering whether I'll have enough participants to achieve statistical significance. How many do you think I'll need?",
+                duration: 11000
+            },
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "Well, for your type of study, I'd recommend a minimum of sixty participants. This should provide adequate statistical power. However, I think you should consider a mixed methods approach for this research.",
+                duration: 12000
+            },
+            {
+                speaker: "Marcus Williams",
+                text: "Mixed methods? Could you explain what you mean by that?",
+                duration: 4000
+            },
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "Certainly. I suggest combining both qualitative interviews and quantitative surveys. This will give you comprehensive data - the surveys will provide statistical evidence, while interviews will offer deeper insights into participant motivations.",
+                duration: 16000
+            },
+            {
+                speaker: "Marcus Williams",
+                text: "That sounds really valuable. What about the timeline? I've planned to complete everything within this academic year. Do you think that's realistic?",
+                duration: 9000
+            },
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "Yes, I believe your timeline is realistic for a final year project, provided you plan carefully. You'll need to submit your research proposal to the ethics committee before starting any data collection, though.",
+                duration: 13000
+            },
+            {
+                speaker: "Marcus Williams",
+                text: "Right, the ethics committee approval. How long does that usually take?",
+                duration: 6000
+            },
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "Typically about three weeks. For your quantitative analysis, I'd recommend using statistical software like SPSS or R. Are you familiar with these programs?",
+                duration: 11000
+            },
+            {
+                speaker: "Marcus Williams",
+                text: "I've used SPSS in my statistics course, so that should be fine. What about the literature review? I want to make sure I'm covering the right theoretical framework.",
+                duration: 10000
+            },
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "For your focus on group behavior, I'd suggest concentrating your literature review on social identity theories. These are particularly relevant to understanding how individuals behave within group contexts.",
+                duration: 13000
+            },
+            {
+                speaker: "Marcus Williams",
+                text: "Social identity theories - that makes perfect sense. This has been incredibly helpful, Dr. Chen. When should we meet again to review my revised proposal?",
+                duration: 9000
+            },
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "How about in two weeks? That should give you enough time to incorporate today's feedback and revise your methodology section. Make sure to include the ethics committee submission timeline in your planning.",
+                duration: 12000
+            },
+            {
+                speaker: "Marcus Williams",
+                text: "Perfect. Two weeks it is. Thank you so much for your guidance, Dr. Chen. I feel much more confident about my research direction now.",
+                duration: 8000
+            },
+            {
+                speaker: "Dr. Sarah Chen",
+                text: "You're very welcome, Marcus. Remember, good research takes time and careful planning. I'm confident you'll produce excellent work. See you in two weeks.",
+                duration: 9000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            }
+        ];
+
+        // Audio control functions with multi-speaker support
+        function playAudio() {
+            console.log('🎧 Play button clicked - starting multi-speaker conversation');
+            
+            if (!checkInternetForAudio()) return;
+            
+            const playBtn = document.getElementById('playBtn');
+            
+            // Disable button during playback
+            playBtn.disabled = true;
+            playBtn.style.opacity = '0.6';
+            playBtn.style.cursor = 'not-allowed';
+            
+            isPlaying = true;
+            
+            // Start audio simulation
+            audioInterval = setInterval(updateProgress, 1000);
+            
+            // Check for speech synthesis support
+            if (!('speechSynthesis' in window)) {
+                console.error('Speech synthesis not supported');
+                alert('Your browser does not support Text-to-Speech. Please try Chrome, Firefox, or Edge.');
+                stopAudio();
+                return;
+            }
+            
+            console.log('Multi-speaker speech synthesis ready, proceeding...');
+            
+            // Cancel any existing speech
+            speechSynthesis.cancel();
+            
+            // Wait a moment for cancellation to complete
+            setTimeout(() => {
+                const conversationScript = getConversationScript();
+                console.log('Conversation script segments:', conversationScript.length);
+                
+                // Start playing conversation sequentially
+                playConversationSegments(conversationScript, 0);
+            }, 100);
+        }
+
+        // Play conversation in segments with speaker identification
+        function playConversationSegments(segments, currentIndex) {
+            if (currentIndex >= segments.length) {
+                console.log('✅ All conversation segments completed');
+                stopAudio();
+                return;
+            }
+            
+            if (!isPlaying) {
+                console.log('🛑 Conversation playback stopped by user');
+                return;
+            }
+            
+            const currentSegment = segments[currentIndex];
+            console.log(`🗣️ ${currentSegment.speaker}: "${currentSegment.text.substring(0, 50)}..."`);
+            
+            // Highlight current speaker
+            highlightCurrentSpeaker(currentSegment.speaker);
+            
+            const utterance = new SpeechSynthesisUtterance(currentSegment.text);
+            utterance.rate = 0.8;
+            utterance.pitch = currentSegment.speaker === 'Dr. Chen' ? 1.1 : 0.9;
+            utterance.volume = 1.0;
+            
+            // Select voice based on speaker accent
+            const voices = speechSynthesis.getVoices();
+            if (voices.length > 0) {
+                let selectedVoice = voices.find(voice => 
+                    voice.lang === currentSegment.accent || 
+                    (currentSegment.accent === 'en-GB' && (voice.name.includes('UK') || voice.name.includes('British'))) ||
+                    (currentSegment.accent === 'en-US' && (voice.name.includes('US') || voice.name.includes('American')))
+                );
+                
+                if (!selectedVoice) {
+                    selectedVoice = voices.find(voice => 
+                        voice.lang.startsWith('en-') || voice.lang === 'en'
+                    );
+                }
+                
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                    console.log(`🎤 ${currentSegment.speaker} using voice: ${selectedVoice.name} (${selectedVoice.lang})`);
+                }
+            }
+            
+            utterance.onstart = function() {
+                console.log(`✅ ${currentSegment.speaker} segment ${currentIndex + 1} started`);
+            };
+            
+            utterance.onend = function() {
+                console.log(`✅ ${currentSegment.speaker} segment ${currentIndex + 1} completed`);
+                // Remove speaker highlighting
+                clearSpeakerHighlight();
+                // Add pause between speakers
+                setTimeout(() => {
+                    playConversationSegments(segments, currentIndex + 1);
+                }, 800);
+            };
+            
+            utterance.onerror = function(event) {
+                console.error(`❌ Error in ${currentSegment.speaker} segment ${currentIndex + 1}:`, event.error);
+                // Try to continue with next segment
+                clearSpeakerHighlight();
+                setTimeout(() => {
+                    playConversationSegments(segments, currentIndex + 1);
+                }, 1000);
+            };
+            
+            try {
+                speechSynthesis.speak(utterance);
+            } catch (error) {
+                console.error(`❌ Failed to speak ${currentSegment.speaker} segment ${currentIndex + 1}:`, error);
+                // Try next segment
+                clearSpeakerHighlight();
+                setTimeout(() => {
+                    playConversationSegments(segments, currentIndex + 1);
+                }, 1000);
+            }
+        }
+
+        // Speaker highlighting functions
+        function highlightCurrentSpeaker(speakerName) {
+            clearSpeakerHighlight();
+            
+            if (speakerName === 'Dr. Chen') {
+                document.getElementById('speaker-chen').classList.add('active');
+            } else if (speakerName === 'Marcus') {
+                document.getElementById('speaker-marcus').classList.add('active');
+            }
+            
+            currentSpeaker = speakerName;
+        }
+
+        function clearSpeakerHighlight() {
+            document.querySelectorAll('.speaker-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            currentSpeaker = null;
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            currentTime = 0;
+            
+            if (audioInterval) {
+                clearInterval(audioInterval);
+                audioInterval = null;
+            }
+            
+            // Re-enable button
+            const playBtn = document.getElementById('playBtn');
+            playBtn.disabled = false;
+            playBtn.style.opacity = '1';
+            playBtn.style.cursor = 'pointer';
+            
+            // Reset progress
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            
+            // Clear speaker highlighting
+            clearSpeakerHighlight();
+            
+            // Cancel speech synthesis
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+        }
+
+        function updateProgress() {
+            if (!isPlaying) return;
+            
+            currentTime++;
+            const progressPercent = (currentTime / totalDuration) * 100;
+            
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('currentTime').textContent = formatTime(currentTime);
+            
+            if (currentTime >= totalDuration) {
+                console.log('⏰ Timer completed - showing auto-submit popup');
+                showAutoSubmitPopup();
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function checkInternetForAudio() {
+            console.log('🌐 Network status:', navigator.onLine ? 'Online' : 'Offline');
+            console.log('🔊 Speech synthesis available:', 'speechSynthesis' in window);
+            
+            if (!('speechSynthesis' in window)) {
+                alert('Text-to-Speech is not supported in your browser. Please use Chrome, Firefox, Edge, or Safari.');
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Test audio function for multi-speaker debugging
+        function testAudio() {
+            console.log('🧪 Testing multi-speaker audio system...');
+            
+            if (!('speechSynthesis' in window)) {
+                alert('❌ Speech Synthesis not supported in this browser');
+                return;
+            }
+            
+            // Cancel any existing speech
+            speechSynthesis.cancel();
+            
+            // Create test utterances for both speakers
+            const testSegments = [
+                { speaker: 'Dr. Chen', accent: 'en-GB', text: "Audio test for Dr. Chen with British accent." },
+                { speaker: 'Marcus', accent: 'en-US', text: "Audio test for Marcus with American accent." }
+            ];
+            
+            let testIndex = 0;
+            
+            function playTestSegment() {
+                if (testIndex >= testSegments.length) {
+                    alert('✅ Multi-speaker audio test completed! Both speakers should have been audible with different accents.');
+                    return;
+                }
+                
+                const segment = testSegments[testIndex];
+                highlightCurrentSpeaker(segment.speaker);
+                
+                const utterance = new SpeechSynthesisUtterance(segment.text);
+                utterance.rate = 1;
+                utterance.pitch = segment.speaker === 'Dr. Chen' ? 1.1 : 0.9;
+                utterance.volume = 1;
+                
+                const voices = speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    let voice = voices.find(v => v.lang === segment.accent) || 
+                               voices.find(v => v.lang.startsWith('en-')) || 
+                               voices[0];
+                    utterance.voice = voice;
+                    console.log(`🎤 Test ${segment.speaker} using voice: ${voice.name} (${voice.lang})`);
+                }
+                
+                utterance.onend = function() {
+                    clearSpeakerHighlight();
+                    testIndex++;
+                    setTimeout(playTestSegment, 1000);
+                };
+                
+                utterance.onerror = function(event) {
+                    console.error('❌ Test audio error:', event.error);
+                    clearSpeakerHighlight();
+                    alert('❌ Audio test failed: ' + event.error);
+                };
+                
+                try {
+                    speechSynthesis.speak(utterance);
+                    if (testIndex === 0) {
+                        alert('✅ Multi-speaker audio test started! Listen for both British and American accents.');
+                    }
+                } catch (error) {
+                    console.error('❌ Error starting test audio:', error);
+                    alert('❌ Failed to start audio test: ' + error.message);
+                }
+            }
+            
+            playTestSegment();
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Academic Listening Part 3 Practice 1 - Going to introduction');
+            window.location.href = 'IELTS_Academic_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Test submission and scoring
+        function submitTest() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Get answers for multiple choice questions (21-26)
+            for (let i = 21; i <= 26; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                const answer = selectedOption ? selectedOption.value : '';
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`];
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Get answers for sentence completion questions (27-30)
+            for (let i = 27; i <= 30; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`].toLowerCase();
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Focus on identifying different speakers and their distinct viewpoints in academic conversations");
+                tips.push("Practice listening for academic planning discussions and research methodology terminology");
+                tips.push("Work on understanding both British and American academic accents in tutorial settings");
+                tips.push("Listen to university tutorial recordings and academic supervision meetings regularly");
+            } else if (score <= 6) {
+                tips.push("Develop better speaker identification skills by paying attention to accent differences and speaking patterns");
+                tips.push("Practice following academic discussions about research methodology and project planning");
+                tips.push("Work on sentence completion skills with academic vocabulary and research terminology");
+                tips.push("Focus on understanding tutorial dynamics between supervisors and students");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to catch specific academic details in multi-speaker conversations");
+                tips.push("Practice following complex research methodology discussions between tutors and students");
+                tips.push("Work on maintaining concentration throughout longer academic tutorial conversations");
+                tips.push("Review vocabulary related to research ethics, methodology, and academic planning");
+            } else {
+                tips.push("Excellent work! Continue practicing with authentic IELTS Academic Part 3 materials");
+                tips.push("Focus on time management to complete both multiple choice and sentence completion efficiently");
+                tips.push("Practice with different accent combinations to prepare for test day variety");
+                tips.push("Consider helping others to reinforce your own academic conversation listening skills");
+            }
+            
+            return tips;
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('💬 IELTS Academic Listening Part 3 Practice 1 - Tutorial Discussion loaded');
+            
+            // Debug multi-speaker audio system
+            console.log('🔊 Browser audio capabilities:');
+            console.log('- speechSynthesis available:', 'speechSynthesis' in window);
+            console.log('- Web Audio API available:', 'AudioContext' in window || 'webkitAudioContext' in window);
+            console.log('- User agent:', navigator.userAgent);
+            
+            // Test speech synthesis availability
+            if ('speechSynthesis' in window) {
+                setTimeout(() => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🎤 Initial voices check:', voices.length, 'voices available');
+                    if (voices.length === 0) {
+                        console.log('⏳ Waiting for voices to load...');
+                        speechSynthesis.addEventListener('voiceschanged', function() {
+                            const newVoices = speechSynthesis.getVoices();
+                            console.log('🎤 Voices loaded:', newVoices.length, 'voices now available');
+                            
+                            // Log available British and American voices
+                            const britishVoices = newVoices.filter(v => v.lang === 'en-GB' || v.name.includes('British') || v.name.includes('UK'));
+                            const americanVoices = newVoices.filter(v => v.lang === 'en-US' || v.name.includes('American') || v.name.includes('US'));
+                            console.log('🇬🇧 British voices:', britishVoices.length);
+                            console.log('🇺🇸 American voices:', americanVoices.length);
+                        });
+                    }
+                }, 1000);
+            }
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+            
+            // Auto-focus on first input when questions section becomes visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target.id === 'questions') {
+                        setTimeout(() => {
+                            const firstRadio = document.querySelector('input[name="q21"]');
+                            if (firstRadio && firstRadio.parentElement) {
+                                firstRadio.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }, 500);
+                    }
+                });
+            });
+            
+            const questionsSection = document.getElementById('questions');
+            if (questionsSection) {
+                observer.observe(questionsSection);
+            }
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+            clearSpeakerHighlight();
+        });
+    </script>
+</body>
+</html> 
