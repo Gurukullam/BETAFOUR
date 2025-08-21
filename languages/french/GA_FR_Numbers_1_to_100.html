@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Numbers 1-100 | GK Foundation</title>
+    
+    <!-- Font Awesome CSS (Embedded for self-contained operation) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in this page */
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-language:before { content: "\f1ab"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-comments:before { content: "\f086"; }
+        .fa-play:before { content: "\f04b"; }
+        .fa-star:before { content: "\f005"; }
+        .fa-clock:before { content: "\f017"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-certificate:before { content: "\f0a3"; }
+        .fa-heart:before { content: "\f004"; }
+        .fa-flag:before { content: "\f024"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-times:before { content: "\f00d"; }
+        .fa-chevron-right:before { content: "\f054"; }
+        .fa-chevron-left:before { content: "\f053"; }
+        .fa-volume-up:before { content: "\f028"; }
+        .fa-edit:before { content: "\f044"; }
+        .fa-microphone:before { content: "\f130"; }
+        .fa-coffee:before { content: "\f0f4"; }
+        .fa-home:before { content: "\f015"; }
+        .fa-shopping-cart:before { content: "\f07a"; }
+        .fa-utensils:before { content: "\f2e7"; }
+        .fa-map:before { content: "\f279"; }
+        .fa-rocket:before { content: "\f135"; }
+        .fa-pause:before { content: "\f04c"; }
+        .fa-stop:before { content: "\f04d"; }
+        .fa-sort-numeric-up:before { content: "\f163"; }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing - minimal top margin for professional appearance */
+        .header-spacer {
+            height: 20px; /* Minimal top spacing */
+            width: 100%;
+        }
+
+        /* Master Guruvammal Logo for back button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            /* Layout & Structure */
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            box-sizing: border-box;
+            
+            /* Typography */
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            
+            /* Golden Square Background */
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
+            padding: 8px;
+            
+            /* Visual Effects */
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            
+            /* Interaction */
+            transition: all 0.3s ease;
+        }
+
+        /* Tamil script corner element within Master Guruvammal Logo */
+        .master-guruvammal-logo .tamil-corner {
+            position: absolute;
+            top: 1px;
+            right: 2px;
+            font-size: 8px;
+            color: #5d3a0a;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hover effect for Master Guruvammal Logo */
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4), 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Back Label under Logo */
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 370px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 30px; /* Adjusted to provide consistent spacing */
+        }
+
+        /* Main Content - professional layout */
+        .main-content {
+            margin-top: 0; /* Remove excessive top margin */
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Slide-out Menu Button */
+        .menu-toggle {
+            position: fixed;
+            top: 40px; /* Positioned near the slide menu start (20px + 20px) */
+            left: 370px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Menu Toggle Label */
+        .menu-toggle-label {
+            position: fixed;
+            top: 100px; /* Positioned below the button (40px + 60px) */
+            left: 370px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 50px;
+            transform: translateX(-50%);
+            left: 395px; /* Centered under the 50px button */
+            pointer-events: none; /* Make it non-interactive */
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Label hover effect when button is hovered */
+        .menu-toggle:hover + .menu-toggle-label {
+            background: rgba(160, 82, 45, 0.95);
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px; /* Adjusted to match the new spacing */
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 55px; /* Centered under the collapsed button (30px + 25px) */
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 20px; /* Match header spacer height */
+            left: 0;
+            width: 350px;
+            height: calc(100vh - 20px); /* Adjust height to account for top offset */
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem; /* Professional padding with more top space */
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px; /* More professional top margin */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px; /* Compact professional height */
+            border-radius: 0 0 8px 8px; /* Subtle bottom rounding */
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2); /* Professional shadow */
+        }
+
+        /* Back Button - Positioned on right side of content */
+        .content-back-btn {
+            position: fixed;
+            top: 30px; /* Aligned with menu toggle button */
+            right: 30px; /* Professional right positioning */
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .content-back-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .content-back-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Back Button Label */
+        .content-back-label {
+            position: fixed;
+            top: 85px; /* Positioned below the back button */
+            right: 52px; /* Centered under the 45px button */
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(50%);
+            pointer-events: none;
+        }
+
+        /* Label hover effect when back button is hovered */
+        .content-back-btn:hover + .content-back-label {
+            background: rgba(160, 82, 45, 0.95);
+            transform: translateX(50%) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .menu-bookmark-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.8;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-content {
+            padding: 2rem 1.5rem 1.5rem 1.5rem; /* Increased top padding for better spacing */
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem; /* Reduced padding since no description */
+            margin-bottom: 0.6rem; /* Slightly reduced margin */
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 4px solid #8b4513;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(139, 69, 19, 0.1);
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0; /* Remove margin since no description below */
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem 0rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .french-flag {
+            display: inline-flex;
+            width: 80px;
+            height: 50px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .flag-blue { background: #002395; flex: 1; }
+        .flag-white { background: #FFFFFF; flex: 1; }
+        .flag-red { background: #ED2939; flex: 1; }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #8b4513;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #8b4513;
+            border: 2px solid #8b4513;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2rem 1rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            scroll-margin-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8b4513;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .audio-btn {
+            background: #8b4513;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .audio-btn:hover {
+            background: #a0522d;
+            transform: translateY(-2px);
+        }
+
+        /* Numbers Grid */
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .number-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border-left: 4px solid #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.1);
+            text-align: center;
+        }
+
+        .number-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .number-digit {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .french-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .english-number {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .pronunciation {
+            font-size: 0.9rem;
+            color: #999;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Custom Play Speaker Button */
+        .play-speaker-button {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            border: none;
+            padding: 0 6px;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 70px;
+            height: 36px;
+            box-shadow: 
+                0 4px 8px rgba(212, 175, 55, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            font-size: 10px;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .play-speaker-button:hover {
+            background: linear-gradient(135deg, #e6c547, #c9a429);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 6px 15px rgba(212, 175, 55, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.4),
+                inset 0 -1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-speaker-button:active {
+            transform: translateY(-1px);
+            box-shadow: 
+                0 3px 8px rgba(212, 175, 55, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .play-text {
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            margin-left: 2px;
+        }
+
+        .speaker-2d {
+            position: relative;
+            width: 24px;
+            height: 18px;
+            margin-right: 3px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 2D Speaker Base */
+        .speaker-base {
+            width: 10px;
+            height: 14px;
+            background: #8b4513;
+            border: 1px solid #654321;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        /* 2D Speaker Cone */
+        .speaker-cone {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 7px solid #8b4513;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        /* Sound Wave Arcs */
+        .wave-arc1,
+        .wave-arc2,
+        .wave-arc3 {
+            position: absolute;
+            left: 17px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid #8b4513;
+            border-left: none;
+            border-radius: 0 50px 50px 0;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .wave-arc1 {
+            width: 4px;
+            height: 7px;
+        }
+
+        .wave-arc2 {
+            width: 6px;
+            height: 11px;
+            left: 19px;
+        }
+
+        .wave-arc3 {
+            width: 8px;
+            height: 15px;
+            left: 21px;
+        }
+
+        /* Playing state animations */
+        .play-speaker-button.playing .wave-arc1,
+        .play-speaker-button.playing .wave-arc2,
+        .play-speaker-button.playing .wave-arc3 {
+            opacity: 1;
+            border-color: #d4af37;
+        }
+
+        .play-speaker-button.playing .wave-arc1 {
+            animation: wavesPulse 0.8s ease-in-out infinite;
+        }
+
+        .play-speaker-button.playing .wave-arc2 {
+            animation: wavesPulse 0.8s ease-in-out 0.2s infinite;
+        }
+
+        .play-speaker-button.playing .wave-arc3 {
+            animation: wavesPulse 0.8s ease-in-out 0.4s infinite;
+        }
+
+        .play-speaker-button.playing .speaker-base {
+            background: #a0522d;
+            border-color: #8b4513;
+        }
+
+        .play-speaker-button.playing .speaker-cone {
+            border-left-color: #a0522d;
+        }
+
+        /* Playing indicator dot */
+        .playing-indicator {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 4px;
+            height: 4px;
+            background: #00ff00;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .play-speaker-button.playing .playing-indicator {
+            opacity: 1;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes wavesPulse {
+            0%, 100% { 
+                opacity: 0.5; 
+                transform: translateY(-50%) scale(0.9);
+            }
+            50% { 
+                opacity: 1; 
+                transform: translateY(-50%) scale(1.1);
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+                margin-top: 60px;
+            }
+
+            .hero-section {
+                padding: 1.5rem 0rem;
+            }
+
+            .content-section {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .slide-menu {
+                width: 300px;
+            }
+
+            .slide-menu.collapsed {
+                left: -300px;
+            }
+
+            .container {
+                margin-left: 320px;
+            }
+
+            .container.menu-collapsed {
+                margin-left: 20px; /* Adjusted for mobile spacing consistency */
+            }
+
+            .slide-menu {
+                top: 80px; /* Reduced for mobile header */
+                height: calc(100vh - 80px);
+            }
+
+            .menu-toggle {
+                left: 320px;
+                top: 100px; /* Adjusted for mobile header and slide menu position */
+            }
+
+            .menu-toggle.collapsed {
+                left: 20px; /* Adjusted for mobile spacing */
+            }
+
+            .menu-toggle-label {
+                left: 345px; /* Centered under mobile button (320px + 25px) */
+                top: 160px; /* Adjusted for mobile header and button position */
+            }
+
+            .menu-toggle-label.collapsed {
+                left: 45px; /* Centered under collapsed mobile button (20px + 25px) */
+            }
+
+            .content-back-btn {
+                right: 20px; /* Adjusted for mobile spacing */
+                top: 100px; /* Same as mobile menu toggle */
+            }
+
+            .content-back-label {
+                right: 45px; /* Centered under mobile back button (20px + 25px) */
+                top: 160px; /* Adjusted for mobile button position */
+            }
+
+            .numbers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile adjustments for logo */
+        @media (max-width: 768px) {
+            .gk-logo-container {
+                top: 100px;
+                right: 20px;
+            }
+
+            .gk-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .gk-logo .emoji {
+                font-size: 40px;
+            }
+
+            .gk-logo .letters {
+                font-size: 12px;
+                margin-top: -5px;
+            }
+
+            .back-label {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()" title="Back to Home">
+        <div class="master-guruvammal-logo">
+            Ga<span class="tamil-corner">அ</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">Numbers Learning Journey</div>
+        </div>
+        <div class="menu-content">
+            <a href="#basics" class="menu-item" onclick="navigateToSection('basics')">
+                <div class="item-title">1. Basic Numbers (1-10)</div>
+            </a>
+            <a href="#teens" class="menu-item" onclick="navigateToSection('teens')">
+                <div class="item-title">2. Teen Numbers (11-19)</div>
+            </a>
+            <a href="#tens" class="menu-item" onclick="navigateToSection('tens')">
+                <div class="item-title">3. Tens (20-90)</div>
+            </a>
+            <a href="#complete" class="menu-item" onclick="navigateToSection('complete')">
+                <div class="item-title">4. Complete (1-100)</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Header Spacer - Reserved for IndexLayout Header Integration -->
+    <div class="header-spacer"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content - Matches HomePage spacing -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section fade-in">
+                <h1 class="hero-title">
+                    French Numbers 1-100
+                </h1>
+                <div class="hero-subtitle">Les Nombres - Master French Counting</div>
+                <div class="french-flag">
+                    <div class="flag-blue"></div>
+                    <div class="flag-white"></div>
+                    <div class="flag-red"></div>
+                </div>
+                <p class="hero-description">
+                    Learn to count from 1 to 100 in French! Master the essential numbers you need for shopping, 
+                    telling time, giving addresses, and everyday conversations. From basic counting to complex numbers, 
+                    this comprehensive guide will have you confidently using French numbers in no time.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="toggleMenu()">
+                        <i class="fas fa-list"></i>
+                        Explore Sections
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('basics')">
+                        <i class="fas fa-play"></i>
+                        Start Learning
+                    </button>
+                </div>
+            </section>
+
+            <!-- 1. Basic Numbers (1-10) Section -->
+            <section id="basics" class="content-section">
+                <h2 class="section-title">
+                    1. Les Nombres de Base - Basic Numbers (1-10)
+                </h2>
+                <p class="section-subtitle">Master the foundation numbers - essential for all French counting</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllBasics()">
+                        <i class="fas fa-play"></i>
+                        Play All Basic Numbers
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        <i class="fas fa-stop"></i>
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="numbers-grid">
+                    <div class="number-card">
+                        <div class="number-digit">1</div>
+                        <div class="french-number">un</div>
+                        <div class="english-number">one</div>
+                        <div class="pronunciation">[uhn]</div>
+                        <button class="play-speaker-button" onclick="playAudio('un')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">2</div>
+                        <div class="french-number">deux</div>
+                        <div class="english-number">two</div>
+                        <div class="pronunciation">[duh]</div>
+                        <button class="play-speaker-button" onclick="playAudio('deux')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">3</div>
+                        <div class="french-number">trois</div>
+                        <div class="english-number">three</div>
+                        <div class="pronunciation">[twah]</div>
+                        <button class="play-speaker-button" onclick="playAudio('trois')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">4</div>
+                        <div class="french-number">quatre</div>
+                        <div class="english-number">four</div>
+                        <div class="pronunciation">[KAH-truh]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quatre')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">5</div>
+                        <div class="french-number">cinq</div>
+                        <div class="english-number">five</div>
+                        <div class="pronunciation">[sank]</div>
+                        <button class="play-speaker-button" onclick="playAudio('cinq')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">6</div>
+                        <div class="french-number">six</div>
+                        <div class="english-number">six</div>
+                        <div class="pronunciation">[sees]</div>
+                        <button class="play-speaker-button" onclick="playAudio('six')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">7</div>
+                        <div class="french-number">sept</div>
+                        <div class="english-number">seven</div>
+                        <div class="pronunciation">[set]</div>
+                        <button class="play-speaker-button" onclick="playAudio('sept')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">8</div>
+                        <div class="french-number">huit</div>
+                        <div class="english-number">eight</div>
+                        <div class="pronunciation">[weet]</div>
+                        <button class="play-speaker-button" onclick="playAudio('huit')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">9</div>
+                        <div class="french-number">neuf</div>
+                        <div class="english-number">nine</div>
+                        <div class="pronunciation">[nuhf]</div>
+                        <button class="play-speaker-button" onclick="playAudio('neuf')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">10</div>
+                        <div class="french-number">dix</div>
+                        <div class="english-number">ten</div>
+                        <div class="pronunciation">[dees]</div>
+                        <button class="play-speaker-button" onclick="playAudio('dix')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Teen Numbers (11-19) Section -->
+            <section id="teens" class="content-section">
+                <h2 class="section-title">
+                    2. Les Nombres de 11 à 19 - Teen Numbers (11-19)
+                </h2>
+                <p class="section-subtitle">Learn the teen numbers - notice the unique patterns in French</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllTeens()">
+                        <i class="fas fa-play"></i>
+                        Play All Teen Numbers
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        <i class="fas fa-stop"></i>
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="numbers-grid">
+                    <div class="number-card">
+                        <div class="number-digit">11</div>
+                        <div class="french-number">onze</div>
+                        <div class="english-number">eleven</div>
+                        <div class="pronunciation">[onz]</div>
+                        <button class="play-speaker-button" onclick="playAudio('onze')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">12</div>
+                        <div class="french-number">douze</div>
+                        <div class="english-number">twelve</div>
+                        <div class="pronunciation">[dooz]</div>
+                        <button class="play-speaker-button" onclick="playAudio('douze')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">13</div>
+                        <div class="french-number">treize</div>
+                        <div class="english-number">thirteen</div>
+                        <div class="pronunciation">[trehz]</div>
+                        <button class="play-speaker-button" onclick="playAudio('treize')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">14</div>
+                        <div class="french-number">quatorze</div>
+                        <div class="english-number">fourteen</div>
+                        <div class="pronunciation">[kah-TORZ]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quatorze')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">15</div>
+                        <div class="french-number">quinze</div>
+                        <div class="english-number">fifteen</div>
+                        <div class="pronunciation">[kanz]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quinze')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">16</div>
+                        <div class="french-number">seize</div>
+                        <div class="english-number">sixteen</div>
+                        <div class="pronunciation">[sehz]</div>
+                        <button class="play-speaker-button" onclick="playAudio('seize')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">17</div>
+                        <div class="french-number">dix-sept</div>
+                        <div class="english-number">seventeen</div>
+                        <div class="pronunciation">[dees-SET]</div>
+                        <button class="play-speaker-button" onclick="playAudio('dix-sept')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">18</div>
+                        <div class="french-number">dix-huit</div>
+                        <div class="english-number">eighteen</div>
+                        <div class="pronunciation">[dees-WEET]</div>
+                        <button class="play-speaker-button" onclick="playAudio('dix-huit')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">19</div>
+                        <div class="french-number">dix-neuf</div>
+                        <div class="english-number">nineteen</div>
+                        <div class="pronunciation">[dees-NUHF]</div>
+                        <button class="play-speaker-button" onclick="playAudio('dix-neuf')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Tens (20-90) Section -->
+            <section id="tens" class="content-section">
+                <h2 class="section-title">
+                    3. Les Dizaines - Tens (20-90)
+                </h2>
+                <p class="section-subtitle">Master the tens - essential building blocks for larger numbers</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllTens()">
+                        <i class="fas fa-play"></i>
+                        Play All Tens
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        <i class="fas fa-stop"></i>
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="numbers-grid">
+                    <div class="number-card">
+                        <div class="number-digit">20</div>
+                        <div class="french-number">vingt</div>
+                        <div class="english-number">twenty</div>
+                        <div class="pronunciation">[van]</div>
+                        <button class="play-speaker-button" onclick="playAudio('vingt')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">30</div>
+                        <div class="french-number">trente</div>
+                        <div class="english-number">thirty</div>
+                        <div class="pronunciation">[trahnt]</div>
+                        <button class="play-speaker-button" onclick="playAudio('trente')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">40</div>
+                        <div class="french-number">quarante</div>
+                        <div class="english-number">forty</div>
+                        <div class="pronunciation">[kah-RAHNT]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quarante')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">50</div>
+                        <div class="french-number">cinquante</div>
+                        <div class="english-number">fifty</div>
+                        <div class="pronunciation">[san-KAHNT]</div>
+                        <button class="play-speaker-button" onclick="playAudio('cinquante')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">60</div>
+                        <div class="french-number">soixante</div>
+                        <div class="english-number">sixty</div>
+                        <div class="pronunciation">[swah-SAHNT]</div>
+                        <button class="play-speaker-button" onclick="playAudio('soixante')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">70</div>
+                        <div class="french-number">soixante-dix</div>
+                        <div class="english-number">seventy</div>
+                        <div class="pronunciation">[swah-sahnt-DEES]</div>
+                        <button class="play-speaker-button" onclick="playAudio('soixante-dix')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">80</div>
+                        <div class="french-number">quatre-vingts</div>
+                        <div class="english-number">eighty</div>
+                        <div class="pronunciation">[KAH-truh-van]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quatre-vingts')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">90</div>
+                        <div class="french-number">quatre-vingt-dix</div>
+                        <div class="english-number">ninety</div>
+                        <div class="pronunciation">[KAH-truh-van-DEES]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quatre-vingt-dix')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">100</div>
+                        <div class="french-number">cent</div>
+                        <div class="english-number">one hundred</div>
+                        <div class="pronunciation">[sahn]</div>
+                        <button class="play-speaker-button" onclick="playAudio('cent')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Complete Numbers Examples -->
+            <section id="complete" class="content-section">
+                <h2 class="section-title">
+                    4. Exemples Complets - Complete Examples
+                </h2>
+                <p class="section-subtitle">Practice with compound numbers using the building blocks you've learned</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllComplete()">
+                        <i class="fas fa-play"></i>
+                        Play All Examples
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        <i class="fas fa-stop"></i>
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="numbers-grid">
+                    <div class="number-card">
+                        <div class="number-digit">21</div>
+                        <div class="french-number">vingt et un</div>
+                        <div class="english-number">twenty-one</div>
+                        <div class="pronunciation">[van-tay-UHN]</div>
+                        <button class="play-speaker-button" onclick="playAudio('vingt-et-un')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">35</div>
+                        <div class="french-number">trente-cinq</div>
+                        <div class="english-number">thirty-five</div>
+                        <div class="pronunciation">[trahnt-SANK]</div>
+                        <button class="play-speaker-button" onclick="playAudio('trente-cinq')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">47</div>
+                        <div class="french-number">quarante-sept</div>
+                        <div class="english-number">forty-seven</div>
+                        <div class="pronunciation">[kah-rahnt-SET]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quarante-sept')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">52</div>
+                        <div class="french-number">cinquante-deux</div>
+                        <div class="english-number">fifty-two</div>
+                        <div class="pronunciation">[san-kahnt-DUH]</div>
+                        <button class="play-speaker-button" onclick="playAudio('cinquante-deux')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">66</div>
+                        <div class="french-number">soixante-six</div>
+                        <div class="english-number">sixty-six</div>
+                        <div class="pronunciation">[swah-sahnt-SEES]</div>
+                        <button class="play-speaker-button" onclick="playAudio('soixante-six')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">73</div>
+                        <div class="french-number">soixante-treize</div>
+                        <div class="english-number">seventy-three</div>
+                        <div class="pronunciation">[swah-sahnt-TREHZ]</div>
+                        <button class="play-speaker-button" onclick="playAudio('soixante-treize')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">84</div>
+                        <div class="french-number">quatre-vingt-quatre</div>
+                        <div class="english-number">eighty-four</div>
+                        <div class="pronunciation">[KAH-truh-van-KAH-truh]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quatre-vingt-quatre')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">91</div>
+                        <div class="french-number">quatre-vingt-onze</div>
+                        <div class="english-number">ninety-one</div>
+                        <div class="pronunciation">[KAH-truh-van-ONZE]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quatre-vingt-onze')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="number-card">
+                        <div class="number-digit">99</div>
+                        <div class="french-number">quatre-vingt-dix-neuf</div>
+                        <div class="english-number">ninety-nine</div>
+                        <div class="pronunciation">[KAH-truh-van-dees-NUHF]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quatre-vingt-dix-neuf')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Menu functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.querySelector('.container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                // Open menu
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                // Close menu
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Back button functionality - returns to home page
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from French Numbers page');
+            
+            // Clear any session storage
+            sessionStorage.removeItem('previousPage');
+            sessionStorage.removeItem('previousPageType');
+            
+            // Always navigate to home page
+            console.log(`🔄 Returning to home page`);
+            window.location.href = '../../../index.html#home';
+        }
+
+        // Navigation to sections
+        function navigateToSection(sectionId) {
+            // Close menu if it's open
+            const menu = document.getElementById('slideMenu');
+            if (!menu.classList.contains('collapsed')) {
+                toggleMenu();
+            }
+            scrollToSection(sectionId);
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Audio functionality (placeholder - in real implementation, you would use actual audio files)
+        let currentAudio = null;
+        let currentPlayingButton = null;
+
+        function playAudio(audioId) {
+            // Stop any currently playing audio and remove playing state
+            stopAllAudio();
+
+            // Find the button that triggered this audio
+            const button = event.target.closest('.play-speaker-button');
+            
+            // In a real implementation, you would have audio files
+            // For now, we'll show an alert and use speech synthesis as a demo
+            console.log(`Playing audio for: ${audioId}`);
+            
+            // Demo using browser's speech synthesis
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance();
+                utterance.text = getTextForAudio(audioId);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.8;
+                
+                // Add playing state when audio starts
+                utterance.onstart = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.add('playing');
+                        currentPlayingButton = button;
+                    }
+                };
+                
+                // Remove playing state when audio ends
+                utterance.onend = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.remove('playing');
+                        currentPlayingButton = null;
+                    }
+                };
+                
+                // Handle errors
+                utterance.onerror = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.remove('playing');
+                        currentPlayingButton = null;
+                    }
+                };
+                
+                speechSynthesis.speak(utterance);
+            } else {
+                alert(`Audio would play: ${audioId}\n\nIn a real implementation, this would play the actual French pronunciation.`);
+            }
+        }
+
+        function getTextForAudio(audioId) {
+            const audioTexts = {
+                // Basic numbers 1-10
+                'un': 'un',
+                'deux': 'deux',
+                'trois': 'trois',
+                'quatre': 'quatre',
+                'cinq': 'cinq',
+                'six': 'six',
+                'sept': 'sept',
+                'huit': 'huit',
+                'neuf': 'neuf',
+                'dix': 'dix',
+                
+                // Teen numbers 11-19
+                'onze': 'onze',
+                'douze': 'douze',
+                'treize': 'treize',
+                'quatorze': 'quatorze',
+                'quinze': 'quinze',
+                'seize': 'seize',
+                'dix-sept': 'dix-sept',
+                'dix-huit': 'dix-huit',
+                'dix-neuf': 'dix-neuf',
+                
+                // Tens
+                'vingt': 'vingt',
+                'trente': 'trente',
+                'quarante': 'quarante',
+                'cinquante': 'cinquante',
+                'soixante': 'soixante',
+                'soixante-dix': 'soixante-dix',
+                'quatre-vingts': 'quatre-vingts',
+                'quatre-vingt-dix': 'quatre-vingt-dix',
+                'cent': 'cent',
+                
+                // Complete examples
+                'vingt-et-un': 'vingt et un',
+                'trente-cinq': 'trente-cinq',
+                'quarante-sept': 'quarante-sept',
+                'cinquante-deux': 'cinquante-deux',
+                'soixante-six': 'soixante-six',
+                'soixante-treize': 'soixante-treize',
+                'quatre-vingt-quatre': 'quatre-vingt-quatre',
+                'quatre-vingt-onze': 'quatre-vingt-onze',
+                'quatre-vingt-dix-neuf': 'quatre-vingt-dix-neuf'
+            };
+            return audioTexts[audioId] || audioId;
+        }
+
+        function playAllBasics() {
+            const basics = ['un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix'];
+            playSequence(basics);
+        }
+
+        function playAllTeens() {
+            const teens = ['onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf'];
+            playSequence(teens);
+        }
+
+        function playAllTens() {
+            const tens = ['vingt', 'trente', 'quarante', 'cinquante', 'soixante', 'soixante-dix', 'quatre-vingts', 'quatre-vingt-dix', 'cent'];
+            playSequence(tens);
+        }
+
+        function playAllComplete() {
+            const complete = ['vingt-et-un', 'trente-cinq', 'quarante-sept', 'cinquante-deux', 'soixante-six', 'soixante-treize', 'quatre-vingt-quatre', 'quatre-vingt-onze', 'quatre-vingt-dix-neuf'];
+            playSequence(complete);
+        }
+
+        function playSequence(audioIds) {
+            let index = 0;
+            
+            function playNext() {
+                if (index < audioIds.length) {
+                    const audioId = audioIds[index];
+                    console.log(`Playing sequence ${index + 1}/${audioIds.length}: ${audioId}`);
+                    
+                    // Find the corresponding button for this audio ID
+                    const button = document.querySelector(`[onclick*="${audioId}"]`);
+                    
+                    if ('speechSynthesis' in window) {
+                        const utterance = new SpeechSynthesisUtterance();
+                        utterance.text = getTextForAudio(audioId);
+                        utterance.lang = 'fr-FR';
+                        utterance.rate = 0.8;
+                        
+                        utterance.onstart = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.add('playing');
+                            }
+                        };
+                        
+                        utterance.onend = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.remove('playing');
+                            }
+                            index++;
+                            setTimeout(playNext, 800); // Pause between numbers
+                        };
+                        
+                        utterance.onerror = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.remove('playing');
+                            }
+                            index++;
+                            setTimeout(playNext, 800);
+                        };
+                        
+                        speechSynthesis.speak(utterance);
+                    } else {
+                        index++;
+                        setTimeout(playNext, 1000);
+                    }
+                }
+            }
+            
+            playNext();
+        }
+
+        function stopAllAudio() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                currentAudio = null;
+            }
+            
+            // Remove playing state from all play speaker buttons
+            document.querySelectorAll('.play-speaker-button.playing').forEach(button => {
+                button.classList.remove('playing');
+            });
+            currentPlayingButton = null;
+            
+            console.log('All audio stopped');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close menu if it's open
+                const menu = document.getElementById('slideMenu');
+                if (!menu.classList.contains('collapsed')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('French Numbers 1-100 page loaded successfully');
+            
+            // Check if speech synthesis is available
+            if ('speechSynthesis' in window) {
+                console.log('Speech synthesis available for audio demo');
+            } else {
+                console.log('Speech synthesis not available');
+            }
+
+            // Initialize toggle label based on menu state
+            const menu = document.getElementById('slideMenu');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            if (menu.classList.contains('collapsed')) {
+                toggleLabel.textContent = 'Expand';
+            } else {
+                toggleLabel.textContent = 'Collapse';
+            }
+        });
+
+        // Internet Connection Check for Audio
+        let hasShownOfflineMessage = false;
+        function checkInternetForAudio() { 
+            if (!navigator.onLine) { showOfflineMessage(); return false; } 
+            const voices = speechSynthesis.getVoices(); 
+            if (voices.length === 0 && !hasShownOfflineMessage) { showOfflineMessage(); return false; } 
+            return true; 
+        }
+        function showOfflineMessage() { 
+            if (hasShownOfflineMessage) return; 
+            hasShownOfflineMessage = true; 
+            alert('🌐 Connect to internet or better network\n\nFrench audio requires an internet connection for the best speech quality.\n\n📡 Please check your internet connection and try again.'); 
+            setTimeout(() => { hasShownOfflineMessage = false; }, 10000); 
+        }
+        window.addEventListener('online', () => { hasShownOfflineMessage = false; }); 
+        window.addEventListener('offline', () => { hasShownOfflineMessage = false; });
+
+        // Back button functionality - Firebase compatible
+        function goBack() {
+            console.log('🔙 Navigating back from French numbers...');
+            if (window.loadLanguageContent) {
+                window.loadLanguageContent('french', 'intro');
+            } else {
+                window.location.hash = '#french-intro';
+            }
+        }
+
+        // Global functions for Firebase compatibility
+        window.goBack = goBack; window.checkInternetForAudio = checkInternetForAudio; window.showOfflineMessage = showOfflineMessage;
+    </script>
+</body>
+</html> 
