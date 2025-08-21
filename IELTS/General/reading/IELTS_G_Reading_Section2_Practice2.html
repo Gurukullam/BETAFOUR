@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 2 - Practice 2: Job Application & Interview Process</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5d3a0a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* Small Timer Display */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle.active #menuIcon {
+            transform: rotate(180deg);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #d4af37;
+            text-align: center;
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .timer-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Split Container Layout */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        /* Passages Panel (Left Side) */
+        .passages-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 45%;
+            max-width: 60%;
+        }
+
+        /* Questions Panel (Right Side) */
+        .questions-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 40%;
+            max-width: 55%;
+        }
+
+        /* Panel Headers */
+        .panel-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .panel-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .passage-counter, .question-progress {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Scrollable Content Areas */
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar Styling */
+        .scrollable-content::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 6px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            border-radius: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+        }
+
+        /* Vertical Separator */
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(180deg, #8b4513, #d4af37, #8b4513);
+            position: relative;
+            cursor: col-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .separator-line {
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .separator-handle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            color: #8b4513;
+            padding: 8px 2px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: col-resize;
+            user-select: none;
+        }
+
+        /* Passage Text Styling */
+        .passage-block {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(249, 249, 249, 0.8);
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .passage-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .passage-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Question Styling */
+        .question-group {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(248, 248, 248, 0.9);
+            border-radius: 10px;
+            border-left: 4px solid #8b4513;
+        }
+
+        .question-group-title {
+            font-size: 1.2rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .question:hover {
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+            border-color: #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #8b4513;
+            display: inline-block;
+            margin-right: 10px;
+            min-width: 25px;
+        }
+
+        .question-text {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .options {
+            display: grid;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(249, 249, 249, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #d4af37;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Results Section */
+        .results-section {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 69, 19, 0.05) 100%);
+            text-align: center;
+            display: none;
+        }
+
+        .results-header h2 {
+            color: #8b4513;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .results-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            
+            .vertical-separator {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+        }
+
+        /* Warning styles */
+        .warning {
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #4caf50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">🏢 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 2 - Practice 2</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">💼 2 Passages - Job Application & Interview Process</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 2 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">💼</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">🏢 IELTS General Reading - Section 2 (Practice 2)</h1>
+                <div class="hero-subtitle">
+                    💼 Job Application & Interview Process - Professional Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 2 reading skills with authentic job application and interview preparation materials. This practice covers professional contexts including application requirements for administrative positions and interview preparation guidelines. You will encounter common Section 2 question formats: Sentence Completion, True/False/Not Given, Multiple Choice, and Matching Information. Complete Questions 15-27 within the recommended 20-minute timeframe to develop your career-focused reading skills.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📄 Passage Types:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Passage 1:</strong> Application Requirements for Administrative Positions</li>
+                                <li><strong>Passage 2:</strong> Interview Preparation Guidelines</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📊 Statistics:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Total words:</strong> ~750 words</li>
+                                <li><strong>Question formats:</strong> 4 different types</li>
+                                <li><strong>Difficulty level:</strong> Beginner workplace</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">🎯 Skills Focus:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li>Application requirement comprehension</li>
+                                <li>Interview process understanding</li>
+                                <li>Professional procedure interpretation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin-bottom: 15px; color: #666;">Recommended time for Section 2: 20 minutes</p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startTimer()" id="startBtn">Start Reading</button>
+                    </div>
+                    <div id="timerWarning" style="margin-top: 15px; color: #d4af37; font-weight: bold; display: none;">
+                        ⚠️ 5 minutes remaining!
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">💼 Reading Workspace - Questions 15-27</h2>
+                
+                <!-- Split Container with Vertical Separation -->
+                <div class="split-container">
+                    
+                    <!-- LEFT SIDE: Reading Passages (Scrollable) -->
+                    <div class="passages-panel">
+                        <div class="panel-header">
+                            <h3>📚 Reading Passages</h3>
+                            <div class="passage-counter">2 Passages | ~750 words total</div>
+                        </div>
+                        <div class="passages-content scrollable-content">
+                            
+                            <!-- Passage 1: Application Requirements for Administrative Positions -->
+                            <div class="passage-block" id="passage1">
+                                <div class="passage-title">Passage 1: Application Requirements for Administrative Positions</div>
+                                <div class="passage-text">
+                                    <strong>PROTECH CORPORATION - ADMINISTRATIVE POSITION VACANCY</strong><br><br>
+                                    
+                                    <strong>Position: Administrative Assistant - Customer Service Department</strong><br>
+                                    ProTech Corporation is seeking a motivated and organized Administrative Assistant to join our Customer Service team. This is a full-time permanent position offering excellent career development opportunities within our growing organization. The successful candidate will work Monday to Friday, 8:30 AM to 5:00 PM, with a one-hour lunch break. Starting salary is £24,000 per annum with annual reviews and performance-based increments.<br><br>
+                                    
+                                    <strong>Essential Requirements:</strong><br>
+                                    Applicants must possess a minimum of GCSE qualifications in English and Mathematics at grade C or above. Previous office experience of at least two years is required, preferably in a customer service environment. Proficiency in Microsoft Office Suite, particularly Word, Excel, and Outlook, is essential. Excellent written and verbal communication skills are mandatory, as the role involves regular contact with clients and suppliers. Applicants must be able to work independently and as part of a team.<br><br>
+                                    
+                                    <strong>Desirable Qualifications:</strong><br>
+                                    A-level qualifications or equivalent professional certification would be advantageous. Experience with database management systems, particularly CRM software, would be beneficial. Knowledge of basic accounting principles and experience with invoice processing would strengthen your application. A clean driving license and access to reliable transport would be useful for occasional client visits.<br><br>
+                                    
+                                    <strong>Application Process:</strong><br>
+                                    All applications must be submitted online through our company website by 5:00 PM on Friday, March 15th. Late applications will not be considered under any circumstances. Your application must include a completed application form, current CV, and a covering letter explaining your suitability for the position. Please ensure all contact details are up to date, as unsuccessful applicants will not be contacted. References will be requested only from shortlisted candidates.<br><br>
+                                    
+                                    <strong>Selection Process:</strong><br>
+                                    First-stage interviews will be conducted during the week beginning March 20th via video call. Successful candidates will be invited for a face-to-face second interview, which will include a practical typing test and Excel skills assessment. Final interviews will include a brief presentation on customer service best practices. All candidates must be available to start employment on Monday, April 10th.
+                                </div>
+                            </div>
+                            
+                            <!-- Passage 2: Interview Preparation Guidelines -->
+                            <div class="passage-block" id="passage2">
+                                <div class="passage-title">Passage 2: Interview Preparation Guidelines</div>
+                                <div class="passage-text">
+                                    <strong>CAREERFOCUS CONSULTING - INTERVIEW SUCCESS GUIDE</strong><br><br>
+                                    
+                                    <strong>Before the Interview:</strong><br>
+                                    Research the company thoroughly by visiting their website, reading recent news articles, and understanding their products or services. Study the job description carefully and prepare specific examples from your experience that demonstrate relevant skills. Plan your journey to arrive 10-15 minutes early, but avoid arriving more than 20 minutes before your appointment as this can be inconvenient for the interviewer. Prepare thoughtful questions about the role, company culture, and career development opportunities.<br><br>
+                                    
+                                    <strong>Professional Appearance:</strong><br>
+                                    Choose conservative business attire appropriate for the industry and company culture. For corporate environments, a dark suit with neutral colors is recommended. Ensure shoes are clean and polished, and avoid excessive jewelry or strong perfumes. Pay attention to personal grooming - neat hair, clean nails, and fresh breath are essential. Bring a professional folder containing multiple copies of your CV, references, and any certificates mentioned in your application.<br><br>
+                                    
+                                    <strong>During the Interview:</strong><br>
+                                    Maintain eye contact with all interviewers and use confident body language. Listen carefully to each question and take a moment to think before responding. Use the STAR method (Situation, Task, Action, Result) when answering behavioral questions to provide structured, relevant examples. Speak clearly and at an appropriate volume - avoid speaking too quickly due to nerves. If you don't understand a question, politely ask for clarification rather than guessing what the interviewer wants to hear.<br><br>
+                                    
+                                    <strong>Common Interview Questions:</strong><br>
+                                    Prepare answers for typical questions such as "Tell me about yourself," "Why do you want this job?" and "What are your strengths and weaknesses?" Be ready to discuss gaps in employment or career changes positively. Practice explaining your achievements using specific figures and outcomes where possible. Prepare examples that showcase problem-solving abilities, teamwork, leadership potential, and adaptability to change.<br><br>
+                                    
+                                    <strong>After the Interview:</strong><br>
+                                    Send a thank-you email within 24 hours, reiterating your interest in the position and highlighting key discussion points. If you haven't heard back within the specified timeframe, it's appropriate to send one polite follow-up inquiry. Use this time to reflect on the interview experience and note areas for improvement in future interviews. Continue your job search activities while waiting for a response, as this demonstrates professionalism and maintains momentum in your career development.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VERTICAL SEPARATOR -->
+                    <div class="vertical-separator">
+                        <div class="separator-line"></div>
+                        <div class="separator-handle" title="Drag to resize">⋮⋮</div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Questions (Scrollable) -->
+                    <div class="questions-panel">
+                        <div class="panel-header">
+                            <h3>📝 Questions 15-27</h3>
+                            <div class="question-progress">
+                                <span id="answeredCount">0</span>/13 answered
+                            </div>
+                        </div>
+                        <div class="questions-content scrollable-content">
+                            
+                            <!-- Questions 15-18: Sentence Completion -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 15-18: Sentence Completion</h4>
+                                <p><em>Complete the sentences using NO MORE THAN TWO WORDS from the passage.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">15.</div>
+                                    <div class="question-text">The starting salary for the Administrative Assistant position is £__________ per annum.</div>
+                                    <input type="text" class="answer-input" id="q15" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">16.</div>
+                                    <div class="question-text">Applicants must have a minimum of __________ years of previous office experience.</div>
+                                    <input type="text" class="answer-input" id="q16" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">17.</div>
+                                    <div class="question-text">To avoid being inconvenient, candidates should not arrive more than __________ minutes early.</div>
+                                    <input type="text" class="answer-input" id="q17" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">18.</div>
+                                    <div class="question-text">A thank-you email should be sent within __________ hours after the interview.</div>
+                                    <input type="text" class="answer-input" id="q18" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+                            </div>
+
+                            <!-- Questions 19-22: True/False/Not Given -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 19-22: True/False/Not Given</h4>
+                                <p><em>Do the following statements agree with the information in the passages?</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">19.</div>
+                                    <div class="question-text">The Administrative Assistant position includes weekend work requirements.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">20.</div>
+                                    <div class="question-text">All candidates must have A-level qualifications to be considered for the position.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">21.</div>
+                                    <div class="question-text">First-stage interviews will be conducted face-to-face.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">22.</div>
+                                    <div class="question-text">The STAR method is recommended for answering technical questions.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 23-25: Multiple Choice -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 23-25: Multiple Choice</h4>
+                                <p><em>Choose the correct letter, A, B, C, or D.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">23.</div>
+                                    <div class="question-text">What is required for the final interview stage?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="A" onchange="updateProgress()">
+                                            A) A practical typing test only
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="B" onchange="updateProgress()">
+                                            B) Excel skills assessment only
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="C" onchange="updateProgress()">
+                                            C) A brief presentation on customer service
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="D" onchange="updateProgress()">
+                                            D) Reference checks with previous employers
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">24.</div>
+                                    <div class="question-text">What should candidates bring to an interview?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="A" onchange="updateProgress()">
+                                            A) Only their CV and references
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="B" onchange="updateProgress()">
+                                            B) A professional folder with multiple documents
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="C" onchange="updateProgress()">
+                                            C) Just their ID and qualifications
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="D" onchange="updateProgress()">
+                                            D) A portfolio of previous work examples
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">25.</div>
+                                    <div class="question-text">According to the interview guide, what should you do if you don't understand a question?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="A" onchange="updateProgress()">
+                                            A) Give your best guess at what they want to hear
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="B" onchange="updateProgress()">
+                                            B) Ask the interviewer to repeat the question
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="C" onchange="updateProgress()">
+                                            C) Politely ask for clarification
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="D" onchange="updateProgress()">
+                                            D) Skip the question and move to the next one
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 26-27: Matching Information -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 26-27: Matching Information</h4>
+                                <p><em>Match the following timeframes with the correct activities.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">26.</div>
+                                    <div class="question-text">Application deadline</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="A" onchange="updateProgress()">
+                                            A) Week beginning March 20th
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="B" onchange="updateProgress()">
+                                            B) Friday, March 15th at 5:00 PM
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="C" onchange="updateProgress()">
+                                            C) Monday, April 10th
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="D" onchange="updateProgress()">
+                                            D) Within 24 hours
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">27.</div>
+                                    <div class="question-text">Employment start date</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="A" onchange="updateProgress()">
+                                            A) Week beginning March 20th
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="B" onchange="updateProgress()">
+                                            B) Friday, March 15th at 5:00 PM
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="C" onchange="updateProgress()">
+                                            C) Monday, April 10th
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="D" onchange="updateProgress()">
+                                            D) Within 24 hours
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <div class="results-header">
+                    <h2>📊 Practice Results</h2>
+                    <p>Your Section 2 Reading Performance</p>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 13 questions correct</div>
+                </div>
+
+                <div id="detailedResults" style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <!-- Results will be populated here -->
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <button class="timer-btn" onclick="resetPractice()">Try Again</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Timer and workspace functionality
+        let timerInterval;
+        let timeRemaining = 1200; // 20 minutes in seconds
+        let isTimerRunning = false;
+
+        // Correct answers for Section 2 Practice 2
+        const correctAnswers = {
+            'q15': '24,000',
+            'q16': 'two',
+            'q17': '20',
+            'q18': '24',
+            'q19': 'False',
+            'q20': 'False',
+            'q21': 'False',
+            'q22': 'False',
+            'q23': 'C',
+            'q24': 'B',
+            'q25': 'C',
+            'q26': 'B',
+            'q27': 'C'
+        };
+
+        function startTimer() {
+            if (isTimerRunning) return;
+            
+            isTimerRunning = true;
+            document.getElementById('startBtn').disabled = true;
+            
+            // Show small timer
+            const smallTimer = document.getElementById('smallTimerDisplay');
+            smallTimer.style.display = 'flex';
+            
+            // Auto-scroll to reading workspace
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            timeRemaining--;
+            
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            document.getElementById('timerDisplay').textContent = timeString;
+            document.getElementById('smallTimerTime').textContent = timeString;
+            
+            // Warning at 10 minutes remaining
+            if (timeRemaining === 600) {
+                document.getElementById('timerWarning').textContent = '⚠️ 10 minutes remaining!';
+                document.getElementById('timerWarning').style.display = 'block';
+                document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(255, 140, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%)';
+            }
+            
+            // Warning at 5 minutes remaining
+            if (timeRemaining === 300) {
+                document.getElementById('timerWarning').textContent = '⚠️ 5 minutes remaining!';
+                document.getElementById('timerWarning').style.color = '#ff6b35';
+                document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(255, 69, 0, 0.95) 0%, rgba(255, 99, 71, 0.95) 100%)';
+            }
+            
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                submitAnswers();
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('menu-open');
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function updateProgress() {
+            this.autoSave(); // Only handles auto-save functionality
+        }
+
+        function autoSave() {
+            // Auto-save user answers to localStorage
+            const answers = {};
+            for (let i = 15; i <= 27; i++) {
+                const questionElement = document.getElementById(`q${i}`);
+                if (questionElement) {
+                    if (questionElement.type === 'text') {
+                        answers[`q${i}`] = questionElement.value;
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                    if (radioButtons.length > 0) {
+                        answers[`q${i}`] = radioButtons[0].value;
+                    }
+                }
+            }
+            
+            localStorage.setItem('section2_practice2_answers', JSON.stringify(answers));
+            
+            // Update progress counter
+            const answeredCount = Object.keys(answers).filter(key => answers[key] && answers[key].trim() !== '').length;
+            document.getElementById('answeredCount').textContent = answeredCount;
+        }
+
+        function loadSavedAnswers() {
+            const savedAnswers = localStorage.getItem('section2_practice2_answers');
+            if (savedAnswers) {
+                const answers = JSON.parse(savedAnswers);
+                for (const [questionId, answer] of Object.entries(answers)) {
+                    const questionElement = document.getElementById(questionId);
+                    if (questionElement) {
+                        if (questionElement.type === 'text') {
+                            questionElement.value = answer;
+                        }
+                    } else {
+                        // Handle radio buttons
+                        const radioButton = document.querySelector(`input[name="${questionId}"][value="${answer}"]`);
+                        if (radioButton) {
+                            radioButton.checked = true;
+                        }
+                    }
+                }
+                updateProgress();
+            }
+        }
+
+        function submitAnswers() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            
+            const userAnswers = {};
+            let score = 0;
+            
+            // Collect answers
+            for (let i = 15; i <= 27; i++) {
+                const questionElement = document.getElementById(`q${i}`);
+                if (questionElement && questionElement.type === 'text') {
+                    userAnswers[`q${i}`] = questionElement.value.toLowerCase().trim();
+                } else {
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                    if (radioButtons.length > 0) {
+                        userAnswers[`q${i}`] = radioButtons[0].value;
+                    }
+                }
+            }
+            
+            // Calculate score
+            for (const [questionId, correctAnswer] of Object.entries(correctAnswers)) {
+                const userAnswer = userAnswers[questionId] || '';
+                if (typeof correctAnswer === 'string' && typeof userAnswer === 'string') {
+                    if (correctAnswer.toLowerCase() === userAnswer.toLowerCase()) {
+                        score++;
+                    }
+                }
+            }
+            
+            // Display results
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('reading-workspace').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            
+            // Show detailed results
+            let resultsHTML = '<h3 style="color: #8b4513; margin-bottom: 20px;">📋 Detailed Answer Review</h3>';
+            resultsHTML += '<div style="display: grid; gap: 15px;">';
+            
+            for (let i = 15; i <= 27; i++) {
+                const questionId = `q${i}`;
+                const correctAnswer = correctAnswers[questionId];
+                const userAnswer = userAnswers[questionId] || 'No answer';
+                const isCorrect = correctAnswer.toLowerCase() === (userAnswer || '').toLowerCase();
+                
+                resultsHTML += `
+                    <div style="padding: 15px; background: ${isCorrect ? 'rgba(76, 175, 80, 0.1)' : 'rgba(244, 67, 54, 0.1)'}; border-radius: 8px; border-left: 4px solid ${isCorrect ? '#4caf50' : '#f44336'};">
+                        <div style="font-weight: bold; margin-bottom: 5px;">Question ${i}: ${isCorrect ? '✅ Correct' : '❌ Incorrect'}</div>
+                        <div>Your answer: <span style="color: #666;">${userAnswer}</span></div>
+                        <div>Correct answer: <span style="color: #8b4513; font-weight: bold;">${correctAnswer}</span></div>
+                    </div>
+                `;
+            }
+            
+            resultsHTML += '</div>';
+            
+            // Add improvement tips based on performance
+            const percentage = Math.round((score / 13) * 100);
+            resultsHTML += `<div style="margin-top: 30px; padding: 20px; background: rgba(212, 175, 55, 0.1); border-radius: 10px;">`;
+            resultsHTML += `<h4 style="color: #8b4513;">🎯 Career Development Reading Enhancement Strategies</h4>`;
+            
+            if (percentage >= 85) {
+                resultsHTML += `<p><strong>Excellent!</strong> You demonstrate strong career-focused reading skills. Focus on:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Advanced job application strategies and complex position requirements</li>
+                        <li>Developing expertise in professional communication protocols</li>
+                        <li>Mastering industry-specific terminology and career advancement materials</li>
+                    </ul>`;
+            } else if (percentage >= 65) {
+                resultsHTML += `<p><strong>Good progress!</strong> Your job application reading skills are developing well. Work on:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Understanding detailed application requirements and selection criteria</li>
+                        <li>Interpreting interview guidelines and professional development advice</li>
+                        <li>Analyzing workplace procedures and career-related documentation</li>
+                    </ul>`;
+            } else {
+                resultsHTML += `<p><strong>Keep practicing!</strong> Focus on building foundational career reading skills:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Scanning job advertisements for key requirements and deadlines</li>
+                        <li>Understanding basic interview preparation and application processes</li>
+                        <li>Recognizing essential vs. desirable qualifications in job descriptions</li>
+                        <li>Practice with simpler career-related materials and job postings</li>
+                    </ul>`;
+            }
+            
+            resultsHTML += `</div>`;
+            
+            document.getElementById('detailedResults').innerHTML = resultsHTML;
+            
+            // Clear saved answers
+            localStorage.removeItem('section2_practice2_answers');
+            
+            // Navigate to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetPractice() {
+            // Reset timer
+            timeRemaining = 1200;
+            isTimerRunning = false;
+            clearInterval(timerInterval);
+            document.getElementById('timerDisplay').textContent = '20:00';
+            document.getElementById('smallTimerTime').textContent = '20:00';
+            document.getElementById('smallTimerDisplay').style.display = 'none';
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('timerWarning').style.display = 'none';
+            
+            // Reset small timer colors
+            document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+            
+            // Clear all answers
+            document.querySelectorAll('.answer-input').forEach(input => input.value = '');
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            
+            // Clear saved answers
+            localStorage.removeItem('section2_practice2_answers');
+            
+            // Show workspace, hide results
+            document.getElementById('reading-workspace').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            
+            // Reset progress counter
+            document.getElementById('answeredCount').textContent = '0';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const menu = document.getElementById('slideMenu');
+                if (menu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize
+        window.addEventListener('load', function() {
+            loadSavedAnswers();
+            
+            // Add change listeners for auto-save
+            document.querySelectorAll('.answer-input, input[type="radio"]').forEach(element => {
+                element.addEventListener('change', autoSave);
+                element.addEventListener('input', autoSave);
+            });
+        });
+
+        // Resizable panels functionality
+        let isResizing = false;
+
+        document.querySelector('.separator-handle').addEventListener('mousedown', function(e) {
+            isResizing = true;
+            document.body.style.cursor = 'col-resize';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isResizing) return;
+            
+            const container = document.querySelector('.split-container');
+            const containerRect = container.getBoundingClientRect();
+            const newLeftWidth = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+            
+            if (newLeftWidth > 30 && newLeftWidth < 70) {
+                document.querySelector('.passages-panel').style.flex = `0 0 ${newLeftWidth}%`;
+                document.querySelector('.questions-panel').style.flex = `0 0 ${100 - newLeftWidth}%`;
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isResizing = false;
+            document.body.style.cursor = 'default';
+        });
+    </script>
+</body>
+</html> 
