@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Speaking Part 1 - Hometown & Living | GK Foundation</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Master Guruvammal Logo for template back button */
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            margin-left: 350px;
+            padding: 2rem;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            padding: 1rem 1.5rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.3s ease;
+        }
+
+        .menu-item:hover::before {
+            left: 100%;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            border-left-color: #d4af37;
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item.active {
+            background: rgba(139, 69, 19, 0.1);
+            border-left-color: #8b4513;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #8b4513;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Speaking Practice Interface */
+        .speaking-interface {
+            display: block;
+            margin: 2rem 0;
+        }
+
+        .questions-panel {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .recording-panel {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .question-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .question-number {
+            font-weight: 700;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .question-text {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .question-tips {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Question Audio Controls */
+        .question-audio {
+            margin-top: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .play-question-btn {
+            padding: 0.4rem 0.8rem;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            min-width: 80px;
+            justify-content: center;
+        }
+
+        .play-question-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #ffd700);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+        }
+
+        .play-question-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .play-question-btn.playing {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            animation: pulse-play 1s infinite;
+        }
+
+        @keyframes pulse-play {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .audio-status {
+            font-size: 0.7rem;
+            color: #8b4513;
+            font-weight: 500;
+        }
+
+        /* Auto Play Controls */
+        .auto-play-section {
+            background: rgba(139, 69, 19, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .auto-play-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .auto-play-btn {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            color: #8b4513;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .auto-play-btn:hover {
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .auto-play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .auto-play-status {
+            font-size: 0.8rem;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        /* Recording Controls */
+        .recording-controls {
+            margin-top: 1rem;
+        }
+
+        .recording-status {
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .recording-status.idle {
+            background: rgba(212, 175, 55, 0.1);
+            color: #8b4513;
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .recording-status.recording {
+            background: rgba(255, 68, 68, 0.1);
+            color: #cc0000;
+            border-color: rgba(255, 68, 68, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .recording-status.processing {
+            background: rgba(68, 170, 68, 0.1);
+            color: #006600;
+            border-color: rgba(68, 170, 68, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .control-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            min-width: 120px;
+        }
+
+        .control-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .record-btn {
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+        }
+
+        .record-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 68, 68, 0.4);
+        }
+
+        .stop-btn {
+            background: linear-gradient(135deg, #666, #444);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 102, 102, 0.3);
+        }
+
+        .stop-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 102, 102, 0.4);
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #44aa44, #006600);
+            color: white;
+            box-shadow: 0 4px 15px rgba(68, 170, 68, 0.3);
+        }
+
+        .play-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(68, 170, 68, 0.4);
+        }
+
+        .process-btn {
+            background: linear-gradient(135deg, #ffa500, #cc8400);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+        }
+
+        .process-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
+        }
+
+
+
+        /* Timer Display */
+        .timer-display {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #8b4513;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        /* Audio Waveform Visualization */
+        .audio-visualizer {
+            width: 100%;
+            height: 100px;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visualizer-bars {
+            display: flex;
+            height: 80%;
+            align-items: end;
+            gap: 2px;
+        }
+
+        .visualizer-bar {
+            width: 3px;
+            background: linear-gradient(to top, #d4af37, #8b4513);
+            border-radius: 2px;
+            transition: height 0.1s ease;
+            min-height: 2px;
+        }
+
+        /* Instructions */
+        .instructions {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .instructions h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .instructions li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .instructions li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            .slide-menu.collapsed {
+                left: -100%;
+            }
+
+            .speaking-interface {
+                margin: 1rem 0;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .control-btn {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 1rem;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo Container (Back Button) -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Slide-out Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle">
+        ‹
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Speaking Part 1</div>
+            <div class="menu-subtitle">Hometown & Living</div>
+        </div>
+        <div class="menu-content">
+            <div class="menu-item" onclick="scrollToSection('instructions')">📋 Instructions</div>
+            <div class="menu-item active" onclick="scrollToSection('recording')">🗣️ Speaking Practice</div>
+            <div class="menu-item" onclick="scrollToSection('analysis')">📊 Analysis Results</div>
+            <div class="menu-item" onclick="scrollToSection('guidance')">🎯 Band Score Guidance</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <div class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">IELTS Speaking Part 1: Hometown & Living</h1>
+                <div class="hero-subtitle">Master hometown and living questions with interactive practice</div>
+                <p class="hero-description">
+                    Practice common Part 1 questions about your hometown, where you live, and your living situation with real-time recording, AI-powered analysis, and personalized feedback.
+                </p>
+            </section>
+
+            <!-- Instructions Section -->
+            <section class="instructions" id="instructions-section">
+                <h3>🎯 How to Practice</h3>
+                <ul>
+                    <li><strong>Read each question carefully</strong> - Take time to understand what's being asked</li>
+                    <li><strong>Think before speaking</strong> - You have a moment to organize your thoughts</li>
+                    <li><strong>Speak naturally</strong> - Answer in 20-30 seconds with 2-3 sentences per question</li>
+                    <li><strong>Record your response</strong> - Click record, answer the question, then stop</li>
+                    <li><strong>Review and improve</strong> - Listen to your original recording and review the analysis feedback</li>
+                    <li><strong>Next Question</strong> - After analysis, click "Next Question" to automatically move to the next practice question</li>
+                    <li><strong>Retry</strong> - Click "Retry" to practice the same question again with a fresh recording session</li>
+                    <li><strong>Practice regularly</strong> - Consistency is key to improving your speaking fluency</li>
+                </ul>
+            </section>
+
+            <!-- Speaking Practice Interface -->
+            <section class="content-section" id="recording-section">
+                <h2 class="section-title">🗣️ Speaking Practice Session</h2>
+                
+                <div class="speaking-interface">
+                    <!-- Recording Panel -->
+                    <div class="recording-panel">
+                        <h3 style="color: #8b4513; margin-bottom: 1rem;">Recording Studio</h3>
+                        
+                        <!-- Recording Status -->
+                        <div class="recording-status idle" id="recordingStatus">
+                            Ready to record your response
+                        </div>
+
+                        <!-- Timer Display -->
+                        <div class="timer-display" id="timerDisplay">00:00</div>
+
+                        <!-- Audio Visualizer -->
+                        <div class="audio-visualizer" id="audioVisualizer">
+                            <div class="visualizer-bars" id="visualizerBars">
+                                <!-- Bars will be generated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Question Selection for Analysis -->
+                        <div style="margin: 1rem 0; text-align: center;">
+                            <label for="questionSelect" style="color: #8b4513; font-weight: 600; margin-bottom: 0.5rem; display: block;">Which question are you answering?</label>
+                            <select id="questionSelect" onchange="updateCurrentQuestion()" style="padding: 0.5rem; border-radius: 5px; border: 1px solid #d4af37; font-size: 0.9rem; width: 100%; max-width: 700px; margin: 0 auto; display: block;">
+                                <option value="1">Q1: Where do you come from?</option>
+                                <option value="2">Q2: What do you like most about your hometown?</option>
+                                <option value="3">Q3: Do you live in a house or an apartment?</option>
+                                <option value="4">Q4: How long have you been living in your current city?</option>
+                                <option value="5">Q5: What changes would you like to see in your hometown?</option>
+                                <option value="6">Q6: Do you prefer living in the city or countryside?</option>
+                            </select>
+                        </div>
+
+                        <!-- Control Buttons -->
+                        <div class="control-buttons">
+                            <button class="control-btn record-btn" id="recordBtn" onclick="startRecording()">
+                                🎤 Start Recording
+                            </button>
+                            <button class="control-btn stop-btn" id="stopBtn" onclick="stopRecording()" disabled>
+                                ⏹️ Stop Recording
+                            </button>
+                            <button class="control-btn play-btn" id="playBtn" onclick="playOriginal()" disabled>
+                                ▶️ Play Original
+                            </button>
+                            <button class="control-btn process-btn" id="processBtn" onclick="processAudio()" disabled>
+                                🔄 Submit for Analysis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Results Section -->
+                <div id="analysisSection" style="display: none;">
+                    <div class="content-section">
+                        <h2 class="section-title">📊 Analysis & Improvement</h2>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                            <!-- What You Said -->
+                            <div style="background: rgba(255, 255, 255, 0.8); padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.3);">
+                                <h3 style="color: #8b4513; margin-bottom: 1rem;">📝 What You Said</h3>
+                                <div id="transcriptResult" style="background: rgba(139, 69, 19, 0.05); padding: 1rem; border-radius: 8px; border-left: 4px solid #d4af37; font-style: italic; line-height: 1.6;"></div>
+                            </div>
+
+                            <!-- Analysis & Missing Elements -->
+                            <div style="background: rgba(255, 255, 255, 0.8); padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.3);">
+                                <h3 style="color: #8b4513; margin-bottom: 1rem;">🎯 Analysis & What You Missed</h3>
+                                <div id="analysisResult" style="line-height: 1.6;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Improved Response -->
+                        <div style="background: rgba(255, 255, 255, 0.8); padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.3); margin-bottom: 2rem;">
+                            <h3 style="color: #8b4513; margin-bottom: 1rem;">✨ Improved Response Suggestions</h3>
+                            <div id="improvedResponse" style="background: rgba(212, 175, 55, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #8b4513; font-weight: 500; line-height: 1.6;"></div>
+                        </div>
+
+                        <!-- Band Score Comparison -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div style="background: rgba(255, 0, 0, 0.1); padding: 1rem; border-radius: 8px; border: 1px solid #ff6666;">
+                                <h4 style="color: #cc0000; margin-bottom: 0.5rem;">Your Current Response</h4>
+                                <div id="currentBandScore" style="font-size: 1.1rem; font-weight: 600;"></div>
+                            </div>
+                            <div style="background: rgba(0, 128, 0, 0.1); padding: 1rem; border-radius: 8px; border: 1px solid #66cc66;">
+                                <h4 style="color: #006600; margin-bottom: 0.5rem;">Potential with Improvements</h4>
+                                <div id="improvedBandScore" style="font-size: 1.1rem; font-weight: 600;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; padding: 1.5rem;">
+                            <button onclick="goToNextQuestion()" style="
+                                background: linear-gradient(135deg, #27ae60, #229954);
+                                color: white;
+                                border: none;
+                                padding: 12px 24px;
+                                border-radius: 25px;
+                                font-size: 1rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                                min-width: 150px;
+                                box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+                            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(39, 174, 96, 0.4)'" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(39, 174, 96, 0.3)'">
+                                ➡️ Next Question
+                            </button>
+                            <button onclick="refreshCurrentQuestion()" style="
+                                background: linear-gradient(135deg, #3498db, #2980b9);
+                                color: white;
+                                border: none;
+                                padding: 12px 24px;
+                                border-radius: 25px;
+                                font-size: 1rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                                min-width: 150px;
+                                box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+                            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(52, 152, 219, 0.4)'" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(52, 152, 219, 0.3)'">
+                                🔄 Retry
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Band Score Guidance -->
+            <section class="content-section" id="guidance-section">
+                <h2 class="section-title">🎯 IELTS Band Score Guidance</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                    <div style="background: rgba(255, 215, 0, 0.1); border: 1px solid #ffd700; border-radius: 10px; padding: 1rem;">
+                        <h4 style="color: #8b4513; margin-bottom: 0.5rem;">🥇 Band 7-9 (Target)</h4>
+                        <ul style="color: #666; font-size: 0.9rem; line-height: 1.5; padding-left: 1rem;">
+                            <li>Speak fluently with natural rhythm</li>
+                            <li>Use varied vocabulary appropriately</li>
+                            <li>Demonstrate complex grammar structures</li>
+                            <li>Clear pronunciation with correct stress</li>
+                            <li>Extend answers with examples and reasons</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; border-radius: 10px; padding: 1rem;">
+                        <h4 style="color: #8b4513; margin-bottom: 0.5rem;">🎯 Hometown & Living Tips</h4>
+                        <ul style="color: #666; font-size: 0.9rem; line-height: 1.5; padding-left: 1rem;">
+                            <li>Be specific about your location and features</li>
+                            <li>Use descriptive adjectives for places</li>
+                            <li>Compare your hometown to other places</li>
+                            <li>Mention local traditions and culture</li>
+                            <li>Express personal preferences and reasons</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Global variables for audio recording
+        let mediaRecorder;
+        let audioChunks = [];
+        let isRecording = false;
+        let recordingStartTime;
+        let timerInterval;
+        let analyser, audioContext, dataArray, source;
+        let animationId;
+        let currentQuestionBeingAnswered = 1;
+
+        // IELTS Part 1 Hometown & Living - Questions Array
+        const questions = [
+            "Where do you come from?",
+            "What do you like most about your hometown?",
+            "Do you live in a house or an apartment?",
+            "How long have you been living in your current city?",
+            "What changes would you like to see in your hometown?",
+            "Do you prefer living in the city or countryside?"
+        ];
+
+        // Mock Analysis Functions for IELTS Assessment
+        function speechToText(audioBlob) {
+            // This would integrate with a real speech-to-text service
+            const mockTranscripts = {
+                1: "I come from Beijing, China. It's a large metropolitan city in northern China. It's particularly known for its historical sites like the Forbidden City and modern architecture.",
+                2: "What I like most about my hometown is the rich cultural heritage. The traditional architecture is really fascinating because it tells stories of our history. For example, the ancient temples showcase incredible craftsmanship.",
+                3: "I live in an apartment with my family. It has three bedrooms and a nice balcony with a view. I really like it because it's convenient and close to public transportation.",
+                4: "I've been living here for about ten years. I moved here for university and I've noticed significant development in infrastructure during this time.",
+                5: "I'd like to see more green spaces in my hometown. This would improve air quality because we need more trees and parks. It would make the city more livable and healthy.",
+                6: "I prefer living in the city because of the convenience and opportunities. While the countryside has fresh air, I find the city more dynamic for career development."
+            };
+            
+            const currentQuestion = parseInt(document.getElementById('questionSelect').value);
+            return mockTranscripts[currentQuestion] || "I need to think about this question more carefully.";
+        }
+
+        function analyzeResponse(transcript, questionNumber) {
+            // Mock analysis based on transcript content
+            const analysis = {
+                strengths: [],
+                improvements: [],
+                missingElements: [],
+                bandScore: Math.floor(Math.random() * 3) + 6 // Random between 6-9 for demo
+            };
+
+            // Question-specific analysis
+            switch(questionNumber) {
+                case 1:
+                    if (transcript.includes("from")) analysis.strengths.push("Clear location statement");
+                    if (transcript.includes("known for")) analysis.strengths.push("Good descriptive details");
+                    if (!transcript.includes("city") && !transcript.includes("town")) {
+                        analysis.improvements.push("Be more specific about the type of place");
+                    }
+                    break;
+                case 2:
+                    if (transcript.includes("like")) analysis.strengths.push("Clear preference expressed");
+                    if (transcript.includes("because")) analysis.strengths.push("Good use of reasoning");
+                    if (!transcript.includes("example")) {
+                        analysis.improvements.push("Add specific examples to support your opinion");
+                    }
+                    break;
+                case 3:
+                    if (transcript.includes("apartment") || transcript.includes("house")) {
+                        analysis.strengths.push("Direct answer to the question");
+                    }
+                    if (transcript.includes("family") || transcript.includes("with")) {
+                        analysis.strengths.push("Good personal details");
+                    }
+                    if (!transcript.includes("like") && !transcript.includes("convenient")) {
+                        analysis.improvements.push("Explain why you like your current accommodation");
+                    }
+                    break;
+                case 4:
+                    if (transcript.includes("years") || transcript.includes("months")) {
+                        analysis.strengths.push("Specific time duration given");
+                    }
+                    if (transcript.includes("moved") || transcript.includes("came")) {
+                        analysis.strengths.push("Good context provided");
+                    }
+                    if (!transcript.includes("changed") && !transcript.includes("noticed")) {
+                        analysis.improvements.push("Mention any changes you've observed over time");
+                    }
+                    break;
+                case 5:
+                    if (transcript.includes("would like") || transcript.includes("improve")) {
+                        analysis.strengths.push("Clear suggestions provided");
+                    }
+                    if (transcript.includes("because") || transcript.includes("would")) {
+                        analysis.strengths.push("Good reasoning for suggestions");
+                    }
+                    if (!transcript.includes("better") && !transcript.includes("benefit")) {
+                        analysis.improvements.push("Explain how changes would benefit the community");
+                    }
+                    break;
+                case 6:
+                    if (transcript.includes("prefer")) analysis.strengths.push("Clear preference stated");
+                    if (transcript.includes("while") || transcript.includes("although")) {
+                        analysis.strengths.push("Good comparison made");
+                    }
+                    if (!transcript.includes("opportunity") && !transcript.includes("convenient")) {
+                        analysis.improvements.push("Mention specific advantages of your preference");
+                    }
+                    break;
+            }
+
+            if (analysis.strengths.length === 0) {
+                analysis.strengths.push("Response shows basic understanding of the question");
+            }
+            if (analysis.improvements.length === 0) {
+                analysis.improvements.push("Try to extend your answer with more specific details");
+            }
+
+            return analysis;
+        }
+
+        function generateImprovedResponse(questionNumber) {
+            const improvedResponses = {
+                1: "I come from Shanghai, China. It's a vibrant metropolitan city located on the eastern coast. It's particularly known for its impressive skyline, international business district, and rich blend of traditional and modern culture.",
+                2: "What I like most about my hometown is the incredible food scene. The local cuisine is really diverse because we have influences from all over the region. For example, you can find everything from traditional street food to modern fusion restaurants within a few blocks.",
+                3: "I live in a modern apartment with my parents. It has two bedrooms, a spacious living room, and a balcony overlooking the city. I really like it because it's well-located near public transport and has all the amenities we need.",
+                4: "I've been living here for about fifteen years now. I moved here when I was quite young for my father's work, and I've noticed tremendous urban development during this time, with many new shopping centers and improved transportation systems.",
+                5: "I'd like to see more bicycle lanes in my hometown. This would encourage eco-friendly transportation because people could cycle safely to work. It would make the city more environmentally sustainable and reduce traffic congestion.",
+                6: "I prefer living in the city because of the career opportunities and cultural diversity. While the countryside has cleaner air and a peaceful environment, I find the city more stimulating for personal growth and professional development."
+            };
+            return improvedResponses[questionNumber] || "Focus on providing specific details and personal examples in your response.";
+        }
+
+        // Audio recording functions
+        async function initializeAudio() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                
+                mediaRecorder = new MediaRecorder(stream);
+                audioChunks = [];
+
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+
+                mediaRecorder.onstop = () => {
+                    console.log('Recording completed');
+                };
+
+                // Set up audio visualization
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                source = audioContext.createMediaStreamSource(stream);
+                source.connect(analyser);
+
+                analyser.fftSize = 256;
+                const bufferLength = analyser.frequencyBinCount;
+                dataArray = new Uint8Array(bufferLength);
+
+                initializeVisualizer();
+                return true;
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+                updateRecordingStatus('Microphone access denied. Please allow microphone permissions.');
+                return false;
+            }
+        }
+
+        function initializeVisualizer() {
+            const visualizerBars = document.getElementById('visualizerBars');
+            visualizerBars.innerHTML = '';
+            
+            // Create 64 bars
+            for (let i = 0; i < 64; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'visualizer-bar';
+                bar.style.height = '2px';
+                visualizerBars.appendChild(bar);
+            }
+        }
+
+        function updateVisualizer() {
+            if (!analyser || !isRecording) return;
+
+            analyser.getByteFrequencyData(dataArray);
+            const bars = document.querySelectorAll('.visualizer-bar');
+            
+            bars.forEach((bar, index) => {
+                const value = dataArray[Math.floor(index * dataArray.length / bars.length)];
+                const height = Math.max(2, (value / 255) * 80);
+                bar.style.height = height + 'px';
+            });
+
+            if (isRecording) {
+                animationId = requestAnimationFrame(updateVisualizer);
+            }
+        }
+
+        async function startRecording() {
+            if (!mediaRecorder) {
+                const initialized = await initializeAudio();
+                if (!initialized) return;
+            }
+
+            audioChunks = [];
+            mediaRecorder.start();
+            isRecording = true;
+            recordingStartTime = Date.now();
+
+            updateRecordingStatus('🔴 Recording in progress...');
+            updateButtonStates('recording');
+            startTimer();
+            updateVisualizer();
+
+            console.log('🎤 Recording started');
+        }
+
+        function stopRecording() {
+            if (!mediaRecorder || !isRecording) return;
+
+            mediaRecorder.stop();
+            isRecording = false;
+            stopTimer();
+            cancelAnimationFrame(animationId);
+
+            updateRecordingStatus('✅ Recording completed. Ready for analysis.');
+            updateButtonStates('recorded');
+
+            console.log('⏹️ Recording stopped');
+        }
+
+        function playOriginal() {
+            if (audioChunks.length === 0) {
+                updateRecordingStatus('❌ No recording available. Please record your response first.');
+                return;
+            }
+
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            
+            const playBtn = document.getElementById('playBtn');
+            playBtn.textContent = '⏸️ Playing...';
+            playBtn.disabled = true;
+            
+            audio.play();
+            
+            audio.onended = function() {
+                playBtn.textContent = '▶️ Play Original';
+                playBtn.disabled = false;
+                URL.revokeObjectURL(audioUrl);
+            };
+            
+            audio.onerror = function() {
+                updateRecordingStatus('❌ Error playing recording');
+                playBtn.textContent = '▶️ Play Original';
+                playBtn.disabled = false;
+                URL.revokeObjectURL(audioUrl);
+            };
+        }
+
+        async function processAudio() {
+            if (audioChunks.length === 0) {
+                updateRecordingStatus('❌ No recording available. Please record your response first.');
+                return;
+            }
+
+            updateRecordingStatus('🔄 Analyzing your response...');
+            
+            // Simulate API delay
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const transcript = speechToText(audioBlob);
+            const currentQuestion = parseInt(document.getElementById('questionSelect').value);
+            const analysis = analyzeResponse(transcript, currentQuestion);
+
+            if (analysis) {
+                displayAnalysisResults(transcript, analysis, currentQuestion);
+                updateRecordingStatus('✅ Analysis completed!');
+            } else {
+                updateRecordingStatus('❌ Analysis failed. Please try again.');
+            }
+        }
+
+        function displayAnalysisResults(transcript, analysis, questionNumber) {
+            // Update transcript
+            document.getElementById('transcriptResult').textContent = `"${transcript}"`;
+            
+            // Update analysis
+            const analysisResult = document.getElementById('analysisResult');
+            analysisResult.innerHTML = `
+                <div style="margin-bottom: 1rem;">
+                    <h4 style="color: #8b4513; margin-bottom: 0.5rem;">✅ Strengths:</h4>
+                    <ul style="margin-left: 1rem; color: #006600;">
+                        ${analysis.strengths.map(strength => `<li>${strength}</li>`).join('')}
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #8b4513; margin-bottom: 0.5rem;">💡 Areas for Improvement:</h4>
+                    <ul style="margin-left: 1rem; color: #cc6600;">
+                        ${analysis.improvements.map(improvement => `<li>${improvement}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            
+            // Update improved response
+            document.getElementById('improvedResponse').textContent = `"${generateImprovedResponse(questionNumber)}"`;
+            
+            // Update band scores
+            document.getElementById('currentBandScore').textContent = `Band ${analysis.bandScore}/9`;
+            document.getElementById('improvedBandScore').textContent = `Band ${Math.min(9, analysis.bandScore + 1)}/9`;
+            
+            // Show analysis section
+            document.getElementById('analysisSection').style.display = 'block';
+            
+            // Scroll to analysis
+            setTimeout(() => {
+                document.getElementById('analysisSection').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function updateButtonStates(state) {
+            const recordBtn = document.getElementById('recordBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            const playBtn = document.getElementById('playBtn');
+            const processBtn = document.getElementById('processBtn');
+
+            switch (state) {
+                case 'idle':
+                    recordBtn.disabled = false;
+                    stopBtn.disabled = true;
+                    playBtn.disabled = true;
+                    processBtn.disabled = true;
+                    break;
+                case 'recording':
+                    recordBtn.disabled = true;
+                    stopBtn.disabled = false;
+                    playBtn.disabled = true;
+                    processBtn.disabled = true;
+                    break;
+                case 'recorded':
+                    recordBtn.disabled = false;
+                    stopBtn.disabled = true;
+                    playBtn.disabled = false;
+                    processBtn.disabled = false;
+                    break;
+            }
+        }
+
+        function updateRecordingStatus(message) {
+            const statusElement = document.getElementById('recordingStatus');
+            statusElement.textContent = message;
+            
+            // Update status styling based on message content
+            statusElement.className = 'recording-status';
+            if (message.includes('Recording in progress')) {
+                statusElement.classList.add('recording');
+            } else if (message.includes('Analyzing')) {
+                statusElement.classList.add('processing');
+            } else {
+                statusElement.classList.add('idle');
+            }
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                const elapsed = Date.now() - recordingStartTime;
+                const seconds = Math.floor(elapsed / 1000);
+                const minutes = Math.floor(seconds / 60);
+                const displaySeconds = seconds % 60;
+                
+                document.getElementById('timerDisplay').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${displaySeconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
+        // Question management
+        function updateCurrentQuestion() {
+            const select = document.getElementById('questionSelect');
+            const currentQuestionNumber = parseInt(select.value);
+            
+            // Reset recording state
+            updateButtonStates('idle');
+            updateRecordingStatus('Ready to record your response');
+            document.getElementById('timerDisplay').textContent = '00:00';
+            document.getElementById('analysisSection').style.display = 'none';
+            
+            // Update URL for bookmarking
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('question', currentQuestionNumber);
+            window.history.replaceState({}, '', newUrl);
+            
+            console.log(`📝 Question ${currentQuestionNumber}: ${questions[currentQuestionNumber - 1]}`);
+        }
+
+        // Function to set question from URL parameters on page load
+        function setQuestionFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const questionParam = urlParams.get('question');
+            
+            if (questionParam) {
+                const questionNumber = parseInt(questionParam);
+                if (questionNumber >= 1 && questionNumber <= 6) {
+                    document.getElementById('questionSelect').value = questionNumber;
+                    currentQuestionBeingAnswered = questionNumber;
+                    console.log('🎯 Set question from URL:', questionNumber);
+                    
+                    // Scroll to the recording section after setting the question
+                    setTimeout(() => {
+                        const recordingSection = document.querySelector('.recording-panel');
+                        if (recordingSection) {
+                            recordingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }, 500);
+                    
+                    // Scroll to the recording section after setting the question
+                    setTimeout(() => {
+                        const recordingSection = document.querySelector('.recording-panel');
+                        if (recordingSection) {
+                            recordingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }, 500);
+                }
+            }
+        }
+
+        // Navigation Functions for Analysis Results
+        function goToNextQuestion() {
+            // Get current question number
+            const currentQuestion = parseInt(document.getElementById('questionSelect').value);
+            
+            // Calculate next question (cycle back to 1 if we're at question 6)
+            const nextQuestion = currentQuestion >= 6 ? 1 : currentQuestion + 1;
+            
+            // Store the next question in URL parameters and reload
+            const url = new URL(window.location);
+            url.searchParams.set('question', nextQuestion);
+            window.location.href = url.toString();
+        }
+
+        function refreshCurrentQuestion() {
+            // Get current question number
+            const currentQuestion = parseInt(document.getElementById('questionSelect').value);
+            
+            // Store the current question in URL parameters and reload
+            const url = new URL(window.location);
+            url.searchParams.set('question', currentQuestion);
+            window.location.href = url.toString();
+        }
+
+        // Navigation functions
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId + '-section');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                updateActiveMenuItem(sectionId);
+            }
+        }
+
+        function updateActiveMenuItem(activeSection) {
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => item.classList.remove('active'));
+            
+            const sectionMap = {
+                'instructions': '📋 Instructions',
+                'recording': '🗣️ Speaking Practice',
+                'analysis': '📊 Analysis Results',
+                'guidance': '🎯 Band Score Guidance'
+            };
+            
+            if (sectionMap[activeSection]) {
+                const activeItem = Array.from(menuItems).find(item => 
+                    item.textContent.includes(sectionMap[activeSection])
+                );
+                if (activeItem) {
+                    activeItem.classList.add('active');
+                }
+            }
+        }
+
+        // Menu toggle functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Back button functionality
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Speaking Part 1 - Going to Speaking Introduction');
+            window.location.href = 'IELTS_General_Speaking_Introduction.html';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎤 IELTS Speaking Part 1 - Hometown & Living page loaded');
+            
+            // Set question from URL if provided
+            setQuestionFromURL();
+            
+            // Set initial UI state
+            updateButtonStates('idle');
+            
+            // Check for audio support
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                updateRecordingStatus('Audio recording not supported in this browser');
+                document.getElementById('recordBtn').disabled = true;
+            }
+        });
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (isRecording) {
+                stopRecording();
+            }
+        });
+    </script>
+</body>
+</html> 
