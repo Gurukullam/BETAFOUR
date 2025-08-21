@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Writing - Complete Practice Guide | GK Foundation</title>
+    
+    <!-- Font Awesome CSS (Embedded for self-contained operation) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in this page */
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-pen:before { content: "\f304"; }
+        .fa-chart-bar:before { content: "\f080"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-clock:before { content: "\f017"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-user:before { content: "\f007"; }
+        .fa-newspaper:before { content: "\f1ea"; }
+        .fa-university:before { content: "\f19c"; }
+        .fa-chevron-down:before { content: "\f078"; }
+        .fa-chevron-up:before { content: "\f077"; }
+        .fa-chevron-right:before { content: "\f054"; }
+        .fa-chevron-left:before { content: "\f053"; }
+        .fa-home:before { content: "\f015"; }
+        .fa-star:before { content: "\f005"; }
+        .fa-trophy:before { content: "\f091"; }
+        .fa-lightbulb:before { content: "\f0eb"; }
+        .fa-exclamation-triangle:before { content: "\f071"; }
+        .fa-check-circle:before { content: "\f058"; }
+        .fa-info-circle:before { content: "\f05a"; }
+        .fa-book:before { content: "\f02d"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-times:before { content: "\f00d"; }
+        .fa-edit:before { content: "\f044"; }
+        .fa-times-circle:before { content: "\f057"; }
+        .fa-file-alt:before { content: "\f15c"; }
+        .fa-search:before { content: "\f002"; }
+        .fa-briefcase:before { content: "\f0b1"; }
+        .fa-heart:before { content: "\f004"; }
+        .fa-comment:before { content: "\f075"; }
+        .fa-chart-line:before { content: "\f201"; }
+        .fa-chart-pie:before { content: "\f200"; }
+        .fa-table:before { content: "\f0ce"; }
+        .fa-project-diagram:before { content: "\f542"; }
+        .fa-map:before { content: "\f279"; }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -280px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1.5rem 1rem 1rem 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 60px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Expandable Section Styles */
+        .expandable-section {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            padding: 0.5rem 0.8rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .section-header:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: translateY(-1px);
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .expand-icon {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            font-weight: 400;
+            flex-shrink: 0;
+        }
+
+        .section-header.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            background: rgba(255, 255, 255, 0.9);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .section-content.expanded {
+            max-height: 500px;
+            padding: 1rem 1.5rem;
+        }
+
+        .practice-item {
+            display: block;
+            padding: 0.6rem 1rem;
+            margin: 0.3rem 0;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 3px solid #d4af37;
+            cursor: pointer;
+        }
+
+        .practice-item:hover {
+            background: rgba(139, 69, 19, 0.15);
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .section-main-title {
+            font-size: 2.2rem;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 1rem;
+        }
+
+        .part-details {
+            margin-bottom: 2rem;
+        }
+
+        .part-title {
+            font-size: 1.6rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .part-description {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .key-points {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid #d4af37;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .key-points h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-points li {
+            padding: 0.4rem 0;
+            color: #444;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .key-points li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #8b4513;
+            font-weight: bold;
+        }
+
+        .timing-info {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(212, 175, 55, 0.1));
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .timing-info h4 {
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .timing-info p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #666;
+        }
+
+        /* Assessment Criteria Cards */
+        .assessment-criteria {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .assessment-criteria:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.15);
+        }
+
+        .criteria-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .criteria-weight {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        .criteria-description {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        /* Task Format Cards */
+        .task-format {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #8b4513;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .task-format:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.15);
+        }
+
+        .format-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .format-requirements {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        .format-description {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .menu-toggle-label {
+                left: 55px;
+            }
+
+            .slide-menu {
+                width: 250px;
+            }
+
+            .slide-menu.collapsed {
+                left: -250px;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .section-main-title {
+                font-size: 1.8rem;
+            }
+
+            .part-title {
+                font-size: 1.3rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .criteria-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .criteria-weight {
+                margin-left: 0;
+            }
+
+            .format-requirements {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Spacer -->
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo Container (Back Button) -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Slide-out Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle">
+        ‹
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Academic Writing</div>
+            <div class="menu-subtitle">Practice by Task</div>
+        </div>
+        <div class="menu-content">
+            <!-- Task 1 Data Description -->
+            <div class="expandable-section">
+                <div class="section-header" onclick="toggleSection('task1')">
+                    <h3 class="section-title"><strong>Task 1: Data Description</strong></h3>
+                    <span class="expand-icon" id="task1-icon">▼</span>
+                </div>
+                <div class="section-content" id="task1-content">
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Graph.html'">Line Graph</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Bar_Chart.html'">Bar Chart</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Pie Chart.html'">Pie Chart</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Table.html'">Table</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Process_Diagram.html'">Process Diagram</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Map.html'">Map</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Mixed_Chart.html'">Mixed Chart</div>
+                </div>
+            </div>
+
+            <!-- Task 2 Academic Essay -->
+            <div class="expandable-section">
+                <div class="section-header" onclick="toggleSection('task2')">
+                    <h3 class="section-title"><strong>Task 2: Academic Essay</strong></h3>
+                    <span class="expand-icon" id="task2-icon">▼</span>
+                </div>
+                <div class="section-content" id="task2-content">
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Opinion_Essay.html'">Opinion Essay</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Discussion_Essay.html'">Discussion Essay</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Advantages_Disadvantage.html'">Advantage/Disadvantage</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Problem_Solution.html'">Problem/Solution</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Two_Part_Question.html'">Two-Part Question</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">IELTS Academic Writing</h1>
+                <div class="hero-subtitle">
+                    📊 Complete Practice Guide
+                </div>
+                <p class="hero-description">
+                    Master both tasks of the IELTS Academic Writing test with comprehensive practice materials. From data description and visual analysis to academic essay composition, develop the analytical and writing skills needed to achieve your target band score with authentic academic task formats.
+                </p>
+            </section>
+
+            <!-- Test Overview Section -->
+            <section class="content-section">
+                <h2 class="section-main-title">
+                    📋 Test Overview
+                </h2>
+                
+                <div class="timing-info">
+                    <h4>⏰ Total Duration</h4>
+                    <p>60 minutes (no additional transfer time)</p>
+                </div>
+
+                <div class="key-points">
+                    <h4>Key Information</h4>
+                    <ul>
+                        <li><strong>Two mandatory tasks</strong> with different weights in final scoring</li>
+                        <li><strong>Task 1:</strong> Data description (150+ words minimum) - 1/3 of total writing score</li>
+                        <li><strong>Task 2:</strong> Academic essay (250+ words minimum) - 2/3 of total writing score</li>
+                        <li><strong>Time allocation:</strong> 20 minutes for Task 1, 40 minutes for Task 2 (recommended)</li>
+                        <li><strong>Four assessment criteria</strong> for each task with equal weighting</li>
+                        <li><strong>Band scoring</strong> from 1-9 in whole or half bands (averaged across criteria)</li>
+                        <li><strong>Academic contexts</strong> relevant to university study and professional development</li>
+                        <li><strong>No choice of questions</strong> - both tasks must be completed</li>
+                        <li><strong>Formal academic register</strong> required throughout both tasks</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Assessment Criteria Section -->
+            <section class="content-section">
+                <h2 class="section-main-title">
+                    📊 Assessment Criteria
+                </h2>
+                
+                <p class="part-description">
+                    Both Task 1 and Task 2 are evaluated using four equally weighted criteria. Understanding these criteria is essential for achieving your target band score.
+                </p>
+
+                <div class="assessment-criteria">
+                    <div class="criteria-title">
+                        📝 Task Achievement (Task 1) / Task Response (Task 2)
+                        <span class="criteria-weight">25%</span>
+                    </div>
+                    <div class="criteria-description">
+                        <strong>Task 1:</strong> Accurate data interpretation, clear overview, relevant details, appropriate length<br>
+                        <strong>Task 2:</strong> Address all parts of question, clear position, fully developed response, relevant ideas
+                    </div>
+                </div>
+
+                <div class="assessment-criteria">
+                    <div class="criteria-title">
+                        🔗 Coherence and Cohesion
+                        <span class="criteria-weight">25%</span>
+                    </div>
+                    <div class="criteria-description">
+                        Logical organization of information, clear progression of ideas, effective use of cohesive devices, appropriate paragraphing
+                    </div>
+                </div>
+
+                <div class="assessment-criteria">
+                    <div class="criteria-title">
+                        📚 Lexical Resource
+                        <span class="criteria-weight">25%</span>
+                    </div>
+                    <div class="criteria-description">
+                        Range and accuracy of vocabulary, precise word choice, natural and sophisticated usage, spelling accuracy
+                    </div>
+                </div>
+
+                <div class="assessment-criteria">
+                    <div class="criteria-title">
+                        ⚙️ Grammatical Range and Accuracy
+                        <span class="criteria-weight">25%</span>
+                    </div>
+                    <div class="criteria-description">
+                        Wide range of grammatical structures, accuracy of complex sentences, error frequency and impact on communication
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 1 Details -->
+            <section class="content-section">
+                <div class="part-details">
+                    <h3 class="part-title">
+                        📊 Task 1: Academic Data Description
+                    </h3>
+                    
+                    <div class="timing-info">
+                        <h4>Requirements & Weight</h4>
+                        <p>150+ words minimum | 20 minutes recommended | 1/3 of writing score</p>
+                    </div>
+
+                    <p class="part-description">
+                        Task 1 requires you to describe, summarize, or explain visual information such as graphs, charts, tables, diagrams, or maps. You must identify key features, trends, and patterns while maintaining an objective, factual tone throughout your response.
+                    </p>
+
+                    <div class="key-points">
+                        <h4>Visual Information Types</h4>
+                        <ul>
+                            <li><strong>Charts & Graphs:</strong> Line graphs, bar charts, pie charts showing data trends and comparisons</li>
+                            <li><strong>Tables:</strong> Statistical data requiring analysis and comparison of figures</li>
+                            <li><strong>Process Diagrams:</strong> Step-by-step illustrations of natural or manufactured processes</li>
+                            <li><strong>Maps:</strong> Geographical changes over time or layout comparisons</li>
+                            <li><strong>Mixed Visuals:</strong> Combination of two different chart types for comparison</li>
+                        </ul>
+                    </div>
+
+                    <h4 style="color: #8b4513; margin: 2rem 0 1rem 0; font-size: 1.4rem;">Common Task 1 Formats & Approaches:</h4>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            📈 Line Graphs
+                            <span class="format-requirements">Trends over time</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Focus:</strong> Changes and trends over time periods, comparing multiple lines<br>
+                            <strong>Key language:</strong> Rose, fell, fluctuated, peaked, remained stable<br>
+                            <strong>Structure:</strong> Overview → Major trends → Specific details and comparisons
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            📊 Bar Charts
+                            <span class="format-requirements">Category comparisons</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Focus:</strong> Comparing different categories, identifying highest/lowest values<br>
+                            <strong>Key language:</strong> Significantly higher, considerably lower, approximately equal<br>
+                            <strong>Structure:</strong> Overview → Highest/lowest comparisons → Notable patterns
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            🥧 Pie Charts
+                            <span class="format-requirements">Proportions & percentages</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Focus:</strong> Proportions, percentages, and relative sizes of segments<br>
+                            <strong>Key language:</strong> The majority, minority, nearly half, a quarter<br>
+                            <strong>Structure:</strong> Overview → Largest segments → Smaller segments and comparisons
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            📋 Tables
+                            <span class="format-requirements">Statistical data</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Focus:</strong> Numerical data analysis, comparing rows and columns<br>
+                            <strong>Key language:</strong> Ranked highest, consistently lower, doubled between<br>
+                            <strong>Structure:</strong> Overview → Significant figures → Patterns and exceptions
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            🔄 Process Diagrams
+                            <span class="format-requirements">Sequential stages</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Focus:</strong> Step-by-step process description, logical sequence<br>
+                            <strong>Key language:</strong> Initially, subsequently, finally, the process begins<br>
+                            <strong>Structure:</strong> Overview → Sequential stages → Key transformations
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            🗺️ Maps
+                            <span class="format-requirements">Geographical changes</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Focus:</strong> Spatial changes, developments, layout modifications<br>
+                            <strong>Key language:</strong> Constructed, demolished, relocated, expanded<br>
+                            <strong>Structure:</strong> Overview → Major changes → Specific developments
+                        </div>
+                    </div>
+
+                    <div class="key-points">
+                        <h4>Essential Task 1 Requirements</h4>
+                        <ul>
+                            <li><strong>Include a clear overview</strong> identifying the main trends or key features</li>
+                            <li><strong>Select relevant information</strong> - don't describe every detail</li>
+                            <li><strong>Make meaningful comparisons</strong> between different data points</li>
+                            <li><strong>Write at least 150 words</strong> (aim for 170-190 for complete development)</li>
+                            <li><strong>Use objective, factual language</strong> without personal opinions</li>
+                            <li><strong>Organize information logically</strong> with clear paragraph structure</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 2 Details -->
+            <section class="content-section">
+                <div class="part-details">
+                    <h3 class="part-title">
+                        📝 Task 2: Academic Essay
+                    </h3>
+                    
+                    <div class="timing-info">
+                        <h4>Requirements & Weight</h4>
+                        <p>250+ words minimum | 40 minutes recommended | 2/3 of writing score</p>
+                    </div>
+
+                    <p class="part-description">
+                        Task 2 requires you to write an essay responding to an academic topic, argument, or problem. This task carries twice the weight of Task 1 and demands sophisticated academic writing skills with well-developed arguments supported by relevant examples and evidence.
+                    </p>
+
+                    <div class="key-points">
+                        <h4>Common Academic Topics</h4>
+                        <ul>
+                            <li><strong>Education & Learning:</strong> University systems, academic methods, online learning, skill development</li>
+                            <li><strong>Science & Technology:</strong> Research advances, artificial intelligence, medical breakthroughs, digital society</li>
+                            <li><strong>Social Issues:</strong> Urbanization, globalization, cultural change, demographic trends</li>
+                            <li><strong>Environment & Sustainability:</strong> Climate research, conservation policies, renewable energy, ecological impact</li>
+                            <li><strong>Economics & Development:</strong> International trade, economic policy, development strategies, employment</li>
+                            <li><strong>Culture & Society:</strong> Arts, media influence, social behavior, cultural preservation</li>
+                        </ul>
+                    </div>
+
+                    <h4 style="color: #8b4513; margin: 2rem 0 1rem 0; font-size: 1.4rem;">Academic Essay Types & Approaches:</h4>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            💭 Opinion Essays
+                            <span class="format-requirements">Argument & justification</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Question phrases:</strong> "To what extent do you agree?", "Do you agree or disagree?"<br>
+                            <strong>Approach:</strong> Present clear thesis, develop supporting arguments with academic examples<br>
+                            <strong>Structure:</strong> Introduction + Thesis → Supporting arguments → Counter-argument → Conclusion
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            🔍 Discussion Essays
+                            <span class="format-requirements">Balanced analysis</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Question phrases:</strong> "Discuss both views and give your opinion"<br>
+                            <strong>Approach:</strong> Analyze multiple perspectives objectively before presenting reasoned conclusion<br>
+                            <strong>Structure:</strong> Introduction → Perspective A → Perspective B → Personal view → Conclusion
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            ⚖️ Advantages & Disadvantages
+                            <span class="format-requirements">Objective evaluation</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Question phrases:</strong> "Discuss advantages and disadvantages", "Do benefits outweigh drawbacks?"<br>
+                            <strong>Approach:</strong> Systematic analysis of positive and negative aspects with evidence<br>
+                            <strong>Structure:</strong> Introduction → Advantages → Disadvantages → Evaluation → Conclusion
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            🛠️ Problem & Solution
+                            <span class="format-requirements">Analytical reasoning</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Question phrases:</strong> "What are the causes and solutions?", "How can this be addressed?"<br>
+                            <strong>Approach:</strong> Identify root causes and propose evidence-based, practical solutions<br>
+                            <strong>Structure:</strong> Introduction → Problem analysis → Solution proposals → Implementation → Conclusion
+                        </div>
+                    </div>
+
+                    <div class="task-format">
+                        <div class="format-title">
+                            ❓ Two-Part Questions
+                            <span class="format-requirements">Multiple analysis</span>
+                        </div>
+                        <div class="format-description">
+                            <strong>Question phrases:</strong> Two distinct questions requiring separate analysis<br>
+                            <strong>Approach:</strong> Address each question thoroughly with equal development and academic depth<br>
+                            <strong>Structure:</strong> Introduction → Question 1 analysis → Question 2 analysis → Conclusion
+                        </div>
+                    </div>
+
+                    <div class="key-points">
+                        <h4>Essential Task 2 Requirements</h4>
+                        <ul>
+                            <li><strong>Address all parts thoroughly</strong> with sophisticated analysis and reasoning</li>
+                            <li><strong>Present clear academic arguments</strong> supported by relevant evidence and examples</li>
+                            <li><strong>Demonstrate critical thinking</strong> with balanced evaluation of different perspectives</li>
+                            <li><strong>Write at least 250 words</strong> (aim for 280-320 for full development)</li>
+                            <li><strong>Use formal academic register</strong> with sophisticated vocabulary and structures</li>
+                            <li><strong>Organize ideas coherently</strong> with clear introduction, body, and conclusion</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Study Tips Section -->
+            <section class="content-section">
+                <h2 class="section-main-title">
+                    💡 Study Tips & Strategies
+                </h2>
+
+                <div class="key-points">
+                    <h4>Before the Test</h4>
+                    <ul>
+                        <li>Practice both tasks regularly with Ga platform tools and timing</li>
+                        <li>Familiarize yourself with all visual data types and essay question formats</li>
+                        <li>Build academic vocabulary for data description and formal essay writing</li>
+                        <li>Learn effective paragraph structures and sophisticated linking phrases</li>
+                        <li>Use Ga platform assessment feedback to understand band score differences</li>
+                    </ul>
+                </div>
+
+                <div class="key-points">
+                    <h4>During the Test</h4>
+                    <ul>
+                        <li>Read both tasks first, then start with Task 2 (higher weighting)</li>
+                        <li>Spend 2-3 minutes planning each response before writing</li>
+                        <li>Check word count requirements and exceed minimums safely</li>
+                        <li>Monitor time carefully: 40 minutes Task 2, 20 minutes Task 1</li>
+                        <li>Leave 3-5 minutes for checking grammar, spelling, and coherence</li>
+                    </ul>
+                </div>
+
+                <div class="key-points">
+                    <h4>Task-Specific Strategies</h4>
+                    <ul>
+                        <li><strong>Task 1:</strong> Include clear overview, select key features, make comparisons, avoid personal opinions</li>
+                        <li><strong>Task 2:</strong> Answer all parts fully, develop arguments with examples, maintain academic tone</li>
+                        <li><strong>Both tasks:</strong> Use varied vocabulary and complex sentence structures appropriately</li>
+                        <li><strong>Coherence:</strong> Use clear topic sentences and logical paragraph development</li>
+                        <li><strong>Time management:</strong> Prioritize Task 2 but ensure both tasks are completed</li>
+                    </ul>
+                </div>
+
+                <div class="key-points">
+                    <h4>Key Success Factors</h4>
+                    <ul>
+                        <li>Consistent practice with Ga platform writing tasks and timing</li>
+                        <li>Understanding of assessment criteria and band score requirements</li>
+                        <li>Strong command of formal academic writing conventions</li>
+                        <li>Ability to analyze data objectively and construct sophisticated arguments</li>
+                        <li>Good time management skills under exam conditions</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Menu functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Expandable section functionality
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId + '-content');
+            const icon = document.getElementById(sectionId + '-icon');
+            const header = icon.closest('.section-header');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                header.classList.remove('expanded');
+            } else {
+                // Close all other sections first
+                const allContents = document.querySelectorAll('.section-content');
+                const allHeaders = document.querySelectorAll('.section-header');
+                
+                allContents.forEach(c => c.classList.remove('expanded'));
+                allHeaders.forEach(h => h.classList.remove('expanded'));
+                
+                // Open the clicked section
+                content.classList.add('expanded');
+                header.classList.add('expanded');
+            }
+        }
+
+        // Back button functionality
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Academic Writing Introduction - Going to IELTS platform');
+            
+            // Navigate back to the IELTS platform (index.html)
+            // Path: writing -> Academic -> IELTS -> index.html
+            window.location.href = '../../index.html';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📊 IELTS Academic Writing Introduction page loaded');
+            
+            // Optional: Auto-expand the first section for better UX
+            // toggleSection('task1');
+        });
+    </script>
+</body>
+</html> 
