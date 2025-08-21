@@ -1844,5 +1844,124 @@
             }
         });
     </script>
+
+    <!-- Firebase CDN Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Firebase Integration -->
+    <script src="../Reference-Lookup/IELTS-Firebase-Integration.js"></script>
+
+    <!-- Test Firebase Button (temporary for testing) -->
+    <div id="firebaseTestButton" style="position: fixed; bottom: 20px; right: 20px; background: #28a745; padding: 12px; border-radius: 8px; z-index: 10000; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <button onclick="testFirebaseSignup()" style="color: white; border: none; background: transparent; cursor: pointer; font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+            🧪 Test Firebase
+        </button>
+    </div>
+
+    <script>
+        // Firebase Integration Test Function
+        function testFirebaseSignup() {
+            console.log('🧪 Testing Firebase integration...');
+            console.log('📡 Starting comprehensive user signup test...');
+            
+            // Test signup with comprehensive data capture
+            freeSignUp(
+                'test@ielts-practice.com', 
+                'TestPass123!', 
+                'Test User', 
+                'Canada'
+            ).then(result => {
+                if (result.success) {
+                    console.log('✅ Firebase test completed successfully!');
+                    console.log('📊 User Profile Created:', result.profile);
+                    
+                    // Test admin creation after successful user signup
+                    setTimeout(() => {
+                        console.log('👥 Testing admin creation...');
+                        createAdmin({
+                            couponCode: 'RAMA1243',
+                            role: 'Executive', 
+                            adminName: 'John Rambo',
+                            email: 'admin@ielts-practice.com',
+                            department: 'Operations'
+                        }).then(adminResult => {
+                            if (adminResult.success) {
+                                console.log('✅ Admin created successfully!', adminResult);
+                            } else {
+                                console.log('❌ Admin creation failed:', adminResult.error);
+                            }
+                        });
+                    }, 2000);
+                } else {
+                    console.log('❌ Firebase test failed:', result.error);
+                }
+            }).catch(error => {
+                console.error('❌ Firebase test error:', error);
+            });
+        }
+
+        // Replace placeholder form handlers with Firebase functions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for Firebase to load
+            setTimeout(() => {
+                // Update Sign In form with Firebase
+                const signInForm = document.getElementById('signInForm');
+                if (signInForm) {
+                    signInForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        const email = this.querySelector('input[type="email"]').value;
+                        const password = this.querySelector('input[type="password"]').value;
+                        
+                        if (email && password) {
+                            console.log('🔑 Attempting Firebase signin...');
+                            freeSignIn(email, password).then(result => {
+                                if (result.success) {
+                                    // Close modal and show success
+                                    const modal = document.getElementById('signInModal');
+                                    if (modal) modal.style.display = 'none';
+                                    console.log('✅ User signed in successfully');
+                                }
+                            });
+                        } else {
+                            alert('Please enter both email and password');
+                        }
+                    });
+                }
+
+                // Update Sign Up form with Firebase
+                const signUpForm = document.getElementById('signUpForm');
+                if (signUpForm) {
+                    signUpForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        const formData = new FormData(this);
+                        const email = formData.get('email') || this.querySelector('input[type="email"]').value;
+                        const password = formData.get('password') || this.querySelector('input[type="password"]').value;
+                        const fullName = formData.get('fullName') || this.querySelector('input[placeholder*="Full Name"], input[placeholder*="Name"]').value || 'IELTS Student';
+                        const country = formData.get('country') || this.querySelector('select').value || 'Canada';
+                        
+                        if (email && password) {
+                            console.log('🚀 Attempting Firebase signup...');
+                            freeSignUp(email, password, fullName, country).then(result => {
+                                if (result.success) {
+                                    // Close modal and show success
+                                    const modal = document.getElementById('signUpModal');
+                                    if (modal) modal.style.display = 'none';
+                                    console.log('✅ User signed up successfully');
+                                }
+                            });
+                        } else {
+                            alert('Please enter both email and password');
+                        }
+                    });
+                }
+
+                console.log('🔥 Firebase integration ready on IELTS page!');
+            }, 3000);
+        });
+    </script>
 </body>
 </html> 
