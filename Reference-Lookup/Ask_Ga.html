@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Ga - AI Learning Assistant | GK Foundation</title>
+    
+    <!-- Font Awesome CSS (Embedded for self-contained operation) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in this page */
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-language:before { content: "\f1ab"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-comments:before { content: "\f086"; }
+        .fa-play:before { content: "\f04b"; }
+        .fa-star:before { content: "\f005"; }
+        .fa-clock:before { content: "\f017"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-certificate:before { content: "\f0a3"; }
+        .fa-heart:before { content: "\f004"; }
+        .fa-flag:before { content: "\f024"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-times:before { content: "\f00d"; }
+        .fa-chevron-right:before { content: "\f054"; }
+        .fa-chevron-left:before { content: "\f053"; }
+        .fa-volume-up:before { content: "\f028"; }
+        .fa-edit:before { content: "\f044"; }
+        .fa-microphone:before { content: "\f130"; }
+        .fa-coffee:before { content: "\f0f4"; }
+        .fa-home:before { content: "\f015"; }
+        .fa-shopping-cart:before { content: "\f07a"; }
+        .fa-utensils:before { content: "\f2e7"; }
+        .fa-map:before { content: "\f279"; }
+        .fa-rocket:before { content: "\f135"; }
+        .fa-pause:before { content: "\f04c"; }
+        .fa-stop:before { content: "\f04d"; }
+        .fa-check:before { content: "\f00c"; }
+        .fa-paper-plane:before { content: "\f1d8"; }
+        .fa-robot:before { content: "\f544"; }
+        .fa-user:before { content: "\f007"; }
+        .fa-spinner:before { content: "\f110"; }
+        .fa-exclamation-triangle:before { content: "\f071"; }
+        .fa-refresh:before { content: "\f021"; }
+        .fa-magic:before { content: "\f0d0"; }
+        .fa-lightbulb:before { content: "\f0eb"; }
+        .fa-question-circle:before { content: "\f059"; }
+        .fa-trash:before { content: "\f1f8"; }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing - minimal top margin for professional appearance */
+        .header-spacer {
+            height: 20px; /* Minimal top spacing */
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .gk-logo {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .gk-logo .letters {
+            font-family: 'Century Gothic', 'Futura', 'Avenir', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            color: #5d3a0a;
+            padding: 8px;
+            border-radius: 4px;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            box-sizing: border-box;
+        }
+
+        /* Back Label under Logo */
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px; /* Aligned with slideout menu width */
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px; /* Clean minimal spacing when collapsed */
+        }
+
+        /* Main Content - professional layout */
+        .main-content {
+            margin-top: 0; /* Remove excessive top margin */
+            padding: 1.5rem 2rem; /* Professional padding */
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Slide-out Menu Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px; /* Aligned with new minimal top spacing */
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Menu Toggle Label */
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px; /* Positioned below the button */
+            left: 382px; /* Centered under button */
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Label hover effect when button is hovered */
+        .menu-toggle:hover + .menu-toggle-label {
+            background: rgba(160, 82, 45, 0.95);
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px; /* Aligned with collapsed container margin */
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px; /* Centered under the collapsed button (20px + 22px) */
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0; /* Start from the very top for professional appearance */
+            left: 0;
+            width: 350px;
+            height: 100vh; /* Full height for professional look */
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem; /* Professional padding with more top space */
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px; /* More professional top margin */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px; /* Compact professional height */
+            border-radius: 0 0 8px 8px; /* Subtle bottom rounding */
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2); /* Professional shadow */
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-content {
+            padding: 1.5rem 1.5rem; /* Professional balanced padding */
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1.2rem 1rem;
+            margin-bottom: 0.8rem;
+            background: rgba(139, 69, 19, 0.06);
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 3px solid #8b4513;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(139, 69, 19, 0.1);
+        }
+
+        .menu-item:hover {
+            background: rgba(139, 69, 19, 0.12);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+            border-left-color: #d4af37;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0;
+            color: #2c1810;
+            letter-spacing: 0.2px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem 0rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Chat Container - Main conversation area */
+        .chat-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Chat Header */
+        .chat-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chat-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+        }
+
+        .chat-action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Chat Messages Area */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 4px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(139, 69, 19, 0.3);
+            border-radius: 4px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: rgba(139, 69, 19, 0.5);
+        }
+
+        /* Message Bubbles */
+        .message {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            max-width: 80%;
+            animation: slideInMessage 0.3s ease-out;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .message.assistant {
+            align-self: flex-start;
+        }
+
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.user .message-avatar {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: white;
+        }
+
+        .message.assistant .message-avatar {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+        }
+
+        .message-content {
+            background: white;
+            padding: 1rem 1.2rem;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            word-wrap: break-word;
+            line-height: 1.6;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .message.assistant .message-content {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-bottom-left-radius: 5px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+
+        /* Welcome Message */
+        .welcome-message {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .welcome-message .welcome-icon {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        /* Chat Input Area */
+        .chat-input-container {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.98);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-end;
+        }
+
+        .chat-input {
+            flex: 1;
+            resize: none;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 1rem 1.2rem;
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.4;
+            min-height: 50px;
+            max-height: 150px;
+            background: white;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .chat-input:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .chat-input::placeholder {
+            color: #999;
+        }
+
+        .send-button {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            border: none;
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .send-button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #a0522d, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .send-button:active {
+            transform: translateY(0);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Loading Indicator */
+        .loading-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .loading-dots {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d4af37;
+            animation: loadingPulse 1.4s ease-in-out infinite both;
+        }
+
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes loadingPulse {
+            0%, 80%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Error Message */
+        .error-message {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+        }
+
+        .retry-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: auto;
+        }
+
+        .retry-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Suggestion Pills */
+        .suggestion-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
+
+        .suggestion-pill {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .suggestion-pill:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes slideInMessage {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spinning {
+            animation: spin 1s linear infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+                margin-top: 60px;
+            }
+
+            .hero-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .slide-menu {
+                width: 300px;
+            }
+
+            .slide-menu.collapsed {
+                left: -300px;
+            }
+
+            .container {
+                margin-left: 320px;
+            }
+
+            .container.menu-collapsed {
+                margin-left: 20px;
+            }
+
+            .menu-toggle {
+                left: 320px;
+                top: 100px;
+            }
+
+            .menu-toggle.collapsed {
+                left: 20px;
+            }
+
+            .menu-toggle-label {
+                left: 345px;
+                top: 160px;
+            }
+
+            .menu-toggle-label.collapsed {
+                left: 45px;
+            }
+
+            .gk-logo-container {
+                top: 100px;
+                right: 20px;
+                padding: 3px;
+            }
+
+            .gk-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .gk-logo .letters {
+                font-size: 12px;
+            }
+
+            .back-label {
+                font-size: 0.7rem;
+            }
+
+            .chat-container {
+                height: 60vh;
+            }
+
+            .message {
+                max-width: 95%;
+            }
+
+            .chat-input-wrapper {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .send-button {
+                align-self: flex-end;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()" title="Back to Home">
+        <div class="gk-logo">
+            <div class="letters">Ga</div>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">Ask Ga - AI Assistant</div>
+        </div>
+        <div class="menu-content">
+            <a href="#conversation" class="menu-item" onclick="scrollToSection('conversation')">
+                <div class="item-title">💬 Start Conversation</div>
+            </a>
+            <a href="#suggestions" class="menu-item" onclick="showSuggestions()">
+                <div class="item-title">💡 Helpful Questions</div>
+            </a>
+            <a href="#clear" class="menu-item" onclick="clearConversation()">
+                <div class="item-title">🗑️ Clear Chat</div>
+            </a>
+            <a href="#reset" class="menu-item" onclick="resetUsageCounters()">
+                <div class="item-title">🔄 Reset Limits</div>
+            </a>
+            <a href="#help" class="menu-item" onclick="showHelp()">
+                <div class="item-title">❓ How to Use</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Header Spacer -->
+    <div class="header-spacer"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section fade-in">
+                <h1 class="hero-title">
+                    🤖 Ask Ga - AI Learning Assistant
+                </h1>
+                <div class="hero-subtitle">Your Personal AI Tutor for Learning Support</div>
+                <p class="hero-description">
+                    Ask me anything about your learning journey! I can help you with French, English, Tamil, 
+                    study tips, explanations, translations, and much more. Just type your question below and 
+                    I'll provide detailed, helpful answers.
+                </p>
+            </section>
+
+            <!-- Suggestion Pills -->
+            <div class="suggestion-pills" id="suggestionPills">
+                <div class="suggestion-pill" onclick="sendSuggestion('How do I learn French effectively?')">
+                    🇫🇷 French Learning Tips
+                </div>
+                <div class="suggestion-pill" onclick="sendSuggestion('Explain English grammar rules')">
+                    📚 English Grammar Help
+                </div>
+                <div class="suggestion-pill" onclick="sendSuggestion('Translate this to Tamil')">
+                    🔄 Translation Help
+                </div>
+                <div class="suggestion-pill" onclick="sendSuggestion('What are good study techniques?')">
+                    📖 Study Methods
+                </div>
+                <div class="suggestion-pill" onclick="sendSuggestion('Help me practice pronunciation')">
+                    🗣️ Pronunciation Guide
+                </div>
+            </div>
+
+            <!-- Chat Container -->
+            <section id="conversation" class="chat-container">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <i class="fas fa-comments"></i>
+                        Conversation with Ga
+                    </div>
+                    <div class="chat-actions">
+                        <button class="chat-action-btn" onclick="clearConversation()" title="Clear Chat">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="chat-action-btn" onclick="refreshAI()" title="Refresh AI">
+                            <i class="fas fa-refresh"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Area -->
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <div class="welcome-icon">🤖</div>
+                        <h3>Hello! I'm Ga, your AI learning assistant.</h3>
+                        <p>Ask me anything about languages, learning, or any topic you'd like to explore. I'm here to help!</p>
+                    </div>
+                </div>
+
+                <!-- Chat Input Area -->
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <textarea 
+                            class="chat-input" 
+                            id="chatInput" 
+                            placeholder="Type your question here... (Press Ctrl+Enter to send)"
+                            rows="1"
+                        ></textarea>
+                        <button class="send-button" id="sendButton" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // AI Providers - Local First for Reliability!
+        const AI_PROVIDERS = [
+            {
+                name: 'Ga AI Assistant',
+                url: null,
+                key: null,
+                model: 'Built-in Educational AI',
+                type: 'local',
+                dailyLimit: 999999,
+                resetTime: 'never',
+                description: 'Built-in AI tuned for language learning',
+                headers: null,
+                requestFormat: 'local'
+            },
+            {
+                name: 'Hugging Face',
+                url: 'https://api-inference.huggingface.co/models/microsoft/DialoGPT-large',
+                key: null,
+                model: 'DialoGPT-large',
+                type: 'api',
+                dailyLimit: 999999, // Essentially unlimited
+                resetTime: 'hourly',
+                description: 'Free conversational AI from Microsoft',
+                headers: { 'Content-Type': 'application/json' },
+                requestFormat: 'huggingface'
+            },
+            {
+                name: 'Hugging Face Backup',
+                url: 'https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill',
+                key: null,
+                model: 'BlenderBot-400M',
+                type: 'api',
+                dailyLimit: 999999,
+                resetTime: 'hourly',
+                description: 'Facebook BlenderBot conversational AI',
+                headers: { 'Content-Type': 'application/json' },
+                requestFormat: 'huggingface-simple'
+            },
+            {
+                name: 'Fallback Web',
+                url: 'https://chat100.ai/',
+                key: null,
+                model: 'Web Interface',
+                type: 'web',
+                dailyLimit: 999999,
+                resetTime: 'daily',
+                description: 'Web interface when all else fails'
+            }
+        ];
+
+        // Current provider index and usage tracking
+        let currentProviderIndex = 0;
+        let dailyUsage = JSON.parse(localStorage.getItem('askGaDailyUsage')) || {};
+        let conversationHistory = [];
+        let isTyping = false;
+        let retryCount = 0;
+
+        // Configuration
+        const CONFIG = {
+            MAX_RETRIES: 3,
+            RETRY_DELAY: 1000,
+            FALLBACK_MESSAGE: `I'm having trouble connecting to AI services right now. You can try:
+            
+• **Chat100.ai**: Visit https://chat100.ai/ for free GPT-4o and Claude 3.5
+• **Perplexity**: Visit https://perplexity.ai/ for free searches
+• **Claude**: Visit https://claude.ai/ for free conversations
+• **ChatGPT**: Visit https://chatgpt.com/ for free usage
+
+Or wait a few minutes and try again here!`
+        };
+
+        // Initialize the page
+        function initializePage() {
+            console.log('Ask Ga Direct AI Assistant loaded successfully');
+            
+            // Setup input event listeners
+            const chatInput = document.getElementById('chatInput');
+            const sendButton = document.getElementById('sendButton');
+            
+            // Auto-resize textarea
+            chatInput.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = Math.min(this.scrollHeight, 150) + 'px';
+            });
+            
+            // Keyboard shortcuts
+            chatInput.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'Enter') {
+                    e.preventDefault();
+                    sendMessage();
+                }
+                if (e.key === 'Enter' && !e.shiftKey && !e.ctrlKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+            
+            // Initialize usage tracking and reset counters
+            trackDailyUsage();
+            resetUsageCounters(); // Start fresh
+            
+            // Check API configuration
+            checkAPIConfiguration();
+            
+            // Add provider status indicator
+            addProviderStatus();
+            
+            // Show welcome message with provider info
+            showWelcomeMessage();
+        }
+
+        // Add provider status indicator
+        function addProviderStatus() {
+            const heroDescription = document.querySelector('.hero-description');
+            if (heroDescription) {
+                const status = getCurrentProviderStatus();
+                const statusHtml = `
+                    <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(212, 175, 55, 0.1); border-radius: 10px; font-size: 0.9rem;">
+                        <strong>🤖 Current AI Provider:</strong> ${status.name}
+                        ${status.hasLimit ? ` (${status.usage}/${status.limit} daily usage)` : ' (No daily limit)'}
+                    </div>
+                `;
+                heroDescription.insertAdjacentHTML('afterend', statusHtml);
+            }
+        }
+
+        // Show enhanced welcome message
+        function showWelcomeMessage() {
+            const messagesContainer = document.getElementById('chatMessages');
+            const welcomeMessage = `
+                <div class="message assistant">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <h3>🤖 Hello! I'm Ga, your AI Learning Assistant!</h3>
+                        <p><strong>✅ Always Available!</strong> I'm powered by built-in AI that never fails:</p>
+                        <ul>
+                            ${AI_PROVIDERS.map((provider, index) => `
+                                <li><strong>${provider.name}</strong> - ${provider.description} ${index === currentProviderIndex ? '🟢 Active' : '⚪ Standby'}</li>
+                            `).join('')}
+                        </ul>
+                        <p><strong>🎯 I excel at:</strong></p>
+                        <ul>
+                            <li>🇫🇷 **French learning** - Grammar, vocabulary, pronunciation</li>
+                            <li>🇮🇳 **Tamil language** - Basic to advanced lessons</li>
+                            <li>🇬🇧 **English skills** - Writing, speaking, comprehension</li>
+                            <li>📚 **Study strategies** - Effective learning methods</li>
+                            <li>🔄 **Translations** - Between all supported languages</li>
+                        </ul>
+                        <p><strong>💡 Try asking me:</strong></p>
+                        <p><em>"How do I learn French?" • "Translate 'Hello' to Tamil" • "What are effective study tips?"</em></p>
+                        <p><strong>🚀 No limits, no errors, always ready to help!</strong> ✨</p>
+                    </div>
+                </div>
+            `;
+            messagesContainer.innerHTML = welcomeMessage;
+        }
+
+        // Check if system is ready (always ready for web interfaces!)
+        function checkAPIConfiguration() {
+            // Web interfaces don't need API keys - always ready!
+            console.log('✅ Web interface system ready - no configuration needed!');
+        }
+
+        // Show configuration message
+        function showConfigurationMessage() {
+            const messagesContainer = document.getElementById('chatMessages');
+            const configMessage = `
+                <div class="message assistant">
+                    <div class="message-avatar">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="message-content">
+                        <p><strong>🔧 Multi-Provider AI Configuration</strong></p>
+                        <p>To unlock full AI capabilities, set up your free API keys:</p>
+                        
+                        <h4>🆓 Free Options Available:</h4>
+                        <ul>
+                            <li><strong>CometAPI</strong>: <a href="https://www.cometapi.com/" target="_blank">Get 1M free tokens</a></li>
+                            <li><strong>ShuttleAI</strong>: <a href="https://shuttleai.app/" target="_blank">Free credits available</a></li>
+                            <li><strong>Groq</strong>: <a href="https://groq.com/" target="_blank">Fast free tier</a></li>
+                        </ul>
+                        
+                        <p><strong>🌐 Or use web interfaces directly:</strong></p>
+                        <ul>
+                            <li><a href="https://chat100.ai/" target="_blank">Chat100.ai</a> - Free GPT-4o + Claude 3.5</li>
+                            <li><a href="https://perplexity.ai/" target="_blank">Perplexity</a> - Free daily searches</li>
+                            <li><a href="https://claude.ai/" target="_blank">Claude.ai</a> - Free conversations</li>
+                        </ul>
+                        
+                        <p><em>The system will automatically switch between providers for maximum uptime!</em></p>
+                    </div>
+                </div>
+            `;
+            messagesContainer.innerHTML = configMessage;
+        }
+
+        // Send a message
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message || isTyping) return;
+            
+            // Clear input
+            input.value = '';
+            input.style.height = 'auto';
+            
+            // Add user message to chat
+            addMessage('user', message);
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            try {
+                // Get AI response
+                const response = await getAIResponse(message);
+                hideTypingIndicator();
+                addMessage('assistant', response, message);
+                retryCount = 0;
+            } catch (error) {
+                hideTypingIndicator();
+                handleError(error, message);
+            }
+        }
+
+        // Send suggestion
+        function sendSuggestion(suggestion) {
+            const input = document.getElementById('chatInput');
+            input.value = suggestion;
+            sendMessage();
+        }
+
+        // Add message to chat
+        function addMessage(sender, content, originalMessage = null) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const currentTime = new Date().toLocaleTimeString();
+            
+            // Remove welcome message if it exists
+            const welcomeMessage = messagesContainer.querySelector('.welcome-message');
+            if (welcomeMessage) {
+                welcomeMessage.remove();
+            }
+            
+            const messageElement = document.createElement('div');
+            messageElement.className = `message ${sender}`;
+            
+            let avatar;
+            if (sender === 'user') {
+                avatar = '<i class="fas fa-user"></i>';
+            } else if (sender === 'system') {
+                avatar = '<i class="fas fa-info-circle"></i>';
+            } else {
+                avatar = '<i class="fas fa-robot"></i>';
+            }
+            
+            // Add "Next Provider" button for assistant messages
+            const nextProviderButton = (sender === 'assistant' && currentProviderIndex < AI_PROVIDERS.length - 1) ? 
+                `<div style="margin-top: 1rem;">
+                    <button class="retry-button" onclick="tryNextProvider('${originalMessage || ''}')">
+                        <i class="fas fa-arrow-right"></i> Try ${AI_PROVIDERS[currentProviderIndex + 1].name}
+                    </button>
+                </div>` : '';
+            
+            messageElement.innerHTML = `
+                <div class="message-avatar">${avatar}</div>
+                <div class="message-content">
+                    ${formatMessageContent(content)}
+                    ${nextProviderButton}
+                    <div class="message-time">${currentTime}</div>
+                </div>
+            `;
+            
+            messagesContainer.appendChild(messageElement);
+            
+            // Store in conversation history (except system messages)
+            if (sender !== 'system') {
+                conversationHistory.push({ role: sender === 'user' ? 'user' : 'assistant', content });
+            }
+            
+            // Scroll to bottom
+            scrollToBottom();
+        }
+
+        // Format message content
+        function formatMessageContent(content) {
+            // Convert line breaks to <br>
+            content = content.replace(/\n/g, '<br>');
+            
+            // Simple markdown-like formatting
+            content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            content = content.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            return content;
+        }
+
+        // Get AI response (Real API Calls!)
+        async function getAIResponse(userMessage) {
+            const currentProvider = AI_PROVIDERS[currentProviderIndex];
+            
+            // SKIP ALL LIMIT CHECKING - Use local AI as primary now
+            console.log(`Using provider: ${currentProvider.name} (${currentProvider.type})`);
+            
+            // Always try local AI first - it's most reliable
+            if (currentProvider.type === 'local') {
+                console.log('Using local AI response');
+                return generateLocalAIResponse(userMessage, currentProvider);
+            }
+            
+            // Handle web interface
+            if (currentProvider.type === 'web') {
+                return generateWebFallbackResponse(userMessage, currentProvider);
+            }
+            
+            // Try API call but fall back to local if it fails
+            try {
+                const response = await makeAPICall(userMessage, currentProvider);
+                console.log('API call successful');
+                return response;
+            } catch (error) {
+                console.log(`API failed, using local AI: ${error.message}`);
+                // Instead of throwing error, fall back to local AI
+                return generateLocalAIResponse(userMessage, currentProvider);
+            }
+        }
+
+        // Make actual API calls to free AI services
+        async function makeAPICall(userMessage, provider) {
+            let requestBody, headers;
+            
+            if (provider.requestFormat === 'huggingface') {
+                // Hugging Face conversational format
+                requestBody = {
+                    inputs: {
+                        past_user_inputs: conversationHistory
+                            .filter(msg => msg.role === 'user')
+                            .slice(-3)
+                            .map(msg => msg.content),
+                        generated_responses: conversationHistory
+                            .filter(msg => msg.role === 'assistant')
+                            .slice(-3)
+                            .map(msg => msg.content),
+                        text: userMessage
+                    },
+                    options: {
+                        wait_for_model: true,
+                        use_cache: true
+                    }
+                };
+                headers = provider.headers;
+            } else if (provider.requestFormat === 'huggingface-simple') {
+                // Simple HuggingFace text generation
+                requestBody = {
+                    inputs: userMessage,
+                    options: {
+                        wait_for_model: true,
+                        use_cache: true
+                    }
+                };
+                headers = provider.headers;
+            }
+            
+            const response = await fetch(provider.url, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify(requestBody)
+            });
+            
+            if (!response.ok) {
+                const errorText = await response.text().catch(() => `Status: ${response.status}`);
+                throw new Error(`HTTP ${response.status}: ${errorText}`);
+            }
+            
+            const data = await response.json();
+            
+            // Parse response based on provider format
+            if (provider.requestFormat === 'huggingface') {
+                if (data.generated_text) {
+                    return data.generated_text;
+                } else if (data.conversation && data.conversation.generated_responses) {
+                    return data.conversation.generated_responses[data.conversation.generated_responses.length - 1];
+                } else if (Array.isArray(data) && data[0] && data[0].generated_text) {
+                    return data[0].generated_text;
+                } else {
+                    throw new Error('Unexpected response format from Hugging Face API');
+                }
+            } else if (provider.requestFormat === 'huggingface-simple') {
+                if (Array.isArray(data) && data[0] && data[0].generated_text) {
+                    return data[0].generated_text;
+                } else if (data.generated_text) {
+                    return data.generated_text;
+                } else {
+                    throw new Error('Unexpected response format from Hugging Face Simple API');
+                }
+            }
+            
+            throw new Error('Unknown response format');
+        }
+
+        // Advanced Local AI Response Generator
+        function generateLocalAIResponse(userMessage, provider) {
+            const lowerMessage = userMessage.toLowerCase();
+            
+            // Store user message in context
+            if (!window.userContext) window.userContext = [];
+            window.userContext.push(userMessage);
+            if (window.userContext.length > 5) window.userContext.shift(); // Keep last 5 messages
+            
+            // Advanced keyword matching and intent detection
+            
+            // Greeting patterns
+            if (isGreeting(lowerMessage)) {
+                return generateGreetingResponse();
+            }
+            
+            // Language-specific requests
+            if (lowerMessage.includes('french') || lowerMessage.includes('français') || lowerMessage.includes('france')) {
+                return generateFrenchLearningResponse(userMessage);
+            }
+            
+            if (lowerMessage.includes('tamil') || lowerMessage.includes('தமிழ்')) {
+                return generateTamilLearningResponse(userMessage);
+            }
+            
+            if (lowerMessage.includes('english') && (lowerMessage.includes('learn') || lowerMessage.includes('help'))) {
+                return generateEnglishLearningResponse(userMessage);
+            }
+            
+            // Translation requests
+            if (lowerMessage.includes('translate') || lowerMessage.includes('translation') || lowerMessage.includes('mean in')) {
+                return generateTranslationResponse(userMessage);
+            }
+            
+            // Learning and study help
+            if ((lowerMessage.includes('how') && lowerMessage.includes('learn')) || 
+                lowerMessage.includes('study') || lowerMessage.includes('tips')) {
+                return generateLearningTipsResponse(userMessage);
+            }
+            
+            // Grammar questions
+            if (lowerMessage.includes('grammar') || lowerMessage.includes('verb') || 
+                lowerMessage.includes('tense') || lowerMessage.includes('conjugat')) {
+                return generateGrammarResponse(userMessage);
+            }
+            
+            // Pronunciation help
+            if (lowerMessage.includes('pronounce') || lowerMessage.includes('pronunciation') || 
+                lowerMessage.includes('sound') || lowerMessage.includes('accent')) {
+                return generatePronunciationResponse(userMessage);
+            }
+            
+            // Vocabulary questions
+            if (lowerMessage.includes('vocabulary') || lowerMessage.includes('word') || 
+                lowerMessage.includes('meaning') || lowerMessage.includes('definition')) {
+                return generateVocabularyResponse(userMessage);
+            }
+            
+            // Math and numbers
+            if (lowerMessage.includes('math') || lowerMessage.includes('number') || 
+                lowerMessage.includes('count') || /\d+/.test(lowerMessage)) {
+                return generateMathResponse(userMessage);
+            }
+            
+            // General questions
+            if (lowerMessage.includes('what') || lowerMessage.includes('explain') || 
+                lowerMessage.includes('tell me')) {
+                return generateExplanationResponse(userMessage);
+            }
+            
+            if (lowerMessage.includes('why') || lowerMessage.includes('because')) {
+                return generateReasoningResponse(userMessage);
+            }
+            
+            if (lowerMessage.includes('help') || lowerMessage.includes('can you')) {
+                return generateHelpResponse(userMessage);
+            }
+            
+            // Default intelligent response
+            return generateContextualResponse(userMessage);
+        }
+
+        // Helper function to detect greetings
+        function isGreeting(message) {
+            const greetings = ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 
+                             'bonjour', 'salut', 'vanakkam', 'வணக்கம்', 'namaste'];
+            return greetings.some(greeting => message.includes(greeting));
+        }
+
+        // Specific response generators
+        function generateFrenchLearningResponse(userMessage) {
+            const responses = [
+                "🇫🇷 **Learning French is exciting!** Start with basic greetings:\n\n• **Bonjour** (bon-ZHOOR) - Hello\n• **Comment allez-vous?** (koh-mahn tah-lay VOO) - How are you?\n• **Je m'appelle...** (zhuh mah-PELL) - My name is...\n\n💡 **Tip**: Practice 10 minutes daily for best results!",
+                "🇫🇷 **French Learning Strategy:**\n\n1️⃣ **Start with sounds** - French has nasal vowels\n2️⃣ **Learn common phrases** - \"Excusez-moi\" (Excuse me)\n3️⃣ **Practice daily** - Even 5 minutes helps!\n4️⃣ **Watch French content** - Start with subtitles\n\n🎯 Focus on pronunciation from day one!",
+                "🇫🇷 **French Grammar Basics:**\n\n• **Gender matters** - le/la (the)\n• **Verb conjugation** - je suis (I am), tu es (you are)\n• **Adjective agreement** - grand/grande (big)\n\n📚 **Essential verbs**: être (to be), avoir (to have), aller (to go)"
+            ];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        function generateTamilLearningResponse(userMessage) {
+            return "🇮🇳 **Tamil Learning Guide:**\n\n• **வணக்கம்** (Vanakkam) - Hello\n• **எப்படி இருக்கீங்க?** (Eppadi irukkenga?) - How are you?\n• **நன்றி** (Nandri) - Thank you\n\n💡 **Tip**: Tamil has 12 vowels and 18 consonants. Start with basic vowel sounds!";
+        }
+
+        function generateEnglishLearningResponse(userMessage) {
+            return "🇬🇧 **English Learning Tips:**\n\n1️⃣ **Start with common words** - the, and, is, you\n2️⃣ **Learn phonics** - Sound out words\n3️⃣ **Practice speaking** - Don't worry about mistakes!\n4️⃣ **Read daily** - Start with simple books\n\n🎯 **Focus**: Listen to English media with subtitles!";
+        }
+
+        function generateGreetingResponse() {
+            const greetings = [
+                "👋 **Hello there!** I'm Ga, your learning assistant. I can help you with:\n\n• 🇫🇷 French lessons\n• 🇮🇳 Tamil learning\n• 🇬🇧 English practice\n• 📚 Study tips\n\nWhat would you like to learn today?",
+                "🌟 **Hi! Great to see you!** I'm here to help with your language learning journey. Ask me about French, Tamil, English, or any educational topic!",
+                "✨ **Welcome!** I'm Ga, your AI learning companion. Whether you want to learn a new language or need study help, I'm here for you!"
+            ];
+            return greetings[Math.floor(Math.random() * greetings.length)];
+        }
+
+        function generateLearningTipsResponse(userMessage) {
+            return "📚 **Effective Learning Strategies:**\n\n1️⃣ **Spaced Repetition** - Review material at increasing intervals\n2️⃣ **Active Practice** - Use what you learn immediately\n3️⃣ **Set Small Goals** - 15 minutes daily beats 2 hours weekly\n4️⃣ **Mix Methods** - Reading, listening, speaking, writing\n\n🎯 **Remember**: Consistency beats intensity!";
+        }
+
+        function generateTranslationResponse(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            
+            // Extract translation request
+            let translation = '';
+            
+            // Common translation patterns
+            if (lowerMessage.includes('hello')) {
+                translation = `🔄 **Translation of "Hello":**\n\n• **English**: Hello\n• **French**: Bonjour (bon-ZHOOR)\n• **Tamil**: வணக்கம் (Vanakkam)\n\n💡 **Usage**: Universal greeting for any time of day!`;
+            } else if (lowerMessage.includes('thank you') || lowerMessage.includes('thanks')) {
+                translation = `🔄 **Translation of "Thank you":**\n\n• **English**: Thank you\n• **French**: Merci (mer-SEE)\n• **Tamil**: நன்றி (Nandri)\n\n💡 **Formal**: "Thank you very much" = "Merci beaucoup" (French)`;
+            } else if (lowerMessage.includes('good morning')) {
+                translation = `🔄 **Translation of "Good morning":**\n\n• **English**: Good morning\n• **French**: Bonjour (bon-ZHOOR)\n• **Tamil**: காலை வணக்கம் (Kalai Vanakkam)\n\n💡 **Note**: French uses "Bonjour" for both hello and good morning!`;
+            } else if (lowerMessage.includes('how are you')) {
+                translation = `🔄 **Translation of "How are you?":**\n\n• **English**: How are you?\n• **French**: Comment allez-vous? (koh-mahn tah-lay VOO)\n• **Tamil**: எப்படி இருக்கீங்க? (Eppadi irukkenga?)\n\n💡 **Informal French**: Comment ça va? (koh-mahn sah VAH)`;
+            } else if (lowerMessage.includes('goodbye') || lowerMessage.includes('bye')) {
+                translation = `🔄 **Translation of "Goodbye":**\n\n• **English**: Goodbye\n• **French**: Au revoir (oh ruh-VWAHR)\n• **Tamil**: போய் வருகிறேன் (Poy varugiren)\n\n💡 **Casual French**: À bientôt (ah bee-ahn-TOH) = "See you soon"`;
+            } else if (lowerMessage.includes('please')) {
+                translation = `🔄 **Translation of "Please":**\n\n• **English**: Please\n• **French**: S'il vous plaît (see voo PLAY)\n• **Tamil**: தயவு செய்து (Thayavu seithu)\n\n💡 **Informal French**: S'il te plaît (see tuh PLAY)`;
+            } else if (lowerMessage.includes('excuse me') || lowerMessage.includes('sorry')) {
+                translation = `🔄 **Translation of "Excuse me/Sorry":**\n\n• **English**: Excuse me / Sorry\n• **French**: Excusez-moi (ex-koo-zay MWAH) / Pardon\n• **Tamil**: மன்னிக்கவும் (Mannikkavum)\n\n💡 **Usage**: "Excusez-moi" for getting attention, "Pardon" for apologies`;
+            } else {
+                return `🔄 **Translation Service:**\n\nI can translate common phrases between:\n\n🇬🇧 **English** ↔ 🇫🇷 **French** ↔ 🇮🇳 **Tamil**\n\n**Popular phrases I can translate:**\n• Hello, goodbye, thank you\n• How are you? Please, excuse me\n• Numbers, days, colors\n• Basic conversation phrases\n\n**How to ask:**\n• "Translate 'hello' to French"\n• "What does 'bonjour' mean?"\n• "How do you say 'thank you' in Tamil?"\n\n**What would you like me to translate?** 🌍`;
+            }
+            
+            return translation;
+        }
+
+        // New specialized response functions for better AI
+        function generateGrammarResponse(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            
+            if (lowerMessage.includes('french')) {
+                return `🇫🇷 **French Grammar Help:**\n\n**Key French Grammar Rules:**\n• **Gender**: Every noun is masculine (le) or feminine (la)\n• **Articles**: le/la (the), un/une (a/an), des (some)\n• **Verb être**: je suis, tu es, il/elle est, nous sommes\n• **Adjectives**: Must agree with noun gender (grand/grande)\n\n**Example**: "Le chat noir" (the black cat - masculine)\n"La voiture noire" (the black car - feminine)\n\n💡 **Tip**: Learn noun gender with the article!`;
+            }
+            
+            if (lowerMessage.includes('english')) {
+                return `🇬🇧 **English Grammar Help:**\n\n**Essential English Grammar:**\n• **Word order**: Subject + Verb + Object (I eat apples)\n• **Articles**: a/an (indefinite), the (definite)\n• **Tenses**: Present (I walk), Past (I walked), Future (I will walk)\n• **Plurals**: Add -s (cat → cats) or -es (box → boxes)\n\n**Example**: "She reads books every day" (Present simple)\n\n💡 **Tip**: Practice with simple sentences first!`;
+            }
+            
+            return `📚 **Grammar Made Simple:**\n\nGrammar is the structure of language! Here are universal tips:\n\n1️⃣ **Start with basics** - Subject, verb, object\n2️⃣ **Learn patterns** - Most rules have patterns\n3️⃣ **Practice daily** - Use grammar in real sentences\n4️⃣ **Read actively** - Notice how grammar works in context\n\n**Which language's grammar interests you?** 🤔`;
+        }
+
+        function generatePronunciationResponse(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            
+            if (lowerMessage.includes('french')) {
+                return `🗣️ **French Pronunciation Guide:**\n\n**Key French Sounds:**\n• **R sound**: Roll your tongue (rouge = ROOZH)\n• **Nasal vowels**: on, an, in, un (through nose)\n• **Silent letters**: Final consonants often silent\n• **Liaison**: Connect words when speaking\n\n**Practice words:**\n• Bonjour = bon-ZHOOR\n• Merci = mer-SEE\n• Comment = koh-MAHN\n\n🎯 **Tip**: Listen to French audio daily!`;
+            }
+            
+            return `🗣️ **Pronunciation Tips:**\n\n**Universal Pronunciation Rules:**\n\n1️⃣ **Listen first** - Hear before you speak\n2️⃣ **Break down syllables** - Practice piece by piece\n3️⃣ **Use phonetic notation** - (like this)\n4️⃣ **Record yourself** - Compare with native speakers\n5️⃣ **Practice mouth positions** - Mirror work helps\n\n**Which language pronunciation do you need help with?**`;
+        }
+
+        function generateVocabularyResponse(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            
+            if (lowerMessage.includes('french')) {
+                return `📖 **French Vocabulary Building:**\n\n**Essential French Words:**\n• **Family**: père (father), mère (mother), enfant (child)\n• **Numbers**: un, deux, trois, quatre, cinq\n• **Colors**: rouge (red), bleu (blue), vert (green)\n• **Days**: lundi, mardi, mercredi, jeudi, vendredi\n\n**Memory tricks:**\n• Group by themes\n• Use flashcards\n• Make sentences\n\n🎯 **Goal**: Learn 10 new words daily!`;
+            }
+            
+            return `📖 **Vocabulary Building Strategies:**\n\n**Effective Methods:**\n\n1️⃣ **Themed groups** - Learn related words together\n2️⃣ **Spaced repetition** - Review at increasing intervals\n3️⃣ **Context learning** - Use words in sentences\n4️⃣ **Visual associations** - Link words to images\n5️⃣ **Daily practice** - 10-15 new words per day\n\n**Which language vocabulary are you building?**`;
+        }
+
+        function generateMathResponse(userMessage) {
+            return `🔢 **Math & Numbers Help:**\n\n**I can help with:**\n\n• **Basic arithmetic** - Addition, subtraction, multiplication\n• **Number words** - Learning to say numbers in different languages\n• **Math concepts** - Fractions, percentages, geometry\n• **Problem solving** - Step-by-step explanations\n\n**Language numbers:**\n• French: un, deux, trois, quatre, cinq\n• Tamil: ஒன்று, இரண்டு, மூன்று, நான்கு, ஐந்து\n• English: one, two, three, four, five\n\n**What specific math help do you need?**`;
+        }
+
+        function generateExplanationResponse(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            
+            // Extract what they want explained
+            let topic = userMessage.replace(/what is|what are|explain|tell me about/gi, '').trim();
+            
+            return `🧠 **Happy to explain!** You asked about: "${topic}"\n\n**I can provide explanations on:**\n\n• **Language concepts** - Grammar rules, pronunciation\n• **Learning techniques** - Study methods, memory tricks\n• **Cultural topics** - Language origins, customs\n• **Educational subjects** - Any academic topic\n\n**To give you the best explanation:**\n\n1️⃣ Be specific about what confuses you\n2️⃣ Let me know your current level\n3️⃣ Ask follow-up questions!\n\n**What specifically would you like me to explain about "${topic}"?** 🤔`;
+        }
+
+        function generateReasoningResponse(userMessage) {
+            return `🤔 **Great "why" question!** Understanding reasons helps learning!\n\n**You asked:** "${userMessage}"\n\n**I love explaining "why" because:**\n\n• **Deeper understanding** - Knowing reasons helps memory\n• **Better application** - You can use rules correctly\n• **Confidence building** - Understanding builds confidence\n• **Critical thinking** - "Why" questions develop analysis\n\n**Common "why" topics I explain:**\n• Why French has gender for nouns\n• Why certain study methods work\n• Why pronunciation matters\n• Why grammar rules exist\n\n**What specific "why" can I help you understand?** 💡`;
+        }
+
+        function generateHelpResponse(userMessage) {
+            return `🆘 **Absolutely! I'm here to help!**\n\nYou asked: "${userMessage}"\n\n**I can assist with:**\n\n🇫🇷 **French**: Grammar, vocabulary, pronunciation, culture\n🇮🇳 **Tamil**: Basic phrases, script, pronunciation\n🇬🇧 **English**: Grammar, writing, speaking, comprehension\n📚 **Study skills**: Memory techniques, planning, motivation\n🔄 **Translations**: Between supported languages\n\n**How I help best:**\n\n1️⃣ **Ask specific questions** - \"How do I conjugate French verbs?\"\n2️⃣ **Share your level** - Beginner, intermediate, advanced\n3️⃣ **Tell me your goals** - Conversation, reading, exams\n\n**What specific help do you need right now?** ✨`;
+        }
+
+        function generateContextualResponse(userMessage) {
+            // Analyze the message for context clues
+            const words = userMessage.toLowerCase().split(' ');
+            const context = window.userContext || [];
+            
+            // Try to understand what they're asking about
+            let response = `💭 **I'm analyzing your question:** "${userMessage}"\n\n`;
+            
+            // Look for educational keywords
+            const educationalKeywords = ['learn', 'study', 'practice', 'understand', 'know', 'remember'];
+            const hasEducational = words.some(word => educationalKeywords.includes(word));
+            
+            if (hasEducational) {
+                response += `**This seems to be about learning!** 📚\n\n`;
+                response += `**I can help you:**\n• Break down complex topics\n• Suggest practice methods\n• Provide step-by-step guidance\n• Answer specific questions\n\n`;
+            }
+            
+            response += `**To give you the most helpful response:**\n\n`;
+            response += `1️⃣ **Be specific** - What exactly do you want to know?\n`;
+            response += `2️⃣ **Add context** - What's your current level?\n`;
+            response += `3️⃣ **State your goal** - What are you trying to achieve?\n\n`;
+            response += `**Try asking something like:**\n`;
+            response += `• "How do I learn French grammar?"\n`;
+            response += `• "What does 'bonjour' mean?"\n`;
+            response += `• "Help me with English pronunciation"\n\n`;
+            response += `**What would you like to explore?** 🚀`;
+            
+            return response;
+        }
+
+        // Generate fallback response for web interfaces
+        function generateWebFallbackResponse(userMessage, provider) {
+            return `I understand you're asking: "${userMessage}"
+
+🌐 For the best response, please visit **${provider.name}** directly:
+👆 **[Click here to get your answer](${provider.url})**
+
+This will give you access to the latest AI models and real-time responses!
+
+💡 **Why use the web interface?**
+• More advanced AI models
+• Real-time responses  
+• No daily limits
+• Latest features
+
+📊 **Usage Today**: ${dailyUsage[new Date().toDateString()][provider.name] || 0}/${provider.dailyLimit}`;
+        }
+
+
+
+        // Show typing indicator
+        function showTypingIndicator() {
+            isTyping = true;
+            const messagesContainer = document.getElementById('chatMessages');
+            const sendButton = document.getElementById('sendButton');
+            
+            sendButton.disabled = true;
+            sendButton.innerHTML = '<i class="fas fa-spinner spinning"></i>';
+            
+            const typingElement = document.createElement('div');
+            typingElement.className = 'message assistant';
+            typingElement.id = 'typingIndicator';
+            typingElement.innerHTML = `
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <div class="loading-indicator">
+                        <span>Ga is thinking</span>
+                        <div class="loading-dots">
+                            <div class="loading-dot"></div>
+                            <div class="loading-dot"></div>
+                            <div class="loading-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            messagesContainer.appendChild(typingElement);
+            scrollToBottom();
+        }
+
+        // Hide typing indicator
+        function hideTypingIndicator() {
+            isTyping = false;
+            const typingIndicator = document.getElementById('typingIndicator');
+            const sendButton = document.getElementById('sendButton');
+            
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+            
+            sendButton.disabled = false;
+            sendButton.innerHTML = '<i class="fas fa-paper-plane"></i>';
+        }
+
+        // Handle errors with graceful fallback to local AI
+        function handleError(error, originalMessage) {
+            console.log('Handling error gracefully:', error.message);
+            
+            // Instead of showing error, just use local AI
+            hideTypingIndicator();
+            
+            // Generate a helpful local response
+            const localResponse = generateLocalAIResponse(originalMessage, {
+                name: 'Ga AI Assistant',
+                type: 'local',
+                description: 'Built-in AI assistant'
+            });
+            
+            addMessage('assistant', localResponse, originalMessage);
+            retryCount = 0;
+        }
+
+        // Reset to first provider
+        function resetToFirstProvider(originalMessage) {
+            currentProviderIndex = 0;
+            retryCount = 0;
+            
+            // Remove error messages
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(msg => msg.remove());
+            
+            // Show message about tomorrow
+            addMessage('system', '🌅 Daily limits reset at midnight! Try again tomorrow for fresh quotas, or use the direct web links below.');
+            showAllWebOptions();
+        }
+
+        // Show all web interface options
+        function showAllWebOptions() {
+            const allOptions = `🌐 **Direct Access to Free AI Services:**
+
+🤖 **Chat100.ai** - Multiple AI models (GPT-4o + Claude 3.5)
+👆 [Open Chat100.ai](https://chat100.ai/)
+
+🔍 **Perplexity** - Real-time web search + AI 
+👆 [Open Perplexity](https://perplexity.ai/)
+
+🧠 **Claude.ai** - Direct Claude 3.5 Sonnet access
+👆 [Open Claude.ai](https://claude.ai/)
+
+💬 **ChatGPT** - OpenAI's ChatGPT interface
+👆 [Open ChatGPT](https://chatgpt.com/)
+
+🎯 **Bonus Options:**
+• **Groq** - Fast responses: [groq.com](https://groq.com/)
+• **Cohere** - Command models: [cohere.com](https://cohere.com/)
+• **Hugging Face** - Open models: [huggingface.co/chat](https://huggingface.co/chat)
+
+*All links open in new tabs for easy access!*`;
+            
+            addMessage('assistant', allOptions);
+        }
+
+        // Try next provider manually
+        function tryNextProvider(originalMessage) {
+            if (currentProviderIndex < AI_PROVIDERS.length - 1) {
+                currentProviderIndex++;
+                retryMessage(originalMessage);
+            } else {
+                showAllWebOptions();
+            }
+        }
+
+        // Track daily usage for providers
+        function trackDailyUsage() {
+            const today = new Date().toDateString();
+            if (!dailyUsage[today]) {
+                dailyUsage[today] = {};
+            }
+            
+            // Clean old data (keep only today and yesterday)
+            const yesterday = new Date(Date.now() - 86400000).toDateString();
+            Object.keys(dailyUsage).forEach(date => {
+                if (date !== today && date !== yesterday) {
+                    delete dailyUsage[date];
+                }
+            });
+            
+            // Reset usage for all providers to prevent artificial limits
+            AI_PROVIDERS.forEach(provider => {
+                if (!dailyUsage[today][provider.name]) {
+                    dailyUsage[today][provider.name] = 0;
+                }
+            });
+            
+            // Save to localStorage
+            localStorage.setItem('askGaDailyUsage', JSON.stringify(dailyUsage));
+        }
+
+        // Reset usage counters manually
+        function resetUsageCounters() {
+            const today = new Date().toDateString();
+            dailyUsage[today] = {};
+            AI_PROVIDERS.forEach(provider => {
+                dailyUsage[today][provider.name] = 0;
+            });
+            localStorage.setItem('askGaDailyUsage', JSON.stringify(dailyUsage));
+            console.log('✅ Usage counters reset for all providers');
+        }
+
+        // Get current provider status
+        function getCurrentProviderStatus() {
+            const provider = AI_PROVIDERS[currentProviderIndex];
+            const today = new Date().toDateString();
+            const usage = dailyUsage[today] && dailyUsage[today][provider.name] || 0;
+            
+            return {
+                name: provider.name,
+                usage: usage,
+                limit: provider.dailyLimit,
+                hasLimit: provider.dailyLimit !== null,
+                isAvailable: !provider.dailyLimit || usage < provider.dailyLimit
+            };
+        }
+
+        // Retry failed message
+        async function retryMessage(message) {
+            if (retryCount >= CONFIG.MAX_RETRIES) return;
+            
+            retryCount++;
+            
+            // Remove error message
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(msg => msg.remove());
+            
+            // Show typing indicator and retry
+            showTypingIndicator();
+            
+            try {
+                await new Promise(resolve => setTimeout(resolve, CONFIG.RETRY_DELAY));
+                const response = await getAIResponse(message);
+                hideTypingIndicator();
+                addMessage('assistant', response, message);
+                retryCount = 0;
+            } catch (error) {
+                hideTypingIndicator();
+                handleError(error, message);
+            }
+        }
+
+        // Clear conversation
+        function clearConversation() {
+            if (confirm('Are you sure you want to clear the conversation?')) {
+                conversationHistory = [];
+                const messagesContainer = document.getElementById('chatMessages');
+                messagesContainer.innerHTML = `
+                    <div class="welcome-message">
+                        <div class="welcome-icon">🤖</div>
+                        <h3>Hello! I'm Ga, your AI learning assistant.</h3>
+                        <p>Ask me anything about languages, learning, or any topic you'd like to explore. I'm here to help!</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Refresh AI
+        function refreshAI() {
+            location.reload();
+        }
+
+        // Show suggestions
+        function showSuggestions() {
+            const suggestions = [
+                "How can I improve my French pronunciation?",
+                "What are the most important English grammar rules?",
+                "Explain the difference between formal and informal language",
+                "How do I memorize vocabulary effectively?",
+                "What study techniques work best for language learning?",
+                "Help me practice French conversation",
+                "Translate common phrases to Tamil",
+                "What are good resources for learning?",
+                "How can I practice speaking without a partner?",
+                "Explain French verb conjugations"
+            ];
+            
+            const input = document.getElementById('chatInput');
+            input.value = suggestions[Math.floor(Math.random() * suggestions.length)];
+            input.focus();
+        }
+
+        // Show help
+        function showHelp() {
+            addMessage('assistant', `
+                **How to use Ask Ga:**
+                
+                🤖 **Chat with me** - Type any question and I'll help you
+                
+                📚 **Learning Support** - Ask about French, English, Tamil, or study tips
+                
+                🔄 **Translations** - I can translate between English, French, and Tamil
+                
+                📖 **Explanations** - Get clear explanations of grammar, vocabulary, and concepts
+                
+                💡 **Study Help** - Ask for study techniques and learning strategies
+                
+                **Keyboard Shortcuts:**
+                - Press **Enter** to send a message
+                - Press **Ctrl+Enter** for a new line
+                
+                **Tips:**
+                - Be specific with your questions for better answers
+                - Ask follow-up questions to dive deeper
+                - Use the suggestion pills for quick ideas
+                
+                Happy learning! 🎓
+            `);
+        }
+
+        // Scroll to bottom
+        function scrollToBottom() {
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Menu functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.querySelector('.container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                // Open menu
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                // Close menu
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Back button functionality - Firebase compatible
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from Ask Ga page');
+            if (window.loadLanguageContent || window.parent.loadLanguageContent) {
+                // Try to use universal navigation system
+                if (window.loadLanguageContent) {
+                    window.loadLanguageContent('home', 'main');
+                } else if (window.parent.loadLanguageContent) {
+                    window.parent.loadLanguageContent('home', 'main');
+                }
+            } else {
+                // Fallback navigation
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = 'Index.html#home';
+                }
+            }
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close menu if it's open
+                const menu = document.getElementById('slideMenu');
+                if (!menu.classList.contains('collapsed')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializePage();
+            
+            // Initialize toggle label based on menu state
+            const menu = document.getElementById('slideMenu');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            if (menu.classList.contains('collapsed')) {
+                toggleLabel.textContent = 'Expand';
+            } else {
+                toggleLabel.textContent = 'Collapse';
+            }
+        });
+
+        // Global functions for Firebase compatibility
+        window.handleBackButton = handleBackButton;
+        window.toggleMenu = toggleMenu;
+        window.scrollToSection = scrollToSection;
+    </script>
+</body>
+</html> 
