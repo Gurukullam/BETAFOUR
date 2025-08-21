@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 2 - Practice 4: Workplace Policies & Procedures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5d3a0a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* Small Timer Display */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle.active #menuIcon {
+            transform: rotate(180deg);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #d4af37;
+            text-align: center;
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .timer-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Split Container Layout */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        /* Passages Panel (Left Side) */
+        .passages-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 45%;
+            max-width: 60%;
+        }
+
+        /* Questions Panel (Right Side) */
+        .questions-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 40%;
+            max-width: 55%;
+        }
+
+        /* Panel Headers */
+        .panel-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .panel-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .passage-counter, .question-progress {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Scrollable Content Areas */
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar Styling */
+        .scrollable-content::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 6px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            border-radius: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+        }
+
+        /* Vertical Separator */
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(180deg, #8b4513, #d4af37, #8b4513);
+            position: relative;
+            cursor: col-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .separator-line {
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .separator-handle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            color: #8b4513;
+            padding: 8px 2px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: col-resize;
+            user-select: none;
+        }
+
+        /* Passage Text Styling */
+        .passage-block {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(249, 249, 249, 0.8);
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .passage-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .passage-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Question Styling */
+        .question-group {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(248, 248, 248, 0.9);
+            border-radius: 10px;
+            border-left: 4px solid #8b4513;
+        }
+
+        .question-group-title {
+            font-size: 1.2rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .question:hover {
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+            border-color: #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #8b4513;
+            display: inline-block;
+            margin-right: 10px;
+            min-width: 25px;
+        }
+
+        .question-text {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .options {
+            display: grid;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(249, 249, 249, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #d4af37;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Results Section */
+        .results-section {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 69, 19, 0.05) 100%);
+            text-align: center;
+            display: none;
+        }
+
+        .results-header h2 {
+            color: #8b4513;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .results-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            
+            .vertical-separator {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+        }
+
+        /* Warning styles */
+        .warning {
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #4caf50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📋 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 2 - Practice 4</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">📄 2 Passages - Workplace Policies & Procedures</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 2 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📋 IELTS General Reading - Section 2 (Practice 4)</h1>
+                <div class="hero-subtitle">
+                    📄 Workplace Policies & Procedures - Intermediate Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 2 reading skills with intermediate-level workplace policies and procedures. This practice covers employee handbook content including flexible working arrangements and disciplinary procedures. You will encounter common Section 2 question formats: Sentence Completion, True/False/Not Given, Multiple Choice, and Matching Information. Complete Questions 15-27 within the recommended 20-minute timeframe to advance your policy interpretation skills.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📄 Passage Types:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Passage 1:</strong> Flexible Working Arrangements Policy</li>
+                                <li><strong>Passage 2:</strong> Employee Disciplinary Procedures</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">📊 Statistics:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li><strong>Total words:</strong> ~750 words</li>
+                                <li><strong>Question formats:</strong> 4 different types</li>
+                                <li><strong>Difficulty level:</strong> Intermediate workplace</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b4513; margin-bottom: 10px;">🎯 Skills Focus:</h4>
+                            <ul style="color: #666; line-height: 1.8;">
+                                <li>Policy document comprehension</li>
+                                <li>Procedural sequence understanding</li>
+                                <li>Workplace regulation interpretation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin-bottom: 15px; color: #666;">Recommended time for Section 2: 20 minutes</p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startTimer()" id="startBtn">Start Reading</button>
+                    </div>
+                    <div id="timerWarning" style="margin-top: 15px; color: #d4af37; font-weight: bold; display: none;">
+                        ⚠️ 5 minutes remaining!
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">📄 Reading Workspace - Questions 15-27</h2>
+                
+                <!-- Split Container with Vertical Separation -->
+                <div class="split-container">
+                    
+                    <!-- LEFT SIDE: Reading Passages (Scrollable) -->
+                    <div class="passages-panel">
+                        <div class="panel-header">
+                            <h3>📚 Reading Passages</h3>
+                            <div class="passage-counter">2 Passages | ~750 words total</div>
+                        </div>
+                        <div class="passages-content scrollable-content">
+                            
+                            <!-- Passage 1: Flexible Working Arrangements Policy -->
+                            <div class="passage-block" id="passage1">
+                                <div class="passage-title">Passage 1: Flexible Working Arrangements Policy</div>
+                                <div class="passage-text">
+                                    <strong>NORTHFIELD ENTERPRISES - FLEXIBLE WORKING ARRANGEMENTS POLICY</strong><br><br>
+                                    
+                                    <strong>Policy Overview and Eligibility</strong><br>
+                                    Northfield Enterprises recognizes the importance of maintaining an appropriate work-life balance and supporting employees in managing their professional and personal responsibilities effectively. This comprehensive policy outlines the various flexible working arrangements available to eligible employees, including remote working options, compressed work schedules, flexible start and finish times, and job-sharing opportunities. All permanent employees who have completed a minimum probationary period of six months are eligible to apply for flexible working arrangements, subject to business requirements and operational feasibility assessments conducted by line managers and human resources personnel.<br><br>
+                                    
+                                    <strong>Application Process and Assessment Criteria</strong><br>
+                                    Employees seeking flexible working arrangements must submit a formal written application using the designated form available through the company intranet portal. Applications should include detailed justification for the requested arrangement, proposed implementation timeline, and assessment of potential impact on team productivity and client service delivery. Line managers are required to conduct thorough evaluations within fourteen working days of receiving applications, considering factors such as role suitability, team dynamics, customer service requirements, and existing workload distribution. Successful applications result in a three-month trial period during which performance metrics and arrangement effectiveness are closely monitored.<br><br>
+                                    
+                                    <strong>Remote Working Guidelines and Technology Requirements</strong><br>
+                                    Employees approved for remote working arrangements must maintain reliable high-speed internet connectivity, secure workspace environments, and appropriate technology equipment to ensure seamless collaboration with colleagues and effective communication with clients. The company provides laptop computers, mobile phone allowances, and access to cloud-based software platforms, while employees are responsible for maintaining suitable home office setups including ergonomic furniture, adequate lighting, and noise-controlled environments. Regular virtual team meetings, weekly progress reports, and quarterly performance reviews ensure that remote workers remain integrated within their teams and continue contributing effectively to organizational objectives.<br><br>
+                                    
+                                    <strong>Review Process and Policy Modifications</strong><br>
+                                    All flexible working arrangements are subject to regular review processes conducted every six months to assess ongoing suitability and effectiveness. Performance indicators include productivity measurements, client satisfaction scores, team collaboration effectiveness, and individual employee wellbeing assessments. Arrangements may be modified, extended, or terminated based on changing business requirements, technological developments, or significant shifts in market conditions. The policy itself undergoes annual reviews incorporating employee feedback, industry best practices, and legal compliance requirements to ensure continued relevance and effectiveness in supporting both organizational goals and employee satisfaction levels.
+                                </div>
+                            </div>
+                            
+                            <!-- Passage 2: Employee Disciplinary Procedures -->
+                            <div class="passage-block" id="passage2">
+                                <div class="passage-title">Passage 2: Employee Disciplinary Procedures</div>
+                                <div class="passage-text">
+                                    <strong>NORTHFIELD ENTERPRISES - EMPLOYEE DISCIPLINARY PROCEDURES HANDBOOK</strong><br><br>
+                                    
+                                    <strong>Disciplinary Framework and Progressive Approach</strong><br>
+                                    Northfield Enterprises maintains a fair and transparent disciplinary framework designed to address employee conduct issues while providing opportunities for improvement and rehabilitation. The progressive disciplinary approach consists of multiple stages including informal counseling sessions, formal verbal warnings, written warnings, final written warnings, and ultimately dismissal for serious misconduct or repeated violations. Each stage incorporates comprehensive documentation requirements, employee rights to representation, and appeal processes to ensure procedural fairness and legal compliance. Minor infractions typically commence with informal guidance, while serious breaches of conduct may result in immediate formal proceedings or summary dismissal depending on severity and circumstances.<br><br>
+                                    
+                                    <strong>Investigation Procedures and Evidence Collection</strong><br>
+                                    When misconduct allegations arise, immediate investigations are conducted by trained human resources professionals in collaboration with relevant department managers to establish factual circumstances and determine appropriate responses. Investigation protocols include witness interviews, document review, digital evidence examination, and comprehensive incident reconstruction to ensure accurate and complete understanding of events. All involved parties receive notification of allegations, investigation timelines, and their rights during the process, including access to union representation or workplace advocates where applicable. Investigation findings are documented thoroughly and reviewed by senior management before determining disciplinary outcomes.<br><br>
+                                    
+                                    <strong>Disciplinary Hearings and Employee Rights</strong><br>
+                                    Formal disciplinary hearings are scheduled within reasonable timeframes following investigation completion, with employees receiving minimum five working days advance notice and copies of all relevant documentation. Employees have the right to be accompanied by trade union representatives, workplace colleagues, or professional advocates during hearings, and may present evidence, call witnesses, and challenge allegations through structured questioning processes. Hearing panels consist of impartial managers who have not been involved in investigations, ensuring objective decision-making and fair assessment of circumstances. Detailed minutes are recorded, and employees receive written outcomes including reasons for decisions, penalty details, and information about appeal rights and procedures.<br><br>
+                                    
+                                    <strong>Appeals Process and Final Resolution</strong><br>
+                                    Employees who disagree with disciplinary decisions may lodge formal appeals within ten working days of receiving written outcomes, submitting detailed grounds for appeal including any new evidence or procedural concerns. Appeal hearings are conducted by senior managers who were not involved in original proceedings, providing independent review of decisions and ensuring additional procedural safeguards. Appeal outcomes may result in decision confirmation, penalty modification, or complete overturning of disciplinary action depending on merit and circumstances. Final decisions are communicated in writing with clear explanations, and employees retain access to external employment tribunals or legal remedies where internal processes fail to achieve satisfactory resolution of disputes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VERTICAL SEPARATOR -->
+                    <div class="vertical-separator">
+                        <div class="separator-line"></div>
+                        <div class="separator-handle" title="Drag to resize">⋮⋮</div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Questions (Scrollable) -->
+                    <div class="questions-panel">
+                        <div class="panel-header">
+                            <h3>📝 Questions 15-27</h3>
+                            <div class="question-progress">
+                                <span id="answeredCount">0</span>/13 answered
+                            </div>
+                        </div>
+                        <div class="questions-content scrollable-content">
+                            
+                            <!-- Questions 15-18: Sentence Completion -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 15-18: Sentence Completion</h4>
+                                <p><em>Complete the sentences using NO MORE THAN THREE WORDS from the passage.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">15.</div>
+                                    <div class="question-text">Permanent employees must complete a minimum __________ before becoming eligible for flexible working.</div>
+                                    <input type="text" class="answer-input" id="q15" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">16.</div>
+                                    <div class="question-text">Line managers must evaluate flexible working applications within __________ working days.</div>
+                                    <input type="text" class="answer-input" id="q16" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">17.</div>
+                                    <div class="question-text">Disciplinary appeals must be lodged within __________ working days of receiving outcomes.</div>
+                                    <input type="text" class="answer-input" id="q17" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">18.</div>
+                                    <div class="question-text">Employees receive minimum __________ working days advance notice for disciplinary hearings.</div>
+                                    <input type="text" class="answer-input" id="q18" placeholder="Your answer" onchange="updateProgress()">
+                                </div>
+                            </div>
+
+                            <!-- Questions 19-22: True/False/Not Given -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 19-22: True/False/Not Given</h4>
+                                <p><em>Do the following statements agree with the information in the passages?</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">19.</div>
+                                    <div class="question-text">The company provides ergonomic furniture for employees working from home.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q19" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">20.</div>
+                                    <div class="question-text">All flexible working arrangements include a three-month trial period.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q20" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">21.</div>
+                                    <div class="question-text">Minor infractions typically begin with informal guidance rather than formal warnings.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q21" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">22.</div>
+                                    <div class="question-text">Employees can only be represented by trade union representatives during disciplinary hearings.</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="True" onchange="updateProgress()">
+                                            True
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="False" onchange="updateProgress()">
+                                            False
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q22" value="Not Given" onchange="updateProgress()">
+                                            Not Given
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 23-25: Multiple Choice -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 23-25: Multiple Choice</h4>
+                                <p><em>Choose the correct letter, A, B, C, or D.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">23.</div>
+                                    <div class="question-text">What does the company provide for remote workers?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="A" onchange="updateProgress()">
+                                            A) Ergonomic furniture and noise-controlled environments
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="B" onchange="updateProgress()">
+                                            B) Laptop computers and mobile phone allowances
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="C" onchange="updateProgress()">
+                                            C) Home office setup and adequate lighting
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q23" value="D" onchange="updateProgress()">
+                                            D) High-speed internet and secure workspace environments
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">24.</div>
+                                    <div class="question-text">Who conducts disciplinary investigations?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="A" onchange="updateProgress()">
+                                            A) Senior management and union representatives
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="B" onchange="updateProgress()">
+                                            B) Human resources professionals and department managers
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="C" onchange="updateProgress()">
+                                            C) External investigators and workplace advocates
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q24" value="D" onchange="updateProgress()">
+                                            D) Line managers and employee representatives
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">25.</div>
+                                    <div class="question-text">How often are flexible working arrangements reviewed?</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="A" onchange="updateProgress()">
+                                            A) Every three months during the trial period
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="B" onchange="updateProgress()">
+                                            B) Every six months to assess ongoing suitability
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="C" onchange="updateProgress()">
+                                            C) Annually as part of performance reviews
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q25" value="D" onchange="updateProgress()">
+                                            D) When business requirements change significantly
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions 26-27: Matching Information -->
+                            <div class="question-group">
+                                <h4 class="question-group-title">Questions 26-27: Matching Information</h4>
+                                <p><em>Match the following timeframes with the correct procedures.</em></p>
+                                
+                                <div class="question">
+                                    <div class="question-number">26.</div>
+                                    <div class="question-text">Six months minimum requirement</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="A" onchange="updateProgress()">
+                                            A) Flexible working arrangement reviews
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="B" onchange="updateProgress()">
+                                            B) Probationary period completion
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="C" onchange="updateProgress()">
+                                            C) Disciplinary appeal submission
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q26" value="D" onchange="updateProgress()">
+                                            D) Investigation completion timeframe
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question">
+                                    <div class="question-number">27.</div>
+                                    <div class="question-text">Fourteen working days maximum</div>
+                                    <div class="options">
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="A" onchange="updateProgress()">
+                                            A) Application evaluation by line managers
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="B" onchange="updateProgress()">
+                                            B) Advance notice for disciplinary hearings
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="C" onchange="updateProgress()">
+                                            C) Appeal submission deadline
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="q27" value="D" onchange="updateProgress()">
+                                            D) Trial period duration for arrangements
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <div class="results-header">
+                    <h2>📊 Practice Results</h2>
+                    <p>Your Section 2 Reading Performance</p>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 13 questions correct</div>
+                </div>
+
+                <div id="detailedResults" style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <!-- Results will be populated here -->
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <button class="timer-btn" onclick="resetPractice()">Try Again</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Timer and workspace functionality
+        let timerInterval;
+        let timeRemaining = 1200; // 20 minutes in seconds
+        let isTimerRunning = false;
+
+        // Correct answers for Section 2 Practice 4
+        const correctAnswers = {
+            'q15': 'probationary period',
+            'q16': 'fourteen',
+            'q17': 'ten',
+            'q18': 'five',
+            'q19': 'False',
+            'q20': 'True',
+            'q21': 'True',
+            'q22': 'False',
+            'q23': 'B',
+            'q24': 'B',
+            'q25': 'B',
+            'q26': 'B',
+            'q27': 'A'
+        };
+
+        function startTimer() {
+            if (isTimerRunning) return;
+            
+            isTimerRunning = true;
+            document.getElementById('startBtn').disabled = true;
+            
+            // Show small timer
+            const smallTimer = document.getElementById('smallTimerDisplay');
+            smallTimer.style.display = 'flex';
+            
+            // Auto-scroll to reading workspace
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            timeRemaining--;
+            
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            document.getElementById('timerDisplay').textContent = timeString;
+            document.getElementById('smallTimerTime').textContent = timeString;
+            
+            // Warning at 10 minutes remaining
+            if (timeRemaining === 600) {
+                document.getElementById('timerWarning').textContent = '⚠️ 10 minutes remaining!';
+                document.getElementById('timerWarning').style.display = 'block';
+                document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(255, 140, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%)';
+            }
+            
+            // Warning at 5 minutes remaining
+            if (timeRemaining === 300) {
+                document.getElementById('timerWarning').textContent = '⚠️ 5 minutes remaining!';
+                document.getElementById('timerWarning').style.color = '#ff6b35';
+                document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(255, 69, 0, 0.95) 0%, rgba(255, 99, 71, 0.95) 100%)';
+            }
+            
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                submitAnswers();
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('menu-open');
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function updateProgress() {
+            this.autoSave(); // Only handles auto-save functionality
+        }
+
+        function autoSave() {
+            // Auto-save user answers to localStorage
+            const answers = {};
+            for (let i = 15; i <= 27; i++) {
+                const questionElement = document.getElementById(`q${i}`);
+                if (questionElement) {
+                    if (questionElement.type === 'text') {
+                        answers[`q${i}`] = questionElement.value;
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                    if (radioButtons.length > 0) {
+                        answers[`q${i}`] = radioButtons[0].value;
+                    }
+                }
+            }
+            
+            localStorage.setItem('section2_practice4_answers', JSON.stringify(answers));
+            
+            // Update progress counter
+            const answeredCount = Object.keys(answers).filter(key => answers[key] && answers[key].trim() !== '').length;
+            document.getElementById('answeredCount').textContent = answeredCount;
+        }
+
+        function loadSavedAnswers() {
+            const savedAnswers = localStorage.getItem('section2_practice4_answers');
+            if (savedAnswers) {
+                const answers = JSON.parse(savedAnswers);
+                for (const [questionId, answer] of Object.entries(answers)) {
+                    const questionElement = document.getElementById(questionId);
+                    if (questionElement) {
+                        if (questionElement.type === 'text') {
+                            questionElement.value = answer;
+                        }
+                    } else {
+                        // Handle radio buttons
+                        const radioButton = document.querySelector(`input[name="${questionId}"][value="${answer}"]`);
+                        if (radioButton) {
+                            radioButton.checked = true;
+                        }
+                    }
+                }
+                updateProgress();
+            }
+        }
+
+        function submitAnswers() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            
+            const userAnswers = {};
+            let score = 0;
+            
+            // Collect answers
+            for (let i = 15; i <= 27; i++) {
+                const questionElement = document.getElementById(`q${i}`);
+                if (questionElement && questionElement.type === 'text') {
+                    userAnswers[`q${i}`] = questionElement.value.toLowerCase().trim();
+                } else {
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                    if (radioButtons.length > 0) {
+                        userAnswers[`q${i}`] = radioButtons[0].value;
+                    }
+                }
+            }
+            
+            // Calculate score
+            for (const [questionId, correctAnswer] of Object.entries(correctAnswers)) {
+                const userAnswer = userAnswers[questionId] || '';
+                if (typeof correctAnswer === 'string' && typeof userAnswer === 'string') {
+                    if (correctAnswer.toLowerCase() === userAnswer.toLowerCase()) {
+                        score++;
+                    }
+                }
+            }
+            
+            // Display results
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('reading-workspace').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            
+            // Show detailed results
+            let resultsHTML = '<h3 style="color: #8b4513; margin-bottom: 20px;">📋 Detailed Answer Review</h3>';
+            resultsHTML += '<div style="display: grid; gap: 15px;">';
+            
+            for (let i = 15; i <= 27; i++) {
+                const questionId = `q${i}`;
+                const correctAnswer = correctAnswers[questionId];
+                const userAnswer = userAnswers[questionId] || 'No answer';
+                const isCorrect = correctAnswer.toLowerCase() === (userAnswer || '').toLowerCase();
+                
+                resultsHTML += `
+                    <div style="padding: 15px; background: ${isCorrect ? 'rgba(76, 175, 80, 0.1)' : 'rgba(244, 67, 54, 0.1)'}; border-radius: 8px; border-left: 4px solid ${isCorrect ? '#4caf50' : '#f44336'};">
+                        <div style="font-weight: bold; margin-bottom: 5px;">Question ${i}: ${isCorrect ? '✅ Correct' : '❌ Incorrect'}</div>
+                        <div>Your answer: <span style="color: #666;">${userAnswer}</span></div>
+                        <div>Correct answer: <span style="color: #8b4513; font-weight: bold;">${correctAnswer}</span></div>
+                    </div>
+                `;
+            }
+            
+            resultsHTML += '</div>';
+            
+            // Add improvement tips based on performance
+            const percentage = Math.round((score / 13) * 100);
+            resultsHTML += `<div style="margin-top: 30px; padding: 20px; background: rgba(212, 175, 55, 0.1); border-radius: 10px;">`;
+            resultsHTML += `<h4 style="color: #8b4513;">📋 Workplace Policy Reading Enhancement Strategies</h4>`;
+            
+            if (percentage >= 85) {
+                resultsHTML += `<p><strong>Excellent!</strong> You demonstrate advanced workplace policy interpretation skills. Focus on:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Complex employment law frameworks and regulatory compliance requirements</li>
+                        <li>Advanced HR policy development and organizational governance structures</li>
+                        <li>Strategic workforce planning and employee relations management</li>
+                    </ul>`;
+            } else if (percentage >= 65) {
+                resultsHTML += `<p><strong>Good progress!</strong> Your policy comprehension is developing well. Work on:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Understanding comprehensive policy frameworks and procedural sequences</li>
+                        <li>Interpreting employee rights, responsibilities, and organizational requirements</li>
+                        <li>Analyzing workplace regulations and compliance documentation</li>
+                    </ul>`;
+            } else {
+                resultsHTML += `<p><strong>Keep practicing!</strong> Focus on building intermediate policy reading skills:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Identifying key policy components and procedural requirements</li>
+                        <li>Understanding basic workplace guidelines and employee obligations</li>
+                        <li>Recognizing timeframes, processes, and compliance standards</li>
+                        <li>Practice with simpler employee handbooks and workplace procedures</li>
+                    </ul>`;
+            }
+            
+            resultsHTML += `</div>`;
+            
+            document.getElementById('detailedResults').innerHTML = resultsHTML;
+            
+            // Clear saved answers
+            localStorage.removeItem('section2_practice4_answers');
+            
+            // Navigate to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetPractice() {
+            // Reset timer
+            timeRemaining = 1200;
+            isTimerRunning = false;
+            clearInterval(timerInterval);
+            document.getElementById('timerDisplay').textContent = '20:00';
+            document.getElementById('smallTimerTime').textContent = '20:00';
+            document.getElementById('smallTimerDisplay').style.display = 'none';
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('timerWarning').style.display = 'none';
+            
+            // Reset small timer colors
+            document.getElementById('smallTimerDisplay').style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+            
+            // Clear all answers
+            document.querySelectorAll('.answer-input').forEach(input => input.value = '');
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            
+            // Clear saved answers
+            localStorage.removeItem('section2_practice4_answers');
+            
+            // Show workspace, hide results
+            document.getElementById('reading-workspace').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            
+            // Reset progress counter
+            document.getElementById('answeredCount').textContent = '0';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const menu = document.getElementById('slideMenu');
+                if (menu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize
+        window.addEventListener('load', function() {
+            loadSavedAnswers();
+            
+            // Add change listeners for auto-save
+            document.querySelectorAll('.answer-input, input[type="radio"]').forEach(element => {
+                element.addEventListener('change', autoSave);
+                element.addEventListener('input', autoSave);
+            });
+        });
+
+        // Resizable panels functionality
+        let isResizing = false;
+
+        document.querySelector('.separator-handle').addEventListener('mousedown', function(e) {
+            isResizing = true;
+            document.body.style.cursor = 'col-resize';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isResizing) return;
+            
+            const container = document.querySelector('.split-container');
+            const containerRect = container.getBoundingClientRect();
+            const newLeftWidth = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+            
+            if (newLeftWidth > 30 && newLeftWidth < 70) {
+                document.querySelector('.passages-panel').style.flex = `0 0 ${newLeftWidth}%`;
+                document.querySelector('.questions-panel').style.flex = `0 0 ${100 - newLeftWidth}%`;
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isResizing = false;
+            document.body.style.cursor = 'default';
+        });
+    </script>
+</body>
+</html> 
