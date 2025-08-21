@@ -831,12 +831,22 @@
                 return this.request(`${endpoint}?ref=${branch}`);
             }
             
-            async createOrUpdateFile(path, content, message, branch = 'main', sha = null, forceOverride = false) {
-                console.log(`📝 Creating/updating file: ${path}`);
+            async createOrUpdateFile(path, content, message, branch = 'main', sha = null, forceOverride = false, isBinary = false) {
+                console.log(`📝 Creating/updating file: ${path} (binary: ${isBinary})`);
                 const endpoint = `/repos/${this.username}/${this.repo}/contents/${path}`;
+                
+                let encodedContent;
+                if (isBinary) {
+                    // For binary files, content should already be base64 encoded
+                    encodedContent = content;
+                } else {
+                    // For text files, encode as UTF-8 then base64
+                    encodedContent = btoa(unescape(encodeURIComponent(content)));
+                }
+                
                 const body = {
                     message,
-                    content: btoa(unescape(encodeURIComponent(content))), // Base64 encode
+                    content: encodedContent,
                     branch
                 };
                 
@@ -1405,15 +1415,26 @@
                                 continue;
                             }
                             
-                            const content = await file.text();
+                            // Detect if file is binary or text
+                            const isBinary = isBinaryFile(file.name);
+                            let content;
+                            
+                            if (isBinary) {
+                                // Read binary files as base64
+                                content = await readFileAsBase64(file);
+                            } else {
+                                // Read text files normally
+                                content = await file.text();
+                            }
                             
                             loadedRealFiles.set(filePath, {
                                 name: file.name,
                                 path: filePath,
                                 content: content,
-                                size: content.length,
+                                size: file.size,
                                 lastModified: new Date(file.lastModified),
-                                type: getFileType(file.name)
+                                type: getFileType(file.name),
+                                isBinary: isBinary
                             });
                             
                             loadedCount++;
@@ -1487,15 +1508,26 @@
                                 continue;
                             }
                             
-                            const content = await file.text();
+                            // Detect if file is binary or text
+                            const isBinary = isBinaryFile(file.name);
+                            let content;
+                            
+                            if (isBinary) {
+                                // Read binary files as base64
+                                content = await readFileAsBase64(file);
+                            } else {
+                                // Read text files normally
+                                content = await file.text();
+                            }
                             
                             loadedRealFiles.set(filePath, {
                                 name: file.name,
                                 path: filePath,
                                 content: content,
-                                size: content.length,
+                                size: file.size,
                                 lastModified: new Date(file.lastModified),
-                                type: getFileType(file.name)
+                                type: getFileType(file.name),
+                                isBinary: isBinary
                             });
                             
                             loadedCount++;
@@ -1563,6 +1595,27 @@
                 'json': 'JSON'
             };
             return types[ext] || 'Other';
+        }
+        
+        // Helper function to detect binary files
+        function isBinaryFile(fileName) {
+            const ext = fileName.split('.').pop().toLowerCase();
+            const binaryExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'ico', 'svg', 'webp', 'pdf', 'zip', 'rar', '7z', 'exe', 'dll', 'bin'];
+            return binaryExtensions.includes(ext);
+        }
+        
+        // Helper function to read file as base64
+        function readFileAsBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    // Remove the data URL prefix (e.g., "data:image/jpeg;base64,")
+                    const base64 = reader.result.split(',')[1];
+                    resolve(base64);
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
         }
         
         function handleFileSelection(event) {
@@ -1898,15 +1951,26 @@
                             continue;
                         }
                         
-                        const content = await file.text();
+                        // Detect if file is binary or text
+                        const isBinary = isBinaryFile(file.name);
+                        let content;
+                        
+                        if (isBinary) {
+                            // Read binary files as base64
+                            content = await readFileAsBase64(file);
+                        } else {
+                            // Read text files normally
+                            content = await file.text();
+                        }
                         
                         loadedRealFiles.set(filePath, {
                             name: file.name,
                             path: filePath,
                             content: content,
-                            size: content.length,
+                            size: file.size,
                             lastModified: new Date(file.lastModified),
-                            type: getFileType(file.name)
+                            type: getFileType(file.name),
+                            isBinary: isBinary
                         });
                         
                         loadedCount++;
@@ -2019,13 +2083,15 @@
                         }
                         
                         // Upload to GitHub with real content
+                        const isBinary = fileData.isBinary || false;
                         await githubApi.createOrUpdateFile(
                             file.targetPath,
                             content,
                             `Upload ${file.name} via bulk upload`,
                             document.getElementById('githubBranch').value,
                             existingSha,
-                            forceOverride
+                            forceOverride,
+                            isBinary
                         );
                         
                         uploadedCount++;
