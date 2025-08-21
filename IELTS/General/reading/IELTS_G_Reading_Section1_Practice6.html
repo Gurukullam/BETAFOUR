@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 1 - Practice 6: Healthcare & Medical</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            color: #5d3a0a;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            opacity: 0.8;
+        }
+
+        /* Small Timer Display (appears when timer is running) */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -380px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            overflow-y: auto;
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin: 25px 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513 0%, #d4af37 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .timer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Split Container for Reading Workspace */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        .passages-panel {
+            flex: 1;
+            min-width: 45%;
+            max-width: 60%;
+            padding: 25px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 248, 0.9) 100%);
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .questions-panel {
+            flex: 1;
+            min-width: 40%;
+            max-width: 55%;
+            padding: 25px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(248, 248, 248, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+        }
+
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(135deg, #d4af37 0%, #8b4513 100%);
+            cursor: col-resize;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .vertical-separator:hover {
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+        }
+
+        .separator-handle {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 3px;
+            padding: 8px 2px;
+            font-size: 12px;
+            color: #8b4513;
+            font-weight: bold;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            user-select: none;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+        }
+
+        /* Passage Styles */
+        .passage {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .passage-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .passage-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Question Styles */
+        .question-group {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            border-left: 4px solid #8b4513;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .question-group-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+            padding: 10px 0;
+        }
+
+        .question-number {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 5px;
+        }
+
+        .question-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 0;
+        }
+
+        .radio-option input[type="radio"] {
+            margin: 0;
+            scale: 1.2;
+        }
+
+        .radio-option label {
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+
+
+        /* Results Section */
+        .score-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .answer-review {
+            margin-bottom: 30px;
+        }
+
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .answer-item.correct {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .answer-item.incorrect {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.05);
+        }
+
+        .improvement-tips {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+                max-height: 50vh;
+            }
+            
+            .vertical-separator {
+                width: 100%;
+                height: 6px;
+                cursor: row-resize;
+            }
+            
+            .separator-handle {
+                writing-mode: horizontal-tb;
+                padding: 2px 8px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .timer-display {
+                font-size: 2rem;
+            }
+
+            .small-timer-display {
+                right: 10px;
+                top: 5px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .gk-logo-container {
+                right: 10px;
+                top: 25px;
+            }
+
+            .master-guruvammal-logo {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+
+            .back-label {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📖 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 1 - Practice 6</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">🏥 3 Passages - Healthcare & Medical Context</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 1 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📖 IELTS General Reading - Section 1 (Practice 6)</h1>
+                <div class="hero-subtitle">
+                    🏥 Healthcare & Medical - Social Survival Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 1 reading skills with authentic healthcare and medical passages featuring advanced vocabulary and complex information. This practice covers everyday healthcare situations including medical insurance policies, hospital discharge procedures, and pharmaceutical guidelines. You will encounter all 6 question formats commonly found in IELTS General Reading Section 1: Form Completion, Matching Information, Multiple Choice, Short Answer Questions, Sentence Completion, and True/False/Not Given. Complete Questions 1-14 within the recommended 20-minute timeframe.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">📚 Passage Details</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>📖 Total Passages:</strong> 3</li>
+                                <li style="margin-bottom: 8px;"><strong>📊 Word Count:</strong> ~750 words</li>
+                                <li style="margin-bottom: 8px;"><strong>🎯 Difficulty Level:</strong> Advanced</li>
+                                <li style="margin-bottom: 8px;"><strong>🏷️ Context:</strong> Healthcare & Medical</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">❓ Question Formats</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>📋 Form Completion:</strong> Q1-3</li>
+                                <li style="margin-bottom: 8px;"><strong>🔗 Matching Information:</strong> Q4-7</li>
+                                <li style="margin-bottom: 8px;"><strong>🎯 Multiple Choice:</strong> Q8-10</li>
+                                <li style="margin-bottom: 8px;"><strong>📝 Short Answer/T/F/NG:</strong> Q11-14</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">🏥 Passage Themes</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>💊 Passage A:</strong> Health Insurance Policy</li>
+                                <li style="margin-bottom: 8px;"><strong>🏥 Passage B:</strong> Hospital Discharge Instructions</li>
+                                <li style="margin-bottom: 8px;"><strong>💉 Passage C:</strong> Medication Guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer - 20 Minutes</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin: 15px 0; color: #666; font-size: 1.1rem;">
+                        🎯 <strong>IELTS Section 1 Standard:</strong> Complete all 14 questions within 20 minutes for optimal exam preparation.
+                    </p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startReading()">Start Reading</button>
+                    </div>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 8px; text-align: left;">
+                        <h4 style="color: #8b4513; margin-bottom: 10px;">⏰ Time Management Tips:</h4>
+                        <ul style="margin: 0; padding-left: 20px; color: #666;">
+                            <li>Spend 3-4 minutes reading all passages carefully due to advanced vocabulary</li>
+                            <li>Allocate 5-6 minutes per passage for questions</li>
+                            <li>Save 3-4 minutes for review and double-checking answers</li>
+                            <li>Pay attention to medical terminology and synonyms</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">📚 Reading Workspace - Questions 1-14</h2>
+                
+                <div class="split-container">
+                    <!-- Passages Panel -->
+                    <div class="passages-panel">
+                        <div class="passage">
+                            <div class="passage-title">💊 Passage A: MediCare Plus Health Insurance Policy</div>
+                            <div class="passage-content">
+                                <strong>MediCare Plus Comprehensive Health Insurance Coverage</strong><br><br>
+                                
+                                Thank you for choosing MediCare Plus as your healthcare insurance provider. This policy document outlines your comprehensive coverage benefits, terms, and conditions. Please retain this document for your records and present it when accessing medical services.<br><br>
+                                
+                                <strong>Policy Holder Information:</strong><br>
+                                Policy Number: MP-2024-78452<br>
+                                Effective Date: January 1, 2024<br>
+                                Renewal Date: December 31, 2024<br>
+                                Deductible: $500 per calendar year<br>
+                                Maximum Annual Coverage: $250,000<br><br>
+                                
+                                <strong>Covered Services and Benefits:</strong><br>
+                                • <strong>Primary Care Consultations:</strong> 100% coverage after deductible is met for visits to designated general practitioners within our network. Co-payment of $25 required for each appointment.<br><br>
+                                
+                                • <strong>Specialist Referrals:</strong> 80% coverage for consultations with specialists including cardiologists, dermatologists, and orthopedic surgeons. Prior authorization from your primary care physician is mandatory for all specialist visits.<br><br>
+                                
+                                • <strong>Emergency Room Treatment:</strong> 90% coverage for genuine emergency situations. Coverage is reduced to 60% if the condition is determined to be non-emergency by medical assessment.<br><br>
+                                
+                                • <strong>Prescription Medications:</strong> 75% coverage for generic medications, 60% coverage for brand-name pharmaceuticals. Medications must be obtained from accredited pharmacies within our network.<br><br>
+                                
+                                • <strong>Diagnostic Procedures:</strong> 85% coverage for laboratory tests, X-rays, MRI scans, and CT scans when ordered by a network physician. Pre-approval is required for advanced imaging procedures costing over $1,000.<br><br>
+                                
+                                <strong>Exclusions and Limitations:</strong><br>
+                                This policy does not cover experimental treatments, cosmetic procedures, alternative medicine therapies, or treatments obtained outside the designated network without prior approval. Dental and vision care require separate supplementary insurance policies.
+                            </div>
+                        </div>
+
+                        <div class="passage">
+                            <div class="passage-title">🏥 Passage B: Post-Surgical Discharge Instructions</div>
+                            <div class="passage-content">
+                                <strong>Metropolitan General Hospital - Patient Discharge Guidelines</strong><br><br>
+                                
+                                Patient Name: [Patient Information]<br>
+                                Procedure: Laparoscopic Appendectomy<br>
+                                Surgeon: Dr. Sarah Chen, MD<br>
+                                Discharge Date: [Current Date]<br>
+                                Follow-up Appointment: Scheduled within 7-10 days<br><br>
+                                
+                                <strong>Immediate Post-Operative Care (First 48 Hours):</strong><br>
+                                Monitor surgical incision sites for signs of infection including increased redness, swelling, warmth, or purulent discharge. Contact the hospital immediately if you experience fever above 100.4°F (38°C), severe abdominal pain, persistent nausea, or inability to retain fluids.<br><br>
+                                
+                                <strong>Activity Restrictions:</strong><br>
+                                • <strong>First Week:</strong> Avoid lifting objects heavier than 10 pounds. No strenuous exercise, swimming, or activities that involve stretching or twisting movements.<br><br>
+                                
+                                • <strong>Weeks 2-4:</strong> Gradually increase light activities such as walking and household chores. Avoid heavy lifting (over 25 pounds) and high-impact exercises until cleared by your surgeon.<br><br>
+                                
+                                • <strong>Return to Work:</strong> Most patients can resume desk work within 3-5 days. Physical labor occupations typically require 2-3 weeks recovery time, depending on individual healing progress.<br><br>
+                                
+                                <strong>Medication Management:</strong><br>
+                                Continue prescribed antibiotics (Cephalexin 500mg) for the full 7-day course, even if feeling better. Take pain medication (Acetaminophen with Codeine) only as needed, maximum every 4-6 hours. Avoid aspirin and ibuprofen for the first week as they may increase bleeding risk.<br><br>
+                                
+                                <strong>Wound Care:</strong><br>
+                                Keep incision sites clean and dry. Gentle showering is permitted after 24 hours, but avoid soaking in baths, hot tubs, or swimming pools for 2 weeks. Remove waterproof dressings before your follow-up appointment. Do not apply lotions, creams, or ointments to the incision area unless specifically instructed.<br><br>
+                                
+                                <strong>Emergency Contact Information:</strong><br>
+                                Hospital Main Line: (555) 789-0123<br>
+                                Surgeon On-Call Service: (555) 789-0145<br>
+                                If experiencing life-threatening emergency, call 911 immediately.
+                            </div>
+                        </div>
+
+                        <div class="passage">
+                            <div class="passage-title">💉 Passage C: Prescription Medication Safety Guidelines</div>
+                            <div class="passage-content">
+                                <strong>PharmaCare Network - Patient Medication Safety Information</strong><br><br>
+                                
+                                Proper medication management is essential for treatment effectiveness and patient safety. This comprehensive guide provides important information about prescription drug usage, storage, and potential interactions.<br><br>
+                                
+                                <strong>Medication Administration Guidelines:</strong><br>
+                                Always take medications exactly as prescribed by your healthcare provider. Do not adjust dosages, frequency, or duration without consulting your physician or pharmacist. Take medications at consistent times each day to maintain therapeutic blood levels. Use a pill organizer or medication reminder app to prevent missed doses.<br><br>
+                                
+                                <strong>Drug Interactions and Contraindications:</strong><br>
+                                Inform all healthcare providers about every medication you are taking, including over-the-counter drugs, herbal supplements, and vitamins. Certain combinations can cause dangerous interactions. For example, blood thinners (warfarin) should not be taken with aspirin or NSAIDs without medical supervision. Antibiotics may reduce the effectiveness of oral contraceptives.<br><br>
+                                
+                                <strong>Storage and Handling Requirements:</strong><br>
+                                Store medications in their original containers with clearly labeled instructions. Most medications should be kept at room temperature (68-77°F) in a dry place away from direct sunlight. Refrigerated medications must be stored between 36-46°F. Never store medications in bathrooms, car glove compartments, or other areas with temperature fluctuations.<br><br>
+                                
+                                <strong>Side Effect Monitoring:</strong><br>
+                                Be aware of common and serious side effects associated with your medications. Contact your healthcare provider immediately if you experience allergic reactions (rash, swelling, difficulty breathing), severe gastrointestinal symptoms, or unexpected changes in mood or cognitive function. Keep a medication diary to track effectiveness and any adverse reactions.<br><br>
+                                
+                                <strong>Disposal and Expiration:</strong><br>
+                                Check expiration dates regularly and dispose of expired medications properly. Most communities have prescription drug take-back programs. If unavailable, mix expired pills with coffee grounds or cat litter, seal in a plastic bag, and dispose in regular trash. Never flush medications down toilets unless specifically instructed on the label.<br><br>
+                                
+                                <strong>Pharmacy Services:</strong><br>
+                                Our pharmacists are available for medication counseling, drug interaction screening, and adherence support. We offer automatic prescription refills, medication synchronization services, and specialized packaging for complex medication regimens. Contact our pharmacy consultation line at (555) 456-7890 for any medication-related questions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertical Separator -->
+                    <div class="vertical-separator">
+                        <div class="separator-handle">RESIZE</div>
+                    </div>
+
+                    <!-- Questions Panel -->
+                    <div class="questions-panel">
+                        <!-- Questions 1-3: Form Completion -->
+                        <div class="question-group">
+                            <div class="question-group-title">📋 Questions 1-3: Form Completion</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Complete the insurance summary form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
+                            </p>
+
+                            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                                <h4 style="text-align: center; margin-bottom: 15px; color: #8b4513;">MediCare Plus Policy Summary</h4>
+                                <div style="display: grid; gap: 10px;">
+                                    <div class="question">
+                                        <div class="question-number">Question 1</div>
+                                        <div class="question-text">
+                                            Annual deductible amount: $<input type="text" class="answer-input" id="q1" placeholder="Amount" style="width: 80px; display: inline;">
+                                        </div>
+                                    </div>
+
+                                    <div class="question">
+                                        <div class="question-number">Question 2</div>
+                                        <div class="question-text">
+                                            Primary care co-payment: $<input type="text" class="answer-input" id="q2" placeholder="Amount" style="width: 80px; display: inline;">
+                                        </div>
+                                    </div>
+
+                                    <div class="question">
+                                        <div class="question-number">Question 3</div>
+                                        <div class="question-text">
+                                            Generic medication coverage: <input type="text" class="answer-input" id="q3" placeholder="Percentage" style="width: 80px; display: inline;">%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 4-7: Matching Information -->
+                        <div class="question-group">
+                            <div class="question-group-title">🔗 Questions 4-7: Matching Information</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Match each statement with the correct passage (A, B, or C). Write A, B, or C for each answer.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 4</div>
+                                <div class="question-text">
+                                    This passage mentions a specific temperature range for storage requirements.
+                                </div>
+                                <input type="text" class="answer-input" id="q4" placeholder="A, B, or C">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 5</div>
+                                <div class="question-text">
+                                    Prior authorization is required for certain medical services.
+                                </div>
+                                <input type="text" class="answer-input" id="q5" placeholder="A, B, or C">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 6</div>
+                                <div class="question-text">
+                                    Contact information for emergency situations is provided.
+                                </div>
+                                <input type="text" class="answer-input" id="q6" placeholder="A, B, or C">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 7</div>
+                                <div class="question-text">
+                                    Specific weight limitations are mentioned for physical activities.
+                                </div>
+                                <input type="text" class="answer-input" id="q7" placeholder="A, B, or C">
+                            </div>
+                        </div>
+
+                        <!-- Questions 8-10: Multiple Choice -->
+                        <div class="question-group">
+                            <div class="question-group-title">🎯 Questions 8-10: Multiple Choice</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Choose the correct letter, A, B, C, or D.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 8</div>
+                                <div class="question-text">
+                                    According to the discharge instructions, patients should avoid swimming for:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8a" name="q8" value="A">
+                                        <label for="q8a">A) 1 week</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8b" name="q8" value="B">
+                                        <label for="q8b">B) 2 weeks</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8c" name="q8" value="C">
+                                        <label for="q8c">C) 3 weeks</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8d" name="q8" value="D">
+                                        <label for="q8d">D) 4 weeks</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 9</div>
+                                <div class="question-text">
+                                    The MediCare Plus policy covers emergency room treatment at:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9a" name="q9" value="A">
+                                        <label for="q9a">A) 60% for all conditions</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9b" name="q9" value="B">
+                                        <label for="q9b">B) 90% for genuine emergencies</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9c" name="q9" value="C">
+                                        <label for="q9c">C) 100% after deductible</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q9d" name="q9" value="D">
+                                        <label for="q9d">D) 75% for all visits</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 10</div>
+                                <div class="question-text">
+                                    According to the medication guidelines, most medications should be stored:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10a" name="q10" value="A">
+                                        <label for="q10a">A) In the refrigerator</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10b" name="q10" value="B">
+                                        <label for="q10b">B) In bathroom medicine cabinets</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10c" name="q10" value="C">
+                                        <label for="q10c">C) At room temperature in a dry place</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q10d" name="q10" value="D">
+                                        <label for="q10d">D) In car glove compartments</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 11-14: Mixed Format -->
+                        <div class="question-group">
+                            <div class="question-group-title">📝 Questions 11-14: Short Answer & True/False/Not Given</div>
+                            
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Questions 11-12: Answer with NO MORE THAN THREE WORDS.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 11</div>
+                                <div class="question-text">
+                                    What type of surgical procedure did the patient undergo?
+                                </div>
+                                <input type="text" class="answer-input" id="q11" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 12</div>
+                                <div class="question-text">
+                                    What should expired medications be mixed with before disposal?
+                                </div>
+                                <input type="text" class="answer-input" id="q12" placeholder="Your answer">
+                            </div>
+
+                            <p style="margin: 20px 0 15px 0; font-style: italic; color: #666;">
+                                Questions 13-14: TRUE/FALSE/NOT GIVEN
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 13</div>
+                                <div class="question-text">
+                                    MediCare Plus covers alternative medicine therapies.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q13a" name="q13" value="TRUE">
+                                        <label for="q13a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q13b" name="q13" value="FALSE">
+                                        <label for="q13b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q13c" name="q13" value="NOT GIVEN">
+                                        <label for="q13c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 14</div>
+                                <div class="question-text">
+                                    The pharmacy offers medication synchronization services.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q14a" name="q14" value="TRUE">
+                                        <label for="q14a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q14b" name="q14" value="FALSE">
+                                        <label for="q14b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q14c" name="q14" value="NOT GIVEN">
+                                        <label for="q14c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 14 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>🏥 Reading Enhancement Strategies</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Enhanced Reading Workspace Class
+        class ReadingWorkspace {
+            constructor() {
+                this.currentQuestion = 1;
+                this.answeredQuestions = new Set();
+                this.timerDuration = 20 * 60; // 20 minutes in seconds
+                this.timeRemaining = this.timerDuration;
+                this.timerInterval = null;
+                this.timerRunning = false;
+                this.initializeWorkspace();
+            }
+
+            initializeWorkspace() {
+                this.setupResizablePanels();
+                this.setupProgressTracking();
+                this.updateTimerDisplay();
+            }
+
+            // Resizable Panels
+            setupResizablePanels() {
+                const separator = document.querySelector('.vertical-separator');
+                const passagesPanel = document.querySelector('.passages-panel');
+                const questionsPanel = document.querySelector('.questions-panel');
+                
+                if (!separator) return;
+                
+                let isResizing = false;
+
+                separator.addEventListener('mousedown', (e) => {
+                    isResizing = true;
+                    document.body.style.cursor = 'col-resize';
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isResizing) return;
+
+                    const container = document.querySelector('.split-container');
+                    const containerRect = container.getBoundingClientRect();
+                    const newPosition = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+                    
+                    if (newPosition > 25 && newPosition < 75) {
+                        passagesPanel.style.flex = `0 0 ${newPosition}%`;
+                        questionsPanel.style.flex = `0 0 ${100 - newPosition}%`;
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isResizing) {
+                        isResizing = false;
+                        document.body.style.cursor = 'default';
+                    }
+                });
+            }
+
+            // Progress Tracking
+            setupProgressTracking() {
+                const inputs = document.querySelectorAll('.answer-input, input[type="radio"]');
+                inputs.forEach(input => {
+                    input.addEventListener('input', () => this.updateProgress());
+                    input.addEventListener('change', () => this.updateProgress());
+                });
+            }
+
+            updateProgress() {
+                const answers = this.getAnsweredQuestions();
+                const progressElement = document.getElementById('progressCount');
+                if (progressElement) {
+                    progressElement.textContent = answers.size;
+                }
+                this.autoSave();
+            }
+
+            getAnsweredQuestions() {
+                const answered = new Set();
+                
+                // Text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answered.add(input.id);
+                    }
+                });
+                
+                // Radio buttons
+                for (let i = 8; i <= 14; i++) {
+                    const radioGroup = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (radioGroup) {
+                        answered.add(`q${i}`);
+                    }
+                }
+                
+                return answered;
+            }
+
+            // Timer Functions
+            startTimer() {
+                if (this.timerRunning) return;
+                
+                this.timerRunning = true;
+                this.showSmallTimer();
+                
+                this.timerInterval = setInterval(() => {
+                    this.timeRemaining--;
+                    this.updateTimerDisplay();
+                    
+                    if (this.timeRemaining <= 0) {
+                        this.stopTimer();
+                        this.handleTimeUp();
+                    }
+                }, 1000);
+            }
+
+            stopTimer() {
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+                this.timerRunning = false;
+                this.hideSmallTimer();
+            }
+
+            updateTimerDisplay() {
+                const minutes = Math.floor(this.timeRemaining / 60);
+                const seconds = this.timeRemaining % 60;
+                const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                const timerDisplay = document.getElementById('timerDisplay');
+                const smallTimerTime = document.getElementById('smallTimerTime');
+                
+                if (timerDisplay) {
+                    timerDisplay.textContent = timeString;
+                    
+                    // Change color when 5 minutes or less remain
+                    if (this.timeRemaining <= 300) {
+                        timerDisplay.style.color = '#dc3545';
+                    } else if (this.timeRemaining <= 600) {
+                        timerDisplay.style.color = '#ffc107';
+                    } else {
+                        timerDisplay.style.color = '#8b4513';
+                    }
+                }
+                
+                if (smallTimerTime) {
+                    smallTimerTime.textContent = timeString;
+                    
+                    // Change small timer color too
+                    const smallTimer = document.getElementById('smallTimerDisplay');
+                    if (this.timeRemaining <= 300) {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(220, 53, 69, 0.95) 0%, rgba(139, 69, 19, 0.95) 100%)';
+                    } else if (this.timeRemaining <= 600) {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(255, 193, 7, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                    } else {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                    }
+                }
+            }
+
+            showSmallTimer() {
+                const smallTimer = document.getElementById('smallTimerDisplay');
+                if (smallTimer) {
+                    smallTimer.style.display = 'flex';
+                }
+            }
+
+            hideSmallTimer() {
+                const smallTimer = document.getElementById('smallTimerDisplay');
+                if (smallTimer) {
+                    smallTimer.style.display = 'none';
+                }
+            }
+
+            handleTimeUp() {
+                alert('⏰ Time is up! Your answers have been automatically saved. Click OK to see your results.');
+                submitAnswers();
+            }
+
+            // Auto-save functionality
+            autoSave() {
+                const answers = {};
+                
+                // Save text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answers[input.id] = input.value.trim();
+                    }
+                });
+                
+                // Save radio selections
+                document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                    answers[radio.name] = radio.value;
+                });
+                
+                try {
+                    localStorage.setItem('ielts_reading_s1_p6_answers', JSON.stringify(answers));
+                } catch (error) {
+                    console.warn('Could not save answers to localStorage');
+                }
+            }
+
+            // Load saved answers
+            loadSavedAnswers() {
+                try {
+                    const saved = localStorage.getItem('ielts_reading_s1_p6_answers');
+                    if (saved) {
+                        const answers = JSON.parse(saved);
+                        
+                        // Restore text inputs
+                        Object.entries(answers).forEach(([id, value]) => {
+                            const element = document.getElementById(id);
+                            if (element && element.type === 'text') {
+                                element.value = value;
+                            }
+                        });
+                        
+                        // Restore radio selections
+                        Object.entries(answers).forEach(([name, value]) => {
+                            const radio = document.querySelector(`input[name="${name}"][value="${value}"]`);
+                            if (radio) {
+                                radio.checked = true;
+                            }
+                        });
+                        
+                        this.updateProgress();
+                    }
+                } catch (error) {
+                    console.warn('Could not load saved answers');
+                }
+            }
+        }
+
+        // Initialize workspace
+        const workspace = new ReadingWorkspace();
+
+        // Global Functions
+        function startReading() {
+            workspace.startTimer();
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Progress Function
+        function updateProgress() {
+            workspace.updateProgress();
+        }
+
+        // Auto-save functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            workspace.loadSavedAnswers();
+        });
+
+        // Menu and Navigation Functions
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('menu-open'); // Make button stick to menu
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        // Submit and Scoring Functions
+        const answerKey = {
+            'q1': '500',
+            'q2': '25',
+            'q3': '75',
+            'q4': 'C',
+            'q5': 'A',
+            'q6': 'B',
+            'q7': 'B',
+            'q8': 'B',
+            'q9': 'B',
+            'q10': 'C',
+            'q11': 'Laparoscopic Appendectomy',
+            'q12': 'coffee grounds',
+            'q13': 'FALSE',
+            'q14': 'TRUE'
+        };
+
+        function submitAnswers() {
+            workspace.stopTimer();
+            
+            let score = 0;
+            const results = [];
+            
+            // Check all answers
+            for (const [questionId, correctAnswer] of Object.entries(answerKey)) {
+                let userAnswer = '';
+                const element = document.getElementById(questionId);
+                
+                if (element) {
+                    if (element.type === 'text') {
+                        userAnswer = element.value.trim();
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButton = document.querySelector(`input[name="${questionId}"]:checked`);
+                    if (radioButton) {
+                        userAnswer = radioButton.value;
+                    }
+                }
+                
+                const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase() ||
+                                userAnswer.toLowerCase().includes(correctAnswer.toLowerCase());
+                if (isCorrect) score++;
+                
+                results.push({
+                    question: questionId,
+                    userAnswer: userAnswer,
+                    correctAnswer: correctAnswer,
+                    isCorrect: isCorrect
+                });
+            }
+            
+            displayResults(score, results);
+        }
+
+        function displayResults(score, results) {
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            
+            // Generate answer review
+            const reviewContainer = document.getElementById('answerReview');
+            reviewContainer.innerHTML = '';
+            
+            results.forEach((result, index) => {
+                const answerItem = document.createElement('div');
+                answerItem.className = `answer-item ${result.isCorrect ? 'correct' : 'incorrect'}`;
+                answerItem.innerHTML = `
+                    <div>
+                        <strong>Question ${index + 1}:</strong> ${result.userAnswer || 'No answer'}
+                        ${!result.isCorrect ? `<br><strong>Correct answer:</strong> ${result.correctAnswer}` : ''}
+                    </div>
+                    <div style="font-size: 1.2em;">${result.isCorrect ? '✓' : '✗'}</div>
+                `;
+                reviewContainer.appendChild(answerItem);
+            });
+            
+            // Generate improvement tips
+            const tipsList = document.getElementById('improvementList');
+            const tips = generateImprovementTips(score, results);
+            tipsList.innerHTML = '';
+            tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateImprovementTips(score, results) {
+            const tips = [];
+            
+            if (score >= 12) {
+                tips.push('Outstanding performance! Your reading comprehension of complex medical texts is excellent.');
+                tips.push('Continue practicing with advanced healthcare and technical vocabulary to maintain this level.');
+            } else if (score >= 10) {
+                tips.push('Very good performance! Focus on complex medical terminology and technical details.');
+                tips.push('Practice identifying precise information in insurance policies and medical documents.');
+            } else if (score >= 7) {
+                tips.push('Good progress with room for improvement. Focus on healthcare vocabulary and document structure.');
+                tips.push('Practice scanning for specific medical information and understanding professional terminology.');
+            } else {
+                tips.push('Significant improvement needed. Review basic medical and healthcare vocabulary.');
+                tips.push('Practice with simpler medical texts first to build confidence with healthcare terminology.');
+                tips.push('Focus on understanding formal document structures and professional language.');
+            }
+            
+            // Specific tips based on common errors
+            const formErrors = results.filter(r => r.question.startsWith('q') && ['1','2','3'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            const matchingErrors = results.filter(r => r.question.startsWith('q') && ['4','5','6','7'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            
+            if (formErrors > 1) {
+                tips.push('Focus on extracting specific numerical information from insurance and medical documents.');
+            }
+            if (matchingErrors > 2) {
+                tips.push('Practice matching information across different types of medical and healthcare texts.');
+            }
+            
+            return tips;
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('slideMenu').classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize timer display
+        workspace.updateTimerDisplay();
+    </script>
+</body>
+</html> 
