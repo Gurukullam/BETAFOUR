@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Reading Section 1 - Practice 5: Leisure & Recreation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 11px;
+            color: #5d3a0a;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            opacity: 0.8;
+        }
+
+        /* Small Timer Display (appears when timer is running) */
+        .small-timer-display {
+            position: fixed;
+            top: -5px;
+            right: 30px;
+            z-index: 1003;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .small-timer-display[style*="flex"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .small-timer-time {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for small timer */
+        @media (max-width: 768px) {
+            .small-timer-display {
+                top: -3px;
+                right: 15px;
+                padding: 3px 6px;
+                font-size: 0.75rem;
+                min-width: 55px;
+            }
+            
+            .small-timer-time {
+                font-size: 0.75rem;
+            }
+        }
+
+
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -380px;
+            width: 380px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 50%, rgba(139, 69, 19, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1001;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            overflow-y: auto;
+        }
+
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 35px 25px 30px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .menu-content {
+            padding: 20px 0;
+            overflow-y: auto;
+            height: calc(100vh - 140px);
+        }
+
+        .menu-item {
+            display: block;
+            padding: 18px 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ffd700;
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button - Sticks to slide-out menu */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1002;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle.menu-open {
+            left: 350px; /* Stick to the right edge of the open menu (380px - 30px) */
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+        }
+
+        #menuIcon {
+            font-size: 1.4rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .container.menu-open {
+            transform: translateX(200px);
+            opacity: 0.7;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            text-align: center;
+            padding: 50px 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #5d3a0a;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reading Timer Styles */
+        .timer-container {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin: 25px 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .timer-btn {
+            background: linear-gradient(135deg, #8b4513 0%, #d4af37 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .timer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .timer-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Split Container for Reading Workspace */
+        .split-container {
+            display: flex;
+            height: 95vh;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            margin-top: 20px;
+        }
+
+        .passages-panel {
+            flex: 1;
+            min-width: 45%;
+            max-width: 60%;
+            padding: 25px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 248, 0.9) 100%);
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .questions-panel {
+            flex: 1;
+            min-width: 40%;
+            max-width: 55%;
+            padding: 25px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(248, 248, 248, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+        }
+
+        .vertical-separator {
+            width: 6px;
+            background: linear-gradient(135deg, #d4af37 0%, #8b4513 100%);
+            cursor: col-resize;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .vertical-separator:hover {
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+        }
+
+        .separator-handle {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 3px;
+            padding: 8px 2px;
+            font-size: 12px;
+            color: #8b4513;
+            font-weight: bold;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            user-select: none;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+        }
+
+        /* Passage Styles */
+        .passage {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .passage-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .passage-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Question Styles */
+        .question-group {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            border-left: 4px solid #8b4513;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .question-group-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+            padding: 10px 0;
+        }
+
+        .question-number {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 5px;
+        }
+
+        .question-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 0;
+        }
+
+        .radio-option input[type="radio"] {
+            margin: 0;
+            scale: 1.2;
+        }
+
+        .radio-option label {
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+
+
+        /* Results Section */
+        .score-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .answer-review {
+            margin-bottom: 30px;
+        }
+
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .answer-item.correct {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .answer-item.incorrect {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.05);
+        }
+
+        .improvement-tips {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .passages-panel, .questions-panel {
+                min-width: 100%;
+                max-width: 100%;
+                max-height: 50vh;
+            }
+            
+            .vertical-separator {
+                width: 100%;
+                height: 6px;
+                cursor: row-resize;
+            }
+            
+            .separator-handle {
+                writing-mode: horizontal-tb;
+                padding: 2px 8px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .timer-display {
+                font-size: 2rem;
+            }
+
+            .small-timer-display {
+                right: 10px;
+                top: 5px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .gk-logo-container {
+                right: 10px;
+                top: 25px;
+            }
+
+            .master-guruvammal-logo {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+
+            .back-label {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Small Timer Display (appears when timer is running) -->
+    <div class="small-timer-display" id="smallTimerDisplay" style="display: none;">
+        <div class="small-timer-time" id="smallTimerTime">20:00</div>
+    </div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">📖 IELTS General Reading</div>
+            <div class="menu-subtitle">Section 1 - Practice 5</div>
+        </div>
+        <div class="menu-content">
+            <a href="#passage-info" class="menu-item" onclick="navigateToSection('passage-info')">
+                <div class="item-title">1. 📋 Passage Information</div>
+                <div class="item-description">⚽ 3 Passages - Leisure & Recreation Context</div>
+            </a>
+            <a href="#timer-section" class="menu-item" onclick="navigateToSection('timer-section')">
+                <div class="item-title">2. ⏰ Reading Timer</div>
+                <div class="item-description">📖 20 Minutes - Section 1 Practice</div>
+            </a>
+            <a href="#reading-workspace" class="menu-item" onclick="navigateToSection('reading-workspace')">
+                <div class="item-title">3. 📚 Reading Workspace</div>
+                <div class="item-description">📖 Passages ← → Questions (Resizable)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. 📊 Performance Analysis</div>
+                <div class="item-description">📈 Results & Strategic Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">📖 IELTS General Reading - Section 1 (Practice 5)</h1>
+                <div class="hero-subtitle">
+                    ⚽ Leisure & Recreation - Social Survival Context
+                </div>
+                <p class="hero-description">
+                    Practice Section 1 reading skills with authentic leisure and recreation passages. This practice covers everyday situations including sports center memberships, community event listings, and recreational facility information. You will encounter all 6 question formats commonly found in IELTS General Reading Section 1: Matching Information, Multiple Choice, Sentence Completion, True/False/Not Given, Form Completion, and Short Answer Questions. Complete Questions 1-14 within the recommended 20-minute timeframe.
+                </p>
+            </section>
+
+            <!-- Passage Information Section -->
+            <section id="passage-info" class="content-section">
+                <h2 class="section-title">📋 Reading Passage Information</h2>
+                <div class="timer-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">📚 Passage Details</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>📖 Total Passages:</strong> 3</li>
+                                <li style="margin-bottom: 8px;"><strong>📊 Word Count:</strong> ~700 words</li>
+                                <li style="margin-bottom: 8px;"><strong>🎯 Difficulty Level:</strong> Intermediate</li>
+                                <li style="margin-bottom: 8px;"><strong>🏷️ Context:</strong> Leisure & Recreation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">❓ Question Formats</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>🔗 Matching Information:</strong> Q1-4</li>
+                                <li style="margin-bottom: 8px;"><strong>🎯 Multiple Choice:</strong> Q5-8</li>
+                                <li style="margin-bottom: 8px;"><strong>📝 Sentence Completion:</strong> Q9-11</li>
+                                <li style="margin-bottom: 8px;"><strong>✅ True/False/Not Given:</strong> Q12-14</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #8b4513; margin-bottom: 10px;">⚽ Passage Themes</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;"><strong>🏊 Passage A:</strong> Sports Center Membership</li>
+                                <li style="margin-bottom: 8px;"><strong>🎪 Passage B:</strong> Community Events Calendar</li>
+                                <li style="margin-bottom: 8px;"><strong>🏞️ Passage C:</strong> Local Park Facilities Guide</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Timer Section -->
+            <section id="timer-section" class="content-section">
+                <h2 class="section-title">⏰ Reading Timer - 20 Minutes</h2>
+                <div class="timer-container">
+                    <div class="timer-display" id="timerDisplay">20:00</div>
+                    <p style="margin: 15px 0; color: #666; font-size: 1.1rem;">
+                        🎯 <strong>IELTS Section 1 Standard:</strong> Complete all 14 questions within 20 minutes for optimal exam preparation.
+                    </p>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="startReading()">Start Reading</button>
+                    </div>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 8px; text-align: left;">
+                        <h4 style="color: #8b4513; margin-bottom: 10px;">⏰ Time Management Tips:</h4>
+                        <ul style="margin: 0; padding-left: 20px; color: #666;">
+                            <li>Spend 2-3 minutes reading all passages quickly</li>
+                            <li>Allocate 6-7 minutes per passage for questions</li>
+                            <li>Save 2-3 minutes for review and checking answers</li>
+                            <li>Look for keywords and synonyms in questions and passages</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Workspace -->
+            <section id="reading-workspace" class="content-section">
+                <h2 class="section-title">📚 Reading Workspace - Questions 1-14</h2>
+                
+                <div class="split-container">
+                    <!-- Passages Panel -->
+                    <div class="passages-panel">
+                        <div class="passage">
+                            <div class="passage-title">🏊 Passage A: AquaFit Sports Center - Membership Information</div>
+                            <div class="passage-content">
+                                <strong>Welcome to AquaFit Sports Center</strong><br><br>
+                                
+                                Our state-of-the-art facility offers comprehensive fitness solutions for individuals and families. Located in the heart of downtown, AquaFit has been serving the community for over 15 years with top-quality equipment and professional instruction.<br><br>
+                                
+                                <strong>Membership Options:</strong><br>
+                                • <strong>Individual Monthly:</strong> $65 per month (includes gym access, pool, and group classes)<br>
+                                • <strong>Individual Annual:</strong> $650 per year (save $130 with upfront payment)<br>
+                                • <strong>Family Plan:</strong> $120 per month for up to 4 members<br>
+                                • <strong>Student Discount:</strong> 25% off all memberships with valid student ID<br>
+                                • <strong>Senior Citizens (60+):</strong> 20% discount on all plans<br><br>
+                                
+                                <strong>Facilities:</strong><br>
+                                Our 5,000 square meter facility includes a fully equipped gymnasium with modern cardio machines, free weights, and strength training equipment. The heated indoor pool is 25 meters long and open year-round. We also feature a sauna, steam room, and relaxation area.<br><br>
+                                
+                                <strong>Group Classes:</strong><br>
+                                All memberships include unlimited access to our group fitness classes: Yoga (Monday/Wednesday/Friday 7 AM), Aqua Aerobics (Tuesday/Thursday 6 PM), Pilates (Saturday 9 AM), and Zumba (Wednesday/Friday 7 PM). Classes are led by certified instructors and suitable for all fitness levels.<br><br>
+                                
+                                <strong>Operating Hours:</strong><br>
+                                Monday-Friday: 5:30 AM - 10:00 PM<br>
+                                Saturday-Sunday: 7:00 AM - 9:00 PM<br>
+                                Holiday hours may vary - check our website for updates.
+                            </div>
+                        </div>
+
+                        <div class="passage">
+                            <div class="passage-title">🎪 Passage B: Riverside Community Events - Monthly Calendar</div>
+                            <div class="passage-content">
+                                <strong>Riverside Community Center - October Events</strong><br><br>
+                                
+                                Join us for an exciting month of community activities designed to bring neighbors together and celebrate our diverse community. All events are open to the public unless otherwise specified.<br><br>
+                                
+                                <strong>Weekly Programs:</strong><br>
+                                • <strong>Senior Dance Classes:</strong> Every Tuesday, 2:00-3:30 PM, Community Hall A. Free for residents over 55. Professional dance instructor Sarah Mitchell leads sessions in ballroom, line dancing, and gentle movement.<br><br>
+                                
+                                • <strong>Children's Art Workshop:</strong> Saturdays, 10:00 AM-12:00 PM, Art Studio. Ages 6-12, $15 per session including all materials. Limited to 12 children per class. Registration required by Thursday before each session.<br><br>
+                                
+                                • <strong>Community Garden Club:</strong> Every Sunday, 9:00 AM-11:00 AM, Community Garden (weather permitting). Free participation. Learn about organic gardening, composting, and seasonal planting. Tools and gloves provided.<br><br>
+                                
+                                <strong>Special October Events:</strong><br>
+                                • <strong>Harvest Festival:</strong> October 15th, 2:00-6:00 PM, Main Square. Family-friendly celebration with pumpkin carving, live music, food vendors, and local craft displays. Entry fee: Adults $5, Children under 12 free.<br><br>
+                                
+                                • <strong>Halloween Costume Contest:</strong> October 31st, 6:00-8:00 PM, Community Hall B. Categories for all ages. Prizes for most creative, funniest, and scariest costumes. Registration at the door, $3 entry fee.<br><br>
+                                
+                                <strong>Registration Information:</strong><br>
+                                Most activities require advance registration. Contact the Community Center at (555) 123-4567 or visit our front desk Monday-Friday, 9 AM-5 PM. Payment accepted in cash, check, or credit card.
+                            </div>
+                        </div>
+
+                        <div class="passage">
+                            <div class="passage-title">🏞️ Passage C: Willowbrook Park - Facilities and Visitor Information</div>
+                            <div class="passage-content">
+                                <strong>Willowbrook Regional Park - Your Gateway to Nature</strong><br><br>
+                                
+                                Spanning 200 hectares of pristine woodland and meadows, Willowbrook Park offers year-round recreational opportunities for visitors of all ages. The park is open daily from sunrise to sunset, with no admission fee.<br><br>
+                                
+                                <strong>Recreation Facilities:</strong><br>
+                                • <strong>Hiking Trails:</strong> Three marked trails ranging from easy (2 km) to challenging (8 km). Trail maps available at the visitor center and online. Dogs welcome on leash.<br><br>
+                                
+                                • <strong>Picnic Areas:</strong> Five designated picnic sites with tables, grills, and waste disposal. Site A accommodates up to 20 people, Sites B-D hold 12 people each, and Site E (wheelchair accessible) seats 8 people. Reservations recommended for weekends.<br><br>
+                                
+                                • <strong>Playground:</strong> Modern playground equipment suitable for children ages 2-12. Rubber surface for safety. Adjacent seating for parents and guardians.<br><br>
+                                
+                                • <strong>Sports Courts:</strong> Two tennis courts (first-come, first-served), one basketball court, and a volleyball net. Equipment rental available at the visitor center: tennis rackets $5/hour, basketballs $3/hour.<br><br>
+                                
+                                <strong>Wildlife Observation:</strong><br>
+                                The park is home to over 50 species of birds, deer, rabbits, and various small mammals. Early morning and late afternoon offer the best wildlife viewing opportunities. Photography is encouraged, but visitors must maintain a respectful distance from all animals.<br><br>
+                                
+                                <strong>Visitor Services:</strong><br>
+                                The visitor center is open Tuesday-Sunday, 9 AM-4 PM (closed Mondays except holidays). Facilities include restrooms, water fountains, and a small gift shop. Free parking is available near all main entrances.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertical Separator -->
+                    <div class="vertical-separator">
+                        <div class="separator-handle">RESIZE</div>
+                    </div>
+
+                    <!-- Questions Panel -->
+                    <div class="questions-panel">
+                        <!-- Questions 1-4: Matching Information -->
+                        <div class="question-group">
+                            <div class="question-group-title">🔗 Questions 1-4: Matching Information</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Match each statement with the correct passage (A, B, or C). Write A, B, or C for each answer.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 1</div>
+                                <div class="question-text">
+                                    This location has been operating for more than a decade.
+                                </div>
+                                <input type="text" class="answer-input" id="q1" placeholder="A, B, or C">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 2</div>
+                                <div class="question-text">
+                                    Advance booking is advised for weekend visits.
+                                </div>
+                                <input type="text" class="answer-input" id="q2" placeholder="A, B, or C">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 3</div>
+                                <div class="question-text">
+                                    Professional instruction is provided for physical activities.
+                                </div>
+                                <input type="text" class="answer-input" id="q3" placeholder="A, B, or C">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 4</div>
+                                <div class="question-text">
+                                    This facility operates on a first-come, first-served basis for certain activities.
+                                </div>
+                                <input type="text" class="answer-input" id="q4" placeholder="A, B, or C">
+                            </div>
+                        </div>
+
+                        <!-- Questions 5-8: Multiple Choice -->
+                        <div class="question-group">
+                            <div class="question-group-title">🎯 Questions 5-8: Multiple Choice</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Choose the correct letter, A, B, C, or D.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 5</div>
+                                <div class="question-text">
+                                    AquaFit Sports Center's annual membership offers a saving of:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5a" name="q5" value="A">
+                                        <label for="q5a">A) $130</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5b" name="q5" value="B">
+                                        <label for="q5b">B) $150</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5c" name="q5" value="C">
+                                        <label for="q5c">C) $120</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q5d" name="q5" value="D">
+                                        <label for="q5d">D) $200</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 6</div>
+                                <div class="question-text">
+                                    The Children's Art Workshop:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6a" name="q6" value="A">
+                                        <label for="q6a">A) Accepts up to 15 children per class</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6b" name="q6" value="B">
+                                        <label for="q6b">B) Requires registration by Friday</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6c" name="q6" value="C">
+                                        <label for="q6c">C) Costs $15 including materials</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q6d" name="q6" value="D">
+                                        <label for="q6d">D) Runs for 3 hours each session</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 7</div>
+                                <div class="question-text">
+                                    At the Harvest Festival:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7a" name="q7" value="A">
+                                        <label for="q7a">A) All children pay an entrance fee</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7b" name="q7" value="B">
+                                        <label for="q7b">B) Activities run for 4 hours</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7c" name="q7" value="C">
+                                        <label for="q7c">C) Only local crafts are displayed</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q7d" name="q7" value="D">
+                                        <label for="q7d">D) Food must be brought from home</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 8</div>
+                                <div class="question-text">
+                                    Willowbrook Park's most challenging hiking trail is:
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8a" name="q8" value="A">
+                                        <label for="q8a">A) 2 kilometers long</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8b" name="q8" value="B">
+                                        <label for="q8b">B) 5 kilometers long</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8c" name="q8" value="C">
+                                        <label for="q8c">C) 8 kilometers long</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q8d" name="q8" value="D">
+                                        <label for="q8d">D) 10 kilometers long</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions 9-11: Sentence Completion -->
+                        <div class="question-group">
+                            <div class="question-group-title">📝 Questions 9-11: Sentence Completion</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer.
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 9</div>
+                                <div class="question-text">
+                                    AquaFit's pool is __________ meters in length and remains open throughout the year.
+                                </div>
+                                <input type="text" class="answer-input" id="q9" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 10</div>
+                                <div class="question-text">
+                                    The Community Garden Club meets every Sunday, but activities depend on __________.
+                                </div>
+                                <input type="text" class="answer-input" id="q10" placeholder="Your answer">
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 11</div>
+                                <div class="question-text">
+                                    At Willowbrook Park, visitors can observe more than __________ different bird species.
+                                </div>
+                                <input type="text" class="answer-input" id="q11" placeholder="Your answer">
+                            </div>
+                        </div>
+
+                        <!-- Questions 12-14: True/False/Not Given -->
+                        <div class="question-group">
+                            <div class="question-group-title">✅ Questions 12-14: True/False/Not Given</div>
+                            <p style="margin-bottom: 15px; font-style: italic; color: #666;">
+                                Do the following statements agree with the information in the passage?<br>
+                                TRUE - if the statement agrees with the information<br>
+                                FALSE - if the statement contradicts the information<br>
+                                NOT GIVEN - if there is no information on this
+                            </p>
+
+                            <div class="question">
+                                <div class="question-number">Question 12</div>
+                                <div class="question-text">
+                                    AquaFit Sports Center provides personal training services.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q12a" name="q12" value="TRUE">
+                                        <label for="q12a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q12b" name="q12" value="FALSE">
+                                        <label for="q12b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q12c" name="q12" value="NOT GIVEN">
+                                        <label for="q12c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 13</div>
+                                <div class="question-text">
+                                    The Halloween Costume Contest has an age limit of 16 years old.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q13a" name="q13" value="TRUE">
+                                        <label for="q13a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q13b" name="q13" value="FALSE">
+                                        <label for="q13b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q13c" name="q13" value="NOT GIVEN">
+                                        <label for="q13c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="question-number">Question 14</div>
+                                <div class="question-text">
+                                    Willowbrook Park's visitor center is closed on Mondays during public holidays.
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="q14a" name="q14" value="TRUE">
+                                        <label for="q14a">TRUE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q14b" name="q14" value="FALSE">
+                                        <label for="q14b">FALSE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="q14c" name="q14" value="NOT GIVEN">
+                                        <label for="q14c">NOT GIVEN</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit Answers</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 14 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>⚽ Reading Enhancement Strategies</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Enhanced Reading Workspace Class
+        class ReadingWorkspace {
+            constructor() {
+                this.currentQuestion = 1;
+                this.answeredQuestions = new Set();
+                this.timerDuration = 20 * 60; // 20 minutes in seconds
+                this.timeRemaining = this.timerDuration;
+                this.timerInterval = null;
+                this.timerRunning = false;
+                this.initializeWorkspace();
+            }
+
+            initializeWorkspace() {
+                this.setupResizablePanels();
+                this.setupProgressTracking();
+                this.updateTimerDisplay();
+            }
+
+            // Resizable Panels
+            setupResizablePanels() {
+                const separator = document.querySelector('.vertical-separator');
+                const passagesPanel = document.querySelector('.passages-panel');
+                const questionsPanel = document.querySelector('.questions-panel');
+                
+                if (!separator) return;
+                
+                let isResizing = false;
+
+                separator.addEventListener('mousedown', (e) => {
+                    isResizing = true;
+                    document.body.style.cursor = 'col-resize';
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isResizing) return;
+
+                    const container = document.querySelector('.split-container');
+                    const containerRect = container.getBoundingClientRect();
+                    const newPosition = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+                    
+                    if (newPosition > 25 && newPosition < 75) {
+                        passagesPanel.style.flex = `0 0 ${newPosition}%`;
+                        questionsPanel.style.flex = `0 0 ${100 - newPosition}%`;
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isResizing) {
+                        isResizing = false;
+                        document.body.style.cursor = 'default';
+                    }
+                });
+            }
+
+            // Progress Tracking
+            setupProgressTracking() {
+                const inputs = document.querySelectorAll('.answer-input, input[type="radio"]');
+                inputs.forEach(input => {
+                    input.addEventListener('input', () => this.updateProgress());
+                    input.addEventListener('change', () => this.updateProgress());
+                });
+            }
+
+            updateProgress() {
+                this.autoSave();
+            }
+
+            getAnsweredQuestions() {
+                const answered = new Set();
+                
+                // Text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answered.add(input.id);
+                    }
+                });
+                
+                // Radio buttons
+                for (let i = 5; i <= 14; i++) {
+                    const radioGroup = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (radioGroup) {
+                        answered.add(`q${i}`);
+                    }
+                }
+                
+                return answered;
+            }
+
+            // Timer Functions
+            startTimer() {
+                if (this.timerRunning) return;
+                
+                this.timerRunning = true;
+                this.showSmallTimer();
+                
+                this.timerInterval = setInterval(() => {
+                    this.timeRemaining--;
+                    this.updateTimerDisplay();
+                    
+                    if (this.timeRemaining <= 0) {
+                        this.stopTimer();
+                        this.handleTimeUp();
+                    }
+                }, 1000);
+            }
+
+            stopTimer() {
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+                this.timerRunning = false;
+                this.hideSmallTimer();
+            }
+
+            updateTimerDisplay() {
+                const minutes = Math.floor(this.timeRemaining / 60);
+                const seconds = this.timeRemaining % 60;
+                const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                const timerDisplay = document.getElementById('timerDisplay');
+                const smallTimerTime = document.getElementById('smallTimerTime');
+                
+                if (timerDisplay) {
+                    timerDisplay.textContent = timeString;
+                    
+                    // Change color when 5 minutes or less remain
+                    if (this.timeRemaining <= 300) {
+                        timerDisplay.style.color = '#dc3545';
+                    } else if (this.timeRemaining <= 600) {
+                        timerDisplay.style.color = '#ffc107';
+                    } else {
+                        timerDisplay.style.color = '#8b4513';
+                    }
+                }
+                
+                if (smallTimerTime) {
+                    smallTimerTime.textContent = timeString;
+                    
+                    // Change small timer color too
+                    const smallTimer = document.getElementById('smallTimerDisplay');
+                    if (this.timeRemaining <= 300) {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(220, 53, 69, 0.95) 0%, rgba(139, 69, 19, 0.95) 100%)';
+                    } else if (this.timeRemaining <= 600) {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(255, 193, 7, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                    } else {
+                        smallTimer.style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%)';
+                    }
+                }
+            }
+
+            showSmallTimer() {
+                const smallTimer = document.getElementById('smallTimerDisplay');
+                if (smallTimer) {
+                    smallTimer.style.display = 'flex';
+                }
+            }
+
+            hideSmallTimer() {
+                const smallTimer = document.getElementById('smallTimerDisplay');
+                if (smallTimer) {
+                    smallTimer.style.display = 'none';
+                }
+            }
+
+            handleTimeUp() {
+                alert('⏰ Time is up! Your answers have been automatically saved. Click OK to see your results.');
+                submitAnswers();
+            }
+
+            // Auto-save functionality
+            autoSave() {
+                const answers = {};
+                
+                // Save text inputs
+                document.querySelectorAll('.answer-input').forEach(input => {
+                    if (input.value.trim()) {
+                        answers[input.id] = input.value.trim();
+                    }
+                });
+                
+                // Save radio selections
+                document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                    answers[radio.name] = radio.value;
+                });
+                
+                try {
+                    localStorage.setItem('ielts_reading_s1_p5_answers', JSON.stringify(answers));
+                } catch (error) {
+                    console.warn('Could not save answers to localStorage');
+                }
+            }
+
+            // Load saved answers
+            loadSavedAnswers() {
+                try {
+                    const saved = localStorage.getItem('ielts_reading_s1_p5_answers');
+                    if (saved) {
+                        const answers = JSON.parse(saved);
+                        
+                        // Restore text inputs
+                        Object.entries(answers).forEach(([id, value]) => {
+                            const element = document.getElementById(id);
+                            if (element && element.type === 'text') {
+                                element.value = value;
+                            }
+                        });
+                        
+                        // Restore radio selections
+                        Object.entries(answers).forEach(([name, value]) => {
+                            const radio = document.querySelector(`input[name="${name}"][value="${value}"]`);
+                            if (radio) {
+                                radio.checked = true;
+                            }
+                        });
+                        
+                        this.updateProgress();
+                    }
+                } catch (error) {
+                    console.warn('Could not load saved answers');
+                }
+            }
+        }
+
+        // Initialize workspace
+        const workspace = new ReadingWorkspace();
+
+        // Global Functions
+        function startReading() {
+            workspace.startTimer();
+            const readingWorkspace = document.getElementById('reading-workspace');
+            if (readingWorkspace) {
+                readingWorkspace.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Progress Function
+        function updateProgress() {
+            workspace.updateProgress();
+        }
+
+        // Auto-save functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            workspace.loadSavedAnswers();
+        });
+
+        // Menu and Navigation Functions
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('open');
+            container.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('menu-open'); // Make button stick to menu
+        }
+
+        function navigateToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(); // Close menu after navigation
+            }
+        }
+
+        function handleBackButton() {
+            window.location.href = 'IELTS_General_Reading_Introduction.html';
+        }
+
+        // Submit and Scoring Functions
+        const answerKey = {
+            'q1': 'A',
+            'q2': 'C',
+            'q3': 'B',
+            'q4': 'C',
+            'q5': 'A',
+            'q6': 'C',
+            'q7': 'B',
+            'q8': 'C',
+            'q9': '25',
+            'q10': 'weather',
+            'q11': '50',
+            'q12': 'NOT GIVEN',
+            'q13': 'NOT GIVEN',
+            'q14': 'FALSE'
+        };
+
+        function submitAnswers() {
+            workspace.stopTimer();
+            
+            let score = 0;
+            const results = [];
+            
+            // Check all answers
+            for (const [questionId, correctAnswer] of Object.entries(answerKey)) {
+                let userAnswer = '';
+                const element = document.getElementById(questionId);
+                
+                if (element) {
+                    if (element.type === 'text') {
+                        userAnswer = element.value.trim();
+                    }
+                } else {
+                    // Handle radio buttons
+                    const radioButton = document.querySelector(`input[name="${questionId}"]:checked`);
+                    if (radioButton) {
+                        userAnswer = radioButton.value;
+                    }
+                }
+                
+                const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase() ||
+                                userAnswer.toLowerCase().includes(correctAnswer.toLowerCase());
+                if (isCorrect) score++;
+                
+                results.push({
+                    question: questionId,
+                    userAnswer: userAnswer,
+                    correctAnswer: correctAnswer,
+                    isCorrect: isCorrect
+                });
+            }
+            
+            displayResults(score, results);
+        }
+
+        function displayResults(score, results) {
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            
+            // Generate answer review
+            const reviewContainer = document.getElementById('answerReview');
+            reviewContainer.innerHTML = '';
+            
+            results.forEach((result, index) => {
+                const answerItem = document.createElement('div');
+                answerItem.className = `answer-item ${result.isCorrect ? 'correct' : 'incorrect'}`;
+                answerItem.innerHTML = `
+                    <div>
+                        <strong>Question ${index + 1}:</strong> ${result.userAnswer || 'No answer'}
+                        ${!result.isCorrect ? `<br><strong>Correct answer:</strong> ${result.correctAnswer}` : ''}
+                    </div>
+                    <div style="font-size: 1.2em;">${result.isCorrect ? '✓' : '✗'}</div>
+                `;
+                reviewContainer.appendChild(answerItem);
+            });
+            
+            // Generate improvement tips
+            const tipsList = document.getElementById('improvementList');
+            const tips = generateImprovementTips(score, results);
+            tipsList.innerHTML = '';
+            tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateImprovementTips(score, results) {
+            const tips = [];
+            
+            if (score >= 12) {
+                tips.push('Excellent performance! Your reading comprehension skills are very strong.');
+                tips.push('Continue practicing with more complex leisure and recreation texts to maintain this level.');
+            } else if (score >= 10) {
+                tips.push('Good performance! Focus on time management for leisure activity information reading.');
+                tips.push('Practice identifying specific details in sports and recreation facility descriptions.');
+            } else if (score >= 7) {
+                tips.push('Room for improvement. Focus on understanding leisure and recreation terminology.');
+                tips.push('Practice scanning for specific times, prices, and facility details.');
+            } else {
+                tips.push('Significant improvement needed. Review basic leisure and recreation vocabulary.');
+                tips.push('Practice with simpler passages first to build confidence.');
+                tips.push('Focus on vocabulary building for sports, events, and recreational activities.');
+            }
+            
+            // Specific tips based on common errors
+            const matchingErrors = results.filter(r => r.question.startsWith('q') && ['1','2','3','4'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            const mcErrors = results.filter(r => r.question.startsWith('q') && ['5','6','7','8'].includes(r.question.slice(1)) && !r.isCorrect).length;
+            
+            if (matchingErrors > 2) {
+                tips.push('Focus on careful reading of facility descriptions and event details.');
+            }
+            if (mcErrors > 2) {
+                tips.push('Practice distinguishing between similar options in multiple choice questions about recreational activities.');
+            }
+            
+            return tips;
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('slideMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (menu.classList.contains('open') && 
+                !menu.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('slideMenu').classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize timer display
+        workspace.updateTimerDisplay();
+    </script>
+</body>
+</html> 
