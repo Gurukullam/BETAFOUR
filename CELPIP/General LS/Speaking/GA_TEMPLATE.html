@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Beginner Course - A1 to A2 Level | GK Foundation</title>
+    
+    <!-- Font Awesome CSS (Embedded for self-contained operation) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in this page */
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-language:before { content: "\f1ab"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-comments:before { content: "\f086"; }
+        .fa-play:before { content: "\f04b"; }
+        .fa-star:before { content: "\f005"; }
+        .fa-clock:before { content: "\f017"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-certificate:before { content: "\f0a3"; }
+        .fa-heart:before { content: "\f004"; }
+        .fa-flag:before { content: "\f024"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-times:before { content: "\f00d"; }
+        .fa-chevron-right:before { content: "\f054"; }
+        .fa-chevron-left:before { content: "\f053"; }
+        .fa-volume-up:before { content: "\f028"; }
+        .fa-edit:before { content: "\f044"; }
+        .fa-microphone:before { content: "\f130"; }
+        .fa-coffee:before { content: "\f0f4"; }
+        .fa-home:before { content: "\f015"; }
+        .fa-shopping-cart:before { content: "\f07a"; }
+        .fa-utensils:before { content: "\f2e7"; }
+        .fa-map:before { content: "\f279"; }
+        .fa-rocket:before { content: "\f135"; }
+        .fa-pause:before { content: "\f04c"; }
+        .fa-stop:before { content: "\f04d"; }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing - minimal top margin for professional appearance */
+        .header-spacer {
+            height: 20px; /* Minimal top spacing */
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Master Guruvammal Logo for template back button */
+        .master-guruvammal-logo {
+            /* Layout & Structure */
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            
+            /* Typography */
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            
+            /* Golden Square Background */
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            
+            /* Visual Effects */
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            
+            /* Interaction */
+            transition: all 0.3s ease;
+        }
+
+        /* Tamil script corner element within Master Guruvammal Logo */
+        .master-guruvammal-logo .tamil-corner {
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            font-size: 10px;
+            color: #5d3a0a;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hover effect for Master Guruvammal Logo */
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .foundation-text {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Back Label under Logo */
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px; /* Aligned with slideout menu width */
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px; /* Clean minimal spacing when collapsed */
+        }
+
+        /* Main Content - professional layout */
+        .main-content {
+            margin-top: 0; /* Remove excessive top margin */
+            padding: 1.5rem 2rem; /* Professional padding */
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Slide-out Menu Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px; /* Aligned with new minimal top spacing */
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Menu Toggle Label */
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px; /* Positioned below the button */
+            left: 382px; /* Centered under button */
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Label hover effect when button is hovered */
+        .menu-toggle:hover + .menu-toggle-label {
+            background: rgba(160, 82, 45, 0.95);
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px; /* Aligned with collapsed container margin */
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px; /* Centered under the collapsed button (20px + 22px) */
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0; /* Start from the very top for professional appearance */
+            left: 0;
+            width: 350px;
+            height: 100vh; /* Full height for professional look */
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem; /* Professional padding with more top space */
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px; /* More professional top margin */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px; /* Compact professional height */
+            border-radius: 0 0 8px 8px; /* Subtle bottom rounding */
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2); /* Professional shadow */
+        }
+
+
+
+
+
+        .menu-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-content {
+            padding: 1.5rem 1.5rem; /* Professional balanced padding */
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1.2rem 1rem;
+            margin-bottom: 0.8rem;
+            background: rgba(139, 69, 19, 0.06);
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 3px solid #8b4513;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(139, 69, 19, 0.1);
+        }
+
+        .menu-item:hover {
+            background: rgba(139, 69, 19, 0.12);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+            border-left-color: #d4af37;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0;
+            color: #2c1810;
+            letter-spacing: 0.2px;
+        }
+
+
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem 0rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .french-flag {
+            display: inline-flex;
+            width: 80px;
+            height: 50px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .flag-blue { background: #002395; flex: 1; }
+        .flag-white { background: #FFFFFF; flex: 1; }
+        .flag-red { background: #ED2939; flex: 1; }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #8b4513;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #8b4513;
+            border: 2px solid #8b4513;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2rem 1rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            scroll-margin-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8b4513;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .audio-btn {
+            background: #8b4513;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .audio-btn:hover {
+            background: #a0522d;
+            transform: translateY(-2px);
+        }
+
+        /* Phrase Cards */
+        .phrases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .phrase-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border-left: 4px solid #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.1);
+        }
+
+        .phrase-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .french-text {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .english-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .pronunciation {
+            font-size: 0.9rem;
+            color: #999;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .individual-audio {
+            background: #d4af37;
+            color: white;
+            border: none;
+            padding: 0.6rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .individual-audio:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+        }
+
+        .individual-audio:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Custom Play Speaker Button */
+        .play-speaker-button {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            border: none;
+            padding: 0 6px;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 70px;
+            height: 36px;
+            box-shadow: 
+                0 4px 8px rgba(212, 175, 55, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            font-size: 10px;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .play-speaker-button:hover {
+            background: linear-gradient(135deg, #e6c547, #c9a429);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 6px 15px rgba(212, 175, 55, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.4),
+                inset 0 -1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-speaker-button:active {
+            transform: translateY(-1px);
+            box-shadow: 
+                0 3px 8px rgba(212, 175, 55, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .play-text {
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            margin-left: 2px;
+        }
+
+        .speaker-2d {
+            position: relative;
+            width: 24px;
+            height: 18px;
+            margin-right: 3px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 2D Speaker Base */
+        .speaker-base {
+            width: 10px;
+            height: 14px;
+            background: #8b4513;
+            border: 1px solid #654321;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        /* 2D Speaker Cone */
+        .speaker-cone {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 7px solid #8b4513;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        /* Sound Wave Arcs */
+        .wave-arc1,
+        .wave-arc2,
+        .wave-arc3 {
+            position: absolute;
+            left: 17px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid #8b4513;
+            border-left: none;
+            border-radius: 0 50px 50px 0;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .wave-arc1 {
+            width: 4px;
+            height: 7px;
+        }
+
+        .wave-arc2 {
+            width: 6px;
+            height: 11px;
+            left: 19px;
+        }
+
+        .wave-arc3 {
+            width: 8px;
+            height: 15px;
+            left: 21px;
+        }
+
+        /* Playing state animations */
+        .play-speaker-button.playing .wave-arc1,
+        .play-speaker-button.playing .wave-arc2,
+        .play-speaker-button.playing .wave-arc3 {
+            opacity: 1;
+            border-color: #d4af37;
+        }
+
+        .play-speaker-button.playing .wave-arc1 {
+            animation: wavesPulse 0.8s ease-in-out infinite;
+        }
+
+        .play-speaker-button.playing .wave-arc2 {
+            animation: wavesPulse 0.8s ease-in-out 0.2s infinite;
+        }
+
+        .play-speaker-button.playing .wave-arc3 {
+            animation: wavesPulse 0.8s ease-in-out 0.4s infinite;
+        }
+
+        .play-speaker-button.playing .speaker-base {
+            background: #a0522d;
+            border-color: #8b4513;
+        }
+
+        .play-speaker-button.playing .speaker-cone {
+            border-left-color: #a0522d;
+        }
+
+        /* Playing indicator dot */
+        .playing-indicator {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 4px;
+            height: 4px;
+            background: #00ff00;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .play-speaker-button.playing .playing-indicator {
+            opacity: 1;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes wavesPulse {
+            0%, 100% { 
+                opacity: 0.5; 
+                transform: translateY(-50%) scale(0.9);
+            }
+            50% { 
+                opacity: 1; 
+                transform: translateY(-50%) scale(1.1);
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .vocabulary-item {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1rem;
+            border-left: 4px solid #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.08);
+        }
+
+        .vocabulary-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .vocab-french {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .vocab-english {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Verb Conjugation Table */
+        .verb-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .verb-table th,
+        .verb-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .verb-table th {
+            background: #8b4513;
+            color: white;
+            font-weight: bold;
+        }
+
+        .verb-table tr:hover {
+            background: rgba(139, 69, 19, 0.05);
+        }
+
+        .pronoun {
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .conjugation {
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+                margin-top: 60px;
+            }
+
+            .hero-section {
+                padding: 1.5rem 0rem;
+            }
+
+            .content-section {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .slide-menu {
+                width: 300px;
+            }
+
+            .slide-menu.collapsed {
+                left: -300px;
+            }
+
+            .container {
+                margin-left: 320px;
+            }
+
+            .container.menu-collapsed {
+                margin-left: 20px; /* Adjusted for mobile spacing consistency */
+            }
+
+            .slide-menu {
+                top: 80px; /* Reduced for mobile header */
+                height: calc(100vh - 80px);
+            }
+
+            .menu-toggle {
+                left: 320px;
+                top: 100px; /* Adjusted for mobile header and slide menu position */
+            }
+
+            .menu-toggle.collapsed {
+                left: 20px; /* Adjusted for mobile spacing */
+            }
+
+            .menu-toggle-label {
+                left: 345px; /* Centered under mobile button (320px + 25px) */
+                top: 160px; /* Adjusted for mobile header and button position */
+            }
+
+            .menu-toggle-label.collapsed {
+                left: 45px; /* Centered under collapsed mobile button (20px + 25px) */
+            }
+
+            /* Mobile Logo Adjustments */
+            .gk-logo-container {
+                top: 100px;
+                right: 20px;
+                padding: 3px;
+            }
+
+            .master-guruvammal-logo {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                padding: 8px;
+            }
+
+            .master-guruvammal-logo .tamil-corner {
+                font-size: 8px;
+                top: 1px;
+                right: 2px;
+            }
+
+            .back-label {
+                font-size: 0.7rem;
+            }
+
+            .phrases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Master Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()" title="Back to Home">
+        <div class="master-guruvammal-logo">
+            Ga<span class="tamil-corner">அ</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">Learning Journey Bookmark</div>
+        </div>
+        <div class="menu-content">
+            <a href="#greetings" class="menu-item" onclick="navigateToSection('greetings')">
+                <div class="item-title">1. Greetings</div>
+            </a>
+            <a href="#vocabulary" class="menu-item" onclick="navigateToSection('vocabulary')">
+                <div class="item-title">2. Essential Vocabulary</div>
+            </a>
+            <a href="#verbs" class="menu-item" onclick="navigateToSection('verbs')">
+                <div class="item-title">3. Present Tense Verbs</div>
+            </a>
+            <a href="#conversations" class="menu-item" onclick="navigateToSection('conversations')">
+                <div class="item-title">4. Simple Conversations</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Header Spacer - Reserved for IndexLayout Header Integration -->
+    <div class="header-spacer"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content - Matches HomePage spacing -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section fade-in">
+                <h1 class="hero-title">
+                    French Beginner Course
+                </h1>
+                <div class="hero-subtitle">Niveau A1 à A2 - From Zero to Confident Beginner</div>
+                <div class="french-flag">
+                    <div class="flag-blue"></div>
+                    <div class="flag-white"></div>
+                    <div class="flag-red"></div>
+                </div>
+                <p class="hero-description">
+                    Embark on your French learning journey with our comprehensive beginner course! 
+                    From basic greetings to everyday conversations, master essential French skills 
+                    step by step. Perfect for complete beginners ready to explore the beautiful French language.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="toggleMenu()">
+                        Explore Topics
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('greetings')">
+                        Start Learning
+                    </button>
+                </div>
+            </section>
+
+            <!-- 1. Greetings Section -->
+            <section id="greetings" class="content-section">
+                <h2 class="section-title">
+                    1. Les Salutations - Greetings
+                </h2>
+                <p class="section-subtitle">Learn essential French greetings and polite expressions</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllGreetings()">
+                        Play All Greetings
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="phrases-grid">
+                    <div class="phrase-card">
+                        <div class="french-text">Bonjour</div>
+                        <div class="english-text">Hello / Good day</div>
+                        <div class="pronunciation">[bon-ZHOOR]</div>
+                        <button class="play-speaker-button" onclick="playAudio('bonjour')" id="speaker-bonjour">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Bonsoir</div>
+                        <div class="english-text">Good evening</div>
+                        <div class="pronunciation">[bon-SWAHR]</div>
+                        <button class="play-speaker-button" onclick="playAudio('bonsoir')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Salut</div>
+                        <div class="english-text">Hi / Bye (informal)</div>
+                        <div class="pronunciation">[sah-LUU]</div>
+                        <button class="play-speaker-button" onclick="playAudio('salut')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Au revoir</div>
+                        <div class="english-text">Goodbye</div>
+                        <div class="pronunciation">[oh ruh-VWAHR]</div>
+                        <button class="play-speaker-button" onclick="playAudio('aurevoir')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Comment allez-vous?</div>
+                        <div class="english-text">How are you? (formal)</div>
+                        <div class="pronunciation">[koh-mahn tah-lay VOO]</div>
+                        <button class="play-speaker-button" onclick="playAudio('comment-allez-vous')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Ça va?</div>
+                        <div class="english-text">How are you? (informal)</div>
+                        <div class="pronunciation">[sah VAH]</div>
+                        <button class="play-speaker-button" onclick="playAudio('ca-va')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Je m'appelle...</div>
+                        <div class="english-text">My name is...</div>
+                        <div class="pronunciation">[zhuh mah-PELL]</div>
+                        <button class="play-speaker-button" onclick="playAudio('je-mappelle')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Enchanté(e)</div>
+                        <div class="english-text">Nice to meet you</div>
+                        <div class="pronunciation">[ahn-shahn-TAY]</div>
+                        <button class="play-speaker-button" onclick="playAudio('enchante')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">S'il vous plaît</div>
+                        <div class="english-text">Please (formal)</div>
+                        <div class="pronunciation">[seel voo PLEH]</div>
+                        <button class="play-speaker-button" onclick="playAudio('sil-vous-plait')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Merci</div>
+                        <div class="english-text">Thank you</div>
+                        <div class="pronunciation">[mer-SEE]</div>
+                        <button class="play-speaker-button" onclick="playAudio('merci')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Essential Vocabulary Section -->
+            <section id="vocabulary" class="content-section">
+                <h2 class="section-title">
+                    2. Vocabulaire Essentiel - Essential Vocabulary
+                </h2>
+                <p class="section-subtitle">Master the most important French words for daily use</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllVocabulary()">
+                        Play All Vocabulary
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="vocabulary-grid">
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">la famille</div>
+                        <div class="vocab-english">family</div>
+                        <button class="play-speaker-button" onclick="playAudio('famille')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">la maison</div>
+                        <div class="vocab-english">house</div>
+                        <button class="play-speaker-button" onclick="playAudio('maison')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">l'eau</div>
+                        <div class="vocab-english">water</div>
+                        <button class="play-speaker-button" onclick="playAudio('eau')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">le pain</div>
+                        <div class="vocab-english">bread</div>
+                        <button class="play-speaker-button" onclick="playAudio('pain')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">le temps</div>
+                        <div class="vocab-english">time / weather</div>
+                        <button class="play-speaker-button" onclick="playAudio('temps')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">l'argent</div>
+                        <div class="vocab-english">money</div>
+                        <button class="play-speaker-button" onclick="playAudio('argent')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">le travail</div>
+                        <div class="vocab-english">work</div>
+                        <button class="play-speaker-button" onclick="playAudio('travail')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">la nourriture</div>
+                        <div class="vocab-english">food</div>
+                        <button class="play-speaker-button" onclick="playAudio('nourriture')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">l'ami(e)</div>
+                        <div class="vocab-english">friend</div>
+                        <button class="play-speaker-button" onclick="playAudio('ami')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">la ville</div>
+                        <div class="vocab-english">city</div>
+                        <button class="play-speaker-button" onclick="playAudio('ville')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">le café</div>
+                        <div class="vocab-english">coffee</div>
+                        <button class="play-speaker-button" onclick="playAudio('cafe')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="vocabulary-item">
+                        <div class="vocab-french">la voiture</div>
+                        <div class="vocab-english">car</div>
+                        <button class="play-speaker-button" onclick="playAudio('voiture')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Present Tense Verbs Section -->
+            <section id="verbs" class="content-section">
+                <h2 class="section-title">
+                    3. Verbes au Présent - Present Tense Verbs
+                </h2>
+                <p class="section-subtitle">Master basic verb conjugations in present tense</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllVerbs()">
+                        Play All Conjugations
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        Stop Audio
+                    </button>
+                </div>
+
+                <h3 style="color: #8b4513; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Être (to be)</h3>
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th>Pronoun</th>
+                            <th>Conjugation</th>
+                            <th>Pronunciation</th>
+                            <th>English</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pronoun">Je</td>
+                            <td class="conjugation">suis</td>
+                            <td>[zhuh swee]</td>
+                            <td>I am</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('je-suis')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Tu</td>
+                            <td class="conjugation">es</td>
+                            <td>[tuu eh]</td>
+                            <td>You are</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('tu-es')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Il/Elle</td>
+                            <td class="conjugation">est</td>
+                            <td>[eel/ell eh]</td>
+                            <td>He/She is</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('il-est')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Nous</td>
+                            <td class="conjugation">sommes</td>
+                            <td>[noo sohm]</td>
+                            <td>We are</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('nous-sommes')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Vous</td>
+                            <td class="conjugation">êtes</td>
+                            <td>[voo eht]</td>
+                            <td>You are (formal/plural)</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('vous-etes')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Ils/Elles</td>
+                            <td class="conjugation">sont</td>
+                            <td>[eel/ell sohn]</td>
+                            <td>They are</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('ils-sont')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="color: #8b4513; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Avoir (to have)</h3>
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th>Pronoun</th>
+                            <th>Conjugation</th>
+                            <th>Pronunciation</th>
+                            <th>English</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pronoun">J'</td>
+                            <td class="conjugation">ai</td>
+                            <td>[zhay]</td>
+                            <td>I have</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('jai')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Tu</td>
+                            <td class="conjugation">as</td>
+                            <td>[tuu ah]</td>
+                            <td>You have</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('tu-as')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Il/Elle</td>
+                            <td class="conjugation">a</td>
+                            <td>[eel/ell ah]</td>
+                            <td>He/She has</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('il-a')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Nous</td>
+                            <td class="conjugation">avons</td>
+                            <td>[noo zah-vohn]</td>
+                            <td>We have</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('nous-avons')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Vous</td>
+                            <td class="conjugation">avez</td>
+                            <td>[voo zah-vay]</td>
+                            <td>You have (formal/plural)</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('vous-avez')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td class="pronoun">Ils/Elles</td>
+                            <td class="conjugation">ont</td>
+                            <td>[eel/ell zohn]</td>
+                            <td>They have</td>
+                            <td><button class="play-speaker-button" onclick="playAudio('ils-ont')">
+                                <span class="play-text">Play</span>
+                                <div class="speaker-2d">
+                                    <div class="speaker-base">
+                                        <div class="speaker-cone"></div>
+                                    </div>
+                                    <div class="wave-arc1"></div>
+                                    <div class="wave-arc2"></div>
+                                    <div class="wave-arc3"></div>
+                                </div>
+                                <div class="playing-indicator"></div>
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 4. Simple Conversations Section -->
+            <section id="conversations" class="content-section">
+                <h2 class="section-title">
+                    4. Conversations Simples - Simple Conversations
+                </h2>
+                <p class="section-subtitle">Everyday conversations and practical phrases</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllConversations()">
+                        Play All Conversations
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="phrases-grid">
+                    <div class="phrase-card">
+                        <div class="french-text">Où est la gare?</div>
+                        <div class="english-text">Where is the train station?</div>
+                        <div class="pronunciation">[oo eh lah gahr]</div>
+                        <button class="play-speaker-button" onclick="playAudio('ou-est-la-gare')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Combien ça coûte?</div>
+                        <div class="english-text">How much does it cost?</div>
+                        <div class="pronunciation">[kohn-bee-ahn sah koot]</div>
+                        <button class="play-speaker-button" onclick="playAudio('combien-ca-coute')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Je voudrais un café</div>
+                        <div class="english-text">I would like a coffee</div>
+                        <div class="pronunciation">[zhuh voo-dreh uhn kah-fay]</div>
+                        <button class="play-speaker-button" onclick="playAudio('je-voudrais-cafe')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Parlez-vous anglais?</div>
+                        <div class="english-text">Do you speak English?</div>
+                        <div class="pronunciation">[par-lay voo ahn-gleh]</div>
+                        <button class="play-speaker-button" onclick="playAudio('parlez-vous-anglais')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Je ne comprends pas</div>
+                        <div class="english-text">I don't understand</div>
+                        <div class="pronunciation">[zhuh nuh kohn-prahn pah]</div>
+                        <button class="play-speaker-button" onclick="playAudio('je-ne-comprends-pas')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Quelle heure est-il?</div>
+                        <div class="english-text">What time is it?</div>
+                        <div class="pronunciation">[kell uhr eh-teel]</div>
+                        <button class="play-speaker-button" onclick="playAudio('quelle-heure')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Excusez-moi</div>
+                        <div class="english-text">Excuse me</div>
+                        <div class="pronunciation">[eks-kuu-zay mwah]</div>
+                        <button class="play-speaker-button" onclick="playAudio('excusez-moi')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="french-text">Pouvez-vous m'aider?</div>
+                        <div class="english-text">Can you help me?</div>
+                        <div class="pronunciation">[poo-vay voo may-day]</div>
+                        <button class="play-speaker-button" onclick="playAudio('pouvez-vous-aider')">
+                            <span class="play-text">Play</span>
+                            <div class="speaker-2d">
+                                <div class="speaker-base">
+                                    <div class="speaker-cone"></div>
+                                </div>
+                                <div class="wave-arc1"></div>
+                                <div class="wave-arc2"></div>
+                                <div class="wave-arc3"></div>
+                            </div>
+                            <div class="playing-indicator"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Toggle menu functionality - Simplified Firebase-compatible version
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.querySelector('.container');
+            const toggle = document.querySelector('.menu-toggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            toggle.classList.toggle('collapsed');
+            toggleLabel.classList.toggle('collapsed');
+            
+            if (menu.classList.contains('collapsed')) {
+                toggleLabel.textContent = 'Expand';
+                toggle.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            } else {
+                toggleLabel.textContent = 'Collapse';
+                toggle.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            }
+        }
+
+        // Back button functionality - returns to previous page
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from template page');
+            
+            const previousPageType = sessionStorage.getItem('previousPageType');
+            const previousPage = sessionStorage.getItem('previousPage');
+            
+            console.log(`🔄 Previous page type: ${previousPageType}, Previous page: ${previousPage}`);
+            
+            if (previousPageType === 'french-menu' && previousPage === 'french-intro') {
+                // Clear session storage
+                sessionStorage.removeItem('previousPage');
+                sessionStorage.removeItem('previousPageType');
+                
+                // Navigate back to index.html with French intro
+                console.log(`🔄 Returning to French intro page`);
+                window.location.href = 'Index.html#french-intro';
+            } else {
+                // Default back behavior - go to home page
+                console.log(`🔄 Returning to home page`);
+                window.location.href = 'Index.html#home';
+            }
+        }
+
+        // Navigation to sections
+        function navigateToSection(sectionId) {
+            // Close menu if it's open
+            const menu = document.getElementById('slideMenu');
+            if (!menu.classList.contains('collapsed')) {
+                toggleMenu();
+            }
+            scrollToSection(sectionId);
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Audio functionality (placeholder - in real implementation, you would use actual audio files)
+        let currentAudio = null;
+        let currentPlayingButton = null;
+
+        function playAudio(audioId) {
+            // Stop any currently playing audio and remove playing state
+            stopAllAudio();
+
+            // Find the button that triggered this audio (check for both button types)
+            const button = event.target.closest('.play-speaker-button') || event.target.closest('.individual-audio');
+            
+            // In a real implementation, you would have audio files
+            // For now, we'll show an alert and use speech synthesis as a demo
+            console.log(`Playing audio for: ${audioId}`);
+            
+            // Demo using browser's speech synthesis
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance();
+                utterance.text = getTextForAudio(audioId);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.8;
+                
+                // Add playing state when audio starts
+                utterance.onstart = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.add('playing');
+                        currentPlayingButton = button;
+                    }
+                };
+                
+                // Remove playing state when audio ends
+                utterance.onend = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.remove('playing');
+                        currentPlayingButton = null;
+                    }
+                };
+                
+                // Handle errors
+                utterance.onerror = () => {
+                    if (button && button.classList.contains('play-speaker-button')) {
+                        button.classList.remove('playing');
+                        currentPlayingButton = null;
+                    }
+                };
+                
+                speechSynthesis.speak(utterance);
+            } else {
+                alert(`Audio would play: ${audioId}\n\nIn a real implementation, this would play the actual French pronunciation.`);
+            }
+        }
+
+        function getTextForAudio(audioId) {
+            const audioTexts = {
+                'bonjour': 'Bonjour',
+                'bonsoir': 'Bonsoir',
+                'salut': 'Salut',
+                'aurevoir': 'Au revoir',
+                'comment-allez-vous': 'Comment allez-vous?',
+                'ca-va': 'Ça va?',
+                'je-mappelle': 'Je m\'appelle',
+                'enchante': 'Enchanté',
+                'sil-vous-plait': 'S\'il vous plaît',
+                'merci': 'Merci',
+                'famille': 'la famille',
+                'maison': 'la maison',
+                'eau': 'l\'eau',
+                'pain': 'le pain',
+                'temps': 'le temps',
+                'argent': 'l\'argent',
+                'travail': 'le travail',
+                'nourriture': 'la nourriture',
+                'ami': 'l\'ami',
+                'ville': 'la ville',
+                'cafe': 'le café',
+                'voiture': 'la voiture',
+                'je-suis': 'Je suis',
+                'tu-es': 'Tu es',
+                'il-est': 'Il est',
+                'nous-sommes': 'Nous sommes',
+                'vous-etes': 'Vous êtes',
+                'ils-sont': 'Ils sont',
+                'jai': 'J\'ai',
+                'tu-as': 'Tu as',
+                'il-a': 'Il a',
+                'nous-avons': 'Nous avons',
+                'vous-avez': 'Vous avez',
+                'ils-ont': 'Ils ont',
+                'ou-est-la-gare': 'Où est la gare?',
+                'combien-ca-coute': 'Combien ça coûte?',
+                'je-voudrais-cafe': 'Je voudrais un café',
+                'parlez-vous-anglais': 'Parlez-vous anglais?',
+                'je-ne-comprends-pas': 'Je ne comprends pas',
+                'quelle-heure': 'Quelle heure est-il?',
+                'excusez-moi': 'Excusez-moi',
+                'pouvez-vous-aider': 'Pouvez-vous m\'aider?'
+            };
+            return audioTexts[audioId] || audioId;
+        }
+
+        function playAllGreetings() {
+            const greetings = ['bonjour', 'bonsoir', 'salut', 'aurevoir', 'comment-allez-vous', 'ca-va', 'je-mappelle', 'enchante', 'sil-vous-plait', 'merci'];
+            playSequence(greetings);
+        }
+
+        function playAllVocabulary() {
+            const vocabulary = ['famille', 'maison', 'eau', 'pain', 'temps', 'argent', 'travail', 'nourriture', 'ami', 'ville', 'cafe', 'voiture'];
+            playSequence(vocabulary);
+        }
+
+        function playAllVerbs() {
+            const verbs = ['je-suis', 'tu-es', 'il-est', 'nous-sommes', 'vous-etes', 'ils-sont', 'jai', 'tu-as', 'il-a', 'nous-avons', 'vous-avez', 'ils-ont'];
+            playSequence(verbs);
+        }
+
+        function playAllConversations() {
+            const conversations = ['ou-est-la-gare', 'combien-ca-coute', 'je-voudrais-cafe', 'parlez-vous-anglais', 'je-ne-comprends-pas', 'quelle-heure', 'excusez-moi', 'pouvez-vous-aider'];
+            playSequence(conversations);
+        }
+
+        function playSequence(audioIds) {
+            let index = 0;
+            
+            function playNext() {
+                if (index < audioIds.length) {
+                    const audioId = audioIds[index];
+                    console.log(`Playing sequence ${index + 1}/${audioIds.length}: ${audioId}`);
+                    
+                    // Find the corresponding button for this audio ID
+                    const button = document.querySelector(`[onclick*="${audioId}"]`);
+                    
+                    if ('speechSynthesis' in window) {
+                        const utterance = new SpeechSynthesisUtterance();
+                        utterance.text = getTextForAudio(audioId);
+                        utterance.lang = 'fr-FR';
+                        utterance.rate = 0.8;
+                        
+                        utterance.onstart = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.add('playing');
+                            }
+                        };
+                        
+                        utterance.onend = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.remove('playing');
+                            }
+                            index++;
+                            setTimeout(playNext, 800); // Pause between phrases
+                        };
+                        
+                        utterance.onerror = () => {
+                            if (button && button.classList.contains('play-speaker-button')) {
+                                button.classList.remove('playing');
+                            }
+                            index++;
+                            setTimeout(playNext, 800);
+                        };
+                        
+                        speechSynthesis.speak(utterance);
+                    } else {
+                        index++;
+                        setTimeout(playNext, 1000);
+                    }
+                }
+            }
+            
+            playNext();
+        }
+
+        function stopAllAudio() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                currentAudio = null;
+            }
+            
+            // Remove playing state from all play speaker buttons
+            document.querySelectorAll('.play-speaker-button.playing').forEach(button => {
+                button.classList.remove('playing');
+            });
+            currentPlayingButton = null;
+            
+            console.log('All audio stopped');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close menu if it's open
+                const menu = document.getElementById('slideMenu');
+                if (!menu.classList.contains('collapsed')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('French Beginner Course page loaded successfully');
+            
+            // Check if speech synthesis is available
+            if ('speechSynthesis' in window) {
+                console.log('Speech synthesis available for audio demo');
+            } else {
+                console.log('Speech synthesis not available');
+            }
+
+            // Initialize toggle label based on menu state
+            const menu = document.getElementById('slideMenu');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            if (menu.classList.contains('collapsed')) {
+                toggleLabel.textContent = 'Expand';
+            } else {
+                toggleLabel.textContent = 'Collapse';
+            }
+        });
+
+        // Global functions for Firebase compatibility
+        window.toggleMenu = toggleMenu;
+        window.handleBackButton = handleBackButton;
+    </script>
+</body>
+</html> 
