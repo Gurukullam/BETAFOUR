@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Ga - AI Learning Assistant | Ga Foundation</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #cd853f 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #3c2d1f;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #5d3a0a;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
+            padding: 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2), 0 0 20px rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .musical-corner {
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 0.8px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 6px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .header-title {
+            flex: 1;
+            margin-left: 1rem;
+        }
+
+        .header-title h1 {
+            font-size: 1.5rem;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        .header-title p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .back-link {
+            background: #8b4513;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #a0522d;
+            transform: translateY(-1px);
+        }
+
+        /* Main Chat Container */
+        .chat-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .chat-header h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .chat-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        /* API Configuration Section */
+        .api-config {
+            background: rgba(139, 69, 19, 0.05);
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .config-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .config-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .config-input {
+            padding: 0.3rem 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            width: 200px;
+        }
+
+        .config-button {
+            background: #8b4513;
+            color: white;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .config-button:hover {
+            background: #a0522d;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #dc3545;
+        }
+
+        .status-dot.connected {
+            background: #28a745;
+        }
+
+        /* Chat Messages Area */
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #fafafa;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            max-width: 80%;
+            position: relative;
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .ai-message {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .message-content {
+            line-height: 1.5;
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+
+        .typing-indicator {
+            display: none;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            max-width: 80%;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #8b4513;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Chat Input Area */
+        .chat-input-area {
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-end;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            resize: none;
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.4;
+            min-height: 50px;
+            max-height: 120px;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            border-color: #8b4513;
+        }
+
+        .send-button {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .send-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Welcome Message */
+        .welcome-message {
+            text-align: center;
+            color: #666;
+            padding: 2rem;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .chat-container {
+                margin: 1rem;
+                height: 85vh;
+            }
+
+            .config-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .config-input {
+                width: 100%;
+            }
+
+            .message {
+                max-width: 90%;
+            }
+
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+
+            .header-title h1 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Success/Error Messages */
+        .alert {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            font-size: 0.8rem;
+        }
+
+        .alert-success {
+            background: rgba(40, 167, 69, 0.1);
+            color: #155724;
+            border: 1px solid rgba(40, 167, 69, 0.2);
+        }
+
+        .alert-error {
+            background: rgba(220, 53, 69, 0.1);
+            color: #721c24;
+            border: 1px solid rgba(220, 53, 69, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="../IELTS/index.html" class="logo">
+                <div class="master-guruvammal-logo">
+                    Ga<span class="musical-corner">P</span>
+                </div>
+            </a>
+            
+            <div class="header-title">
+                <h1>Ask Ga - AI Learning Assistant</h1>
+                <p>Conversational AI powered by Hugging Face</p>
+            </div>
+            
+            <a href="../IELTS/index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Platform
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Chat Interface -->
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <h2><i class="fas fa-robot"></i> Ask Ga Anything!</h2>
+            <p>Your intelligent learning companion for IELTS, languages, and academic success</p>
+        </div>
+
+        <!-- API Configuration (Hidden - Admin Configured) -->
+        <div class="api-config" style="display: none;">
+            <div class="config-row">
+                <div class="config-group">
+                    <label>🔌 API Provider:</label>
+                    <select id="apiProvider" class="config-input">
+                        <option value="huggingface">Hugging Face (Free)</option>
+                        <option value="cohere">Cohere (Free - No Email Issues)</option>
+                    </select>
+                </div>
+                
+                <div class="config-group">
+                    <label>🔑 API Token:</label>
+                    <input type="password" id="apiToken" class="config-input" placeholder="Your API token here" value="">
+                    <a id="tokenLink" href="https://huggingface.co/settings/tokens" target="_blank" style="font-size: 0.8rem; margin-left: 0.5rem;">Get Token</a>
+                </div>
+                
+                <div class="config-group">
+                    <label>🤖 Model:</label>
+                    <select id="modelSelect" class="config-input">
+                        <option value="microsoft/DialoGPT-medium">DialoGPT Medium (Conversational)</option>
+                        <option value="microsoft/DialoGPT-large">DialoGPT Large (Advanced)</option>
+                        <option value="facebook/blenderbot-400M-distill">BlenderBot (Friendly)</option>
+                        <option value="google/flan-t5-base">Flan-T5 (Helpful)</option>
+                    </select>
+                </div>
+                
+                <button onclick="testConnection()" class="config-button">
+                    <i class="fas fa-plug"></i> Test API
+                </button>
+                
+                <div class="status-indicator">
+                    <div id="statusDot" class="status-dot"></div>
+                    <span id="statusText">Connected</span>
+                </div>
+            </div>
+            
+            <div id="configAlert"></div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chatMessages" class="chat-messages">
+            <div class="welcome-message">
+                <h3>👋 Welcome to Ask Ga!</h3>
+                <p>Your AI learning assistant is ready to help!</p>
+                <br>
+                <p><strong>💬 You can ask me about:</strong></p>
+                <ul style="text-align: left; margin: 1rem 0;">
+                    <li>📝 IELTS preparation and study tips</li>
+                    <li>📚 Language learning and grammar</li>
+                    <li>🎯 Test strategies and techniques</li>
+                    <li>📖 Academic writing and essay structure</li>
+                    <li>🗣️ Speaking practice and conversation</li>
+                    <li>❓ Any other learning questions!</li>
+                </ul>
+                <p><em>Just type your question below and press Enter to start chatting!</em></p>
+            </div>
+            
+            <!-- Typing Indicator -->
+            <div id="typingIndicator" class="typing-indicator">
+                <div class="message-header">
+                    <i class="fas fa-robot"></i> Ga AI is thinking...
+                </div>
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-area">
+            <div class="input-container">
+                <textarea 
+                    id="chatInput" 
+                    class="chat-input" 
+                    placeholder="Ask me anything about IELTS, languages, or academic topics..."
+                    rows="1"
+                ></textarea>
+                <button id="sendButton" onclick="sendMessage()" class="send-button">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // AI Chat Configuration
+        let aiConfig = {
+            provider: "huggingface",
+            apiUrl: "https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium",
+            cohereUrl: "https://api.cohere.ai/v1/generate",
+            token: "",
+            maxLength: 200,
+            temperature: 0.8,
+            isConnected: false,
+            requestCount: 0,
+            lastResetTime: Date.now()
+        };
+
+        let conversationHistory = [];
+        let isProcessing = false;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            autoConfigureAPI();
+            autoResizeTextarea();
+        });
+
+        function setupEventListeners() {
+            // Enter key to send message
+            document.getElementById('chatInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+
+            // Auto-resize textarea
+            document.getElementById('chatInput').addEventListener('input', autoResizeTextarea);
+
+            // Save token when changed
+            document.getElementById('apiToken').addEventListener('change', function() {
+                localStorage.setItem('askGa_apiToken', this.value);
+            });
+
+            // API Provider change
+            document.getElementById('apiProvider').addEventListener('change', function() {
+                aiConfig.provider = this.value;
+                updateProviderSettings();
+                updateStatus('disconnected', 'Provider changed - test connection');
+            });
+
+            // Update API URL when model changes
+            document.getElementById('modelSelect').addEventListener('change', function() {
+                if (aiConfig.provider === 'huggingface') {
+                    aiConfig.apiUrl = `https://api-inference.huggingface.co/models/${this.value}`;
+                }
+                updateStatus('disconnected', 'Model changed - test connection');
+            });
+        }
+
+        function updateProviderSettings() {
+            const provider = document.getElementById('apiProvider').value;
+            const tokenLink = document.getElementById('tokenLink');
+            const modelSelect = document.getElementById('modelSelect');
+            
+            if (provider === 'cohere') {
+                tokenLink.href = 'https://dashboard.cohere.ai/api-keys';
+                tokenLink.textContent = 'Get Cohere Token';
+                document.getElementById('apiToken').placeholder = 'Cohere API key';
+                
+                // Update model options for Cohere
+                modelSelect.innerHTML = `
+                    <option value="command">Command (Recommended)</option>
+                    <option value="command-light">Command Light (Faster)</option>
+                `;
+                
+                aiConfig.apiUrl = aiConfig.cohereUrl;
+            } else {
+                tokenLink.href = 'https://huggingface.co/settings/tokens';
+                tokenLink.textContent = 'Get HF Token';
+                document.getElementById('apiToken').placeholder = 'hf_your_token_here';
+                
+                // Restore Hugging Face models
+                modelSelect.innerHTML = `
+                    <option value="microsoft/DialoGPT-medium">DialoGPT Medium (Conversational)</option>
+                    <option value="microsoft/DialoGPT-large">DialoGPT Large (Advanced)</option>
+                    <option value="facebook/blenderbot-400M-distill">BlenderBot (Friendly)</option>
+                    <option value="google/flan-t5-base">Flan-T5 (Helpful)</option>
+                `;
+                
+                aiConfig.apiUrl = `https://api-inference.huggingface.co/models/${modelSelect.value}`;
+            }
+        }
+
+        function autoConfigureAPI() {
+            // Auto-configure API settings (admin pre-configured)
+            aiConfig.provider = "cohere";
+            aiConfig.token = "oQ06Ncst4vkCpaK6oKzQJzBk8VPZrIYxJJE3POOM"; // Your Cohere API key
+            aiConfig.isConnected = true;
+            
+            // Set UI elements
+            document.getElementById('apiProvider').value = "cohere";
+            document.getElementById('apiToken').value = aiConfig.token;
+            document.getElementById('modelSelect').value = "command";
+            
+            // Update status
+            updateStatus('connected', 'Ready to chat!');
+            clearWelcomeMessage();
+            
+            // Update provider settings
+            updateProviderSettings();
+        }
+
+        function autoResizeTextarea() {
+            const textarea = document.getElementById('chatInput');
+            textarea.style.height = 'auto';
+            textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
+        }
+
+        async function testConnection() {
+            const token = document.getElementById('apiToken').value.trim();
+            const provider = document.getElementById('apiProvider').value;
+            
+            if (!token) {
+                showAlert('error', `Please enter your ${provider === 'cohere' ? 'Cohere' : 'Hugging Face'} API token first.`);
+                return;
+            }
+
+            aiConfig.token = token;
+            aiConfig.provider = provider;
+            updateStatus('connecting', 'Testing connection...');
+
+            try {
+                let response;
+                
+                if (provider === 'cohere') {
+                    response = await fetch(aiConfig.cohereUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            model: document.getElementById('modelSelect').value,
+                            prompt: "Hello, this is a test message.",
+                            max_tokens: 50,
+                            temperature: 0.7
+                        })
+                    });
+                } else {
+                    response = await fetch(aiConfig.apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            inputs: "Hello, this is a test message.",
+                            parameters: {
+                                max_length: 50,
+                                temperature: 0.7
+                            }
+                        })
+                    });
+                }
+
+                if (response.ok) {
+                    const result = await response.json();
+                    aiConfig.isConnected = true;
+                    updateStatus('connected', 'Connected successfully!');
+                    showAlert('success', `${provider === 'cohere' ? 'Cohere' : 'Hugging Face'} API connection successful! You can now start chatting.`);
+                    clearWelcomeMessage();
+                } else {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                aiConfig.isConnected = false;
+                updateStatus('disconnected', 'Connection failed');
+                showAlert('error', `Connection failed: ${error.message}`);
+            }
+        }
+
+        function updateStatus(status, message) {
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+            
+            statusDot.className = 'status-dot';
+            
+            switch(status) {
+                case 'connected':
+                    statusDot.classList.add('connected');
+                    break;
+                case 'connecting':
+                    statusDot.style.background = '#ffc107';
+                    break;
+                default:
+                    statusDot.style.background = '#dc3545';
+            }
+            
+            statusText.textContent = message;
+        }
+
+        function showAlert(type, message) {
+            const alertContainer = document.getElementById('configAlert');
+            alertContainer.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 5000);
+        }
+
+        function clearWelcomeMessage() {
+            const welcomeMsg = document.querySelector('.welcome-message');
+            if (welcomeMsg) {
+                welcomeMsg.style.display = 'none';
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message || isProcessing) return;
+            
+            if (!aiConfig.isConnected) {
+                showAlert('error', 'Please test your API connection first.');
+                return;
+            }
+
+            // Clear input and disable send button
+            input.value = '';
+            autoResizeTextarea();
+            setProcessing(true);
+
+            // Add user message to chat
+            addMessage('user', message);
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            try {
+                // Create enhanced prompt for better responses
+                const enhancedPrompt = createEnhancedPrompt(message);
+                
+                // Call AI API
+                const aiResponse = await callHuggingFaceAPI(enhancedPrompt);
+                const cleanResponse = cleanAIResponse(aiResponse, message);
+                
+                // Hide typing indicator and add AI response
+                hideTypingIndicator();
+                addMessage('ai', cleanResponse);
+                
+                // Update conversation history
+                conversationHistory.push({
+                    user: message,
+                    ai: cleanResponse,
+                    timestamp: new Date()
+                });
+
+            } catch (error) {
+                hideTypingIndicator();
+                addMessage('ai', `I'm having trouble connecting right now. Please try again in a moment. (Error: ${error.message})`);
+            } finally {
+                setProcessing(false);
+                input.focus();
+            }
+        }
+
+        function createEnhancedPrompt(userMessage) {
+            const context = "You are Ga, an intelligent and helpful AI assistant created by Ga Foundation. You specialize in education, IELTS preparation, language learning, and academic support. You are friendly, knowledgeable, and encouraging. Provide helpful, accurate responses in a conversational tone.";
+            
+            // Include recent conversation history for context
+            let conversationContext = "";
+            if (conversationHistory.length > 0) {
+                const recentHistory = conversationHistory.slice(-2); // Last 2 exchanges
+                conversationContext = recentHistory.map(exchange => 
+                    `Human: ${exchange.user}\nGa: ${exchange.ai}`
+                ).join('\n');
+                conversationContext += '\n';
+            }
+            
+            return `${context}\n\n${conversationContext}Human: ${userMessage}\nGa:`;
+        }
+
+        async function callHuggingFaceAPI(prompt) {
+            const provider = aiConfig.provider;
+            let response;
+            
+            if (provider === 'cohere') {
+                response = await fetch(aiConfig.cohereUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${aiConfig.token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        model: document.getElementById('modelSelect').value,
+                        prompt: prompt,
+                        max_tokens: aiConfig.maxLength,
+                        temperature: aiConfig.temperature,
+                        stop_sequences: ["\n\nHuman:", "\n\nUser:"]
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Cohere API Error: ${response.status} ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.message) {
+                    throw new Error(result.message);
+                }
+
+                return result.generations?.[0]?.text || "I'm not sure how to respond to that. Could you try rephrasing your question?";
+                
+            } else {
+                // Hugging Face API call (existing code)
+                response = await fetch(aiConfig.apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${aiConfig.token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        inputs: prompt,
+                        parameters: {
+                            max_length: aiConfig.maxLength,
+                            temperature: aiConfig.temperature,
+                            do_sample: true,
+                            top_p: 0.9,
+                            repetition_penalty: 1.1
+                        }
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.error) {
+                    throw new Error(result.error);
+                }
+
+                return result[0]?.generated_text || "I'm not sure how to respond to that. Could you try rephrasing your question?";
+            }
+        }
+
+        function cleanAIResponse(response, originalQuestion) {
+            // Remove the original prompt from the response
+            let cleanResponse = response;
+            
+            // Find the last occurrence of "Ga:" to get just the AI response
+            const gaIndex = cleanResponse.lastIndexOf('Ga:');
+            if (gaIndex !== -1) {
+                cleanResponse = cleanResponse.substring(gaIndex + 3).trim();
+            }
+            
+            // Remove common AI artifacts
+            cleanResponse = cleanResponse
+                .replace(/^(Human:|User:|Assistant:|AI:)/i, '')
+                .replace(/\[.*?\]/g, '') // Remove bracketed content
+                .replace(/\*.*?\*/g, '') // Remove asterisk content
+                .replace(/^\w+:/, '') // Remove speaker labels at start
+                .replace(/\s+/g, ' ') // Normalize whitespace
+                .trim();
+            
+            // If response is too short or empty, provide a fallback
+            if (!cleanResponse || cleanResponse.length < 10) {
+                cleanResponse = "I'd be happy to help you with that! Could you provide a bit more detail about what you're looking for?";
+            }
+            
+            return cleanResponse;
+        }
+
+        function addMessage(sender, content) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const timestamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+            const icon = sender === 'user' ? 'fa-user' : 'fa-robot';
+            const name = sender === 'user' ? 'You' : 'Ga AI';
+            
+            messageDiv.innerHTML = `
+                <div class="message-header">
+                    <i class="fas ${icon}"></i> ${name}
+                </div>
+                <div class="message-content">${content}</div>
+                <div class="message-time">${timestamp}</div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'block';
+            document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'none';
+        }
+
+        function setProcessing(processing) {
+            isProcessing = processing;
+            const sendButton = document.getElementById('sendButton');
+            const chatInput = document.getElementById('chatInput');
+            
+            sendButton.disabled = processing;
+            chatInput.disabled = processing;
+            
+            if (processing) {
+                sendButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            } else {
+                sendButton.innerHTML = '<i class="fas fa-paper-plane"></i> Send';
+            }
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + Enter to send message
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                sendMessage();
+            }
+            
+            // Escape to clear input
+            if (e.key === 'Escape') {
+                document.getElementById('chatInput').value = '';
+                autoResizeTextarea();
+            }
+        });
+
+        // Auto-focus on input when page loads
+        window.addEventListener('load', function() {
+            document.getElementById('apiToken').focus();
+        });
+    </script>
+</body>
+</html> 
