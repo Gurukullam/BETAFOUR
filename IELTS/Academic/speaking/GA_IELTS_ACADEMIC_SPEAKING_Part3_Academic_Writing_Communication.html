@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Speaking Part 3: Academic Writing & Communication Practice | Gammapace</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button - Right Side */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Master Guruvammal Logo for template back button */
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Menu Toggle Button - Professional Brown Gradient */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border-left: 3px solid transparent;
+            margin: 0.3rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: #d4af37;
+            transform: translateX(5px);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 380px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #8b4513, #d4af37, #8b4513);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Part 3 Format Info */
+        .format-info {
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .format-info h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .format-info p {
+            color: #8b4513;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        /* Discussion Topics */
+        .topic-selection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .topic-selection label {
+            font-weight: 600;
+            color: #8b4513;
+            font-size: 1.1rem;
+        }
+
+        .topic-selection select {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #8b4513;
+            background: white;
+            min-width: 300px;
+            font-weight: 600;
+        }
+
+        .topic-selection select:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Question Sets */
+        .question-set {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid #d4af37;
+        }
+
+        .question-set h3 {
+            color: #8b4513;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .question-item {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 4px solid #8b4513;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-number {
+            color: #d4af37;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .question-tips {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+            background: rgba(139, 69, 19, 0.05);
+            padding: 0.8rem;
+            border-radius: 6px;
+            border-left: 3px solid #d4af37;
+        }
+
+        /* Timer Display */
+        .timer-display {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .timer {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #8b4513;
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .timer-label {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Control Buttons */
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 160px;
+        }
+
+        .control-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .control-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #228b22, #32cd32);
+        }
+
+        .start-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #32cd32, #228b22);
+        }
+
+        .record-btn {
+            background: linear-gradient(135deg, #dc143c, #ff6347);
+        }
+
+        .record-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #ff6347, #dc143c);
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, #4169e1, #6495ed);
+        }
+
+        .next-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #6495ed, #4169e1);
+        }
+
+        /* Status Display */
+        .status-display {
+            background: rgba(139, 69, 19, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            color: #8b4513;
+            font-weight: 600;
+            margin: 1rem 0;
+            border-left: 4px solid #d4af37;
+        }
+
+        /* Analysis Section */
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .analysis-card {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .analysis-card h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .analysis-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        /* Band Score Guidance */
+        .band-guidance {
+            margin: 1.5rem 0;
+        }
+
+        .band-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .criteria-card {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .criteria-card h5 {
+            color: #8b4513;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .criteria-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .control-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                left: -100%;
+            }
+
+            .container {
+                margin-left: 0 !important;
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .menu-toggle.collapsed {
+                left: 30px;
+            }
+
+            .menu-toggle-label {
+                left: 55px;
+            }
+
+            .menu-toggle-label.collapsed {
+                left: 55px;
+            }
+
+            .gk-logo-container {
+                top: 100px;
+                right: 20px;
+                padding: 3px;
+            }
+
+            .master-guruvammal-logo {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                padding: 8px;
+            }
+
+            .master-guruvammal-logo .musical-corner {
+                font-size: 8px;
+                top: 1px;
+                right: 2px;
+            }
+
+            .back-label {
+                font-size: 0.7rem;
+            }
+
+            .band-criteria {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()" title="Back to Academic Speaking Menu">
+        <div class="master-guruvammal-logo">
+            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Slide-out Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle">
+        ‹
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Expand</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Academic Speaking Part 3</div>
+            <div class="menu-subtitle">Academic Writing & Communication</div>
+        </div>
+        <div class="menu-content">
+            <div class="menu-item" onclick="scrollToSection('overview')">🎯 Discussion Overview</div>
+            <div class="menu-item active" onclick="scrollToSection('questions')">💬 Question Sets</div>
+            <div class="menu-item" onclick="scrollToSection('practice')">🎙️ Discussion Practice</div>
+            <div class="menu-item" onclick="scrollToSection('analysis')">📊 Analysis Results</div>
+            <div class="menu-item" onclick="scrollToSection('guidance')">🎯 Band Score Guidance</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">Academic Writing & Communication</h1>
+                <div class="hero-subtitle">✍️ Part 3: Academic Discussion Practice</div>
+                <p class="hero-description">
+                    Explore sophisticated discussions about academic writing conventions, scholarly communication, 
+                    and discourse practices. Develop your ability to analyze writing standards, evaluate communication methods, 
+                    and discuss the evolving landscape of academic expression in digital and multilingual contexts.
+                </p>
+            </section>
+
+            <!-- Overview Section -->
+            <section class="content-section" id="overview">
+                <h2 class="section-title">📋 Discussion Format Overview</h2>
+                
+                <div class="format-info">
+                    <h3>Part 3: Academic Discussion Guidelines</h3>
+                    <p><strong>Duration:</strong> 4-5 minutes of interactive discussion</p>
+                    <p><strong>Format:</strong> Two-way conversation with examiner on abstract topics</p>
+                    <p><strong>Preparation:</strong> No preparation time - immediate responses required</p>
+                    <p><strong>Focus:</strong> Abstract ideas, opinions, analysis, and future speculation</p>
+                </div>
+
+                <div class="topic-selection">
+                    <label for="topicSelect">Choose Discussion Theme:</label>
+                    <select id="topicSelect" onchange="changeDiscussionTopic()">
+                        <option value="1">Academic Writing Standards & Conventions</option>
+                        <option value="2">Research Communication & Publication</option>
+                        <option value="3">Digital Communication in Academia</option>
+                        <option value="4">Multilingual Academic Communication</option>
+                        <option value="5">Academic Genres & Discourse</option>
+                        <option value="6">Communication Skills for Academic Success</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Question Sets Section -->
+            <section class="content-section" id="questions">
+                <h2 class="section-title">💬 Discussion Questions</h2>
+                
+                <div class="question-set" id="questionSetContent">
+                    <h3>Academic Writing Standards & Conventions</h3>
+                    
+                    <div class="question-item">
+                        <div class="question-number">Question 1</div>
+                        <div class="question-text">How important is it for academic writing to follow strict formatting and citation conventions, and should these standards be more flexible?</div>
+                        <div class="question-tips">💡 Consider: standardization benefits, creativity constraints, accessibility, international variations, digital formats</div>
+                    </div>
+
+                    <div class="question-item">
+                        <div class="question-number">Question 2</div>
+                        <div class="question-text">What role should clarity and accessibility play in academic writing, and how can scholars balance complexity with comprehensibility?</div>
+                        <div class="question-tips">💡 Consider: jargon necessity, public engagement, expert vs. general audiences, knowledge dissemination</div>
+                    </div>
+
+                    <div class="question-item">
+                        <div class="question-number">Question 3</div>
+                        <div class="question-text">How has the emphasis on originality and avoiding plagiarism affected academic writing practices, both positively and negatively?</div>
+                        <div class="question-tips">💡 Consider: creativity vs. building on existing work, cultural differences in attribution, collaboration challenges</div>
+                    </div>
+
+                    <div class="question-item">
+                        <div class="question-number">Question 4</div>
+                        <div class="question-text">Should academic writing become more personal and subjective, or should it maintain its traditional objective stance?</div>
+                        <div class="question-tips">💡 Consider: researcher positionality, bias acknowledgment, narrative approaches, disciplinary differences</div>
+                    </div>
+
+                    <div class="question-item">
+                        <div class="question-number">Question 5</div>
+                        <div class="question-text">How might artificial intelligence tools change the future of academic writing and what challenges might this present?</div>
+                        <div class="question-tips">💡 Consider: writing assistance, authenticity concerns, skill development, evaluation methods</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="content-section" id="practice">
+                <h2 class="section-title">🎙️ Discussion Practice Studio</h2>
+                
+                <div style="text-align: center; color: #666; margin: 1rem 0;">
+                    <p>Practice your responses to the discussion questions above. Record your answers and receive feedback on your academic discourse skills.</p>
+                </div>
+
+                <!-- Timer Display -->
+                <div class="timer-display">
+                    <div class="timer" id="timerDisplay">--:--</div>
+                    <div class="timer-label" id="timerLabel">Ready for Discussion</div>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="control-buttons">
+                    <button class="control-btn start-btn" id="startBtn" onclick="startDiscussion()">
+                        🗣️ Start Discussion
+                    </button>
+                    <button class="control-btn record-btn" id="recordBtn" onclick="startRecording()" disabled>
+                        🎤 Record Response
+                    </button>
+                    <button class="control-btn" id="stopBtn" onclick="stopRecording()" disabled>
+                        ⏹️ Stop Recording
+                    </button>
+                    <button class="control-btn" id="playBtn" onclick="playRecording()" disabled>
+                        ▶️ Play Recording
+                    </button>
+                    <button class="control-btn" id="analyzeBtn" onclick="analyzeDiscussion()" disabled>
+                        📊 Analyze Discussion
+                    </button>
+                </div>
+
+                <!-- Status Display -->
+                <div class="status-display" id="statusDisplay">
+                    Ready to begin your Academic Writing & Communication discussion practice
+                </div>
+            </section>
+
+            <!-- Analysis Section -->
+            <section class="content-section hidden" id="analysis">
+                <h2 class="section-title">📊 Discussion Analysis</h2>
+                
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h4>📝 Model Discussion Response</h4>
+                        <p id="modelResponseText" style="font-style: italic; color: #555;">A sophisticated model response will appear here demonstrating the level of analytical discourse expected in Part 3 discussions about academic writing and communication topics.</p>
+                    </div>
+                    
+                    <div class="analysis-card">
+                        <h4>🎯 Your Discussion Analysis & Feedback</h4>
+                        <p id="feedbackText" style="white-space: pre-line;">Based on your recorded discussion, personalized feedback on your argumentation skills, analytical depth, academic vocabulary usage, and discourse management will appear here.</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+                    <button class="control-btn next-btn" onclick="nextQuestionSet()">
+                        ➡️ Next Question Set
+                    </button>
+                    <button class="control-btn next-btn" onclick="retryCurrentSet()">
+                        🔄 Retry This Set
+                    </button>
+                </div>
+            </section>
+
+            <!-- Band Score Guidance -->
+            <section class="content-section" id="guidance">
+                <h2 class="section-title">🎯 Band Score Guidance</h2>
+                
+                <div class="band-guidance">
+                    <h3 style="color: #8b4513; text-align: center; margin-bottom: 1.5rem;">Academic Writing & Communication Discussion Assessment Criteria</h3>
+                    
+                    <div class="band-criteria">
+                        <div class="criteria-card">
+                            <h5>🗣️ Fluency & Coherence</h5>
+                            <p>Maintain sophisticated discourse flow when discussing writing concepts. Use advanced connecting phrases to link abstract ideas about communication theory, genre conventions, and discourse analysis.</p>
+                        </div>
+                        
+                        <div class="criteria-card">
+                            <h5>📚 Lexical Resource</h5>
+                            <p>Employ specialized vocabulary related to rhetoric, linguistics, and composition studies. Demonstrate precise terminology for writing processes, communication theory, and academic discourse analysis.</p>
+                        </div>
+                        
+                        <div class="criteria-card">
+                            <h5>⚙️ Grammatical Range</h5>
+                            <p>Display complex structures for discussing theoretical concepts, comparative analysis of communication methods, and hypothetical scenarios about future writing practices and technological impacts.</p>
+                        </div>
+                        
+                        <div class="criteria-card">
+                            <h5>🎯 Pronunciation</h5>
+                            <p>Maintain clear articulation of technical linguistic and rhetorical terminology. Use appropriate stress patterns to emphasize key concepts in writing theory and communication studies.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Academic Writing & Communication Discussion Question Sets
+        const questionSets = {
+            1: {
+                title: "Academic Writing Standards & Conventions",
+                questions: [
+                    {
+                        number: 1,
+                        text: "How important is it for academic writing to follow strict formatting and citation conventions, and should these standards be more flexible?",
+                        tips: "💡 Consider: standardization benefits, creativity constraints, accessibility, international variations, digital formats"
+                    },
+                    {
+                        number: 2,
+                        text: "What role should clarity and accessibility play in academic writing, and how can scholars balance complexity with comprehensibility?",
+                        tips: "💡 Consider: jargon necessity, public engagement, expert vs. general audiences, knowledge dissemination"
+                    },
+                    {
+                        number: 3,
+                        text: "How has the emphasis on originality and avoiding plagiarism affected academic writing practices, both positively and negatively?",
+                        tips: "💡 Consider: creativity vs. building on existing work, cultural differences in attribution, collaboration challenges"
+                    },
+                    {
+                        number: 4,
+                        text: "Should academic writing become more personal and subjective, or should it maintain its traditional objective stance?",
+                        tips: "💡 Consider: researcher positionality, bias acknowledgment, narrative approaches, disciplinary differences"
+                    },
+                    {
+                        number: 5,
+                        text: "How might artificial intelligence tools change the future of academic writing and what challenges might this present?",
+                        tips: "💡 Consider: writing assistance, authenticity concerns, skill development, evaluation methods"
+                    }
+                ]
+            },
+            2: {
+                title: "Research Communication & Publication",
+                questions: [
+                    {
+                        number: 1,
+                        text: "What are the advantages and disadvantages of the current academic publishing system, and how could it be improved?",
+                        tips: "💡 Consider: peer review process, open access, publication costs, speed vs. quality, impact metrics"
+                    },
+                    {
+                        number: 2,
+                        text: "How can researchers better communicate their findings to non-academic audiences without oversimplifying complex concepts?",
+                        tips: "💡 Consider: science communication, media training, public engagement, social responsibility, funding justification"
+                    },
+                    {
+                        number: 3,
+                        text: "Should there be more emphasis on collaborative writing and multi-author publications in academic research?",
+                        tips: "💡 Consider: interdisciplinary work, credit allocation, knowledge synthesis, global collaboration, authorship ethics"
+                    },
+                    {
+                        number: 4,
+                        text: "How important are conference presentations compared to written publications in academic career advancement?",
+                        tips: "💡 Consider: networking opportunities, immediate feedback, accessibility, permanence, different communication skills"
+                    },
+                    {
+                        number: 5,
+                        text: "What impact might social media and digital platforms have on how academic research is shared and discussed?",
+                        tips: "💡 Consider: rapid dissemination, quality control, public engagement, academic reputation, misinformation risks"
+                    }
+                ]
+            },
+            3: {
+                title: "Digital Communication in Academia",
+                questions: [
+                    {
+                        number: 1,
+                        text: "How has digital technology changed the way academics collaborate and share information globally?",
+                        tips: "💡 Consider: virtual collaboration, cloud sharing, real-time editing, language barriers, digital divides"
+                    },
+                    {
+                        number: 2,
+                        text: "What are the benefits and drawbacks of online academic conferences and virtual presentations?",
+                        tips: "💡 Consider: accessibility, environmental impact, interaction quality, technical challenges, networking opportunities"
+                    },
+                    {
+                        number: 3,
+                        text: "Should academic institutions invest more in digital literacy training for faculty and students?",
+                        tips: "💡 Consider: evolving technology, research efficiency, communication skills, generation gaps, resource allocation"
+                    },
+                    {
+                        number: 4,
+                        text: "How can academics maintain professional communication standards in increasingly informal digital environments?",
+                        tips: "💡 Consider: email etiquette, social media presence, instant messaging, video calls, generational differences"
+                    },
+                    {
+                        number: 5,
+                        text: "What role should artificial intelligence play in academic communication and writing assistance?",
+                        tips: "💡 Consider: translation tools, writing aids, editing software, authenticity concerns, skill development"
+                    }
+                ]
+            },
+            4: {
+                title: "Multilingual Academic Communication",
+                questions: [
+                    {
+                        number: 1,
+                        text: "What challenges do non-native English speakers face in academic writing and communication, and how can these be addressed?",
+                        tips: "💡 Consider: language barriers, cultural differences in rhetoric, editing support, publication opportunities, linguistic bias"
+                    },
+                    {
+                        number: 2,
+                        text: "Should academic institutions provide more support for publishing research in languages other than English?",
+                        tips: "💡 Consider: local relevance, global reach, linguistic diversity, resource constraints, translation services"
+                    },
+                    {
+                        number: 3,
+                        text: "How can the global academic community better value and include diverse cultural perspectives in scholarly communication?",
+                        tips: "💡 Consider: western-centric models, indigenous knowledge systems, cultural communication styles, inclusive practices"
+                    },
+                    {
+                        number: 4,
+                        text: "What role should translation play in making academic research more globally accessible?",
+                        tips: "💡 Consider: funding for translation, quality concerns, cultural adaptation, technology solutions, priority setting"
+                    },
+                    {
+                        number: 5,
+                        text: "How might the dominance of English in academic publishing affect the development of knowledge in other languages and cultures?",
+                        tips: "💡 Consider: linguistic imperialism, local knowledge preservation, career incentives, global vs. local relevance"
+                    }
+                ]
+            },
+            5: {
+                title: "Academic Genres & Discourse",
+                questions: [
+                    {
+                        number: 1,
+                        text: "How do different academic disciplines vary in their writing conventions and communication styles?",
+                        tips: "💡 Consider: humanities vs. sciences, quantitative vs. qualitative, theoretical vs. applied research, cultural variations"
+                    },
+                    {
+                        number: 2,
+                        text: "Should there be more standardization across academic disciplines in how research is presented and communicated?",
+                        tips: "💡 Consider: interdisciplinary collaboration, reader accessibility, disciplinary identity, innovation constraints"
+                    },
+                    {
+                        number: 3,
+                        text: "How important is it for academics to master multiple genres of writing beyond traditional research papers?",
+                        tips: "💡 Consider: grant proposals, popular writing, policy briefs, digital content, career versatility"
+                    },
+                    {
+                        number: 4,
+                        text: "What role should narrative and storytelling play in academic writing and research presentation?",
+                        tips: "💡 Consider: engagement vs. objectivity, humanities influence, public communication, emotional connection, credibility"
+                    },
+                    {
+                        number: 5,
+                        text: "How might emerging digital formats and multimedia change the nature of academic discourse?",
+                        tips: "💡 Consider: interactive publications, video abstracts, podcasts, data visualization, accessibility, permanence"
+                    }
+                ]
+            },
+            6: {
+                title: "Communication Skills for Academic Success",
+                questions: [
+                    {
+                        number: 1,
+                        text: "What communication skills beyond writing are most important for academic success in the modern university environment?",
+                        tips: "💡 Consider: presentation skills, networking, social media, grant writing, public speaking, collaboration"
+                    },
+                    {
+                        number: 2,
+                        text: "How can graduate programs better prepare students for the diverse communication demands of academic careers?",
+                        tips: "💡 Consider: professional development, practical training, mentorship, real-world experience, skill assessment"
+                    },
+                    {
+                        number: 3,
+                        text: "Should academics be required to demonstrate public engagement and science communication skills?",
+                        tips: "💡 Consider: social responsibility, funding justification, career requirements, training resources, evaluation criteria"
+                    },
+                    {
+                        number: 4,
+                        text: "How important is it for academics to develop strong interpersonal and leadership communication skills?",
+                        tips: "💡 Consider: team management, institutional service, conference organization, conflict resolution, mentoring"
+                    },
+                    {
+                        number: 5,
+                        text: "What role should emotional intelligence and empathy play in academic communication and collaboration?",
+                        tips: "💡 Consider: peer review process, student interaction, conflict resolution, inclusive practices, mental health"
+                    }
+                ]
+            }
+        };
+
+        // Timer and recording variables
+        let discussionTimer = null;
+        let recordingTime = 0;
+        let isDiscussionActive = false;
+        let isRecording = false;
+        let mediaRecorder;
+        let audioChunks = [];
+        let currentAudioBlob = null;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ IELTS Academic Speaking Part 3: Academic Writing & Communication loaded');
+            changeDiscussionTopic(); // Load default topic
+            
+            // Initialize menu state - start with menu collapsed
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            
+            menu.classList.add('collapsed');
+            toggleBtn.classList.add('collapsed');
+            toggleLabel.classList.add('collapsed');
+            container.classList.add('menu-collapsed');
+            toggleBtn.innerHTML = '‹';
+            toggleLabel.textContent = 'Expand';
+        });
+
+        // Back button navigation
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from Academic Writing & Communication - Going back to Academic Speaking Menu');
+            window.location.href = 'IELTS_Academic_Speaking_Introduction.html';
+        }
+
+        // Menu toggle functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.getElementById('container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Change discussion topic
+        function changeDiscussionTopic() {
+            const select = document.getElementById('topicSelect');
+            const topicId = select.value;
+            const topic = questionSets[topicId];
+            
+            if (topic) {
+                const questionSetContent = document.getElementById('questionSetContent');
+                questionSetContent.innerHTML = `
+                    <h3>${topic.title}</h3>
+                    ${topic.questions.map(q => `
+                        <div class="question-item">
+                            <div class="question-number">Question ${q.number}</div>
+                            <div class="question-text">${q.text}</div>
+                            <div class="question-tips">${q.tips}</div>
+                        </div>
+                    `).join('')}
+                `;
+            }
+            
+            // Reset discussion state
+            resetDiscussion();
+        }
+
+        // Start discussion practice
+        function startDiscussion() {
+            isDiscussionActive = true;
+            recordingTime = 0;
+            
+            const startBtn = document.getElementById('startBtn');
+            const recordBtn = document.getElementById('recordBtn');
+            const statusDisplay = document.getElementById('statusDisplay');
+            const timerLabel = document.getElementById('timerLabel');
+            
+            startBtn.disabled = true;
+            startBtn.textContent = '🗣️ Discussion Active';
+            recordBtn.disabled = false;
+            statusDisplay.textContent = 'Discussion started! You can now record your responses to individual questions.';
+            timerLabel.textContent = 'Discussion Active';
+            
+            startTimer();
+        }
+
+        // Start timer
+        function startTimer() {
+            const timerDisplay = document.getElementById('timerDisplay');
+            
+            discussionTimer = setInterval(() => {
+                recordingTime++;
+                const minutes = Math.floor(recordingTime / 60);
+                const seconds = recordingTime % 60;
+                timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Start recording
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                audioChunks = [];
+                
+                mediaRecorder.ondataavailable = event => {
+                    if (event.data.size > 0) {
+                        audioChunks.push(event.data);
+                    }
+                };
+                
+                mediaRecorder.onstop = () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    currentAudioBlob = audioBlob;
+                    
+                    const playBtn = document.getElementById('playBtn');
+                    const analyzeBtn = document.getElementById('analyzeBtn');
+                    playBtn.disabled = false;
+                    analyzeBtn.disabled = false;
+                };
+                
+                mediaRecorder.start();
+                isRecording = true;
+                
+                const recordBtn = document.getElementById('recordBtn');
+                const stopBtn = document.getElementById('stopBtn');
+                const statusDisplay = document.getElementById('statusDisplay');
+                
+                recordBtn.disabled = true;
+                stopBtn.disabled = false;
+                statusDisplay.textContent = 'Recording your discussion response... Focus on analytical depth and theoretical understanding.';
+                
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+                document.getElementById('statusDisplay').textContent = 'Error: Could not access microphone. Please check permissions.';
+            }
+        }
+
+        // Stop recording
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                mediaRecorder.stream.getTracks().forEach(track => track.stop());
+                isRecording = false;
+                
+                const recordBtn = document.getElementById('recordBtn');
+                const stopBtn = document.getElementById('stopBtn');
+                const statusDisplay = document.getElementById('statusDisplay');
+                
+                recordBtn.disabled = false;
+                recordBtn.textContent = '🎤 Record Another Response';
+                stopBtn.disabled = true;
+                statusDisplay.textContent = 'Recording stopped. You can play back your response, record another, or analyze your discussion.';
+            }
+        }
+
+        // Play recording
+        function playRecording() {
+            if (currentAudioBlob) {
+                const audio = new Audio(URL.createObjectURL(currentAudioBlob));
+                audio.play();
+                
+                document.getElementById('statusDisplay').textContent = 'Playing your discussion response...';
+                
+                audio.onended = () => {
+                    document.getElementById('statusDisplay').textContent = 'Playback complete. Ready for analysis or retry.';
+                };
+            }
+        }
+
+        // Analyze discussion
+        function analyzeDiscussion() {
+            const analysisSection = document.getElementById('analysis');
+            const modelResponseText = document.getElementById('modelResponseText');
+            const feedbackText = document.getElementById('feedbackText');
+            
+            // Show analysis section
+            analysisSection.classList.remove('hidden');
+            
+            // Scroll to analysis
+            analysisSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Simulated analysis content
+            const currentTopic = document.getElementById('topicSelect').selectedOptions[0].text;
+            
+            modelResponseText.innerHTML = `
+                <strong>Model Discussion Response for "${currentTopic}":</strong><br><br>
+                "This is a particularly nuanced question that touches on fundamental tensions in academic discourse. I think we need to consider both the practical and theoretical dimensions of writing conventions in scholarly communication.<br><br>
+                
+                From a pragmatic standpoint, standardized formatting and citation systems serve crucial functions - they facilitate efficient peer review, ensure proper attribution, and create a shared framework for academic dialogue across disciplines and cultures. However, I'd argue that these benefits shouldn't come at the expense of intellectual creativity or cultural diversity in academic expression.<br><br>
+                
+                The challenge lies in distinguishing between conventions that genuinely serve scholarly communication versus those that may perpetuate exclusionary practices or reflect particular cultural biases. For instance, while consistent citation practices are essential for academic integrity, rigid adherence to certain rhetorical structures might inadvertently privilege particular ways of constructing arguments that reflect specific cultural or disciplinary traditions.<br><br>
+                
+                I believe we need more flexibility in format and style while maintaining rigorous standards for intellectual honesty, methodological transparency, and logical argumentation. This might involve developing more inclusive guidelines that accommodate diverse communication styles while preserving the essential functions of academic discourse."
+            `;
+            
+            feedbackText.textContent = `Discussion Analysis & Feedback:
+
+✅ Analytical Strengths:
+• Excellent use of sophisticated academic vocabulary and discourse markers
+• Strong ability to present multiple perspectives on complex issues
+• Effective use of hedging language and qualifying statements
+• Good development of abstract concepts with concrete applications
+
+🎯 Areas for Enhancement:
+• Could incorporate more specific examples from different disciplines
+• Consider discussing technological impacts on writing conventions
+• Expand on international or cross-cultural perspectives
+• Use more advanced rhetorical devices for persuasive argumentation
+
+📊 Communication Analysis Assessment:
+• Theoretical Understanding: Shows strong grasp of communication theory
+• Critical Analysis: Demonstrates sophisticated analytical thinking
+• Academic Register: Maintains appropriate scholarly discourse throughout
+• Coherence: Clear logical progression from problem to potential solutions
+
+🔧 Specific Recommendations:
+• Practice using more specialized terminology from rhetoric and composition studies
+• Incorporate comparative analysis of different academic writing traditions
+• Develop stronger conclusions that synthesize theoretical and practical considerations
+• Work on using more complex grammatical structures for nuanced argumentation
+• Focus on demonstrating knowledge of current debates in academic communication`;
+            
+            document.getElementById('statusDisplay').textContent = 'Analysis complete! Review your feedback and model response above.';
+        }
+
+        // Next question set
+        function nextQuestionSet() {
+            const select = document.getElementById('topicSelect');
+            let currentIndex = parseInt(select.value);
+            let nextIndex = currentIndex + 1;
+            
+            if (nextIndex > Object.keys(questionSets).length) {
+                nextIndex = 1; // Loop back to first set
+            }
+            
+            select.value = nextIndex.toString();
+            changeDiscussionTopic();
+            
+            // Hide analysis section
+            document.getElementById('analysis').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Retry current set
+        function retryCurrentSet() {
+            resetDiscussion();
+            
+            // Hide analysis section
+            document.getElementById('analysis').classList.add('hidden');
+            
+            // Scroll to practice section
+            document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Reset discussion state
+        function resetDiscussion() {
+            // Clear timer
+            if (discussionTimer) {
+                clearInterval(discussionTimer);
+                discussionTimer = null;
+            }
+            
+            // Reset display
+            document.getElementById('timerDisplay').textContent = '--:--';
+            document.getElementById('timerLabel').textContent = 'Ready for Discussion';
+            
+            // Reset buttons
+            const startBtn = document.getElementById('startBtn');
+            const recordBtn = document.getElementById('recordBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            const playBtn = document.getElementById('playBtn');
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            
+            startBtn.disabled = false;
+            startBtn.textContent = '🗣️ Start Discussion';
+            recordBtn.disabled = true;
+            recordBtn.textContent = '🎤 Record Response';
+            stopBtn.disabled = true;
+            playBtn.disabled = true;
+            analyzeBtn.disabled = true;
+            
+            // Reset status
+            document.getElementById('statusDisplay').textContent = 'Ready to begin your Academic Writing & Communication discussion practice';
+            
+            // Reset variables
+            recordingTime = 0;
+            isDiscussionActive = false;
+            isRecording = false;
+            currentAudioBlob = null;
+            audioChunks = [];
+            
+            // Hide analysis
+            document.getElementById('analysis').classList.add('hidden');
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update active menu item
+                const menuItems = document.querySelectorAll('.menu-item');
+                menuItems.forEach(item => item.classList.remove('active'));
+                
+                // Find the menu item that corresponds to this section and make it active
+                const targetMenuItem = Array.from(menuItems).find(item => 
+                    item.getAttribute('onclick').includes(sectionId)
+                );
+                if (targetMenuItem) {
+                    targetMenuItem.classList.add('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html> 
