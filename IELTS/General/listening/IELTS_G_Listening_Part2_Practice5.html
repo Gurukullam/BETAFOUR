@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Listening Part 2 - Practice 5 | GK Foundation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 8px 0 30px rgba(139, 69, 19, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Audio Player Styles */
+        .audio-player {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #B8860B, #CD853F);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #DAA520, #B8860B);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .time-display {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Questions Styles */
+        .questions-container {
+            margin-top: 2rem;
+        }
+
+        .question-section {
+            margin-bottom: 3rem;
+        }
+
+        .question-section h3 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Form Completion Styles */
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #d4af37;
+        }
+
+        .form-title {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-field {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid #d4af37;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-field-label {
+            font-weight: 600;
+            color: #8b4513;
+            font-size: 1rem;
+        }
+
+        .form-field-input {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.7rem;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .form-field-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Multiple Choice Styles */
+        .mc-question {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #d4af37;
+        }
+
+        .mc-question h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .mc-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .mc-option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .mc-option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateX(5px);
+        }
+
+        .mc-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .mc-option label {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #B8860B, #CD853F);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.6);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+            display: none;
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">🏛️ IELTS General Listening</div>
+            <div class="menu-subtitle">Part 2 - Practice 5</div>
+        </div>
+        <div class="menu-content">
+            <a href="#instructions" class="menu-item" onclick="navigateToSection('instructions')">
+                <div class="item-title">1. Instructions</div>
+                <div class="item-description">⚠️ Test guidelines and preparation</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">2. Audio Monologue</div>
+                <div class="item-description">🎧 Local Museum Exhibition (6.5 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">3. Questions (Part 2)</div>
+                <div class="item-description">📝 Form Completion + Multiple Choice</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. Results & Analysis</div>
+                <div class="item-description">📊 Your performance and tips</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">🏛️ IELTS General Listening - Part 2 (Practice 5)</h1>
+                <div class="hero-subtitle">
+                    Local Museum Exhibition Information
+                </div>
+                <p class="hero-description">
+                    Listen to a museum curator describing a new exhibition and visitor information. Complete the form and answer multiple choice questions. This practice simulates real test conditions with Questions 11-20.
+                </p>
+            </section>
+
+            <!-- Instructions Section -->
+            <section id="instructions" class="content-section">
+                <h2 class="section-title">
+                    ⚠️ Instructions
+                </h2>
+                <div style="background: rgba(255, 193, 7, 0.1); border-radius: 10px; padding: 1.5rem; border-left: 4px solid #ffc107;">
+                    <h4 style="color: #8b4513; margin-bottom: 1rem;">📋 Before You Begin:</h4>
+                    <ul style="color: #333; line-height: 1.8; list-style-position: inside;">
+                        <li><strong>Questions 11-17:</strong> Complete the museum visitor form using NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer</li>
+                        <li><strong>Questions 18-20:</strong> Choose the correct letter A, B, or C for multiple choice questions</li>
+                        <li><strong>Audio Duration:</strong> Approximately 6.5 minutes (one play only)</li>
+                        <li><strong>Writing Time:</strong> You have additional time to transfer and check your answers</li>
+                        <li><strong>Listen Carefully:</strong> Pay attention to exhibition details, dates, times, and visitor information</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Audio Section -->
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">
+                    🎧 Audio Monologue
+                </h2>
+                
+                <div class="audio-player">
+                    <p style="color: #8b4513; font-weight: 600; margin-bottom: 1rem;">
+                        🔊 You will hear a museum curator explaining the details of a new exhibition and providing visitor information.
+                    </p>
+                    
+                    <button class="play-btn" onclick="playAudio()" id="playBtn">
+                        ▶️ Play Audio
+                    </button>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="currentTime">00:00</span> / <span id="totalTime">06:30</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Questions Section -->
+            <section id="questions" class="content-section">
+                <h2 class="section-title">
+                    📝 Questions 11-20
+                </h2>
+                
+                <div class="questions-container">
+                    <!-- Form Completion Questions 11-17 -->
+                    <div class="question-section">
+                        <h3>Questions 11-17</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Complete the museum visitor form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
+                        </p>
+                        
+                        <div class="form-container">
+                            <div class="form-title">Brisbane Heritage Museum - Exhibition Visitor Information</div>
+                            
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label class="form-field-label">11. Exhibition Title:</label>
+                                    <input type="text" class="form-field-input" id="q11" placeholder="Enter answer">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label class="form-field-label">12. Exhibition runs until:</label>
+                                    <input type="text" class="form-field-input" id="q12" placeholder="Enter answer">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label class="form-field-label">13. Opening hours (weekdays):</label>
+                                    <input type="text" class="form-field-input" id="q13" placeholder="Enter answer">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label class="form-field-label">14. Adult ticket price: $</label>
+                                    <input type="text" class="form-field-input" id="q14" placeholder="Enter answer">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label class="form-field-label">15. Free guided tours available on:</label>
+                                    <input type="text" class="form-field-input" id="q15" placeholder="Enter answer">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label class="form-field-label">16. Special discount for:</label>
+                                    <input type="text" class="form-field-input" id="q16" placeholder="Enter answer">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label class="form-field-label">17. Exhibition catalogue costs: $</label>
+                                    <input type="text" class="form-field-input" id="q17" placeholder="Enter answer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multiple Choice Questions 18-20 -->
+                    <div class="question-section">
+                        <h3>Questions 18-20</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Choose the correct letter A, B, or C.
+                        </p>
+                        
+                        <div class="mc-question">
+                            <h4>18. What makes this exhibition particularly special?</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q18a" name="q18" value="A">
+                                    <label for="q18a">A. Interactive multimedia displays</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q18b" name="q18" value="B">
+                                    <label for="q18b">B. Items never displayed before</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q18c" name="q18" value="C">
+                                    <label for="q18c">C. International loan collections</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mc-question">
+                            <h4>19. The museum recommends booking in advance because:</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q19a" name="q19" value="A">
+                                    <label for="q19a">A. Tickets are cheaper online</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q19b" name="q19" value="B">
+                                    <label for="q19b">B. The exhibition is very popular</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q19c" name="q19" value="C">
+                                    <label for="q19c">C. Group discounts are available</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mc-question">
+                            <h4>20. What additional service does the museum offer?</h4>
+                            <div class="mc-options">
+                                <div class="mc-option">
+                                    <input type="radio" id="q20a" name="q20" value="A">
+                                    <label for="q20a">A. Photography workshops</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q20b" name="q20" value="B">
+                                    <label for="q20b">B. Educational seminars</label>
+                                </div>
+                                <div class="mc-option">
+                                    <input type="radio" id="q20c" name="q20" value="C">
+                                    <label for="q20c">C. Audio guide rental</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button class="submit-btn" onclick="submitTest()">Submit Test</button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <h2 class="section-title">
+                    📊 Test Results & Analysis
+                </h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>💡 Part 2 Improvement Tips</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Audio simulation and test data
+        let audioContext = null;
+        let isPlaying = false;
+        let currentTime = 0;
+        let totalDuration = 390; // 6.5 minutes in seconds
+        let audioInterval = null;
+
+        // Correct answers for Part 2 Practice 5
+        const correctAnswers = {
+            q11: 'ancient treasures',
+            q12: 'march 15',
+            q13: '9 to 5',
+            q14: '18',
+            q15: 'weekends',
+            q16: 'senior citizens',
+            q17: '12',
+            q18: 'B',
+            q19: 'B',
+            q20: 'C'
+        };
+
+        // Question explanations
+        const explanations = {
+            q11: 'The curator announces that the new exhibition is titled "Ancient Treasures" featuring historical artifacts.',
+            q12: 'The exhibition runs until March 15th, giving visitors several months to explore the collection.',
+            q13: 'Weekday opening hours are from 9 AM to 5 PM, providing ample time for visitors.',
+            q14: 'Adult tickets are priced at $18, which includes access to all museum galleries.',
+            q15: 'Free guided tours are available on weekends when volunteer guides are present.',
+            q16: 'Senior citizens receive a special discount on admission as part of the museum\'s community outreach.',
+            q17: 'The exhibition catalogue, featuring detailed descriptions and photos, costs $12.',
+            q18: 'The exhibition is special because it features items that have never been displayed to the public before.',
+            q19: 'The museum recommends advance booking because the exhibition has proven to be very popular with visitors.',
+            q20: 'The museum offers audio guide rental service to enhance the visitor experience with detailed commentary.'
+        };
+
+        // Local Museum Exhibition monologue script
+        function getMonologueScript() {
+            return `
+            G'day everyone, and welcome to the Brisbane Heritage Museum. I'm Dr. Sarah Mitchell, the chief curator here, and I'm absolutely thrilled to tell you about our exciting new exhibition that opens next week.
+
+            We've been working on this project for over eighteen months, and I'm delighted to announce that our new exhibition, titled "Ancient Treasures," will be opening to the public this coming Monday. This exhibition features some of the most remarkable historical artifacts from our region, many of which have never been displayed before.
+
+            The exhibition will be running from Monday the twenty-second of January until March the fifteenth, giving you plenty of time to visit and explore these fascinating pieces of our local history. We've carefully curated over two hundred items, ranging from Indigenous artifacts to colonial-era pieces that tell the story of our area's rich cultural heritage.
+
+            Now, let me give you some important visitor information. Our regular opening hours during the week are nine in the morning until five in the afternoon. On weekends, we're open from ten AM until four PM, so there's plenty of opportunity to visit at a time that suits your schedule.
+
+            Ticket prices for the exhibition are quite reasonable. Adult admission is eighteen dollars, which includes access not only to the special exhibition but also to our permanent galleries throughout the museum. Children under twelve visit for free when accompanied by an adult, and we offer a student discount of twenty-five percent with valid student identification.
+
+            One of the things I'm particularly excited about is our guided tour program. We have free guided tours available on weekends, conducted by our knowledgeable volunteer guides who are passionate about local history. These tours last approximately forty-five minutes and provide fascinating insights into the stories behind the artifacts. No booking is required for these weekend tours - simply arrive at the main entrance at eleven AM or two PM.
+
+            We also offer special pricing for certain groups. Senior citizens, that's anyone aged sixty-five and over, receive a thirty percent discount on admission. We believe it's important to make our cultural heritage accessible to everyone in our community, particularly our older residents who often have their own memories and stories related to these historical periods.
+
+            For those who want to take something home, we have a beautiful exhibition catalogue available in our museum shop. It's a comprehensive guide featuring detailed descriptions and high-quality photographs of all the major pieces in the exhibition. The catalogue costs twelve dollars and makes a wonderful souvenir or gift for anyone interested in local history.
+
+            Now, what makes this exhibition particularly special? Well, many of the items you'll see have been stored in our archives for decades and have never been displayed to the public before. We've spent considerable time and resources preparing these pieces for display, including conservation work and research to uncover their fascinating stories. It's truly a rare opportunity to see these treasures up close.
+
+            I should mention that this exhibition has already generated quite a bit of excitement in the community. We've had inquiries from schools, historical societies, and tourism groups, and based on advance interest, we expect it to be very popular indeed. For this reason, I'd strongly recommend booking your tickets in advance through our website or by calling our booking line. This will save you time and ensure you can visit on your preferred date.
+
+            Finally, I want to tell you about an additional service we offer to enhance your visit. We have audio guides available for rental at the front desk. These provide detailed commentary about each major piece in the exhibition, including historical context and interesting anecdotes that you won't find on the standard display labels. The audio guides cost five dollars to rent and are available in English, Mandarin, and Japanese. Many visitors find these particularly helpful for getting the most out of their exhibition experience.
+
+            We're really looking forward to sharing these ancient treasures with you all. Thank you for your interest in the Brisbane Heritage Museum, and we hope to see you soon at our new exhibition.
+            `;
+        }
+
+        // Audio control functions
+        function playAudio() {
+            if (!checkInternetForAudio()) return;
+            
+            const playBtn = document.getElementById('playBtn');
+            
+            // Disable button during playback
+            playBtn.disabled = true;
+            playBtn.style.opacity = '0.6';
+            playBtn.style.cursor = 'not-allowed';
+            
+            isPlaying = true;
+            
+            // Start audio simulation
+            audioInterval = setInterval(updateProgress, 1000);
+            
+            // Simulate TTS narration
+            if ('speechSynthesis' in window) {
+                // Cancel any existing speech
+                speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(getMonologueScript());
+                utterance.rate = 0.8;
+                utterance.pitch = 1;
+                utterance.volume = 1.0;
+                
+                // Wait for voices to load and set voice to Australian English
+                function setVoiceAndSpeak() {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('Available voices:', voices.length);
+                    
+                    // Try to find Australian English voice, fallback to any English voice
+                    let selectedVoice = voices.find(voice => 
+                        voice.lang === 'en-AU' || voice.name.includes('AU') || voice.name.includes('Australian')
+                    );
+                    
+                    if (!selectedVoice) {
+                        selectedVoice = voices.find(voice => 
+                            voice.lang.startsWith('en-') || voice.lang === 'en'
+                        );
+                    }
+                    
+                    if (selectedVoice) {
+                        utterance.voice = selectedVoice;
+                        console.log('Selected voice:', selectedVoice.name, selectedVoice.lang);
+                    } else {
+                        console.log('No suitable voice found, using default');
+                    }
+                    
+                    utterance.onend = function() {
+                        console.log('Audio playback completed');
+                        stopAudio();
+                    };
+                    
+                    utterance.onerror = function(event) {
+                        console.error('Speech synthesis error:', event.error);
+                        stopAudio();
+                        alert('Audio playback failed. Please check your browser settings and try again.');
+                    };
+                    
+                    speechSynthesis.speak(utterance);
+                }
+
+                if (speechSynthesis.getVoices().length === 0) {
+                    speechSynthesis.addEventListener('voiceschanged', setVoiceAndSpeak);
+                } else {
+                    setVoiceAndSpeak();
+                }
+            } else {
+                alert('Speech synthesis is not supported in your browser. Please use a modern browser like Chrome, Firefox, or Safari.');
+                stopAudio();
+            }
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            currentTime = 0;
+            
+            if (audioInterval) {
+                clearInterval(audioInterval);
+                audioInterval = null;
+            }
+            
+            // Re-enable button
+            const playBtn = document.getElementById('playBtn');
+            playBtn.disabled = false;
+            playBtn.style.opacity = '1';
+            playBtn.style.cursor = 'pointer';
+            
+            // Reset progress
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            
+            // Cancel speech synthesis
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+        }
+
+        function updateProgress() {
+            if (!isPlaying) return;
+            
+            currentTime++;
+            const progressPercent = (currentTime / totalDuration) * 100;
+            
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('currentTime').textContent = formatTime(currentTime);
+            
+            if (currentTime >= totalDuration) {
+                stopAudio();
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function checkInternetForAudio() {
+            if (!navigator.onLine) {
+                alert('Internet connection required for audio playback. Please check your connection and try again.');
+                return false;
+            }
+            return true;
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS General Listening Part 2 Practice 5 - Going to introduction');
+            window.location.href = 'IELTS_General_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Test submission and scoring
+        function submitTest() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Get answers for form completion questions (11-17)
+            for (let i = 11; i <= 17; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`].toLowerCase();
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Get answers for multiple choice questions (18-20)
+            for (let i = 18; i <= 20; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                const answer = selectedOption ? selectedOption.value : '';
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`];
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Focus on listening for specific details in form completion tasks");
+                tips.push("Practice identifying key information like dates, times, and prices");
+                tips.push("Work on understanding number formats and currency expressions");
+                tips.push("Listen to museum and exhibition content to familiarize yourself with cultural vocabulary");
+            } else if (score <= 6) {
+                tips.push("Develop better prediction skills by reading form fields before listening");
+                tips.push("Practice distinguishing between similar-sounding information");
+                tips.push("Work on understanding speaker attitudes and opinions for multiple choice questions");
+                tips.push("Focus on word limits and spelling accuracy in form completion");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to catch specific details in longer explanations");
+                tips.push("Practice following complex descriptions while maintaining focus");
+                tips.push("Work on identifying paraphrased information in multiple choice options");
+                tips.push("Review vocabulary related to cultural institutions and visitor services");
+            } else {
+                tips.push("Excellent work! Continue practicing with authentic IELTS materials");
+                tips.push("Focus on time management to complete both form and multiple choice sections");
+                tips.push("Practice with different Australian accents to prepare for test day variety");
+                tips.push("Consider helping others to reinforce your own listening and form completion skills");
+            }
+            
+            return tips;
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🏛️ IELTS General Listening Part 2 Practice 5 - Local Museum Exhibition loaded');
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+            
+            // Auto-focus on first input when questions section becomes visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target.id === 'questions') {
+                        setTimeout(() => {
+                            const firstInput = document.getElementById('q11');
+                            if (firstInput) firstInput.focus();
+                        }, 500);
+                    }
+                });
+            });
+            
+            const questionsSection = document.getElementById('questions');
+            if (questionsSection) {
+                observer.observe(questionsSection);
+            }
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+        });
+    </script>
+</body>
+</html> 
