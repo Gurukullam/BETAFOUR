@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Listening Part 3 - Practice 2 | GK Foundation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #3a2006;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(139, 69, 19, 0.3);
+            box-shadow: 8px 0 30px rgba(139, 69, 19, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Speaker Cards Section */
+        .speakers-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .speakers-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .speakers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .speaker-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.8rem;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.25);
+        }
+
+        .speaker-card.active {
+            border-color: #d4af37;
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .speaker-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .speaker-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .speaker-info h3 {
+            color: #8b4513;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .speaker-role {
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .speaker-details {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.4rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #8b4513;
+            font-size: 0.9rem;
+        }
+
+        .detail-value {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .speaker-background {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Audio Player Styles */
+        .audio-player {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #d4af37, #8b4513);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .time-display {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Questions Styles */
+        .questions-container {
+            margin-top: 2rem;
+        }
+
+        .question-section {
+            margin-bottom: 3rem;
+        }
+
+        .question-section h3 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Matching Questions Styles */
+        .matching-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid #d4af37;
+            margin-bottom: 1.5rem;
+        }
+
+        .matching-title {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .matching-layout {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .options-column {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .options-title {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .option-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .option-item:hover {
+            border-color: #d4af37;
+            transform: translateX(3px);
+        }
+
+        .questions-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .matching-question {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            color: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .question-text {
+            flex: 1;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .answer-select {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.4rem;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: #8b4513;
+            font-weight: 600;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .answer-select:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Flow Chart Styles */
+        .flowchart-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid #d4af37;
+            margin-bottom: 1.5rem;
+        }
+
+        .flowchart-title {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .flowchart-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .flow-step {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 1.2rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .flow-step:not(:last-child)::after {
+            content: '↓';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #8b4513;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-text {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .flow-blank {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: #8b4513;
+            font-weight: 600;
+            min-width: 120px;
+            text-align: center;
+            display: inline-block;
+            margin: 0 0.3rem;
+        }
+
+        .flow-blank:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #d4af37, #8b4513);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+            display: none;
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #8b4513;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: '🎓';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .speakers-container {
+                grid-template-columns: 1fr;
+            }
+
+            .matching-layout {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .flowchart-diagram {
+                max-width: 100%;
+            }
+
+            .flow-step {
+                padding: 1rem;
+            }
+
+            .flow-blank {
+                min-width: 100px;
+                margin: 0.2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">💬 IELTS Academic Listening</div>
+            <div class="menu-subtitle">Part 3 - Practice 2</div>
+        </div>
+        <div class="menu-content">
+            <a href="#speakers" class="menu-item" onclick="navigateToSection('speakers')">
+                <div class="item-title">1. Speaker Profiles</div>
+                <div class="item-description">👥 Meet the study group members</div>
+            </a>
+            <a href="#instructions" class="menu-item" onclick="navigateToSection('instructions')">
+                <div class="item-title">2. Instructions</div>
+                <div class="item-description">⚠️ Test guidelines and preparation</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">3. Audio Conversation</div>
+                <div class="item-description">🎧 Study Group Meeting (4.5 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">4. Questions (Part 3)</div>
+                <div class="item-description">📝 Matching Questions + Flow Chart</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">5. Results & Analysis</div>
+                <div class="item-description">📊 Your performance and tips</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">💬 IELTS Academic Listening - Part 3 (Practice 2)</h1>
+                <div class="hero-subtitle">
+                    Study Group Meeting - Environmental Science Department
+                </div>
+                <p class="hero-description">
+                    Listen to three Environmental Science students - Emma Thompson (UK), Raj Patel (India/Australia), and Lisa Zhang (China/USA) - planning their collaborative climate change project. This group discussion covers task allocation, research methodology, and project timeline coordination. Answer Questions 21-30 to test your understanding of multi-speaker academic planning conversations.
+                </p>
+            </section>
+
+            <!-- Speaker Profiles Section -->
+            <section id="speakers" class="speakers-section">
+                <h2 class="speakers-title">
+                    👥 Study Group Members
+                </h2>
+                
+                <div class="speakers-container">
+                    <div class="speaker-card" id="speaker-emma">
+                        <div class="speaker-header">
+                            <div class="speaker-avatar">ET</div>
+                            <div class="speaker-info">
+                                <h3>Emma Thompson</h3>
+                                <div class="speaker-role">3rd Year Environmental Science</div>
+                            </div>
+                        </div>
+                        <div class="speaker-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Background:</span>
+                                <span class="detail-value">UK Student</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Accent:</span>
+                                <span class="detail-value">British English</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Specialization:</span>
+                                <span class="detail-value">Climate Policy</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Role:</span>
+                                <span class="detail-value">Project Coordinator</span>
+                            </div>
+                        </div>
+                        <div class="speaker-background">
+                            Emma is a dedicated environmental science student from Manchester with strong organizational skills. She's passionate about climate policy and environmental legislation, often taking leadership roles in group projects.
+                        </div>
+                    </div>
+
+                    <div class="speaker-card" id="speaker-raj">
+                        <div class="speaker-header">
+                            <div class="speaker-avatar">RP</div>
+                            <div class="speaker-info">
+                                <h3>Raj Patel</h3>
+                                <div class="speaker-role">3rd Year Environmental Science</div>
+                            </div>
+                        </div>
+                        <div class="speaker-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Background:</span>
+                                <span class="detail-value">Indian-Australian</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Accent:</span>
+                                <span class="detail-value">Australian English</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Specialization:</span>
+                                <span class="detail-value">Data Analysis</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Role:</span>
+                                <span class="detail-value">Research Analyst</span>
+                            </div>
+                        </div>
+                        <div class="speaker-background">
+                            Raj moved to Australia from India and has excellent analytical skills. He specializes in environmental data analysis and statistical modeling, particularly interested in carbon emission patterns and climate data interpretation.
+                        </div>
+                    </div>
+
+                    <div class="speaker-card" id="speaker-lisa">
+                        <div class="speaker-header">
+                            <div class="speaker-avatar">LZ</div>
+                            <div class="speaker-info">
+                                <h3>Lisa Zhang</h3>
+                                <div class="speaker-role">3rd Year Environmental Science</div>
+                            </div>
+                        </div>
+                        <div class="speaker-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Background:</span>
+                                <span class="detail-value">Chinese-American</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Accent:</span>
+                                <span class="detail-value">American English</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Specialization:</span>
+                                <span class="detail-value">Field Research</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Role:</span>
+                                <span class="detail-value">Field Coordinator</span>
+                            </div>
+                        </div>
+                        <div class="speaker-background">
+                            Lisa grew up in California and has extensive experience in environmental field research. She's particularly skilled in data collection methods and has participated in several climate monitoring projects.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instructions Section -->
+            <section id="instructions" class="content-section">
+                <h2 class="section-title">
+                    ⚠️ Instructions
+                </h2>
+                <div style="background: rgba(212, 175, 55, 0.1); border-radius: 10px; padding: 1.5rem; border-left: 4px solid #d4af37;">
+                    <h4 style="color: #8b4513; margin-bottom: 1rem;">📋 Before You Begin:</h4>
+                    <ul style="color: #333; line-height: 1.8; list-style-position: inside;">
+                        <li><strong>Questions 21-25:</strong> Match each student with their specific responsibility (choose from options A-F)</li>
+                        <li><strong>Questions 26-30:</strong> Complete the project timeline flow chart using NO MORE THAN TWO WORDS for each answer</li>
+                        <li><strong>Audio Duration:</strong> Approximately 4.5 minutes (one play only)</li>
+                        <li><strong>Speaker Focus:</strong> Pay attention to task assignments and timeline planning decisions</li>
+                        <li><strong>Listen Carefully:</strong> Note who suggests what and how the group reaches decisions</li>
+                    </ul>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.3);">
+                        <button onclick="testAudio()" style="background: linear-gradient(135deg, #28a745, #20c997); color: white; border: none; padding: 0.5rem 1rem; border-radius: 15px; cursor: pointer; font-size: 0.9rem; margin-right: 1rem;">
+                            🔊 Test Audio System
+                        </button>
+                        <small style="color: #666;">Click to test if your browser supports three-speaker audio playback</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Audio Section -->
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">
+                    🎧 Audio Conversation
+                </h2>
+                
+                <div class="audio-player">
+                    <p style="color: #8b4513; font-weight: 600; margin-bottom: 1rem;">
+                        🔊 You will hear Emma Thompson, Raj Patel, and Lisa Zhang planning their collaborative climate change research project.
+                    </p>
+                    
+                    <button class="play-btn" onclick="playAudio()" id="playBtn">
+                        ▶️ Play Group Discussion
+                    </button>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="currentTime">00:00</span> / <span id="totalTime">07:00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Questions Section -->
+            <section id="questions" class="content-section">
+                <h2 class="section-title">
+                    📝 Questions 21-30
+                </h2>
+                
+                <div class="questions-container">
+                    <!-- Matching Questions 21-25 -->
+                    <div class="question-section">
+                        <h3>Questions 21-25</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Match each student with their main project responsibility. Choose from options A-F.
+                        </p>
+                        
+                        <div class="matching-container">
+                            <div class="matching-title">Project Responsibility Assignments</div>
+                            
+                            <div class="matching-layout">
+                                <div class="options-column">
+                                    <div class="options-title">Responsibilities (A-F)</div>
+                                    <div class="option-item"><strong>A.</strong> Literature review coordination</div>
+                                    <div class="option-item"><strong>B.</strong> Statistical data analysis</div>
+                                    <div class="option-item"><strong>C.</strong> Field data collection</div>
+                                    <div class="option-item"><strong>D.</strong> Report writing and editing</div>
+                                    <div class="option-item"><strong>E.</strong> Presentation preparation</div>
+                                    <div class="option-item"><strong>F.</strong> Meeting coordination</div>
+                                </div>
+                                
+                                <div class="questions-column">
+                                    <div class="matching-question">
+                                        <div class="question-number">21</div>
+                                        <div class="question-text">Emma Thompson</div>
+                                        <select class="answer-select" id="q21" name="q21">
+                                            <option value="">--</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="matching-question">
+                                        <div class="question-number">22</div>
+                                        <div class="question-text">Raj Patel</div>
+                                        <select class="answer-select" id="q22" name="q22">
+                                            <option value="">--</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="matching-question">
+                                        <div class="question-number">23</div>
+                                        <div class="question-text">Lisa Zhang</div>
+                                        <select class="answer-select" id="q23" name="q23">
+                                            <option value="">--</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="matching-question">
+                                        <div class="question-number">24</div>
+                                        <div class="question-text">All three students (shared)</div>
+                                        <select class="answer-select" id="q24" name="q24">
+                                            <option value="">--</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="matching-question">
+                                        <div class="question-number">25</div>
+                                        <div class="question-text">Group priority focus</div>
+                                        <select class="answer-select" id="q25" name="q25">
+                                            <option value="">--</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flow Chart Questions 26-30 -->
+                    <div class="question-section">
+                        <h3>Questions 26-30</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; font-style: italic;">
+                            Complete the project timeline flow chart below. Write NO MORE THAN TWO WORDS for each answer.
+                        </p>
+                        
+                        <div class="flowchart-container">
+                            <div class="flowchart-title">Climate Change Project Timeline</div>
+                            
+                            <div class="flowchart-diagram">
+                                <div class="flow-step">
+                                    <div class="step-text">
+                                        <strong>Week 1-2:</strong> Complete 
+                                        <input type="text" class="flow-blank" id="q26" placeholder="26">
+                                        and establish research framework
+                                    </div>
+                                </div>
+                                
+                                <div class="flow-step">
+                                    <div class="step-text">
+                                        <strong>Week 3-5:</strong> Conduct field data collection using 
+                                        <input type="text" class="flow-blank" id="q27" placeholder="27">
+                                        equipment
+                                    </div>
+                                </div>
+                                
+                                <div class="flow-step">
+                                    <div class="step-text">
+                                        <strong>Week 6-7:</strong> Analyze data and prepare 
+                                        <input type="text" class="flow-blank" id="q28" placeholder="28">
+                                        for preliminary results
+                                    </div>
+                                </div>
+                                
+                                <div class="flow-step">
+                                    <div class="step-text">
+                                        <strong>Week 8-9:</strong> Complete final report and submit to 
+                                        <input type="text" class="flow-blank" id="q29" placeholder="29">
+                                        for review
+                                    </div>
+                                </div>
+                                
+                                <div class="flow-step">
+                                    <div class="step-text">
+                                        <strong>Week 10:</strong> Deliver final presentation during 
+                                        <input type="text" class="flow-blank" id="q30" placeholder="30">
+                                        week
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button class="submit-btn" onclick="submitTest()">Submit Test</button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section">
+                <h2 class="section-title">
+                    📊 Test Results & Analysis
+                </h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>🎓 Academic Part 3 Improvement Tips</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Audio simulation and test data
+        let audioContext = null;
+        let isPlaying = false;
+        let currentTime = 0;
+        let totalDuration = 420; // 7 minutes in seconds for comprehensive conversation
+        let audioInterval = null;
+        let currentSpeaker = null;
+
+        // Correct answers for Academic Part 3 Practice 2
+        const correctAnswers = {
+            q21: 'F',
+            q22: 'B',
+            q23: 'C',
+            q24: 'E',
+            q25: 'A',
+            q26: 'literature review',
+            q27: 'monitoring',
+            q28: 'statistical graphs',
+            q29: 'department supervisor',
+            q30: 'assessment'
+        };
+
+        // Question explanations
+        const explanations = {
+            q21: 'Emma Thompson volunteers to handle meeting coordination, organizing schedules and ensuring everyone stays on track with deadlines.',
+            q22: 'Raj Patel takes responsibility for statistical data analysis, using his strong analytical skills to process the climate data they collect.',
+            q23: 'Lisa Zhang agrees to handle field data collection, coordinating the actual gathering of environmental measurements and samples.',
+            q24: 'All three students will work together on presentation preparation, combining their different expertise areas for a comprehensive final presentation.',
+            q25: 'The group decides that literature review coordination is their priority focus to establish a strong theoretical foundation for their research.',
+            q26: 'The first step in their timeline is to complete the literature review, establishing the research framework and theoretical background.',
+            q27: 'During weeks 3-5, they will conduct field data collection using specialized monitoring equipment to gather environmental measurements.',
+            q28: 'In weeks 6-7, they will analyze their data and prepare statistical graphs to visualize their preliminary findings and results.',
+            q29: 'Week 8-9 involves completing the final report and submitting it to their department supervisor for academic review and feedback.',
+            q30: 'The final presentation will be delivered during assessment week, which is the designated time for project evaluations.'
+        };
+
+        // Multi-speaker conversation script with speaker identification
+        function getConversationScript() {
+            return [
+                { speaker: 'Emma', accent: 'en-GB', text: "Right, everyone, thanks for meeting up today. We really need to sort out our climate change project and divide up the responsibilities. I've got our project outline here." },
+                
+                { speaker: 'Raj', accent: 'en-AU', text: "Good on you, Emma. I've been looking forward to this project. My background in data analysis should be useful for the statistical side of things. What do you think about the overall approach?" },
+                
+                { speaker: 'Lisa', accent: 'en-US', text: "I'm excited too! I've got experience with field research from my summer internship in California. I think we should focus on both data collection and theoretical analysis. What are our main tasks?" },
+                
+                { speaker: 'Emma', accent: 'en-GB', text: "Well, looking at our requirements, we need someone to coordinate meetings and keep us organized. I'm quite good with scheduling, so I could handle meeting coordination if that works for everyone." },
+                
+                { speaker: 'Raj', accent: 'en-AU', text: "That sounds perfect, Emma. I'd love to take on the statistical data analysis - that's right up my alley. I've got experience with environmental modeling software and statistical programs." },
+                
+                { speaker: 'Lisa', accent: 'en-US', text: "And I can definitely handle the field data collection. I know how to use the monitoring equipment, and I've done similar work before. It'll be great to get some hands-on experience." },
+                
+                { speaker: 'Emma', accent: 'en-GB', text: "Excellent! Now, what about the presentation? I think that's something we should all work on together since it'll showcase everyone's contribution to the project." },
+                
+                { speaker: 'Raj', accent: 'en-AU', text: "Absolutely. We each bring different strengths, so presentation preparation should definitely be a collaborative effort. That way we can cover all aspects comprehensively." },
+                
+                { speaker: 'Lisa', accent: 'en-US', text: "I agree completely. But what should we prioritize first? I think establishing a solid theoretical foundation is crucial before we start collecting data." },
+                
+                { speaker: 'Emma', accent: 'en-GB', text: "You're absolutely right. Literature review coordination should be our priority focus. We need to understand what research has already been done before we design our own study." },
+                
+                { speaker: 'Raj', accent: 'en-AU', text: "Great point. So let's talk timeline. I'm thinking we should complete the literature review in the first two weeks to establish our research framework." },
+                
+                { speaker: 'Lisa', accent: 'en-US', text: "That makes sense. Then in weeks three to five, I can conduct the field data collection using the monitoring equipment from the environmental lab." },
+                
+                { speaker: 'Emma', accent: 'en-GB', text: "Perfect. Raj, during weeks six and seven, you could analyze the data and prepare statistical graphs for our preliminary results, right?" },
+                
+                { speaker: 'Raj', accent: 'en-AU', text: "Definitely. I'll have all the statistical analysis done and create visual representations of our findings. That should give us a clear picture of what we've discovered." },
+                
+                { speaker: 'Lisa', accent: 'en-US', text: "Then in weeks eight and nine, we can complete the final report and submit it to our department supervisor for review. That gives us time for revisions if needed." },
+                
+                { speaker: 'Emma', accent: 'en-GB', text: "And finally, we'll deliver our presentation during assessment week in week ten. That's when all the projects are evaluated." },
+                
+                { speaker: 'Raj', accent: 'en-AU', text: "This timeline looks really solid. I think we've got a good plan that plays to everyone's strengths while ensuring we meet all the requirements." },
+                
+                { speaker: 'Lisa', accent: 'en-US', text: "I'm feeling confident about this project now. With Emma keeping us organized, Raj handling the analysis, and me managing the field work, plus our collaborative presentation, we should do really well." },
+                
+                { speaker: 'Emma', accent: 'en-GB', text: "Brilliant! I'll send everyone a summary of what we've discussed today, along with the timeline. Our next meeting should be in a week to check our progress on the literature review." }
+            ];
+        }
+
+        // Audio control functions with multi-speaker support
+        function playAudio() {
+            console.log('🎧 Play button clicked - starting three-speaker group discussion');
+            
+            if (!checkInternetForAudio()) return;
+            
+            const playBtn = document.getElementById('playBtn');
+            
+            // Disable button during playback
+            playBtn.disabled = true;
+            playBtn.style.opacity = '0.6';
+            playBtn.style.cursor = 'not-allowed';
+            
+            isPlaying = true;
+            
+            // Start audio simulation
+            audioInterval = setInterval(updateProgress, 1000);
+            
+            // Check for speech synthesis support
+            if (!('speechSynthesis' in window)) {
+                console.error('Speech synthesis not supported');
+                alert('Your browser does not support Text-to-Speech. Please try Chrome, Firefox, or Edge.');
+                stopAudio();
+                return;
+            }
+            
+            console.log('Three-speaker speech synthesis ready, proceeding...');
+            
+            // Cancel any existing speech
+            speechSynthesis.cancel();
+            
+            // Wait a moment for cancellation to complete
+            setTimeout(() => {
+                const conversationScript = getConversationScript();
+                console.log('Group conversation script segments:', conversationScript.length);
+                
+                // Start playing conversation sequentially
+                playConversationSegments(conversationScript, 0);
+            }, 100);
+        }
+
+        // Play conversation in segments with speaker identification
+        function playConversationSegments(segments, currentIndex) {
+            if (currentIndex >= segments.length) {
+                console.log('✅ All group conversation segments completed');
+                stopAudio();
+                return;
+            }
+            
+            if (!isPlaying) {
+                console.log('🛑 Group conversation playback stopped by user');
+                return;
+            }
+            
+            const currentSegment = segments[currentIndex];
+            console.log(`🗣️ ${currentSegment.speaker}: "${currentSegment.text.substring(0, 50)}..."`);
+            
+            // Highlight current speaker
+            highlightCurrentSpeaker(currentSegment.speaker);
+            
+            const utterance = new SpeechSynthesisUtterance(currentSegment.text);
+            utterance.rate = 0.8;
+            
+            // Set pitch based on speaker
+            if (currentSegment.speaker === 'Emma') {
+                utterance.pitch = 1.1;
+            } else if (currentSegment.speaker === 'Raj') {
+                utterance.pitch = 0.9;
+            } else { // Lisa
+                utterance.pitch = 1.0;
+            }
+            
+            utterance.volume = 1.0;
+            
+            // Select voice based on speaker accent
+            const voices = speechSynthesis.getVoices();
+            if (voices.length > 0) {
+                let selectedVoice = voices.find(voice => 
+                    voice.lang === currentSegment.accent || 
+                    (currentSegment.accent === 'en-GB' && (voice.name.includes('UK') || voice.name.includes('British'))) ||
+                    (currentSegment.accent === 'en-AU' && (voice.name.includes('AU') || voice.name.includes('Australian'))) ||
+                    (currentSegment.accent === 'en-US' && (voice.name.includes('US') || voice.name.includes('American')))
+                );
+                
+                if (!selectedVoice) {
+                    selectedVoice = voices.find(voice => 
+                        voice.lang.startsWith('en-') || voice.lang === 'en'
+                    );
+                }
+                
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                    console.log(`🎤 ${currentSegment.speaker} using voice: ${selectedVoice.name} (${selectedVoice.lang})`);
+                }
+            }
+            
+            utterance.onstart = function() {
+                console.log(`✅ ${currentSegment.speaker} segment ${currentIndex + 1} started`);
+            };
+            
+            utterance.onend = function() {
+                console.log(`✅ ${currentSegment.speaker} segment ${currentIndex + 1} completed`);
+                // Remove speaker highlighting
+                clearSpeakerHighlight();
+                // Add pause between speakers
+                setTimeout(() => {
+                    playConversationSegments(segments, currentIndex + 1);
+                }, 700);
+            };
+            
+            utterance.onerror = function(event) {
+                console.error(`❌ Error in ${currentSegment.speaker} segment ${currentIndex + 1}:`, event.error);
+                // Try to continue with next segment
+                clearSpeakerHighlight();
+                setTimeout(() => {
+                    playConversationSegments(segments, currentIndex + 1);
+                }, 1000);
+            };
+            
+            try {
+                speechSynthesis.speak(utterance);
+            } catch (error) {
+                console.error(`❌ Failed to speak ${currentSegment.speaker} segment ${currentIndex + 1}:`, error);
+                // Try next segment
+                clearSpeakerHighlight();
+                setTimeout(() => {
+                    playConversationSegments(segments, currentIndex + 1);
+                }, 1000);
+            }
+        }
+
+        // Speaker highlighting functions
+        function highlightCurrentSpeaker(speakerName) {
+            clearSpeakerHighlight();
+            
+            if (speakerName === 'Emma') {
+                document.getElementById('speaker-emma').classList.add('active');
+            } else if (speakerName === 'Raj') {
+                document.getElementById('speaker-raj').classList.add('active');
+            } else if (speakerName === 'Lisa') {
+                document.getElementById('speaker-lisa').classList.add('active');
+            }
+            
+            currentSpeaker = speakerName;
+        }
+
+        function clearSpeakerHighlight() {
+            document.querySelectorAll('.speaker-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            currentSpeaker = null;
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            currentTime = 0;
+            
+            if (audioInterval) {
+                clearInterval(audioInterval);
+                audioInterval = null;
+            }
+            
+            // Re-enable button
+            const playBtn = document.getElementById('playBtn');
+            playBtn.disabled = false;
+            playBtn.style.opacity = '1';
+            playBtn.style.cursor = 'pointer';
+            
+            // Reset progress
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            
+            // Clear speaker highlighting
+            clearSpeakerHighlight();
+            
+            // Cancel speech synthesis
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+        }
+
+        function updateProgress() {
+            if (!isPlaying) return;
+            
+            currentTime++;
+            const progressPercent = (currentTime / totalDuration) * 100;
+            
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('currentTime').textContent = formatTime(currentTime);
+            
+            if (currentTime >= totalDuration) {
+                console.log('⏰ Timer completed - showing auto-submit popup');
+                showAutoSubmitPopup();
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function checkInternetForAudio() {
+            console.log('🌐 Network status:', navigator.onLine ? 'Online' : 'Offline');
+            console.log('🔊 Speech synthesis available:', 'speechSynthesis' in window);
+            
+            if (!('speechSynthesis' in window)) {
+                alert('Text-to-Speech is not supported in your browser. Please use Chrome, Firefox, Edge, or Safari.');
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Test audio function for three-speaker debugging
+        function testAudio() {
+            console.log('🧪 Testing three-speaker audio system...');
+            
+            if (!('speechSynthesis' in window)) {
+                alert('❌ Speech Synthesis not supported in this browser');
+                return;
+            }
+            
+            // Cancel any existing speech
+            speechSynthesis.cancel();
+            
+            // Create test utterances for all three speakers
+            const testSegments = [
+                { speaker: 'Emma', accent: 'en-GB', text: "Audio test for Emma with British accent." },
+                { speaker: 'Raj', accent: 'en-AU', text: "Audio test for Raj with Australian accent." },
+                { speaker: 'Lisa', accent: 'en-US', text: "Audio test for Lisa with American accent." }
+            ];
+            
+            let testIndex = 0;
+            
+            function playTestSegment() {
+                if (testIndex >= testSegments.length) {
+                    alert('✅ Three-speaker audio test completed! All speakers should have been audible with different accents.');
+                    return;
+                }
+                
+                const segment = testSegments[testIndex];
+                highlightCurrentSpeaker(segment.speaker);
+                
+                const utterance = new SpeechSynthesisUtterance(segment.text);
+                utterance.rate = 1;
+                
+                if (segment.speaker === 'Emma') {
+                    utterance.pitch = 1.1;
+                } else if (segment.speaker === 'Raj') {
+                    utterance.pitch = 0.9;
+                } else {
+                    utterance.pitch = 1.0;
+                }
+                
+                utterance.volume = 1;
+                
+                const voices = speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    let voice = voices.find(v => v.lang === segment.accent) || 
+                               voices.find(v => v.lang.startsWith('en-')) || 
+                               voices[0];
+                    utterance.voice = voice;
+                    console.log(`🎤 Test ${segment.speaker} using voice: ${voice.name} (${voice.lang})`);
+                }
+                
+                utterance.onend = function() {
+                    clearSpeakerHighlight();
+                    testIndex++;
+                    setTimeout(playTestSegment, 1000);
+                };
+                
+                utterance.onerror = function(event) {
+                    console.error('❌ Test audio error:', event.error);
+                    clearSpeakerHighlight();
+                    alert('❌ Audio test failed: ' + event.error);
+                };
+                
+                try {
+                    speechSynthesis.speak(utterance);
+                    if (testIndex === 0) {
+                        alert('✅ Three-speaker audio test started! Listen for British, Australian, and American accents.');
+                    }
+                } catch (error) {
+                    console.error('❌ Error starting test audio:', error);
+                    alert('❌ Failed to start audio test: ' + error.message);
+                }
+            }
+            
+            playTestSegment();
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Academic Listening Part 3 Practice 2 - Going to introduction');
+            window.location.href = 'IELTS_Academic_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Test submission and scoring
+        function submitTest() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Get answers for matching questions (21-25)
+            for (let i = 21; i <= 25; i++) {
+                const selectedOption = document.getElementById(`q${i}`);
+                const answer = selectedOption ? selectedOption.value : '';
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`];
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Get answers for flow chart questions (26-30)
+            for (let i = 26; i <= 30; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                answers[`q${i}`] = answer;
+                
+                const correct = correctAnswers[`q${i}`].toLowerCase();
+                const isCorrect = answer === correct;
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[`q${i}`]}<br>
+                        <strong>Explanation:</strong> ${explanations[`q${i}`]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Focus on identifying different speakers in group discussions and tracking who suggests what");
+                tips.push("Practice listening for task allocation and responsibility assignments in academic group work");
+                tips.push("Work on understanding British, Australian, and American accents in collaborative settings");
+                tips.push("Listen to university study group recordings and project planning meetings regularly");
+            } else if (score <= 6) {
+                tips.push("Develop better speaker tracking skills by paying attention to individual voices and roles");
+                tips.push("Practice following project planning discussions and timeline development conversations");
+                tips.push("Work on matching questions with academic collaboration vocabulary and project terminology");
+                tips.push("Focus on understanding group dynamics and decision-making processes in academic contexts");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to catch specific project details in multi-speaker planning conversations");
+                tips.push("Practice following complex timeline discussions and responsibility allocation between group members");
+                tips.push("Work on maintaining concentration throughout longer group planning sessions with multiple speakers");
+                tips.push("Review vocabulary related to project management, timeline planning, and academic collaboration");
+            } else {
+                tips.push("Excellent work! Continue practicing with authentic IELTS Academic Part 3 materials");
+                tips.push("Focus on time management to complete both matching questions and flow chart completion efficiently");
+                tips.push("Practice with different accent combinations in group settings to prepare for test day variety");
+                tips.push("Consider helping others to reinforce your own group conversation listening and project planning skills");
+            }
+            
+            return tips;
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('💬 IELTS Academic Listening Part 3 Practice 2 - Study Group Meeting loaded');
+            
+            // Debug three-speaker audio system
+            console.log('🔊 Browser audio capabilities:');
+            console.log('- speechSynthesis available:', 'speechSynthesis' in window);
+            console.log('- Web Audio API available:', 'AudioContext' in window || 'webkitAudioContext' in window);
+            console.log('- User agent:', navigator.userAgent);
+            
+            // Test speech synthesis availability
+            if ('speechSynthesis' in window) {
+                setTimeout(() => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🎤 Initial voices check:', voices.length, 'voices available');
+                    if (voices.length === 0) {
+                        console.log('⏳ Waiting for voices to load...');
+                        speechSynthesis.addEventListener('voiceschanged', function() {
+                            const newVoices = speechSynthesis.getVoices();
+                            console.log('🎤 Voices loaded:', newVoices.length, 'voices now available');
+                            
+                            // Log available voices for all three accents
+                            const britishVoices = newVoices.filter(v => v.lang === 'en-GB' || v.name.includes('British') || v.name.includes('UK'));
+                            const australianVoices = newVoices.filter(v => v.lang === 'en-AU' || v.name.includes('Australian') || v.name.includes('AU'));
+                            const americanVoices = newVoices.filter(v => v.lang === 'en-US' || v.name.includes('American') || v.name.includes('US'));
+                            console.log('🇬🇧 British voices:', britishVoices.length);
+                            console.log('🇦🇺 Australian voices:', australianVoices.length);
+                            console.log('🇺🇸 American voices:', americanVoices.length);
+                        });
+                    }
+                }, 1000);
+            }
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+            
+            // Auto-focus on first input when questions section becomes visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target.id === 'questions') {
+                        setTimeout(() => {
+                            const firstSelect = document.getElementById('q21');
+                            if (firstSelect) {
+                                firstSelect.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }, 500);
+                    }
+                });
+            });
+            
+            const questionsSection = document.getElementById('questions');
+            if (questionsSection) {
+                observer.observe(questionsSection);
+            }
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+            clearSpeakerHighlight();
+        });
+    </script>
+</body>
+</html> 
