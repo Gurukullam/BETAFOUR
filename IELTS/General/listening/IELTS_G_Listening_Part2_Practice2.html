@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Listening Part 2 - Practice 2 | GK Foundation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle-label {
+            position: fixed;
+            top: 85px;
+            left: 382px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 20px;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 42px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-content {
+            padding: 1.5rem 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1.2rem 1rem;
+            margin-bottom: 0.8rem;
+            background: rgba(139, 69, 19, 0.06);
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 3px solid #8b4513;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(139, 69, 19, 0.1);
+        }
+
+        .menu-item:hover {
+            background: rgba(139, 69, 19, 0.12);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+            border-left-color: #d4af37;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0;
+            color: #2c1810;
+            letter-spacing: 0.2px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+        }
+
+        /* Audio Player Section */
+        .audio-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .audio-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .audio-header h2 {
+            color: #8b4513;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .audio-instructions {
+            background: rgba(255, 193, 7, 0.1);
+            border: 2px solid rgba(255, 193, 7, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .audio-instructions h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .audio-instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .audio-instructions li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .audio-instructions li::before {
+            content: "🔊";
+            position: absolute;
+            left: 0;
+        }
+
+        .audio-player {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(135deg, #B8860B, #CD853F);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.5);
+        }
+
+        .audio-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(139, 69, 19, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .time-display {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #8b4513;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        /* Questions Section */
+        .questions-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #8b4513;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 1rem;
+        }
+
+        /* Map Labelling Questions */
+        .map-section {
+            margin-bottom: 3rem;
+        }
+
+        .map-section h3 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .map-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .festival-map {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+            border: 3px solid #8b4513;
+            border-radius: 15px;
+            padding: 1.5rem;
+            height: 450px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .map-title {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #8b4513;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        .map-area {
+            border: 2px solid #d4af37;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #8b4513;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px;
+            font-size: 0.9rem;
+            text-align: center;
+            min-height: 50px;
+        }
+
+        .map-area:hover {
+            background: rgba(212, 175, 55, 0.4);
+            transform: scale(1.02);
+        }
+
+        .map-question {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ffffff;
+            border: 2px solid #d4af37;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #8b4513;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-size: 0.8rem;
+        }
+
+        /* Grid positioning for map areas */
+        .entrance { grid-column: 2; grid-row: 2; }
+        .parking { grid-column: 3; grid-row: 2; }
+        .main-stage { grid-column: 1; grid-row: 3; }
+        .food-court { grid-column: 3; grid-row: 3; }
+        .craft-market { grid-column: 1; grid-row: 4; }
+        .children-area { grid-column: 2; grid-row: 4; }
+
+        .map-options {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .map-option {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: 600;
+            color: #8b4513;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .map-option:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .map-option.selected {
+            background: rgba(212, 175, 55, 0.4);
+            border-color: #8b4513;
+        }
+
+        /* Table Completion Questions */
+        .table-section {
+            margin-bottom: 2rem;
+        }
+
+        .table-section h3 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .table-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid #d4af37;
+            overflow-x: auto;
+        }
+
+        .festival-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .festival-table th,
+        .festival-table td {
+            border: 2px solid #d4af37;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .festival-table th {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            font-weight: bold;
+        }
+
+        .festival-table td {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .table-blank {
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            padding: 0.5rem;
+            font-size: 1rem;
+            min-width: 100px;
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .table-blank:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #B8860B, #CD853F);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.5);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            display: none;
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .answer-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            gap: 1rem;
+        }
+
+        .answer-correct {
+            border-left: 4px solid #28a745;
+        }
+
+        .answer-incorrect {
+            border-left: 4px solid #dc3545;
+        }
+
+        .answer-icon {
+            font-size: 1.5rem;
+        }
+
+        .answer-icon.correct {
+            color: #28a745;
+        }
+
+        .answer-icon.incorrect {
+            color: #dc3545;
+        }
+
+        .answer-details {
+            flex: 1;
+        }
+
+        .answer-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .answer-explanation {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .improvement-tips {
+            background: rgba(255, 193, 7, 0.1);
+            border: 2px solid rgba(255, 193, 7, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .improvement-tips li::before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+                margin-top: 60px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .audio-player {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .container {
+                margin-left: 320px;
+            }
+
+            .container.menu-collapsed {
+                margin-left: 20px;
+            }
+
+            .menu-toggle {
+                left: 320px;
+                top: 100px;
+            }
+
+            .menu-toggle.collapsed {
+                left: 20px;
+            }
+
+            .menu-toggle-label {
+                left: 345px;
+                top: 160px;
+            }
+
+            .menu-toggle-label.collapsed {
+                left: 45px;
+            }
+
+            .gk-logo-container {
+                top: 100px;
+                right: 20px;
+            }
+
+            .festival-map {
+                height: 350px;
+                padding: 1rem;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .entrance { grid-column: 1; grid-row: 2; }
+            .parking { grid-column: 2; grid-row: 2; }
+            .main-stage { grid-column: 1; grid-row: 3; }
+            .food-court { grid-column: 2; grid-row: 3; }
+            .craft-market { grid-column: 1; grid-row: 4; }
+            .children-area { grid-column: 2; grid-row: 4; }
+
+            .map-options {
+                grid-template-columns: 1fr;
+            }
+
+            .festival-table {
+                font-size: 0.9rem;
+            }
+
+            .festival-table th,
+            .festival-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Spacer -->
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo Container (Back Button) -->
+    <div class="gk-logo-container" onclick="handleBackButton()" title="Back to Introduction">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" onclick="toggleMenu()">
+        ‹
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">IELTS Part 2 Test Guide</div>
+        </div>
+        <div class="menu-content">
+            <a href="#instructions" class="menu-item" onclick="navigateToSection('instructions')">
+                <div class="item-title">1. Instructions</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">2. Audio Monologue</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">3. Questions (Part 2)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. Results & Analysis</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+        <!-- Instructions Section -->
+        <section id="instructions" class="hero-section">
+            <h1 class="hero-title fade-in">
+                🎪 IELTS General Listening - Part 2 (Practice 2)
+            </h1>
+            <div class="hero-subtitle fade-in">
+                Local Festival Information Monologue
+            </div>
+            <div class="hero-description fade-in">
+                Listen to a festival organizer describing the layout and schedule of the annual Spring Festival. Answer Questions 11-20 based on what you hear.
+            </div>
+        </section>
+
+        <!-- Audio Section -->
+        <section id="audio-section" class="audio-section fade-in">
+            <div class="audio-header">
+                <h2>
+                    🎧 Audio Player - Spring Festival Information
+                </h2>
+            </div>
+
+            <div class="audio-instructions">
+                <h4>⚠️ Listening Instructions</h4>
+                <ul>
+                    <li>You will hear a monologue about a local spring festival</li>
+                    <li>The audio runs for approximately 5 minutes</li>
+                    <li>You have 6 minutes total to complete all questions</li>
+                    <li>Listen carefully and answer questions 11-20</li>
+                    <li>You can replay the audio as needed for practice</li>
+                </ul>
+            </div>
+
+            <div class="audio-player">
+                <button class="play-btn" onclick="playAudio()" id="playBtn">
+                    ▶️ Play Audio
+                </button>
+            </div>
+
+            <div class="audio-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-display" id="timeDisplay">00:00 / 05:00</div>
+            </div>
+        </section>
+
+        <!-- Questions Section -->
+        <section id="questions" class="questions-section fade-in">
+            <h2 class="section-title">
+                Questions 11-20: Spring Festival Information
+            </h2>
+
+            <!-- Map Labelling Questions 11-16 -->
+            <div class="map-section">
+                <h3>Questions 11-16: Label the map below</h3>
+                <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">Write the correct letter A-J next to questions 11-16.</p>
+
+                <div class="map-container">
+                    <div class="festival-map">
+                        <div class="map-title">SPRINGFIELD ANNUAL SPRING FESTIVAL - SITE MAP</div>
+                        
+                        <!-- Map Areas with Question Numbers -->
+                        <div class="map-area main-stage">
+                            Main Stage
+                            <div class="map-question">11</div>
+                        </div>
+                        <div class="map-area entrance">
+                            Main Entrance
+                            <div class="map-question">12</div>
+                        </div>
+                        <div class="map-area parking">
+                            Parking
+                            <div class="map-question">16</div>
+                        </div>
+                        <div class="map-area craft-market">
+                            Craft Market
+                            <div class="map-question">14</div>
+                        </div>
+                        <div class="map-area food-court">
+                            Food Court
+                            <div class="map-question">13</div>
+                        </div>
+                        <div class="map-area children-area">
+                            Children's Area
+                            <div class="map-question">15</div>
+                        </div>
+                    </div>
+
+                    <div class="map-options">
+                        <div class="map-option" data-letter="A">A - Information Booth</div>
+                        <div class="map-option" data-letter="B">B - First Aid Station</div>
+                        <div class="map-option" data-letter="C">C - Local History Display</div>
+                        <div class="map-option" data-letter="D">D - Music Performance Area</div>
+                        <div class="map-option" data-letter="E">E - Art Exhibition Tent</div>
+                        <div class="map-option" data-letter="F">F - Recycling Station</div>
+                        <div class="map-option" data-letter="G">G - Lost and Found</div>
+                        <div class="map-option" data-letter="H">H - Community Garden</div>
+                        <div class="map-option" data-letter="I">I - Beer Garden</div>
+                        <div class="map-option" data-letter="J">J - Restrooms</div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1rem; background: rgba(255, 193, 7, 0.1); border-radius: 8px;">
+                        <strong>Selected Answers:</strong><br>
+                        11: <span id="answer11">_</span> &nbsp;&nbsp;
+                        12: <span id="answer12">_</span> &nbsp;&nbsp;
+                        13: <span id="answer13">_</span> &nbsp;&nbsp;
+                        14: <span id="answer14">_</span> &nbsp;&nbsp;
+                        15: <span id="answer15">_</span> &nbsp;&nbsp;
+                        16: <span id="answer16">_</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Completion Questions 17-20 -->
+            <div class="table-section">
+                <h3>Questions 17-20: Complete the table below</h3>
+                <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">Write NO MORE THAN TWO WORDS for each answer.</p>
+
+                <div class="table-container">
+                    <table class="festival-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Activity</th>
+                                <th>Location</th>
+                                <th>Special Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10:00 AM</td>
+                                <td>Opening Ceremony</td>
+                                <td>Main Stage</td>
+                                <td>Features local <input type="text" class="table-blank" id="q17"> group</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 PM</td>
+                                <td>Cooking Competition</td>
+                                <td>Food Court</td>
+                                <td>Prize: <input type="text" class="table-blank" id="q18"> vouchers</td>
+                            </tr>
+                            <tr>
+                                <td>2:00 PM</td>
+                                <td>Children's Show</td>
+                                <td>Children's Area</td>
+                                <td>Starring <input type="text" class="table-blank" id="q19"> the Clown</td>
+                            </tr>
+                            <tr>
+                                <td>6:00 PM</td>
+                                <td>Evening Concert</td>
+                                <td>Main Stage</td>
+                                <td>Bring your own <input type="text" class="table-blank" id="q20"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <button class="submit-btn" onclick="submitTest()">
+                    SUBMIT ANSWERS
+                </button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="results-section">
+            <h2 class="section-title">
+                Test Results & Analysis
+            </h2>
+            
+            <div class="score-display">
+                <div class="score-number" id="scoreNumber">0</div>
+                <div class="score-text">out of 10 questions correct</div>
+            </div>
+
+            <div class="answer-review" id="answerReview">
+                <!-- Answer review will be populated by JavaScript -->
+            </div>
+
+            <div class="improvement-tips">
+                <h4>💡 Part 2 Improvement Tips</h4>
+                <ul id="improvementList">
+                    <!-- Tips will be populated by JavaScript -->
+                </ul>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <script>
+        // Audio simulation and test data
+        let audioContext = null;
+        let isPlaying = false;
+        let currentTime = 0;
+        let totalDuration = 300; // 5 minutes in seconds
+        let audioInterval = null;
+
+        // Map question tracking
+        let currentQuestion = 11;
+        let mapAnswers = {};
+
+        // Correct answers for Part 2 Practice 2
+        const correctAnswers = {
+            q11: 'A',  // Information Booth (near main entrance)
+            q12: 'D',  // Music Performance Area (near main stage)
+            q13: 'B',  // First Aid Station (near food court)
+            q14: 'E',  // Art Exhibition Tent (near craft market)
+            q15: 'J',  // Restrooms (near children's area)
+            q16: 'F',  // Recycling Station (near parking)
+            q17: 'dance',
+            q18: 'restaurant',
+            q19: 'benny',
+            q20: 'blanket'
+        };
+
+        // Question explanations
+        const explanations = {
+            q11: 'The Information Booth is located near the main entrance to help visitors as they arrive.',
+            q12: 'The Music Performance Area is positioned next to the main stage for acoustic performances.',
+            q13: 'The First Aid Station is strategically placed near the food court for easy access.',
+            q14: 'The Art Exhibition Tent is set up near the craft market to complement the artistic theme.',
+            q15: 'Restrooms are conveniently located near the children\'s area for families.',
+            q16: 'The Recycling Station is placed near the parking area for easy waste disposal.',
+            q17: 'The opening ceremony features a local dance group performing traditional dances.',
+            q18: 'The cooking competition winner receives restaurant vouchers worth $100.',
+            q19: 'The children\'s show stars Benny the Clown, a popular local entertainer.',
+            q20: 'For the evening concert, visitors should bring their own blanket to sit comfortably on the grass.'
+        };
+
+        // Audio control functions
+        function playAudio() {
+            if (!checkInternetForAudio()) return;
+            
+            const playBtn = document.getElementById('playBtn');
+            
+            // Disable button during playback
+            playBtn.disabled = true;
+            playBtn.style.opacity = '0.6';
+            playBtn.style.cursor = 'not-allowed';
+            
+            isPlaying = true;
+            
+            // Start audio simulation
+            audioInterval = setInterval(updateProgress, 1000);
+            
+            // Simulate TTS narration
+            if ('speechSynthesis' in window) {
+                // Cancel any existing speech
+                speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(getMonologueScript());
+                utterance.rate = 0.8;
+                utterance.pitch = 1;
+                utterance.volume = 1.0;
+                
+                // Wait for voices to load and set voice
+                function setVoiceAndSpeak() {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('Available voices:', voices.length);
+                    
+                    // Try to find Australian English voice, fallback to any English voice
+                    let selectedVoice = voices.find(voice => 
+                        voice.lang === 'en-AU' || voice.name.includes('Australia') || voice.name.includes('Australian')
+                    );
+                    
+                    if (!selectedVoice) {
+                        selectedVoice = voices.find(voice => 
+                            voice.lang.startsWith('en-') || voice.lang === 'en'
+                        );
+                    }
+                    
+                    if (selectedVoice) {
+                        utterance.voice = selectedVoice;
+                        console.log('Using voice:', selectedVoice.name);
+                    } else {
+                        console.log('Using default voice');
+                    }
+                    
+                    utterance.onstart = () => {
+                        console.log('Speech started');
+                    };
+                    
+                    utterance.onend = () => {
+                        console.log('Speech ended');
+                        stopAudio();
+                    };
+                    
+                    utterance.onerror = (event) => {
+                        console.error('Speech error:', event.error);
+                        alert('Audio playback failed. Please try again.');
+                        stopAudio();
+                    };
+                    
+                    speechSynthesis.speak(utterance);
+                }
+                
+                // Check if voices are already loaded
+                if (speechSynthesis.getVoices().length > 0) {
+                    setVoiceAndSpeak();
+                } else {
+                    // Wait for voices to load
+                    speechSynthesis.onvoiceschanged = () => {
+                        setVoiceAndSpeak();
+                        speechSynthesis.onvoiceschanged = null; // Remove listener
+                    };
+                }
+            } else {
+                alert('Speech synthesis is not supported in this browser. Please try a different browser.');
+                stopAudio();
+            }
+        }
+
+        function stopAudio() {
+            const playBtn = document.getElementById('playBtn');
+            
+            isPlaying = false;
+            currentTime = 0;
+            
+            // Re-enable button
+            playBtn.disabled = false;
+            playBtn.style.opacity = '1';
+            playBtn.style.cursor = 'pointer';
+            
+            clearInterval(audioInterval);
+            updateProgress();
+            
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+        }
+
+        function updateProgress() {
+            if (isPlaying && currentTime < totalDuration) {
+                currentTime++;
+            }
+            
+            const progress = (currentTime / totalDuration) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            
+            const minutes = Math.floor(currentTime / 60);
+            const seconds = currentTime % 60;
+            const totalMinutes = Math.floor(totalDuration / 60);
+            const totalSeconds = totalDuration % 60;
+            
+            document.getElementById('timeDisplay').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} / ${totalMinutes.toString().padStart(2, '0')}:${totalSeconds.toString().padStart(2, '0')}`;
+            
+            if (currentTime >= totalDuration) {
+                stopAudio();
+            }
+        }
+
+        function getMonologueScript() {
+            return `Good morning everyone, and welcome to the Springfield Annual Spring Festival! I'm Margaret, the festival coordinator, and I'll be giving you a quick overview of our festival layout and today's exciting program.
+
+First, let me orient you with our festival map. As you enter through the main entrance, you'll immediately see our Information Booth marked as point A. This is where you can get maps, programs, and ask any questions about today's events.
+
+Moving towards the main stage area, you'll find our Music Performance Area at point D, just adjacent to the main stage. This smaller stage will host acoustic performances throughout the day.
+
+For safety, we've placed our First Aid Station at point B, conveniently located near the food court where most people tend to gather. Our qualified staff will be there all day.
+
+Art lovers will be delighted with our Art Exhibition Tent at point E, positioned right next to the craft market. You can admire local artwork and perhaps purchase some unique pieces.
+
+Families with children will find our restrooms at point J, strategically placed near the children's area for your convenience.
+
+Finally, we're committed to being environmentally friendly, so you'll find our Recycling Station at point F, near the parking area. Please use these bins to help keep our festival green.
+
+Now, let me tell you about today's schedule. We're kicking off at 10 AM with our opening ceremony on the main stage. This year, we're featuring a fantastic local dance group performing traditional folk dances.
+
+At noon, don't miss our cooking competition in the food court. The winner will receive restaurant vouchers worth 100 dollars to spend at local eateries.
+
+At 2 PM, the children will love our special show in the children's area, starring Benny the Clown. He's been entertaining families in our community for over ten years.
+
+Finally, at 6 PM, we'll conclude with our evening concert on the main stage. For this outdoor performance, I recommend bringing your own blanket to sit comfortably on the grass.
+
+We hope you have a wonderful time at our Spring Festival today. Enjoy all the activities, food, and entertainment we have to offer!`;
+        }
+
+        // Map interaction functions
+        function handleMapOptionClick(option) {
+            const letter = option.getAttribute('data-letter');
+            
+            if (currentQuestion <= 16) {
+                // Store the answer
+                mapAnswers[`q${currentQuestion}`] = letter;
+                document.getElementById(`answer${currentQuestion}`).textContent = letter;
+                
+                // Visual feedback
+                document.querySelectorAll('.map-option').forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                
+                // Move to next question
+                currentQuestion++;
+                
+                // Remove selection after a moment
+                setTimeout(() => {
+                    option.classList.remove('selected');
+                }, 1000);
+            }
+        }
+
+        // Internet connection check
+        function checkInternetForAudio() {
+            if (!navigator.onLine) {
+                alert('Please check your internet connection to play audio.');
+                return false;
+            }
+            return true;
+        }
+
+        // Submit test function
+        function submitTest() {
+            let score = 0;
+            const totalQuestions = 10;
+            const reviewContainer = document.getElementById('answerReview');
+            const improvementContainer = document.getElementById('improvementList');
+            
+            reviewContainer.innerHTML = '';
+            improvementContainer.innerHTML = '';
+            
+            // Check map labelling questions (11-16)
+            for (let i = 11; i <= 16; i++) {
+                const userAnswer = mapAnswers[`q${i}`] || '';
+                const correctAnswer = correctAnswers[`q${i}`];
+                const isCorrect = userAnswer === correctAnswer;
+                
+                if (isCorrect) score++;
+                
+                const answerItem = document.createElement('div');
+                answerItem.className = `answer-item ${isCorrect ? 'answer-correct' : 'answer-incorrect'}`;
+                answerItem.innerHTML = `
+                    <div class="answer-icon ${isCorrect ? 'correct' : 'incorrect'}">
+                        ${isCorrect ? '✓' : '✗'}
+                    </div>
+                    <div class="answer-details">
+                        <div class="answer-question">Question ${i}: Your answer: ${userAnswer || 'No answer'} | Correct: ${correctAnswer}</div>
+                        <div class="answer-explanation">${explanations[`q${i}`]}</div>
+                    </div>
+                `;
+                reviewContainer.appendChild(answerItem);
+            }
+            
+            // Check table completion questions (17-20)
+            for (let i = 17; i <= 20; i++) {
+                const userAnswer = document.getElementById(`q${i}`).value.toLowerCase().trim();
+                const correctAnswer = correctAnswers[`q${i}`].toLowerCase();
+                const isCorrect = userAnswer === correctAnswer;
+                
+                if (isCorrect) score++;
+                
+                const answerItem = document.createElement('div');
+                answerItem.className = `answer-item ${isCorrect ? 'answer-correct' : 'answer-incorrect'}`;
+                answerItem.innerHTML = `
+                    <div class="answer-icon ${isCorrect ? 'correct' : 'incorrect'}">
+                        ${isCorrect ? '✓' : '✗'}
+                    </div>
+                    <div class="answer-details">
+                        <div class="answer-question">Question ${i}: Your answer: "${userAnswer}" | Correct: "${correctAnswer}"</div>
+                        <div class="answer-explanation">${explanations[`q${i}`]}</div>
+                    </div>
+                `;
+                reviewContainer.appendChild(answerItem);
+            }
+            
+            // Display score
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('scoreNumber').style.color = score >= 7 ? '#28a745' : score >= 5 ? '#ffc107' : '#dc3545';
+            
+            // Generate improvement tips
+            const tips = generateImprovementTips(score, totalQuestions);
+            tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                improvementContainer.appendChild(li);
+            });
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateImprovementTips(score, total) {
+            const percentage = (score / total) * 100;
+            const tips = [];
+            
+            if (percentage >= 80) {
+                tips.push("Excellent work! You have strong skills with map labelling and table completion.");
+                tips.push("Continue practicing with different question formats and visual materials.");
+                tips.push("Focus on listening for specific details and spatial relationships.");
+            } else if (percentage >= 60) {
+                tips.push("Good progress! Practice identifying locations and directional language.");
+                tips.push("Work on understanding descriptions of layouts and schedules.");
+                tips.push("Practice both map labelling and table completion question types.");
+            } else {
+                tips.push("Focus on understanding spatial descriptions and location vocabulary.");
+                tips.push("Practice following directions and identifying key landmarks.");
+                tips.push("Listen for time references and event scheduling information.");
+                tips.push("Improve vocabulary related to festivals, events, and public spaces.");
+            }
+            
+            return tips;
+        }
+
+        // Menu functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            const container = document.querySelector('.container');
+            const isCollapsed = menu.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                menu.classList.remove('collapsed');
+                toggleBtn.classList.remove('collapsed');
+                toggleLabel.classList.remove('collapsed');
+                container.classList.remove('menu-collapsed');
+                toggleBtn.innerHTML = '‹';
+                toggleLabel.textContent = 'Collapse';
+            } else {
+                menu.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+                toggleLabel.classList.add('collapsed');
+                container.classList.add('menu-collapsed');
+                toggleBtn.innerHTML = '›';
+                toggleLabel.textContent = 'Expand';
+            }
+        }
+
+        // Navigation to sections
+        function navigateToSection(sectionId) {
+            const menu = document.getElementById('slideMenu');
+            if (!menu.classList.contains('collapsed')) {
+                toggleMenu();
+            }
+            scrollToSection(sectionId);
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Back button functionality
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS Part 2 Practice 2');
+            window.location.href = 'IELTS_General_Listening_Introduction.html';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📚 IELTS General Listening Part 2 Practice 2 loaded');
+            
+            // Initialize progress bar
+            updateProgress();
+            
+            // Add click handlers to map options
+            document.querySelectorAll('.map-option').forEach(option => {
+                option.addEventListener('click', () => handleMapOptionClick(option));
+            });
+            
+            // Load voices for speech synthesis
+            if ('speechSynthesis' in window) {
+                console.log('Speech synthesis supported');
+                
+                // Force load voices
+                speechSynthesis.getVoices();
+                
+                speechSynthesis.onvoiceschanged = () => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🔊 Speech synthesis voices loaded:', voices.length);
+                    
+                    // Show available voices in console for debugging
+                    voices.forEach((voice, index) => {
+                        console.log(`Voice ${index}: ${voice.name} (${voice.lang})`);
+                    });
+                };
+            } else {
+                console.error('Speech synthesis not supported');
+                alert('Your browser does not support audio playback. Please use Chrome, Firefox, Safari, or Edge.');
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                handleBackButton();
+            } else if (e.key === ' ' && e.target.tagName !== 'INPUT' && !isPlaying) {
+                e.preventDefault();
+                playAudio();
+            } else if (e.key === 'Tab' && e.ctrlKey) {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html> 
