@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS General Listening Part 4 - Practice 1: Environmental Science</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header spacing */
+        .header-spacer {
+            height: 20px;
+            width: 100%;
+        }
+
+        /* Guruvammal Logo as Back Button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+
+        .master-guruvammal-logo .musical-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container with menu support */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 360px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Professional Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-right: 3px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 8px 0 30px rgba(139, 69, 19, 0.15);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .slide-menu.collapsed {
+            transform: translateX(-340px);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.08);
+            color: #8b4513;
+            transform: translateX(8px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 360px;
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #d4af37;
+        }
+
+        .section-title {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .speaker-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .speaker-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            max-width: 500px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .speaker-card.active {
+            border-color: #8b4513;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(212, 175, 55, 0.1));
+            transform: scale(1.02);
+        }
+
+        .speaker-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .speaker-role {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .speaker-details {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .lecture-context {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #d4af37;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        /* Audio Player Styles */
+        .play-btn {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            margin-bottom: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .play-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
+        }
+
+        .play-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b4513, #d4af37);
+            height: 100%;
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+
+        .time-display {
+            text-align: center;
+            font-size: 1rem;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        .question-group {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .question-group-title {
+            font-size: 1.3em;
+            color: #8b4513;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #5d3a0a;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .question-text {
+            margin-bottom: 18px;
+            font-size: 1.08em;
+            line-height: 1.7;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 12px;
+            accent-color: #d4af37;
+        }
+
+        .summary-completion-container {
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .summary-completion-title {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 25px;
+        }
+
+        .summary-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #333;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .summary-input {
+            background: #fffbf0;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 0 5px;
+            min-width: 140px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #8b4513;
+        }
+
+        .summary-input:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+            background: white;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #5d3a0a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 40px auto;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5d3a0a, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            border-radius: 20px;
+            border: 2px solid #d4af37;
+        }
+
+        .score-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-text {
+            font-size: 1.3rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .answer-review {
+            margin-bottom: 2rem;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .improvement-tips {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .improvement-tips h4 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .improvement-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .improvement-tips li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .improvement-tips li::before {
+            content: '🌍';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Auto-submit popup styles */
+        .auto-submit-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auto-submit-popup {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            border: 3px solid #d4af37;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .auto-submit-title {
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .auto-submit-message {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .auto-submit-countdown {
+            font-size: 2rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .auto-submit-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .auto-submit-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auto-submit-btn.primary {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+        }
+
+        .auto-submit-btn.primary:hover {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            transform: translateY(-2px);
+        }
+
+        .auto-submit-btn.secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #d4af37;
+        }
+
+        .auto-submit-btn.secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 20px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+
+            .slide-menu.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                left: 30px;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .play-btn {
+                width: 90%;
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styles */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-spacer"></div>
+
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()">
+        <div class="master-guruvammal-logo">
+                            Ga<span class="musical-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Professional Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-title">🌍 IELTS General Listening</div>
+            <div class="menu-subtitle">Part 4 - Practice 1</div>
+        </div>
+        <div class="menu-content">
+            <a href="#speaker" class="menu-item" onclick="navigateToSection('speaker')">
+                <div class="item-title">1. Academic Lecturer</div>
+                <div class="item-description">🎓 Prof. Sarah Williams - Environmental Science</div>
+            </a>
+            <a href="#audio-section" class="menu-item" onclick="navigateToSection('audio-section')">
+                <div class="item-title">2. Climate Research Lecture</div>
+                <div class="item-description">🎧 Advanced Academic Presentation (7 min)</div>
+            </a>
+            <a href="#questions" class="menu-item" onclick="navigateToSection('questions')">
+                <div class="item-title">3. Academic Assessment</div>
+                <div class="item-description">📝 Sentence Completion (Questions 31-40)</div>
+            </a>
+            <a href="#results" class="menu-item" onclick="navigateToSection('results')">
+                <div class="item-title">4. Performance Analysis</div>
+                <div class="item-description">📊 Academic Results & Advanced Feedback</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span id="menuIcon">📋</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">🌍 IELTS General Listening - Part 4 (Practice 1)</h1>
+                <div class="hero-subtitle">
+                    Environmental Science Lecture - Climate Change Research
+                </div>
+                <p class="hero-description">
+                    Listen to Professor Sarah Williams delivering an advanced academic lecture on climate change research from the University of Oxford Environmental Science Department. This complex presentation covers research methodology, statistical analysis of global warming trends, environmental data interpretation, and policy implications. You will need to demonstrate university-level listening comprehension skills to complete summary completion and multiple choice questions. This practice covers Questions 31-40 and requires C1-level academic vocabulary understanding.
+                </p>
+            </section>
+
+            <section id="speaker" class="content-section">
+                <h2 class="section-title">🎓 Academic Lecturer Profile</h2>
+                <div class="speaker-container">
+                    <div class="speaker-card" id="speakerCard">
+                        <div class="speaker-name">Professor Sarah Williams</div>
+                        <div class="speaker-role">Environmental Science Department | University of Oxford</div>
+                        <div class="speaker-details">
+                            <strong>Academic Position:</strong> Professor of Climate Science and Environmental Policy<br>
+                            <strong>Accent:</strong> British English (Oxford Academic)<br>
+                            <strong>Specialization:</strong> Climate modeling, environmental data analysis, policy research<br>
+                            <strong>Research Focus:</strong> Global warming trends, mitigation strategies, environmental impact assessment<br>
+                            <strong>Teaching Experience:</strong> 15 years of university-level instruction and research supervision<br>
+                            <strong>Publications:</strong> Leading researcher in climate science with extensive peer-reviewed publications
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="audio-section" class="content-section">
+                <h2 class="section-title">🎧 Academic Lecture: Climate Change Research</h2>
+                <div class="lecture-context">
+                    <strong>Academic Context:</strong> University of Oxford Environmental Science Department lecture hall. Professor Williams is presenting advanced research findings on climate change impacts to graduate students and faculty members. This lecture includes complex scientific terminology, statistical data analysis, research methodology discussion, and policy implications requiring sophisticated academic listening skills and note-taking proficiency.
+                    <br><br>
+                    <strong>Content Complexity:</strong> C1-level academic discourse with specialized environmental science vocabulary, multi-clause sentence structures, abstract theoretical concepts, and rapid information density typical of university-level presentations.
+                </div>
+                
+                <button class="play-btn" onclick="playAudio()" id="playBtn">
+                    Play
+                </button>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">00:00</span> / <span id="totalTime">09:00</span>
+                    </div>
+                </div>
+                
+                <div id="currentSpeaker" style="text-align: center; margin-top: 20px; font-weight: bold; color: #8b4513; font-size: 1.1em;"></div>
+            </section>
+
+            <section id="questions" class="content-section">
+                <h2 class="section-title">📝 Academic Assessment - Climate Change Research</h2>
+                
+                <!-- Authentic IELTS Part 4 Format: Sentence Completion Questions (Questions 31-40) -->
+                <div class="question-group">
+                    <h3 class="question-group-title">Questions 31-40: Sentence Completion</h3>
+                    <p><em>Complete the notes below using ONE WORD ONLY for each answer.</em></p>
+                    
+                    <div class="summary-completion-container">
+                        <div class="summary-completion-title">Climate Change Research - Professor Williams' Lecture Notes</div>
+                        
+                        <div class="summary-text">
+                            <strong>Research Methodology and Scope</strong><br>
+                            The study analyzed data from <input type="text" class="summary-input" id="q31" placeholder="31"> weather stations situated worldwide. The methodology uses <input type="text" class="summary-input" id="q32" placeholder="32"> across multiple temporal scales, representing a significant innovation in climate research.
+                            <br><br>
+                            
+                            <strong>Key Research Findings</strong><br>
+                            The most alarming finding is the accelerated rate of <input type="text" class="summary-input" id="q33" placeholder="33">, which has increased substantially since 1990. This acceleration is primarily caused by <input type="text" class="summary-input" id="q34" placeholder="34"> from industrial activities. Climate models predict temperatures could rise by <input type="text" class="summary-input" id="q35" placeholder="35"> degrees Celsius within the next century.
+                            <br><br>
+                            
+                            <strong>Climate Patterns and Limitations</strong><br>
+                            The study reveals unprecedented changes in <input type="text" class="summary-input" id="q36" placeholder="36">, showing altered seasonal distributions. The methodology integrates <input type="text" class="summary-input" id="q37" placeholder="37"> with environmental indicators. However, current climate models are limited by uncertainty in <input type="text" class="summary-input" id="q38" placeholder="38">.
+                            <br><br>
+                            
+                            <strong>Policy Recommendations and Implications</strong><br>
+                            Effective mitigation strategies must prioritize <input type="text" class="summary-input" id="q39" placeholder="39"> and policy harmonization. The research emphasizes urgent implementation of carbon <input type="text" class="summary-input" id="q40" placeholder="40"> to address environmental challenges effectively.
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="submitAnswers()">Submit</button>
+            </section>
+
+            <section id="results" class="content-section" style="display: none;">
+                <h2 class="section-title">📊 Academic Performance Analysis</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text">out of 10 questions correct</div>
+                </div>
+
+                <div class="answer-review" id="answerReview">
+                    <!-- Answer review will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-tips">
+                    <h4>🌍 Academic Listening Enhancement Strategies</h4>
+                    <ul id="improvementList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Auto-submit Timer Popup -->
+    <div class="auto-submit-overlay" id="autoSubmitOverlay">
+        <div class="auto-submit-popup">
+            <div class="auto-submit-title">⏰ Academic Lecture Completed!</div>
+            <div class="auto-submit-message">
+                The lecture time has finished. You should submit your answers now as this simulates real IELTS Part 4 test conditions.
+            </div>
+            <div class="auto-submit-countdown" id="autoSubmitCountdown">10</div>
+            <div class="auto-submit-buttons">
+                <button class="auto-submit-btn primary" onclick="handleAutoSubmit()">Submit Now</button>
+                <button class="auto-submit-btn secondary" onclick="continueWithoutSubmit()">Continue Working</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Environmental science lecture data with complex academic content
+        const conversationData = [
+            {
+                speaker: "Professor Sarah Williams",
+                text: "Good afternoon, everyone. Today's lecture focuses on our latest research findings regarding accelerated climate change patterns and their implications for environmental policy. I'm Professor Sarah Williams from the Environmental Science Department, and I'll be presenting data from our comprehensive three-year study.",
+                duration: 18000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            },
+            {
+                speaker: "Professor Sarah Williams",
+                text: "Let me begin by outlining the scope of our research methodology. We analyzed temperature data from numerous weather stations worldwide, incorporating both historical records and real-time observations. Our statistical approach utilizes longitudinal analysis across multiple temporal scales, which represents a significant methodological innovation in climate research.",
+                duration: 22000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            },
+            {
+                speaker: "Professor Sarah Williams",
+                text: "The most alarming finding concerns the rate of ice melting, which has increased by approximately 40% since 1990. This acceleration is primarily attributable to anthropogenic greenhouse gas emissions from industrial activities, rather than natural climate variability. The correlation coefficient between industrial emissions and atmospheric changes exceeds 0.89, indicating a statistically significant relationship.",
+                duration: 26000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            },
+            {
+                speaker: "Professor Sarah Williams",
+                text: "Our climate models predict that without immediate intervention, global temperatures could rise by three degrees Celsius within the next century. This projection is based on current emission trajectories and incorporates machine learning algorithms for predictive modeling. However, I must emphasize the uncertainty in feedback mechanisms and tipping points, which represents the most significant limitation of current climate models.",
+                duration: 28000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            },
+            {
+                speaker: "Professor Sarah Williams",
+                text: "Perhaps the most significant aspect of our findings concerns precipitation patterns, which show unprecedented variations compared to historical data. We've observed increased frequency of extreme weather events, altered seasonal distributions, and disrupted hydrological cycles. These changes have profound implications for water resource management and agricultural planning.",
+                duration: 25000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            },
+            {
+                speaker: "Professor Sarah Williams",
+                text: "Our research methodology employed innovative statistical techniques that integrate socioeconomic variables with environmental indicators. We utilized real-time satellite data and ground-based observations simultaneously, enabling us to capture complex interactions between human activities and environmental systems. This interdisciplinary approach provides more comprehensive insights than traditional single-variable analyses.",
+                duration: 27000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            },
+            {
+                speaker: "Professor Sarah Williams",
+                text: "The implications of these findings are particularly significant for future generations and intergenerational equity. We face an unprecedented challenge that requires immediate action. Our research suggests that effective mitigation strategies must prioritize international cooperation and policy harmonization, as climate change transcends national boundaries and requires coordinated global responses.",
+                duration: 26000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            },
+            {
+                speaker: "Professor Sarah Williams",
+                text: "In conclusion, our policy recommendations emphasize the urgent need for carbon pricing to address these environmental challenges effectively. We must also invest in adaptive capacity building, particularly for developing countries with limited resources. The window for effective action is rapidly closing, and the scientific evidence demands immediate, substantial, and sustained efforts to mitigate climate change impacts.",
+                duration: 24000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 3000
+            },
+            {
+                speaker: "Professor Sarah Williams",
+                text: "I encourage you to consider these findings as you develop your own research proposals and policy recommendations. The complexity of climate systems requires continued interdisciplinary collaboration and innovative methodological approaches. Thank you for your attention, and I look forward to our discussion.",
+                duration: 18000
+            },
+            {
+                speaker: "pause",
+                text: "",
+                duration: 5000
+            }
+        ];
+
+        // Audio control variables
+        let currentIndex = 0;
+        let isPlaying = false;
+        let speechSynthesis = window.speechSynthesis;
+        let currentUtterance = null;
+        // Part 4 optimized timing for complex academic content
+        let totalDuration = conversationData.reduce((sum, item) => sum + item.duration, 0) + 120000; // Add 2 minutes for academic pacing
+        let currentTime = 0;
+        let audioInterval;
+        let autoSubmitInterval;
+        let autoSubmitCountdown = 10;
+        let timerElapsed = false;
+
+        // Enhanced voice configuration for academic presentations
+        const voiceConfig = {
+            "Professor Sarah Williams": {
+                rate: 0.8,          // Slower for complex content
+                pitch: 1.0,         // Natural academic tone
+                volume: 0.9,        // Clear audibility
+                lang: 'en-GB'       // British English
+            }
+        };
+
+        function highlightCurrentSpeaker(speakerName) {
+            const speakerCard = document.getElementById('speakerCard');
+            
+            // Handle pause or end of conversation
+            if (speakerName === "pause" || !speakerName) {
+                speakerCard.classList.remove('active');
+                document.getElementById('currentSpeaker').textContent = '⏸️ Academic lecture pausing for emphasis...';
+                return;
+            }
+            
+            // Highlight current speaker
+            if (speakerName === "Professor Sarah Williams") {
+                speakerCard.classList.add('active');
+                document.getElementById('currentSpeaker').textContent = `🎓 Currently presenting: Professor Williams (Environmental Science)`;
+            }
+        }
+
+        function updateProgress() {
+            if (isPlaying) {
+                currentTime += 100;
+                const progress = Math.min((currentTime / totalDuration) * 100, 100);
+                document.getElementById('progressFill').style.width = progress + '%';
+                
+                // Update time display
+                const currentMinutes = Math.floor(currentTime / 60000);
+                const currentSeconds = Math.floor((currentTime % 60000) / 1000);
+                document.getElementById('currentTime').textContent = 
+                    `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')}`;
+                
+                // Check if time is completed (when progress reaches 100%)
+                if (currentTime >= totalDuration) {
+                    timerElapsed = true;
+                }
+            }
+        }
+
+        function formatTime(milliseconds) {
+            const minutes = Math.floor(milliseconds / 60000);
+            const seconds = Math.floor((milliseconds % 60000) / 1000);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function playAudio() {
+            if (currentIndex >= conversationData.length) {
+                currentIndex = 0;
+                currentTime = 0;
+            }
+            
+            isPlaying = true;
+            document.getElementById('playBtn').disabled = true;
+            document.getElementById('playBtn').textContent = 'Playing...';
+            
+            audioInterval = setInterval(updateProgress, 100);
+            playCurrentSegment();
+        }
+
+        function playCurrentSegment() {
+            if (!isPlaying) {
+                return;
+            }
+            
+            if (currentIndex >= conversationData.length) {
+                console.log('🎯 Reached end of academic lecture');
+                stopAudio();
+                if (timerElapsed) { showAutoSubmitPopup(); }
+                return;
+            }
+
+            const segment = conversationData[currentIndex];
+            
+            // Handle pause segments (extended for academic emphasis)
+            if (segment.speaker === "pause") {
+                console.log(`⏸️ Academic pause segment ${currentIndex + 1} for ${segment.duration}ms`);
+                highlightCurrentSpeaker("pause");
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying) {
+                        if (currentIndex < conversationData.length) {
+                            playCurrentSegment();
+                        } else {
+                            console.log('🎯 Academic lecture completed after final pause');
+                            stopAudio();
+                        }
+                    }
+                }, segment.duration);
+                return;
+            }
+
+            highlightCurrentSpeaker(segment.speaker);
+
+            // Create speech utterance for academic content
+            currentUtterance = new SpeechSynthesisUtterance(segment.text);
+            
+            // Apply academic voice configuration
+            const config = voiceConfig[segment.speaker];
+            if (config) {
+                currentUtterance.rate = config.rate;
+                currentUtterance.pitch = config.pitch;
+                currentUtterance.volume = config.volume;
+                currentUtterance.lang = config.lang;
+            }
+
+            // Set British English voice for academic presentation
+            const voices = speechSynthesis.getVoices();
+            const britishVoice = voices.find(voice => 
+                voice.lang.includes('en-GB') && voice.name.toLowerCase().includes('female')
+            ) || voices.find(voice => voice.lang.includes('en-GB'));
+            if (britishVoice) currentUtterance.voice = britishVoice;
+
+            currentUtterance.onstart = () => {
+                console.log(`🎤 Started academic segment ${currentIndex + 1}: ${segment.speaker}`);
+            };
+
+            currentUtterance.onend = () => {
+                console.log(`✅ Completed academic segment ${currentIndex + 1}: ${segment.speaker}`);
+                currentIndex++;
+                // Extended pause for academic content processing (3 seconds)
+                setTimeout(() => {
+                    if (isPlaying) {
+                        if (currentIndex < conversationData.length) {
+                            playCurrentSegment();
+                        } else {
+                            console.log('🎯 All academic lecture segments completed');
+                            stopAudio();
+                        }
+                    }
+                }, 3000);
+                if (timerElapsed && currentIndex >= conversationData.length) {
+                    showAutoSubmitPopup();
+                }
+            };
+
+            currentUtterance.onerror = (event) => {
+                console.error(`❌ Error in academic segment ${currentIndex + 1}:`, event.error);
+                // Continue to next segment on error
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying && currentIndex < conversationData.length) {
+                        playCurrentSegment();
+                    } else {
+                        stopAudio();
+                    }
+                }, 1000);
+            };
+
+            try {
+                speechSynthesis.speak(currentUtterance);
+            } catch (error) {
+                console.error(`❌ Failed to start TTS for academic segment ${currentIndex + 1}:`, error);
+                // Continue to next segment
+                currentIndex++;
+                setTimeout(() => {
+                    if (isPlaying && currentIndex < conversationData.length) {
+                        playCurrentSegment();
+                    } else {
+                        stopAudio();
+                    }
+                }, 1000);
+            }
+        }
+
+        function stopAudio() {
+            isPlaying = false;
+            speechSynthesis.cancel();
+            clearInterval(audioInterval);
+            
+            // Show completion message if audio played to the end
+            if (currentIndex >= conversationData.length) {
+                document.getElementById('currentSpeaker').textContent = '✅ Academic lecture completed. You may now answer the assessment questions.';
+                setTimeout(() => {
+                    document.getElementById('currentSpeaker').textContent = '';
+                }, 4000);
+            } else {
+                document.getElementById('currentSpeaker').textContent = '';
+            }
+            
+            currentIndex = 0;
+            currentTime = 0;
+            
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('currentTime').textContent = '00:00';
+            document.getElementById('speakerCard').classList.remove('active');
+            
+            document.getElementById('playBtn').disabled = false;
+            document.getElementById('playBtn').textContent = 'Play';
+        }
+
+        // Correct answers for authentic IELTS Part 4 assessment
+        const correctAnswers = {
+            q31: 'numerous',
+            q32: 'longitudinal',
+            q33: 'melting',
+            q34: 'emissions',
+            q35: 'three',
+            q36: 'precipitation',
+            q37: 'socioeconomic',
+            q38: 'feedback',
+            q39: 'cooperation',
+            q40: 'pricing'
+        };
+
+        // Academic question explanations for authentic IELTS Part 4 format
+        const explanations = {
+            q31: 'Professor Williams explains: "We analyzed data from over 200 weather stations worldwide, incorporating both historical records and real-time observations."',
+            q32: 'Professor Williams states: "Our statistical approach utilizes longitudinal analysis across multiple temporal scales, which represents a significant methodological innovation in climate research."',
+            q33: 'Professor Williams notes: "The most alarming finding concerns the rate of ice melting, which has increased by approximately 40% since 1990."',
+            q34: 'Professor Williams explains: "This acceleration is primarily attributable to anthropogenic greenhouse gas emissions from industrial activities, rather than natural climate variability."',
+            q35: 'Professor Williams predicts: "Our climate models predict that without immediate intervention, global temperatures could rise by three degrees Celsius within the next century."',
+            q36: 'Professor Williams states: "Perhaps the most significant aspect of our findings concerns precipitation patterns, which show unprecedented variations compared to historical data."',
+            q37: 'Professor Williams mentions: "Our research methodology employed innovative statistical techniques that integrate socioeconomic variables with environmental indicators."',
+            q38: 'Professor Williams emphasizes: "However, I must emphasize the uncertainty in feedback mechanisms and tipping points, which represents the most significant limitation of current climate models."',
+            q39: 'Professor Williams suggests: "Our research suggests that effective mitigation strategies must prioritize international cooperation and policy harmonization."',
+            q40: 'Professor Williams concludes: "Our policy recommendations emphasize the urgent need for carbon pricing to address these environmental challenges effectively."'
+        };
+
+        function submitAnswers() {
+            let score = 0;
+            const answers = {};
+            const reviewHTML = [];
+            
+            // Check all sentence completion questions (31-40) - authentic IELTS Part 4 format
+            for (let i = 31; i <= 40; i++) {
+                const questionName = `q${i}`;
+                const answer = document.getElementById(questionName).value.trim().toLowerCase();
+                answers[questionName] = answer;
+                
+                const correct = correctAnswers[questionName].toLowerCase();
+                const oneWord = answer && !answer.includes(' ');
+                const isAlphabetic = /^[a-zA-Z]+$/.test(answer);
+                const isCorrect = oneWord && isAlphabetic && (answer === correct);
+                if (isCorrect) score++;
+                
+                reviewHTML.push(`
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Question ${i}:</strong> ${isCorrect ? '✅' : '❌'}<br>
+                        <strong>Your answer:</strong> ${answer || '<em>No answer</em>'}${(!oneWord && answer) ? ' <em>(violates ONE WORD ONLY)</em>' : ''}<br>
+                        <strong>Correct answer:</strong> ${correctAnswers[questionName]}<br>
+                        <strong>Explanation:</strong> ${explanations[questionName]}
+                    </div>
+                `);
+            }
+            
+            // Update score display
+            document.getElementById('scoreNumber').textContent = score;
+            document.getElementById('answerReview').innerHTML = reviewHTML.join('');
+            
+            // Generate academic improvement tips
+            const tips = generateAcademicImprovementTips(score);
+            const tipsHTML = tips.map(tip => `<li>${tip}</li>`).join('');
+            document.getElementById('improvementList').innerHTML = tipsHTML;
+            
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function generateAcademicImprovementTips(score) {
+            const tips = [];
+            
+            if (score <= 3) {
+                tips.push("Focus on academic vocabulary development, particularly environmental science terminology and research methodology concepts");
+                tips.push("Practice listening to university lectures and academic presentations to familiarize yourself with complex discourse patterns");
+                tips.push("Develop note-taking skills for academic content, focusing on key concepts, statistical data, and research findings");
+                tips.push("Work on understanding abstract concepts, theoretical frameworks, and sophisticated argumentation in academic contexts");
+                tips.push("Improve comprehension of multi-clause sentences and complex grammatical structures common in academic discourse");
+            } else if (score <= 6) {
+                tips.push("Enhance your ability to identify main ideas and supporting details in complex academic presentations");
+                tips.push("Practice extracting specific information from dense academic content with high information density");
+                tips.push("Develop skills in understanding research methodology, statistical analysis, and scientific reasoning");
+                tips.push("Work on recognizing signposting language and discourse markers used in academic lectures");
+                tips.push("Focus on improving comprehension of specialized terminology and technical vocabulary across academic disciplines");
+            } else if (score <= 8) {
+                tips.push("Fine-tune your ability to understand implied meanings and inferences in sophisticated academic discourse");
+                tips.push("Practice identifying subtle distinctions between complex concepts and theoretical positions");
+                tips.push("Develop advanced note-taking strategies for capturing nuanced arguments and detailed research findings");
+                tips.push("Work on understanding complex cause-effect relationships and multi-faceted academic arguments");
+                tips.push("Enhance your comprehension of academic citation practices, research limitations, and methodological considerations");
+            } else {
+                tips.push("Excellent academic listening performance! Continue engaging with authentic university-level content and research presentations");
+                tips.push("Focus on developing expertise in specific academic disciplines to deepen your understanding of specialized discourse");
+                tips.push("Practice with interdisciplinary academic content that combines multiple fields of study and research methodologies");
+                tips.push("Consider helping other students develop their academic listening skills while reinforcing your own expertise");
+                tips.push("Explore advanced academic contexts such as conference presentations, expert panels, and research symposiums");
+            }
+            
+            return tips;
+        }
+
+        // Auto-submit timer functions
+        function showAutoSubmitPopup() {
+            // Stop audio and clear intervals
+            isPlaying = false;
+            speechSynthesis.cancel();
+            clearInterval(audioInterval);
+            
+            // Show the popup
+            document.getElementById('autoSubmitOverlay').style.display = 'flex';
+            
+            // Reset countdown
+            autoSubmitCountdown = 10;
+            document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+            
+            // Start countdown
+            autoSubmitInterval = setInterval(() => {
+                autoSubmitCountdown--;
+                document.getElementById('autoSubmitCountdown').textContent = autoSubmitCountdown;
+                
+                if (autoSubmitCountdown <= 0) {
+                    clearInterval(autoSubmitInterval);
+                    handleAutoSubmit();
+                }
+            }, 1000);
+        }
+
+        function handleAutoSubmit() {
+            clearInterval(autoSubmitInterval);
+            document.getElementById('autoSubmitOverlay').style.display = 'none';
+            
+            // Automatically submit answers
+            submitAnswers();
+            
+            // Show message
+            setTimeout(() => {
+                alert('⏰ Academic lecture completed! Your answers have been automatically submitted as per IELTS Part 4 test conditions.');
+            }, 500);
+        }
+
+        function continueWithoutSubmit() {
+            clearInterval(autoSubmitInterval);
+            document.getElementById('autoSubmitOverlay').style.display = 'none';
+            
+            // Allow user to continue working
+            console.log('📝 User chose to continue working after academic lecture completion');
+        }
+
+        // Navigation and menu functions
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from IELTS General Listening Part 4 Practice 1 - Going to introduction');
+            window.location.href = 'IELTS_General_Listening_Introduction.html';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.getElementById('container');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            menuToggle.classList.toggle('collapsed');
+        }
+
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+            
+            // Auto-collapse menu on mobile
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                handleBackButton();
+            } else if (event.code === 'Space' && !isPlaying) {
+                event.preventDefault();
+                playAudio();
+            } else if (event.ctrlKey && event.key === 'Tab') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🌍 IELTS General Listening Part 4 Practice 1 - Environmental Science Lecture loaded');
+            
+            // Debug audio system
+            console.log('🔊 Academic audio capabilities:');
+            console.log('- speechSynthesis available:', 'speechSynthesis' in window);
+            console.log('- Web Audio API available:', 'AudioContext' in window || 'webkitAudioContext' in window);
+            
+            // Test speech synthesis availability
+            if ('speechSynthesis' in window) {
+                setTimeout(() => {
+                    const voices = speechSynthesis.getVoices();
+                    console.log('🎤 Initial voices check:', voices.length, 'voices available');
+                    if (voices.length === 0) {
+                        console.log('⏳ Waiting for voices to load...');
+                        speechSynthesis.addEventListener('voiceschanged', function() {
+                            const newVoices = speechSynthesis.getVoices();
+                            console.log('🎤 Academic voices loaded:', newVoices.length, 'voices now available');
+                        });
+                    }
+                }, 1000);
+            }
+            
+            // Set total time display
+            document.getElementById('totalTime').textContent = formatTime(totalDuration);
+        });
+
+        // Clean up on page unload
+        window.addEventListener('beforeunload', function() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            if (audioInterval) {
+                clearInterval(audioInterval);
+            }
+            if (autoSubmitInterval) {
+                clearInterval(autoSubmitInterval);
+            }
+        });
+    </script>
+</body>
+</html> 
