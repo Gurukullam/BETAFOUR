@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Vocabulary Guide - A1 Level | GA Foundation</title>
+    
+    <!-- ResponsiveVoice API for better Tamil pronunciation -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=FREE"></script>
+    
+    <!-- Font Awesome CSS (Embedded for self-contained operation) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in this page */
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-language:before { content: "\f1ab"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-play:before { content: "\f04b"; }
+        .fa-stop:before { content: "\f04d"; }
+        .fa-volume-up:before { content: "\f028"; }
+        .fa-chevron-left:before { content: "\f053"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-home:before { content: "\f015"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-apple-alt:before { content: "\f5d1"; }
+        .fa-palette:before { content: "\f53f"; }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(255, 215, 0, 0.1) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Master Guruvammal Logo for back button */
+        .gk-logo-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .master-guruvammal-logo {
+            /* Layout & Structure */
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            box-sizing: border-box;
+            
+            /* Typography */
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: #5d3a0a;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            
+            /* Golden Square Background */
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
+            padding: 8px;
+            
+            /* Visual Effects */
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+            z-index: 10000;
+            
+            /* Interaction */
+            transition: all 0.3s ease;
+        }
+
+        /* Letter P with circle corner element within Master Gammapace Logo */
+        .master-guruvammal-logo .tamil-corner {
+            position: absolute;
+            top: 3px;
+            right: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid #5d3a0a;
+            color: #5d3a0a;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 7px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        /* Hover effect for Master Gammapace Logo */
+        .master-guruvammal-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4), 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Back Label under Logo */
+        .back-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b4513;
+            font-family: 'Century Gothic', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gk-logo-container:hover .back-label {
+            color: #5d3a0a;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            margin-left: 370px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .container.menu-collapsed {
+            margin-left: 30px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem 0rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #5d4e37;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.02) 0%, rgba(212, 175, 55, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #5d4e37;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .audio-btn {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .audio-btn:hover {
+            background: linear-gradient(135deg, #f4d03f, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vocab-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .vocab-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+        }
+
+        .tamil-word {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+            font-family: 'Noto Sans Tamil', serif;
+        }
+
+        .english-word {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .pronunciation {
+            font-size: 1rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        /* Play Speaker Button */
+        .play-speaker-button {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+            margin: 0 auto;
+        }
+
+        .play-speaker-button:hover {
+            background: linear-gradient(135deg, #f4d03f, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .play-speaker-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .play-speaker-button.playing {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 40px;
+            left: 370px;
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .menu-toggle:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .menu-toggle.collapsed {
+            left: 30px;
+        }
+
+        /* Menu Toggle Label */
+        .menu-toggle-label {
+            position: fixed;
+            top: 100px;
+            left: 395px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            min-width: 45px;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .menu-toggle-label.collapsed {
+            left: 55px;
+        }
+
+        /* Slide-out Menu */
+        .slide-menu {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            width: 350px;
+            height: calc(100vh - 20px);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 4px 0 24px rgba(212, 175, 55, 0.15);
+            border-right: 2px solid rgba(212, 175, 55, 0.15);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        .slide-menu.collapsed {
+            left: -350px;
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #8b4513, #d4af37);
+            color: white;
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .menu-bookmark-title {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-content {
+            padding: 1.5rem 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 1.2rem 1rem;
+            margin-bottom: 0.8rem;
+            background: rgba(139, 69, 19, 0.06);
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 3px solid #8b4513;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(139, 69, 19, 0.1);
+        }
+
+        .menu-item:hover {
+            background: rgba(139, 69, 19, 0.12);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+            border-left-color: #d4af37;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0;
+            color: #2c1810;
+            letter-spacing: 0.2px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0;
+                padding: 0 1rem;
+            }
+
+            .menu-toggle {
+                left: 20px;
+                top: 20px;
+            }
+
+            .menu-toggle-label {
+                left: 45px;
+                top: 80px;
+            }
+
+            .slide-menu {
+                width: 100%;
+                top: 0;
+                height: 100vh;
+            }
+
+            .slide-menu.collapsed {
+                left: -100%;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .vocab-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Guruvammal Logo as Back Button -->
+    <div class="gk-logo-container" onclick="handleBackButton()" title="Back to Home">
+        <div class="master-guruvammal-logo">
+            Ga<span class="tamil-corner">P</span>
+        </div>
+        <div class="back-label">Back</div>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="menu-toggle-label" id="menuToggleLabel">Collapse</div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-bookmark-title">Tamil Learning Menu</div>
+        </div>
+        <div class="menu-content">
+            <!-- Current Page Sections -->
+            <div style="background: rgba(139, 69, 19, 0.1); padding: 0.5rem; margin-bottom: 0.5rem; border-radius: 6px; font-weight: bold; color: #8b4513; text-align: center;">
+                📚 Vocabulary (Current)
+            </div>
+            <a href="#family-vocab" class="menu-item" onclick="navigateToSection('family-vocab')">
+                <div class="item-title">👨‍👩‍👧‍👦 Family Members</div>
+            </a>
+            <a href="#body-vocab" class="menu-item" onclick="navigateToSection('body-vocab')">
+                <div class="item-title">👤 Body Parts</div>
+            </a>
+            <a href="#food-vocab" class="menu-item" onclick="navigateToSection('food-vocab')">
+                <div class="item-title">🍽️ Food Items</div>
+            </a>
+            <a href="#colors-vocab" class="menu-item" onclick="navigateToSection('colors-vocab')">
+                <div class="item-title">🎨 Colors</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section fade-in">
+                <h1 class="hero-title">
+                    தமிழ் சொற்களஞ்சியம் - Tamil Vocabulary
+                </h1>
+                <div class="hero-subtitle">Essential Tamil Words for Beginners</div>
+                <p class="hero-description">
+                    Build your Tamil vocabulary with essential everyday words organized by categories. 
+                    Each word includes Tamil script, English meaning, pronunciation guide, and audio 
+                    to help you learn effectively!
+                </p>
+            </section>
+
+            <!-- 1. Family Members Section -->
+            <section id="family-vocab" class="content-section">
+                <h2 class="section-title">
+                    1. குடும்ப உறுப்பினர்கள் - Family Members
+                </h2>
+                <p class="section-subtitle">Essential family relationship words</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllFamilyVocab()">
+                        <i class="fas fa-play"></i>
+                        Play All Family
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        <i class="fas fa-stop"></i>
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="vocabulary-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👨</div>
+                        <div class="tamil-word">அப்பா</div>
+                        <div class="english-word">Father</div>
+                        <div class="pronunciation">[appa]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('அப்பா', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👩</div>
+                        <div class="tamil-word">அம்மா</div>
+                        <div class="english-word">Mother</div>
+                        <div class="pronunciation">[amma]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('அம்மா', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👦</div>
+                        <div class="tamil-word">அண்ணன்</div>
+                        <div class="english-word">Elder brother</div>
+                        <div class="pronunciation">[annan]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('அண்ணன்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👧</div>
+                        <div class="tamil-word">அக்கா</div>
+                        <div class="english-word">Elder sister</div>
+                        <div class="pronunciation">[akka]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('அக்கா', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👶</div>
+                        <div class="tamil-word">தம்பி</div>
+                        <div class="english-word">Younger brother</div>
+                        <div class="pronunciation">[thambi]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('தம்பி', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👶</div>
+                        <div class="tamil-word">தங்கை</div>
+                        <div class="english-word">Younger sister</div>
+                        <div class="pronunciation">[thangai]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('தங்கை', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Body Parts Section -->
+            <section id="body-vocab" class="content-section">
+                <h2 class="section-title">
+                    2. உடல் உறுப்புகள் - Body Parts
+                </h2>
+                <p class="section-subtitle">Common body part vocabulary</p>
+                
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAllBodyVocab()">
+                        <i class="fas fa-play"></i>
+                        Play All Body
+                    </button>
+                    <button class="audio-btn" onclick="stopAllAudio()">
+                        <i class="fas fa-stop"></i>
+                        Stop Audio
+                    </button>
+                </div>
+
+                <div class="vocabulary-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👁️</div>
+                        <div class="tamil-word">கண்</div>
+                        <div class="english-word">Eye</div>
+                        <div class="pronunciation">[kan]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('கண்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👃</div>
+                        <div class="tamil-word">மூக்கு</div>
+                        <div class="english-word">Nose</div>
+                        <div class="pronunciation">[mookku]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('மூக்கு', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👄</div>
+                        <div class="tamil-word">வாய்</div>
+                        <div class="english-word">Mouth</div>
+                        <div class="pronunciation">[vaai]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('வாய்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">👂</div>
+                        <div class="tamil-word">காது</div>
+                        <div class="english-word">Ear</div>
+                        <div class="pronunciation">[kaadhu]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('காது', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">✋</div>
+                        <div class="tamil-word">கை</div>
+                        <div class="english-word">Hand</div>
+                        <div class="pronunciation">[kai]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('கை', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">🦵</div>
+                        <div class="tamil-word">கால்</div>
+                        <div class="english-word">Leg/Foot</div>
+                        <div class="pronunciation">[kaal]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('கால்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Food Items Section -->
+            <section id="food-vocab" class="content-section">
+                <h2 class="section-title">
+                    3. உணவு பொருட்கள் - Food Items
+                </h2>
+                <p class="section-subtitle">Essential food and drink vocabulary</p>
+                
+                <div class="vocabulary-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-icon">🍚</div>
+                        <div class="tamil-word">சாதம்</div>
+                        <div class="english-word">Rice</div>
+                        <div class="pronunciation">[saatham]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('சாதம்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">🥛</div>
+                        <div class="tamil-word">பால்</div>
+                        <div class="english-word">Milk</div>
+                        <div class="pronunciation">[paal]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('பால்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">💧</div>
+                        <div class="tamil-word">தண்ணீர்</div>
+                        <div class="english-word">Water</div>
+                        <div class="pronunciation">[thanneer]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('தண்ணீர்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">🍌</div>
+                        <div class="tamil-word">வாழைப்பழம்</div>
+                        <div class="english-word">Banana</div>
+                        <div class="pronunciation">[vaazhaippazham]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('வாழைப்பழம்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">🥭</div>
+                        <div class="tamil-word">மாம்பழம்</div>
+                        <div class="english-word">Mango</div>
+                        <div class="pronunciation">[maampazham]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('மாம்பழம்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon">🍞</div>
+                        <div class="tamil-word">ரொட்டி</div>
+                        <div class="english-word">Bread</div>
+                        <div class="pronunciation">[rotti]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('ரொட்டி', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Colors Section -->
+            <section id="colors-vocab" class="content-section">
+                <h2 class="section-title">
+                    4. நிறங்கள் - Colors
+                </h2>
+                <p class="section-subtitle">Basic color vocabulary in Tamil</p>
+                
+                <div class="vocabulary-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-icon" style="color: #ff0000;">🎨</div>
+                        <div class="tamil-word">சிவப்பு</div>
+                        <div class="english-word">Red</div>
+                        <div class="pronunciation">[sivappu]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('சிவப்பு', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon" style="color: #0000ff;">🎨</div>
+                        <div class="tamil-word">நீலம்</div>
+                        <div class="english-word">Blue</div>
+                        <div class="pronunciation">[neelam]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('நீலம்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon" style="color: #008000;">🎨</div>
+                        <div class="tamil-word">பச்சை</div>
+                        <div class="english-word">Green</div>
+                        <div class="pronunciation">[pacchai]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('பச்சை', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon" style="color: #ffff00;">🎨</div>
+                        <div class="tamil-word">மஞ்சள்</div>
+                        <div class="english-word">Yellow</div>
+                        <div class="pronunciation">[manjal]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('மஞ்சள்', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon" style="color: #000000;">🎨</div>
+                        <div class="tamil-word">கருப்பு</div>
+                        <div class="english-word">Black</div>
+                        <div class="pronunciation">[karuppu]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('கருப்பு', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-icon" style="color: #ffffff; text-shadow: 1px 1px 2px #000;">🎨</div>
+                        <div class="tamil-word">வெள்ளை</div>
+                        <div class="english-word">White</div>
+                        <div class="pronunciation">[vellai]</div>
+                        <button class="play-speaker-button" onclick="playTamilAudio('வெள்ளை', this)">
+                            <i class="fas fa-volume-up"></i>
+                            <span class="play-text">Play</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Toggle menu functionality
+        function toggleMenu() {
+            const menu = document.getElementById('slideMenu');
+            const container = document.querySelector('.container');
+            const toggle = document.getElementById('menuToggle');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            
+            menu.classList.toggle('collapsed');
+            container.classList.toggle('menu-collapsed');
+            toggle.classList.toggle('collapsed');
+            toggleLabel.classList.toggle('collapsed');
+            
+            if (menu.classList.contains('collapsed')) {
+                toggleLabel.textContent = 'Expand';
+            } else {
+                toggleLabel.textContent = 'Collapse';
+            }
+        }
+
+        // Back button functionality - returns to home page
+        function handleBackButton() {
+            console.log('🔄 Back button clicked from Tamil Vocabulary page');
+            
+            // Clear any session storage
+            sessionStorage.removeItem('previousPage');
+            sessionStorage.removeItem('previousPageType');
+            
+            // Always navigate to home page
+            console.log(`🔄 Returning to home page`);
+            window.location.href = '../../../index.html#home';
+        }
+
+        // Navigation to sections
+        function navigateToSection(sectionId) {
+            const menu = document.getElementById('slideMenu');
+            if (!menu.classList.contains('collapsed')) {
+                toggleMenu();
+            }
+            scrollToSection(sectionId);
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Tamil Audio System with Enhanced Voice Support
+        let currentAudio = null;
+        let currentPlayingButton = null;
+
+        function playTamilAudio(text, buttonElement = null) {
+            // Stop any currently playing audio
+            stopAllAudio();
+
+            const button = buttonElement || event.target.closest('.play-speaker-button');
+            
+            console.log(`🎵 Playing Tamil audio for: ${text}`);
+            
+            // Try gTTS first (Google Text-to-Speech - most authentic Tamil)
+            console.log('🚀 Trying gTTS (Google Text-to-Speech) for Tamil audio');
+            playWithGTTS(text, button);
+        }
+
+        // Google Text-to-Speech (gTTS) implementation
+        function playWithGTTS(text, button) {
+            if (button) {
+                button.classList.add('playing');
+                currentPlayingButton = button;
+            }
+
+            console.log(`🗣️ gTTS: Attempting to play "${text}"`);
+            
+            // Multiple gTTS endpoints for reliability
+            const gttsPproxies = [
+                // Google Translate TTS (direct)
+                `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=ta&client=tw-ob&ttsspeed=0.7`,
+                // Alternative Google TTS endpoints
+                `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=ta&client=gtx&ttsspeed=0.7`,
+                `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=ta&client=dict-chrome-ex&ttsspeed=0.7`,
+                // Backup TTS services
+                `https://api.voicerss.org/?key=undefined&src=${encodeURIComponent(text)}&hl=ta-in&c=mp3&f=44khz_16bit_stereo`,
+                `https://ttsapi.com/tts?text=${encodeURIComponent(text)}&voice=ta-IN-Wavenet-A&speed=0.8`
+            ];
+
+            tryGTTSEndpoints(gttsPproxies, text, button, 0);
+        }
+
+        function tryGTTSEndpoints(endpoints, text, button, index) {
+            if (index >= endpoints.length) {
+                console.log('❌ All gTTS endpoints failed, falling back to ResponsiveVoice');
+                playWithResponsiveVoice(text, button);
+                return;
+            }
+
+            const url = endpoints[index];
+            console.log(`🌐 Trying gTTS endpoint ${index + 1}/${endpoints.length}: ${url.substring(0, 50)}...`);
+
+            const audio = new Audio();
+            audio.crossOrigin = 'anonymous';
+            
+            // Set a timeout for loading
+            const loadTimeout = setTimeout(() => {
+                console.log(`⏱️ gTTS endpoint ${index + 1} timeout`);
+                audio.src = '';
+                tryGTTSEndpoints(endpoints, text, button, index + 1);
+            }, 5000);
+
+            audio.oncanplaythrough = function() {
+                clearTimeout(loadTimeout);
+                console.log(`✅ gTTS audio loaded successfully from endpoint ${index + 1}`);
+                audio.play().then(() => {
+                    console.log(`▶️ gTTS started playing: ${text}`);
+                }).catch(error => {
+                    console.log(`❌ gTTS play failed: ${error.message}`);
+                    tryGTTSEndpoints(endpoints, text, button, index + 1);
+                });
+            };
+
+            audio.onended = function() {
+                console.log(`⏹️ gTTS ended: ${text}`);
+                if (button) {
+                    button.classList.remove('playing');
+                    currentPlayingButton = null;
+                }
+            };
+
+            audio.onerror = function(e) {
+                console.log(`❌ gTTS endpoint ${index + 1} failed: ${e.type}`);
+                clearTimeout(loadTimeout);
+                // Try next endpoint
+                tryGTTSEndpoints(endpoints, text, button, index + 1);
+            };
+
+            audio.onloadstart = function() {
+                console.log(`⏳ gTTS endpoint ${index + 1} loading...`);
+            };
+
+            // Set source to trigger loading
+            audio.src = url;
+        }
+
+        // ResponsiveVoice fallback
+        function playWithResponsiveVoice(text, button) {
+            console.log('🔊 Fallback: Using ResponsiveVoice for Tamil audio');
+            
+            if (typeof responsiveVoice !== 'undefined' && responsiveVoice.voiceSupport()) {
+                if (button) {
+                    button.classList.add('playing');
+                    currentPlayingButton = button;
+                }
+                
+                responsiveVoice.speak(text, "Tamil Female", {
+                    rate: 0.8,
+                    pitch: 1,
+                    volume: 1,
+                    onstart: () => {
+                        console.log(`▶️ ResponsiveVoice started: ${text}`);
+                    },
+                    onend: () => {
+                        console.log(`⏹️ ResponsiveVoice ended: ${text}`);
+                        if (button) {
+                            button.classList.remove('playing');
+                            currentPlayingButton = null;
+                        }
+                    },
+                    onerror: (err) => {
+                        console.error(`❌ ResponsiveVoice error:`, err);
+                        // Final fallback to Speech Synthesis
+                        playWithSpeechSynthesis(text, button);
+                    }
+                });
+            } else {
+                // Final fallback to Speech Synthesis API
+                console.log('🔊 Final fallback: Using Speech Synthesis for Tamil audio');
+                playWithSpeechSynthesis(text, button);
+            }
+        }
+
+        function playWithSpeechSynthesis(text, button) {
+            if ('speechSynthesis' in window) {
+                // Wait for voices to load
+                if (speechSynthesis.getVoices().length === 0) {
+                    speechSynthesis.addEventListener('voiceschanged', () => {
+                        speakTamilText(text, button);
+                    });
+                } else {
+                    speakTamilText(text, button);
+                }
+            } else {
+                console.warn('🚫 Speech synthesis not supported');
+                // Show fallback message
+                if (button) {
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<span style="color: #e74c3c;">Audio not supported</span>';
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                    }, 2000);
+                }
+            }
+        }
+
+        function speakTamilText(text, button) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            
+            // Try to find the best Tamil voice
+            const voices = speechSynthesis.getVoices();
+            let tamilVoice = null;
+            
+            // Priority order for Tamil voices
+            const preferredVoices = [
+                'ta-IN', 'ta_IN', 'Tamil', 'hi-IN', 'hi_IN', 'Hindi'
+            ];
+            
+            for (const voiceCode of preferredVoices) {
+                tamilVoice = voices.find(voice => 
+                    voice.lang.includes(voiceCode) || 
+                    voice.name.includes(voiceCode) ||
+                    voice.lang.startsWith('ta') ||
+                    voice.lang.startsWith('hi')
+                );
+                if (tamilVoice) break;
+            }
+            
+            if (tamilVoice) {
+                utterance.voice = tamilVoice;
+                console.log(`🎯 Using Tamil voice: ${tamilVoice.name} (${tamilVoice.lang})`);
+            } else {
+                console.warn('⚠️ No Tamil voice found, using default');
+            }
+            
+            utterance.lang = 'ta-IN';
+            utterance.rate = 0.7;
+            utterance.pitch = 1;
+            utterance.volume = 1;
+            
+            utterance.onstart = () => {
+                if (button) {
+                    button.classList.add('playing');
+                    currentPlayingButton = button;
+                }
+                console.log(`▶️ Speech synthesis started: ${text}`);
+            };
+            
+            utterance.onend = () => {
+                if (button) {
+                    button.classList.remove('playing');
+                    currentPlayingButton = null;
+                }
+                console.log(`⏹️ Speech synthesis ended: ${text}`);
+            };
+            
+            utterance.onerror = (event) => {
+                if (button) {
+                    button.classList.remove('playing');
+                    currentPlayingButton = null;
+                }
+                console.error(`❌ Speech synthesis error:`, event.error);
+            };
+            
+            speechSynthesis.speak(utterance);
+        }
+
+        function stopAllAudio() {
+            // Stop ResponsiveVoice if available
+            if (typeof responsiveVoice !== 'undefined') {
+                responsiveVoice.cancel();
+            }
+            
+            // Stop Speech Synthesis
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+            
+            // Stop any HTML5 audio
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                currentAudio = null;
+            }
+            
+            // Remove playing state from all buttons
+            document.querySelectorAll('.play-speaker-button.playing').forEach(button => {
+                button.classList.remove('playing');
+            });
+            currentPlayingButton = null;
+            
+            console.log('🔇 All audio stopped');
+        }
+
+        // Play sequence functions
+        function playAllFamilyVocab() {
+            const words = ['அப்பா', 'அம்மா', 'அண்ணன்', 'அக்கா', 'தம்பி', 'தங்கை'];
+            playSequence(words);
+        }
+
+        function playAllBodyVocab() {
+            const words = ['கண்', 'மூக்கு', 'வாய்', 'காது', 'கை', 'கால்'];
+            playSequence(words);
+        }
+
+        function playSequence(textArray) {
+            if (textArray.length === 0) return;
+            
+            let index = 0;
+            
+            function playNext() {
+                if (index < textArray.length) {
+                    const text = textArray[index];
+                    console.log(`🔄 Playing sequence ${index + 1}/${textArray.length}: ${text}`);
+                    
+                    // Find the corresponding button for visual feedback
+                    const button = document.querySelector(`[onclick*="${text}"]`);
+                    
+                    if (typeof responsiveVoice !== 'undefined' && responsiveVoice.voiceSupport()) {
+                        if (button) button.classList.add('playing');
+                        
+                        responsiveVoice.speak(text, "Tamil Female", {
+                            rate: 0.8,
+                            pitch: 1,
+                            volume: 1,
+                            onend: () => {
+                                if (button) button.classList.remove('playing');
+                                index++;
+                                setTimeout(playNext, 800); // Pause between items
+                            },
+                            onerror: (err) => {
+                                console.error('ResponsiveVoice sequence error:', err);
+                                if (button) button.classList.remove('playing');
+                                index++;
+                                setTimeout(playNext, 800);
+                            }
+                        });
+                    } else {
+                        // Fallback to Speech Synthesis
+                        const utterance = new SpeechSynthesisUtterance(text);
+                        utterance.lang = 'ta-IN';
+                        utterance.rate = 0.7;
+                        
+                        utterance.onstart = () => {
+                            if (button) button.classList.add('playing');
+                        };
+                        
+                        utterance.onend = () => {
+                            if (button) button.classList.remove('playing');
+                            index++;
+                            setTimeout(playNext, 800);
+                        };
+                        
+                        utterance.onerror = () => {
+                            if (button) button.classList.remove('playing');
+                            index++;
+                            setTimeout(playNext, 800);
+                        };
+                        
+                        speechSynthesis.speak(utterance);
+                    }
+                }
+            }
+            
+            playNext();
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Tamil Vocabulary page loaded successfully');
+            
+            // Check audio support
+            if (typeof responsiveVoice !== 'undefined') {
+                console.log('✅ ResponsiveVoice loaded for enhanced Tamil pronunciation');
+            } else if ('speechSynthesis' in window) {
+                console.log('✅ Speech Synthesis available for Tamil audio');
+                
+                // Load voices
+                speechSynthesis.onvoiceschanged = () => {
+                    const voices = speechSynthesis.getVoices();
+                    const tamilVoices = voices.filter(voice => 
+                        voice.lang.startsWith('ta') || 
+                        voice.name.toLowerCase().includes('tamil')
+                    );
+                    console.log(`Found ${tamilVoices.length} Tamil voices:`, tamilVoices.map(v => v.name));
+                };
+            } else {
+                console.warn('⚠️ Limited audio support available');
+            }
+
+            // Initialize toggle label
+            const menu = document.getElementById('slideMenu');
+            const toggleLabel = document.getElementById('menuToggleLabel');
+            if (menu.classList.contains('collapsed')) {
+                toggleLabel.textContent = 'Expand';
+            } else {
+                toggleLabel.textContent = 'Collapse';
+            }
+        });
+    </script>
+</body>
+</html> 
