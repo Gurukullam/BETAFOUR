@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ga Foundation - Global Online Learning Platform</title>
+    
+    <!-- Font Awesome CSS (Embedded icons) -->
+    <style>
+        /* Font Awesome 6.4.0 - Core icons embedded for self-contained operation */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+            font-style: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Core icons used in application */
+        .fa-home:before { content: "\f015"; }
+        .fa-graduation-cap:before { content: "\f19d"; }
+        .fa-clipboard-check:before { content: "\f46c"; }
+        .fa-chevron-down:before { content: "\f078"; }
+        .fa-headphones:before { content: "\f025"; }
+        .fa-book-open:before { content: "\f518"; }
+        .fa-edit:before { content: "\f044"; }
+        .fa-microphone:before { content: "\f130"; }
+        .fa-clipboard-list:before { content: "\f46d"; }
+        .fa-bars:before { content: "\f0c9"; }
+        .fa-times:before { content: "\f00d"; }
+        .fa-users:before { content: "\f0c0"; }
+        .fa-clock:before { content: "\f017"; }
+        .fa-certificate:before { content: "\f0a3"; }
+        .fa-mobile-alt:before { content: "\f3cd"; }
+        .fa-headset:before { content: "\f590"; }
+        .fa-globe:before { content: "\f0ac"; }
+        .fa-lightbulb:before { content: "\f0eb"; }
+        .fa-rocket:before { content: "\f135"; }
+        .fa-heart:before { content: "\f004"; }
+        .fa-star:before { content: "\f005"; }
+        .fa-check:before { content: "\f00c"; }
+        .fa-language:before { content: "\f1ab"; }
+        .fa-flag:before { content: "\f024"; }
+        .fa-robot:before { content: "\f544"; }
+    </style>
+
+    <!-- Font Awesome (CDN - fallback) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Mobile-optimized root styles */
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            touch-action: manipulation;
+            font-family: 'Century Gothic', sans-serif;
+            line-height: 1.6;
+            color: #3c2d1f;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #cd853f 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Improve tap targets and touch response */
+        button, a, input, select, textarea {
+            touch-action: manipulation;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #3c2d1f;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            width: 100%;
+            min-height: 80px;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 0.5rem;
+        }
+
+        .nav-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-height: 45px;
+        }
+
+        .nav-bottom-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            padding-top: 0.3rem;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Master Gammapace Logo for header */
+        .master-guruvammal-logo {
+            /* Layout & Structure */
+            position: relative !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 40px !important;
+            height: 40px !important;
+            box-sizing: border-box !important;
+            
+            /* Typography */
+            font-family: 'Century Gothic', sans-serif !important;
+            font-size: 24px !important;
+            font-weight: 900 !important;
+            letter-spacing: -0.5px !important;
+            line-height: 1 !important;
+            color: #5d3a0a !important;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3) !important;
+            
+            /* Golden Square Background */
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 69, 19, 0.25) 50%, rgba(205, 133, 63, 0.2) 100%) !important;
+            backdrop-filter: blur(10px) !important;
+            border-radius: 4px !important;
+            padding: 8px !important;
+            
+            /* Visual Effects */
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2), 0 0 20px rgba(212, 175, 55, 0.1) !important;
+            z-index: 10000 !important;
+            
+            /* Interaction */
+            transition: all 0.3s ease !important;
+        }
+
+        /* Letter P with circle corner element within Master Gammapace Logo */
+        .master-guruvammal-logo .musical-corner {
+            position: absolute !important;
+            top: 2px !important;
+            right: 3px !important;
+            width: 8px !important;
+            height: 8px !important;
+            border-radius: 50% !important;
+            background-color: transparent !important;
+            border: 0.8px solid #5d3a0a !important;
+            color: #5d3a0a !important;
+            font-family: 'Century Gothic', sans-serif !important;
+            font-size: 4.5px !important;
+            font-weight: 900 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3) !important;
+            box-shadow: none !important;
+        }
+
+        /* Optional hover effect for Master Gammapace Logo */
+        .master-guruvammal-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4), 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Ensure logo container fits Master Logo properly */
+        .logo .master-guruvammal-logo {
+            margin-right: 0.5rem;
+        }
+
+        /* Ga brand text styling to match logo font */
+        .ga-text {
+            font-family: 'Century Gothic', sans-serif !important;
+            font-weight: 900 !important;
+            letter-spacing: -0.5px !important;
+        }
+
+        /* Guruvammal brand text styling */
+        .guruvammal-text {
+            font-weight: normal !important;
+        }
+
+        /* Century Gothic letters within Guruvammal */
+        .century-letter {
+            font-family: 'Century Gothic', sans-serif !important;
+            font-weight: 900 !important;
+            letter-spacing: -0.5px !important;
+        }
+
+        /* Bold Century Gothic letters */
+        .bold-century-letter {
+            font-family: 'Century Gothic', sans-serif !important;
+            font-weight: 900 !important;
+            letter-spacing: -0.5px !important;
+        }
+
+        /* Foundation text styling */
+        .foundation-text {
+            font-family: 'Century Gothic', sans-serif !important;
+            font-weight: normal !important;
+            letter-spacing: -0.5px !important;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #8b4513;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: #3c2d1f;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 0.85rem;
+            font-family: 'Century Gothic', sans-serif;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #8b4513;
+            background: rgba(139, 69, 19, 0.1);
+            transform: translateY(-1px);
+        }
+
+        
+
+        /* Main content area */
+        .main-content {
+            margin-top: 120px;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+            font-family: 'Century Gothic', sans-serif;
+            text-align: justify;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #8b4513;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            font-family: 'Century Gothic', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #a0522d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Vision section */
+        .vision-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .vision-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-5px);
+            border-color: #8b4513;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+        }
+
+        .vision-icon {
+            font-size: 3rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        .vision-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        .vision-description {
+            color: #666;
+            text-align: center;
+            line-height: 1.8;
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        /* Stats section */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .stat-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8b4513;
+            display: inline;
+            margin-right: 0.3rem;
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+            display: inline;
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-menu a {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                font-family: 'Century Gothic', sans-serif;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                font-family: 'Century Gothic', sans-serif;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Top Row: Logo -->
+            <div class="nav-top-row">
+                <a href="#" class="logo">
+                    <div class="master-guruvammal-logo">
+                        Ga<span class="musical-corner">P</span>
+                    </div>
+                </a>
+                
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Bottom Row: Navigation Menu -->
+                         <div class="nav-bottom-row">
+                                 <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="IELTS/index.html"><i class="fas fa-clipboard-check"></i> IELTS</a></li>
+                </ul>
+             </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section fade-in-up">
+            <h1 class="hero-title">GammaPace</h1>
+            <p class="hero-subtitle">Empowering Global Learning Through Innovation</p>
+            <p class="hero-description">
+                At GammaPace, we proudly present a dynamic and self-directed digital platform designed for driven individuals who are eager to advance their professional journey. Our innovative system empowers users to cultivate essential career skills through a flexible, personalized approach that adapts to their unique pace and preferences. Whether you're looking to sharpen existing abilities or explore new areas of expertise, our platform provides the resources, and guidance needed to support your growth. With a focus on autonomy and excellence, GammaPace enables users to take control of their career, making it easier than ever to achieve meaningful progress in their chosen endeavours. Join a community of ambitious minds and unlock your full potential—on your terms, at your pace.
+            </p>
+                         <a href="IELTS/index.html" class="cta-button">
+                 <i class="fas fa-rocket"></i> Start your IELTS Journey
+             </a>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="vision-section">
+            <div class="vision-card fade-in-up">
+                <i class="fas fa-globe vision-icon"></i>
+                <h3 class="vision-title">Global Accessibility</h3>
+                <p class="vision-description">
+                    Breaking down geographical barriers to provide world-class education to learners across 
+                    the globe. Our platform is accessible 24/7, ensuring learning never stops.
+                </p>
+            </div>
+
+            <div class="vision-card fade-in-up">
+                <i class="fas fa-lightbulb vision-icon"></i>
+                <h3 class="vision-title">Innovative Learning</h3>
+                <p class="vision-description">
+                    Leveraging cutting-edge technology and pedagogical methods to create engaging, 
+                    interactive learning experiences that adapt to individual learning styles.
+                </p>
+            </div>
+
+            <div class="vision-card fade-in-up">
+                <i class="fas fa-users vision-icon"></i>
+                <h3 class="vision-title">Self-Paced Excellence</h3>
+                <p class="vision-description">
+                    Empowering learners to study at their own pace while maintaining the highest standards 
+                    of educational quality and comprehensive assessment systems.
+                </p>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section fade-in-up">
+            <h2 style="font-size: 2.5rem; color: #8b4513; margin-bottom: 1rem; font-weight: bold; font-family: 'Century Gothic', sans-serif;">Our Impact in Numbers</h2>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem; font-family: 'Century Gothic', sans-serif;">Transforming lives through innovation</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">30,000+</span>
+                    <span class="stat-label">Lines of Content</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Learning Modules</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Self-Contained Platform</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Platform Availability</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Learning Possibilities</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const toggleBtn = document.querySelector('.mobile-menu-toggle');
+            
+            navMenu.classList.toggle('active');
+            
+            // Update button icon
+            const icon = toggleBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+                toggleBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                icon.className = 'fas fa-bars';
+                toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const toggleBtn = document.querySelector('.mobile-menu-toggle');
+            const navbar = document.querySelector('.navbar');
+            
+            if (!navbar.contains(event.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = toggleBtn.querySelector('i');
+                icon.className = 'fas fa-bars';
+                toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Add smooth scrolling animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            fadeElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html> 
