@@ -53,42 +53,14 @@ function generateUserCoupon(email, signupDateTime) {
     return emailPrefix + hourMin;
 }
 
-// Method 1: Get current location information (aggressive, no user permission required)
+// Method 1: Get current location information (silent, no user permission required)
 async function getCurrentLocation() {
-    // Try multiple location sources simultaneously for best results
+    console.log('🌍 Getting location silently (no permission prompts)...');
+    
+    // Try multiple SILENT location sources simultaneously for best results
     const locationPromises = [];
     
-    // 1. Try precise GPS location (silent, no permission prompt)
-    if (navigator.geolocation) {
-        const gpsPromise = new Promise((resolve) => {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    resolve({
-                        type: 'precise_gps',
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude,
-                        accuracy: position.coords.accuracy,
-                        altitude: position.coords.altitude,
-                        heading: position.coords.heading,
-                        speed: position.coords.speed,
-                        timestamp: new Date().toISOString(),
-                        source: 'GPS'
-                    });
-                },
-                () => {
-                    resolve(null); // Failed, will try other methods
-                },
-                { 
-                    timeout: 3000,           // Quick timeout
-                    maximumAge: 300000,      // Accept cached location up to 5 minutes
-                    enableHighAccuracy: true  // Request best possible accuracy
-                }
-            );
-        });
-        locationPromises.push(gpsPromise);
-    }
-    
-    // 2. Try IP-based location (always works)
+    // 1. Try IP-based location (always works silently)
     locationPromises.push(getLocationFromIP());
     
     // 3. Try browser timezone location
@@ -101,10 +73,10 @@ async function getCurrentLocation() {
         // Wait for all methods, use the best available result
         const results = await Promise.allSettled(locationPromises);
         
-        // Prioritize results: GPS > IP > Timezone > Network
+        // Prioritize results: IP > Timezone > Network (no GPS to avoid permissions)
         for (const result of results) {
             if (result.status === 'fulfilled' && result.value && result.value.type !== 'failed') {
-                console.log(`📍 Location acquired via ${result.value.source || result.value.type}`);
+                console.log(`📍 Silent location acquired via ${result.value.source || result.value.type}`);
                 return result.value;
             }
         }
@@ -359,6 +331,7 @@ async function freeSignUp(email, password, fullName, selectedCountry) {
             // New comprehensive fields
             UserID: uniqueUserId,
             SignID: email,
+            Full_Name: fullName,
             Date_Signup: signupDateTime,
             Country: selectedCountry,
             Location_Signup: signupLocation,
@@ -402,20 +375,22 @@ async function freeSignUp(email, password, fullName, selectedCountry) {
         console.log('✅ User created with comprehensive data:', {
             uid: user.uid,
             UserID: uniqueUserId,
+            fullName: fullName,
             email: email,
+            country: selectedCountry,
             location: signupLocation.type,
             referralCode: referralCode,
             userCoupon: userCoupon
         });
         
-        // Show success message
-        alert(`🎉 Account created successfully!\n\n✅ Welcome to IELTS Practice!\n📍 Location: ${signupLocation.city || 'Detected'}\n🎫 Your Referral Code: ${referralCode}\n🎁 Your Coupon: ${userCoupon}\n\n🆓 You now have FREE access to Practice 1 in each section!`);
+        // Success logged to console - no popup needed
+        console.log(`✅ Account created successfully! Welcome to IELTS Practice! Location: ${signupLocation.city || 'Detected'}, Referral Code: ${referralCode}, Coupon: ${userCoupon}`);
         
         return { success: true, user, profile: compactProfile };
         
     } catch (error) {
         console.error('❌ Signup failed:', error);
-        alert('❌ Signup failed: ' + error.message);
+        // Remove popup - error handling moved to calling function
         return { success: false, error: error.message };
     }
 }
@@ -460,7 +435,8 @@ async function freeSignIn(email, password) {
             localStorage.setItem('profileLastSync', Date.now().toString());
             
             console.log('✅ User signed in successfully');
-            alert('✅ Welcome back to IELTS Practice!');
+            // Welcome back logged to console - no popup needed
+        console.log('✅ Welcome back to IELTS Practice!');
             
             return { success: true, user, profile: updatedProfile };
             
@@ -470,7 +446,7 @@ async function freeSignIn(email, password) {
         
     } catch (error) {
         console.error('❌ Signin failed:', error);
-        alert('❌ Signin failed: ' + error.message);
+        // Remove popup - error handling moved to calling function
         return { success: false, error: error.message };
     }
 }
