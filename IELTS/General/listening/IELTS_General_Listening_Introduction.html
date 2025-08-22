@@ -381,6 +381,7 @@
             transition: all 0.3s ease;
             border-left: 3px solid #d4af37;
             cursor: pointer;
+            position: relative;
         }
 
         .practice-item:hover {
@@ -388,6 +389,43 @@
             transform: translateX(5px);
             box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
         }
+
+        /* Lock styling for Practice 2 */
+        .practice-item.locked {
+            background: rgba(220, 53, 69, 0.08);
+            border-left-color: #dc3545;
+            color: #666;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .practice-item.locked:hover {
+            background: rgba(220, 53, 69, 0.12);
+            transform: none;
+            box-shadow: none;
+            border-left-color: #dc3545;
+        }
+
+        .practice-text {
+            display: inline-block;
+        }
+
+        .lock-badge {
+            display: none;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .practice-item.locked .lock-badge {
+            display: inline-block;
+        }
+
+
 
         /* Hero Section */
         .hero-section {
@@ -608,7 +646,10 @@
                 </div>
                 <div class="section-content" id="part1-content">
                     <a href="IELTS_G_Listening_Part1_Practice1.html" class="practice-item">Practice 1</a>
-                    <a href="IELTS_G_Listening_Part1_Practice2.html" class="practice-item">Practice 2</a>
+                    <a href="IELTS_G_Listening_Part1_Practice2.html" class="practice-item" id="practice2Link" onclick="handlePractice2Click(event)">
+                        <span class="practice-text">Practice 2</span>
+                        <span class="lock-badge" id="practice2Lock">🔒</span>
+                    </a>
                     <a href="IELTS_G_Listening_Part1_Practice3.html" class="practice-item">Practice 3</a>
                     <a href="IELTS_G_Listening_Part1_Practice4.html" class="practice-item">Practice 4</a>
                     <a href="IELTS_G_Listening_Part1_Practice5.html" class="practice-item">Practice 5</a>
@@ -904,7 +945,184 @@
         </main>
     </div>
 
+
+
+    <!-- Firebase CDN Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Firebase Integration -->
+    <script src="../../../Reference-Lookup/IELTS-Firebase-Integration.js"></script>
+
     <script>
+        // User Subscription Management for Practice 2 Link (Using Stored Data)
+        function checkUserSubscription() {
+            console.log('🔍 Checking user subscription for General Practice 2 using stored data...');
+            console.log('🔍 Current auth state:', typeof auth !== 'undefined' ? (auth.currentUser ? 'Authenticated: ' + auth.currentUser.uid : 'Not authenticated') : 'Auth not ready');
+            
+            try {
+                // Get stored subscription data from localStorage (regardless of auth state)
+                const subscriptionData = localStorage.getItem('userSubscriptionData');
+                console.log('📋 Raw localStorage data:', subscriptionData);
+                
+                if (subscriptionData) {
+                    const data = JSON.parse(subscriptionData);
+                    console.log('📋 Parsed subscription data:', data);
+                    console.log('📋 Subscription field:', data.subscription);
+                    console.log('📅 Start date:', data.startDate);
+                    console.log('📅 End date:', data.endDate);
+                    console.log('✅ Is active flag:', data.isActive);
+                    console.log('🔍 Reason:', data.reason);
+                    console.log('🕒 Last checked:', data.lastChecked);
+                    console.log('👤 User ID in data:', data.userId);
+                    
+                    if (data.isActive === true) {
+                        console.log('🎉 SUBSCRIPTION IS ACTIVE - UNLOCKING Practice 2');
+                        unlockPractice2();
+                    } else {
+                        console.log('❌ Subscription NOT active - LOCKING Practice 2');
+                        console.log('🔍 Lock reason:', data.reason || 'isActive = false');
+                        lockPractice2();
+                    }
+                } else {
+                    console.log('❌ No subscription data found in localStorage - LOCKING Practice 2');
+                    
+                    // Check if user is authenticated but no data
+                    if (typeof auth !== 'undefined' && auth.currentUser) {
+                        console.log('⚠️ User authenticated but no subscription data - may need to refresh');
+                        console.log('💡 Try: forceRefreshSubscription() on main page and navigate back');
+                    }
+                    
+                    lockPractice2();
+                }
+                
+            } catch (error) {
+                console.error('❌ Error checking stored subscription data:', error);
+                console.log('🔧 Defaulting to LOCKED due to error');
+                lockPractice2();
+            }
+        }
+
+        // This function is no longer needed as validation is done at login/signup
+        // Keeping for backward compatibility
+        function validateSubscriptionDates(userData, currentDate) {
+            console.log('ℹ️ Note: Using stored subscription validation instead of real-time checking');
+            return false; // Force use of stored data
+        }
+
+        function lockPractice2() {
+            console.log('🔒 Attempting to lock Practice 2 link...');
+            
+            const practice2Link = document.getElementById('practice2Link');
+            const lockBadge = document.getElementById('practice2Lock');
+            
+            console.log('🔍 Elements found:', {
+                practice2Link: practice2Link ? 'Found' : 'NOT FOUND',
+                lockBadge: lockBadge ? 'Found' : 'NOT FOUND'
+            });
+            
+            if (practice2Link && lockBadge) {
+                practice2Link.classList.add('locked');
+                practice2Link.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Practice 2 link LOCKED successfully');
+                console.log('🔍 Link classes after lock:', practice2Link.className);
+                console.log('🔍 Lock badge display:', lockBadge.style.display);
+            } else {
+                console.error('❌ Could not lock - elements missing!');
+            }
+        }
+
+        function unlockPractice2() {
+            console.log('✅ Attempting to unlock Practice 2 link...');
+            
+            const practice2Link = document.getElementById('practice2Link');
+            const lockBadge = document.getElementById('practice2Lock');
+            
+            console.log('🔍 Elements found:', {
+                practice2Link: practice2Link ? 'Found' : 'NOT FOUND',
+                lockBadge: lockBadge ? 'Found' : 'NOT FOUND'
+            });
+            
+            if (practice2Link && lockBadge) {
+                practice2Link.classList.remove('locked');
+                practice2Link.setAttribute('href', 'IELTS_G_Listening_Part1_Practice2.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Practice 2 link UNLOCKED successfully');
+                console.log('🔍 Link classes after unlock:', practice2Link.className);
+                console.log('🔍 Lock badge display:', lockBadge.style.display);
+            } else {
+                console.error('❌ Could not unlock - elements missing!');
+            }
+        }
+
+        function handlePractice2Click(event) {
+            const practice2Link = document.getElementById('practice2Link');
+            
+            if (practice2Link.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Practice 2 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Practice 2');
+            return true;
+        }
+
+        // Redirect to main IELTS page and open subscription modal
+        function openSubscriptionModal() {
+            console.log('💳 Redirecting to main page for subscription...');
+            
+            // Navigate to main IELTS page with a parameter to open subscription modal
+            window.location.href = '../../index.html?openSubscription=true';
+        }
+
+        // Manual testing functions (can be called from console)
+        window.testLockPractice2 = function() {
+            console.log('🧪 Manual test: LOCKING Practice 2');
+            lockPractice2();
+        };
+
+        window.testUnlockPractice2 = function() {
+            console.log('🧪 Manual test: UNLOCKING Practice 2');
+            unlockPractice2();
+        };
+
+        window.manualSubscriptionCheck = function() {
+            console.log('🧪 Manual subscription check triggered (using stored data)');
+            checkUserSubscription();
+        };
+
+        window.viewStoredSubscriptionData = function() {
+            const data = localStorage.getItem('userSubscriptionData');
+            if (data) {
+                const parsed = JSON.parse(data);
+                console.log('📋 Stored subscription data:', parsed);
+                return parsed;
+            } else {
+                console.log('❌ No subscription data found in localStorage');
+                return null;
+            }
+        };
+
+        window.simulateSubscriptionData = function(isActive = true) {
+            const testData = {
+                subscription: 'Y',
+                startDate: '2024-01-01',
+                endDate: '2024-12-31',
+                isActive: isActive,
+                lastChecked: new Date().toISOString(),
+                userId: 'test123'
+            };
+            
+            localStorage.setItem('userSubscriptionData', JSON.stringify(testData));
+            console.log('🧪 Simulated subscription data set:', testData);
+            console.log('🔄 Running subscription check with simulated data...');
+            checkUserSubscription();
+        };
+
         // Menu functionality
         function toggleMenu() {
             const menu = document.getElementById('slideMenu');
@@ -966,9 +1184,57 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('📚 IELTS General Listening Introduction page loaded');
             
+            // Multiple subscription checks to ensure it works
+            setTimeout(() => {
+                console.log('🚀 Starting user subscription check with stored data (attempt 1)...');
+                checkUserSubscription();
+            }, 500);
+            
+            // Second check after more delay for Firebase auth
+            setTimeout(() => {
+                console.log('🚀 Secondary subscription check (attempt 2)...');
+                checkUserSubscription();
+            }, 2000);
+            
+            // Third check for good measure
+            setTimeout(() => {
+                console.log('🚀 Final subscription check (attempt 3)...');
+                checkUserSubscription();
+            }, 5000);
+            
             // Optional: Auto-expand the first section for better UX
             // toggleSection('part1');
         });
+
+        // Also check when page becomes visible (when user navigates back)
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                console.log('📖 Page became visible - checking subscription again...');
+                setTimeout(checkUserSubscription, 1000);
+            }
+        });
+
+        // Check subscription when page gains focus
+        window.addEventListener('focus', function() {
+            console.log('🎯 Window gained focus - checking subscription...');
+            setTimeout(checkUserSubscription, 500);
+        });
+
+
+
+        // Manual testing function for subscription redirect
+        window.testSubscriptionRedirect = function() {
+            console.log('🧪 Testing subscription redirect...');
+            openSubscriptionModal();
+        };
+
+        console.log('🔧 Debug functions available:');
+        console.log('   testLockPractice2() - manually lock Practice 2');
+        console.log('   testUnlockPractice2() - manually unlock Practice 2');
+        console.log('   manualSubscriptionCheck() - run subscription check with stored data');
+        console.log('   viewStoredSubscriptionData() - view current subscription data');
+        console.log('   simulateSubscriptionData(true/false) - simulate subscription data for testing');
+        console.log('   testSubscriptionRedirect() - test redirect to subscription page');
     </script>
 </body>
 </html> 
