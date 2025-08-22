@@ -1186,138 +1186,237 @@
         }
         
         function saveToken() {
+            console.log('💾 Saving token and credentials...');
+            
             const token = document.getElementById('githubToken').value.trim();
             const username = document.getElementById('githubUsername').value.trim();
             const repo = document.getElementById('githubRepo').value.trim();
             
+            // Validate token
             if (!token) {
-                showStatus('❌ No token to save', 'error');
+                showStatus('❌ No token to save. Please enter your GitHub token first.', 'error');
+                updateTokenStatus('❌ No token provided');
+                console.log('❌ No token provided');
+                return;
+            }
+            
+            // Validate token format
+            if (!token.startsWith('ghp_') && !token.startsWith('github_pat_')) {
+                showStatus('❌ Invalid token format. Token should start with "ghp_" or "github_pat_"', 'error');
+                updateTokenStatus('❌ Invalid token format');
+                console.log('❌ Invalid token format');
+                return;
+            }
+            
+            // Check localStorage availability
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+            } catch (error) {
+                showStatus('❌ Cannot save token. Browser storage is disabled.', 'error');
+                updateTokenStatus('❌ Storage disabled');
+                console.error('❌ localStorage not available:', error);
                 return;
             }
             
             try {
                 const tokenData = {
                     token: token,
-                    username: username,
-                    repo: repo,
+                    username: username || '',
+                    repo: repo || '',
                     savedAt: new Date().toISOString(),
                     tokenPrefix: token.substring(0, 7) + '...'
                 };
                 
                 localStorage.setItem('github_token_data', JSON.stringify(tokenData));
+                
                 updateTokenStatus(`💾 Token saved (${tokenData.tokenPrefix})`);
                 showStatus('💾 Token and credentials saved successfully!', 'success');
+                
                 console.log('💾 Token saved to localStorage:', {
                     tokenPrefix: tokenData.tokenPrefix,
-                    username: username,
-                    repo: repo,
+                    username: username || 'empty',
+                    repo: repo || 'empty',
                     savedAt: tokenData.savedAt
                 });
+                
             } catch (error) {
                 console.error('❌ Error saving token:', error);
-                showStatus('❌ Failed to save token', 'error');
+                showStatus(`❌ Failed to save token: ${error.message}`, 'error');
+                updateTokenStatus('❌ Save failed');
             }
         }
         
         function loadToken() {
+            console.log('🔄 Loading saved token and credentials...');
+            
             try {
                 const savedData = localStorage.getItem('github_token_data');
                 if (!savedData) {
-                    showStatus('ℹ️ No saved token found', 'info');
-                    updateTokenStatus('');
+                    showStatus('ℹ️ No saved token found. Please save your token first.', 'info');
+                    updateTokenStatus('❌ No saved token found');
+                    console.log('❌ No saved token data in localStorage');
                     return;
                 }
                 
+                console.log('✅ Found saved token data in localStorage');
                 const tokenData = JSON.parse(savedData);
+                
+                if (!tokenData.token) {
+                    showStatus('❌ Invalid saved token data', 'error');
+                    updateTokenStatus('❌ Invalid token data');
+                    return;
+                }
+                
+                // Show what we're loading
+                console.log('📋 Loading saved data:', {
+                    tokenPrefix: tokenData.tokenPrefix || tokenData.token.substring(0, 7) + '...',
+                    username: tokenData.username || 'none',
+                    repo: tokenData.repo || 'none',
+                    savedAt: tokenData.savedAt || 'unknown'
+                });
                 
                 // Always load the token
                 document.getElementById('githubToken').value = tokenData.token;
+                console.log('✅ Token loaded into field');
                 
-                // Load username if empty or ask user
+                // Load username and repo with simpler logic
                 const currentUsername = document.getElementById('githubUsername').value.trim();
-                if (!currentUsername && tokenData.username) {
-                    document.getElementById('githubUsername').value = tokenData.username;
-                } else if (currentUsername && tokenData.username && currentUsername !== tokenData.username) {
-                    // Ask user if they want to overwrite username
-                    if (confirm(`🤔 Load saved username?\n\nCurrent: ${currentUsername}\nSaved: ${tokenData.username}\n\nClick OK to use saved username, Cancel to keep current.`)) {
-                        document.getElementById('githubUsername').value = tokenData.username;
-                    }
-                }
-                
-                // Handle repository name more carefully - don't overwrite BETAFOUR by default
                 const currentRepo = document.getElementById('githubRepo').value.trim();
-                if (!currentRepo && tokenData.repo) {
-                    // If repo field is empty, load the saved one
-                    document.getElementById('githubRepo').value = tokenData.repo;
-                } else if (currentRepo && tokenData.repo && currentRepo !== tokenData.repo) {
-                    // Ask user if they want to overwrite repository name
-                    if (confirm(`🤔 Load saved repository name?\n\nCurrent: ${currentRepo}\nSaved: ${tokenData.repo}\n\nClick OK to use saved repository, Cancel to keep current (${currentRepo}).`)) {
-                        document.getElementById('githubRepo').value = tokenData.repo;
+                
+                // Load saved username if available
+                if (tokenData.username) {
+                    if (!currentUsername) {
+                        // Field is empty, load saved value
+                        document.getElementById('githubUsername').value = tokenData.username;
+                        console.log(`✅ Username loaded: ${tokenData.username}`);
+                    } else if (currentUsername !== tokenData.username) {
+                        // Different value exists, ask user
+                        const useUsername = confirm(`Load saved username?\n\nCurrent: ${currentUsername}\nSaved: ${tokenData.username}\n\nOK = Use saved, Cancel = Keep current`);
+                        if (useUsername) {
+                            document.getElementById('githubUsername').value = tokenData.username;
+                            console.log(`✅ Username updated to: ${tokenData.username}`);
+                        } else {
+                            console.log(`✅ Keeping current username: ${currentUsername}`);
+                        }
                     }
                 }
                 
-                // Calculate how long ago it was saved
-                const savedDate = new Date(tokenData.savedAt);
-                const now = new Date();
-                const daysDiff = Math.floor((now - savedDate) / (1000 * 60 * 60 * 24));
-                const timeAgo = daysDiff === 0 ? 'today' : 
-                               daysDiff === 1 ? '1 day ago' : 
-                               `${daysDiff} days ago`;
+                // Load saved repository if available
+                if (tokenData.repo) {
+                    if (!currentRepo) {
+                        // Field is empty, load saved value
+                        document.getElementById('githubRepo').value = tokenData.repo;
+                        console.log(`✅ Repository loaded: ${tokenData.repo}`);
+                    } else if (currentRepo !== tokenData.repo) {
+                        // Different value exists, ask user
+                        const useRepo = confirm(`Load saved repository?\n\nCurrent: ${currentRepo}\nSaved: ${tokenData.repo}\n\nOK = Use saved, Cancel = Keep current`);
+                        if (useRepo) {
+                            document.getElementById('githubRepo').value = tokenData.repo;
+                            console.log(`✅ Repository updated to: ${tokenData.repo}`);
+                        } else {
+                            console.log(`✅ Keeping current repository: ${currentRepo}`);
+                        }
+                    }
+                }
                 
-                updateTokenStatus(`📥 Loaded (${tokenData.tokenPrefix}) - saved ${timeAgo}`);
+                // Calculate and show age of saved data
+                let timeAgo = 'unknown time';
+                if (tokenData.savedAt) {
+                    const savedDate = new Date(tokenData.savedAt);
+                    const now = new Date();
+                    const daysDiff = Math.floor((now - savedDate) / (1000 * 60 * 60 * 24));
+                    timeAgo = daysDiff === 0 ? 'today' : 
+                             daysDiff === 1 ? '1 day ago' : 
+                             `${daysDiff} days ago`;
+                }
+                
+                const tokenPrefix = tokenData.tokenPrefix || tokenData.token.substring(0, 7) + '...';
+                updateTokenStatus(`📥 Loaded (${tokenPrefix}) - saved ${timeAgo}`);
                 showStatus(`📥 Token and credentials loaded successfully! (saved ${timeAgo})`, 'success');
                 
-                console.log('📥 Token loaded from localStorage:', {
-                    tokenPrefix: tokenData.tokenPrefix,
-                    username: tokenData.username,
-                    repo: tokenData.repo,
-                    savedAt: tokenData.savedAt,
-                    daysAgo: daysDiff
-                });
+                console.log('🎉 Token loading completed successfully');
                 
             } catch (error) {
                 console.error('❌ Error loading token:', error);
-                showStatus('❌ Failed to load saved token', 'error');
-                updateTokenStatus('');
+                showStatus(`❌ Failed to load saved token: ${error.message}`, 'error');
+                updateTokenStatus('❌ Load failed');
+                
+                // Try to clear corrupted data
+                if (error instanceof SyntaxError) {
+                    console.log('🗑️ Clearing corrupted token data...');
+                    localStorage.removeItem('github_token_data');
+                    showStatus('🗑️ Corrupted token data cleared. Please save your token again.', 'info');
+                }
             }
         }
         
         function loadTokenOnly() {
+            console.log('🔑 Loading token only (keeping username and repo unchanged)...');
+            
             try {
                 const savedData = localStorage.getItem('github_token_data');
                 if (!savedData) {
-                    showStatus('ℹ️ No saved token found', 'info');
-                    updateTokenStatus('');
+                    showStatus('ℹ️ No saved token found. Please save your token first.', 'info');
+                    updateTokenStatus('❌ No saved token found');
+                    console.log('❌ No saved token data in localStorage');
                     return;
                 }
                 
+                console.log('✅ Found saved token data in localStorage');
                 const tokenData = JSON.parse(savedData);
                 
+                if (!tokenData.token) {
+                    showStatus('❌ Invalid saved token data', 'error');
+                    updateTokenStatus('❌ Invalid token data');
+                    return;
+                }
+                
+                // Show what we're loading (token only)
+                console.log('📋 Loading token only:', {
+                    tokenPrefix: tokenData.tokenPrefix || tokenData.token.substring(0, 7) + '...',
+                    savedAt: tokenData.savedAt || 'unknown'
+                });
+                
                 // Only load the token, don't touch other fields
-                document.getElementById('githubToken').value = tokenData.token;
+                const tokenField = document.getElementById('githubToken');
+                if (tokenField) {
+                    tokenField.value = tokenData.token;
+                    console.log('✅ Token loaded into field');
+                } else {
+                    console.error('❌ Token input field not found!');
+                    showStatus('❌ Token input field not found', 'error');
+                    return;
+                }
                 
-                // Calculate how long ago it was saved
-                const savedDate = new Date(tokenData.savedAt);
-                const now = new Date();
-                const daysDiff = Math.floor((now - savedDate) / (1000 * 60 * 60 * 24));
-                const timeAgo = daysDiff === 0 ? 'today' : 
-                               daysDiff === 1 ? '1 day ago' : 
-                               `${daysDiff} days ago`;
+                // Calculate and show age of saved data
+                let timeAgo = 'unknown time';
+                if (tokenData.savedAt) {
+                    const savedDate = new Date(tokenData.savedAt);
+                    const now = new Date();
+                    const daysDiff = Math.floor((now - savedDate) / (1000 * 60 * 60 * 24));
+                    timeAgo = daysDiff === 0 ? 'today' : 
+                             daysDiff === 1 ? '1 day ago' : 
+                             `${daysDiff} days ago`;
+                }
                 
-                updateTokenStatus(`🔑 Token loaded (${tokenData.tokenPrefix}) - saved ${timeAgo}`);
+                const tokenPrefix = tokenData.tokenPrefix || tokenData.token.substring(0, 7) + '...';
+                updateTokenStatus(`🔑 Token loaded (${tokenPrefix}) - saved ${timeAgo}`);
                 showStatus(`🔑 Token loaded successfully! (saved ${timeAgo}) - username and repository unchanged`, 'success');
                 
-                console.log('🔑 Token-only loaded from localStorage:', {
-                    tokenPrefix: tokenData.tokenPrefix,
-                    savedAt: tokenData.savedAt,
-                    daysAgo: daysDiff,
-                    note: 'Username and repository fields unchanged'
-                });
+                console.log('🎉 Token-only loading completed successfully');
                 
             } catch (error) {
                 console.error('❌ Error loading token:', error);
-                showStatus('❌ Failed to load saved token', 'error');
-                updateTokenStatus('');
+                showStatus(`❌ Failed to load saved token: ${error.message}`, 'error');
+                updateTokenStatus('❌ Load failed');
+                
+                // Try to clear corrupted data
+                if (error instanceof SyntaxError) {
+                    console.log('🗑️ Clearing corrupted token data...');
+                    localStorage.removeItem('github_token_data');
+                    showStatus('🗑️ Corrupted token data cleared. Please save your token again.', 'info');
+                }
             }
         }
         
@@ -1351,26 +1450,70 @@
         function initializeTokenManagement() {
             console.log('🔧 Initializing token management...');
             
+            // Check if localStorage is available
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                console.log('✅ localStorage is available');
+            } catch (error) {
+                console.error('❌ localStorage not available:', error);
+                updateTokenStatus('❌ localStorage disabled');
+                showStatus('❌ Browser storage disabled. Token saving/loading won\'t work.', 'error');
+                return;
+            }
+            
             // Check if there's a saved token
             try {
                 const savedData = localStorage.getItem('github_token_data');
                 if (savedData) {
+                    console.log('✅ Found saved token data');
                     const tokenData = JSON.parse(savedData);
-                    const savedDate = new Date(tokenData.savedAt);
-                    const now = new Date();
-                    const daysDiff = Math.floor((now - savedDate) / (1000 * 60 * 60 * 24));
-                    const timeAgo = daysDiff === 0 ? 'today' : 
-                                   daysDiff === 1 ? '1 day ago' : 
-                                   `${daysDiff} days ago`;
                     
-                    updateTokenStatus(`💾 Token available (${tokenData.tokenPrefix}) - saved ${timeAgo}`);
+                    // Validate token data structure
+                    if (!tokenData.token) {
+                        console.log('❌ Invalid token data structure');
+                        updateTokenStatus('❌ Invalid saved data');
+                        return;
+                    }
+                    
+                    // Calculate age of saved data
+                    let timeAgo = 'unknown time';
+                    if (tokenData.savedAt) {
+                        const savedDate = new Date(tokenData.savedAt);
+                        const now = new Date();
+                        const daysDiff = Math.floor((now - savedDate) / (1000 * 60 * 60 * 24));
+                        timeAgo = daysDiff === 0 ? 'today' : 
+                                 daysDiff === 1 ? '1 day ago' : 
+                                 `${daysDiff} days ago`;
+                        console.log(`📅 Token saved ${timeAgo}`);
+                    }
+                    
+                    const tokenPrefix = tokenData.tokenPrefix || tokenData.token.substring(0, 7) + '...';
+                    updateTokenStatus(`💾 Token available (${tokenPrefix}) - saved ${timeAgo}`);
+                    
                     console.log('💾 Saved token detected:', {
-                        tokenPrefix: tokenData.tokenPrefix,
-                        daysAgo: daysDiff
+                        tokenPrefix: tokenPrefix,
+                        username: tokenData.username || 'none',
+                        repo: tokenData.repo || 'none',
+                        savedAt: tokenData.savedAt || 'unknown'
                     });
+                    
+                    showStatus('💾 Saved token available! Use "📥" or "🔑" buttons to load it.', 'info');
+                    
+                } else {
+                    console.log('ℹ️ No saved token found');
+                    updateTokenStatus('ℹ️ No saved token');
                 }
             } catch (error) {
-                console.log('ℹ️ No valid saved token found');
+                console.error('❌ Error checking saved token:', error);
+                updateTokenStatus('❌ Check failed');
+                
+                // Try to clear corrupted data
+                if (error instanceof SyntaxError) {
+                    console.log('🗑️ Clearing corrupted token data...');
+                    localStorage.removeItem('github_token_data');
+                    updateTokenStatus('🗑️ Corrupted data cleared');
+                }
             }
         }
         
@@ -2436,9 +2579,134 @@
         // Initialize the application when the page loads
         document.addEventListener('DOMContentLoaded', initializeApp);
         
+        // Debug function to test token functionality
+        function testTokenFunctionality() {
+            console.log('🧪 Testing token functionality...');
+            
+            // Test localStorage availability
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                console.log('✅ localStorage test passed');
+            } catch (error) {
+                console.error('❌ localStorage test failed:', error);
+                return;
+            }
+            
+            // Test saving and loading a dummy token
+            const testToken = 'ghp_test123456789012345678901234567890';
+            const testUsername = 'testuser';
+            const testRepo = 'testrepo';
+            
+            // Temporarily set values
+            document.getElementById('githubToken').value = testToken;
+            document.getElementById('githubUsername').value = testUsername;
+            document.getElementById('githubRepo').value = testRepo;
+            
+            console.log('🧪 Testing save functionality...');
+            saveToken();
+            
+            // Clear fields
+            document.getElementById('githubToken').value = '';
+            document.getElementById('githubUsername').value = '';
+            document.getElementById('githubRepo').value = '';
+            
+            console.log('🧪 Testing load functionality...');
+            loadToken();
+            
+            // Verify values were loaded
+            const loadedToken = document.getElementById('githubToken').value;
+            const loadedUsername = document.getElementById('githubUsername').value;
+            const loadedRepo = document.getElementById('githubRepo').value;
+            
+            if (loadedToken === testToken && loadedUsername === testUsername && loadedRepo === testRepo) {
+                console.log('✅ Token save/load test passed!');
+                showStatus('✅ Token functionality test passed!', 'success');
+            } else {
+                console.error('❌ Token save/load test failed');
+                console.error('Expected:', { testToken, testUsername, testRepo });
+                console.error('Actual:', { loadedToken, loadedUsername, loadedRepo });
+                showStatus('❌ Token functionality test failed!', 'error');
+            }
+            
+            // Clean up test data
+            localStorage.removeItem('github_token_data');
+            console.log('🧪 Test completed and cleaned up');
+        }
+        
+        // Add test button to console (for development)
+        window.testTokens = testTokenFunctionality;
+        
+        // Debug function to check localStorage status
+        function debugTokenStorage() {
+            console.log('🔍 ==> DEBUGGING TOKEN STORAGE <==');
+            
+            // 1. Check localStorage availability
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                console.log('✅ localStorage is available and working');
+            } catch (error) {
+                console.error('❌ localStorage is NOT available:', error);
+                return;
+            }
+            
+            // 2. Check if token data exists
+            const savedData = localStorage.getItem('github_token_data');
+            console.log('📋 Raw localStorage data:', savedData);
+            
+            if (!savedData) {
+                console.log('❌ No token data found in localStorage');
+                console.log('💡 You need to SAVE a token first using the 💾 button');
+                return;
+            }
+            
+            // 3. Try to parse the data
+            try {
+                const tokenData = JSON.parse(savedData);
+                console.log('✅ Token data parsed successfully:', {
+                    hasToken: !!tokenData.token,
+                    tokenLength: tokenData.token ? tokenData.token.length : 0,
+                    tokenPrefix: tokenData.token ? tokenData.token.substring(0, 10) + '...' : 'none',
+                    username: tokenData.username || 'empty',
+                    repo: tokenData.repo || 'empty',
+                    savedAt: tokenData.savedAt || 'unknown'
+                });
+            } catch (error) {
+                console.error('❌ Failed to parse token data:', error);
+                console.log('🗑️ Clearing corrupted data...');
+                localStorage.removeItem('github_token_data');
+            }
+            
+            // 4. List all localStorage keys
+            console.log('📂 All localStorage keys:', Object.keys(localStorage));
+            
+            console.log('🔍 ==> END DEBUG <==');
+        }
+        
+        // Function to manually check and clear storage
+        function clearAllTokenData() {
+            console.log('🗑️ Clearing all token data...');
+            localStorage.removeItem('github_token_data');
+            localStorage.removeItem('githubSyncConfig');
+            updateTokenStatus('🗑️ All data cleared');
+            showStatus('🗑️ All token data cleared! You can now save fresh data.', 'success');
+            console.log('✅ All token data cleared');
+        }
+        
+        // Add debug functions to global scope
+        window.debugTokens = debugTokenStorage;
+        window.clearTokens = clearAllTokenData;
+        
         console.log('🔄 BETAFOUR GitHub Repository Sync Tool loaded successfully!');
         console.log('💡 This tool helps you sync BETAFOUR local development with GitHub repositories');
         console.log('🎯 Features: Dual-pane interface, path mapping, GitHub Pages setup, and more');
+        console.log('');
+        console.log('🛠️  DEBUGGING COMMANDS (run in console):');
+        console.log('   debugTokens()  - Check token storage status');
+        console.log('   testTokens()   - Test save/load functionality'); 
+        console.log('   clearTokens()  - Clear all saved token data');
+        console.log('');
     </script>
 </body>
 </html> 
