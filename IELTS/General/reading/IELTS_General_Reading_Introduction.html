@@ -387,6 +387,49 @@
             box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
         }
 
+        /* Lock mechanism styles - Enhanced with animations */
+        .practice-item {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .practice-text {
+            flex: 1;
+        }
+
+        .lock-badge {
+            display: none;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Lock styling for premium practices */
+        .practice-item.locked {
+            background: rgba(220, 53, 69, 0.08);
+            border-left-color: #dc3545;
+            color: #666;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .practice-item.locked:hover {
+            background: rgba(220, 53, 69, 0.12);
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15);
+            border-left-color: #dc3545;
+        }
+
+        .practice-item.locked .lock-badge {
+            display: inline-block;
+        }
+
         /* Hero Section */
         .hero-section {
             background: rgba(255, 255, 255, 0.9);
@@ -658,13 +701,33 @@
                     <span class="expand-icon" id="section1-icon">▼</span>
                 </div>
                 <div class="section-content" id="section1-content">
-                    <a href="IELTS_G_Reading_Section1_Practice1.html" class="practice-item">Practice 1</a>
-                    <a href="IELTS_G_Reading_Section1_Practice2.html" class="practice-item">Practice 2</a>
-                    <a href="IELTS_G_Reading_Section1_Practice3.html" class="practice-item">Practice 3</a>
-                    <a href="IELTS_G_Reading_Section1_Practice4.html" class="practice-item">Practice 4</a>
-                    <a href="IELTS_G_Reading_Section1_Practice5.html" class="practice-item">Practice 5</a>
-                    <a href="IELTS_G_Reading_Section1_Practice6.html" class="practice-item">Practice 6</a>
-                    <a href="IELTS_G_Reading_Section1_Practice7.html" class="practice-item">Practice 7</a>
+                    <a href="IELTS_G_Reading_Section1_Practice1.html" class="practice-item">
+                        <span class="practice-text">Practice 1</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section1_Practice2.html" class="practice-item" id="section1Practice2Link" onclick="handleSection1Practice2Click(event)">
+                        <span class="practice-text">Practice 2</span>
+                        <span class="lock-badge" id="section1Practice2Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section1_Practice3.html" class="practice-item" id="section1Practice3Link" onclick="handleSection1Practice3Click(event)">
+                        <span class="practice-text">Practice 3</span>
+                        <span class="lock-badge" id="section1Practice3Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section1_Practice4.html" class="practice-item" id="section1Practice4Link" onclick="handleSection1Practice4Click(event)">
+                        <span class="practice-text">Practice 4</span>
+                        <span class="lock-badge" id="section1Practice4Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section1_Practice5.html" class="practice-item" id="section1Practice5Link" onclick="handleSection1Practice5Click(event)">
+                        <span class="practice-text">Practice 5</span>
+                        <span class="lock-badge" id="section1Practice5Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section1_Practice6.html" class="practice-item" id="section1Practice6Link" onclick="handleSection1Practice6Click(event)">
+                        <span class="practice-text">Practice 6</span>
+                        <span class="lock-badge" id="section1Practice6Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section1_Practice7.html" class="practice-item" id="section1Practice7Link" onclick="handleSection1Practice7Click(event)">
+                        <span class="practice-text">Practice 7</span>
+                        <span class="lock-badge" id="section1Practice7Lock">🔒</span>
+                    </a>
                 </div>
             </div>
 
@@ -675,13 +738,33 @@
                     <span class="expand-icon" id="section2-icon">▼</span>
                 </div>
                 <div class="section-content" id="section2-content">
-                    <a href="IELTS_G_Reading_Section2_Practice1.html" class="practice-item">Practice 1</a>
-                    <a href="IELTS_G_Reading_Section2_Practice2.html" class="practice-item">Practice 2</a>
-                    <a href="IELTS_G_Reading_Section2_Practice3.html" class="practice-item">Practice 3</a>
-                    <a href="IELTS_G_Reading_Section2_Practice4.html" class="practice-item">Practice 4</a>
-                    <a href="IELTS_G_Reading_Section2_Practice5.html" class="practice-item">Practice 5</a>
-                    <a href="IELTS_G_Reading_Section2_Practice6.html" class="practice-item">Practice 6</a>
-                    <a href="IELTS_G_Reading_Section2_Practice7.html" class="practice-item">Practice 7</a>
+                    <a href="IELTS_G_Reading_Section2_Practice1.html" class="practice-item">
+                        <span class="practice-text">Practice 1</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section2_Practice2.html" class="practice-item" id="section2Practice2Link" onclick="handleSection2Practice2Click(event)">
+                        <span class="practice-text">Practice 2</span>
+                        <span class="lock-badge" id="section2Practice2Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section2_Practice3.html" class="practice-item" id="section2Practice3Link" onclick="handleSection2Practice3Click(event)">
+                        <span class="practice-text">Practice 3</span>
+                        <span class="lock-badge" id="section2Practice3Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section2_Practice4.html" class="practice-item" id="section2Practice4Link" onclick="handleSection2Practice4Click(event)">
+                        <span class="practice-text">Practice 4</span>
+                        <span class="lock-badge" id="section2Practice4Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section2_Practice5.html" class="practice-item" id="section2Practice5Link" onclick="handleSection2Practice5Click(event)">
+                        <span class="practice-text">Practice 5</span>
+                        <span class="lock-badge" id="section2Practice5Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section2_Practice6.html" class="practice-item" id="section2Practice6Link" onclick="handleSection2Practice6Click(event)">
+                        <span class="practice-text">Practice 6</span>
+                        <span class="lock-badge" id="section2Practice6Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section2_Practice7.html" class="practice-item" id="section2Practice7Link" onclick="handleSection2Practice7Click(event)">
+                        <span class="practice-text">Practice 7</span>
+                        <span class="lock-badge" id="section2Practice7Lock">🔒</span>
+                    </a>
                 </div>
             </div>
 
@@ -692,13 +775,33 @@
                     <span class="expand-icon" id="section3-icon">▼</span>
                 </div>
                 <div class="section-content" id="section3-content">
-                    <a href="IELTS_G_Reading_Section3_Practice1.html" class="practice-item">Practice 1</a>
-                    <a href="IELTS_G_Reading_Section3_Practice2.html" class="practice-item">Practice 2</a>
-                    <a href="IELTS_G_Reading_Section3_Practice3.html" class="practice-item">Practice 3</a>
-                    <a href="IELTS_G_Reading_Section3_Practice4.html" class="practice-item">Practice 4</a>
-                    <a href="IELTS_G_Reading_Section3_Practice5.html" class="practice-item">Practice 5</a>
-                    <a href="IELTS_G_Reading_Section3_Practice6.html" class="practice-item">Practice 6</a>
-                    <a href="IELTS_G_Reading_Section3_Practice7.html" class="practice-item">Practice 7</a>
+                    <a href="IELTS_G_Reading_Section3_Practice1.html" class="practice-item">
+                        <span class="practice-text">Practice 1</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section3_Practice2.html" class="practice-item" id="section3Practice2Link" onclick="handleSection3Practice2Click(event)">
+                        <span class="practice-text">Practice 2</span>
+                        <span class="lock-badge" id="section3Practice2Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section3_Practice3.html" class="practice-item" id="section3Practice3Link" onclick="handleSection3Practice3Click(event)">
+                        <span class="practice-text">Practice 3</span>
+                        <span class="lock-badge" id="section3Practice3Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section3_Practice4.html" class="practice-item" id="section3Practice4Link" onclick="handleSection3Practice4Click(event)">
+                        <span class="practice-text">Practice 4</span>
+                        <span class="lock-badge" id="section3Practice4Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section3_Practice5.html" class="practice-item" id="section3Practice5Link" onclick="handleSection3Practice5Click(event)">
+                        <span class="practice-text">Practice 5</span>
+                        <span class="lock-badge" id="section3Practice5Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section3_Practice6.html" class="practice-item" id="section3Practice6Link" onclick="handleSection3Practice6Click(event)">
+                        <span class="practice-text">Practice 6</span>
+                        <span class="lock-badge" id="section3Practice6Lock">🔒</span>
+                    </a>
+                    <a href="IELTS_G_Reading_Section3_Practice7.html" class="practice-item" id="section3Practice7Link" onclick="handleSection3Practice7Click(event)">
+                        <span class="practice-text">Practice 7</span>
+                        <span class="lock-badge" id="section3Practice7Lock">🔒</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1139,9 +1242,1244 @@
             window.location.href = '../../index.html';
         }
 
+        // ========================================
+        // SUBSCRIPTION CHECK & CONTENT LOCKING SYSTEM
+        // ========================================
+
+        // Check subscription status and manage content locking
+        function checkStoredSubscriptionData() {
+            console.log('🔍 Checking stored subscription data...');
+            
+            const storedData = localStorage.getItem('userSubscriptionData');
+            console.log('📦 Raw stored data:', storedData);
+            
+            if (!storedData) {
+                console.log('❌ No stored subscription data found - LOCKING ALL PREMIUM PRACTICES');
+                lockAllPremiumPractices();
+                return;
+            }
+            
+            try {
+                const data = JSON.parse(storedData);
+                console.log('📋 Parsed subscription data:', data);
+                
+                if (data && typeof data === 'object') {
+                    if (data.isActive === true) {
+                        console.log('🎉 SUBSCRIPTION IS ACTIVE - UNLOCKING ALL PREMIUM PRACTICES');
+                        unlockAllPremiumPractices();
+                    } else {
+                        console.log('❌ Subscription NOT active - LOCKING ALL PREMIUM PRACTICES');
+                        console.log('🔍 Lock reason:', data.reason || 'isActive = false');
+                        lockAllPremiumPractices();
+                    }
+                } else {
+                    console.log('❌ Invalid subscription data format - LOCKING ALL PREMIUM PRACTICES');
+                    lockAllPremiumPractices();
+                }
+                
+            } catch (error) {
+                console.error('❌ Error parsing stored subscription data:', error);
+                console.log('🔧 Defaulting to LOCKED due to error');
+                lockAllPremiumPractices();
+            }
+        }
+
+        // Lock all premium practices
+        function lockAllPremiumPractices() {
+            // Section 1 Premium Practices
+            lockSection1Practice2();
+            lockSection1Practice3();
+            lockSection1Practice4();
+            lockSection1Practice5();
+            lockSection1Practice6();
+            lockSection1Practice7();
+            // Section 2 Premium Practices
+            lockSection2Practice2();
+            lockSection2Practice3();
+            lockSection2Practice4();
+            lockSection2Practice5();
+            lockSection2Practice6();
+            lockSection2Practice7();
+            // Section 3 Premium Practices
+            lockSection3Practice2();
+            lockSection3Practice3();
+            lockSection3Practice4();
+            lockSection3Practice5();
+            lockSection3Practice6();
+            lockSection3Practice7();
+        }
+
+        // Unlock all premium practices
+        function unlockAllPremiumPractices() {
+            // Section 1 Premium Practices
+            unlockSection1Practice2();
+            unlockSection1Practice3();
+            unlockSection1Practice4();
+            unlockSection1Practice5();
+            unlockSection1Practice6();
+            unlockSection1Practice7();
+            // Section 2 Premium Practices
+            unlockSection2Practice2();
+            unlockSection2Practice3();
+            unlockSection2Practice4();
+            unlockSection2Practice5();
+            unlockSection2Practice6();
+            unlockSection2Practice7();
+            // Section 3 Premium Practices
+            unlockSection3Practice2();
+            unlockSection3Practice3();
+            unlockSection3Practice4();
+            unlockSection3Practice5();
+            unlockSection3Practice6();
+            unlockSection3Practice7();
+        }
+
+        // ========================================
+        // SECTION 1 PREMIUM PRACTICES LOCK/UNLOCK FUNCTIONS
+        // ========================================
+
+        // Section 1 Practice 2
+        function lockSection1Practice2() {
+            console.log('🔒 Attempting to lock Section 1 Practice 2 link...');
+            
+            const practiceLink = document.getElementById('section1Practice2Link');
+            const lockBadge = document.getElementById('section1Practice2Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 1 Practice 2 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 1 Practice 2 - elements missing!');
+            }
+        }
+
+        function unlockSection1Practice2() {
+            console.log('✅ Attempting to unlock Section 1 Practice 2 link...');
+            
+            const practiceLink = document.getElementById('section1Practice2Link');
+            const lockBadge = document.getElementById('section1Practice2Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section1_Practice2.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 1 Practice 2 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 1 Practice 2 - elements missing!');
+            }
+        }
+
+        function handleSection1Practice2Click(event) {
+            const practiceLink = document.getElementById('section1Practice2Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 1 Practice 2 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 1 Practice 2');
+            return true;
+        }
+
+        // Section 1 Practice 3
+        function lockSection1Practice3() {
+            console.log('🔒 Attempting to lock Section 1 Practice 3 link...');
+            
+            const practiceLink = document.getElementById('section1Practice3Link');
+            const lockBadge = document.getElementById('section1Practice3Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 1 Practice 3 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 1 Practice 3 - elements missing!');
+            }
+        }
+
+        function unlockSection1Practice3() {
+            console.log('✅ Attempting to unlock Section 1 Practice 3 link...');
+            
+            const practiceLink = document.getElementById('section1Practice3Link');
+            const lockBadge = document.getElementById('section1Practice3Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section1_Practice3.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 1 Practice 3 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 1 Practice 3 - elements missing!');
+            }
+        }
+
+        function handleSection1Practice3Click(event) {
+            const practiceLink = document.getElementById('section1Practice3Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 1 Practice 3 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 1 Practice 3');
+            return true;
+        }
+
+        // Section 1 Practice 4
+        function lockSection1Practice4() {
+            console.log('🔒 Attempting to lock Section 1 Practice 4 link...');
+            
+            const practiceLink = document.getElementById('section1Practice4Link');
+            const lockBadge = document.getElementById('section1Practice4Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 1 Practice 4 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 1 Practice 4 - elements missing!');
+            }
+        }
+
+        function unlockSection1Practice4() {
+            console.log('✅ Attempting to unlock Section 1 Practice 4 link...');
+            
+            const practiceLink = document.getElementById('section1Practice4Link');
+            const lockBadge = document.getElementById('section1Practice4Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section1_Practice4.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 1 Practice 4 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 1 Practice 4 - elements missing!');
+            }
+        }
+
+        function handleSection1Practice4Click(event) {
+            const practiceLink = document.getElementById('section1Practice4Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 1 Practice 4 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 1 Practice 4');
+            return true;
+        }
+
+        // Section 1 Practice 5
+        function lockSection1Practice5() {
+            console.log('🔒 Attempting to lock Section 1 Practice 5 link...');
+            
+            const practiceLink = document.getElementById('section1Practice5Link');
+            const lockBadge = document.getElementById('section1Practice5Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 1 Practice 5 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 1 Practice 5 - elements missing!');
+            }
+        }
+
+        function unlockSection1Practice5() {
+            console.log('✅ Attempting to unlock Section 1 Practice 5 link...');
+            
+            const practiceLink = document.getElementById('section1Practice5Link');
+            const lockBadge = document.getElementById('section1Practice5Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section1_Practice5.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 1 Practice 5 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 1 Practice 5 - elements missing!');
+            }
+        }
+
+        function handleSection1Practice5Click(event) {
+            const practiceLink = document.getElementById('section1Practice5Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 1 Practice 5 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 1 Practice 5');
+            return true;
+        }
+
+        // Section 1 Practice 6
+        function lockSection1Practice6() {
+            console.log('🔒 Attempting to lock Section 1 Practice 6 link...');
+            
+            const practiceLink = document.getElementById('section1Practice6Link');
+            const lockBadge = document.getElementById('section1Practice6Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 1 Practice 6 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 1 Practice 6 - elements missing!');
+            }
+        }
+
+        function unlockSection1Practice6() {
+            console.log('✅ Attempting to unlock Section 1 Practice 6 link...');
+            
+            const practiceLink = document.getElementById('section1Practice6Link');
+            const lockBadge = document.getElementById('section1Practice6Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section1_Practice6.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 1 Practice 6 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 1 Practice 6 - elements missing!');
+            }
+        }
+
+        function handleSection1Practice6Click(event) {
+            const practiceLink = document.getElementById('section1Practice6Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 1 Practice 6 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 1 Practice 6');
+            return true;
+        }
+
+        // Section 1 Practice 7
+        function lockSection1Practice7() {
+            console.log('🔒 Attempting to lock Section 1 Practice 7 link...');
+            
+            const practiceLink = document.getElementById('section1Practice7Link');
+            const lockBadge = document.getElementById('section1Practice7Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 1 Practice 7 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 1 Practice 7 - elements missing!');
+            }
+        }
+
+        function unlockSection1Practice7() {
+            console.log('✅ Attempting to unlock Section 1 Practice 7 link...');
+            
+            const practiceLink = document.getElementById('section1Practice7Link');
+            const lockBadge = document.getElementById('section1Practice7Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section1_Practice7.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 1 Practice 7 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 1 Practice 7 - elements missing!');
+            }
+        }
+
+        function handleSection1Practice7Click(event) {
+            const practiceLink = document.getElementById('section1Practice7Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 1 Practice 7 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 1 Practice 7');
+            return true;
+        }
+
+        // ========================================
+        // SECTION 2 PREMIUM PRACTICES LOCK/UNLOCK FUNCTIONS
+        // ========================================
+
+        // Section 2 Practice 2
+        function lockSection2Practice2() {
+            console.log('🔒 Attempting to lock Section 2 Practice 2 link...');
+            
+            const practiceLink = document.getElementById('section2Practice2Link');
+            const lockBadge = document.getElementById('section2Practice2Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 2 Practice 2 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 2 Practice 2 - elements missing!');
+            }
+        }
+
+        function unlockSection2Practice2() {
+            console.log('✅ Attempting to unlock Section 2 Practice 2 link...');
+            
+            const practiceLink = document.getElementById('section2Practice2Link');
+            const lockBadge = document.getElementById('section2Practice2Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section2_Practice2.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 2 Practice 2 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 2 Practice 2 - elements missing!');
+            }
+        }
+
+        function handleSection2Practice2Click(event) {
+            const practiceLink = document.getElementById('section2Practice2Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 2 Practice 2 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 2 Practice 2');
+            return true;
+        }
+
+        // Section 2 Practice 3
+        function lockSection2Practice3() {
+            console.log('🔒 Attempting to lock Section 2 Practice 3 link...');
+            
+            const practiceLink = document.getElementById('section2Practice3Link');
+            const lockBadge = document.getElementById('section2Practice3Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 2 Practice 3 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 2 Practice 3 - elements missing!');
+            }
+        }
+
+        function unlockSection2Practice3() {
+            console.log('✅ Attempting to unlock Section 2 Practice 3 link...');
+            
+            const practiceLink = document.getElementById('section2Practice3Link');
+            const lockBadge = document.getElementById('section2Practice3Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section2_Practice3.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 2 Practice 3 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 2 Practice 3 - elements missing!');
+            }
+        }
+
+        function handleSection2Practice3Click(event) {
+            const practiceLink = document.getElementById('section2Practice3Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 2 Practice 3 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 2 Practice 3');
+            return true;
+        }
+
+        // Section 2 Practice 4
+        function lockSection2Practice4() {
+            console.log('🔒 Attempting to lock Section 2 Practice 4 link...');
+            
+            const practiceLink = document.getElementById('section2Practice4Link');
+            const lockBadge = document.getElementById('section2Practice4Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 2 Practice 4 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 2 Practice 4 - elements missing!');
+            }
+        }
+
+        function unlockSection2Practice4() {
+            console.log('✅ Attempting to unlock Section 2 Practice 4 link...');
+            
+            const practiceLink = document.getElementById('section2Practice4Link');
+            const lockBadge = document.getElementById('section2Practice4Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section2_Practice4.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 2 Practice 4 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 2 Practice 4 - elements missing!');
+            }
+        }
+
+        function handleSection2Practice4Click(event) {
+            const practiceLink = document.getElementById('section2Practice4Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 2 Practice 4 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 2 Practice 4');
+            return true;
+        }
+
+        // Section 2 Practice 5
+        function lockSection2Practice5() {
+            console.log('🔒 Attempting to lock Section 2 Practice 5 link...');
+            
+            const practiceLink = document.getElementById('section2Practice5Link');
+            const lockBadge = document.getElementById('section2Practice5Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 2 Practice 5 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 2 Practice 5 - elements missing!');
+            }
+        }
+
+        function unlockSection2Practice5() {
+            console.log('✅ Attempting to unlock Section 2 Practice 5 link...');
+            
+            const practiceLink = document.getElementById('section2Practice5Link');
+            const lockBadge = document.getElementById('section2Practice5Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section2_Practice5.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 2 Practice 5 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 2 Practice 5 - elements missing!');
+            }
+        }
+
+        function handleSection2Practice5Click(event) {
+            const practiceLink = document.getElementById('section2Practice5Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 2 Practice 5 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 2 Practice 5');
+            return true;
+        }
+
+        // Section 2 Practice 6
+        function lockSection2Practice6() {
+            console.log('🔒 Attempting to lock Section 2 Practice 6 link...');
+            
+            const practiceLink = document.getElementById('section2Practice6Link');
+            const lockBadge = document.getElementById('section2Practice6Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 2 Practice 6 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 2 Practice 6 - elements missing!');
+            }
+        }
+
+        function unlockSection2Practice6() {
+            console.log('✅ Attempting to unlock Section 2 Practice 6 link...');
+            
+            const practiceLink = document.getElementById('section2Practice6Link');
+            const lockBadge = document.getElementById('section2Practice6Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section2_Practice6.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 2 Practice 6 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 2 Practice 6 - elements missing!');
+            }
+        }
+
+        function handleSection2Practice6Click(event) {
+            const practiceLink = document.getElementById('section2Practice6Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 2 Practice 6 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 2 Practice 6');
+            return true;
+        }
+
+        // Section 2 Practice 7
+        function lockSection2Practice7() {
+            console.log('🔒 Attempting to lock Section 2 Practice 7 link...');
+            
+            const practiceLink = document.getElementById('section2Practice7Link');
+            const lockBadge = document.getElementById('section2Practice7Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 2 Practice 7 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 2 Practice 7 - elements missing!');
+            }
+        }
+
+        function unlockSection2Practice7() {
+            console.log('✅ Attempting to unlock Section 2 Practice 7 link...');
+            
+            const practiceLink = document.getElementById('section2Practice7Link');
+            const lockBadge = document.getElementById('section2Practice7Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section2_Practice7.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 2 Practice 7 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 2 Practice 7 - elements missing!');
+            }
+        }
+
+        function handleSection2Practice7Click(event) {
+            const practiceLink = document.getElementById('section2Practice7Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 2 Practice 7 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 2 Practice 7');
+            return true;
+        }
+
+        // ========================================
+        // SECTION 3 PREMIUM PRACTICES LOCK/UNLOCK FUNCTIONS
+        // ========================================
+
+        // Section 3 Practice 2
+        function lockSection3Practice2() {
+            console.log('🔒 Attempting to lock Section 3 Practice 2 link...');
+            
+            const practiceLink = document.getElementById('section3Practice2Link');
+            const lockBadge = document.getElementById('section3Practice2Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 3 Practice 2 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 3 Practice 2 - elements missing!');
+            }
+        }
+
+        function unlockSection3Practice2() {
+            console.log('✅ Attempting to unlock Section 3 Practice 2 link...');
+            
+            const practiceLink = document.getElementById('section3Practice2Link');
+            const lockBadge = document.getElementById('section3Practice2Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section3_Practice2.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 3 Practice 2 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 3 Practice 2 - elements missing!');
+            }
+        }
+
+        function handleSection3Practice2Click(event) {
+            const practiceLink = document.getElementById('section3Practice2Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 3 Practice 2 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 3 Practice 2');
+            return true;
+        }
+
+        // Section 3 Practice 3
+        function lockSection3Practice3() {
+            console.log('🔒 Attempting to lock Section 3 Practice 3 link...');
+            
+            const practiceLink = document.getElementById('section3Practice3Link');
+            const lockBadge = document.getElementById('section3Practice3Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 3 Practice 3 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 3 Practice 3 - elements missing!');
+            }
+        }
+
+        function unlockSection3Practice3() {
+            console.log('✅ Attempting to unlock Section 3 Practice 3 link...');
+            
+            const practiceLink = document.getElementById('section3Practice3Link');
+            const lockBadge = document.getElementById('section3Practice3Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section3_Practice3.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 3 Practice 3 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 3 Practice 3 - elements missing!');
+            }
+        }
+
+        function handleSection3Practice3Click(event) {
+            const practiceLink = document.getElementById('section3Practice3Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 3 Practice 3 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 3 Practice 3');
+            return true;
+        }
+
+        // Section 3 Practice 4
+        function lockSection3Practice4() {
+            console.log('🔒 Attempting to lock Section 3 Practice 4 link...');
+            
+            const practiceLink = document.getElementById('section3Practice4Link');
+            const lockBadge = document.getElementById('section3Practice4Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 3 Practice 4 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 3 Practice 4 - elements missing!');
+            }
+        }
+
+        function unlockSection3Practice4() {
+            console.log('✅ Attempting to unlock Section 3 Practice 4 link...');
+            
+            const practiceLink = document.getElementById('section3Practice4Link');
+            const lockBadge = document.getElementById('section3Practice4Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section3_Practice4.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 3 Practice 4 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 3 Practice 4 - elements missing!');
+            }
+        }
+
+        function handleSection3Practice4Click(event) {
+            const practiceLink = document.getElementById('section3Practice4Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 3 Practice 4 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 3 Practice 4');
+            return true;
+        }
+
+        // Section 3 Practice 5
+        function lockSection3Practice5() {
+            console.log('🔒 Attempting to lock Section 3 Practice 5 link...');
+            
+            const practiceLink = document.getElementById('section3Practice5Link');
+            const lockBadge = document.getElementById('section3Practice5Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 3 Practice 5 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 3 Practice 5 - elements missing!');
+            }
+        }
+
+        function unlockSection3Practice5() {
+            console.log('✅ Attempting to unlock Section 3 Practice 5 link...');
+            
+            const practiceLink = document.getElementById('section3Practice5Link');
+            const lockBadge = document.getElementById('section3Practice5Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section3_Practice5.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 3 Practice 5 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 3 Practice 5 - elements missing!');
+            }
+        }
+
+        function handleSection3Practice5Click(event) {
+            const practiceLink = document.getElementById('section3Practice5Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 3 Practice 5 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 3 Practice 5');
+            return true;
+        }
+
+        // Section 3 Practice 6
+        function lockSection3Practice6() {
+            console.log('🔒 Attempting to lock Section 3 Practice 6 link...');
+            
+            const practiceLink = document.getElementById('section3Practice6Link');
+            const lockBadge = document.getElementById('section3Practice6Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 3 Practice 6 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 3 Practice 6 - elements missing!');
+            }
+        }
+
+        function unlockSection3Practice6() {
+            console.log('✅ Attempting to unlock Section 3 Practice 6 link...');
+            
+            const practiceLink = document.getElementById('section3Practice6Link');
+            const lockBadge = document.getElementById('section3Practice6Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section3_Practice6.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 3 Practice 6 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 3 Practice 6 - elements missing!');
+            }
+        }
+
+        function handleSection3Practice6Click(event) {
+            const practiceLink = document.getElementById('section3Practice6Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 3 Practice 6 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 3 Practice 6');
+            return true;
+        }
+
+        // Section 3 Practice 7
+        function lockSection3Practice7() {
+            console.log('🔒 Attempting to lock Section 3 Practice 7 link...');
+            
+            const practiceLink = document.getElementById('section3Practice7Link');
+            const lockBadge = document.getElementById('section3Practice7Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                practiceLink.removeAttribute('href');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Section 3 Practice 7 link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Section 3 Practice 7 - elements missing!');
+            }
+        }
+
+        function unlockSection3Practice7() {
+            console.log('✅ Attempting to unlock Section 3 Practice 7 link...');
+            
+            const practiceLink = document.getElementById('section3Practice7Link');
+            const lockBadge = document.getElementById('section3Practice7Lock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('href', 'IELTS_G_Reading_Section3_Practice7.html');
+                lockBadge.style.display = 'none';
+                console.log('✅ Section 3 Practice 7 link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Section 3 Practice 7 - elements missing!');
+            }
+        }
+
+        function handleSection3Practice7Click(event) {
+            const practiceLink = document.getElementById('section3Practice7Link');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Section 3 Practice 7 - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Section 3 Practice 7');
+            return true;
+        }
+
+        // Redirect to main IELTS page and open subscription modal
+        function openSubscriptionModal() {
+            console.log('💳 Redirecting to main page for subscription...');
+            
+            // Store the current practice attempt for analytics
+            localStorage.setItem('lastAttemptedPractice', JSON.stringify({
+                section: 'General Reading',
+                timestamp: new Date().toISOString(),
+                reason: 'subscription_required'
+            }));
+            
+            // Navigate to main IELTS page with a parameter to open subscription modal
+            window.location.href = '../../index.html?openSubscription=true';
+        }
+
+        // ========================================
+        // MANUAL TESTING FUNCTIONS
+        // ========================================
+
+        // Section 1 Manual Testing Functions
+        window.testLockSection1Practice2 = function() {
+            console.log('🧪 Manual test: LOCKING Section 1 Practice 2');
+            lockSection1Practice2();
+        };
+
+        window.testUnlockSection1Practice2 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 1 Practice 2');
+            unlockSection1Practice2();
+        };
+
+        window.testLockSection1Practice3 = function() {
+            console.log('🧪 Manual test: LOCKING Section 1 Practice 3');
+            lockSection1Practice3();
+        };
+
+        window.testUnlockSection1Practice3 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 1 Practice 3');
+            unlockSection1Practice3();
+        };
+
+        window.testLockSection1Practice4 = function() {
+            console.log('🧪 Manual test: LOCKING Section 1 Practice 4');
+            lockSection1Practice4();
+        };
+
+        window.testUnlockSection1Practice4 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 1 Practice 4');
+            unlockSection1Practice4();
+        };
+
+        window.testLockSection1Practice5 = function() {
+            console.log('🧪 Manual test: LOCKING Section 1 Practice 5');
+            lockSection1Practice5();
+        };
+
+        window.testUnlockSection1Practice5 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 1 Practice 5');
+            unlockSection1Practice5();
+        };
+
+        window.testLockSection1Practice6 = function() {
+            console.log('🧪 Manual test: LOCKING Section 1 Practice 6');
+            lockSection1Practice6();
+        };
+
+        window.testUnlockSection1Practice6 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 1 Practice 6');
+            unlockSection1Practice6();
+        };
+
+        window.testLockSection1Practice7 = function() {
+            console.log('🧪 Manual test: LOCKING Section 1 Practice 7');
+            lockSection1Practice7();
+        };
+
+        window.testUnlockSection1Practice7 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 1 Practice 7');
+            unlockSection1Practice7();
+        };
+
+        // Section 2 Manual Testing Functions
+        window.testLockSection2Practice2 = function() {
+            console.log('🧪 Manual test: LOCKING Section 2 Practice 2');
+            lockSection2Practice2();
+        };
+
+        window.testUnlockSection2Practice2 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 2 Practice 2');
+            unlockSection2Practice2();
+        };
+
+        window.testLockSection2Practice3 = function() {
+            console.log('🧪 Manual test: LOCKING Section 2 Practice 3');
+            lockSection2Practice3();
+        };
+
+        window.testUnlockSection2Practice3 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 2 Practice 3');
+            unlockSection2Practice3();
+        };
+
+        window.testLockSection2Practice4 = function() {
+            console.log('🧪 Manual test: LOCKING Section 2 Practice 4');
+            lockSection2Practice4();
+        };
+
+        window.testUnlockSection2Practice4 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 2 Practice 4');
+            unlockSection2Practice4();
+        };
+
+        window.testLockSection2Practice5 = function() {
+            console.log('🧪 Manual test: LOCKING Section 2 Practice 5');
+            lockSection2Practice5();
+        };
+
+        window.testUnlockSection2Practice5 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 2 Practice 5');
+            unlockSection2Practice5();
+        };
+
+        window.testLockSection2Practice6 = function() {
+            console.log('🧪 Manual test: LOCKING Section 2 Practice 6');
+            lockSection2Practice6();
+        };
+
+        window.testUnlockSection2Practice6 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 2 Practice 6');
+            unlockSection2Practice6();
+        };
+
+        window.testLockSection2Practice7 = function() {
+            console.log('🧪 Manual test: LOCKING Section 2 Practice 7');
+            lockSection2Practice7();
+        };
+
+        window.testUnlockSection2Practice7 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 2 Practice 7');
+            unlockSection2Practice7();
+        };
+
+        // Section 3 Manual Testing Functions
+        window.testLockSection3Practice2 = function() {
+            console.log('🧪 Manual test: LOCKING Section 3 Practice 2');
+            lockSection3Practice2();
+        };
+
+        window.testUnlockSection3Practice2 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 3 Practice 2');
+            unlockSection3Practice2();
+        };
+
+        window.testLockSection3Practice3 = function() {
+            console.log('🧪 Manual test: LOCKING Section 3 Practice 3');
+            lockSection3Practice3();
+        };
+
+        window.testUnlockSection3Practice3 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 3 Practice 3');
+            unlockSection3Practice3();
+        };
+
+        window.testLockSection3Practice4 = function() {
+            console.log('🧪 Manual test: LOCKING Section 3 Practice 4');
+            lockSection3Practice4();
+        };
+
+        window.testUnlockSection3Practice4 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 3 Practice 4');
+            unlockSection3Practice4();
+        };
+
+        window.testLockSection3Practice5 = function() {
+            console.log('🧪 Manual test: LOCKING Section 3 Practice 5');
+            lockSection3Practice5();
+        };
+
+        window.testUnlockSection3Practice5 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 3 Practice 5');
+            unlockSection3Practice5();
+        };
+
+        window.testLockSection3Practice6 = function() {
+            console.log('🧪 Manual test: LOCKING Section 3 Practice 6');
+            lockSection3Practice6();
+        };
+
+        window.testUnlockSection3Practice6 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 3 Practice 6');
+            unlockSection3Practice6();
+        };
+
+        window.testLockSection3Practice7 = function() {
+            console.log('🧪 Manual test: LOCKING Section 3 Practice 7');
+            lockSection3Practice7();
+        };
+
+        window.testUnlockSection3Practice7 = function() {
+            console.log('🧪 Manual test: UNLOCKING Section 3 Practice 7');
+            unlockSection3Practice7();
+        };
+
+        // Manual testing functions (can be called from console)
+        window.manualSubscriptionCheck = function() {
+            console.log('🧪 Manual test: Running subscription check...');
+            checkStoredSubscriptionData();
+        };
+
+        window.viewStoredSubscriptionData = function() {
+            const data = localStorage.getItem('userSubscriptionData');
+            console.log('📦 Current stored subscription data:', data);
+            if (data) {
+                console.log('📋 Parsed data:', JSON.parse(data));
+            }
+        };
+
+        window.simulateSubscriptionData = function() {
+            console.log('🧪 Creating test subscription data...');
+            const testData = {
+                isActive: true,
+                expiryDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+                plan: 'premium'
+            };
+            localStorage.setItem('userSubscriptionData', JSON.stringify(testData));
+            console.log('✅ Test subscription data created:', testData);
+            console.log('🔄 Running subscription check...');
+            checkStoredSubscriptionData();
+        };
+
+        // Manual testing function for subscription redirect
+        window.testSubscriptionRedirect = function() {
+            console.log('🧪 Testing subscription redirect...');
+            openSubscriptionModal();
+        };
+
+        console.log('🔧 Debug functions available:');
+        console.log('   === SECTION 1 PRACTICES ===');
+        console.log('   testLockSection1Practice2() - manually lock Section 1 Practice 2');
+        console.log('   testUnlockSection1Practice2() - manually unlock Section 1 Practice 2');
+        console.log('   testLockSection1Practice3() - manually lock Section 1 Practice 3');
+        console.log('   testUnlockSection1Practice3() - manually unlock Section 1 Practice 3');
+        console.log('   testLockSection1Practice4() - manually lock Section 1 Practice 4');
+        console.log('   testUnlockSection1Practice4() - manually unlock Section 1 Practice 4');
+        console.log('   testLockSection1Practice5() - manually lock Section 1 Practice 5');
+        console.log('   testUnlockSection1Practice5() - manually unlock Section 1 Practice 5');
+        console.log('   testLockSection1Practice6() - manually lock Section 1 Practice 6');
+        console.log('   testUnlockSection1Practice6() - manually unlock Section 1 Practice 6');
+        console.log('   testLockSection1Practice7() - manually lock Section 1 Practice 7');
+        console.log('   testUnlockSection1Practice7() - manually unlock Section 1 Practice 7');
+        console.log('   === SECTION 2 PRACTICES ===');
+        console.log('   testLockSection2Practice2() - manually lock Section 2 Practice 2');
+        console.log('   testUnlockSection2Practice2() - manually unlock Section 2 Practice 2');
+        console.log('   testLockSection2Practice3() - manually lock Section 2 Practice 3');
+        console.log('   testUnlockSection2Practice3() - manually unlock Section 2 Practice 3');
+        console.log('   testLockSection2Practice4() - manually lock Section 2 Practice 4');
+        console.log('   testUnlockSection2Practice4() - manually unlock Section 2 Practice 4');
+        console.log('   testLockSection2Practice5() - manually lock Section 2 Practice 5');
+        console.log('   testUnlockSection2Practice5() - manually unlock Section 2 Practice 5');
+        console.log('   testLockSection2Practice6() - manually lock Section 2 Practice 6');
+        console.log('   testUnlockSection2Practice6() - manually unlock Section 2 Practice 6');
+        console.log('   testLockSection2Practice7() - manually lock Section 2 Practice 7');
+        console.log('   testUnlockSection2Practice7() - manually unlock Section 2 Practice 7');
+        console.log('   === SECTION 3 PRACTICES ===');
+        console.log('   testLockSection3Practice2() - manually lock Section 3 Practice 2');
+        console.log('   testUnlockSection3Practice2() - manually unlock Section 3 Practice 2');
+        console.log('   testLockSection3Practice3() - manually lock Section 3 Practice 3');
+        console.log('   testUnlockSection3Practice3() - manually unlock Section 3 Practice 3');
+        console.log('   testLockSection3Practice4() - manually lock Section 3 Practice 4');
+        console.log('   testUnlockSection3Practice4() - manually unlock Section 3 Practice 4');
+        console.log('   testLockSection3Practice5() - manually lock Section 3 Practice 5');
+        console.log('   testUnlockSection3Practice5() - manually unlock Section 3 Practice 5');
+        console.log('   testLockSection3Practice6() - manually lock Section 3 Practice 6');
+        console.log('   testUnlockSection3Practice6() - manually unlock Section 3 Practice 6');
+        console.log('   testLockSection3Practice7() - manually lock Section 3 Practice 7');
+        console.log('   testUnlockSection3Practice7() - manually unlock Section 3 Practice 7');
+        console.log('   === UTILITY FUNCTIONS ===');
+        console.log('   manualSubscriptionCheck() - run subscription check with stored data');
+        console.log('   viewStoredSubscriptionData() - view current subscription data');
+        console.log('   simulateSubscriptionData() - create test subscription data');
+        console.log('   testSubscriptionRedirect() - test subscription redirect functionality');
+
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
             console.log('📚 IELTS General Reading Introduction page loaded');
+            
+            // Check subscription status on page load
+            console.log('🔍 Checking subscription status on page load...');
+            checkStoredSubscriptionData();
             
             // Optional: Auto-expand the first section for better UX
             // toggleSection('section1');
