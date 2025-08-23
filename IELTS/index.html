@@ -2130,8 +2130,20 @@
             }, 2000); // Longer delay to ensure Firebase has updated subscription data
         };
 
-        function signOutUser() {
+        async function signOutUser() {
             console.log('🔓 User signing out with session management...');
+            
+            // UPDATE: Set Sign_IN_Active = false in Firebase before signing out
+            if (auth && auth.currentUser) {
+                try {
+                    await db.collection('users').doc(auth.currentUser.uid).update({
+                        Sign_IN_Active: false
+                    });
+                    console.log('✅ Updated Sign_IN_Active = false in Firebase');
+                } catch (error) {
+                    console.error('❌ Error updating Sign_IN_Active field during sign out:', error);
+                }
+            }
             
             // Use enhanced signout with session cleanup if available
             if (typeof enhancedSignOut === 'function') {
@@ -2145,22 +2157,34 @@
                     // Clear remaining data and refresh
                     sessionStorage.clear();
                     window.location.reload(true);
-                }).catch((error) => {
+                }).catch(async (error) => {
                     console.error('❌ Enhanced sign out error:', error);
                     
                     // Fallback to original sign out logic
-                    fallbackSignOut();
+                    await fallbackSignOut();
                 });
             } else {
                 // Fallback if session management is not loaded
                 console.log('⚠️ Session management not available, using fallback sign out');
-                fallbackSignOut();
+                await fallbackSignOut();
             }
         }
         
         // Fallback sign out function (original logic)
-        function fallbackSignOut() {
+        async function fallbackSignOut() {
             console.log('🔓 Using fallback sign out...');
+            
+            // UPDATE: Set Sign_IN_Active = false in Firebase (fallback)
+            if (auth && auth.currentUser) {
+                try {
+                    await db.collection('users').doc(auth.currentUser.uid).update({
+                        Sign_IN_Active: false
+                    });
+                    console.log('✅ Updated Sign_IN_Active = false in Firebase (fallback)');
+                } catch (error) {
+                    console.error('❌ Error updating Sign_IN_Active field in fallback:', error);
+                }
+            }
             
             // CRITICAL: Clear subscription cache FIRST before general clear
             localStorage.removeItem('userSubscriptionData');
@@ -3898,48 +3922,101 @@
                         
                         if (email && password) {
                             console.log('🚀 Attempting Firebase signin with session management for:', email);
-                            freeSignInWithSessionCheck(email, password).then(result => {
+                            freeSignInWithSessionCheck(email, password).then(async (result) => {
                                 if (result.success) {
-                                    // Close modal and store user data
-                                    const modal = document.getElementById('signInModal');
-                                    if (modal) modal.style.display = 'none';
-                                    console.log('✅ User signed in successfully');
-                                    
-                                    // Store user name for welcome message (from Firebase result)
-                                    let userName = 'User';
-                                    if (result.profile && result.profile.fullName) {
-                                        userName = result.profile.fullName;
-                                        localStorage.setItem('userName', userName);
-                                        console.log('✅ Stored user name from profile:', userName);
-                                    } else if (result.user && result.user.displayName) {
-                                        userName = result.user.displayName;
-                                        localStorage.setItem('userName', userName);
-                                        console.log('✅ Stored user name from user:', userName);
-                                    } else {
-                                        // Fallback - try to get name from email or use default
-                                        const email = document.getElementById('signInEmail').value;
-                                        if (email) {
-                                            userName = email.split('@')[0]; // Use part before @ as fallback
+                                    try {
+                                        console.log('✅ User authenticated successfully, checking device status...');
+                                        
+                                        // CHECK: Verify if user is already signed in on another device
+                                        try {
+                                            const userDoc = await db.collection('users').doc(result.user.uid).get();
+                                            if (userDoc.exists) {
+                                                const userData = userDoc.data();
+                                                if (userData.Sign_IN_Active === true) {
+                                                    console.log('🚫 User is already signed in on another device');
+                                                    
+                                                    // Sign out the current session immediately
+                                                    try {
+                                                        if (firebase.auth && firebase.auth().currentUser) {
+                                                            await firebase.auth().signOut();
+                                                        }
+                                                    } catch (signOutError) {
+                                                        console.error('Error signing out:', signOutError);
+                                                    }
+                                                    
+                                                    // Show multi-device error message and stop sign-in process
+                                                    alert('⚠️ You are currently signed in on another device.\nPlease sign out from the other device and try again after a short while.\nFor assistance or technical support, feel free to contact us at GammaPace@outlook.com.');
+                                                    return; // Exit early - don't complete sign-in process
+                                                }
+                                            }
+                                        } catch (deviceCheckError) {
+                                            console.error('❌ Error checking device status:', deviceCheckError);
+                                            // Continue with sign-in if we can't check (don't block user unnecessarily)
+                                        }
+                                        
+                                        console.log('✅ Device check passed, completing sign-in...');
+                                        
+                                        // UPDATE: Set Sign_IN_Active = true in Firebase (only if device check passed)
+                                        try {
+                                            await db.collection('users').doc(result.user.uid).set({
+                                                Sign_IN_Active: true
+                                            }, { merge: true });
+                                            console.log('✅ Updated Sign_IN_Active = true in Firebase');
+                                        } catch (error) {
+                                            console.error('❌ Error updating Sign_IN_Active field:', error);
+                                            // Don't let Firebase field update errors break the signin flow
+                                        }
+                                        
+                                        // Close modal and store user data
+                                        const modal = document.getElementById('signInModal');
+                                        if (modal) modal.style.display = 'none';
+                                        
+                                        // Store user name for welcome message (from Firebase result)
+                                        let userName = 'User';
+                                        if (result.profile && result.profile.fullName) {
+                                            userName = result.profile.fullName;
                                             localStorage.setItem('userName', userName);
-                                            console.log('✅ Stored user name from email:', userName);
+                                            console.log('✅ Stored user name from profile:', userName);
+                                        } else if (result.user && result.user.displayName) {
+                                            userName = result.user.displayName;
+                                            localStorage.setItem('userName', userName);
+                                            console.log('✅ Stored user name from user:', userName);
+                                        } else {
+                                            // Fallback - try to get name from email or use default
+                                            const email = document.getElementById('signInEmail').value;
+                                            if (email) {
+                                                userName = email.split('@')[0]; // Use part before @ as fallback
+                                                localStorage.setItem('userName', userName);
+                                                console.log('✅ Stored user name from email:', userName);
+                                            }
+                                        }
+                                        
+                                        // CRITICAL: Clear old cached data and get fresh user subscription data (SIGN-IN)
+                                        localStorage.removeItem('userSubscriptionData');
+                                        console.log('🧹 CRITICAL: Cleared subscription cache before SIGN-IN validation');
+                                        console.log('💾 Cache cleared verification:', localStorage.getItem('userSubscriptionData') === null);
+                                        checkAndStoreUserSubscription(result.user.uid);
+                                        
+                                        // Switch to authenticated button state
+                                        switchToAuthenticatedState();
+                                    } catch (signinProcessError) {
+                                        console.error('❌ Error in signin success processing:', signinProcessError);
+                                        // Still close modal and switch to authenticated state even if there are minor issues
+                                        try {
+                                            const modal = document.getElementById('signInModal');
+                                            if (modal) modal.style.display = 'none';
+                                            switchToAuthenticatedState();
+                                        } catch (fallbackError) {
+                                            console.error('❌ Critical error in signin fallback:', fallbackError);
                                         }
                                     }
-                                    
-                                    // CRITICAL: Clear old cached data and get fresh user subscription data (SIGN-IN)
-                                    localStorage.removeItem('userSubscriptionData');
-                                    console.log('🧹 CRITICAL: Cleared subscription cache before SIGN-IN validation');
-                                    console.log('💾 Cache cleared verification:', localStorage.getItem('userSubscriptionData') === null);
-                                    checkAndStoreUserSubscription(result.user.uid);
-                                    
-                                    // Switch to authenticated button state
-                                    switchToAuthenticatedState();
                                 } else {
                                     // Handle specific error cases
                                     const errorMsg = result.error || 'Please check your credentials';
                                     if (errorMsg.includes('network') || errorMsg.includes('internet') || errorMsg.includes('offline')) {
                                         alert('🌐 Please check your internet connection and try again.');
                                     } else {
-                                        alert('⚠️ Server issue. Please try again after some time or email "Gammapace@outlook.com" for support.');
+                                        alert('⚠️ You are currently signed in on another device.\nPlease sign out from the other device and try again after a short while.\nFor assistance or technical support, feel free to contact us at GammaPace@outlook.com.');
                                     }
                                 }
                             }).catch(error => {
@@ -3949,7 +4026,7 @@
                                 if (errorMsg.includes('network') || errorMsg.includes('internet') || errorMsg.includes('offline') || errorMsg.includes('fetch')) {
                                     alert('🌐 Please check your internet connection and try again.');
                                 } else {
-                                    alert('⚠️ Server issue. Please try again after some time or email "Gammapace@outlook.com" for support.');
+                                    alert('⚠️ You are currently signed in on another device.\nPlease sign out from the other device and try again after a short while.\nFor assistance or technical support, feel free to contact us at GammaPace@outlook.com.');
                                 }
                             });
                         } else {
@@ -3977,33 +4054,57 @@
                         
                         if (email && password && fullName.trim()) {
                             console.log('🚀 Attempting Firebase signup for:', email, 'Name:', fullName);
-                            freeSignUp(email, password, fullName, country).then(result => {
+                            freeSignUp(email, password, fullName, country).then(async (result) => {
                                 if (result.success) {
-                                    // Close modal and store user name
-                                    const modal = document.getElementById('signUpModal');
-                                    if (modal) modal.style.display = 'none';
-                                    console.log('✅ User signed up successfully');
-                                    
-                                    // Store user name for welcome message
-                                    const cleanName = fullName.trim();
-                                    localStorage.setItem('userName', cleanName);
-                                    console.log('✅ Stored user name for welcome:', cleanName);
-                                    
-                                    // CRITICAL: Clear old cached data and get fresh user subscription data (SIGN-UP)
-                                    localStorage.removeItem('userSubscriptionData');
-                                    console.log('🧹 CRITICAL: Cleared subscription cache before SIGN-UP validation');
-                                    console.log('💾 Cache cleared verification:', localStorage.getItem('userSubscriptionData') === null);
-                                    checkAndStoreUserSubscription(result.user.uid);
-                                    
-                                    // Switch to authenticated button state
-                                    switchToAuthenticatedState();
+                                    try {
+                                        console.log('✅ User signed up successfully');
+                                        
+                                        // UPDATE: Set Sign_IN_Active = true in Firebase (use set with merge for new users)
+                                        try {
+                                            await db.collection('users').doc(result.user.uid).set({
+                                                Sign_IN_Active: true
+                                            }, { merge: true });
+                                            console.log('✅ Updated Sign_IN_Active = true in Firebase');
+                                        } catch (error) {
+                                            console.error('❌ Error updating Sign_IN_Active field:', error);
+                                            // Don't let Firebase field update errors break the signup flow
+                                        }
+                                        
+                                        // Close modal and store user name
+                                        const modal = document.getElementById('signUpModal');
+                                        if (modal) modal.style.display = 'none';
+                                        
+                                        // Store user name for welcome message
+                                        const cleanName = fullName.trim();
+                                        localStorage.setItem('userName', cleanName);
+                                        console.log('✅ Stored user name for welcome:', cleanName);
+                                        
+                                        // CRITICAL: Clear old cached data and get fresh user subscription data (SIGN-UP)
+                                        localStorage.removeItem('userSubscriptionData');
+                                        console.log('🧹 CRITICAL: Cleared subscription cache before SIGN-UP validation');
+                                        console.log('💾 Cache cleared verification:', localStorage.getItem('userSubscriptionData') === null);
+                                        checkAndStoreUserSubscription(result.user.uid);
+                                        
+                                        // Switch to authenticated button state
+                                        switchToAuthenticatedState();
+                                    } catch (signupProcessError) {
+                                        console.error('❌ Error in signup success processing:', signupProcessError);
+                                        // Still close modal and switch to authenticated state even if there are minor issues
+                                        try {
+                                            const modal = document.getElementById('signUpModal');
+                                            if (modal) modal.style.display = 'none';
+                                            switchToAuthenticatedState();
+                                        } catch (fallbackError) {
+                                            console.error('❌ Critical error in signup fallback:', fallbackError);
+                                        }
+                                    }
                                 } else {
                                     // Handle specific error cases
                                     const errorMsg = result.error || 'Please try again';
                                     if (errorMsg.includes('network') || errorMsg.includes('internet') || errorMsg.includes('offline')) {
                                         alert('🌐 Please check your internet connection and try again.');
                                     } else {
-                                        alert('⚠️ Server issue. Please try again after some time or email "Gammapace@outlook.com" for support.');
+                                        alert('⚠️ You are currently signed in on another device.\nPlease sign out from the other device and try again after a short while.\nFor assistance or technical support, feel free to contact us at GammaPace@outlook.com.');
                                     }
                                 }
                             }).catch(error => {
@@ -4013,7 +4114,7 @@
                                 if (errorMsg.includes('network') || errorMsg.includes('internet') || errorMsg.includes('offline') || errorMsg.includes('fetch')) {
                                     alert('🌐 Please check your internet connection and try again.');
                                 } else {
-                                    alert('⚠️ Server issue. Please try again after some time or email "Gammapace@outlook.com" for support.');
+                                    alert('⚠️ You are currently signed in on another device.\nPlease sign out from the other device and try again after a short while.\nFor assistance or technical support, feel free to contact us at GammaPace@outlook.com.');
                                 }
                             });
                         } else {
