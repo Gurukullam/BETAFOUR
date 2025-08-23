@@ -999,6 +999,7 @@
                             <a href="#ielts-academic-speaking-practice" onclick="selectIeltsAcademicOption('Speaking')"><i class="fas fa-microphone"></i> Speaking</a>
                         </div>
                     </li>
+                    <li><a href="#about" onclick="selectAbout()"><i class="fas fa-lightbulb"></i> About</a></li>
                 </ul>
             </div>
         </nav>
@@ -1006,6 +1007,8 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Default IELTS Content (Initially Shown) -->
+        <div id="defaultContent">
         <!-- IELTS Hero Section -->
         <section class="hero-section fade-in" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); padding: 4rem 2rem; text-align: center; margin-bottom: 3rem; position: relative; overflow: hidden; max-width: 1200px; margin-left: auto; margin-right: auto; margin-bottom: 3rem;">
             <h1 style="font-size: 3rem; font-weight: bold; color: #8b4513; margin-bottom: 1rem; position: relative; z-index: 1; font-family: 'Century Gothic', sans-serif;">GammaPace IELTS Practice Module</h1>
@@ -1200,6 +1203,22 @@
                         <p style="color: #666; margin-bottom: 0.5rem;"><strong>Preferred:</strong> Band 7.5+</p>
                         <p style="color: #666; font-size: 0.9rem;">Research programs require higher proficiency</p>
                     </div>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <!-- About Section (Initially Hidden) -->
+        <section id="aboutSection" style="display: none;">
+            <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 15px; padding: 3rem 2rem; margin-bottom: 3rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <h2 style="text-align: center; font-size: 2.5rem; color: #8b4513; margin-bottom: 3rem; font-weight: bold;">About GammaPace IELTS Practice Module</h2>
+                <div style="font-size: 1.2rem; color: #666; line-height: 1.8; text-align: justify; font-family: 'Century Gothic', sans-serif;">
+                    <p style="margin-bottom: 1.5rem;">
+                        GammaPace offers a comprehensive IELTS Practice Module tailored for both General and Academic formats. The four core areas—Listening, Reading, Writing, and Speaking—are meticulously designed to reflect the latest IELTS question patterns. Each module includes expert-curated practice sections to help you build skills and confidence under real exam conditions. You may begin with any module and progress at your own pace. Time management is critical in the actual IELTS exam, and our materials are structured to help you master it while improving accuracy. The practice journey follows a gradual increase in difficulty to elevate your performance. Hence, train your practices in the same sequence.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        We also provide group discounts to educational, professional institutions, and individuals. Please contact <strong>GammaPace@outlook.com</strong> for details or technical support. All the best!
+                    </p>
                 </div>
             </div>
         </section>
@@ -1677,6 +1696,10 @@
         function selectIeltsGeneralOption(skill) {
             console.log(`✅ IELTS General ${skill} selected`);
             
+            // Hide about content and show default content
+            hideAboutContent();
+            showDefaultContent();
+            
             // Close the submenu first
             const submenu = document.getElementById('ieltsGeneralSubmenu');
             const menuParent = submenu.closest('.ielts-general-menu');
@@ -1715,6 +1738,10 @@
         function selectIeltsAcademicOption(skill) {
             console.log(`✅ IELTS Academic ${skill} selected`);
             
+            // Hide about content and show default content
+            hideAboutContent();
+            showDefaultContent();
+            
             // Close the submenu first
             const submenu = document.getElementById('ieltsAcademicSubmenu');
             const menuParent = submenu.closest('.ielts-academic-menu');
@@ -1750,7 +1777,45 @@
         // Navigation functions
         function selectHome() {
             console.log('🏠 Home selected - Loading IELTS content');
-            // Placeholder for home content loading
+            // Hide about content and show default IELTS content
+            hideAboutContent();
+            showDefaultContent();
+        }
+
+        function selectAbout() {
+            console.log('ℹ️ About selected - Loading About content');
+            // Hide default content and show about content
+            hideDefaultContent();
+            showAboutContent();
+        }
+
+        // Content visibility functions
+        function showDefaultContent() {
+            const defaultContent = document.getElementById('defaultContent');
+            if (defaultContent) {
+                defaultContent.style.display = 'block';
+            }
+        }
+
+        function hideDefaultContent() {
+            const defaultContent = document.getElementById('defaultContent');
+            if (defaultContent) {
+                defaultContent.style.display = 'none';
+            }
+        }
+
+        function showAboutContent() {
+            const aboutSection = document.getElementById('aboutSection');
+            if (aboutSection) {
+                aboutSection.style.display = 'block';
+            }
+        }
+
+        function hideAboutContent() {
+            const aboutSection = document.getElementById('aboutSection');
+            if (aboutSection) {
+                aboutSection.style.display = 'none';
+            }
         }
 
         // Submenu timeout handling
