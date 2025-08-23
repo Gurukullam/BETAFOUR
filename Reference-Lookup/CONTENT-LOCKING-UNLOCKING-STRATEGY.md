@@ -71,35 +71,82 @@ User Authentication → Subscription Validation → localStorage Storage → Con
 }
 ```
 
-#### **🔒 Locked State Styling:**
+#### **🔒 Enhanced Locked State Styling with Animations:**
 ```css
+/* Lock styling for premium practices - Enhanced with smooth animations */
 .practice-item.locked {
-    background: rgba(220, 53, 69, 0.08);
-    border-left-color: #dc3545;
-    color: #666;
-    cursor: pointer;
-    opacity: 0.7;
+    background: rgba(220, 53, 69, 0.08);           /* Subtle red background */
+    border-left-color: #dc3545;                    /* Red left border */
+    color: #666;                                   /* Muted text color */
+    cursor: pointer;                               /* Maintains clickable cursor */
+    opacity: 0.7;                                  /* Slight transparency */
 }
 
 .practice-item.locked:hover {
-    background: rgba(220, 53, 69, 0.12);
-    transform: translateX(5px);                      /* Same animation as unlocked */
+    background: rgba(220, 53, 69, 0.12);          /* Slightly darker on hover */
+    transform: translateX(5px);                    /* SAME slide animation as unlocked */
     box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15); /* Red-themed shadow */
-    border-left-color: #dc3545;
+    border-left-color: #dc3545;                   /* Consistent red border */
 }
 
+/* Lock badge with simplified display logic */
 .lock-badge {
-    display: none;                                   /* Hidden by default */
-    font-size: 0.8rem;
-    margin-left: 0.5rem;
+    display: none;                                 /* Hidden by default */
+    font-size: 0.8rem;                           /* Compact size */
+    margin-left: 0.5rem;                         /* Spacing from text */
     background: linear-gradient(135deg, #dc3545, #c82333);
     color: white;
     padding: 0.2rem 0.5rem;
     border-radius: 12px;
     font-weight: 600;
-    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.practice-item.locked .lock-badge {
+    display: inline-block;                        /* Show when locked */
 }
 ```
+
+#### **🎯 Enhanced Animation Benefits:**
+- **Consistent UX**: Both locked and unlocked items have identical hover animations
+- **Professional Feel**: Smooth `translateX(5px)` slide creates premium experience  
+- **Visual Feedback**: Red theming clearly indicates premium content status
+- **Intuitive Interaction**: Maintains `cursor: pointer` suggesting clickable action
+- **Smooth Transitions**: All animations use same 0.3s ease timing
+
+#### **🚀 Enhanced Animation Strategy Implementation:**
+
+**UPDATED: Enhanced Button Animation & Cursor Effects**  
+*Applied to all General Reading practices and can be universally implemented*
+
+```css
+/* Key Enhancement: Consistent animations regardless of lock state */
+.practice-item {
+    transition: all 0.3s ease;                     /* Smooth transitions */
+    cursor: pointer;                               /* Always clickable appearance */
+}
+
+.practice-item:hover {
+    transform: translateX(5px);                    /* Standard slide animation */
+    box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+}
+
+.practice-item.locked:hover {
+    transform: translateX(5px);                    /* IDENTICAL animation */
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15); /* Red-themed shadow */
+}
+```
+
+**🎯 Animation Strategy Benefits:**
+- **User Experience Consistency**: No jarring differences between locked/unlocked interactions
+- **Professional Polish**: Maintains premium feel even for restricted content
+- **Visual Hierarchy**: Red theming indicates premium status without breaking UX flow
+- **Accessibility**: Cursor pointer suggests interactivity, meeting user expectations
+- **Performance**: Single animation keyframe for both states optimizes rendering
+
+**📱 Cross-Platform Compatibility:**
+- **Desktop**: Smooth hover animations enhance clickability perception
+- **Mobile**: Touch interactions benefit from consistent visual feedback
+- **Tablet**: Hybrid interaction modes work seamlessly with unified approach
 
 ### **3. JAVASCRIPT IMPLEMENTATION**
 
@@ -233,9 +280,35 @@ function handleContentClick(event) {
 function openSubscriptionModal() {
     console.log('💳 Redirecting to main page for subscription...');
     
+    // Store the current practice attempt for analytics (optional)
+    localStorage.setItem('lastAttemptedPractice', JSON.stringify({
+        section: 'General Reading', // Update based on actual section
+        timestamp: new Date().toISOString(),
+        reason: 'subscription_required'
+    }));
+    
     // Navigate to main IELTS page with parameter to open subscription modal
     window.location.href = '../../index.html?openSubscription=true';
 }
+```
+
+#### **🚨 CRITICAL: URL Parameter Required**
+**⚠️ Common Issue Fix**: The URL parameter `?openSubscription=true` is **ESSENTIAL** for opening the subscription modal. Without it, users are redirected to the main page but the modal doesn't open.
+
+**❌ WRONG**: `window.location.href = '../../index.html';`  
+**✅ CORRECT**: `window.location.href = '../../index.html?openSubscription=true';`
+
+#### **🔑 CRITICAL: localStorage Key Consistency**
+**⚠️ Common Issue Fix**: All implementations must use the **same localStorage key** for subscription data. Inconsistent keys cause subscription status checking failures.
+
+**✅ STANDARD KEY**: `'userSubscriptionData'`  
+**❌ AVOID**: `'ieltsSubscriptionData'`, `'subscriptionData'`, or any other variants
+
+**Usage Pattern:**
+```javascript
+// Consistent key usage across all files
+const subscriptionData = localStorage.getItem('userSubscriptionData');
+localStorage.setItem('userSubscriptionData', JSON.stringify(data));
 ```
 
 ### **🏦 CURRENCY HANDLING FOR SUBSCRIPTION REDIRECTS**
@@ -640,10 +713,15 @@ function checkUserSubscription() {
 - [ ] Content locks correctly when no subscription
 - [ ] Content unlocks correctly with active subscription
 - [ ] Lock badge appears/disappears appropriately  
+- [ ] **CRITICAL**: Click handlers remain active on locked content (NO `removeAttribute('onclick')`)
 - [ ] Click handler prevents/allows access correctly
-- [ ] Subscription modal opens on locked content click
+- [ ] **CRITICAL**: Subscription modal opens on locked content click with `?openSubscription=true` parameter
+- [ ] **CRITICAL**: localStorage uses consistent `'userSubscriptionData'` key across all implementations
 - [ ] Styling applies correctly (locked/unlocked states)
-- [ ] Hover animations work for both states
+- [ ] Enhanced hover animations work identically for both states (`translateX(5px)`)
+- [ ] Cursor pointer maintained for locked content (maintains clickability feel)
+- [ ] Animation consistency across all premium content
+- [ ] Red-themed shadows appear correctly on locked content hover
 
 #### **✅ Event Testing:**
 - [ ] Page load triggers subscription check
@@ -687,8 +765,10 @@ const VALIDATION_CHECKLIST = {
     cssImplementation: {
         baseStyles: 'practice-item class properly styled',
         lockedStyles: 'locked class applies red theme',
-        hoverAnimation: 'Both states have translateX(5px) animation',
-        lockBadge: 'Badge properly styled and positioned'
+        enhancedAnimations: 'IDENTICAL translateX(5px) hover animation for both states',
+        cursorBehavior: 'cursor: pointer maintained for locked content',
+        lockBadge: 'Badge properly styled and positioned',
+        animationConsistency: 'Same 0.3s ease transition timing across states'
     },
     
     javascriptFunctions: {
@@ -739,6 +819,240 @@ const VALIDATION_CHECKLIST = {
 
 ---
 
+## 🛠️ **COMMON ISSUES & TROUBLESHOOTING**
+
+### **🚨 Issue 1: Subscription Modal Doesn't Open**
+**Symptoms**: Clicking locked content redirects to main page but modal doesn't appear
+
+**Root Cause**: Missing URL parameter in redirect
+```javascript
+// ❌ BROKEN - No parameter
+window.location.href = '../../index.html';
+
+// ✅ FIXED - With parameter
+window.location.href = '../../index.html?openSubscription=true';
+```
+
+**Fix**: Always include `?openSubscription=true` parameter in subscription redirects
+
+### **🚨 Issue 2: Subscription Status Not Updating**
+**Symptoms**: Content remains locked even with valid subscription
+
+**Root Cause**: Inconsistent localStorage key usage
+```javascript
+// ❌ WRONG - Mixed keys cause data inconsistency
+localStorage.getItem('ieltsSubscriptionData');    // Reading uses this
+localStorage.getItem('userSubscriptionData');     // Listening uses this
+
+// ✅ CORRECT - Consistent key usage
+localStorage.getItem('userSubscriptionData');     // ALL should use this
+```
+
+**Fix**: Standardize on `'userSubscriptionData'` across all implementations
+
+### **🚨 Issue 3: Click Handlers Removed (CRITICAL)**
+**Symptoms**: Clicking locked content does absolutely nothing - no modal, no response
+
+**Root Cause**: `removeAttribute('onclick')` in lock functions completely removes click detection
+```javascript
+// ❌ CRITICAL ERROR - Removes click handler entirely
+function lockContent() {
+    practiceLink.classList.add('locked');
+    practiceLink.removeAttribute('onclick');  // ❌ BREAKS SUBSCRIPTION MODAL!
+    lockBadge.style.display = 'inline-block';
+}
+
+// ✅ CORRECT - Keeps click handler for modal detection
+function lockContent() {
+    practiceLink.classList.add('locked');
+    // ✅ NO removeAttribute - handler stays active!
+    lockBadge.style.display = 'inline-block';
+}
+```
+
+**Fix**: **NEVER** remove onclick attributes in lock functions - they're needed for subscription modal detection
+
+### **🚨 Issue 4: Animation Inconsistencies**
+**Symptoms**: Locked content has different hover behavior than unlocked
+
+**Root Cause**: Missing or incorrect hover animations
+```css
+/* ❌ WRONG - No animation for locked state */
+.practice-item.locked:hover {
+    background: rgba(220, 53, 69, 0.12);
+}
+
+/* ✅ CORRECT - Identical animation */
+.practice-item.locked:hover {
+    background: rgba(220, 53, 69, 0.12);
+    transform: translateX(5px);                    /* Same as unlocked */
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15);
+}
+```
+
+**Fix**: Ensure identical `translateX(5px)` animations for both states
+
+### **🛠️ Quick Diagnostic Commands**
+```javascript
+// Test subscription modal redirect
+testSubscriptionRedirect();
+
+// Check localStorage key consistency
+viewStoredSubscriptionData();
+
+// Verify subscription status
+manualSubscriptionCheck();
+
+// Test animation behavior (General Reading example)
+testLockSection1Practice2();  // Then hover to test animation
+testUnlockSection1Practice2(); // Then hover to compare
+
+// Test General Writing practices
+testLockTask1SemiFormal();     // Test Task 1 lock
+testUnlockTask1SemiFormal();   // Test Task 1 unlock
+testLockTask2Discussion();     // Test Task 2 lock  
+testUnlockTask2Discussion();   // Test Task 2 unlock
+
+// Test General Speaking practices
+testLockPart1Hobbies();        // Test Part 1 lock
+testUnlockPart1Hobbies();      // Test Part 1 unlock
+testLockPart2Place();          // Test Part 2 lock
+testUnlockPart2Place();        // Test Part 2 unlock
+testLockPart3Technology();     // Test Part 3 lock
+testUnlockPart3Technology();   // Test Part 3 unlock
+```
+
+### **📝 Implementation Example: General Writing**
+
+**Structure Overview:**
+- **Task 1 (Letter Writing)**: 6 types total, 1 free + 5 premium
+- **Task 2 (Essay Writing)**: 5 types total, 1 free + 4 premium
+- **Total Premium Content**: 9 locked practices
+
+**Free Content** (Always accessible):
+- Task 1: Formal Letter (introductory practice)
+- Task 2: Opinion Essay (introductory practice)
+
+**Premium Content** (Requires subscription):
+- Task 1: Semi-formal Letter, Informal Letter, Complaint Letter, Request Letter, Invitation Letter
+- Task 2: Discussion Essay, Advantage/Disadvantage, Problem/Solution, Two-Part Question
+
+**Key Implementation Features:**
+- ✅ Enhanced animations with identical `translateX(5px)` hover effects for locked/unlocked states
+- ✅ Correct localStorage key (`'userSubscriptionData'`) for cross-platform consistency
+- ✅ Proper subscription modal opening with `?openSubscription=true` parameter
+- ✅ Comprehensive debug functions for all 9 premium practices
+- ✅ Analytics tracking for subscription conversion optimization
+
+### **🎤 Implementation Example: General Speaking**
+
+**Structure Overview:**
+- **Part 1 (Introduction & Interview)**: 6 topics total, 1 free + 5 premium
+- **Part 2 (Long Turn/Cue Card)**: 6 topics total, 1 free + 5 premium  
+- **Part 3 (Two-way Discussion)**: 6 topics total, 1 free + 5 premium
+- **Total Premium Content**: 15 locked practices
+
+**Free Content** (Always accessible):
+- Part 1: Personal Information (introductory practice)
+- Part 2: Describe a Person (introductory practice)
+- Part 3: Social Issues (introductory practice)
+
+**Premium Content** (Requires subscription):
+- Part 1: Hobbies & Interests, Daily Routine, Family & Friends, Work & Study, Hometown & Living
+- Part 2: Describe a Place, Describe an Event, Describe an Object, Describe an Experience, Describe an Activity
+- Part 3: Technology & Change, Education & Learning, Environment & Society, Culture & Traditions, Future Trends
+
+**Key Implementation Features:**
+- ✅ Enhanced animations with identical `translateX(5px)` hover effects for locked/unlocked states
+- ✅ Correct localStorage key (`'userSubscriptionData'`) for cross-platform consistency
+- ✅ Proper subscription modal opening with `?openSubscription=true` parameter
+- ✅ Comprehensive debug functions for all 15 premium practices (30 functions total)
+- ✅ **CRITICAL FIX**: NO `removeAttribute('onclick')` - click handlers preserved for modal detection
+- ✅ Analytics tracking for subscription conversion optimization
+
+---
+
+## 🎓 **ACADEMIC IELTS IMPLEMENTATIONS**
+
+### **📚 Implementation Example: Academic Listening**
+
+**File**: `IELTS/Academic/listening/IELTS_Academic_Listening_Introduction.html`
+
+**Structure Overview:**
+- **Part 1 (Conversation)**: 8 practices total, 2 free (Practice Sample + Practice 1) + 6 premium
+- **Part 2 (Monologue)**: 7 practices total, 1 free (Practice 1) + 6 premium
+- **Part 3 (Discussion)**: 7 practices total, 1 free (Practice 1) + 6 premium
+- **Part 4 (Lecture)**: 7 practices total, 1 free (Practice 1) + 6 premium
+- **Total Premium Content**: 24 locked practices (highest count across all modules)
+
+**Key Implementation Features:**
+- ✅ Academic-focused content with university-level listening materials
+- ✅ Expandable sidebar navigation for efficient practice selection
+- ✅ Individual `lockPart[Num]Practice[Num]()` functions for all 24 practices
+- ✅ Enhanced animations with red lock indicators for premium content
+- ✅ Debug functions: `testLockAcademicListening()`, `simulateAcademicSubscription()`
+
+### **📖 Implementation Example: Academic Reading**
+
+**File**: `IELTS/Academic/reading/IELTS_Academic_Reading_Introduction.html`
+
+**Structure Overview:**
+- **Passage 1 (Academic Texts)**: 7 practices total, 1 free (Practice 1) + 6 premium
+- **Passage 2 (Advanced Academic)**: 7 practices total, 1 free (Practice 1) + 6 premium
+- **Passage 3 (Complex Academic)**: 7 practices total, 1 free (Practice 1) + 6 premium
+- **Total Premium Content**: 18 locked practices with progressive difficulty
+
+**Key Implementation Features:**
+- ✅ University-level reading comprehension with authentic academic texts
+- ✅ Progressive difficulty scaling from undergraduate to postgraduate level
+- ✅ Individual `lockPassage[Num]Practice[Num]()` functions for all 18 practices
+- ✅ Academic vocabulary and complex argumentation focus
+- ✅ Debug functions: `testLockAcademicReading()`, `simulateAcademicSubscription()`
+
+### **✍️ Implementation Example: Academic Writing**
+
+**File**: `IELTS/Academic/writing/IELTS_Academic_Writing_Introduction.html`
+
+**Structure Overview:**
+- **Task 1 (Data Description)**: 7 chart types total, 1 free (Line Graph) + 6 premium
+- **Task 2 (Academic Essay)**: 5 essay types total, 1 free (Opinion Essay) + 4 premium
+- **Total Premium Content**: 10 locked practices with academic writing focus
+
+**Premium Content** (Requires subscription):
+- Task 1: Bar Chart, Pie Chart, Table, Process Diagram, Map, Mixed Chart
+- Task 2: Discussion Essay, Advantage/Disadvantage, Problem/Solution, Two-Part Question
+
+**Key Implementation Features:**
+- ✅ Academic data interpretation and scholarly essay composition
+- ✅ University-level argumentation and critical analysis skills
+- ✅ Individual `lockTask[Num][Type]()` functions for all 10 practices
+- ✅ Chart analysis with academic vocabulary development
+- ✅ Debug functions: `testLockAcademicWriting()`, `simulateAcademicSubscription()`
+
+### **🎤 Implementation Example: Academic Speaking**
+
+**File**: `IELTS/Academic/speaking/IELTS_Academic_Speaking_Introduction.html`
+
+**Structure Overview:**
+- **Part 1 (Academic Interview)**: 6 topics total, 1 free (Academic Background) + 5 premium
+- **Part 2 (Academic Long Turn)**: 6 topics total, 1 free (Academic Achievement) + 5 premium
+- **Part 3 (Academic Discussion)**: 6 topics total, 1 free (Higher Education & Research) + 5 premium
+- **Total Premium Content**: 15 locked practices with scholarly discourse focus
+
+**Premium Content** (Requires subscription):
+- Part 1: Research Methods, Academic Goals, University Life, Academic Skills, Educational Technology
+- Part 2: Research Project, Educational Institution, Academic Subject, Learning Experience, Academic Challenge
+- Part 3: Academic Writing & Communication, Educational Policy, Knowledge Management, Academic Ethics, International Education
+
+**Key Implementation Features:**
+- ✅ University-level academic discourse and research presentation skills
+- ✅ Scholarly vocabulary and critical thinking development
+- ✅ Individual `lockPart[Num][Topic]()` functions for all 15 practices
+- ✅ Academic interview, presentation, and discussion expertise
+- ✅ Debug functions: `testLockAcademicSpeaking()`, `simulateAcademicSubscription()`
+
+---
+
 ## ✅ **SUMMARY**
 
 This strategy provides a **complete, battle-tested blueprint** for implementing content locking/unlocking across your entire IELTS platform. 
@@ -747,18 +1061,37 @@ This strategy provides a **complete, battle-tested blueprint** for implementing 
 - ✅ **Proven Implementation**: Based on working Practice 2 system
 - ✅ **Universal Application**: Works for any content type
 - ✅ **Robust Validation**: Multiple check triggers ensure reliability
-- ✅ **Professional UX**: Smooth animations and clear visual feedback
+- ✅ **Enhanced Professional UX**: Consistent `translateX(5px)` animations for both locked/unlocked states
+- ✅ **Intuitive Interactions**: Smart cursor pointer maintains clickable feel even when locked
+- ✅ **Seamless Animation Flow**: Identical hover effects create cohesive user experience
+- ✅ **Fixed Modal Issues**: Guaranteed subscription modal opening with `?openSubscription=true` parameter
+- ✅ **localStorage Consistency**: Standardized `'userSubscriptionData'` key prevents data conflicts
 - ✅ **Currency Handling**: Automatic currency display for 20+ countries
 - ✅ **Seamless Subscription Flow**: No currency flashing or display issues
 - ✅ **Debug Capabilities**: Comprehensive testing and debugging tools
 - ✅ **Error Resilience**: Graceful handling of edge cases with retry logic
 - ✅ **Performance Optimized**: Efficient localStorage-based checking
+- ✅ **Comprehensive Troubleshooting**: Common issue identification and resolution guide
+- ✅ **Complete General Module Coverage**: All 4 General Training modules now implemented (60+ premium practices total)
+- ✅ **Complete Academic Module Coverage**: All 4 Academic modules now implemented (67+ premium practices total)
+- ✅ **Full IELTS Coverage**: Complete implementation across both General and Academic tracks (127+ total premium practices)
 
 **Ready for use across:**
-- 🎧 All Listening practices and parts
-- 📖 All Reading sections and passages  
-- ✍️ All Writing tasks and practices
-- 🗣️ All Speaking parts and topics
-- 📚 Any future premium content
+
+### **🎓 Academic IELTS Modules:**
+- ✅ **Academic Listening** (All Parts 1-4, 24+ premium practices) - IMPLEMENTED ✨
+- ✅ **Academic Reading** (All Passages 1-3, 18+ premium practices) - IMPLEMENTED ✨
+- ✅ **Academic Writing** (Both Tasks 1-2, 10+ premium practices) - IMPLEMENTED ✨
+- ✅ **Academic Speaking** (All Parts 1-3, 15+ premium practices) - IMPLEMENTED ✨
+
+### **🌍 General IELTS Modules:**
+- ✅ **General Listening** (All Parts 1-4, 18+ premium practices) - IMPLEMENTED
+- ✅ **General Reading** (All Sections 1-3, 18+ premium practices) - IMPLEMENTED  
+- ✅ **General Writing** (Both Tasks 1-2, 9+ premium practices) - IMPLEMENTED
+- ✅ **General Speaking** (All Parts 1-3, 15+ premium practices) - IMPLEMENTED
+
+### **📚 Future Extensions:**
+- 🚀 Any additional IELTS content modules
+- 🌟 Other language certification platforms
 
 **Simply replace the template placeholders with your specific content details, and you have a fully functional premium content access control system!** 🔒✨ 
