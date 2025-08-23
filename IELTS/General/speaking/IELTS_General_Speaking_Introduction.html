@@ -542,6 +542,49 @@
             transform: translateX(5px);
         }
 
+        /* Lock mechanism styles - Enhanced with animations */
+        .practice-item {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .practice-text {
+            flex: 1;
+        }
+
+        .lock-badge {
+            display: none;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Lock styling for premium practices - Enhanced with smooth animations */
+        .practice-item.locked {
+            background: rgba(220, 53, 69, 0.08);
+            border-left-color: #dc3545;
+            color: #666;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .practice-item.locked:hover {
+            background: rgba(220, 53, 69, 0.12);
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15);
+            border-left-color: #dc3545;
+        }
+
+        .practice-item.locked .lock-badge {
+            display: inline-block;
+        }
+
         /* Menu Toggle Button */
         .menu-toggle {
             position: fixed;
@@ -708,12 +751,29 @@
                     <span class="expand-icon" id="part1-icon">▼</span>
                 </div>
                 <div class="section-content" id="part1-content">
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part1_Personal_Information.html'">Personal Information</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part1_Hobbies_Interests.html'">Hobbies & Interests</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part1_Daily_Routine.html'">Daily Routine</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part1_Family_Friends.html'">Family & Friends</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part1_Work_Study.html'">Work & Study</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part1_Hometown_Living.html'">Hometown & Living</div>
+                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part1_Personal_Information.html'">
+                        <span class="practice-text">Personal Information</span>
+                    </div>
+                    <div class="practice-item" id="part1HobbiesLink" onclick="handlePart1HobbiesClick(event)">
+                        <span class="practice-text">Hobbies & Interests</span>
+                        <span class="lock-badge" id="part1HobbiesLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part1RoutineLink" onclick="handlePart1RoutineClick(event)">
+                        <span class="practice-text">Daily Routine</span>
+                        <span class="lock-badge" id="part1RoutineLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part1FamilyLink" onclick="handlePart1FamilyClick(event)">
+                        <span class="practice-text">Family & Friends</span>
+                        <span class="lock-badge" id="part1FamilyLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part1WorkLink" onclick="handlePart1WorkClick(event)">
+                        <span class="practice-text">Work & Study</span>
+                        <span class="lock-badge" id="part1WorkLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part1HometownLink" onclick="handlePart1HometownClick(event)">
+                        <span class="practice-text">Hometown & Living</span>
+                        <span class="lock-badge" id="part1HometownLock">🔒</span>
+                    </div>
                 </div>
             </div>
 
@@ -724,12 +784,29 @@
                     <span class="expand-icon" id="part2-icon">▼</span>
                 </div>
                 <div class="section-content" id="part2-content">
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part2_Describe_a_Person.html'">Describe a Person</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part2_Describe_a_Place.html'">Describe a Place</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part2_Describe_an_Event.html'">Describe an Event</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part2_Describe_an_Object.html'">Describe an Object</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part2_Describe_an_Experience.html'">Describe an Experience</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part2_Describe_an_Activity.html'">Describe an Activity</div>
+                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part2_Describe_a_Person.html'">
+                        <span class="practice-text">Describe a Person</span>
+                    </div>
+                    <div class="practice-item" id="part2PlaceLink" onclick="handlePart2PlaceClick(event)">
+                        <span class="practice-text">Describe a Place</span>
+                        <span class="lock-badge" id="part2PlaceLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part2EventLink" onclick="handlePart2EventClick(event)">
+                        <span class="practice-text">Describe an Event</span>
+                        <span class="lock-badge" id="part2EventLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part2ObjectLink" onclick="handlePart2ObjectClick(event)">
+                        <span class="practice-text">Describe an Object</span>
+                        <span class="lock-badge" id="part2ObjectLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part2ExperienceLink" onclick="handlePart2ExperienceClick(event)">
+                        <span class="practice-text">Describe an Experience</span>
+                        <span class="lock-badge" id="part2ExperienceLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part2ActivityLink" onclick="handlePart2ActivityClick(event)">
+                        <span class="practice-text">Describe an Activity</span>
+                        <span class="lock-badge" id="part2ActivityLock">🔒</span>
+                    </div>
                 </div>
             </div>
 
@@ -740,12 +817,29 @@
                     <span class="expand-icon" id="part3-icon">▼</span>
                 </div>
                 <div class="section-content" id="part3-content">
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part3_Social_Issues.html'">Social Issues</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part3_Technology_Change.html'">Technology & Change</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part3_Education_Learning.html'">Education & Learning</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part3_Environment_Society.html'">Environment & Society</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part3_Culture_Traditions.html'">Culture & Traditions</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part3_Future_Trends.html'">Future Trends</div>
+                    <div class="practice-item" onclick="window.location.href='GA_IELTS_SPEAKING_Part3_Social_Issues.html'">
+                        <span class="practice-text">Social Issues</span>
+                    </div>
+                    <div class="practice-item" id="part3TechnologyLink" onclick="handlePart3TechnologyClick(event)">
+                        <span class="practice-text">Technology & Change</span>
+                        <span class="lock-badge" id="part3TechnologyLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part3EducationLink" onclick="handlePart3EducationClick(event)">
+                        <span class="practice-text">Education & Learning</span>
+                        <span class="lock-badge" id="part3EducationLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part3EnvironmentLink" onclick="handlePart3EnvironmentClick(event)">
+                        <span class="practice-text">Environment & Society</span>
+                        <span class="lock-badge" id="part3EnvironmentLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part3CultureLink" onclick="handlePart3CultureClick(event)">
+                        <span class="practice-text">Culture & Traditions</span>
+                        <span class="lock-badge" id="part3CultureLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part3FutureLink" onclick="handlePart3FutureClick(event)">
+                        <span class="practice-text">Future Trends</span>
+                        <span class="lock-badge" id="part3FutureLock">🔒</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1126,9 +1220,1061 @@
             window.location.href = '../../index.html';
         }
 
+        // ========================================
+        // SUBSCRIPTION CHECK & CONTENT LOCKING SYSTEM
+        // ========================================
+
+        // Check subscription status and manage content locking
+        function checkStoredSubscriptionData() {
+            console.log('🔍 Checking stored subscription data...');
+            
+            const storedData = localStorage.getItem('userSubscriptionData');
+            console.log('📦 Raw stored data:', storedData);
+            
+            if (!storedData) {
+                console.log('❌ No stored subscription data found - LOCKING ALL PREMIUM PRACTICES');
+                lockAllPremiumPractices();
+                return;
+            }
+            
+            try {
+                const data = JSON.parse(storedData);
+                console.log('📋 Parsed subscription data:', data);
+                
+                if (data && typeof data === 'object') {
+                    if (data.isActive === true) {
+                        console.log('🎉 SUBSCRIPTION IS ACTIVE - UNLOCKING ALL PREMIUM PRACTICES');
+                        unlockAllPremiumPractices();
+                    } else {
+                        console.log('❌ Subscription NOT active - LOCKING ALL PREMIUM PRACTICES');
+                        console.log('🔍 Lock reason:', data.reason || 'isActive = false');
+                        lockAllPremiumPractices();
+                    }
+                } else {
+                    console.log('❌ Invalid subscription data format - LOCKING ALL PREMIUM PRACTICES');
+                    lockAllPremiumPractices();
+                }
+                
+            } catch (error) {
+                console.error('❌ Error parsing stored subscription data:', error);
+                console.log('🔧 Defaulting to LOCKED due to error');
+                lockAllPremiumPractices();
+            }
+        }
+
+        // Lock all premium practices
+        function lockAllPremiumPractices() {
+            // Part 1 Premium Practices
+            lockPart1Hobbies();
+            lockPart1Routine();
+            lockPart1Family();
+            lockPart1Work();
+            lockPart1Hometown();
+            // Part 2 Premium Practices
+            lockPart2Place();
+            lockPart2Event();
+            lockPart2Object();
+            lockPart2Experience();
+            lockPart2Activity();
+            // Part 3 Premium Practices
+            lockPart3Technology();
+            lockPart3Education();
+            lockPart3Environment();
+            lockPart3Culture();
+            lockPart3Future();
+        }
+
+        // Unlock all premium practices
+        function unlockAllPremiumPractices() {
+            // Part 1 Premium Practices
+            unlockPart1Hobbies();
+            unlockPart1Routine();
+            unlockPart1Family();
+            unlockPart1Work();
+            unlockPart1Hometown();
+            // Part 2 Premium Practices
+            unlockPart2Place();
+            unlockPart2Event();
+            unlockPart2Object();
+            unlockPart2Experience();
+            unlockPart2Activity();
+            // Part 3 Premium Practices
+            unlockPart3Technology();
+            unlockPart3Education();
+            unlockPart3Environment();
+            unlockPart3Culture();
+            unlockPart3Future();
+        }
+
+        // ========================================
+        // PART 1 PREMIUM PRACTICES LOCK/UNLOCK FUNCTIONS
+        // ========================================
+
+        // Part 1 Hobbies & Interests
+        function lockPart1Hobbies() {
+            console.log('🔒 Attempting to lock Part 1 Hobbies & Interests link...');
+            
+            const practiceLink = document.getElementById('part1HobbiesLink');
+            const lockBadge = document.getElementById('part1HobbiesLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 1 Hobbies & Interests link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 1 Hobbies & Interests - elements missing!');
+            }
+        }
+
+        function unlockPart1Hobbies() {
+            console.log('✅ Attempting to unlock Part 1 Hobbies & Interests link...');
+            
+            const practiceLink = document.getElementById('part1HobbiesLink');
+            const lockBadge = document.getElementById('part1HobbiesLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part1_Hobbies_Interests.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 1 Hobbies & Interests link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 1 Hobbies & Interests - elements missing!');
+            }
+        }
+
+        function handlePart1HobbiesClick(event) {
+            const practiceLink = document.getElementById('part1HobbiesLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 1 Hobbies & Interests - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 1 Hobbies & Interests');
+            window.location.href = 'GA_IELTS_SPEAKING_Part1_Hobbies_Interests.html';
+            return true;
+        }
+
+        // Part 1 Daily Routine
+        function lockPart1Routine() {
+            console.log('🔒 Attempting to lock Part 1 Daily Routine link...');
+            
+            const practiceLink = document.getElementById('part1RoutineLink');
+            const lockBadge = document.getElementById('part1RoutineLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 1 Daily Routine link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 1 Daily Routine - elements missing!');
+            }
+        }
+
+        function unlockPart1Routine() {
+            console.log('✅ Attempting to unlock Part 1 Daily Routine link...');
+            
+            const practiceLink = document.getElementById('part1RoutineLink');
+            const lockBadge = document.getElementById('part1RoutineLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part1_Daily_Routine.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 1 Daily Routine link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 1 Daily Routine - elements missing!');
+            }
+        }
+
+        function handlePart1RoutineClick(event) {
+            const practiceLink = document.getElementById('part1RoutineLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 1 Daily Routine - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 1 Daily Routine');
+            window.location.href = 'GA_IELTS_SPEAKING_Part1_Daily_Routine.html';
+            return true;
+        }
+
+        // Part 1 Family & Friends
+        function lockPart1Family() {
+            console.log('🔒 Attempting to lock Part 1 Family & Friends link...');
+            
+            const practiceLink = document.getElementById('part1FamilyLink');
+            const lockBadge = document.getElementById('part1FamilyLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 1 Family & Friends link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 1 Family & Friends - elements missing!');
+            }
+        }
+
+        function unlockPart1Family() {
+            console.log('✅ Attempting to unlock Part 1 Family & Friends link...');
+            
+            const practiceLink = document.getElementById('part1FamilyLink');
+            const lockBadge = document.getElementById('part1FamilyLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part1_Family_Friends.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 1 Family & Friends link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 1 Family & Friends - elements missing!');
+            }
+        }
+
+        function handlePart1FamilyClick(event) {
+            const practiceLink = document.getElementById('part1FamilyLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 1 Family & Friends - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 1 Family & Friends');
+            window.location.href = 'GA_IELTS_SPEAKING_Part1_Family_Friends.html';
+            return true;
+        }
+
+        // Part 1 Work & Study
+        function lockPart1Work() {
+            console.log('🔒 Attempting to lock Part 1 Work & Study link...');
+            
+            const practiceLink = document.getElementById('part1WorkLink');
+            const lockBadge = document.getElementById('part1WorkLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 1 Work & Study link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 1 Work & Study - elements missing!');
+            }
+        }
+
+        function unlockPart1Work() {
+            console.log('✅ Attempting to unlock Part 1 Work & Study link...');
+            
+            const practiceLink = document.getElementById('part1WorkLink');
+            const lockBadge = document.getElementById('part1WorkLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part1_Work_Study.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 1 Work & Study link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 1 Work & Study - elements missing!');
+            }
+        }
+
+        function handlePart1WorkClick(event) {
+            const practiceLink = document.getElementById('part1WorkLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 1 Work & Study - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 1 Work & Study');
+            window.location.href = 'GA_IELTS_SPEAKING_Part1_Work_Study.html';
+            return true;
+        }
+
+        // Part 1 Hometown & Living
+        function lockPart1Hometown() {
+            console.log('🔒 Attempting to lock Part 1 Hometown & Living link...');
+            
+            const practiceLink = document.getElementById('part1HometownLink');
+            const lockBadge = document.getElementById('part1HometownLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 1 Hometown & Living link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 1 Hometown & Living - elements missing!');
+            }
+        }
+
+        function unlockPart1Hometown() {
+            console.log('✅ Attempting to unlock Part 1 Hometown & Living link...');
+            
+            const practiceLink = document.getElementById('part1HometownLink');
+            const lockBadge = document.getElementById('part1HometownLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part1_Hometown_Living.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 1 Hometown & Living link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 1 Hometown & Living - elements missing!');
+            }
+        }
+
+        function handlePart1HometownClick(event) {
+            const practiceLink = document.getElementById('part1HometownLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 1 Hometown & Living - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 1 Hometown & Living');
+            window.location.href = 'GA_IELTS_SPEAKING_Part1_Hometown_Living.html';
+            return true;
+        }
+
+        // ========================================
+        // PART 2 PREMIUM PRACTICES LOCK/UNLOCK FUNCTIONS
+        // ========================================
+
+        // Part 2 Describe a Place
+        function lockPart2Place() {
+            console.log('🔒 Attempting to lock Part 2 Describe a Place link...');
+            
+            const practiceLink = document.getElementById('part2PlaceLink');
+            const lockBadge = document.getElementById('part2PlaceLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 2 Describe a Place link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 2 Describe a Place - elements missing!');
+            }
+        }
+
+        function unlockPart2Place() {
+            console.log('✅ Attempting to unlock Part 2 Describe a Place link...');
+            
+            const practiceLink = document.getElementById('part2PlaceLink');
+            const lockBadge = document.getElementById('part2PlaceLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part2_Describe_a_Place.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 2 Describe a Place link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 2 Describe a Place - elements missing!');
+            }
+        }
+
+        function handlePart2PlaceClick(event) {
+            const practiceLink = document.getElementById('part2PlaceLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 2 Describe a Place - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 2 Describe a Place');
+            window.location.href = 'GA_IELTS_SPEAKING_Part2_Describe_a_Place.html';
+            return true;
+        }
+
+        // Part 2 Describe an Event
+        function lockPart2Event() {
+            console.log('🔒 Attempting to lock Part 2 Describe an Event link...');
+            
+            const practiceLink = document.getElementById('part2EventLink');
+            const lockBadge = document.getElementById('part2EventLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 2 Describe an Event link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 2 Describe an Event - elements missing!');
+            }
+        }
+
+        function unlockPart2Event() {
+            console.log('✅ Attempting to unlock Part 2 Describe an Event link...');
+            
+            const practiceLink = document.getElementById('part2EventLink');
+            const lockBadge = document.getElementById('part2EventLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part2_Describe_an_Event.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 2 Describe an Event link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 2 Describe an Event - elements missing!');
+            }
+        }
+
+        function handlePart2EventClick(event) {
+            const practiceLink = document.getElementById('part2EventLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 2 Describe an Event - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 2 Describe an Event');
+            window.location.href = 'GA_IELTS_SPEAKING_Part2_Describe_an_Event.html';
+            return true;
+        }
+
+        // Part 2 Describe an Object
+        function lockPart2Object() {
+            console.log('🔒 Attempting to lock Part 2 Describe an Object link...');
+            
+            const practiceLink = document.getElementById('part2ObjectLink');
+            const lockBadge = document.getElementById('part2ObjectLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 2 Describe an Object link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 2 Describe an Object - elements missing!');
+            }
+        }
+
+        function unlockPart2Object() {
+            console.log('✅ Attempting to unlock Part 2 Describe an Object link...');
+            
+            const practiceLink = document.getElementById('part2ObjectLink');
+            const lockBadge = document.getElementById('part2ObjectLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part2_Describe_an_Object.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 2 Describe an Object link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 2 Describe an Object - elements missing!');
+            }
+        }
+
+        function handlePart2ObjectClick(event) {
+            const practiceLink = document.getElementById('part2ObjectLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 2 Describe an Object - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 2 Describe an Object');
+            window.location.href = 'GA_IELTS_SPEAKING_Part2_Describe_an_Object.html';
+            return true;
+        }
+
+        // Part 2 Describe an Experience
+        function lockPart2Experience() {
+            console.log('🔒 Attempting to lock Part 2 Describe an Experience link...');
+            
+            const practiceLink = document.getElementById('part2ExperienceLink');
+            const lockBadge = document.getElementById('part2ExperienceLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 2 Describe an Experience link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 2 Describe an Experience - elements missing!');
+            }
+        }
+
+        function unlockPart2Experience() {
+            console.log('✅ Attempting to unlock Part 2 Describe an Experience link...');
+            
+            const practiceLink = document.getElementById('part2ExperienceLink');
+            const lockBadge = document.getElementById('part2ExperienceLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part2_Describe_an_Experience.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 2 Describe an Experience link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 2 Describe an Experience - elements missing!');
+            }
+        }
+
+        function handlePart2ExperienceClick(event) {
+            const practiceLink = document.getElementById('part2ExperienceLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 2 Describe an Experience - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 2 Describe an Experience');
+            window.location.href = 'GA_IELTS_SPEAKING_Part2_Describe_an_Experience.html';
+            return true;
+        }
+
+        // Part 2 Describe an Activity
+        function lockPart2Activity() {
+            console.log('🔒 Attempting to lock Part 2 Describe an Activity link...');
+            
+            const practiceLink = document.getElementById('part2ActivityLink');
+            const lockBadge = document.getElementById('part2ActivityLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 2 Describe an Activity link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 2 Describe an Activity - elements missing!');
+            }
+        }
+
+        function unlockPart2Activity() {
+            console.log('✅ Attempting to unlock Part 2 Describe an Activity link...');
+            
+            const practiceLink = document.getElementById('part2ActivityLink');
+            const lockBadge = document.getElementById('part2ActivityLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part2_Describe_an_Activity.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 2 Describe an Activity link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 2 Describe an Activity - elements missing!');
+            }
+        }
+
+        function handlePart2ActivityClick(event) {
+            const practiceLink = document.getElementById('part2ActivityLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 2 Describe an Activity - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 2 Describe an Activity');
+            window.location.href = 'GA_IELTS_SPEAKING_Part2_Describe_an_Activity.html';
+            return true;
+        }
+
+        // ========================================
+        // PART 3 PREMIUM PRACTICES LOCK/UNLOCK FUNCTIONS
+        // ========================================
+
+        // Part 3 Technology & Change
+        function lockPart3Technology() {
+            console.log('🔒 Attempting to lock Part 3 Technology & Change link...');
+            
+            const practiceLink = document.getElementById('part3TechnologyLink');
+            const lockBadge = document.getElementById('part3TechnologyLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 3 Technology & Change link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 3 Technology & Change - elements missing!');
+            }
+        }
+
+        function unlockPart3Technology() {
+            console.log('✅ Attempting to unlock Part 3 Technology & Change link...');
+            
+            const practiceLink = document.getElementById('part3TechnologyLink');
+            const lockBadge = document.getElementById('part3TechnologyLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part3_Technology_Change.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 3 Technology & Change link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 3 Technology & Change - elements missing!');
+            }
+        }
+
+        function handlePart3TechnologyClick(event) {
+            const practiceLink = document.getElementById('part3TechnologyLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 3 Technology & Change - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 3 Technology & Change');
+            window.location.href = 'GA_IELTS_SPEAKING_Part3_Technology_Change.html';
+            return true;
+        }
+
+        // Part 3 Education & Learning
+        function lockPart3Education() {
+            console.log('🔒 Attempting to lock Part 3 Education & Learning link...');
+            
+            const practiceLink = document.getElementById('part3EducationLink');
+            const lockBadge = document.getElementById('part3EducationLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 3 Education & Learning link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 3 Education & Learning - elements missing!');
+            }
+        }
+
+        function unlockPart3Education() {
+            console.log('✅ Attempting to unlock Part 3 Education & Learning link...');
+            
+            const practiceLink = document.getElementById('part3EducationLink');
+            const lockBadge = document.getElementById('part3EducationLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part3_Education_Learning.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 3 Education & Learning link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 3 Education & Learning - elements missing!');
+            }
+        }
+
+        function handlePart3EducationClick(event) {
+            const practiceLink = document.getElementById('part3EducationLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 3 Education & Learning - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 3 Education & Learning');
+            window.location.href = 'GA_IELTS_SPEAKING_Part3_Education_Learning.html';
+            return true;
+        }
+
+        // Part 3 Environment & Society
+        function lockPart3Environment() {
+            console.log('🔒 Attempting to lock Part 3 Environment & Society link...');
+            
+            const practiceLink = document.getElementById('part3EnvironmentLink');
+            const lockBadge = document.getElementById('part3EnvironmentLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 3 Environment & Society link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 3 Environment & Society - elements missing!');
+            }
+        }
+
+        function unlockPart3Environment() {
+            console.log('✅ Attempting to unlock Part 3 Environment & Society link...');
+            
+            const practiceLink = document.getElementById('part3EnvironmentLink');
+            const lockBadge = document.getElementById('part3EnvironmentLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part3_Environment_Society.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 3 Environment & Society link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 3 Environment & Society - elements missing!');
+            }
+        }
+
+        function handlePart3EnvironmentClick(event) {
+            const practiceLink = document.getElementById('part3EnvironmentLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 3 Environment & Society - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 3 Environment & Society');
+            window.location.href = 'GA_IELTS_SPEAKING_Part3_Environment_Society.html';
+            return true;
+        }
+
+        // Part 3 Culture & Traditions
+        function lockPart3Culture() {
+            console.log('🔒 Attempting to lock Part 3 Culture & Traditions link...');
+            
+            const practiceLink = document.getElementById('part3CultureLink');
+            const lockBadge = document.getElementById('part3CultureLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 3 Culture & Traditions link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 3 Culture & Traditions - elements missing!');
+            }
+        }
+
+        function unlockPart3Culture() {
+            console.log('✅ Attempting to unlock Part 3 Culture & Traditions link...');
+            
+            const practiceLink = document.getElementById('part3CultureLink');
+            const lockBadge = document.getElementById('part3CultureLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part3_Culture_Traditions.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 3 Culture & Traditions link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 3 Culture & Traditions - elements missing!');
+            }
+        }
+
+        function handlePart3CultureClick(event) {
+            const practiceLink = document.getElementById('part3CultureLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 3 Culture & Traditions - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 3 Culture & Traditions');
+            window.location.href = 'GA_IELTS_SPEAKING_Part3_Culture_Traditions.html';
+            return true;
+        }
+
+        // Part 3 Future Trends
+        function lockPart3Future() {
+            console.log('🔒 Attempting to lock Part 3 Future Trends link...');
+            
+            const practiceLink = document.getElementById('part3FutureLink');
+            const lockBadge = document.getElementById('part3FutureLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.add('locked');
+                lockBadge.style.display = 'inline-block';
+                console.log('🔒 Part 3 Future Trends link LOCKED successfully');
+            } else {
+                console.error('❌ Could not lock Part 3 Future Trends - elements missing!');
+            }
+        }
+
+        function unlockPart3Future() {
+            console.log('✅ Attempting to unlock Part 3 Future Trends link...');
+            
+            const practiceLink = document.getElementById('part3FutureLink');
+            const lockBadge = document.getElementById('part3FutureLock');
+            
+            if (practiceLink && lockBadge) {
+                practiceLink.classList.remove('locked');
+                practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_SPEAKING_Part3_Future_Trends.html'");
+                lockBadge.style.display = 'none';
+                console.log('✅ Part 3 Future Trends link UNLOCKED successfully');
+            } else {
+                console.error('❌ Could not unlock Part 3 Future Trends - elements missing!');
+            }
+        }
+
+        function handlePart3FutureClick(event) {
+            const practiceLink = document.getElementById('part3FutureLink');
+            
+            if (practiceLink.classList.contains('locked')) {
+                event.preventDefault();
+                console.log('🔒 Blocked access to locked Part 3 Future Trends - opening subscription modal');
+                openSubscriptionModal();
+                return false;
+            }
+            
+            console.log('✅ Allowing access to Part 3 Future Trends');
+            window.location.href = 'GA_IELTS_SPEAKING_Part3_Future_Trends.html';
+            return true;
+        }
+
+        // Redirect to main IELTS page and open subscription modal
+        function openSubscriptionModal() {
+            console.log('💳 Redirecting to main page for subscription...');
+            
+            // Store the current practice attempt for analytics
+            localStorage.setItem('lastAttemptedPractice', JSON.stringify({
+                section: 'General Speaking',
+                timestamp: new Date().toISOString(),
+                reason: 'subscription_required'
+            }));
+            
+            // Navigate to main IELTS page with a parameter to open subscription modal
+            window.location.href = '../../index.html?openSubscription=true';
+        }
+
+        // ========================================
+        // MANUAL TESTING FUNCTIONS
+        // ========================================
+
+        // Part 1 Manual Testing Functions
+        window.testLockPart1Hobbies = function() {
+            console.log('🧪 Manual test: LOCKING Part 1 Hobbies & Interests');
+            lockPart1Hobbies();
+        };
+
+        window.testUnlockPart1Hobbies = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 1 Hobbies & Interests');
+            unlockPart1Hobbies();
+        };
+
+        window.testLockPart1Routine = function() {
+            console.log('🧪 Manual test: LOCKING Part 1 Daily Routine');
+            lockPart1Routine();
+        };
+
+        window.testUnlockPart1Routine = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 1 Daily Routine');
+            unlockPart1Routine();
+        };
+
+        window.testLockPart1Family = function() {
+            console.log('🧪 Manual test: LOCKING Part 1 Family & Friends');
+            lockPart1Family();
+        };
+
+        window.testUnlockPart1Family = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 1 Family & Friends');
+            unlockPart1Family();
+        };
+
+        window.testLockPart1Work = function() {
+            console.log('🧪 Manual test: LOCKING Part 1 Work & Study');
+            lockPart1Work();
+        };
+
+        window.testUnlockPart1Work = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 1 Work & Study');
+            unlockPart1Work();
+        };
+
+        window.testLockPart1Hometown = function() {
+            console.log('🧪 Manual test: LOCKING Part 1 Hometown & Living');
+            lockPart1Hometown();
+        };
+
+        window.testUnlockPart1Hometown = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 1 Hometown & Living');
+            unlockPart1Hometown();
+        };
+
+        // Part 2 Manual Testing Functions
+        window.testLockPart2Place = function() {
+            console.log('🧪 Manual test: LOCKING Part 2 Describe a Place');
+            lockPart2Place();
+        };
+
+        window.testUnlockPart2Place = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 2 Describe a Place');
+            unlockPart2Place();
+        };
+
+        window.testLockPart2Event = function() {
+            console.log('🧪 Manual test: LOCKING Part 2 Describe an Event');
+            lockPart2Event();
+        };
+
+        window.testUnlockPart2Event = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 2 Describe an Event');
+            unlockPart2Event();
+        };
+
+        window.testLockPart2Object = function() {
+            console.log('🧪 Manual test: LOCKING Part 2 Describe an Object');
+            lockPart2Object();
+        };
+
+        window.testUnlockPart2Object = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 2 Describe an Object');
+            unlockPart2Object();
+        };
+
+        window.testLockPart2Experience = function() {
+            console.log('🧪 Manual test: LOCKING Part 2 Describe an Experience');
+            lockPart2Experience();
+        };
+
+        window.testUnlockPart2Experience = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 2 Describe an Experience');
+            unlockPart2Experience();
+        };
+
+        window.testLockPart2Activity = function() {
+            console.log('🧪 Manual test: LOCKING Part 2 Describe an Activity');
+            lockPart2Activity();
+        };
+
+        window.testUnlockPart2Activity = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 2 Describe an Activity');
+            unlockPart2Activity();
+        };
+
+        // Part 3 Manual Testing Functions
+        window.testLockPart3Technology = function() {
+            console.log('🧪 Manual test: LOCKING Part 3 Technology & Change');
+            lockPart3Technology();
+        };
+
+        window.testUnlockPart3Technology = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 3 Technology & Change');
+            unlockPart3Technology();
+        };
+
+        window.testLockPart3Education = function() {
+            console.log('🧪 Manual test: LOCKING Part 3 Education & Learning');
+            lockPart3Education();
+        };
+
+        window.testUnlockPart3Education = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 3 Education & Learning');
+            unlockPart3Education();
+        };
+
+        window.testLockPart3Environment = function() {
+            console.log('🧪 Manual test: LOCKING Part 3 Environment & Society');
+            lockPart3Environment();
+        };
+
+        window.testUnlockPart3Environment = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 3 Environment & Society');
+            unlockPart3Environment();
+        };
+
+        window.testLockPart3Culture = function() {
+            console.log('🧪 Manual test: LOCKING Part 3 Culture & Traditions');
+            lockPart3Culture();
+        };
+
+        window.testUnlockPart3Culture = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 3 Culture & Traditions');
+            unlockPart3Culture();
+        };
+
+        window.testLockPart3Future = function() {
+            console.log('🧪 Manual test: LOCKING Part 3 Future Trends');
+            lockPart3Future();
+        };
+
+        window.testUnlockPart3Future = function() {
+            console.log('🧪 Manual test: UNLOCKING Part 3 Future Trends');
+            unlockPart3Future();
+        };
+
+        // Utility testing functions
+        window.manualSubscriptionCheck = function() {
+            console.log('🧪 Manual test: Running subscription check...');
+            checkStoredSubscriptionData();
+        };
+
+        window.viewStoredSubscriptionData = function() {
+            const data = localStorage.getItem('userSubscriptionData');
+            console.log('📦 Current stored subscription data:', data);
+            if (data) {
+                console.log('📋 Parsed data:', JSON.parse(data));
+            }
+        };
+
+        window.simulateSubscriptionData = function() {
+            console.log('🧪 Creating test subscription data...');
+            const testData = {
+                isActive: true,
+                expiryDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+                plan: 'premium'
+            };
+            localStorage.setItem('userSubscriptionData', JSON.stringify(testData));
+            console.log('✅ Test subscription data created:', testData);
+            console.log('🔄 Running subscription check...');
+            checkStoredSubscriptionData();
+        };
+
+        // Manual testing function for subscription redirect
+        window.testSubscriptionRedirect = function() {
+            console.log('🧪 Testing subscription redirect...');
+            openSubscriptionModal();
+        };
+
+        console.log('🔧 Debug functions available:');
+        console.log('   === PART 1 PRACTICES ===');
+        console.log('   testLockPart1Hobbies() - manually lock Part 1 Hobbies & Interests');
+        console.log('   testUnlockPart1Hobbies() - manually unlock Part 1 Hobbies & Interests');
+        console.log('   testLockPart1Routine() - manually lock Part 1 Daily Routine');
+        console.log('   testUnlockPart1Routine() - manually unlock Part 1 Daily Routine');
+        console.log('   testLockPart1Family() - manually lock Part 1 Family & Friends');
+        console.log('   testUnlockPart1Family() - manually unlock Part 1 Family & Friends');
+        console.log('   testLockPart1Work() - manually lock Part 1 Work & Study');
+        console.log('   testUnlockPart1Work() - manually unlock Part 1 Work & Study');
+        console.log('   testLockPart1Hometown() - manually lock Part 1 Hometown & Living');
+        console.log('   testUnlockPart1Hometown() - manually unlock Part 1 Hometown & Living');
+        console.log('   === PART 2 PRACTICES ===');
+        console.log('   testLockPart2Place() - manually lock Part 2 Describe a Place');
+        console.log('   testUnlockPart2Place() - manually unlock Part 2 Describe a Place');
+        console.log('   testLockPart2Event() - manually lock Part 2 Describe an Event');
+        console.log('   testUnlockPart2Event() - manually unlock Part 2 Describe an Event');
+        console.log('   testLockPart2Object() - manually lock Part 2 Describe an Object');
+        console.log('   testUnlockPart2Object() - manually unlock Part 2 Describe an Object');
+        console.log('   testLockPart2Experience() - manually lock Part 2 Describe an Experience');
+        console.log('   testUnlockPart2Experience() - manually unlock Part 2 Describe an Experience');
+        console.log('   testLockPart2Activity() - manually lock Part 2 Describe an Activity');
+        console.log('   testUnlockPart2Activity() - manually unlock Part 2 Describe an Activity');
+        console.log('   === PART 3 PRACTICES ===');
+        console.log('   testLockPart3Technology() - manually lock Part 3 Technology & Change');
+        console.log('   testUnlockPart3Technology() - manually unlock Part 3 Technology & Change');
+        console.log('   testLockPart3Education() - manually lock Part 3 Education & Learning');
+        console.log('   testUnlockPart3Education() - manually unlock Part 3 Education & Learning');
+        console.log('   testLockPart3Environment() - manually lock Part 3 Environment & Society');
+        console.log('   testUnlockPart3Environment() - manually unlock Part 3 Environment & Society');
+        console.log('   testLockPart3Culture() - manually lock Part 3 Culture & Traditions');
+        console.log('   testUnlockPart3Culture() - manually unlock Part 3 Culture & Traditions');
+        console.log('   testLockPart3Future() - manually lock Part 3 Future Trends');
+        console.log('   testUnlockPart3Future() - manually unlock Part 3 Future Trends');
+        console.log('   === UTILITY FUNCTIONS ===');
+        console.log('   manualSubscriptionCheck() - run subscription check with stored data');
+        console.log('   viewStoredSubscriptionData() - view current subscription data');
+        console.log('   simulateSubscriptionData() - create test subscription data');
+        console.log('   testSubscriptionRedirect() - test subscription redirect functionality');
+
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
             console.log('🎤 IELTS General Speaking Introduction page loaded');
+            
+            // Check subscription status on page load
+            console.log('🔍 Checking subscription status on page load...');
+            checkStoredSubscriptionData();
             
             // Optional: Auto-expand the first section for better UX
             // toggleSection('part1');
