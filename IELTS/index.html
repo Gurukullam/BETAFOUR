@@ -2131,7 +2131,36 @@
         };
 
         function signOutUser() {
-            console.log('🔓 User signing out...');
+            console.log('🔓 User signing out with session management...');
+            
+            // Use enhanced signout with session cleanup if available
+            if (typeof enhancedSignOut === 'function') {
+                enhancedSignOut().then((success) => {
+                    if (success) {
+                        console.log('✅ Enhanced sign out with session cleanup successful');
+                    } else {
+                        console.log('⚠️ Enhanced sign out had issues, proceeding with fallback');
+                    }
+                    
+                    // Clear remaining data and refresh
+                    sessionStorage.clear();
+                    window.location.reload(true);
+                }).catch((error) => {
+                    console.error('❌ Enhanced sign out error:', error);
+                    
+                    // Fallback to original sign out logic
+                    fallbackSignOut();
+                });
+            } else {
+                // Fallback if session management is not loaded
+                console.log('⚠️ Session management not available, using fallback sign out');
+                fallbackSignOut();
+            }
+        }
+        
+        // Fallback sign out function (original logic)
+        function fallbackSignOut() {
+            console.log('🔓 Using fallback sign out...');
             
             // CRITICAL: Clear subscription cache FIRST before general clear
             localStorage.removeItem('userSubscriptionData');
@@ -3868,8 +3897,8 @@
                         const password = document.getElementById('signInPassword').value;
                         
                         if (email && password) {
-                            console.log('🚀 Attempting Firebase signin for:', email);
-                            freeSignIn(email, password).then(result => {
+                            console.log('🚀 Attempting Firebase signin with session management for:', email);
+                            freeSignInWithSessionCheck(email, password).then(result => {
                                 if (result.success) {
                                     // Close modal and store user data
                                     const modal = document.getElementById('signInModal');
@@ -4008,6 +4037,9 @@
 
     <!-- Firebase Integration -->
     <script src="../Reference-Lookup/IELTS-Firebase-Integration.js"></script>
+
+    <!-- Single-Device Session Management -->
+    <script src="../Reference-Lookup/Single-Device-Session-Management.js"></script>
 
     <!-- Stripe Payment Integration -->
     <script src="../Reference-Lookup/Include-Stripe-Integration.js"></script>
