@@ -353,6 +353,49 @@
             transform: translateX(5px);
         }
 
+        /* Lock mechanism styles - Enhanced with animations */
+        .practice-item {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .practice-text {
+            flex: 1;
+        }
+
+        .lock-badge {
+            display: none;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Lock styling for premium practices - Enhanced with smooth animations */
+        .practice-item.locked {
+            background: rgba(220, 53, 69, 0.08);
+            border-left-color: #dc3545;
+            color: #666;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .practice-item.locked:hover {
+            background: rgba(220, 53, 69, 0.12);
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15);
+            border-left-color: #dc3545;
+        }
+
+        .practice-item.locked .lock-badge {
+            display: inline-block;
+        }
+
         .practice-item[onclick] {
             color: #8b4513;
             font-weight: 600;
@@ -670,13 +713,30 @@
                     <h3 class="section-title"><strong>Part 1: Academic Interview</strong></h3>
                     <span class="expand-icon" id="part1-icon">▼</span>
                 </div>
-                <div class="section-content" id="part1-content">
-                                                                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Academic_Background.html'">Academic Background & Studies</div>
-            <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Research_Methods.html'">Research & Learning Methods</div>
-            <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Academic_Goals.html'">Academic Goals & Aspirations</div>
-            <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_University_Life.html'">University Life & Experience</div>
-            <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Academic_Skills.html'">Academic Skills & Challenges</div>
-            <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Educational_Technology.html'">Educational Technology</div>
+                                <div class="section-content" id="part1-content">
+                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Academic_Background.html'">
+                        <span class="practice-text">Academic Background & Studies</span>
+                    </div>
+                    <div class="practice-item" id="part1ResearchMethodsLink" onclick="handlePart1ResearchMethodsClick(event)">
+                        <span class="practice-text">Research & Learning Methods</span>
+                        <span class="lock-badge" id="part1ResearchMethodsLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part1AcademicGoalsLink" onclick="handlePart1AcademicGoalsClick(event)">
+                        <span class="practice-text">Academic Goals & Aspirations</span>
+                        <span class="lock-badge" id="part1AcademicGoalsLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part1UniversityLifeLink" onclick="handlePart1UniversityLifeClick(event)">
+                        <span class="practice-text">University Life & Experience</span>
+                        <span class="lock-badge" id="part1UniversityLifeLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part1AcademicSkillsLink" onclick="handlePart1AcademicSkillsClick(event)">
+                        <span class="practice-text">Academic Skills & Challenges</span>
+                        <span class="lock-badge" id="part1AcademicSkillsLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part1EducationalTechnologyLink" onclick="handlePart1EducationalTechnologyClick(event)">
+                        <span class="practice-text">Educational Technology</span>
+                        <span class="lock-badge" id="part1EducationalTechnologyLock">🔒</span>
+                    </div>
                 </div>
             </div>
 
@@ -687,12 +747,29 @@
                     <span class="expand-icon" id="part2-icon">▼</span>
                 </div>
                 <div class="section-content" id="part2-content">
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Academic_Achievement.html'">Describe an Important Academic Achievement</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Research_Project.html'">Describe a Research Project or Study</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Educational_Institution.html'">Describe an Educational Institution</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Academic_Subject.html'">Describe an Academic Subject You Enjoy</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Learning_Experience.html'">Describe a Learning Experience</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Academic_Challenge.html'">Describe an Academic Challenge</div>
+                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Academic_Achievement.html'">
+                        <span class="practice-text">Describe an Important Academic Achievement</span>
+                    </div>
+                    <div class="practice-item" id="part2ResearchProjectLink" onclick="handlePart2ResearchProjectClick(event)">
+                        <span class="practice-text">Describe a Research Project or Study</span>
+                        <span class="lock-badge" id="part2ResearchProjectLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part2EducationalInstitutionLink" onclick="handlePart2EducationalInstitutionClick(event)">
+                        <span class="practice-text">Describe an Educational Institution</span>
+                        <span class="lock-badge" id="part2EducationalInstitutionLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part2AcademicSubjectLink" onclick="handlePart2AcademicSubjectClick(event)">
+                        <span class="practice-text">Describe an Academic Subject You Enjoy</span>
+                        <span class="lock-badge" id="part2AcademicSubjectLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part2LearningExperienceLink" onclick="handlePart2LearningExperienceClick(event)">
+                        <span class="practice-text">Describe a Learning Experience</span>
+                        <span class="lock-badge" id="part2LearningExperienceLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part2AcademicChallengeLink" onclick="handlePart2AcademicChallengeClick(event)">
+                        <span class="practice-text">Describe an Academic Challenge</span>
+                        <span class="lock-badge" id="part2AcademicChallengeLock">🔒</span>
+                    </div>
                 </div>
             </div>
 
@@ -703,12 +780,29 @@
                     <span class="expand-icon" id="part3-icon">▼</span>
                 </div>
                 <div class="section-content" id="part3-content">
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Higher_Education_Research.html'">Higher Education & Research</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Academic_Writing_Communication.html'">Academic Writing & Communication</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Educational_Policy_Systems.html'">Educational Policy & Systems</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Knowledge_Information_Management.html'">Knowledge & Information Management</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Academic_Ethics_Integrity.html'">Academic Ethics & Integrity</div>
-                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_International_Education_Mobility.html'">International Education & Mobility</div>
+                    <div class="practice-item" onclick="window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Higher_Education_Research.html'">
+                        <span class="practice-text">Higher Education & Research</span>
+                    </div>
+                    <div class="practice-item" id="part3AcademicWritingLink" onclick="handlePart3AcademicWritingClick(event)">
+                        <span class="practice-text">Academic Writing & Communication</span>
+                        <span class="lock-badge" id="part3AcademicWritingLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part3EducationalPolicyLink" onclick="handlePart3EducationalPolicyClick(event)">
+                        <span class="practice-text">Educational Policy & Systems</span>
+                        <span class="lock-badge" id="part3EducationalPolicyLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part3KnowledgeManagementLink" onclick="handlePart3KnowledgeManagementClick(event)">
+                        <span class="practice-text">Knowledge & Information Management</span>
+                        <span class="lock-badge" id="part3KnowledgeManagementLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part3AcademicEthicsLink" onclick="handlePart3AcademicEthicsClick(event)">
+                        <span class="practice-text">Academic Ethics & Integrity</span>
+                        <span class="lock-badge" id="part3AcademicEthicsLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="part3InternationalEducationLink" onclick="handlePart3InternationalEducationClick(event)">
+                        <span class="practice-text">International Education & Mobility</span>
+                        <span class="lock-badge" id="part3InternationalEducationLock">🔒</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -835,9 +929,171 @@
 
     <!-- JavaScript -->
     <script>
+        // ========================================
+        // SUBSCRIPTION CHECK & CONTENT LOCKING SYSTEM  
+        // ========================================
+
+        // Check subscription status and manage content locking
+        function checkStoredSubscriptionData() {
+            console.log('🔍 Checking stored subscription data...');
+            
+            const storedData = localStorage.getItem('userSubscriptionData');
+            console.log('📦 Raw stored data:', storedData);
+            
+            if (!storedData) {
+                console.log('❌ No stored subscription data found - LOCKING ALL PREMIUM PRACTICES');
+                lockAllPremiumPractices();
+                return;
+            }
+            
+            try {
+                const data = JSON.parse(storedData);
+                console.log('📋 Parsed subscription data:', data);
+                
+                if (data && typeof data === 'object') {
+                    if (data.isActive === true) {
+                        console.log('🎉 SUBSCRIPTION IS ACTIVE - UNLOCKING ALL PREMIUM PRACTICES');
+                        unlockAllPremiumPractices();
+                    } else {
+                        console.log('❌ Subscription NOT active - LOCKING ALL PREMIUM PRACTICES');
+                        lockAllPremiumPractices();
+                    }
+                } else {
+                    console.log('❌ Invalid subscription data format - LOCKING ALL PREMIUM PRACTICES');
+                    lockAllPremiumPractices();
+                }
+                
+            } catch (error) {
+                console.error('❌ Error parsing stored subscription data:', error);
+                console.log('🔧 Defaulting to LOCKED due to error');
+                lockAllPremiumPractices();
+            }
+        }
+
+        // Lock all premium practices
+        function lockAllPremiumPractices() {
+            // Part 1 Premium Practices (5 practices)
+            lockPart1ResearchMethods(); lockPart1AcademicGoals(); lockPart1UniversityLife();
+            lockPart1AcademicSkills(); lockPart1EducationalTechnology();
+            // Part 2 Premium Practices (5 practices)
+            lockPart2ResearchProject(); lockPart2EducationalInstitution(); lockPart2AcademicSubject();
+            lockPart2LearningExperience(); lockPart2AcademicChallenge();
+            // Part 3 Premium Practices (5 practices)
+            lockPart3AcademicWriting(); lockPart3EducationalPolicy(); lockPart3KnowledgeManagement();
+            lockPart3AcademicEthics(); lockPart3InternationalEducation();
+        }
+
+        // Unlock all premium practices
+        function unlockAllPremiumPractices() {
+            // Part 1 Premium Practices (5 practices)
+            unlockPart1ResearchMethods(); unlockPart1AcademicGoals(); unlockPart1UniversityLife();
+            unlockPart1AcademicSkills(); unlockPart1EducationalTechnology();
+            // Part 2 Premium Practices (5 practices)
+            unlockPart2ResearchProject(); unlockPart2EducationalInstitution(); unlockPart2AcademicSubject();
+            unlockPart2LearningExperience(); unlockPart2AcademicChallenge();
+            // Part 3 Premium Practices (5 practices)
+            unlockPart3AcademicWriting(); unlockPart3EducationalPolicy(); unlockPart3KnowledgeManagement();
+            unlockPart3AcademicEthics(); unlockPart3InternationalEducation();
+        }
+
+        // ========================================
+        // PART 1 PREMIUM PRACTICES (5 practices)
+        // ========================================
+
+        function lockPart1ResearchMethods() { const practiceLink = document.getElementById('part1ResearchMethodsLink'); const lockBadge = document.getElementById('part1ResearchMethodsLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart1ResearchMethods() { const practiceLink = document.getElementById('part1ResearchMethodsLink'); const lockBadge = document.getElementById('part1ResearchMethodsLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Research_Methods.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart1ResearchMethodsClick(event) { const practiceLink = document.getElementById('part1ResearchMethodsLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part1_Research_Methods.html'; return true; }
+
+        function lockPart1AcademicGoals() { const practiceLink = document.getElementById('part1AcademicGoalsLink'); const lockBadge = document.getElementById('part1AcademicGoalsLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart1AcademicGoals() { const practiceLink = document.getElementById('part1AcademicGoalsLink'); const lockBadge = document.getElementById('part1AcademicGoalsLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Academic_Goals.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart1AcademicGoalsClick(event) { const practiceLink = document.getElementById('part1AcademicGoalsLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part1_Academic_Goals.html'; return true; }
+
+        function lockPart1UniversityLife() { const practiceLink = document.getElementById('part1UniversityLifeLink'); const lockBadge = document.getElementById('part1UniversityLifeLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart1UniversityLife() { const practiceLink = document.getElementById('part1UniversityLifeLink'); const lockBadge = document.getElementById('part1UniversityLifeLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_University_Life.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart1UniversityLifeClick(event) { const practiceLink = document.getElementById('part1UniversityLifeLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part1_University_Life.html'; return true; }
+
+        function lockPart1AcademicSkills() { const practiceLink = document.getElementById('part1AcademicSkillsLink'); const lockBadge = document.getElementById('part1AcademicSkillsLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart1AcademicSkills() { const practiceLink = document.getElementById('part1AcademicSkillsLink'); const lockBadge = document.getElementById('part1AcademicSkillsLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Academic_Skills.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart1AcademicSkillsClick(event) { const practiceLink = document.getElementById('part1AcademicSkillsLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part1_Academic_Skills.html'; return true; }
+
+        function lockPart1EducationalTechnology() { const practiceLink = document.getElementById('part1EducationalTechnologyLink'); const lockBadge = document.getElementById('part1EducationalTechnologyLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart1EducationalTechnology() { const practiceLink = document.getElementById('part1EducationalTechnologyLink'); const lockBadge = document.getElementById('part1EducationalTechnologyLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part1_Educational_Technology.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart1EducationalTechnologyClick(event) { const practiceLink = document.getElementById('part1EducationalTechnologyLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part1_Educational_Technology.html'; return true; }
+
+        // ========================================
+        // PART 2 PREMIUM PRACTICES (5 practices)
+        // ========================================
+
+        function lockPart2ResearchProject() { const practiceLink = document.getElementById('part2ResearchProjectLink'); const lockBadge = document.getElementById('part2ResearchProjectLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart2ResearchProject() { const practiceLink = document.getElementById('part2ResearchProjectLink'); const lockBadge = document.getElementById('part2ResearchProjectLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Research_Project.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart2ResearchProjectClick(event) { const practiceLink = document.getElementById('part2ResearchProjectLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part2_Research_Project.html'; return true; }
+
+        function lockPart2EducationalInstitution() { const practiceLink = document.getElementById('part2EducationalInstitutionLink'); const lockBadge = document.getElementById('part2EducationalInstitutionLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart2EducationalInstitution() { const practiceLink = document.getElementById('part2EducationalInstitutionLink'); const lockBadge = document.getElementById('part2EducationalInstitutionLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Educational_Institution.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart2EducationalInstitutionClick(event) { const practiceLink = document.getElementById('part2EducationalInstitutionLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part2_Educational_Institution.html'; return true; }
+
+        function lockPart2AcademicSubject() { const practiceLink = document.getElementById('part2AcademicSubjectLink'); const lockBadge = document.getElementById('part2AcademicSubjectLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart2AcademicSubject() { const practiceLink = document.getElementById('part2AcademicSubjectLink'); const lockBadge = document.getElementById('part2AcademicSubjectLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Academic_Subject.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart2AcademicSubjectClick(event) { const practiceLink = document.getElementById('part2AcademicSubjectLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part2_Academic_Subject.html'; return true; }
+
+        function lockPart2LearningExperience() { const practiceLink = document.getElementById('part2LearningExperienceLink'); const lockBadge = document.getElementById('part2LearningExperienceLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart2LearningExperience() { const practiceLink = document.getElementById('part2LearningExperienceLink'); const lockBadge = document.getElementById('part2LearningExperienceLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Learning_Experience.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart2LearningExperienceClick(event) { const practiceLink = document.getElementById('part2LearningExperienceLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part2_Learning_Experience.html'; return true; }
+
+        function lockPart2AcademicChallenge() { const practiceLink = document.getElementById('part2AcademicChallengeLink'); const lockBadge = document.getElementById('part2AcademicChallengeLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart2AcademicChallenge() { const practiceLink = document.getElementById('part2AcademicChallengeLink'); const lockBadge = document.getElementById('part2AcademicChallengeLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part2_Academic_Challenge.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart2AcademicChallengeClick(event) { const practiceLink = document.getElementById('part2AcademicChallengeLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part2_Academic_Challenge.html'; return true; }
+
+        // ========================================
+        // PART 3 PREMIUM PRACTICES (5 practices)
+        // ========================================
+
+        function lockPart3AcademicWriting() { const practiceLink = document.getElementById('part3AcademicWritingLink'); const lockBadge = document.getElementById('part3AcademicWritingLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart3AcademicWriting() { const practiceLink = document.getElementById('part3AcademicWritingLink'); const lockBadge = document.getElementById('part3AcademicWritingLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Academic_Writing_Communication.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart3AcademicWritingClick(event) { const practiceLink = document.getElementById('part3AcademicWritingLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part3_Academic_Writing_Communication.html'; return true; }
+
+        function lockPart3EducationalPolicy() { const practiceLink = document.getElementById('part3EducationalPolicyLink'); const lockBadge = document.getElementById('part3EducationalPolicyLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart3EducationalPolicy() { const practiceLink = document.getElementById('part3EducationalPolicyLink'); const lockBadge = document.getElementById('part3EducationalPolicyLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Educational_Policy_Systems.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart3EducationalPolicyClick(event) { const practiceLink = document.getElementById('part3EducationalPolicyLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part3_Educational_Policy_Systems.html'; return true; }
+
+        function lockPart3KnowledgeManagement() { const practiceLink = document.getElementById('part3KnowledgeManagementLink'); const lockBadge = document.getElementById('part3KnowledgeManagementLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart3KnowledgeManagement() { const practiceLink = document.getElementById('part3KnowledgeManagementLink'); const lockBadge = document.getElementById('part3KnowledgeManagementLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Knowledge_Information_Management.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart3KnowledgeManagementClick(event) { const practiceLink = document.getElementById('part3KnowledgeManagementLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part3_Knowledge_Information_Management.html'; return true; }
+
+        function lockPart3AcademicEthics() { const practiceLink = document.getElementById('part3AcademicEthicsLink'); const lockBadge = document.getElementById('part3AcademicEthicsLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart3AcademicEthics() { const practiceLink = document.getElementById('part3AcademicEthicsLink'); const lockBadge = document.getElementById('part3AcademicEthicsLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_Academic_Ethics_Integrity.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart3AcademicEthicsClick(event) { const practiceLink = document.getElementById('part3AcademicEthicsLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part3_Academic_Ethics_Integrity.html'; return true; }
+
+        function lockPart3InternationalEducation() { const practiceLink = document.getElementById('part3InternationalEducationLink'); const lockBadge = document.getElementById('part3InternationalEducationLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockPart3InternationalEducation() { const practiceLink = document.getElementById('part3InternationalEducationLink'); const lockBadge = document.getElementById('part3InternationalEducationLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_IELTS_ACADEMIC_SPEAKING_Part3_International_Education_Mobility.html'"); lockBadge.style.display = 'none'; } }
+        function handlePart3InternationalEducationClick(event) { const practiceLink = document.getElementById('part3InternationalEducationLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_IELTS_ACADEMIC_SPEAKING_Part3_International_Education_Mobility.html'; return true; }
+
+        // Redirect to main IELTS page and open subscription modal
+        function openSubscriptionModal() {
+            console.log('💳 Redirecting to main page for subscription...');
+            localStorage.setItem('lastAttemptedPractice', JSON.stringify({
+                section: 'Academic Speaking',
+                timestamp: new Date().toISOString(),
+                reason: 'subscription_required'
+            }));
+            window.location.href = '../../index.html?openSubscription=true';
+        }
+
+        // Manual testing functions
+        window.testLockAcademicSpeaking = function() { lockAllPremiumPractices(); };
+        window.testUnlockAcademicSpeaking = function() { unlockAllPremiumPractices(); };
+        window.simulateAcademicSubscription = function() {
+            localStorage.setItem('userSubscriptionData', JSON.stringify({isActive: true, plan: 'premium'}));
+            checkStoredSubscriptionData();
+        };
+
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
             console.log('✅ IELTS Academic Speaking Practice loaded');
+            
+            // Check subscription status on page load
+            console.log('🔍 Checking subscription status on page load...');
+            checkStoredSubscriptionData();
         });
 
         // Back button navigation
