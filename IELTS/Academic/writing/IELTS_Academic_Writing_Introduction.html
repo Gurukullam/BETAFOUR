@@ -397,6 +397,49 @@
             box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
         }
 
+        /* Lock mechanism styles - Enhanced with animations */
+        .practice-item {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .practice-text {
+            flex: 1;
+        }
+
+        .lock-badge {
+            display: none;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Lock styling for premium practices - Enhanced with smooth animations */
+        .practice-item.locked {
+            background: rgba(220, 53, 69, 0.08);
+            border-left-color: #dc3545;
+            color: #666;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .practice-item.locked:hover {
+            background: rgba(220, 53, 69, 0.12);
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15);
+            border-left-color: #dc3545;
+        }
+
+        .practice-item.locked .lock-badge {
+            display: inline-block;
+        }
+
         /* Hero Section */
         .hero-section {
             background: rgba(255, 255, 255, 0.9);
@@ -715,13 +758,33 @@
                     <span class="expand-icon" id="task1-icon">▼</span>
                 </div>
                 <div class="section-content" id="task1-content">
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Graph.html'">Line Graph</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Bar_Chart.html'">Bar Chart</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Pie Chart.html'">Pie Chart</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Table.html'">Table</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Process_Diagram.html'">Process Diagram</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Map.html'">Map</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Mixed_Chart.html'">Mixed Chart</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Graph.html'">
+                        <span class="practice-text">Line Graph</span>
+                    </div>
+                    <div class="practice-item" id="task1BarChartLink" onclick="handleTask1BarChartClick(event)">
+                        <span class="practice-text">Bar Chart</span>
+                        <span class="lock-badge" id="task1BarChartLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="task1PieChartLink" onclick="handleTask1PieChartClick(event)">
+                        <span class="practice-text">Pie Chart</span>
+                        <span class="lock-badge" id="task1PieChartLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="task1TableLink" onclick="handleTask1TableClick(event)">
+                        <span class="practice-text">Table</span>
+                        <span class="lock-badge" id="task1TableLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="task1ProcessDiagramLink" onclick="handleTask1ProcessDiagramClick(event)">
+                        <span class="practice-text">Process Diagram</span>
+                        <span class="lock-badge" id="task1ProcessDiagramLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="task1MapLink" onclick="handleTask1MapClick(event)">
+                        <span class="practice-text">Map</span>
+                        <span class="lock-badge" id="task1MapLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="task1MixedChartLink" onclick="handleTask1MixedChartClick(event)">
+                        <span class="practice-text">Mixed Chart</span>
+                        <span class="lock-badge" id="task1MixedChartLock">🔒</span>
+                    </div>
                 </div>
             </div>
 
@@ -732,11 +795,25 @@
                     <span class="expand-icon" id="task2-icon">▼</span>
                 </div>
                 <div class="section-content" id="task2-content">
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Opinion_Essay.html'">Opinion Essay</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Discussion_Essay.html'">Discussion Essay</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Advantages_Disadvantage.html'">Advantage/Disadvantage</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Problem_Solution.html'">Problem/Solution</div>
-                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Two_Part_Question.html'">Two-Part Question</div>
+                    <div class="practice-item" onclick="window.location.href='GA_AC_IELTS_ESSAY_Writting_Opinion_Essay.html'">
+                        <span class="practice-text">Opinion Essay</span>
+                    </div>
+                    <div class="practice-item" id="task2DiscussionEssayLink" onclick="handleTask2DiscussionEssayClick(event)">
+                        <span class="practice-text">Discussion Essay</span>
+                        <span class="lock-badge" id="task2DiscussionEssayLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="task2AdvantageDisadvantageLink" onclick="handleTask2AdvantageDisadvantageClick(event)">
+                        <span class="practice-text">Advantage/Disadvantage</span>
+                        <span class="lock-badge" id="task2AdvantageDisadvantageLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="task2ProblemSolutionLink" onclick="handleTask2ProblemSolutionClick(event)">
+                        <span class="practice-text">Problem/Solution</span>
+                        <span class="lock-badge" id="task2ProblemSolutionLock">🔒</span>
+                    </div>
+                    <div class="practice-item" id="task2TwoPartQuestionLink" onclick="handleTask2TwoPartQuestionClick(event)">
+                        <span class="practice-text">Two-Part Question</span>
+                        <span class="lock-badge" id="task2TwoPartQuestionLock">🔒</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1165,9 +1242,142 @@
             window.location.href = '../../index.html';
         }
 
+        // ========================================
+        // SUBSCRIPTION CHECK & CONTENT LOCKING SYSTEM
+        // ========================================
+
+        // Check subscription status and manage content locking
+        function checkStoredSubscriptionData() {
+            console.log('🔍 Checking stored subscription data...');
+            
+            const storedData = localStorage.getItem('userSubscriptionData');
+            console.log('📦 Raw stored data:', storedData);
+            
+            if (!storedData) {
+                console.log('❌ No stored subscription data found - LOCKING ALL PREMIUM PRACTICES');
+                lockAllPremiumPractices();
+                return;
+            }
+            
+            try {
+                const data = JSON.parse(storedData);
+                console.log('📋 Parsed subscription data:', data);
+                
+                if (data && typeof data === 'object') {
+                    if (data.isActive === true) {
+                        console.log('🎉 SUBSCRIPTION IS ACTIVE - UNLOCKING ALL PREMIUM PRACTICES');
+                        unlockAllPremiumPractices();
+                    } else {
+                        console.log('❌ Subscription NOT active - LOCKING ALL PREMIUM PRACTICES');
+                        console.log('🔍 Lock reason:', data.reason || 'isActive = false');
+                        lockAllPremiumPractices();
+                    }
+                } else {
+                    console.log('❌ Invalid subscription data format - LOCKING ALL PREMIUM PRACTICES');
+                    lockAllPremiumPractices();
+                }
+                
+            } catch (error) {
+                console.error('❌ Error parsing stored subscription data:', error);
+                console.log('🔧 Defaulting to LOCKED due to error');
+                lockAllPremiumPractices();
+            }
+        }
+
+        // Lock all premium practices
+        function lockAllPremiumPractices() {
+            // Task 1 Premium Practices
+            lockTask1BarChart(); lockTask1PieChart(); lockTask1Table();
+            lockTask1ProcessDiagram(); lockTask1Map(); lockTask1MixedChart();
+            // Task 2 Premium Practices
+            lockTask2DiscussionEssay(); lockTask2AdvantageDisadvantage();
+            lockTask2ProblemSolution(); lockTask2TwoPartQuestion();
+        }
+
+        // Unlock all premium practices
+        function unlockAllPremiumPractices() {
+            // Task 1 Premium Practices
+            unlockTask1BarChart(); unlockTask1PieChart(); unlockTask1Table();
+            unlockTask1ProcessDiagram(); unlockTask1Map(); unlockTask1MixedChart();
+            // Task 2 Premium Practices
+            unlockTask2DiscussionEssay(); unlockTask2AdvantageDisadvantage();
+            unlockTask2ProblemSolution(); unlockTask2TwoPartQuestion();
+        }
+
+        // ========================================
+        // TASK 1 PREMIUM PRACTICES LOCK/UNLOCK FUNCTIONS
+        // ========================================
+
+        function lockTask1BarChart() { const practiceLink = document.getElementById('task1BarChartLink'); const lockBadge = document.getElementById('task1BarChartLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask1BarChart() { const practiceLink = document.getElementById('task1BarChartLink'); const lockBadge = document.getElementById('task1BarChartLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_Datadescription_Writting_Bar_Chart.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask1BarChartClick(event) { const practiceLink = document.getElementById('task1BarChartLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_Datadescription_Writting_Bar_Chart.html'; return true; }
+
+        function lockTask1PieChart() { const practiceLink = document.getElementById('task1PieChartLink'); const lockBadge = document.getElementById('task1PieChartLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask1PieChart() { const practiceLink = document.getElementById('task1PieChartLink'); const lockBadge = document.getElementById('task1PieChartLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_Datadescription_Writting_Pie Chart.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask1PieChartClick(event) { const practiceLink = document.getElementById('task1PieChartLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_Datadescription_Writting_Pie Chart.html'; return true; }
+
+        function lockTask1Table() { const practiceLink = document.getElementById('task1TableLink'); const lockBadge = document.getElementById('task1TableLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask1Table() { const practiceLink = document.getElementById('task1TableLink'); const lockBadge = document.getElementById('task1TableLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_Datadescription_Writting_Table.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask1TableClick(event) { const practiceLink = document.getElementById('task1TableLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_Datadescription_Writting_Table.html'; return true; }
+
+        function lockTask1ProcessDiagram() { const practiceLink = document.getElementById('task1ProcessDiagramLink'); const lockBadge = document.getElementById('task1ProcessDiagramLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask1ProcessDiagram() { const practiceLink = document.getElementById('task1ProcessDiagramLink'); const lockBadge = document.getElementById('task1ProcessDiagramLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_Datadescription_Writting_Process_Diagram.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask1ProcessDiagramClick(event) { const practiceLink = document.getElementById('task1ProcessDiagramLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_Datadescription_Writting_Process_Diagram.html'; return true; }
+
+        function lockTask1Map() { const practiceLink = document.getElementById('task1MapLink'); const lockBadge = document.getElementById('task1MapLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask1Map() { const practiceLink = document.getElementById('task1MapLink'); const lockBadge = document.getElementById('task1MapLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Map.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask1MapClick(event) { const practiceLink = document.getElementById('task1MapLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_Datadescription_Writting_Line_Map.html'; return true; }
+
+        function lockTask1MixedChart() { const practiceLink = document.getElementById('task1MixedChartLink'); const lockBadge = document.getElementById('task1MixedChartLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask1MixedChart() { const practiceLink = document.getElementById('task1MixedChartLink'); const lockBadge = document.getElementById('task1MixedChartLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_Datadescription_Writting_Line_Mixed_Chart.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask1MixedChartClick(event) { const practiceLink = document.getElementById('task1MixedChartLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_Datadescription_Writting_Line_Mixed_Chart.html'; return true; }
+
+        // ========================================
+        // TASK 2 PREMIUM PRACTICES LOCK/UNLOCK FUNCTIONS
+        // ========================================
+
+        function lockTask2DiscussionEssay() { const practiceLink = document.getElementById('task2DiscussionEssayLink'); const lockBadge = document.getElementById('task2DiscussionEssayLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask2DiscussionEssay() { const practiceLink = document.getElementById('task2DiscussionEssayLink'); const lockBadge = document.getElementById('task2DiscussionEssayLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_ESSAY_Writting_Discussion_Essay.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask2DiscussionEssayClick(event) { const practiceLink = document.getElementById('task2DiscussionEssayLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_ESSAY_Writting_Discussion_Essay.html'; return true; }
+
+        function lockTask2AdvantageDisadvantage() { const practiceLink = document.getElementById('task2AdvantageDisadvantageLink'); const lockBadge = document.getElementById('task2AdvantageDisadvantageLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask2AdvantageDisadvantage() { const practiceLink = document.getElementById('task2AdvantageDisadvantageLink'); const lockBadge = document.getElementById('task2AdvantageDisadvantageLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_ESSAY_Writting_Advantages_Disadvantage.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask2AdvantageDisadvantageClick(event) { const practiceLink = document.getElementById('task2AdvantageDisadvantageLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_ESSAY_Writting_Advantages_Disadvantage.html'; return true; }
+
+        function lockTask2ProblemSolution() { const practiceLink = document.getElementById('task2ProblemSolutionLink'); const lockBadge = document.getElementById('task2ProblemSolutionLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask2ProblemSolution() { const practiceLink = document.getElementById('task2ProblemSolutionLink'); const lockBadge = document.getElementById('task2ProblemSolutionLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_ESSAY_Writting_Problem_Solution.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask2ProblemSolutionClick(event) { const practiceLink = document.getElementById('task2ProblemSolutionLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_ESSAY_Writting_Problem_Solution.html'; return true; }
+
+        function lockTask2TwoPartQuestion() { const practiceLink = document.getElementById('task2TwoPartQuestionLink'); const lockBadge = document.getElementById('task2TwoPartQuestionLock'); if (practiceLink && lockBadge) { practiceLink.classList.add('locked'); lockBadge.style.display = 'inline-block'; } }
+        function unlockTask2TwoPartQuestion() { const practiceLink = document.getElementById('task2TwoPartQuestionLink'); const lockBadge = document.getElementById('task2TwoPartQuestionLock'); if (practiceLink && lockBadge) { practiceLink.classList.remove('locked'); practiceLink.setAttribute('onclick', "window.location.href='GA_AC_IELTS_ESSAY_Writting_Two_Part_Question.html'"); lockBadge.style.display = 'none'; } }
+        function handleTask2TwoPartQuestionClick(event) { const practiceLink = document.getElementById('task2TwoPartQuestionLink'); if (practiceLink.classList.contains('locked')) { event.preventDefault(); openSubscriptionModal(); return false; } window.location.href = 'GA_AC_IELTS_ESSAY_Writting_Two_Part_Question.html'; return true; }
+
+        // Redirect to main IELTS page and open subscription modal
+        function openSubscriptionModal() {
+            console.log('💳 Redirecting to main page for subscription...');
+            localStorage.setItem('lastAttemptedPractice', JSON.stringify({
+                section: 'Academic Writing',
+                timestamp: new Date().toISOString(),
+                reason: 'subscription_required'
+            }));
+            window.location.href = '../../index.html?openSubscription=true';
+        }
+
+        // Manual testing functions
+        window.testLockAcademicWriting = function() { lockAllPremiumPractices(); };
+        window.testUnlockAcademicWriting = function() { unlockAllPremiumPractices(); };
+        window.simulateAcademicSubscription = function() {
+            localStorage.setItem('userSubscriptionData', JSON.stringify({isActive: true, plan: 'premium'}));
+            checkStoredSubscriptionData();
+        };
+
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
             console.log('📊 IELTS Academic Writing Introduction page loaded');
+            
+            // Check subscription status on page load
+            console.log('🔍 Checking subscription status on page load...');
+            checkStoredSubscriptionData();
             
             // Optional: Auto-expand the first section for better UX
             // toggleSection('task1');
